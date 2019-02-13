@@ -1,0 +1,108 @@
+<HTML>
+<HEAD><TITLE>Force fields</TITLE></HEAD>
+<BODY BGCOLOR="white" BACKGROUND="images/6h2o-w-small.gif">
+<!-- $Log: params.html,v $
+<!-- Revision 1.2  2004/11/16 13:56:17  root
+<!-- enhanced
+<!--
+<!-- Revision 1.1  2002/02/06 11:48:19  netadmin
+<!-- Initial revision
+<!-- -->
+<HR ALIGN=CENTER SIZE=8 WIDTH="75%" NOSHADE>
+<CENTER><H1>Force field parameter sets for TINKER</H1></CENTER>
+<HR ALIGN=CENTER SIZE=8 WIDTH="75%" NOSHADE>
+
+<TABLE  WIDTH="90%" ALIGN="CENTER" CELLSPACING="18" BGCOLOR="lightblue">
+<TR BGCOLOR="lightgreen"><TH>Force field</TH><TH>Description</TH></TR>
+<TR><TD VALIGN="top">amber</TD>
+    	     <TD>AMBER-94 parameters for proteins and nucleic acids.
+                 Note that N- and C-terminal amino acid charges differ
+                 slightly from the authentic charge values. For these
+                 terminal residues some charge is redistributed to or
+                 from the alpha carbon atom; the total magnitude of the
+                 redistribution is less than 0.01 e- in most cases. The
+                 file reproduces the authentic parm94 set; torsional
+                 parameter changes for parm96 are noted in that section
+                 of the file.
+</TD></TR>
+<TR><TD VALIGN="top">charmm</TD>
+             <TD>CHARMM27 parameters for proteins and heme. Most of the
+                 nucleic acid, lipid and small model compound parameters
+                 are not yet implemented.
+</TD></TR>
+<TR><TD VALIGN="top">dudek</TD>
+             <TD>Protein-only parameters for the TINKER force field
+                 with multipole values of Dudek and Ponder. The current
+                 file contains all the multipole values from the 1995
+                 JCC paper. These values are superceeded by the full
+                 TINKER force field still under development.
+</TD></TR>
+<TR><TD VALIGN="top">emr</TD>
+             <TD>Reduced EMR model of Pappu, Schneller and Weaver.
+                 Only a few residue types have been implemented.
+</TD></TR>
+<TR><TD VALIGN="top">encad</TD>
+             <TD>ENCAD parameters for proteins and nucleic acids
+                 (in preparation).
+</TD></TR>
+<TR><TD VALIGN="top">hoch</TD>
+             <TD>Simple NMR-NOE force field of Hoch and Stern.
+</TD></TR>
+<TR><TD VALIGN="top">merck</TD>
+             <TD>Preliminary MMFF vdw parameters from Halgren.
+</TD></TR>
+<TR><TD VALIGN="top">mm2</TD>
+             <TD>Full MM2(1991) parameters including pi-systems. The
+                 anomeric and electronegativity correction terms are
+                 not implemented.
+</TD></TR>
+<TR><TD VALIGN="top">mm3</TD>
+             <TD>Full MM3(2000) parameters including pi-systems. The
+                 directional hydrogen bonding and electronegativity
+                 bond length correction terms are implemented, but
+                 the anomeric and Bohlmann correction terms are not
+                 implemented.
+</TD></TR>
+<TR><TD VALIGN="top">mm3pro</TD>
+             <TD>Protein-only version of the MM3 parameters.
+</TD></TR>
+<TR><TD VALIGN="top">mmff</TD>
+             <TD>MMFF94 parameters (in preparation).
+</TD></TR>
+<TR><TD VALIGN="top">mmffpro</TD>
+             <TD>Protein-only version of the MMFF94 parameters
+                 (in preparation).
+</TD></TR>
+<TR><TD VALIGN="top">opls</TD>
+             <TD>Complete OPLS-UA with united-atom parameters for proteins
+                 and many classes of organic molecules. Explicit hydrogens
+                 on polar atoms and aromatic carbons.
+</TD></TR>
+<TR><TD VALIGN="top">oplsaa</TD>
+             <TD>OPLS-AA with all-atom parameters for proteins and many
+                 general classes of organic molecules.
+</TD></TR>
+<TR><TD VALIGN="top">mooth</TD>
+             <TD>Parameters for use with the TINKER potential energy
+                 smoothing methods. Largely adapted largely from
+                 OPLS-UA with modifications to the vdw and improper
+                 torsion terms.
+</TD></TR>
+<TR><TD VALIGN="top">smoothaa</TD>
+             <TD>Similar to SMOOTH, but based on OPLS-AA parameters.
+</TD></TR>
+<TR><TD VALIGN="top">tinker</TD>
+             <TD>Preliminary TINKER protein force field based on the
+                 use of polarizable atomic multipole electrostatics.
+</TD></TR>
+<TR><TD VALIGN="top">water</TD>
+             <TD>The current TINKER water parameters for a polarizable
+                 multipole electrostatics model. This model is equal to
+                 or better than the best available water models for many
+                 bulk and cluster properties.
+
+</TD>
+</TR></TABLE>
+
+</BODY>
+</HTML>

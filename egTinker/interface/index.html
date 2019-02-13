@@ -1,0 +1,147 @@
+<HTML>
+<HEAD><TITLE>Welcome to Tinker</TITLE></HEAD>
+<!-- $Id: index.html,v 1.3 2002/02/06 11:47:32 netadmin Exp $ -->
+<!-- $Log: index.html,v $
+<!-- Revision 1.3  2002/02/06 11:47:32  netadmin
+<!-- Fixed wap mailing [j]
+<!--
+<!-- Revision 1.2  2001/09/05 12:13:06  netadmin
+<!-- Aesthetic enhancements [j]
+<!--
+<!-- Revision 1.1  2001/09/05 10:24:34  netadmin
+<!-- Initial revision
+<!-- -->
+
+<script>
+function openNewWindow(fileName,windowName,theWidth,theHeight) {
+        window.open(fileName,windowName,"toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=yes,resizable=yes,width="+theWidth+",height="+theHeight)
+}
+
+</script>
+
+<script>
+function mouse(img_name,img_src)
+{
+document[img_name].src=img_src;
+}
+</script>
+
+<BODY BGCOLOR="white" BACKGROUND="images/logo-bg.gif" onLoad="preload()";>
+<CENTER><A HREF="http://dasher.wustl.edu/tinker"><IMG SRC="images/logo.gif" ALT="[TINKER]"></A></CENTER>
+
+<CENTER>
+<HR ALIGN=CENTER SIZE=8 WIDTH="75%" NOSHADE>
+<H2><B>TINKER - <I>Software Tools for Molecular Design</I></B></H2>
+<HR ALIGN=CENTER SIZE=8 WIDTH="75%" NOSHADE>
+
+<H2>Welcome to TINKER</H2>
+
+</CENTER>
+
+<P><STRONG>The TINKER molecular modeling software provides a variety of
+methods to perform molecular modeling, with special features for
+biopolymers.</STRONG></P>
+
+<P><STRONG>Here you will find WWW forms to help you work with some of the
+applications in the package. Not all the applications do have a
+WWW interface yet, and not all the functionality of the applications
+featured is supported. However, you will find that for most cases,
+these forms will fulfill your needs.</STRONG></P>
+
+<HR ALIGN=CENTER SIZE=8 WIDTH="75%" NOSHADE>
+
+
+<TABLE BGCOLOR="lightpink" CENTER WIDTH="100%" CELLPADDING="5">
+<TR><TD><CENTER><STRONG>You can always get access to the full power of the TINKER
+package by using the command line interface</STRONG></CENTER></TD></TR>
+</TABLE>
+
+<HR ALIGN=CENTER SIZE=8 WIDTH="75%" NOSHADE>
+
+<CENTER><H2>Applications</H2></CENTER>
+
+<P><STRONG>The following TINKER applications are supported under this WWW
+interface:</STRONG></P>
+
+<TABLE WIDTH="100%" ALIGN=CENTER BGCOLOR="lightblue" 
+       CELLSPACING=0 CELLPADDING=5  BORDER="2">
+<TR BORDER="4"><TH>Application</TH><TH>Description</TH><TH>Help</TH><TH>Do it!</TH></TR>
+<TR>
+  <TD>ANALYZE</TD>
+  <TD>Provides information about a specific molecular structure.</TD>
+  <TD><A HREF="JavaScript:parent.openNewWindow('analyze_help.html','inlineHelp',400,400)"><IMG SRC="images/help.gif" ALT="[Help]"></A></TD>
+  <TD><A HREF="analyze.html" 
+	onMouseOver="mouse('doanalyze','images/ToasterFull.gif')" 
+	onMouseOut="mouse('doanalyze', 'images/ToasterEmpty.gif')">
+	<IMG NAME="doanalyze" SRC="images/ToasterEmpty.gif" ALT="[Do it!]"></A></TD>
+</TR><TR>
+  <TD>ANNEAL</TD>
+  <TD>Molecular dynamics simulated annealing 
+computation.</TD>
+  <TD><A HREF="JavaScript:parent.openNewWindow('anneal_help.html','inlineHelp',400,400)"><IMG SRC="images/help.gif" ALT="[Help]"></A></TD>
+  <TD><A HREF="anneal.html" 
+	onMouseOver="mouse('doanneal','images/ToasterFull.gif')" 
+	onMouseOut="mouse('doanneal', 'images/ToasterEmpty.gif')">
+	<IMG NAME="doanneal" SRC="images/ToasterEmpty.gif" ALT="[Do it!]"></A></TD>
+</TR><TR>
+  <TD>DYNAMIC</TD>
+  <TD>Molecular dynamics (MD) or stochastic dynamics 
+(SD) computation.</TD>
+  <TD><A HREF="JavaScript:parent.openNewWindow('dynamic_help.html','inlineHelp',400,400)"><IMG SRC="images/help.gif" ALT="[Help]"></A></TD>
+  <TD><A HREF="dynamic.html" 
+	onMouseOver="mouse('dodynamic','images/ToasterFull.gif')" 
+	onMouseOut="mouse('dodynamic', 'images/ToasterEmpty.gif')">
+	<IMG NAME="dodynamic" SRC="images/ToasterEmpty.gif" ALT="[Do it!]"></A></TD>
+</TR><TR>
+  <TD>GDA</TD>
+  <TD>Straub's Gaussian Density Annealing 
+algorithm</TD>
+  <TD><A HREF="JavaScript:parent.openNewWindow('gda_help.html','inlineHelp',400,400)"><IMG SRC="images/help.gif" ALT="[Help]"></A></TD>
+  <TD><A HREF="gda.html" 
+	onMouseOver="mouse('dogda','images/ToasterFull.gif')" 
+	onMouseOut="mouse('dogda', 'images/ToasterEmpty.gif')">
+	<IMG NAME="dogda" SRC="images/ToasterEmpty.gif" ALT="[Do it!]"></A></TD>
+</TR><TR>
+  <TD>MINIMIZE</TD>
+  <TD>Nonlinear conjugate gradient minimization</TD>
+  <TD><A HREF="JavaScript:parent.openNewWindow('minimize_help.html','inlineHelp',400,400)"><IMG SRC="images/help.gif" ALT="[Help]"></A></TD>
+  <TD><A HREF="minimize.html" 
+	onMouseOver="mouse('dominimize','images/ToasterFull.gif')" 
+	onMouseOut="mouse('dominimize', 'images/ToasterEmpty.gif')">
+	<IMG NAME="dominimize" SRC="images/ToasterEmpty.gif" ALT="[Do it!]"></A></TD>
+</TR><TR>
+  <TD>NEWTON</TD>
+  <TD>Truncated Newton minimization</TD>
+  <TD><A HREF="JavaScript:parent.openNewWindow('newton_help.html','inlineHelp',400,400)"><IMG SRC="images/help.gif" ALT="[Help]"></A></TD>
+  <TD><A HREF="newton.html" 
+	onMouseOver="mouse('donewton','images/ToasterFull.gif')" 
+	onMouseOut="mouse('donewton', 'images/ToasterEmpty.gif')">
+	<IMG NAME="donewton" SRC="images/ToasterEmpty.gif" ALT="[Do it!]"></A></TD>
+</TR><TR>
+  <TD>OPTIMIZE</TD>
+  <TD>Variable metric energy minimization</TD>
+  <TD><A HREF="JavaScript:parent.openNewWindow('optimize_help.html','inlineHelp',400,400)"><IMG SRC="images/help.gif" ALT="[Help]"></A></TD>
+  <TD><A HREF="optimize.html" 
+	onMouseOver="mouse('dooptimize','images/ToasterFull.gif')" 
+	onMouseOut="mouse('dooptimize', 'images/ToasterEmpty.gif')">
+	<IMG NAME="dooptimize" SRC="images/ToasterEmpty.gif" ALT="[Do it!]"></A></TD>
+</TR><TR>
+  <TD>PSS</TD>
+  <TD>Potential smoothing and search 
+algorithm for a "global" optimization</TD>
+  <TD><A HREF="JavaScript:parent.openNewWindow('pss_help.html','inlineHelp',400,400)"><IMG SRC="images/help.gif" ALT="[Help]"></A></TD>
+  <TD><A HREF="pss.html" 
+	onMouseOver="mouse('dopss','images/ToasterFull.gif')" 
+	onMouseOut="mouse('dopss', 'images/ToasterEmpty.gif')">
+	<IMG NAME="dopss" SRC="images/ToasterEmpty.gif" ALT="[Do it!]"></A></TD>
+</TR><TR>
+  <TD>SNIFFER</TD>
+  <TD> Sniffer global optimization 
+algorithm of Butler and Slaminka</TD>
+  <TD><A HREF="JavaScript:parent.openNewWindow('sniffer_help.html','inlineHelp',400,400)"><IMG SRC="images/help.gif" ALT="[Help]"></A></TD>
+  <TD><A HREF="sniffer.html" 
+	onMouseOver="mouse('dosniffer','images/ToasterFull.gif')" 
+	onMouseOut="mouse('dosniffer', 'images/ToasterEmpty.gif')">
+	<IMG NAME="dosniffer" SRC="images/ToasterEmpty.gif" ALT="[Do it!]"></A></TD>
+</TR>
+</TABLE>

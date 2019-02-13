@@ -1,0 +1,9 @@
+FILE	Enter Cartesian Coordinate File Name
+TICKS	The TINKER Analysis Facility can Provide
+	Total Potential Energy and its Components	E
+	Energy Breakdown over each of the Atoms	A
+	List of the Large Individual Interactions	L
+	Details for All Individual Interactions	D
+	Electrostatic, Inertial & Virial Properties	M
+	Force Field Parameters for Interactions	P
+ATMLIST	List Atoms for which Output is Desired ALL

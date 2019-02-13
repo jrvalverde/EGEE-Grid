@@ -1,0 +1,227 @@
+<HTML><HEAD>
+<TITLE>Tinker - SNIFFER</TITLE>
+</HEAD><BODY BGCOLOR="white" BACKGROUND="images/6h2o-w-small.gif">
+<!-- $Id: sniffer.html,v 1.5 2002/02/06 11:48:19 netadmin Exp $ -->
+<!-- $Log: sniffer.html,v $
+<!-- Revision 1.5  2002/02/06 11:48:19  netadmin
+<!-- Minor changes [j]
+<!--
+<!-- Revision 1.4  2001/09/05 12:57:39  netadmin
+<!-- Expanded help window [j]
+<!--
+<!-- Revision 1.3  2001/09/05 12:54:41  netadmin
+<!-- Fixed for infinite loop due to nsteps [j]
+<!--
+<!-- Revision 1.2  2001/09/05 12:13:06  netadmin
+<!-- Aesthetic enhancements [j]
+<!--
+<!-- Revision 1.1  2001/09/04 13:37:05  netadmin
+<!-- Initial revision
+<!-- -->
+
+<script>
+function openNewWindow(fileName,windowName,theWidth,theHeight) {
+        window.open(fileName,windowName,"toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=yes,resizable=yes,width="+theWidth+",height="+theHeight)
+}
+
+</script>
+
+<CENTER>
+    	    	    	<H1>TINKER - SNIFFER</H1>
+    	<H2>Optimize Molecular Structures</H2>
+</CENTER>
+<HR>
+<BR>
+
+<FORM  METHOD="POST" ACTION="/cgi-bin/tinker/sniffer.cgi" ENCTYPE="multipart/form-data">
+<TABLE WIDTH="100%" BGCOLOR="lightblue" ALIGN=CENTER BORDER=0 
+       CELLSPACING=0 CELLPADDING=5 >
+
+  <!---- data box --->
+  <TR ><TD ALIGN=CENTER>
+  <TABLE  WIDTH="100%" CELLSPACING=0 CELLPADDING=2>
+    <TR ><TH >Structure file to optimize</TH></TR>
+    <TR><TD ALIGN=CENTER  VALIGN=TOP>
+    Upload file: 
+    <INPUT TYPE="file" NAME="infile" VALUE="" SIZE=40 MAXLENGTH=80 ><BR>
+    <i>or</i> enter <b>data</b> 
+    in box below
+    <BR>
+    <TEXTAREA NAME="indata" ROWS=6 COLS=75></TEXTAREA><BR>
+    </TD></TR>
+  </TABLE>
+  </TD></TR>
+  <!---- end data box --->
+
+  <!---- options box --->
+  <TR> 
+  <TD  ALIGN=CENTER  VALIGN=TOP>
+  <TABLE  WIDTH="100%" CELLSPACING=0 CELLPADDING=2>
+    <TR><TD>&nbsp;</TD> </TR>
+    <TR>
+
+    <!---- Input options cell --->
+    <TD ALIGN=CENTER VALIGN=TOP>
+    <TABLE BORDER=1 bgcolor="#e8e8e8" CELLSPACING=1 CELLPADDING=2>
+      <TR ><TH >Input format</TH><TH>Force Field</TH><TH>RMS value</TH></TR>
+      <TR ><TD>
+        <SELECT NAME="informat">
+        <OPTION SELECTED VALUE="pdb">PDB
+        <OPTION VALUE="tinker">TINKER XYZ file
+	<OPTION VALUE="alc">Alchemy file
+	<OPTION VALUE="prep">AMBER prep file
+	<OPTION VALUE="bs">Ball and Stick file
+        <OPTION VALUE="bgf">MSI BGF file
+        <OPTION VALUE="car">Biosym .CAR file
+        <OPTION VALUE="boog">Boogie file
+        <OPTION VALUE="caccrt">Cacao Cartesian file
+        <OPTION VALUE="cadpac">Cambridge CADPAC file
+        <OPTION VALUE="charmm">CHARMm file
+        <OPTION VALUE="c3d1">Chem3D Cartesian 1 file
+        <OPTION VALUE="c3d2">Chem3D Cartesian 2 file
+        <OPTION VALUE="cssr">CSD CSSR file
+        <OPTION VALUE="fdat">CSD FDAT file
+        <OPTION VALUE="gstat">CSD GSTAT file
+        <OPTION VALUE="dock">Dock Database file
+        <OPTION VALUE="dpdb">Dock PDB file
+        <OPTION VALUE="feat">Feature file
+        <OPTION VALUE="fract">Free Form Fractional file
+        <OPTION VALUE="gamout">GAMESS Output file
+        <OPTION VALUE="gzmat">Gaussian Z-Matrix file
+        <OPTION VALUE="gauout">Gaussian 92 Output file
+        <OPTION VALUE="g94">Gaussian 94 Output file
+        <OPTION VALUE="gr96A">GROMOS96 (A) file
+        <OPTION VALUE="gr96N">GROMOS96 (nm) file
+        <OPTION VALUE="hin">Hyperchem HIN file
+        <OPTION VALUE="sdf">MDL Isis SDF file
+        <OPTION VALUE="m3d">M3D file
+        <OPTION VALUE="macmol">Mac Molecule file
+        <OPTION VALUE="macmod">Macromodel file
+        <OPTION VALUE="micro">Micro World file
+        <OPTION VALUE="mm2in">MM2 Input file
+        <OPTION VALUE="mm2out">MM2 Output file
+        <OPTION VALUE="mm3">MM3 file
+        <OPTION VALUE="mmads">MMADS file
+        <OPTION VALUE="mdl">MDL MOLfile file
+        <OPTION VALUE="molen">MOLIN file
+        <OPTION VALUE="mopcrt">Mopac Cartesian file
+        <OPTION VALUE="mopint">Mopac Internal file
+        <OPTION VALUE="mopout">Mopac Output file
+        <OPTION VALUE="pcmod">PC Model file
+        <OPTION VALUE="pdb">PDB file
+        <OPTION VALUE="psin">PS-GVB Input file
+        <OPTION VALUE="psout">PS-GVB Output file
+        <OPTION VALUE="msf">Quanta MSF file
+        <OPTION VALUE="schakal">Schakal file
+        <OPTION VALUE="shelx">ShelX file
+        <OPTION VALUE="smiles">SMILES file
+        <OPTION VALUE="spar">Spartan file
+        <OPTION VALUE="semi">Spartan Semi-Empirical file
+        <OPTION VALUE="spmm">Spartan Mol. Mechanics file
+        <OPTION VALUE="mol">Sybyl Mol file
+        <OPTION VALUE="mol2">Sybyl Mol2 file
+        <OPTION VALUE="wiz">Conjure file
+        <OPTION VALUE="unixyz">UniChem XYZ file
+        <OPTION VALUE="xyz">XYZ file
+        <OPTION VALUE="xed">XED file
+        </SELECT>
+      </TD>
+      <TD>
+         <SELECT NAME="forcefield">
+	 <OPTION SELECTED VALUE="amber">Amber95
+	 <OPTION VALUE="charmm">CHARMM22-protein
+	 <OPTION VALUE="dudek">Tinker+multipoles
+	 <OPTION VALUE="emr">EMR
+	 <!-- OPTION VALUE="encad">ENCAD -->
+	 <OPTION VALUE="hoch">Hoch and Stern
+	 <OPTION VALUE="merck">Merck-MMFF
+	 <OPTION VALUE="mm2">MM2-1991
+	 <OPTION VALUE="mm3">MM3-2000
+	 <OPTION VALUE="mm3pro">MM3-protein
+	 <!-- OPTION VALUE="mmff">MMFF94 -->
+	 <OPTION VALUE="mmffpro">MMFF94-protein
+	 <OPTION VALUE="opls">OPLS-UA
+	 <OPTION VALUE="oplsaa">OPLS all-atom
+	 <OPTION VALUE="smooth">Smooth
+	 <OPTION VALUE="smoothaa">Smooth all-atom
+	 <OPTION VALUE="tinker">Tinker-protein
+	 <OPTION VALUE="water">Tinker-water
+	 </SELECT>
+      </TD>
+      <TD>
+        <SELECT NAME="rms">
+	<OPTION SELECTED VALUE="1.0">1.0 Kcal/mole/Ang
+	<OPTION VALUE="0.1">0.1 Kcal/mole/Ang
+	<OPTION VALUE="0.01">0.01 
+	<!--OPTION VALUE="0.001">0.001 -->
+    	</SELECT>
+      </TD>
+      </TR>
+   </TABLE>
+   </TD></TR>
+   <TR><TD>
+     <TABLE ALIGN=CENTER>
+     <!-- For some reason any answer to this question produces an infinite loop
+       TR><TD>
+       Number of Steps in the Initial Set </TD><TD>
+       <INPUT NAME="steps" VALUE="100">
+       </TD></TR 
+     -->
+     <TR><TD>
+     Target Energy for the Global Minimum </TD><TD>
+     <INPUT NAME="emin" VALUE="0.0">
+     </TD></TR>
+     </TABLE>
+   </TR></TD>
+   <!---- end input options cell --->
+
+  </TABLE> </TD></TR>
+  <!---- end options box --->
+  </TD></TR>
+
+  <TR><TD>
+  <TABLE WIDTH="90%" ALIGN="CENTER">
+  <TR><TH>E-mail</TH><TH>Urgent mail (e.g. WAP)</TH><TH>Job name</TH></TR>
+  <TR><TD>You will get detailed results here</TD>
+  <TD>Optional: to get a <U>short</U> termination notice</TD>
+  <TD>A name to identify your job</TD></TR>
+  <TD><INPUT NAME="email"></TD>
+  <TD><INPUT NAME="wapmail"></TD>
+  <TD><INPUT NAME="job"></TD>
+  </TABLE>  
+  </TD></TR>
+
+  <TR><TD>
+    <TABLE ALIGN="CENTER">
+      <TR>
+      <TD><TABLE BORDER="2"><TR><TD><a href="JavaScript:parent.openNewWindow('sniffer_help.html','inlineHelp',500,400)">Help</A>
+		</TD></TR></TABLE></TD>
+      <TD ALIGN=CENTER>
+      <INPUT TYPE="submit" NAME="Action" VALUE="Submit">&nbsp; &nbsp;
+      <INPUT TYPE="reset">
+      </TD>
+      </TR>
+    </TABLE>
+  </TD></TR>
+</TABLE>
+</FORM>
+<HR>
+
+<TABLE BGCOLOR="lightpink" CENTER WIDTH="100%" CELLPADDING="5">
+<TR><TD><CENTER><STRONG>REMEMBER: You can get access to the full power of the TINKER
+package by using the command line interface</STRONG></CENTER></TD></TR>
+</TABLE>
+
+<HR>
+<TABLE WIDTH="100%">
+  <TR ><TD ALIGN=CENTER>
+    <address>
+    <!-- app info here -->
+    <P>If you have any trouble, please contact our
+    <A HREF="/cgi-bin/emailto?Bioinformatics+Administrator">Bioinformatics
+    Administrator</A></P>
+    <P><A HREF="/Copyright-CSIC.html">&copy; EMBnet/CNB</A></P>
+    </address>
+  </TD></TR>
+</TABLE>
+</BODY></HTML>

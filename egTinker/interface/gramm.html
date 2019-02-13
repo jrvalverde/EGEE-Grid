@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+<title>
+	GridGramm (a docking Interface)
+</title>
+</head>
+
+<script language="JavaScript" type="text/javascript">
+
+//Function for dispaly the help window
+function openNewWindow(fileName,windowName,thewidth,theHeight) 
+{
+        window.open(fileName,windowName,"toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=0,width="+thewidth+",height="+theHeight);
+}
+
+</script>
+
+<body background="back.png" >
+<center>
+
+<p><h1>GridGramm</h1></p>
+
+<h3>Web interface for Low or High-Resolution docking with Gramm.</h3>
+
+<form name="form1" enctype="multipart/form-data" method="POST" action="../script/processor.php">
+
+
+<table style="width: 100%; text-align: left;" border="1" cellpadding="2"
+cellspacing="2" bgcolor="lightblue" >
+<tbody>
+<tr>
+	<td style="vertical-align: top;"><b>Receptor molecule in PDB format</b>
+	</td>
+	<td style="vertical-align: top;" align="center"><input type="file" name="upload[0]" size="40" >
+        <!-- <input type="hidden" name="MAX_FILE_SIZE" value="3000000">-- >
+	</td>
+</tr>
+
+<tr>
+	<td style="vertical-align: top;"><b>Ligand molecule in PDB format</b>
+	</td>
+	<td style="vertical-align: top;" align="center"><input type="file" name="upload[1]" size="40" >
+	</td>
+</tr>
+
+<tr>
+	<td style="vertical-align: top;"><b>Low or High resolution docking.</b>
+	</td>
+	<td style="vertical-align: top;" align="center">
+		Low <input type="radio" name="resolution" value="low" checked>
+	  	High <input type="radio" name="resolution" value="high">
+	</td>
+</tr>
+
+<tr align="center">
+	<td colspan="2" style="vertical-align: top;"><input type="submit" name="submit" value="Run Gramm">
+	</td>
+</tr>
+
+</tbody>
+</table>
+
+<hr>
+<table width="100%">
+<tr>
+	<td align=center><a href="JavaScript:openNewWindow('./help.html','Help',650,200)"><img src="help.gif" alt="[HELP]"></a>
+	</td>
+</tr>
+
+<tr><td align=center>
+<address>
+<!-- app info here -->
+<p>If you have any trouble, please contact our
+    <a href="/cgi-bin/emailto?Bioinformatics+Administrator">Bioinformatics
+    Administrator</a></p>
+<p><a href="./Copyright-CSIC.html">&copy; EMBnet/CNB</a></p>
+</address>
+</td></tr>
+<tr>
+	<td align=center><img src="EMBnetCNB.gif" alt="[EMBnetCNB]"></a>
+	</td>
+</tr>
+</table>
+<p>
+	<a href="http://validator.w3.org/check?uri=referer">
+	<img border="0" src="http://www.w3.org/Icons/valid-html401"alt="Valid HTML 4.01!" height="31" width="88"></a>
+</p>
+</center>
+</form>
+</body>
+
+</html>

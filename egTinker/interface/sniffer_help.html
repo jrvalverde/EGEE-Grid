@@ -1,0 +1,119 @@
+<HTML>
+<HEAD><TITLE="minimize"></HEAD>
+<BODY BGCOLOR="white" BACKGROUND="images/6h2o-w-small.gif">
+<!-- $Id: sniffer_help.html,v 1.4 2002/02/06 11:48:19 netadmin Exp $ -->
+<!-- $Log: sniffer_help.html,v $
+<!-- Revision 1.4  2002/02/06 11:48:19  netadmin
+<!-- Minor changes [j]
+<!--
+<!-- Revision 1.3  2001/09/05 12:54:41  netadmin
+<!-- Fixed for infinite loop due to nsteps [j]
+<!--
+<!-- Revision 1.2  2001/09/05 12:13:06  netadmin
+<!-- Aesthetic enhancements [j]
+<!--
+<!-- Revision 1.1  2001/09/04 13:37:05  netadmin
+<!-- Initial revision
+<!-- -->
+
+<CENTER><H1><A HREF="http://dasher.wustl.edu/tinker">TINKER</A></H1>
+<STRONG><EM>Software Tools for Molecular Design</EM></STRONG></CENTER>
+
+
+<TABLE WIDTH="90%" ALIGN="CENTER" CELLSPACING="18">
+<TR><TH><CENTER><H2>SNIFFER</H2></CENTER></TH></TR>
+
+<TR><TD BGCOLOR="lightyellow">
+
+<P>A program that implements the Sniffer global optimization 
+algorithm of Butler and Slaminka, a discrete version of 
+Griewank's global search trajectory method. The program 
+takes an input coordinates file and shakes it 
+vigorously via a modified dynamics trajectory before, 
+hopefully, settling into a low lying minimum. Some trial and 
+error is often required as the current implementation is 
+sensitive to various parameters and tolerances that govern 
+the computation. At present, these parameters are not user 
+accessible, and must be altered in the source code. However, 
+this method can do a good job of quickly optimizing 
+conformation within a limited range of convergence.</P>
+
+<P>This page will first convert your structure to PDB format
+using BABEL, and then process that structure with TINKER, first
+converting it to Tinker's XYZ format, then running SNIFFER and
+finally converting TINKER output back to PDB format.</P>
+
+</TD></TR>
+<TR><TD BGCOLOR="lightblue">
+
+<STRONG>Input:</STRONG> You must supply:
+<UL>
+    <LI>the <STRONG>coordinates</STRONG> of your molecule in 
+any of BABEL supported
+formats, either as a local file selected from your computer
+or pasting the coordinate data in the supplied box.</LI>
+
+    <LI>the input <STRONG>format</STRONG> of your data (make sure it matches
+what you have or you may get entirely wrong results)</LI>
+
+    <LI>the <A HREF="params.html"><STRONG>force field</STRONG></A> to use in the minimization procedure</LI>
+
+    <LI>target <STRONG>RMS gradient</STRONG> value at which the minimization 
+will terminate (in Kcal/mole/Angstrom)</LI>
+
+    <!-- removed since any value here generates an infinite loop
+    LI>the <STRONG>number of stepst</STRONG>to be taken</LI 
+    -->
+
+    <LI>target <STRONG>Energy</STRONG> of the global minimum searched</LI>
+
+    <LI>an <STRONG>e-mail address</STRONG> where the results (see below) will 
+be sent</LI>
+    
+    <LI>an optional <STRONG>urgent-mail address</STRONG> (e.g. a WAP mobile 
+phone) where a short notification may be sent (so you may know it's done 
+ASAP)</LI>
+    
+    <LI>a <STRONG>short title</STRONG> to identify your job (this is for your own reference
+purposes, so you can identify the results when they are mailed to you)</LI>
+</UL></P>
+
+</TD></TR>
+<TR><TD BGCOLOR="lightpink">
+
+<P><STRONG>Output</STRONG> will be sent to you by e-mail at the specified address. It
+will consist of several files:
+<UL>
+    <LI>[LOG] the optimization  statistics 
+    <LI>[XYZ] the topimized structure in TINKER XYZ format
+    <LI>[PDB] the optimized structure in PDB format
+    <LI>[SEQ] the sequence corresponding to your structure
+</UL></P>
+<P>You may also specify an additional e-mail address to receive
+a short notification. Typically this would be a mobile phone e-mail
+address. This way, if your results are important to you, you will
+be notified of program termination as soon as possible.</P>
+
+</TD></TR><TR><TD BGCOLOR="lightgreen">
+
+     Questions and comments regarding the TINKER package, 
+including suggestions for improvements and changes should be 
+made to the author:<PRE>
+
+  Professor Jay William Ponder
+  Biochemistry & Molecular Biophysics
+  North Building, Room 2811, Box 8231
+  Washington University School of Medicine
+  660 South Euclid Avenue
+  Saint Louis, MO  63110  U.S.A.
+
+  phone: (314) 362-4195
+  fax:   (314) 362-7183
+  email: ponder@dasher.wustl.edu
+</PRE>
+
+</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>
