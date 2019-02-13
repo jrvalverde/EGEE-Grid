@@ -1,0 +1,33 @@
+This directory contains Web-based Grid developments at EMBnet/CNB
+
+All projects are/should be managed using CVS.
+
+CVS at EMBnet/CNB has several repositories devoted to various goals:
+	root	- generic / system administration
+	bioinfo	- Bioinformatic tools
+	egee	- EGEE Grid developments
+All of them are located on a shared disk that is NFS mounted in all
+systems so it may be accessed locally.
+
+For projects maintained in this directory we will use the EGEE CVS
+repository, whose CVSROOT is at /data/cvs/egee
+
+	export CVSROOT=/data/cvs/egee
+
+	setenv CVSROOT /data/cvs/egee
+
+To work on a project:
+
+	cvs co -P project
+
+Do your changes, then run off the documentation
+
+	cd doc ; ./makedoc.sh ; cd ..
+
+ and finally
+
+	cvs ci project
+
+	cvs release project
+
+see cvs(1) for more info.
