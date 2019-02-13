@@ -1,0 +1,6 @@
+tcgetattr: Invalid argument
+Killed by signal 2.
+tcgetattr: Invalid argument
+Killed by signal 2.
+tcgetattr: Invalid argument
+Killed by signal 2.

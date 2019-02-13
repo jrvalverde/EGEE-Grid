@@ -1,0 +1,52 @@
+get_input($_POST, $options);
+
+run_app($options)
+
+function run_app($options) {
+	foreach line in $options
+		append($optfile, $options[line])
+
+
+	create script <<END
+$program < $optfile > $outfile
+END
+	job_submit(job)
+	job === script, $optfile, $outfile ¿+$tinker_key?
+}
+
+The problem:
+	get_input depends on the program
+
+function get_input($post, $options){
+	program = $post['program'] (a hidden form value)
+	read_file $program.params in the form
+		param=default value
+	foreach line in $program.params
+		if !$post["$line"] and ! $options["$line"] (not exists def.)
+			error
+		else
+			do nothing: leave default as is.
+		$options["$line"] = $post["$line"]
+	Note: this algorithm prevents use of non-allowed options. It does not
+	check allowed options for valid values... For that it might help
+	having a better program description (e.g. in XML)
+
+    	get_pdb_struct();
+	pdb_to_xyz();
+}
+
+That deals with it.
+
+Description:
+
+<tinker_app>
+    <name>dynamic</name>
+    <param name="no_steps" default="1000" type="numeric" />
+    <param name="force_field" default="amber" type="str_list">
+    	<option>amber</option>
+	<option>opls</option>
+	...
+    </param>
+    <param name="structure" default="infile.xyz" type="file" />
+    ...
+</tinker_app>
