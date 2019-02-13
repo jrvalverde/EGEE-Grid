@@ -1,0 +1,13 @@
+### begin MODELLER6v2 ######################################################
+
+MODINSTALL6v2=edit_modinstall
+EXECUTABLE_TYPE6v2=edit_executable
+LIBS_LIB6v2=$MODINSTALL6v2/modlib/libs.lib
+KEY_MODELLER6v2=edit_key_modeller
+mod=edit_script
+export MODINSTALL6v2 EXECUTABLE_TYPE6v2 LIBS_LIB6v2 KEY_MODELLER6v2 mod
+PATH=$PATH:$MODINSTALL6v2/bin
+ulimit -S -s unlimited
+
+### end MODELLER6v2 ########################################################
+

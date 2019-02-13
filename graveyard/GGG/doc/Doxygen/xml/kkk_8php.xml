@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.3.4">
+  <compounddef id="kkk_8php" kind="file">
+    <compoundname>kkk.php</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="kkk_8php_1a0" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$username</definition>
+        <argsstring></argsstring>
+        <name>$username</name>
+        <initializer>&quot;david&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/root/GridGRAMM/script/kkk.php" line="4" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="kkk_8php_1a1" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$password</definition>
+        <argsstring></argsstring>
+        <name>$password</name>
+        <initializer>&quot;miseria2004&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/root/GridGRAMM/script/kkk.php" line="5" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="kkk_8php_1a2" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$descriptorspec</definition>
+        <argsstring></argsstring>
+        <name>$descriptorspec</name>
+        <initializer> array(
+   0 =&gt; array(&quot;pipe&quot;, &quot;r&quot;),  // stdin is a pipe that the child will read from
+   1 =&gt; array(&quot;pipe&quot;, &quot;w&quot;),  // stdout is a pipe that the child will write to
+   2 =&gt; array(&quot;file&quot;, &quot;./error-output.txt&quot;, &quot;a&quot;) // stderr is a file to write to
+)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/root/GridGRAMM/script/kkk.php" line="16" bodystart="12" bodyend="-1"/>
+        <referencedby refid="functions_8php_1a0" compoundref="functions_8php" startline="53" endline="84">open_connection</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="kkk_8php_1a3" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$process</definition>
+        <argsstring></argsstring>
+        <name>$process</name>
+        <initializer> proc_open(&apos;bash&apos;, $descriptorspec, $pipes)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/root/GridGRAMM/script/kkk.php" line="18" bodystart="18" bodyend="-1"/>
+        <referencedby refid="functions_8php_1a0" compoundref="functions_8php" startline="53" endline="84">open_connection</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="kkk_8php_1a4" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$return_value</definition>
+        <argsstring></argsstring>
+        <name>$return_value</name>
+        <initializer> proc_close($process)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/root/GridGRAMM/script/kkk.php" line="42" bodystart="42" bodyend="-1"/>
+        <referencedby refid="functions_8php_1a1" compoundref="functions_8php" startline="100" endline="123">close_connection</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//$username=$_POST[&quot;username&quot;];</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//$password=$_POST[&quot;password&quot;];</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><ref refid="auth_8php_1a0" kindref="member">$username</ref>=</highlight><highlight class="stringliteral">&quot;david&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><ref refid="auth_8php_1a1" kindref="member">$password</ref>=</highlight><highlight class="stringliteral">&quot;miseria2004&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//escapeshellcmd()<sp/>escapes<sp/>any<sp/>characters<sp/>in<sp/>a<sp/>string<sp/>that<sp/>might<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//be<sp/>used<sp/>to<sp/>trick<sp/>a<sp/>shell<sp/>command<sp/>into<sp/>executing<sp/>arbitrary<sp/>commands.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="kkk_8php_1a0" refkind="member"><highlight class="normal"><ref refid="auth_8php_1a0" kindref="member">$username</ref>=<sp/>escapeshellcmd($username);</highlight></codeline>
+<codeline lineno="10" refid="kkk_8php_1a1" refkind="member"><highlight class="normal"><ref refid="auth_8php_1a1" kindref="member">$password</ref>=<sp/>escapeshellcmd($password);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="kkk_8php_1a2" refkind="member"><highlight class="normal"><ref refid="kkk_8php_1a2" kindref="member">$descriptorspec</ref><sp/>=<sp/>array(</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/>0<sp/>=&gt;<sp/>array(</highlight><highlight class="stringliteral">&quot;pipe&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;r&quot;</highlight><highlight class="normal">),<sp/><sp/></highlight><highlight class="comment">//<sp/>stdin<sp/>is<sp/>a<sp/>pipe<sp/>that<sp/>the<sp/>child<sp/>will<sp/>read<sp/>from</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/>1<sp/>=&gt;<sp/>array(</highlight><highlight class="stringliteral">&quot;pipe&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">),<sp/><sp/></highlight><highlight class="comment">//<sp/>stdout<sp/>is<sp/>a<sp/>pipe<sp/>that<sp/>the<sp/>child<sp/>will<sp/>write<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/>2<sp/>=&gt;<sp/>array(</highlight><highlight class="stringliteral">&quot;file&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;./error-output.txt&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;a&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="comment">//<sp/>stderr<sp/>is<sp/>a<sp/>file<sp/>to<sp/>write<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="kkk_8php_1a3" refkind="member"><highlight class="normal"><ref refid="kkk_8php_1a3" kindref="member">$process</ref><sp/>=<sp/>proc_open(&apos;bash&apos;,<sp/>$descriptorspec,<sp/>$pipes);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(is_resource($process))<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/>fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;su<sp/>-<sp/>$username\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/>sleep(3);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/>fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;$password\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/>sleep(3);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/>fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;whoami\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/>fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;hostname\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/>fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;ssh<sp/>-x<sp/>-t<sp/>-t<sp/>$username@villon\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/>sleep(3);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/>fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;$password\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/>sleep(3);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/>fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;whoami\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/>fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;hostname\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/>fclose($pipes[0]);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!feof($pipes[1]))<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/>fgets($pipes[1],<sp/>1024);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/>fclose($pipes[1]);</highlight></codeline>
+<codeline lineno="42" refid="kkk_8php_1a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><ref refid="kkk_8php_1a4" kindref="member">$return_value</ref><sp/>=<sp/>proc_close($process);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\ncommand<sp/>returned<sp/>$return_value\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="/root/GridGRAMM/script/kkk.php"/>
+  </compounddef>
+</doxygen>

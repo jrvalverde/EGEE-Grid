@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.3.4">
+  <compounddef id="variables_8php" kind="file">
+    <compoundname>variables.php</compoundname>
+    <innernamespace refid="namespaceGridGRAMM">GridGRAMM</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="variables_8php_1a0" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$server_user</definition>
+        <argsstring></argsstring>
+        <name>$server_user</name>
+        <initializer>&quot;david&quot;</initializer>
+        <briefdescription>
+<para>user name to use to connect to the Grid UI host  string $server_user </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/root/GridGRAMM/script/variables.php" line="15" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="variables_8php_1a1" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$server_host</definition>
+        <argsstring></argsstring>
+        <name>$server_host</name>
+        <initializer>&quot;villon&quot;</initializer>
+        <briefdescription>
+<para>name of the Grid UI host  string $server_host </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/root/GridGRAMM/script/variables.php" line="21" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="variables_8php_1a2" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$server</definition>
+        <argsstring></argsstring>
+        <name>$server</name>
+        <initializer>&quot;$server_user@$server_host&quot;</initializer>
+        <briefdescription>
+<para>Who acts as the grid server for us  string $server. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/root/GridGRAMM/script/variables.php" line="27" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="variables_8php_1a3" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$grid_pass</definition>
+        <argsstring></argsstring>
+        <name>$grid_pass</name>
+        <initializer>&quot;kndlaria&quot;</initializer>
+        <briefdescription>
+<para>Grid passphrase  string $grid_pass. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/root/GridGRAMM/script/variables.php" line="33" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="variables_8php_1a4" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$grid_path</definition>
+        <argsstring></argsstring>
+        <name>$grid_path</name>
+        <initializer>&quot;/data/www/EMBnet/tmp/grid&quot;</initializer>
+        <briefdescription>
+<para>Path to the working directories in the local machine. </para>        </briefdescription>
+        <detaileddescription>
+<para>This must be a directory within the Web server accessible area. Typically a directory below the &apos;htdocs&apos; or $DocumentRoot</para><para>At EMBnet/CNB we host many servers, each has its own DocumentRoot hanging from /data/www/.  string $grid_path </para>        </detaileddescription>
+        <location file="/root/GridGRAMM/script/variables.php" line="45" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="2"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Variables<sp/>used<sp/>to<sp/>connect<sp/>with<sp/>the<sp/>user<sp/>interface<sp/>host</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>@package<sp/>GridGRAMM</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>@author<sp/>David<sp/>Garcia<sp/>Aristegui<sp/>&lt;david@cnb.uam.es&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>@copyright<sp/>CSIC<sp/>-<sp/>GPL</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>@version<sp/>1.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="11"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>user<sp/>name<sp/>to<sp/>use<sp/>to<sp/>connect<sp/>to<sp/>the<sp/>Grid<sp/>UI<sp/>host</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>@global<sp/>string<sp/>$server_user</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="variables_8php_1a0" refkind="member"><highlight class="normal"><ref refid="variables_8php_1a0" kindref="member">$server_user</ref>=</highlight><highlight class="stringliteral">&quot;david&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="17"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>name<sp/>of<sp/>the<sp/>Grid<sp/>UI<sp/>host</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>@global<sp/>string<sp/>$server_host</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="variables_8php_1a1" refkind="member"><highlight class="normal"><ref refid="variables_8php_1a1" kindref="member">$server_host</ref>=</highlight><highlight class="stringliteral">&quot;villon&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="23"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>Who<sp/>acts<sp/>as<sp/>the<sp/>grid<sp/>server<sp/>for<sp/>us</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>@global<sp/>string<sp/>$server</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="variables_8php_1a2" refkind="member"><highlight class="normal"><ref refid="variables_8php_1a2" kindref="member">$server</ref>=</highlight><highlight class="stringliteral">&quot;$server_user@$server_host&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="29"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>Grid<sp/>passphrase</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>@global<sp/>string<sp/>$grid_pass</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="variables_8php_1a3" refkind="member"><highlight class="normal"><ref refid="variables_8php_1a3" kindref="member">$grid_pass</ref>=</highlight><highlight class="stringliteral">&quot;kndlaria&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="35"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>Path<sp/>to<sp/>the<sp/>working<sp/>directories<sp/>in<sp/>the<sp/>local<sp/>machine</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>This<sp/>must<sp/>be<sp/>a<sp/>directory<sp/>within<sp/>the<sp/>Web<sp/>server<sp/>accessible<sp/>area.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/>Typically<sp/>a<sp/>directory<sp/>below<sp/>the<sp/>&apos;htdocs&apos;<sp/>or<sp/>$DocumentRoot</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*	At<sp/>EMBnet/CNB<sp/>we<sp/>host<sp/>many<sp/>servers,<sp/>each<sp/>has<sp/>its<sp/>own<sp/>DocumentRoot</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*	hanging<sp/>from<sp/>/data/www/.</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>@global<sp/>string<sp/>$grid_path</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="variables_8php_1a4" refkind="member"><highlight class="normal"><ref refid="variables_8php_1a4" kindref="member">$grid_path</ref>=</highlight><highlight class="stringliteral">&quot;/data/www/EMBnet/tmp/grid&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//<sp/>User<sp/>Interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Remember<sp/>that<sp/>the<sp/>User<sp/>Interface<sp/>has<sp/>mounted<sp/>/data/...<sp/>directory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="/root/GridGRAMM/script/variables.php"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,166 @@
+    	    list of param descriptions
+	    	    |
+		    v
+	    initial UI
+	    	    |
+		    |	on method selection
+		    v
+	    UI generator   <--- param description
+	            |
+		    v
+	    Updated UI (dynamically generated)
+	    	    |
+		    v
+	    Processor ----------------------------------------+
+	    	get                                           |
+		    module, path/URL                          |
+		    param                                     |
+		call                                          |
+		    module                                    |
+		    |                                         |
+		    v                                         |
+	    Module -> generate JDL -----> grid job            |
+	            |                        |                |
+		    v                        v                
+	    Result processor <-- results <-- grid           redirect
+	            |
+		    v                                         |
+	    Std. results listing                              |
+	            |                                         |
+		    v                                         |
+	    Show results   <----------------------------------+
+
+
+--------------------------------------------------
+
+Step 1:
+    on call:
+    	get listing of methods
+	build base UI
+	
+	    select method (default X)
+	    
+	    molfile
+	    
+	    moltext
+	
+     on select method
+     	change UI to meet param description
+	
+-----------------------------------    
+read param.description
+to be used as a way to describe the parameters needed by
+a docking plugin.
+Alternately, an input plugin coul be accepted.
+But it seems better to generate UI form dynamically from
+a description (perhaps then it would be better to use XML)
+
+    ignore # comments
+    
+    int var range # .. # default x ;
+    float var range # .. # default y;
+    string var default s;
+    text var default t;
+    file var default f;
+    list var = {
+         ( v1, "descrip" ),
+	 ( v2, "descrip" ),
+	 ( v3, "descrip" ),
+	 ...
+	 ( vn, "descrip" )
+	 } default = l;
+    
+    choice var = {
+    	( v1, "descrip" ),
+	...
+	( vn, "descrip" )
+	} default c;
+
+
+--------------------------------------
+
+
+    on submit
+    	call processor with
+	    module (hidden)
+	    params
+
+Step 2:
+    processor calls repeatedly module on DB
+    	(surely will need to run in background to reduce loop time)
+	-------------------------------------
+
+    	get_params();
+    	cd($top_level_wd);
+    	$db = dbopen($dbfile, $dbtype);     // e.g. PDB40, pdblisting
+    	while (db_get($db)) {
+    	    $wsd = maketmpdir();
+    	    mv ($mol, $wsd);
+	    ...
+    	-------------------------------------
+
+    	module generates jdl
+	    submits to the grid
+	    collects results
+	    converts to std format and name
+    
+    redirect to results page
+
+Step 3:
+    show results
+    	get listing of display plugins
+	build table
+	
+	    pair-match        DP1   DP2  ... DPN
+	                      (display plugins)
+	
+	provide default DP on separate, connected window
+	DPs are called with 
+	    mol1
+	    mol2
+	    coords
+    	On click (list of pair-match)
+	    update default DP window.
+
+---------------------------
+
+Collect and collate results:
+
+    cat */results_file > full_results
+or
+    cat */results_file | sort > sorted_results
+        ^
+	|
+	+- will probably be too many
+or
+    for each dir / find . -type d ...
+    	cat $dir/results >> full_results
+    sort full_results > sorted_results
+    
+Show results:
+
+    +----------------------------+    
+    |                            |
+    |     on click        +-+-+-+|     +------------+
+    | ------------------  | | |^||     |    3-d     |
+    |                     +-+-+ || ->  |            |
+    | ------------------  | | | ||     |  viewer    |
+    ..                                 |            |
+    | ------------------  | | |V||     +------------+
+    |                     +-+-+-+|
+    +----------------------------+
+
+Use scoring function???
+
+
+
+----------------------------------
+
+module
+    I/O
+    In -> GUIF	    user form generator
+    Out -> GRF?     report form generator
+    
+    (recursive?)
+
+----------------------------

@@ -1,0 +1,31 @@
+# Example for: COLOR_ALN_MODEL
+
+# Two demos: 
+#
+# 1) Use a given alignment to color a structure according to 
+#    insertions and deletions in a pairwise alignment.
+#
+# 2) Superpose two 3D structure and do (1).
+
+# Demo 1:
+
+READ_MODEL FILE = '1nbt'
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = '1nbt' '1fas', ;
+               REMOVE_GAPS = on
+COLOR_ALN_MODEL
+WRITE_MODEL FILE = '1nbt-1.clr'
+
+# Demo 2:
+
+READ_MODEL FILE = '1nbt', MODEL_SEGMENT = '1:A' '66:A'
+SEQUENCE_TO_ALI ALIGN_CODES = '1nbt', ATOM_FILES = ALIGN_CODES
+READ_MODEL FILE = '1fas', MODEL_SEGMENT = '1:' '61:'
+SEQUENCE_TO_ALI ADD_SEQUENCE = on, ALIGN_CODES = ALIGN_CODES '1fas', ;
+                ATOM_FILES = ALIGN_CODES
+ALIGN GAP_PENALTIES_1D= -600 -400
+MALIGN3D GAP_PENALTIES_3D= 0 3.0
+WRITE_ALIGNMENT FILE = 'color_aln_model.pap', ALIGNMENT_FORMAT = 'PAP'
+
+READ_MODEL FILE = '1nbt', MODEL_SEGMENT = '1:A' '66:A'
+COLOR_ALN_MODEL
+WRITE_MODEL FILE = '1nbt-2.clr'

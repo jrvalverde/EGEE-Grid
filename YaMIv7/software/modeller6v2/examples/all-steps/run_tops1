@@ -1,0 +1,6 @@
+#!/bin/sh
+
+mod6v2 search.top
+mod6v2 malign.top     
+mod6v2 cluster.top    
+mod6v2 get-model.top  

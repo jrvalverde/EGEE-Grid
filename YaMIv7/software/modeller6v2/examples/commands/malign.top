@@ -1,0 +1,8 @@
+# Example for: MALIGN
+
+# This will read all sequences from a file, align them, and write 
+# the alignment to a new file:
+
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = 'all'
+MALIGN GAP_PENALTIES_1D= -600 -400
+WRITE_ALIGNMENT FILE = 'toxin-seq.pap', ALIGNMENT_FORMAT = 'PAP'

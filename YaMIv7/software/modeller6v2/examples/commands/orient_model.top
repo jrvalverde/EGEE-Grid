@@ -1,0 +1,7 @@
+# Example for: ORIENT_MODEL
+
+# This will orient the model along the principal axes of the inertia ellipsoid:
+
+READ_MODEL FILE = '1fas'
+ORIENT_MODEL
+WRITE_MODEL FILE = '1fas.ini'

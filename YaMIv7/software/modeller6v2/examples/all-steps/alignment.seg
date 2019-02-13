@@ -1,0 +1,21 @@
+>P1;1fdx
+sequence:1fdx:FIRST:@:  54 :@:ferredoxin:Peptococcus aerogenes: 2.00:-1.00
+AYVINDSCIACGACKPECPVNIIQGSIYAIDADSCIDCGSCASVCPVGAPNPED*
+
+>P1;1fdn
+structureX:1fdn:FIRST:@:  55 :@:ferredoxin:CLOSTRIDIUM ACIDIURICI: 1.84:-1.0
+*
+
+C; 5fd1 sequence was truncated manually from its full PDB length of 106 residues
+>P1;5fd1
+structureX:5fd1:FIRST:@:  60 :@:ferredoxin:Azotobacter vinelandii: 1.90:0.192
+*
+
+>P1;1fxd
+structureX:1fxd:FIRST:@:  58 :@:ferredoxin:DESULFOVIBRIO $GIGAS: 1.70:-1.0
+*
+
+C; 2fxb sequence was truncated manually from its full PDB length of 81 residues
+>P1;2fxb
+structureX:2fxb:FIRST:@:  60 :@:ferredoxin:BACILLUS $THERMOPROTEOLYTICUS: 2.30:-1.0
+*

@@ -1,0 +1,40 @@
+# Example for: REINDEX_RESTRAINTS
+
+# This will reindex restraints obtained previously for a simpler topology so 
+# that they will now apply to a more complicated topology.
+
+# Generate the model for the simpler topology (CA only in this case):
+READ_TOPOLOGY   FILE = '$(LIB)/top_ca.lib'
+READ_PARAMETERS FILE = '$(LIB)/par_ca.lib'
+SET TOPOLOGY_MODEL = 7
+READ_MODEL FILE = '1fas'
+SEQUENCE_TO_ALI ATOM_FILES = '1fas', ALIGN_CODES = '1fas'
+SEQUENCE_TO_ALI ADD_SEQUENCE = on, ATOM_FILES = ATOM_FILES '1fas.ca', ;
+                ALIGN_CODES = ALIGN_CODES '1fas-ca'
+GENERATE_TOPOLOGY SEQUENCE = '1fas-ca'
+TRANSFER_XYZ
+BUILD_MODEL INITIALIZE_XYZ = off
+WRITE_MODEL FILE = '1fas.ca'
+
+# Generate the restraints for the simpler topology:
+MAKE_RESTRAINTS RESTRAINT_TYPE = 'stereo'
+WRITE_RESTRAINTS FILE = '1fas-ca.rsr'
+ENERGY
+
+# Generate the model for the more complicated topology:
+READ_TOPOLOGY   FILE = '$(LIB)/top_heav.lib'
+READ_PARAMETERS FILE = '$(LIB)/par.lib'
+SET TOPOLOGY_MODEL = 3
+READ_MODEL FILE = '1fas'
+SET ADD_SEQUENCE = off
+SEQUENCE_TO_ALI ATOM_FILES = '1fas', ALIGN_CODES = '1fas'
+SEQUENCE_TO_ALI ADD_SEQUENCE = on, ATOM_FILES = ATOM_FILES '1fas.ini', ;
+                ALIGN_CODES = ALIGN_CODES '1fas-ini'
+GENERATE_TOPOLOGY SEQUENCE = '1fas-ini'
+TRANSFER_XYZ
+WRITE_MODEL FILE = '1fas.ini'
+
+READ_MODEL2 FILE = '1fas.ca'
+REINDEX_RESTRAINTS
+WRITE_RESTRAINTS FILE = '1fas.rsr'
+ENERGY

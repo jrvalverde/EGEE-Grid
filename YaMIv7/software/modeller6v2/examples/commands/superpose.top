@@ -1,0 +1,12 @@
+# Example for: SUPERPOSE
+
+# This will use a given alignment to superpose Calpha atoms of 
+# one structure (2ctx) on the other (1fas).
+
+READ_MODEL  FILE = '1fas'
+READ_MODEL2 FILE = '2ctx'
+SET ALIGN_CODES = '1fas' '2ctx'
+READ_ALIGNMENT FILE = 'toxin.ali'
+PICK_ATOMS PICK_ATOMS_SET = 1, ATOM_TYPES = 'CA'
+SUPERPOSE
+WRITE_MODEL2 FILE = '2ctx.fit'

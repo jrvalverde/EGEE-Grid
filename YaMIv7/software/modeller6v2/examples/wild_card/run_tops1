@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cp align2d_15.ali.original align2d_15.ali
+cp align2d_5.ali.original align2d_5.ali
+mod6v2 mod_15.top
+mod6v2 mod_5.top

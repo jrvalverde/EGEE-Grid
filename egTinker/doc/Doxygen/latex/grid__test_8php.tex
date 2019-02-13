@@ -1,0 +1,204 @@
+\section{grid\_\-test.php File Reference}
+\label{grid__test_8php}\index{grid_test.php@{grid\_\-test.php}}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf test\_\-grid\_\-pconnect} ()
+\begin{CompactList}\small\item\em test grid::pconnect()/pdisconnect() \item\end{CompactList}\item 
+{\bf test\_\-grid\_\-pinit} ()
+\begin{CompactList}\small\item\em test {\bf Grid::pinitialize()}{\rm (p.\,\pageref{classGrid_a11})} \item\end{CompactList}\item 
+{\bf test\_\-grid\_\-init} ()
+\item 
+{\bf test\_\-pjob\_\-submit} ()
+\item 
+{\bf test\_\-job\_\-submit} ()
+\item 
+{\bf test\_\-pjob\_\-get\_\-id} ()
+\item 
+{\bf test\_\-job\_\-get\_\-id} ()
+\item 
+{\bf test\_\-pjob\_\-status} ()
+\item 
+{\bf test\_\-job\_\-status} ()
+\item 
+{\bf test\_\-pjob\_\-output} ()
+\item 
+{\bf test\_\-job\_\-output} ()
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+{\bf \$debug} = TRUE
+\item 
+{\bf \$user} = \char`\"{}david\char`\"{}
+\item 
+{\bf \$host} = \char`\"{}villon\char`\"{}
+\item 
+{\bf \$passwd} = \char`\"{}miseria2004\char`\"{}
+\item 
+{\bf \$passphrase} = \char`\"{}kndlaria\char`\"{}
+\item 
+{\bf \$debug\_\-persistent} = FALSE
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{grid_test.php@{grid\_\-test.php}!test_grid_init@{test\_\-grid\_\-init}}
+\index{test_grid_init@{test\_\-grid\_\-init}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}test\_\-grid\_\-init ()}\label{grid__test_8php_a8}
+
+
+
+
+Definition at line 83 of file grid\_\-test.php.
+
+References \$host, \$passphrase, \$passwd, and \$user.\index{grid_test.php@{grid\_\-test.php}!test_grid_pconnect@{test\_\-grid\_\-pconnect}}
+\index{test_grid_pconnect@{test\_\-grid\_\-pconnect}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}test\_\-grid\_\-pconnect ()}\label{grid__test_8php_a6}
+
+
+test grid::pconnect()/pdisconnect() 
+
+Grid::connect() opens a connection to a {\bf Grid}{\rm (p.\,\pageref{classGrid})} UI server (a server that allows one to submit and monitor jobs in the grid). It is much like 'rsh' allowing one to send commands to the UI node.
+
++ This routine tests Grid::connect() by opening a connection to a user interface node, executing a simple command (ls -l) on it (on the UI node itself) and disconnecting. 
+
+Definition at line 29 of file grid\_\-test.php.
+
+References \$host, \$passphrase, \$passwd, and \$user.\index{grid_test.php@{grid\_\-test.php}!test_grid_pinit@{test\_\-grid\_\-pinit}}
+\index{test_grid_pinit@{test\_\-grid\_\-pinit}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}test\_\-grid\_\-pinit ()}\label{grid__test_8php_a7}
+
+
+test {\bf Grid::pinitialize()}{\rm (p.\,\pageref{classGrid_a11})} 
+
+{\bf Grid::pinitialize()}{\rm (p.\,\pageref{classGrid_a11})} allows us to identify ourselves to the {\bf Grid}{\rm (p.\,\pageref{classGrid})}. Identification must be made from a UI node, hence we need to connect first to a UI node.
+
+In later versions, initialize() detects if we are already connected and if not, opens the connection implicitly for us. Both scenarios should be checked. 
+
+Definition at line 64 of file grid\_\-test.php.
+
+References \$host, \$passphrase, \$passwd, and \$user.\index{grid_test.php@{grid\_\-test.php}!test_job_get_id@{test\_\-job\_\-get\_\-id}}
+\index{test_job_get_id@{test\_\-job\_\-get\_\-id}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}test\_\-job\_\-get\_\-id ()}\label{grid__test_8php_a12}
+
+
+
+
+Definition at line 161 of file grid\_\-test.php.
+
+References \$host, \$passphrase, \$passwd, and \$user.\index{grid_test.php@{grid\_\-test.php}!test_job_output@{test\_\-job\_\-output}}
+\index{test_job_output@{test\_\-job\_\-output}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}test\_\-job\_\-output ()}\label{grid__test_8php_a16}
+
+
+
+
+Definition at line 252 of file grid\_\-test.php.
+
+References \$host, \$passphrase, \$passwd, and \$user.\index{grid_test.php@{grid\_\-test.php}!test_job_status@{test\_\-job\_\-status}}
+\index{test_job_status@{test\_\-job\_\-status}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}test\_\-job\_\-status ()}\label{grid__test_8php_a14}
+
+
+
+
+Definition at line 204 of file grid\_\-test.php.
+
+References \$host, \$passphrase, \$passwd, and \$user.\index{grid_test.php@{grid\_\-test.php}!test_job_submit@{test\_\-job\_\-submit}}
+\index{test_job_submit@{test\_\-job\_\-submit}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}test\_\-job\_\-submit ()}\label{grid__test_8php_a10}
+
+
+
+
+Definition at line 118 of file grid\_\-test.php.
+
+References \$host, \$passphrase, \$passwd, and \$user.\index{grid_test.php@{grid\_\-test.php}!test_pjob_get_id@{test\_\-pjob\_\-get\_\-id}}
+\index{test_pjob_get_id@{test\_\-pjob\_\-get\_\-id}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}test\_\-pjob\_\-get\_\-id ()}\label{grid__test_8php_a11}
+
+
+
+
+Definition at line 143 of file grid\_\-test.php.
+
+References \$host, \$passphrase, \$passwd, and \$user.\index{grid_test.php@{grid\_\-test.php}!test_pjob_output@{test\_\-pjob\_\-output}}
+\index{test_pjob_output@{test\_\-pjob\_\-output}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}test\_\-pjob\_\-output ()}\label{grid__test_8php_a15}
+
+
+
+
+Definition at line 232 of file grid\_\-test.php.
+
+References \$host, \$passphrase, \$passwd, and \$user.\index{grid_test.php@{grid\_\-test.php}!test_pjob_status@{test\_\-pjob\_\-status}}
+\index{test_pjob_status@{test\_\-pjob\_\-status}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}test\_\-pjob\_\-status ()}\label{grid__test_8php_a13}
+
+
+
+
+Definition at line 186 of file grid\_\-test.php.
+
+References \$host, \$passphrase, \$passwd, and \$user.\index{grid_test.php@{grid\_\-test.php}!test_pjob_submit@{test\_\-pjob\_\-submit}}
+\index{test_pjob_submit@{test\_\-pjob\_\-submit}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}test\_\-pjob\_\-submit ()}\label{grid__test_8php_a9}
+
+
+
+
+Definition at line 101 of file grid\_\-test.php.
+
+References \$host, \$passphrase, \$passwd, and \$user.
+
+\subsection{Variable Documentation}
+\index{grid_test.php@{grid\_\-test.php}!$debug@{\$debug}}
+\index{$debug@{\$debug}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$debug = TRUE}\label{grid__test_8php_a0}
+
+
+
+
+Definition at line 287 of file grid\_\-test.php.\index{grid_test.php@{grid\_\-test.php}!$debug_persistent@{\$debug\_\-persistent}}
+\index{$debug_persistent@{\$debug\_\-persistent}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$debug\_\-persistent = FALSE}\label{grid__test_8php_a5}
+
+
+
+
+Definition at line 288 of file grid\_\-test.php.\index{grid_test.php@{grid\_\-test.php}!$host@{\$host}}
+\index{$host@{\$host}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$host = \char`\"{}villon\char`\"{}}\label{grid__test_8php_a2}
+
+
+
+
+Definition at line 13 of file grid\_\-test.php.
+
+Referenced by test\_\-grid\_\-init(), test\_\-grid\_\-pconnect(), test\_\-grid\_\-pinit(), test\_\-job\_\-get\_\-id(), test\_\-job\_\-output(), test\_\-job\_\-status(), test\_\-job\_\-submit(), test\_\-pjob\_\-get\_\-id(), test\_\-pjob\_\-output(), test\_\-pjob\_\-status(), and test\_\-pjob\_\-submit().\index{grid_test.php@{grid\_\-test.php}!$passphrase@{\$passphrase}}
+\index{$passphrase@{\$passphrase}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$passphrase = \char`\"{}kndlaria\char`\"{}}\label{grid__test_8php_a4}
+
+
+
+
+Definition at line 15 of file grid\_\-test.php.\index{grid_test.php@{grid\_\-test.php}!$passwd@{\$passwd}}
+\index{$passwd@{\$passwd}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$passwd = \char`\"{}miseria2004\char`\"{}}\label{grid__test_8php_a3}
+
+
+
+
+Definition at line 14 of file grid\_\-test.php.
+
+Referenced by test\_\-grid\_\-init(), test\_\-grid\_\-pconnect(), test\_\-grid\_\-pinit(), test\_\-job\_\-get\_\-id(), test\_\-job\_\-output(), test\_\-job\_\-status(), test\_\-job\_\-submit(), test\_\-pjob\_\-get\_\-id(), test\_\-pjob\_\-output(), test\_\-pjob\_\-status(), and test\_\-pjob\_\-submit().\index{grid_test.php@{grid\_\-test.php}!$user@{\$user}}
+\index{$user@{\$user}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$user = \char`\"{}david\char`\"{}}\label{grid__test_8php_a1}
+
+
+
+
+Definition at line 12 of file grid\_\-test.php.
+
+Referenced by Grid::set\_\-user(), test\_\-grid\_\-init(), test\_\-grid\_\-pconnect(), test\_\-grid\_\-pinit(), test\_\-job\_\-get\_\-id(), test\_\-job\_\-output(), test\_\-job\_\-status(), test\_\-job\_\-submit(), test\_\-pjob\_\-get\_\-id(), test\_\-pjob\_\-output(), test\_\-pjob\_\-status(), and test\_\-pjob\_\-submit().

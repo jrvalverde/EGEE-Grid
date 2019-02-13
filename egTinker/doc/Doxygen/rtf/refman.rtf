@@ -1,0 +1,4488 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1033\deflangfe1033
+{\fonttbl {\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\f1\fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}Arial;}
+{\f2\fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}
+{\f3\froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}
+{\stylesheet
+{\widctlpar\adjustright \fs20\cgrid \snext0 Normal;}
+{\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid \sbasedon0 \snext0 heading 1;}
+{\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid \sbasedon0 \snext0 heading 2;}
+{\s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid \sbasedon0 \snext0 heading 3;}
+{\s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 4;}{\*\cs10 \additive Default Paragraph Font;}
+{\s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid \sbasedon0 \snext15 Title;}
+{\s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid \sbasedon0 \snext16 Subtitle;}
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid \sbasedon0 \snext17 BodyText;}
+{\s18\widctlpar\fs22\cgrid \sbasedon0 \snext18 DenseText;}
+{\s28\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext28 header;}
+{\s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid \sbasedon0 \snext29 footer;}
+{\s30\li360\sa60\sb120\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext30 GroupHeader;}
+{\s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext41 Code Example 0;}
+{\s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext42 Code Example 1;}
+{\s42\li720\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext43 Code Example 2;}
+{\s43\li1080\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext44 Code Example 3;}
+{\s44\li1440\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext45 Code Example 4;}
+{\s45\li1800\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext46 Code Example 5;}
+{\s46\li2160\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext47 Code Example 6;}
+{\s47\li2520\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext48 Code Example 7;}
+{\s48\li2880\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext49 Code Example 8;}
+{\s49\li3240\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext49 Code Example 9;}
+{\s50\li0\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext51 List Continue 0;}
+{\s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext52 List Continue 1;}
+{\s52\li720\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext53 List Continue 2;}
+{\s53\li1080\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext54 List Continue 3;}
+{\s54\li1440\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext55 List Continue 4;}
+{\s55\li1800\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext56 List Continue 5;}
+{\s56\li2160\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext57 List Continue 6;}
+{\s57\li2520\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext58 List Continue 7;}
+{\s58\li2880\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext59 List Continue 8;}
+{\s59\li3240\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext59 List Continue 9;}
+{\s60\li0\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext61 DescContinue 0;}
+{\s61\li360\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext62 DescContinue 1;}
+{\s62\li720\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext63 DescContinue 2;}
+{\s63\li1080\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext64 DescContinue 3;}
+{\s64\li1440\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext65 DescContinue 4;}
+{\s65\li1800\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext66 DescContinue 5;}
+{\s66\li2160\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext67 DescContinue 6;}
+{\s67\li2520\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext68 DescContinue 7;}
+{\s68\li2880\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext69 DescContinue 8;}
+{\s69\li3240\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext69 DescContinue 9;}
+{\s70\li0\sa30\sb30\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext81 LatexTOC 0;}
+{\s71\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext82 LatexTOC 1;}
+{\s72\li720\sa24\sb24\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext83 LatexTOC 2;}
+{\s73\li1080\sa21\sb21\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext84 LatexTOC 3;}
+{\s74\li1440\sa18\sb18\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext85 LatexTOC 4;}
+{\s75\li1800\sa15\sb15\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext86 LatexTOC 5;}
+{\s76\li2160\sa12\sb12\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext87 LatexTOC 6;}
+{\s77\li2520\sa9\sb9\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext88 LatexTOC 7;}
+{\s78\li2880\sa6\sb6\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext89 LatexTOC 8;}
+{\s79\li3240\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext89 LatexTOC 9;}
+{\s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext81 \sautoupd List Bullet 0;}
+{\s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid \sbasedon0 \snext82 \sautoupd List Bullet 1;}
+{\s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid \sbasedon0 \snext83 \sautoupd List Bullet 2;}
+{\s83\fi-360\li1440\widctlpar\jclisttab\tx1440{\*\pn \pnlvlbody\ilvl0\ls4\pnrnot0\pndec }\ls4\adjustright \fs20\cgrid \sbasedon0 \snext84 \sautoupd List Bullet 3;}
+{\s84\fi-360\li1800\widctlpar\jclisttab\tx1800{\*\pn \pnlvlbody\ilvl0\ls5\pnrnot0\pndec }\ls5\adjustright \fs20\cgrid \sbasedon0 \snext85 \sautoupd List Bullet 4;}
+{\s85\fi-360\li2160\widctlpar\jclisttab\tx2160{\*\pn \pnlvlbody\ilvl0\ls6\pnrnot0\pndec }\ls6\adjustright \fs20\cgrid \sbasedon0 \snext86 \sautoupd List Bullet 5;}
+{\s86\fi-360\li2520\widctlpar\jclisttab\tx2520{\*\pn \pnlvlbody\ilvl0\ls7\pnrnot0\pndec }\ls7\adjustright \fs20\cgrid \sbasedon0 \snext87 \sautoupd List Bullet 6;}
+{\s87\fi-360\li2880\widctlpar\jclisttab\tx2880{\*\pn \pnlvlbody\ilvl0\ls8\pnrnot0\pndec }\ls8\adjustright \fs20\cgrid \sbasedon0 \snext88 \sautoupd List Bullet 7;}
+{\s88\fi-360\li3240\widctlpar\jclisttab\tx3240{\*\pn \pnlvlbody\ilvl0\ls9\pnrnot0\pndec }\ls9\adjustright \fs20\cgrid \sbasedon0 \snext89 \sautoupd List Bullet 8;}
+{\s89\fi-360\li3600\widctlpar\jclisttab\tx3600{\*\pn \pnlvlbody\ilvl0\ls10\pnrnot0\pndec }\ls10\adjustright \fs20\cgrid \sbasedon0 \snext89 \sautoupd List Bullet 9;}
+{\s90\fi-360\li360\widctlpar\fs20\cgrid \sbasedon0 \snext91 \sautoupd List Enum 0;}
+{\s91\fi-360\li720\widctlpar\fs20\cgrid \sbasedon0 \snext92 \sautoupd List Enum 1;}
+{\s92\fi-360\li1080\widctlpar\fs20\cgrid \sbasedon0 \snext93 \sautoupd List Enum 2;}
+{\s93\fi-360\li1440\widctlpar\fs20\cgrid \sbasedon0 \snext94 \sautoupd List Enum 3;}
+{\s94\fi-360\li1800\widctlpar\fs20\cgrid \sbasedon0 \snext95 \sautoupd List Enum 4;}
+{\s95\fi-360\li2160\widctlpar\fs20\cgrid \sbasedon0 \snext96 \sautoupd List Enum 5;}
+{\s96\fi-360\li2520\widctlpar\fs20\cgrid \sbasedon0 \snext96 \sautoupd List Enum 5;}
+{\s97\fi-360\li2880\widctlpar\fs20\cgrid \sbasedon0 \snext98 \sautoupd List Enum 7;}
+{\s98\fi-360\li3240\widctlpar\fs20\cgrid \sbasedon0 \snext99 \sautoupd List Enum 8;}
+{\s99\fi-360\li3600\widctlpar\fs20\cgrid \sbasedon0 \snext99 \sautoupd List Enum 9;}
+}
+{\comment begin body}
+{\info 
+{\title {\comment egTinker Reference Manual 1.0 }egTinker}
+{\comment Generated byDoxgyen. }
+{\creatim \yr2005\mo4\dy21\hr15\min51\sec36}
+}\pard\plain 
+\sectd\pgnlcrm
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\vertalc\qc\par\par\par\par\par\par\par
+\pard\plain \s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid 
+{\field\fldedit {\*\fldinst TITLE \\*MERGEFORMAT}{\fldrslt TITLE}}\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\par
+\par\par\par\par\par\par\par\par\par\par\par\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+{\field\fldedit {\*\fldinst AUTHOR \\*MERGEFORMAT}{\fldrslt AUTHOR}}\par
+Version 1.0\par{\field\fldedit {\*\fldinst CREATEDATE \\*MERGEFORMAT}{\fldrslt CREATEDATE}}\par
+\page\page\vertalt
+\pard\plain 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Table of Contents\par
+\pard\plain \par
+{\field\fldedit {\*\fldinst TOC \\f \\*MERGEFORMAT}{\fldrslt Table of contents}}\par
+\pard\plain 
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+egTinker Namespace Index\par \pard\plain 
+{\tc \v Namespace Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+egTinker Namespace List\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here is a list of all namespaces with brief descriptions:\par
+}
+{
+\pard\plain \s71\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+\par
+{\b {\b egTINKER} (General utility functions )} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAHO \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b GridGRAMM} (PHP-MIDDLEWARE INTERACTION )} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAHP \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b TINKER} (Variables used to connect with the user interface host )} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAHQ \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par
+}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+egTinker Class Index\par \pard\plain 
+{\tc \v Class Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+egTinker Class List\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here are the classes, structs, unions and interfaces with brief descriptions:\par
+}
+{
+\pard\plain \s71\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+\par
+{\b {\b Grid} (Grid access class )} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAADX \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b SExec} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAADY \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b TinkerApp} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAADZ \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par
+}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+egTinker File Index\par \pard\plain 
+{\tc \v File Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+egTinker File List\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here is a list of all files with brief descriptions:\par
+}
+{
+\pard\plain \s71\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+\par
+{\b {\b analyze.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAA \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b auth.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAB \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b config.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAC \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b functions.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAD \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b grid.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAE \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b grid_test.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAF \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b test/grid_test.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAG \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b processor.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAH \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b remotessh.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAI \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b results.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAJ \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b ssh-files.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAK \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b ssh-pipes.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAL \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b ssh.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAM \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b ssh_test.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAN \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b test/ssh_test.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAO \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b tinkerApp.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAP \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b util.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAQ \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par
+}\sect \sbkpage \pgndec \pgnrestart
+\sect \sectd \sbknone
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+egTinker Namespace Documentation\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+egTINKER Namespace Reference\par \pard\plain 
+{\tc\tcl2 \v egTINKER}
+{\xe \v egTINKER}
+{\bkmkstart AAAAAAAAHO}
+{\bkmkend AAAAAAAAHO}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid General utility functions.  
+\par
+\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid General utility functions. \par
+This file contains convenience functions used throughout the package.\par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid should be split into several class files\par
+}{{\b \par
+Author:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Jos\'E9 \'52. Valverde <{\f2 jrvalverde@cnb.uam.es}> \par
+}{{\b \par
+Version:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid 1.0  CSIC - GPL \par
+}\par
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+GridGRAMM Namespace Reference\par \pard\plain 
+{\tc\tcl2 \v GridGRAMM}
+{\xe \v GridGRAMM}
+{\bkmkstart AAAAAAAAHP}
+{\bkmkend AAAAAAAAHP}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid PHP-MIDDLEWARE INTERACTION.  
+\par
+\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid PHP-MIDDLEWARE INTERACTION. \par
+This php script runs in the local machine as user 'apache', is the 'father' process. In a remote machine (our grid User Interface) we open a 'child' process, and it's runs as the user validated before. That user must connect via ssh to the User Interface without password See {\f2 http://www.cs.umd.edu/~arun/misc/ssh.html} and {\f2 http://www.openssh.com/} Remember that the User Interface has mounted a directory in the local machine\par
+DOCKING PROGRAM\par
+Gramm - Global Range Molecular Matching\par
+Protein-Protein Docking and Protein-Ligand Docking {\b Home site}\par
+{{\b \par
+Author:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid David Garcia Aristegui <{\f2 david@cnb.uam.es}>  CSIC - GPL \par
+}{{\b \par
+Version:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid 1.0 \par
+}\par
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+TINKER Namespace Reference\par \pard\plain 
+{\tc\tcl2 \v TINKER}
+{\xe \v TINKER}
+{\bkmkstart AAAAAAAAHQ}
+{\bkmkend AAAAAAAAHQ}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Variables used to connect with the user interface host.  
+\par
+\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Variables used to connect with the user interface host. \par
+{{\b \par
+Author:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Jose R. Valverde <{\f2 jrvalverde@acm.org}>  CSIC - GPL \par
+}{{\b \par
+Version:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid 1.0 \par
+}\par
+\par
+}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+egTinker Class Documentation{\tc \v Class Documentation}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Grid Class Reference\par \pard\plain 
+{\tc\tcl2 \v Grid}
+{\xe \v Grid}
+{\bkmkstart AAAAAAAADX}
+{\bkmkend AAAAAAAADX}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Grid access class.  
+\par
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Grid} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Constructor for the class. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_user} ($user)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i set the Grid user name }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_host} ($host)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i set the name of the Grid access host }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_password} ($pass)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i set the password for the remote grid user/server }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_passphrase} ($pass)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i set the passphrase for the remote grid user }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_work_dir} ($wd)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i set working directory on the Grid server }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_error_log} ($errlog)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i set error log }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b get_connection_status} ()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b get_init_status} ()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b pconnect} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i open a persistent connection to the Grid UI server }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b pdisconnect} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Close the connection with the remote Grid access point (UI node). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b pinitialize} ($hours=12, $minutes=0)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Start the Grid services. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b pdestroy} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Destroy remote grid identity. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b pnew_session} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Create a new session. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b pjob_submit} ($job, $session="")\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Submit a job to the Grid. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b pjob_get_id} ($job, $session="")\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Get Grid ID of a submitted job. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b pjob_status} ($job, $session="")\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i check job status }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b pjob_output} ($job, $session="")\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i retrieve results }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b initialize} ($hours=12, $minutes=0)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Start the Grid services. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b destroy} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Destroy remote grid identity. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b new_session} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Create a new session. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b destroy_session} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i destroy the current session }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b job_submit} ($job, &$out)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i submit a job to the grid }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b job_get_id} ($job)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b job_status} ($job, &$out)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b job_output} ($job, &$out)\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Attributes\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $entry_point}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i the grid entry point, should not be needed }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $username}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i user name to use to connect to the grid }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $hostname}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i name of host that provides access to the grid }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $password}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i password to login on the UI node }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $passphrase}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i key to unlock the grid access certificate }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $work_dir}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i a GrUI directory where we can work }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $error_log}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i a local file to store the error log }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $std_in}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Internal. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $std_out}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Internal. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $std_err}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Internal. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $connected}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Internal: Have we already connected? }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $initialized}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Internal: Have we already identified ourselves? }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $session}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Internal: A unique identifier for this session. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $sx}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Internal: The secure transfer communications line to use. }\par
+\par}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Grid access class. \par
+\par
+CAUTION: THIS CLASS IS UNDERGOING A GENERAL OVERHAUL. DO NOT USE NOW.\par
+This class allows you to connect to a remote Grid UI server and launch and monitor jobs on it.\par
+The reason for this class is mostly one of resilience: if you put all your services directly on a GrUI host, then whenever that host if offline, your services will be as well.\par
+An alternative is to replicate the services on various GrUI nodes.\par
+Or better yet: use this class and set up your services wherever you want. You may put them on an HA system and ensure this way their continuous availability. Your service will be always up and running, ready to accept jobs.\par
+Your next problem is dealing with the Grid UI. You still need to log-in on a Grid access point to submit your jobs. But once you have detached from a specific GrUI node, you are free to attempt a connection to a given remote access point, and if it is available (and while it is) submit jobs as needed. If at any time it is not available, nothing is lost: just look for another one and use this to continue working. You may thus enter the grid through any door.\par
+There is a side advantage too: with your services on a GrUI node you can only launch jobs from it. With your services detached from any given Grid door, you may use _any_ AND _as many_ as you want: this means you may launch jobs using various GrUI nodes simultaneously if you so wish. And even split the jobs througho various, separate Grids if you feel like it, hence potentially increasing your throughput and computing power, harnessing even more resources.\par
+Detaching your jobs from the GrUI has one serious drawback though: all your job information must travel from your service user interface to the grid user interface through the Internet, which may be potentially dangerous. We deal with this security issue using SSH to handle all communications and provide encryption. As long as you use strong passwords you may feel secure. Actually, it is as weak (or strong) as working directly on the GrUI node: access to it is still managed by standard password mechanisms and subject to the same types of attacks. However, remember you now have an extra system (the front-end) to maintain and secure. Please, be always cautious with any server you use.\par
+Sounds convincing? Then read ahead to learn how to use this class.\par
+Using this class you may access the Grid in two different ways: connected or disconnected mode (or if you prefer, using persistent connections or disconnected mode).\par
+It is important to understand the differences among them:\par
+PERSISTENT CONNECTIONS\par
+When working with persistent connections, you first issue a Grid::connect() call to stablish a connection to the GrUI. This will be kept open during all the time until you call Grid::disconnect(). All commands issued will travel over the same wire, and hence communications will be more efficient.\par
+Output of all your commands is collected on a single I/O channel that persists during the whole session.\par
+On the minus side, persistent connections drive all communications between your front-end and the grid access point through pipes, and are subject to serious deadlock problems. You must make sure you avoid them by clearing periodically the communication buffers. In addition, error checking is relayed to YOU: all information will travel through the persistent I/O channels, and it will be YOUR responsability to detect errors and act accordingly. Debugging is thus more difficult.\par
+DISCONNECTED MODE\par
+When working in disconnected mode, the connections are open and closed for each command you issue. This imposes a heavier tax on your communications, which may become serious for submitting huge numbers of jobs.\par
+Each command will return its output separately since it uses a new I/O channel every time.\par
+On the plus side, you will retrieve job completion status inmediately and won't risk deadlocks while running remote jobs. Development and debugging will be a lot easier.\par
+JOB MANAGEMENT\par
+In order to submit your jobs to the grid you need to understand how job management has been defined for this class. On the command line you would have a lot more versatility, but to make this class more useful some compromises had to be reached. We have defined a strict protocol to generate/prepare your jobs before submitting them to the grid, and you must stick to it if you want to avoid problems.\par
+To understand why this has been designed the way it is, you should keep in mind that you will be preparing your jobs on one (or many) front-end and submitting them from it to one (or many) GrUI nodes. Further to it, this has been designhed to make it easy to deploy web-based services for users. Therefore many similar jobs might be launched simultaneously and we need some way to avoid collusion among them. To avoid one job stepping over other we must isolate every one from each other. This means providing an isolated environment for every job.\par
+The easiest way to achieve our goal is to have every job submitted placed on an independent directory (which we pair to the job name). For single jobs, this means that you should make sure that no two potentially simultaneous/overlapping jobs have the same name (i.e. are stored in the same directory so there is no risk one overwrites files of the other).\par
+Sometimes this may result inconvenient to you. E.g. if your whole job is submitted split into many separate sub-jobs (which each is a separate job from the point of view of the grid) you may want to follow some naming convention for your sub-jobs that makes it easier to identify and keep track of them. In this case, if you had two simultaneous runs, then the names would collide.\par
+For example, let's say you are rendering frames of a movie and want to identify each job by frame number: 0000, 0001, 0002, 0003... If you now try to generate a second movie while the first is being processed, then the frames of the second movie (named as well 0000, 0001, etc...) would overwrite the frames of the first one. Generating random names for each frame would be an option, but too cumbersome and expensive as you would need to keep track of the association of the random names with the actual frames.\par
+To deal with this scenario we define 'sessions'. A session is identified by a unique identifier, and guarantees that all jobs belonging to this session are kept separate from similarly named jobs from other sessions.\par
+Actually when you create a session, what we actually do is create a subdirectory in the GrUI and direct all further jobs to this subdirectory. This way, jobs of two sessions may have the same name and not step into each other.\par
+PREPARING JOBS FOR THE GRID\par
+To prepare a job for the grid you must assign it a name. The same preacutions that apply to any local job hold for your grid work too: if various simultaneous jobs of the same kind may be run, then each must be kept separate from the others by using a different name.\par
+Once you have decided the name, you must create a directory locally with the same name as your job. In this directory you must install everything needed to run your job: executables, libraries, input data and a JDL file.\par
+The JDL file defines the work that we will ask the grid to carry out. Since each single job gets its own directory, you will only submit one JDL file for each, and to make processing easier, we request that this JDL file have a fixed name: "job.jdl".\par
+The grid processing will generate various auxiliary files, for internal housekeeping. Again, for simplicity, we have chosen to call each of them 'job.*', i.e. 'job.' something. This means that other than 'job.jdl' you should NOT create any file named job.anything on your job directory to avoid collusion with possible temporary files.\par
+In brief, to prepare a job:{
+\par
+\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+select a name\par
+\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+create a directory named after the job\par
+\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+populate this directory with all files needed to run your job\par
+\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+generate the file 'job.jdl' with the description of the work to be carried out by the grid\par
+\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+avoid having files named 'job.*' (starting with 'job.')\par
+}
+\par
+SUBMITTING JOBS TO THE GRID\par
+First consider whether you will be using unique job names or if you will follow a convenient naming convention that may cause name collisions with other jobs.\par
+If you feel pretty safe that the job name is unique (e.g. has been generated using one or more random strings), then simply call the appropriate *job_submit() function.\par
+If you are using names that have low entropy or reusing names for similar jobs then it is advisable that you first call one of the *new_session() routines to ensure all your jobs will be kept isolated from other similarly named jobs, and then use the *job_submit() routines to send your jobs.\par
+For the curious: when you submit your job, the directory and all of its contents will be sent to the remote Grid UI selected and then the 'job.jdl' will be submitted to the grid. In the process, several files will be generated holding information about your job identity in the grid context that will be kept for housekeeping and future reference.\par
+The above is to be kept in mind when submitting light or numerous jobs: the transfer time may become sensibly relevant. Please do take it into consideration in your equations when designing jobs for the grid using this class. You may find it interesting to first store all or some of your job data/execs on the grid and keep them already there instead of having to copy them.\par
+Grid file management routines are not included yet, but are intended for a future release of this class. \par
+Definition at line 213 of file grid.php.\par
+\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v Grid\:Grid}
+{\xe \v Grid\:Grid}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::Grid ()}
+}\par
+{\bkmkstart AAAAAAAAEA}
+{\bkmkend AAAAAAAAEA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Constructor for the class. \par
+Set the values for the class variables using defaults provided in 'config.php'\par
+These defaults can be overridden using the functions provided below. \par
+Definition at line 243 of file grid.php.\par
+\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v destroy\:Grid}
+{\xe \v Grid\:destroy}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::destroy ()}
+}\par
+{\bkmkstart AAAAAAAAEB}
+{\bkmkend AAAAAAAAEB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Destroy remote grid identity. \par
+We destroy the certification we initialized so that no more jobs can be launched under our identity.\par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Be careful when using this function: as it destroys our Grid-ID, no more work will be able to be executed on the grid on our behalf. In other words, please, make sure there is no work pending and that all your work has terminated before destroying your Grid-ID.\par
+}{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i pipes} The set of pipes to communicate (stdin/stdout) with the remote grid server entry point\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid exit status of the destroy command. \par
+}\par
+Definition at line 964 of file grid.php.\par
+\par
+References $debug, and $status.\par
+}
+{\xe \v destroy_session\:Grid}
+{\xe \v Grid\:destroy_session}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::destroy_session ()}
+}\par
+{\bkmkstart AAAAAAAAEC}
+{\bkmkend AAAAAAAAEC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+destroy the current session \par
+\par
+Definition at line 995 of file grid.php.\par
+\par
+References $status.\par
+}
+{\xe \v get_connection_status\:Grid}
+{\xe \v Grid\:get_connection_status}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::get_connection_status ()}
+}\par
+{\bkmkstart AAAAAAAAED}
+{\bkmkend AAAAAAAAED}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 326 of file grid.php.\par
+\par
+}
+{\xe \v get_init_status\:Grid}
+{\xe \v Grid\:get_init_status}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::get_init_status ()}
+}\par
+{\bkmkstart AAAAAAAAEE}
+{\bkmkend AAAAAAAAEE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 331 of file grid.php.\par
+\par
+References $debug.\par
+}
+{\xe \v initialize\:Grid}
+{\xe \v Grid\:initialize}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::initialize ($ {\i hours} = 12, $ {\i minutes} = 0)}
+}\par
+{\bkmkstart AAAAAAAAEF}
+{\bkmkend AAAAAAAAEF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Start the Grid services. \par
+This function starts the grid services on the remote UI server host. This is done by unlocking the certificate that we are going to use to run our jobs on the grid using the passphrase provided.\par
+Grid services have a lifetime of their own. By default they are available for 12:00 hours (that's the default value of grid-proxy-init itself), but their duration may be fine tuned if we have some knowledge about the time required to run our job.\par
+Session duration is specified in hours+minutes. If the number of minutes is negative, the specified minutes are substracted from the specified hours (e.g: 1, -15 is fifteen minutes to one hour, i.e. 45 minutes). If the total time specified is negative then the default of 12:00 is used.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i hours} Estimated duration in hours of the session\par
+{\i minutes} Estimated duration in minutes of the session\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid TRUE on success, FALSE otherwise \par
+}\par
+Definition at line 908 of file grid.php.\par
+\par
+References $status.\par
+}
+{\xe \v job_get_id\:Grid}
+{\xe \v Grid\:job_get_id}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::job_get_id ($ {\i job})}
+}\par
+{\bkmkstart AAAAAAAAEG}
+{\bkmkend AAAAAAAAEG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 1057 of file grid.php.\par
+\par
+References $status.\par
+}
+{\xe \v job_output\:Grid}
+{\xe \v Grid\:job_output}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::job_output ($ {\i job}, &$ {\i out})}
+}\par
+{\bkmkstart AAAAAAAAEH}
+{\bkmkend AAAAAAAAEH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 1107 of file grid.php.\par
+\par
+}
+{\xe \v job_status\:Grid}
+{\xe \v Grid\:job_status}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::job_status ($ {\i job}, &$ {\i out})}
+}\par
+{\bkmkstart AAAAAAAAEI}
+{\bkmkend AAAAAAAAEI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 1085 of file grid.php.\par
+\par
+}
+{\xe \v job_submit\:Grid}
+{\xe \v Grid\:job_submit}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::job_submit ($ {\i job}, &$ {\i out})}
+}\par
+{\bkmkstart AAAAAAAAEJ}
+{\bkmkend AAAAAAAAEJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+submit a job to the grid \par
+\par
+Definition at line 1013 of file grid.php.\par
+\par
+}
+{\xe \v new_session\:Grid}
+{\xe \v Grid\:new_session}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::new_session ()}
+}\par
+{\bkmkstart AAAAAAAAEK}
+{\bkmkend AAAAAAAAEK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Create a new session. \par
+untested! \par
+Definition at line 978 of file grid.php.\par
+\par
+References $debug, and $status.\par
+}
+{\xe \v pconnect\:Grid}
+{\xe \v Grid\:pconnect}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::pconnect ()}
+}\par
+{\bkmkstart AAAAAAAAEL}
+{\bkmkend AAAAAAAAEL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+open a persistent connection to the Grid UI server \par
+The Grid User Interface Server is the entry point to the Grid for users and user applications. This is where jobs are launched from.\par
+This package has been designed to be able to be installed in any host, independent of whether it is an UI or not. Thus, to be able to submit jobs to the Grid, the server hosting the Web UI must connect to a Grid UI host to do the work.\par
+This routine opens a connection to a Grid UI host using an specified username (i.e. all jobs will be run under said username). To allow the caller to communicate with the remote end, it creates two pipes/pty, one for input and one for output, and redirects error messages to a file.\par
+We need to redirect stderr to a file. This is so to avoid blocking on reading to check for errors and to avoid (if we use PTYs) interleave of error messages and normal I/O.\par
+These pipes lead to a child process that actually manages the communication. Using a child process has several advantages: it simplifies the communication process by offloading the comm. logic to a separate, convenience tool, and by being able to use SSH as the child, we can increase security taking advantage of its encryption capabilities.\par
+The panorama therefore will look like this:\par
+HTML front-end --> {\b processor.php} <--> SSH <--> remote host <--> Grid\par
+This allows for better resilience: should a GridUI host be unavailable, we can detect the error condition and try another one. If the GridUI runs the front-end, then we have a single point of failure, which is a no-no.\par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Use of persistent connections is greatly DISCOURAGED: all I/O will go through pipes, and any end of the line may hang waiting on read (if there is nothing to be read at the other end) or write (if there is noone to retrieve the data at the other end).\par
+}Just picture this: you open a connection to a GridUI and the remote host issues an unusually large 'motd' that fills the pipe. The remote shell will hang waiting for someone to read and empty the pipe before continuing. Now, on the local side we do issue a remote command (without checking the output): we hang waiting for the other end to read it, but the other end is hung. Sadly a 'motd' may contain anything, and we can't predict what the remote prompt will look like...\par
+Be careful. Be _very_ careful.\par
+AND always consider setting the pipe ends to non-blocking status. This is actually the default, but has its tricks too. Be careful. Be _very_ careful.\par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid There is no easy way to know the exit status of a remote command while using persisten connections. Your only chance is to review the output log and check it yourself for error messages.\par
+}We could be doing better here, but for now we will leave this for later. After all, the point here is to give the user maximum efficiency.\par
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid TRUE on success, FALSE otherwise. \par
+}\par
+Definition at line 409 of file grid.php.\par
+\par
+}
+{\xe \v pdestroy\:Grid}
+{\xe \v Grid\:pdestroy}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::pdestroy ()}
+}\par
+{\bkmkstart AAAAAAAAEM}
+{\bkmkend AAAAAAAAEM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Destroy remote grid identity. \par
+Destroy the certification we initialized so that no more jobs can be launched under our identity.\par
+Note that once you call this, no more work will be performed on the Grid on your behalf... BEWARE of race conditions!!!\par
+As an example, suppose you have two simultaneous works, A and B: A connects to the Grid A submits job to the Grid B connects to the Grid A destroys proxy B submits job to the Grid <-- FAILS!!! B destroys proxy\par
+In general, you should not use this function, but rely instead on the proxy's lifetime to do the control. Use this function when you really want to make sure NO MORE WORK is performed at all. This may be the case if you want to cancel all outstanding jobs.\par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid : no error checking is performed. You are supposed to check the standard output to verify success yourself (just as in all other persistent commands). \par
+}\par
+Definition at line 681 of file grid.php.\par
+\par
+}
+{\xe \v pdisconnect\:Grid}
+{\xe \v Grid\:pdisconnect}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::pdisconnect ()}
+}\par
+{\bkmkstart AAAAAAAAEN}
+{\bkmkend AAAAAAAAEN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Close the connection with the remote Grid access point (UI node). \par
+What we are going to do is close the communication pipes and kill the child process that actually handles communication with the remote Grid UI host (ssh). This function returns the exit status of the connection (i.e. of the intermediate program that handles the connection --in this case SSH).\par
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid integer exit status of the connection (or the handling program) \par
+}\par
+Definition at line 521 of file grid.php.\par
+\par
+References $debug.\par
+}
+{\xe \v pinitialize\:Grid}
+{\xe \v Grid\:pinitialize}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::pinitialize ($ {\i hours} = 12, $ {\i minutes} = 0)}
+}\par
+{\bkmkstart AAAAAAAAEO}
+{\bkmkend AAAAAAAAEO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Start the Grid services. \par
+This function starts the grid services on the remote UI server host. This is done by unlocking the certificate that we are going to use to run our jobs on the grid using the passphrase provided.\par
+We need to have a connection open with the remote grid server as the user with whose identity we want to run the jobs. This connection is created by {\b Grid::pconnect()}.\par
+To ease things up, we check if we are already connected, and if we aren't, we try to connect ourselves. That is, there is no need to call Grid::Connect() first unless you want to do something else on the Grid-UI before initializing the Grid.\par
+Grid services have a lifetime of their own. By default they are available for 12:00 hours (that's the default value of grid-proxy-init itself), but their duration may be fine tuned if we have some knowledge about the time required to run our job.\par
+Session duration is specified in hours+minutes. If the number of minutes is negative, the specified minutes are substracted from the specified hours (e.g: 1, -15 is fifteen minutes to one hour, i.e. 45 minutes). If the total time specified is negative then the default of 12:00 is used.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i hours} Estimated duration in hours of the session\par
+{\i minutes} Estimated duration in minutes of the session \par
+}
+\par
+Definition at line 602 of file grid.php.\par
+\par
+References $debug.\par
+}
+{\xe \v pjob_get_id\:Grid}
+{\xe \v Grid\:pjob_get_id}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::pjob_get_id ($ {\i job}, $ {\i session} = "")}
+}\par
+{\bkmkstart AAAAAAAAEP}
+{\bkmkend AAAAAAAAEP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Get Grid ID of a submitted job. \par
+\par
+Definition at line 773 of file grid.php.\par
+\par
+}
+{\xe \v pjob_output\:Grid}
+{\xe \v Grid\:pjob_output}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::pjob_output ($ {\i job}, $ {\i session} = "")}
+}\par
+{\bkmkstart AAAAAAAAEQ}
+{\bkmkend AAAAAAAAEQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+retrieve results \par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid STUB. DO NOT USE YET \par
+}\par
+Definition at line 851 of file grid.php.\par
+\par
+}
+{\xe \v pjob_status\:Grid}
+{\xe \v Grid\:pjob_status}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::pjob_status ($ {\i job}, $ {\i session} = "")}
+}\par
+{\bkmkstart AAAAAAAAER}
+{\bkmkend AAAAAAAAER}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+check job status \par
+\par
+Definition at line 814 of file grid.php.\par
+\par
+References $debug.\par
+}
+{\xe \v pjob_submit\:Grid}
+{\xe \v Grid\:pjob_submit}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::pjob_submit ($ {\i job}, $ {\i session} = "")}
+}\par
+{\bkmkstart AAAAAAAAES}
+{\bkmkend AAAAAAAAES}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Submit a job to the Grid. \par
+This function submits a job to the Grid, optionally tagging it as part of a specific session.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i job} The name of the job (same as the subdirectory it is in) \par
+{\i session} Optional name of the session to which this job belongs (obtained from a previous call to pnew_session). \par
+}
+\par
+Definition at line 724 of file grid.php.\par
+\par
+}
+{\xe \v pnew_session\:Grid}
+{\xe \v Grid\:pnew_session}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::pnew_session ()}
+}\par
+{\bkmkstart AAAAAAAAET}
+{\bkmkend AAAAAAAAET}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Create a new session. \par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid : untested. \par
+}\par
+Definition at line 702 of file grid.php.\par
+\par
+}
+{\xe \v set_error_log\:Grid}
+{\xe \v Grid\:set_error_log}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::set_error_log ($ {\i errlog})}
+}\par
+{\bkmkstart AAAAAAAAEU}
+{\bkmkend AAAAAAAAEU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+set error log \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i errlog} path to a local file where we will store the error log (i.e. stderr of the grid connection) \par
+}
+\par
+Definition at line 321 of file grid.php.\par
+\par
+}
+{\xe \v set_host\:Grid}
+{\xe \v Grid\:set_host}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::set_host ($ {\i host})}
+}\par
+{\bkmkstart AAAAAAAAEV}
+{\bkmkend AAAAAAAAEV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+set the name of the Grid access host \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i host} name of the remote UI host \par
+}
+\par
+Definition at line 275 of file grid.php.\par
+\par
+}
+{\xe \v set_passphrase\:Grid}
+{\xe \v Grid\:set_passphrase}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::set_passphrase ($ {\i pass})}
+}\par
+{\bkmkstart AAAAAAAAEW}
+{\bkmkend AAAAAAAAEW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+set the passphrase for the remote grid user \par
+This is grid-wise and independent of the UI-node used.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i pass} passphrase needed to unlock the grid certificate \par
+}
+\par
+Definition at line 300 of file grid.php.\par
+\par
+}
+{\xe \v set_password\:Grid}
+{\xe \v Grid\:set_password}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::set_password ($ {\i pass})}
+}\par
+{\bkmkstart AAAAAAAAEX}
+{\bkmkend AAAAAAAAEX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+set the password for the remote grid user/server \par
+This is specific to the remote UI server selected.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i pass} password needed to login on to the grid UI server \par
+}
+\par
+Definition at line 288 of file grid.php.\par
+\par
+}
+{\xe \v set_user\:Grid}
+{\xe \v Grid\:set_user}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::set_user ($ {\i user})}
+}\par
+{\bkmkstart AAAAAAAAEY}
+{\bkmkend AAAAAAAAEY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+set the Grid user name \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i user} identity to use in the Grid UI host \par
+}
+\par
+Definition at line 264 of file grid.php.\par
+\par
+References $user.\par
+}
+{\xe \v set_work_dir\:Grid}
+{\xe \v Grid\:set_work_dir}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::set_work_dir ($ {\i wd})}
+}\par
+{\bkmkstart AAAAAAAAEZ}
+{\bkmkend AAAAAAAAEZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+set working directory on the Grid server \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i work_dir} the remote path of the working directory \par
+}
+\par
+Definition at line 310 of file grid.php.\par
+\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Data Documentation\par
+\pard\plain 
+{\xe \v $connected\:Grid}
+{\xe \v Grid\:$connected}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$connected}
+}\par
+{\bkmkstart AAAAAAAAFA}
+{\bkmkend AAAAAAAAFA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Internal: Have we already connected? \par
+\par
+Definition at line 230 of file grid.php.\par
+\par
+}
+{\xe \v $entry_point\:Grid}
+{\xe \v Grid\:$entry_point}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$entry_point}
+}\par
+{\bkmkstart AAAAAAAAFB}
+{\bkmkend AAAAAAAAFB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+the grid entry point, should not be needed \par
+\par
+Definition at line 215 of file grid.php.\par
+\par
+}
+{\xe \v $error_log\:Grid}
+{\xe \v Grid\:$error_log}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$error_log}
+}\par
+{\bkmkstart AAAAAAAAFC}
+{\bkmkend AAAAAAAAFC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+a local file to store the error log \par
+\par
+Definition at line 221 of file grid.php.\par
+\par
+}
+{\xe \v $hostname\:Grid}
+{\xe \v Grid\:$hostname}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$hostname}
+}\par
+{\bkmkstart AAAAAAAAFD}
+{\bkmkend AAAAAAAAFD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+name of host that provides access to the grid \par
+\par
+Definition at line 217 of file grid.php.\par
+\par
+}
+{\xe \v $initialized\:Grid}
+{\xe \v Grid\:$initialized}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$initialized}
+}\par
+{\bkmkstart AAAAAAAAFE}
+{\bkmkend AAAAAAAAFE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Internal: Have we already identified ourselves? \par
+\par
+Definition at line 231 of file grid.php.\par
+\par
+}
+{\xe \v $passphrase\:Grid}
+{\xe \v Grid\:$passphrase}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$passphrase}
+}\par
+{\bkmkstart AAAAAAAAFF}
+{\bkmkend AAAAAAAAFF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+key to unlock the grid access certificate \par
+\par
+Definition at line 219 of file grid.php.\par
+\par
+}
+{\xe \v $password\:Grid}
+{\xe \v Grid\:$password}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$password}
+}\par
+{\bkmkstart AAAAAAAAFG}
+{\bkmkend AAAAAAAAFG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+password to login on the UI node \par
+\par
+Definition at line 218 of file grid.php.\par
+\par
+}
+{\xe \v $session\:Grid}
+{\xe \v Grid\:$session}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$session}
+}\par
+{\bkmkstart AAAAAAAAFH}
+{\bkmkend AAAAAAAAFH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Internal: A unique identifier for this session. \par
+\par
+Definition at line 232 of file grid.php.\par
+\par
+}
+{\xe \v $std_err\:Grid}
+{\xe \v Grid\:$std_err}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$std_err}
+}\par
+{\bkmkstart AAAAAAAAFI}
+{\bkmkend AAAAAAAAFI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Internal. \par
+Standard error of the grid entry \par
+Definition at line 225 of file grid.php.\par
+\par
+}
+{\xe \v $std_in\:Grid}
+{\xe \v Grid\:$std_in}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$std_in}
+}\par
+{\bkmkstart AAAAAAAAFJ}
+{\bkmkend AAAAAAAAFJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Internal. \par
+Standard input of the grid entry \par
+Definition at line 223 of file grid.php.\par
+\par
+}
+{\xe \v $std_out\:Grid}
+{\xe \v Grid\:$std_out}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$std_out}
+}\par
+{\bkmkstart AAAAAAAAFK}
+{\bkmkend AAAAAAAAFK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Internal. \par
+Standard output of the grid entry \par
+Definition at line 224 of file grid.php.\par
+\par
+}
+{\xe \v $sx\:Grid}
+{\xe \v Grid\:$sx}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$sx}
+}\par
+{\bkmkstart AAAAAAAAFL}
+{\bkmkend AAAAAAAAFL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Internal: The secure transfer communications line to use. \par
+\par
+Definition at line 233 of file grid.php.\par
+\par
+}
+{\xe \v $username\:Grid}
+{\xe \v Grid\:$username}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$username}
+}\par
+{\bkmkstart AAAAAAAAFM}
+{\bkmkend AAAAAAAAFM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+user name to use to connect to the grid \par
+\par
+Definition at line 216 of file grid.php.\par
+\par
+}
+{\xe \v $work_dir\:Grid}
+{\xe \v Grid\:$work_dir}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$work_dir}
+}\par
+{\bkmkstart AAAAAAAAFN}
+{\bkmkend AAAAAAAAFN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+a GrUI directory where we can work \par
+\par
+Definition at line 220 of file grid.php.\par
+\par
+}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following file:{\par
+\pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
+{\b grid.php}\par
+}}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+SExec Class Reference\par \pard\plain 
+{\tc\tcl2 \v SExec}
+{\xe \v SExec}
+{\bkmkstart AAAAAAAADY}
+{\bkmkend AAAAAAAADY}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid \par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b SExec} ($remote="localhost", $password="xxyzzy")\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_remote_end} ($remote, $password="xxyzzy")\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_passthru} ($remote, $password, $command, &$status)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Execute a single command remotely using ssh and display its output, optionally returning its exit status (like passthru). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_exec} ($remote, $password, $command, &$out)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Execute a remote command using SSH. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_copy} ($origin, $destination, $password)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Copy a file or directory from one source to a destination. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_open_shell} ($remote, $password)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Open an SSH connection to a remote site with a shell to run interactive commands. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_open_command} ($remote, $password, $command)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Open an SSH connection to run an interactive command on a remote site. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_close} ($p)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Close an SSH interactive session. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_close_bck} ($p)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_popen} ($remote, $password, $command, $mode)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Execute a remore command and keep an unidirectional stream contact with it. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_pclose} ($f)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b SExec} ($remote="localhost", $password="xxyzzy")\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_remote_end} ($remote, $password="xxyzzy")\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_passthru} ($remote, $password, $command, &$status)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Execute a single command remotely using ssh and display its output, optionally returning its exit status (like passthru). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_exec} ($remote, $password, $command, &$out)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Execute a remote command using SSH. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_copy} ($origin, $destination, $password)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Copy a file or directory from one source to a destination. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_open_shell} ($remote, $password)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Open an SSH connection to a remote site with a shell to run interactive commands. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_open_command} ($remote, $password, $command)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Open an SSH connection to run an interactive command on a remote site. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_close} ($p)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Close an SSH interactive session. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_popen} ($remote, $password, $command, $mode)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Execute a remore command and keep an unidirectional stream contact with it. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_pclose} ($f)\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Attributes\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $version} = "1.0"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $remote}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $password}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v SExec\:SExec}
+{\xe \v SExec\:SExec}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::SExec ($ {\i remote} = "localhost", $ {\i password} = "xxyzzy")}
+}\par
+{\bkmkstart AAAAAAAAFO}
+{\bkmkend AAAAAAAAFO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 9 of file ssh-files.php.\par
+\par
+References $remote.\par
+}
+{\xe \v SExec\:SExec}
+{\xe \v SExec\:SExec}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::SExec ($ {\i remote} = "localhost", $ {\i password} = "xxyzzy")}
+}\par
+{\bkmkstart AAAAAAAAFP}
+{\bkmkend AAAAAAAAFP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 9 of file ssh-pipes.php.\par
+\par
+References $remote.\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v set_remote_end\:SExec}
+{\xe \v SExec\:set_remote_end}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::set_remote_end ($ {\i remote}, $ {\i password} = "xxyzzy")}
+}\par
+{\bkmkstart AAAAAAAAFQ}
+{\bkmkend AAAAAAAAFQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 15 of file ssh-pipes.php.\par
+\par
+References $password, and $remote.\par
+}
+{\xe \v set_remote_end\:SExec}
+{\xe \v SExec\:set_remote_end}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::set_remote_end ($ {\i remote}, $ {\i password} = "xxyzzy")}
+}\par
+{\bkmkstart AAAAAAAAFR}
+{\bkmkend AAAAAAAAFR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 15 of file ssh-files.php.\par
+\par
+References $password, and $remote.\par
+}
+{\xe \v ssh_close\:SExec}
+{\xe \v SExec\:ssh_close}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::ssh_close ($ {\i p})}
+}\par
+{\bkmkstart AAAAAAAAFS}
+{\bkmkend AAAAAAAAFS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Close an SSH interactive session. \par
+\par
+Definition at line 411 of file ssh-pipes.php.\par
+\par
+References $debug.\par
+}
+{\xe \v ssh_close\:SExec}
+{\xe \v SExec\:ssh_close}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::ssh_close ($ {\i p})}
+}\par
+{\bkmkstart AAAAAAAAFT}
+{\bkmkend AAAAAAAAFT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Close an SSH interactive session. \par
+\par
+Definition at line 410 of file ssh-files.php.\par
+\par
+References $debug.\par
+}
+{\xe \v ssh_close_bck\:SExec}
+{\xe \v SExec\:ssh_close_bck}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::ssh_close_bck ($ {\i p})}
+}\par
+{\bkmkstart AAAAAAAAFU}
+{\bkmkend AAAAAAAAFU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 423 of file ssh-files.php.\par
+\par
+References $debug.\par
+}
+{\xe \v ssh_copy\:SExec}
+{\xe \v SExec\:ssh_copy}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::ssh_copy ($ {\i origin}, $ {\i destination}, $ {\i password})}
+}\par
+{\bkmkstart AAAAAAAAFV}
+{\bkmkend AAAAAAAAFV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Copy a file or directory from one source to a destination. \par
+This function copies source to dest, where one of them is a local filespec and the other a remote filespec of the form [user@]host:path\par
+If the original source is a directory, it will be copied recursively to destination (hence easing file transfers).\par
+The function returns TRUE on success or FALSE on failure.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i origin} The origin path, of the form [user@][host][:port]path You may omit the optional sections if the default values (local username, local host, standard SSH port) are OK\par
+{\i destination} The destination path, of the form [user@][host][:port]path You may omit the optional sections if the default values (local username, local host, standard SSH port) are OK\par
+}
+password The password to use to connect to the remote end of the copy (be it the origin or the destination, it's all the same). If connection is automatic by some means (.shosts or RSA/DSA authentication) then it should be ignored and any password should do.\par
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid status TRUE if all went well, or FALSE on failure. \par
+}\par
+Definition at line 177 of file ssh-pipes.php.\par
+\par
+References $debug, and $status.\par
+}
+{\xe \v ssh_copy\:SExec}
+{\xe \v SExec\:ssh_copy}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::ssh_copy ($ {\i origin}, $ {\i destination}, $ {\i password})}
+}\par
+{\bkmkstart AAAAAAAAFW}
+{\bkmkend AAAAAAAAFW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Copy a file or directory from one source to a destination. \par
+This function copies source to dest, where one of them is a local filespec and the other a remote filespec of the form [user@]host:path\par
+If the original source is a directory, it will be copied recursively to destination (hence easing file transfers).\par
+The function returns TRUE on success or FALSE on failure.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i origin} The origin path, of the form [user@][host][:port]path You may omit the optional sections if the default values (local username, local host, standard SSH port) are OK\par
+{\i destination} The destination path, of the form [user@][host][:port]path You may omit the optional sections if the default values (local username, local host, standard SSH port) are OK\par
+}
+password The password to use to connect to the remote end of the copy (be it the origin or the destination, it's all the same). If connection is automatic by some means (.shosts or RSA/DSA authentication) then it should be ignored and any password should do.\par
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid status TRUE if all went well, or FALSE on failure. \par
+}\par
+Definition at line 177 of file ssh-files.php.\par
+\par
+References $debug, and $status.\par
+}
+{\xe \v ssh_exec\:SExec}
+{\xe \v SExec\:ssh_exec}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::ssh_exec ($ {\i remote}, $ {\i password}, $ {\i command}, &$ {\i out})}
+}\par
+{\bkmkstart AAAAAAAAFX}
+{\bkmkend AAAAAAAAFX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Execute a remote command using SSH. \par
+This function sort of mimics rexec(3) using SSH as the transport protocol.\par
+The function returns the exit status of the remote command, and appends the remote job output to an optional argument.\par
+This function is intended to be used as a one-time all-at-once non-interactive execution mechanism which will run the command remotely and return its output.\par
+If you try to issue an interactive command using this function, all you will get is unneccessary trouble. So don't!\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i remote} The remote end to run the command, in the form 'user:port' (you may omit the 'user@' or ':port' parts if the default values [i.e. same user or standard port] are OK). \par
+{\i password} The remote password. Note that if direct RSA/DSA/.shosts/.rhosts login is enabled then the password should be ignored as SSH should not run the ASKPASS command). \par
+{\i command} The command to execute on the remote end NOTE: if you want to use redirection, the entire remote command line should be enclosed in additional quotes! \par
+{\i output} Optional, the collated (stdout+stderr) output of the remote command. \par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid status will hold the termination status of SSH after invocation, which should be the exit status of the remote command or 255 if an error occurred \par
+}\par
+Definition at line 125 of file ssh-pipes.php.\par
+\par
+References $debug.\par
+}
+{\xe \v ssh_exec\:SExec}
+{\xe \v SExec\:ssh_exec}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::ssh_exec ($ {\i remote}, $ {\i password}, $ {\i command}, &$ {\i out})}
+}\par
+{\bkmkstart AAAAAAAAFY}
+{\bkmkend AAAAAAAAFY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Execute a remote command using SSH. \par
+This function sort of mimics rexec(3) using SSH as the transport protocol.\par
+The function returns the exit status of the remote command, and appends the remote job output to an optional argument.\par
+This function is intended to be used as a one-time all-at-once non-interactive execution mechanism which will run the command remotely and return its output.\par
+If you try to issue an interactive command using this function, all you will get is unneccessary trouble. So don't!\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i remote} The remote end to run the command, in the form 'user:port' (you may omit the 'user@' or ':port' parts if the default values [i.e. same user or standard port] are OK). \par
+{\i password} The remote password. Note that if direct RSA/DSA/.shosts/.rhosts login is enabled then the password should be ignored as SSH should not run the ASKPASS command). \par
+{\i command} The command to execute on the remote end NOTE: if you want to use redirection, the entire remote command line should be enclosed in additional quotes! \par
+{\i output} Optional, the collated (stdout+stderr) output of the remote command. \par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid status will hold the termination status of SSH after invocation, which should be the exit status of the remote command or 255 if an error occurred \par
+}\par
+Definition at line 125 of file ssh-files.php.\par
+\par
+References $debug.\par
+}
+{\xe \v ssh_open_command\:SExec}
+{\xe \v SExec\:ssh_open_command}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::ssh_open_command ($ {\i remote}, $ {\i password}, $ {\i command})}
+}\par
+{\bkmkstart AAAAAAAAFZ}
+{\bkmkend AAAAAAAAFZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Open an SSH connection to run an interactive command on a remote site. \par
+Connects to a remote host and runs an interactive command with NO controlling terminal.\par
+Returns a process_control array which contains the process resource ID and an the standard file descriptors which the caller may use to interact with the remote shell. \par
+Definition at line 323 of file ssh-pipes.php.\par
+\par
+References $debug, $p, $process, and letal().\par
+}
+{\xe \v ssh_open_command\:SExec}
+{\xe \v SExec\:ssh_open_command}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::ssh_open_command ($ {\i remote}, $ {\i password}, $ {\i command})}
+}\par
+{\bkmkstart AAAAAAAAGA}
+{\bkmkend AAAAAAAAGA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Open an SSH connection to run an interactive command on a remote site. \par
+Connects to a remote host and runs an interactive command with NO controlling terminal.\par
+Returns a process_control array which contains the process resource ID and an the standard file descriptors which the caller may use to interact with the remote shell. \par
+Definition at line 318 of file ssh-files.php.\par
+\par
+References $debug, $p, $process, and letal().\par
+}
+{\xe \v ssh_open_shell\:SExec}
+{\xe \v SExec\:ssh_open_shell}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::ssh_open_shell ($ {\i remote}, $ {\i password})}
+}\par
+{\bkmkstart AAAAAAAAGB}
+{\bkmkend AAAAAAAAGB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Open an SSH connection to a remote site with a shell to run interactive commands. \par
+Connects to a remote host and opens an interactive shell session with NO controlling terminal.\par
+Returns a process_control array which contains the process resource ID and an the standard file descriptors which the caller may use to interact with the remote shell.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i remote} The remote end to run the shell, in the form 'user:port' (you may omit the 'user@' or ':port' parts if the default values [i.e. same user or standard port] are OK). \par
+{\i password} The remote password. Note that if direct RSA/DSA/.shosts/.rhosts login is enabled then the password should be ignored as SSH should not run the ASKPASS command). \par
+}
+\par
+Definition at line 218 of file ssh-pipes.php.\par
+\par
+References $debug, $p, $process, and letal().\par
+}
+{\xe \v ssh_open_shell\:SExec}
+{\xe \v SExec\:ssh_open_shell}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::ssh_open_shell ($ {\i remote}, $ {\i password})}
+}\par
+{\bkmkstart AAAAAAAAGC}
+{\bkmkend AAAAAAAAGC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Open an SSH connection to a remote site with a shell to run interactive commands. \par
+Connects to a remote host and opens an interactive shell session with NO controlling terminal.\par
+Returns a process_control array which contains the process resource ID and an the standard file descriptors which the caller may use to interact with the remote shell.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i remote} The remote end to run the shell, in the form 'user:port' (you may omit the 'user@' or ':port' parts if the default values [i.e. same user or standard port] are OK). \par
+{\i password} The remote password. Note that if direct RSA/DSA/.shosts/.rhosts login is enabled then the password should be ignored as SSH should not run the ASKPASS command). \par
+}
+\par
+Definition at line 218 of file ssh-files.php.\par
+\par
+References $debug, $p, $process, and letal().\par
+}
+{\xe \v ssh_passthru\:SExec}
+{\xe \v SExec\:ssh_passthru}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::ssh_passthru ($ {\i remote}, $ {\i password}, $ {\i command}, &$ {\i status})}
+}\par
+{\bkmkstart AAAAAAAAGD}
+{\bkmkend AAAAAAAAGD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Execute a single command remotely using ssh and display its output, optionally returning its exit status (like passthru). \par
+This function is intended to be used as a one-time all-at-once non-interactive execution mechanism which will run the command remotely and display its output.\par
+If you try to issue an interactive command using this function, all you will get is unneccessary trouble. So don't!\par
+This might be done as well using a pipe on /tmp and making the command 'cat' the pipe: when ssh runs, it runs the command 'cat' on the pipe and hangs on read. Then we just need a thread to open the pipe, put the password and close the pipe. This other way the password is never wirtten down. But, OTOH, the file life is so ephemeral that most of the time it will only exist in the internal system cache, so this approach is not that bad either.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i remote} The remote end to run the command, in the form 'user:port' (you may omit the 'user@' or ':port' parts if the default values [i.e. same user or standard port] are OK). \par
+{\i password} The remote password. Note that if direct RSA/DSA/.shosts/.rhosts login is enabled then the password should be ignored as SSH should not run the ASKPASS command). \par
+{\i command} The command to execute on the remote end NOTE: if you want to use redirection, the entire remote command line should be enclosed in additional quotes! \par
+{\i status} Optional, this will hold the termination status of SSH after invocation, which should be the exit status of the remote command or 255 if an error occurred \par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid void \par
+}\par
+Definition at line 63 of file ssh-pipes.php.\par
+\par
+References $debug.\par
+}
+{\xe \v ssh_passthru\:SExec}
+{\xe \v SExec\:ssh_passthru}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::ssh_passthru ($ {\i remote}, $ {\i password}, $ {\i command}, &$ {\i status})}
+}\par
+{\bkmkstart AAAAAAAAGE}
+{\bkmkend AAAAAAAAGE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Execute a single command remotely using ssh and display its output, optionally returning its exit status (like passthru). \par
+This function is intended to be used as a one-time all-at-once non-interactive execution mechanism which will run the command remotely and display its output.\par
+If you try to issue an interactive command using this function, all you will get is unneccessary trouble. So don't!\par
+This might be done as well using a pipe on /tmp and making the command 'cat' the pipe: when ssh runs, it runs the command 'cat' on the pipe and hangs on read. Then we just need a thread to open the pipe, put the password and close the pipe. This other way the password is never wirtten down. But, OTOH, the file life is so ephemeral that most of the time it will only exist in the internal system cache, so this approach is not that bad either.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i remote} The remote end to run the command, in the form 'user:port' (you may omit the 'user@' or ':port' parts if the default values [i.e. same user or standard port] are OK). \par
+{\i password} The remote password. Note that if direct RSA/DSA/.shosts/.rhosts login is enabled then the password should be ignored as SSH should not run the ASKPASS command). \par
+{\i command} The command to execute on the remote end NOTE: if you want to use redirection, the entire remote command line should be enclosed in additional quotes! \par
+{\i status} Optional, this will hold the termination status of SSH after invocation, which should be the exit status of the remote command or 255 if an error occurred \par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid void \par
+}\par
+Definition at line 63 of file ssh-files.php.\par
+\par
+References $debug.\par
+}
+{\xe \v ssh_pclose\:SExec}
+{\xe \v SExec\:ssh_pclose}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::ssh_pclose ($ {\i f})}
+}\par
+{\bkmkstart AAAAAAAAGF}
+{\bkmkend AAAAAAAAGF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 453 of file ssh-pipes.php.\par
+\par
+}
+{\xe \v ssh_pclose\:SExec}
+{\xe \v SExec\:ssh_pclose}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::ssh_pclose ($ {\i f})}
+}\par
+{\bkmkstart AAAAAAAAGG}
+{\bkmkend AAAAAAAAGG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 471 of file ssh-files.php.\par
+\par
+}
+{\xe \v ssh_popen\:SExec}
+{\xe \v SExec\:ssh_popen}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::ssh_popen ($ {\i remote}, $ {\i password}, $ {\i command}, $ {\i mode})}
+}\par
+{\bkmkstart AAAAAAAAGH}
+{\bkmkend AAAAAAAAGH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Execute a remore command and keep an unidirectional stream contact with it. \par
+This routine mimics 'popen()' but uses ssh to connect to a remote host and run the requested command. \par
+Definition at line 431 of file ssh-pipes.php.\par
+\par
+References $debug.\par
+}
+{\xe \v ssh_popen\:SExec}
+{\xe \v SExec\:ssh_popen}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::ssh_popen ($ {\i remote}, $ {\i password}, $ {\i command}, $ {\i mode})}
+}\par
+{\bkmkstart AAAAAAAAGI}
+{\bkmkend AAAAAAAAGI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Execute a remore command and keep an unidirectional stream contact with it. \par
+This routine mimics 'popen()' but uses ssh to connect to a remote host and run the requested command. \par
+Definition at line 449 of file ssh-files.php.\par
+\par
+References $debug.\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Data Documentation\par
+\pard\plain 
+{\xe \v $password\:SExec}
+{\xe \v SExec\:$password}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::$password}
+}\par
+{\bkmkstart AAAAAAAAGJ}
+{\bkmkend AAAAAAAAGJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 7 of file ssh-pipes.php.\par
+\par
+Referenced by set_remote_end().\par
+}
+{\xe \v $remote\:SExec}
+{\xe \v SExec\:$remote}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::$remote}
+}\par
+{\bkmkstart AAAAAAAAGK}
+{\bkmkend AAAAAAAAGK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 6 of file ssh-pipes.php.\par
+\par
+Referenced by set_remote_end(), and SExec().\par
+}
+{\xe \v $version\:SExec}
+{\xe \v SExec\:$version}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SExec::$version = "1.0"}
+}\par
+{\bkmkstart AAAAAAAAGL}
+{\bkmkend AAAAAAAAGL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 5 of file ssh-pipes.php.\par
+\par
+}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following files:{\par
+\pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
+{\b ssh-files.php}\par
+\pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
+{\b ssh-pipes.php}\par
+}}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+TinkerApp Class Reference\par \pard\plain 
+{\tc\tcl2 \v TinkerApp}
+{\xe \v TinkerApp}
+{\bkmkstart AAAAAAAADZ}
+{\bkmkend AAAAAAAADZ}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid \par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b get_user_data} ($workdir)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b print_user_data} ()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b run} ()\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Attributes\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $app_name} = "egTinker"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $fn} = "tinker-$appname"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $inuri} = "$httptmp/$dir/$fn.inp"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $infile} = "$serverpath/$inuri"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $brkuri} = "$httptmp/$dir/$fn.brk"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $brkfile} = "$serverpath/$brkuri"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $xyzuri} = "$httptmp/$dir/$fn.xyz"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $xyzfile} = "$serverpath/$xyzuri"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $loguri} = "$httptmp/$dir/$fn.log"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $logfile} = "$serverpath/$loguri"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $resuri} = "$httptmp/$dir/$fn.xyz_2"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $resfile} = "$serverpath/$resuri"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $pdburi} = "$httptmp/$dir/$fn.pdb"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $pdbfile} = "$serverpath/$pdburi"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $sequri} = "$httptmp/$dir/$fn.seq"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $seqfile} = "$serverpath/$sequri"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $input_file}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $input_data}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $iformatopts}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $force_field}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $ffpar}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $email}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $wapmail}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $job}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $key}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v get_user_data\:TinkerApp}
+{\xe \v TinkerApp\:get_user_data}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::get_user_data ($ {\i workdir})}
+}\par
+{\bkmkstart AAAAAAAAGM}
+{\bkmkend AAAAAAAAGM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 52 of file tinkerApp.php.\par
+\par
+References exit.\par
+}
+{\xe \v print_user_data\:TinkerApp}
+{\xe \v TinkerApp\:print_user_data}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::print_user_data ()}
+}\par
+{\bkmkstart AAAAAAAAGN}
+{\bkmkend AAAAAAAAGN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 92 of file tinkerApp.php.\par
+\par
+}
+{\xe \v run\:TinkerApp}
+{\xe \v TinkerApp\:run}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::run ()}
+}\par
+{\bkmkstart AAAAAAAAGO}
+{\bkmkend AAAAAAAAGO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 98 of file tinkerApp.php.\par
+\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Data Documentation\par
+\pard\plain 
+{\xe \v $app_name\:TinkerApp}
+{\xe \v TinkerApp\:$app_name}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$app_name = "egTinker"}
+}\par
+{\bkmkstart AAAAAAAAGP}
+{\bkmkend AAAAAAAAGP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 6 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $brkfile\:TinkerApp}
+{\xe \v TinkerApp\:$brkfile}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$brkfile = "$serverpath/$brkuri"}
+}\par
+{\bkmkstart AAAAAAAAGQ}
+{\bkmkend AAAAAAAAGQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 18 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $brkuri\:TinkerApp}
+{\xe \v TinkerApp\:$brkuri}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$brkuri = "$httptmp/$dir/$fn.brk"}
+}\par
+{\bkmkstart AAAAAAAAGR}
+{\bkmkend AAAAAAAAGR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 17 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $email\:TinkerApp}
+{\xe \v TinkerApp\:$email}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$email}
+}\par
+{\bkmkstart AAAAAAAAGS}
+{\bkmkend AAAAAAAAGS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 47 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $ffpar\:TinkerApp}
+{\xe \v TinkerApp\:$ffpar}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$ffpar}
+}\par
+{\bkmkstart AAAAAAAAGT}
+{\bkmkend AAAAAAAAGT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 46 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $fn\:TinkerApp}
+{\xe \v TinkerApp\:$fn}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$fn = "tinker-$appname"}
+}\par
+{\bkmkstart AAAAAAAAGU}
+{\bkmkend AAAAAAAAGU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 10 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $force_field\:TinkerApp}
+{\xe \v TinkerApp\:$force_field}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$force_field}
+}\par
+{\bkmkstart AAAAAAAAGV}
+{\bkmkend AAAAAAAAGV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 45 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $iformatopts\:TinkerApp}
+{\xe \v TinkerApp\:$iformatopts}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$iformatopts}
+}\par
+{\bkmkstart AAAAAAAAGW}
+{\bkmkend AAAAAAAAGW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 43 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $infile\:TinkerApp}
+{\xe \v TinkerApp\:$infile}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$infile = "$serverpath/$inuri"}
+}\par
+{\bkmkstart AAAAAAAAGX}
+{\bkmkend AAAAAAAAGX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 14 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $input_data\:TinkerApp}
+{\xe \v TinkerApp\:$input_data}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$input_data}
+}\par
+{\bkmkstart AAAAAAAAGY}
+{\bkmkend AAAAAAAAGY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 42 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $input_file\:TinkerApp}
+{\xe \v TinkerApp\:$input_file}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$input_file}
+}\par
+{\bkmkstart AAAAAAAAGZ}
+{\bkmkend AAAAAAAAGZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 41 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $inuri\:TinkerApp}
+{\xe \v TinkerApp\:$inuri}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$inuri = "$httptmp/$dir/$fn.inp"}
+}\par
+{\bkmkstart AAAAAAAAHA}
+{\bkmkend AAAAAAAAHA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 13 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $job\:TinkerApp}
+{\xe \v TinkerApp\:$job}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$job}
+}\par
+{\bkmkstart AAAAAAAAHB}
+{\bkmkend AAAAAAAAHB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 49 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $key\:TinkerApp}
+{\xe \v TinkerApp\:$key}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$key}
+}\par
+{\bkmkstart AAAAAAAAHC}
+{\bkmkend AAAAAAAAHC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 50 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $logfile\:TinkerApp}
+{\xe \v TinkerApp\:$logfile}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$logfile = "$serverpath/$loguri"}
+}\par
+{\bkmkstart AAAAAAAAHD}
+{\bkmkend AAAAAAAAHD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 26 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $loguri\:TinkerApp}
+{\xe \v TinkerApp\:$loguri}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$loguri = "$httptmp/$dir/$fn.log"}
+}\par
+{\bkmkstart AAAAAAAAHE}
+{\bkmkend AAAAAAAAHE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 25 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $pdbfile\:TinkerApp}
+{\xe \v TinkerApp\:$pdbfile}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$pdbfile = "$serverpath/$pdburi"}
+}\par
+{\bkmkstart AAAAAAAAHF}
+{\bkmkend AAAAAAAAHF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 34 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $pdburi\:TinkerApp}
+{\xe \v TinkerApp\:$pdburi}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$pdburi = "$httptmp/$dir/$fn.pdb"}
+}\par
+{\bkmkstart AAAAAAAAHG}
+{\bkmkend AAAAAAAAHG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 33 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $resfile\:TinkerApp}
+{\xe \v TinkerApp\:$resfile}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$resfile = "$serverpath/$resuri"}
+}\par
+{\bkmkstart AAAAAAAAHH}
+{\bkmkend AAAAAAAAHH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 30 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $resuri\:TinkerApp}
+{\xe \v TinkerApp\:$resuri}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$resuri = "$httptmp/$dir/$fn.xyz_2"}
+}\par
+{\bkmkstart AAAAAAAAHI}
+{\bkmkend AAAAAAAAHI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 29 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $seqfile\:TinkerApp}
+{\xe \v TinkerApp\:$seqfile}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$seqfile = "$serverpath/$sequri"}
+}\par
+{\bkmkstart AAAAAAAAHJ}
+{\bkmkend AAAAAAAAHJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 38 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $sequri\:TinkerApp}
+{\xe \v TinkerApp\:$sequri}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$sequri = "$httptmp/$dir/$fn.seq"}
+}\par
+{\bkmkstart AAAAAAAAHK}
+{\bkmkend AAAAAAAAHK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 37 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $wapmail\:TinkerApp}
+{\xe \v TinkerApp\:$wapmail}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$wapmail}
+}\par
+{\bkmkstart AAAAAAAAHL}
+{\bkmkend AAAAAAAAHL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 48 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $xyzfile\:TinkerApp}
+{\xe \v TinkerApp\:$xyzfile}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$xyzfile = "$serverpath/$xyzuri"}
+}\par
+{\bkmkstart AAAAAAAAHM}
+{\bkmkend AAAAAAAAHM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 22 of file tinkerApp.php.\par
+\par
+}
+{\xe \v $xyzuri\:TinkerApp}
+{\xe \v TinkerApp\:$xyzuri}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+TinkerApp::$xyzuri = "$httptmp/$dir/$fn.xyz"}
+}\par
+{\bkmkstart AAAAAAAAHN}
+{\bkmkend AAAAAAAAHN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 21 of file tinkerApp.php.\par
+\par
+}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following file:{\par
+\pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
+{\b tinkerApp.php}\par
+}}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+egTinker File Documentation{\tc \v File Documentation}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+analyze.php File Reference\par \pard\plain 
+{\tc\tcl2 \v analyze.php}
+{\xe \v analyze.php}
+{\bkmkstart AAAAAAAAAA}
+{\bkmkend AAAAAAAAAA}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+auth.php File Reference\par \pard\plain 
+{\tc\tcl2 \v auth.php}
+{\xe \v auth.php}
+{\bkmkstart AAAAAAAAAB}
+{\bkmkend AAAAAAAAAB}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b required_fields} ()\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $username} = $_POST["username"]\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $password} = $_POST["password"]\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $passphrase} = $_POST["passphrase"]\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $process} = proc_open("bash", $descriptorspec, $pipes)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $return_value} = proc_close($process)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v required_fields\:auth.php}
+{\xe \v auth.php\:required_fields}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+required_fields ()}
+}\par
+{\bkmkstart AAAAAAAAAR}
+{\bkmkend AAAAAAAAAR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 83 of file auth.php.\par
+\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variable Documentation\par
+\pard\plain 
+{\xe \v $passphrase\:auth.php}
+{\xe \v auth.php\:$passphrase}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$passphrase = $_POST["passphrase"]}
+}\par
+{\bkmkstart AAAAAAAAAS}
+{\bkmkend AAAAAAAAAS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 23 of file auth.php.\par
+\par
+Referenced by test_grid_init(), test_grid_pconnect(), test_grid_pinit(), test_job_get_id(), test_job_output(), test_job_status(), test_job_submit(), test_pjob_get_id(), test_pjob_output(), test_pjob_status(), and test_pjob_submit().\par
+}
+{\xe \v $password\:auth.php}
+{\xe \v auth.php\:$password}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$password = $_POST["password"]}
+}\par
+{\bkmkstart AAAAAAAAAT}
+{\bkmkend AAAAAAAAAT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 22 of file auth.php.\par
+\par
+}
+{\xe \v $process\:auth.php}
+{\xe \v auth.php\:$process}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$process = proc_open("bash", $descriptorspec, $pipes)}
+}\par
+{\bkmkstart AAAAAAAAAU}
+{\bkmkend AAAAAAAAAU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 51 of file auth.php.\par
+\par
+Referenced by ssh_open(), SExec::ssh_open_command(), and SExec::ssh_open_shell().\par
+}
+{\xe \v $return_value\:auth.php}
+{\xe \v auth.php\:$return_value}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$return_value = proc_close($process)}
+}\par
+{\bkmkstart AAAAAAAAAV}
+{\bkmkend AAAAAAAAAV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 79 of file auth.php.\par
+\par
+}
+{\xe \v $username\:auth.php}
+{\xe \v auth.php\:$username}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$username = $_POST["username"]}
+}\par
+{\bkmkstart AAAAAAAAAW}
+{\bkmkend AAAAAAAAAW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 21 of file auth.php.\par
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+config.php File Reference\par \pard\plain 
+{\tc\tcl2 \v config.php}
+{\xe \v config.php}
+{\bkmkstart AAAAAAAAAC}
+{\bkmkend AAAAAAAAAC}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Namespaces\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+namespace {\b TINKER}\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $php_version} = 4\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $maintainer} = "netadmin@es.embnet.org"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i email address of the service maintainer }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $document_root} = "/data/www/EMBnet"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Path to server Document Root. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $app_dir} = "/Services/MolBio/egTINKER/"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Path to where this program has been installed. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $httptmp} = "/tmp/egTINKER"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Path to a temporary directory. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $wd_path} = "$document_root/$httptmp"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Path to the working directories in the local machine starting from /. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_wd_path} = "services/egTINKER"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Remote work directory in the {\b Grid} UI server. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_error_log} = "./error.txt"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i where the error log of the grid connection should be stored locally }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $babel} = "/opt/structure/bin/babel"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Path to BABEL in the local machine. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $babel_dir} = "/opt/structure/babel"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i BABEL_DIR directory holding babel files. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $tinker_dir} = "/opt/structure/tinker"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Directory where tinker is installed. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $tinker_bin} = "$tinker_dir/bin"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Application binaries are stored here. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $tinker_params} = "$tinker_dir/params"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Tinker params files are stored here. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $mailprog} = "/usr/lib/sendmail"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Program used to send e-mail. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $wapprog} = "/usr/sbin/Mail"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Program used to send wap messages. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_user} = "jr"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i user name to use to connect to the {\b Grid} UI host  string $server_user }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_host} = "villon.cnb.uam.es"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i name of the {\b Grid} UI host  string $server_host }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_server} = "$grid_user@$grid_host"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Who acts as the grid server for us  string $server. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_password} = "BETTER USE GRID::SET_PASSWORD"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Default password to login on the UI machine. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_passphrase} = "USE GRID::SET_PASSPHRASE"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Default passphrase to unlock certificate of remote user at the UI. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $pkg_name} = "egTINKER"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Title to use for displaying in all the page headers. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $debug} = FALSE\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variable Documentation\par
+\pard\plain 
+{\xe \v $app_dir\:config.php}
+{\xe \v config.php\:$app_dir}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$app_dir = "/Services/MolBio/egTINKER/"}
+}\par
+{\bkmkstart AAAAAAAAAX}
+{\bkmkend AAAAAAAAAX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Path to where this program has been installed. \par
+We will use this path to avoid duplicating common files. In order to do so, we need to know the path relative to Document Root, since that is how it will be accessed over the Web. Should we need a full path we can always rebuild it by concatenating this with $documentroot\par
+string $app_dir \par
+Definition at line 42 of file config.php.\par
+\par
+Referenced by set_footer(), and set_header().\par
+}
+{\xe \v $babel\:config.php}
+{\xe \v config.php\:$babel}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$babel = "/opt/structure/bin/babel"}
+}\par
+{\bkmkstart AAAAAAAAAY}
+{\bkmkend AAAAAAAAAY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Path to BABEL in the local machine. \par
+We'll use BABEL to convert input files in any acceptable format to PDB format\par
+string $babel \par
+Definition at line 114 of file config.php.\par
+\par
+}
+{\xe \v $babel_dir\:config.php}
+{\xe \v config.php\:$babel_dir}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$babel_dir = "/opt/structure/babel"}
+}\par
+{\bkmkstart AAAAAAAAAZ}
+{\bkmkend AAAAAAAAAZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+BABEL_DIR directory holding babel files. \par
+BABEL requires some additional files to run. These must be placed in a directory pointed to by environment variable BABEL_DIR\par
+string babel_dir \par
+Definition at line 124 of file config.php.\par
+\par
+}
+{\xe \v $debug\:config.php}
+{\xe \v config.php\:$debug}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$debug = FALSE}
+}\par
+{\bkmkstart AAAAAAAABA}
+{\bkmkend AAAAAAAABA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 204 of file config.php.\par
+\par
+Referenced by Grid::destroy(), Grid::get_init_status(), Grid::new_session(), Grid::pdisconnect(), Grid::pinitialize(), Grid::pjob_status(), SExec::ssh_close(), SExec::ssh_close_bck(), SExec::ssh_copy(), SExec::ssh_exec(), ssh_open(), SExec::ssh_open_command(), SExec::ssh_open_shell(), SExec::ssh_passthru(), and SExec::ssh_popen().\par
+}
+{\xe \v $document_root\:config.php}
+{\xe \v config.php\:$document_root}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$document_root = "/data/www/EMBnet"}
+}\par
+{\bkmkstart AAAAAAAABB}
+{\bkmkend AAAAAAAABB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Path to server Document Root. \par
+string $serverpath \par
+Definition at line 30 of file config.php.\par
+\par
+}
+{\xe \v $grid_error_log\:config.php}
+{\xe \v config.php\:$grid_error_log}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_error_log = "./error.txt"}
+}\par
+{\bkmkstart AAAAAAAABC}
+{\bkmkend AAAAAAAABC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+where the error log of the grid connection should be stored locally \par
+string $grid_error_log \par
+Definition at line 104 of file config.php.\par
+\par
+}
+{\xe \v $grid_host\:config.php}
+{\xe \v config.php\:$grid_host}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_host = "villon.cnb.uam.es"}
+}\par
+{\bkmkstart AAAAAAAABD}
+{\bkmkend AAAAAAAABD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+name of the {\b Grid} UI host  string $server_host \par
+\par
+Definition at line 175 of file config.php.\par
+\par
+}
+{\xe \v $grid_passphrase\:config.php}
+{\xe \v config.php\:$grid_passphrase}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_passphrase = "USE GRID::SET_PASSPHRASE"}
+}\par
+{\bkmkstart AAAAAAAABE}
+{\bkmkend AAAAAAAABE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Default passphrase to unlock certificate of remote user at the UI. \par
+\par
+Definition at line 193 of file config.php.\par
+\par
+}
+{\xe \v $grid_password\:config.php}
+{\xe \v config.php\:$grid_password}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_password = "BETTER USE GRID::SET_PASSWORD"}
+}\par
+{\bkmkstart AAAAAAAABF}
+{\bkmkend AAAAAAAABF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Default password to login on the UI machine. \par
+string $grid_password \par
+Definition at line 188 of file config.php.\par
+\par
+}
+{\xe \v $grid_server\:config.php}
+{\xe \v config.php\:$grid_server}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_server = "$grid_user@$grid_host"}
+}\par
+{\bkmkstart AAAAAAAABG}
+{\bkmkend AAAAAAAABG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Who acts as the grid server for us  string $server. \par
+\par
+Definition at line 181 of file config.php.\par
+\par
+}
+{\xe \v $grid_user\:config.php}
+{\xe \v config.php\:$grid_user}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_user = "jr"}
+}\par
+{\bkmkstart AAAAAAAABH}
+{\bkmkend AAAAAAAABH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+user name to use to connect to the {\b Grid} UI host  string $server_user \par
+\par
+Definition at line 169 of file config.php.\par
+\par
+}
+{\xe \v $grid_wd_path\:config.php}
+{\xe \v config.php\:$grid_wd_path}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_wd_path = "services/egTINKER"}
+}\par
+{\bkmkstart AAAAAAAABI}
+{\bkmkend AAAAAAAABI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Remote work directory in the {\b Grid} UI server. \par
+We will use this to separate different services into alternate hierarchies in the grid server, as well as to avoid cluttering the remote user's dir with too many directories.\par
+This should be a path relative to the user home OR an actual correct full path. For the sake of versatility it is better to use a relative path.\par
+string $grid_wd_path \par
+Definition at line 97 of file config.php.\par
+\par
+}
+{\xe \v $httptmp\:config.php}
+{\xe \v config.php\:$httptmp}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$httptmp = "/tmp/egTINKER"}
+}\par
+{\bkmkstart AAAAAAAABJ}
+{\bkmkend AAAAAAAABJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Path to a temporary directory. \par
+This directory needs to be inside the server path, so we just specify here its relative path to DocumentRoot. We can always reconstruct the full absolute path by concatenating with $serverpath\par
+global string $httptmp \par
+Definition at line 54 of file config.php.\par
+\par
+}
+{\xe \v $mailprog\:config.php}
+{\xe \v config.php\:$mailprog}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$mailprog = "/usr/lib/sendmail"}
+}\par
+{\bkmkstart AAAAAAAABK}
+{\bkmkend AAAAAAAABK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Program used to send e-mail. \par
+global string $mailprog \par
+Definition at line 152 of file config.php.\par
+\par
+}
+{\xe \v $maintainer\:config.php}
+{\xe \v config.php\:$maintainer}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$maintainer = "netadmin@es.embnet.org"}
+}\par
+{\bkmkstart AAAAAAAABL}
+{\bkmkend AAAAAAAABL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+email address of the service maintainer \par
+Used to point users to some help desk reference if anything goes wrong i.e. YOU\par
+string $maintainer \par
+Definition at line 21 of file config.php.\par
+\par
+Referenced by set_footer().\par
+}
+{\xe \v $php_version\:config.php}
+{\xe \v config.php\:$php_version}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$php_version = 4}
+}\par
+{\bkmkstart AAAAAAAABM}
+{\bkmkend AAAAAAAABM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 11 of file config.php.\par
+\par
+Referenced by ssh_open().\par
+}
+{\xe \v $pkg_name\:config.php}
+{\xe \v config.php\:$pkg_name}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$pkg_name = "egTINKER"}
+}\par
+{\bkmkstart AAAAAAAABN}
+{\bkmkend AAAAAAAABN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Title to use for displaying in all the page headers. \par
+string $pkg_name \par
+Definition at line 202 of file config.php.\par
+\par
+}
+{\xe \v $tinker_bin\:config.php}
+{\xe \v config.php\:$tinker_bin}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$tinker_bin = "$tinker_dir/bin"}
+}\par
+{\bkmkstart AAAAAAAABO}
+{\bkmkend AAAAAAAABO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Application binaries are stored here. \par
+global string $tinker_bin \par
+Definition at line 138 of file config.php.\par
+\par
+}
+{\xe \v $tinker_dir\:config.php}
+{\xe \v config.php\:$tinker_dir}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$tinker_dir = "/opt/structure/tinker"}
+}\par
+{\bkmkstart AAAAAAAABP}
+{\bkmkend AAAAAAAABP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Directory where tinker is installed. \par
+global string $tinker_dir \par
+Definition at line 131 of file config.php.\par
+\par
+}
+{\xe \v $tinker_params\:config.php}
+{\xe \v config.php\:$tinker_params}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$tinker_params = "$tinker_dir/params"}
+}\par
+{\bkmkstart AAAAAAAABQ}
+{\bkmkend AAAAAAAABQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Tinker params files are stored here. \par
+global string $tinker_params \par
+Definition at line 145 of file config.php.\par
+\par
+}
+{\xe \v $wapprog\:config.php}
+{\xe \v config.php\:$wapprog}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$wapprog = "/usr/sbin/Mail"}
+}\par
+{\bkmkstart AAAAAAAABR}
+{\bkmkend AAAAAAAABR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Program used to send wap messages. \par
+global string $wapprog \par
+Definition at line 159 of file config.php.\par
+\par
+}
+{\xe \v $wd_path\:config.php}
+{\xe \v config.php\:$wd_path}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$wd_path = "$document_root/$httptmp"}
+}\par
+{\bkmkstart AAAAAAAABS}
+{\bkmkend AAAAAAAABS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Path to the working directories in the local machine starting from /. \par
+This must be a directory within the Web server accessible area. Typically a directory below the 'htdocs' or $DocumentRoot\par
+We'll use this path to store user data files below into separate directories with random names (to make it more difficult to guess)\par
+This directory must be non-browseable (e.g. with a suitable index.html).\par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid At EMBnet/CNB we host many servers, each has its own DocumentRoot hanging from /data/www/.\par
+}string $wd_path \par
+Definition at line 72 of file config.php.\par
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+functions.php File Reference\par \pard\plain 
+{\tc\tcl2 \v functions.php}
+{\xe \v functions.php}
+{\bkmkstart AAAAAAAAAD}
+{\bkmkend AAAAAAAAAD}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Namespaces\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+namespace {\b egTINKER}\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b install_gramm} ($wd_path, $random_value)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Install the program and scripts needed to run it on a suitable place. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b go_to_work} ($user_wd_path, $options)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Create working directory and move to it. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b job_identifier} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Get job identifier. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b check_status} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Check job status. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b get_user_data} ($user_wd_path, $options)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Upload user data. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b create_gr_files} ($user_wd_path, $resolution)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Create configuration files needed to run GRAMM. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b create_jdl_file} ($user_wd_path)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Create JDL description of the job to be submitted to the {\b Grid}. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b unpack_results} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Extract results gathered from the {\b Grid}. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b show_results} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Show the results to the user. }\par
+\par}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v check_status\:functions.php}
+{\xe \v functions.php\:check_status}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+check_status ()}
+}\par
+{\bkmkstart AAAAAAAABT}
+{\bkmkend AAAAAAAABT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Check job status. \par
+\par
+Definition at line 127 of file functions.php.\par
+\par
+}
+{\xe \v create_gr_files\:functions.php}
+{\xe \v functions.php\:create_gr_files}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+create_gr_files ($ {\i user_wd_path}, $ {\i resolution})}
+}\par
+{\bkmkstart AAAAAAAABU}
+{\bkmkend AAAAAAAABU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Create configuration files needed to run GRAMM. \par
+\par
+Definition at line 201 of file functions.php.\par
+\par
+}
+{\xe \v create_jdl_file\:functions.php}
+{\xe \v functions.php\:create_jdl_file}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+create_jdl_file ($ {\i user_wd_path})}
+}\par
+{\bkmkstart AAAAAAAABV}
+{\bkmkend AAAAAAAABV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Create JDL description of the job to be submitted to the {\b Grid}. \par
+\par
+Definition at line 266 of file functions.php.\par
+\par
+}
+{\xe \v get_user_data\:functions.php}
+{\xe \v functions.php\:get_user_data}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+get_user_data ($ {\i user_wd_path}, $ {\i options})}
+}\par
+{\bkmkstart AAAAAAAABW}
+{\bkmkend AAAAAAAABW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Upload user data. \par
+\par
+Definition at line 145 of file functions.php.\par
+\par
+References exit.\par
+}
+{\xe \v go_to_work\:functions.php}
+{\xe \v functions.php\:go_to_work}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+go_to_work ($ {\i user_wd_path}, $ {\i options})}
+}\par
+{\bkmkstart AAAAAAAABX}
+{\bkmkend AAAAAAAABX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Create working directory and move to it. \par
+The goal is to go to the working directory. If it does not exist, we create it (it shouldn't) and move inside.\par
+Ideally we would also create an .htaccess file and a .htpasswd with a random password to return to the user. Should that be done here?\par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid The working directory should not exist!\par
+}{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i $user_wd_path} the _absolute_ path to the local directory where we will be storing user data. \par
+}
+\par
+Definition at line 94 of file functions.php.\par
+\par
+References exit.\par
+}
+{\xe \v install_gramm\:functions.php}
+{\xe \v functions.php\:install_gramm}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+install_gramm ($ {\i wd_path}, $ {\i random_value})}
+}\par
+{\bkmkstart AAAAAAAABY}
+{\bkmkend AAAAAAAABY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Install the program and scripts needed to run it on a suitable place. \par
+This function installs the docking program GRAMM and the scripts needed to run it on a suitable local directory.\par
+Since we may potentially be called many times in a short period we need a way to make sure their jobs don't clash with one another, most specially, that they don't overwrite each others' workspace.\par
+For this reason, we use a separate working directory for each request. This function will install GRAMM on the specified working directory.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i wd_path} local directory devoted to {\b Grid} work \par
+{\i random_value} a random value to generate a unique name for the working directory. \par
+}
+\par
+Definition at line 41 of file functions.php.\par
+\par
+References exit.\par
+}
+{\xe \v job_identifier\:functions.php}
+{\xe \v functions.php\:job_identifier}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+job_identifier ()}
+}\par
+{\bkmkstart AAAAAAAABZ}
+{\bkmkend AAAAAAAABZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Get job identifier. \par
+\par
+Definition at line 112 of file functions.php.\par
+\par
+}
+{\xe \v show_results\:functions.php}
+{\xe \v functions.php\:show_results}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+show_results ()}
+}\par
+{\bkmkstart AAAAAAAACA}
+{\bkmkend AAAAAAAACA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Show the results to the user. \par
+\par
+Definition at line 312 of file functions.php.\par
+\par
+References $dir.\par
+}
+{\xe \v unpack_results\:functions.php}
+{\xe \v functions.php\:unpack_results}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+unpack_results ()}
+}\par
+{\bkmkstart AAAAAAAACB}
+{\bkmkend AAAAAAAACB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Extract results gathered from the {\b Grid}. \par
+\par
+Definition at line 289 of file functions.php.\par
+\par
+References $dir.\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+grid.php File Reference\par \pard\plain 
+{\tc\tcl2 \v grid.php}
+{\xe \v grid.php}
+{\bkmkstart AAAAAAAAAE}
+{\bkmkend AAAAAAAAAE}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Classes\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b Grid}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Grid access class. }\par
+\par}
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+grid_test.php File Reference\par \pard\plain 
+{\tc\tcl2 \v grid_test.php}
+{\xe \v grid_test.php}
+{\bkmkstart AAAAAAAAAF}
+{\bkmkend AAAAAAAAAF}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_grid_pconnect} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i test grid::pconnect()/pdisconnect() }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_grid_pinit} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i test {\b Grid::pinitialize()} }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_grid_init} ()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_pjob_submit} ()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_job_submit} ()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_pjob_get_id} ()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_job_get_id} ()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_pjob_status} ()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_job_status} ()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_pjob_output} ()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_job_output} ()\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $debug} = TRUE\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $user} = "david"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $host} = "villon"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $passwd} = "miseria2004"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $passphrase} = "kndlaria"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $debug_persistent} = FALSE\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v test_grid_init\:grid_test.php}
+{\xe \v grid_test.php\:test_grid_init}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test_grid_init ()}
+}\par
+{\bkmkstart AAAAAAAACC}
+{\bkmkend AAAAAAAACC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 83 of file grid_test.php.\par
+\par
+References $host, $passphrase, $passwd, and $user.\par
+}
+{\xe \v test_grid_pconnect\:grid_test.php}
+{\xe \v grid_test.php\:test_grid_pconnect}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test_grid_pconnect ()}
+}\par
+{\bkmkstart AAAAAAAACD}
+{\bkmkend AAAAAAAACD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+test grid::pconnect()/pdisconnect() \par
+Grid::connect() opens a connection to a {\b Grid} UI server (a server that allows one to submit and monitor jobs in the grid). It is much like 'rsh' allowing one to send commands to the UI node.\par
++ This routine tests Grid::connect() by opening a connection to a user interface node, executing a simple command (ls -l) on it (on the UI node itself) and disconnecting. \par
+Definition at line 29 of file grid_test.php.\par
+\par
+References $host, $passphrase, $passwd, and $user.\par
+}
+{\xe \v test_grid_pinit\:grid_test.php}
+{\xe \v grid_test.php\:test_grid_pinit}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test_grid_pinit ()}
+}\par
+{\bkmkstart AAAAAAAACE}
+{\bkmkend AAAAAAAACE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+test {\b Grid::pinitialize()} \par
+{\b Grid::pinitialize()} allows us to identify ourselves to the {\b Grid}. Identification must be made from a UI node, hence we need to connect first to a UI node.\par
+In later versions, initialize() detects if we are already connected and if not, opens the connection implicitly for us. Both scenarios should be checked. \par
+Definition at line 64 of file grid_test.php.\par
+\par
+References $host, $passphrase, $passwd, and $user.\par
+}
+{\xe \v test_job_get_id\:grid_test.php}
+{\xe \v grid_test.php\:test_job_get_id}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test_job_get_id ()}
+}\par
+{\bkmkstart AAAAAAAACF}
+{\bkmkend AAAAAAAACF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 161 of file grid_test.php.\par
+\par
+References $host, $passphrase, $passwd, and $user.\par
+}
+{\xe \v test_job_output\:grid_test.php}
+{\xe \v grid_test.php\:test_job_output}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test_job_output ()}
+}\par
+{\bkmkstart AAAAAAAACG}
+{\bkmkend AAAAAAAACG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 252 of file grid_test.php.\par
+\par
+References $host, $passphrase, $passwd, and $user.\par
+}
+{\xe \v test_job_status\:grid_test.php}
+{\xe \v grid_test.php\:test_job_status}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test_job_status ()}
+}\par
+{\bkmkstart AAAAAAAACH}
+{\bkmkend AAAAAAAACH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 204 of file grid_test.php.\par
+\par
+References $host, $passphrase, $passwd, and $user.\par
+}
+{\xe \v test_job_submit\:grid_test.php}
+{\xe \v grid_test.php\:test_job_submit}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test_job_submit ()}
+}\par
+{\bkmkstart AAAAAAAACI}
+{\bkmkend AAAAAAAACI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 118 of file grid_test.php.\par
+\par
+References $host, $passphrase, $passwd, and $user.\par
+}
+{\xe \v test_pjob_get_id\:grid_test.php}
+{\xe \v grid_test.php\:test_pjob_get_id}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test_pjob_get_id ()}
+}\par
+{\bkmkstart AAAAAAAACJ}
+{\bkmkend AAAAAAAACJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 143 of file grid_test.php.\par
+\par
+References $host, $passphrase, $passwd, and $user.\par
+}
+{\xe \v test_pjob_output\:grid_test.php}
+{\xe \v grid_test.php\:test_pjob_output}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test_pjob_output ()}
+}\par
+{\bkmkstart AAAAAAAACK}
+{\bkmkend AAAAAAAACK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 232 of file grid_test.php.\par
+\par
+References $host, $passphrase, $passwd, and $user.\par
+}
+{\xe \v test_pjob_status\:grid_test.php}
+{\xe \v grid_test.php\:test_pjob_status}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test_pjob_status ()}
+}\par
+{\bkmkstart AAAAAAAACL}
+{\bkmkend AAAAAAAACL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 186 of file grid_test.php.\par
+\par
+References $host, $passphrase, $passwd, and $user.\par
+}
+{\xe \v test_pjob_submit\:grid_test.php}
+{\xe \v grid_test.php\:test_pjob_submit}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test_pjob_submit ()}
+}\par
+{\bkmkstart AAAAAAAACM}
+{\bkmkend AAAAAAAACM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 101 of file grid_test.php.\par
+\par
+References $host, $passphrase, $passwd, and $user.\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variable Documentation\par
+\pard\plain 
+{\xe \v $debug\:grid_test.php}
+{\xe \v grid_test.php\:$debug}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$debug = TRUE}
+}\par
+{\bkmkstart AAAAAAAACN}
+{\bkmkend AAAAAAAACN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 287 of file grid_test.php.\par
+\par
+}
+{\xe \v $debug_persistent\:grid_test.php}
+{\xe \v grid_test.php\:$debug_persistent}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$debug_persistent = FALSE}
+}\par
+{\bkmkstart AAAAAAAACO}
+{\bkmkend AAAAAAAACO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 288 of file grid_test.php.\par
+\par
+}
+{\xe \v $host\:grid_test.php}
+{\xe \v grid_test.php\:$host}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$host = "villon"}
+}\par
+{\bkmkstart AAAAAAAACP}
+{\bkmkend AAAAAAAACP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 13 of file grid_test.php.\par
+\par
+Referenced by test_grid_init(), test_grid_pconnect(), test_grid_pinit(), test_job_get_id(), test_job_output(), test_job_status(), test_job_submit(), test_pjob_get_id(), test_pjob_output(), test_pjob_status(), and test_pjob_submit().\par
+}
+{\xe \v $passphrase\:grid_test.php}
+{\xe \v grid_test.php\:$passphrase}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$passphrase = "kndlaria"}
+}\par
+{\bkmkstart AAAAAAAACQ}
+{\bkmkend AAAAAAAACQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 15 of file grid_test.php.\par
+\par
+}
+{\xe \v $passwd\:grid_test.php}
+{\xe \v grid_test.php\:$passwd}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$passwd = "miseria2004"}
+}\par
+{\bkmkstart AAAAAAAACR}
+{\bkmkend AAAAAAAACR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 14 of file grid_test.php.\par
+\par
+Referenced by test_grid_init(), test_grid_pconnect(), test_grid_pinit(), test_job_get_id(), test_job_output(), test_job_status(), test_job_submit(), test_pjob_get_id(), test_pjob_output(), test_pjob_status(), and test_pjob_submit().\par
+}
+{\xe \v $user\:grid_test.php}
+{\xe \v grid_test.php\:$user}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$user = "david"}
+}\par
+{\bkmkstart AAAAAAAACS}
+{\bkmkend AAAAAAAACS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 12 of file grid_test.php.\par
+\par
+Referenced by Grid::set_user(), test_grid_init(), test_grid_pconnect(), test_grid_pinit(), test_job_get_id(), test_job_output(), test_job_status(), test_job_submit(), test_pjob_get_id(), test_pjob_output(), test_pjob_status(), and test_pjob_submit().\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+grid_test.php File Reference\par \pard\plain 
+{\tc\tcl2 \v grid_test.php}
+{\xe \v grid_test.php}
+{\bkmkstart AAAAAAAAAG}
+{\bkmkend AAAAAAAAAG}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_grid_connect} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i test grid::connect()/disconnect() }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_grid_init} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i test {\b Grid::initialize()} }\par
+\par}
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $debug} = TRUE\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v test_grid_connect\:test/grid_test.php}
+{\xe \v test/grid_test.php\:test_grid_connect}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test_grid_connect ()}
+}\par
+{\bkmkstart AAAAAAAACT}
+{\bkmkend AAAAAAAACT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+test grid::connect()/disconnect() \par
+Grid::connect() opens a connection to a {\b Grid} UI server (a server that allows one to submit and monitor jobs in the grid). It is much like 'rsh' allowing one to send commands to the UI node.\par
++ This routine tests Grid::connect() by opening a connection to a user interface node, executing a simple command (ls -l) on it (on the UI node itself) and disconnecting. \par
+Definition at line 22 of file test/grid_test.php.\par
+\par
+}
+{\xe \v test_grid_init\:test/grid_test.php}
+{\xe \v test/grid_test.php\:test_grid_init}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test_grid_init ()}
+}\par
+{\bkmkstart AAAAAAAACU}
+{\bkmkend AAAAAAAACU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+test {\b Grid::initialize()} \par
+{\b Grid::initialize()} allows us to identify ourselves to the {\b Grid}. Identification must be made from a UI node, hence we need to connect first to a UI node.\par
+In later versions, initialize() detects if we are already connected and if not, opens the connection implicitly for us. Both scenarios should be checked. \par
+Definition at line 55 of file test/grid_test.php.\par
+\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variable Documentation\par
+\pard\plain 
+{\xe \v $debug\:test/grid_test.php}
+{\xe \v test/grid_test.php\:$debug}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$debug = TRUE}
+}\par
+{\bkmkstart AAAAAAAACV}
+{\bkmkend AAAAAAAACV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 8 of file test/grid_test.php.\par
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+processor.php File Reference\par \pard\plain 
+{\tc\tcl2 \v processor.php}
+{\xe \v processor.php}
+{\bkmkstart AAAAAAAAAH}
+{\bkmkend AAAAAAAAAH}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Namespaces\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+namespace {\b GridGRAMM}\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $application} = $_POST["application"]\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $r1} = rand()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $r2} = rand()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $dir} = "$application.$r1.$r2"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $workdir} = $serverpath/$httptmp/$dir\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variable Documentation\par
+\pard\plain 
+{\xe \v $application\:processor.php}
+{\xe \v processor.php\:$application}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$application = $_POST["application"]}
+}\par
+{\bkmkstart AAAAAAAACW}
+{\bkmkend AAAAAAAACW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 44 of file processor.php.\par
+\par
+}
+{\xe \v $dir\:processor.php}
+{\xe \v processor.php\:$dir}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$dir = "$application.$r1.$r2"}
+}\par
+{\bkmkstart AAAAAAAACX}
+{\bkmkend AAAAAAAACX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 67 of file processor.php.\par
+\par
+Referenced by show_results(), and unpack_results().\par
+}
+{\xe \v $r1\:processor.php}
+{\xe \v processor.php\:$r1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$r1 = rand()}
+}\par
+{\bkmkstart AAAAAAAACY}
+{\bkmkend AAAAAAAACY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 66 of file processor.php.\par
+\par
+}
+{\xe \v $r2\:processor.php}
+{\xe \v processor.php\:$r2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$r2 = rand()}
+}\par
+{\bkmkstart AAAAAAAACZ}
+{\bkmkend AAAAAAAACZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 66 of file processor.php.\par
+\par
+}
+{\xe \v $workdir\:processor.php}
+{\xe \v processor.php\:$workdir}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$workdir = $serverpath/$httptmp/$dir}
+}\par
+{\bkmkstart AAAAAAAADA}
+{\bkmkend AAAAAAAADA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 68 of file processor.php.\par
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+remotessh.php File Reference\par \pard\plain 
+{\tc\tcl2 \v remotessh.php}
+{\xe \v remotessh.php}
+{\bkmkstart AAAAAAAAAI}
+{\bkmkend AAAAAAAAAI}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b do_ssh} ($host, $user, $password, $command)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b do_scp} ($origin, $destination, $password)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v do_scp\:remotessh.php}
+{\xe \v remotessh.php\:do_scp}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+do_scp ($ {\i origin}, $ {\i destination}, $ {\i password})}
+}\par
+{\bkmkstart AAAAAAAADB}
+{\bkmkend AAAAAAAADB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 19 of file remotessh.php.\par
+\par
+}
+{\xe \v do_ssh\:remotessh.php}
+{\xe \v remotessh.php\:do_ssh}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+do_ssh ($ {\i host}, $ {\i user}, $ {\i password}, $ {\i command})}
+}\par
+{\bkmkstart AAAAAAAADC}
+{\bkmkend AAAAAAAADC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 4 of file remotessh.php.\par
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+results.php File Reference\par \pard\plain 
+{\tc\tcl2 \v results.php}
+{\xe \v results.php}
+{\bkmkstart AAAAAAAAAJ}
+{\bkmkend AAAAAAAAAJ}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Namespaces\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+namespace {\b GridGRAMM}\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $current_directory} = getcwd()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Current directory. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b exit}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $status} = check_status()\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variable Documentation\par
+\pard\plain 
+{\xe \v $current_directory\:results.php}
+{\xe \v results.php\:$current_directory}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$current_directory = getcwd()}
+}\par
+{\bkmkstart AAAAAAAADD}
+{\bkmkend AAAAAAAADD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Current directory. \par
+The 'child' process needs to know were is the working directory, to generate there the middleware output files\par
+string $current_directory \par
+Definition at line 36 of file results.php.\par
+\par
+}
+{\xe \v $status\:results.php}
+{\xe \v results.php\:$status}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$status = check_status()}
+}\par
+{\bkmkstart AAAAAAAADE}
+{\bkmkend AAAAAAAADE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 76 of file results.php.\par
+\par
+Referenced by Grid::destroy(), Grid::destroy_session(), Grid::initialize(), Grid::job_get_id(), Grid::new_session(), ssh_copy(), SExec::ssh_copy(), and ssh_open().\par
+}
+{\xe \v exit\:results.php}
+{\xe \v results.php\:exit}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+{\b exit}}
+}\par
+{\bkmkstart AAAAAAAADF}
+{\bkmkend AAAAAAAADF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 50 of file results.php.\par
+\par
+Referenced by get_user_data(), go_to_work(), and install_gramm().\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+ssh-files.php File Reference\par \pard\plain 
+{\tc\tcl2 \v ssh-files.php}
+{\xe \v ssh-files.php}
+{\bkmkstart AAAAAAAAAK}
+{\bkmkend AAAAAAAAAK}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Classes\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b SExec}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+ssh-pipes.php File Reference\par \pard\plain 
+{\tc\tcl2 \v ssh-pipes.php}
+{\xe \v ssh-pipes.php}
+{\bkmkstart AAAAAAAAAL}
+{\bkmkend AAAAAAAAAL}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Classes\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b SExec}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+ssh.php File Reference\par \pard\plain 
+{\tc\tcl2 \v ssh.php}
+{\xe \v ssh.php}
+{\bkmkstart AAAAAAAAAM}
+{\bkmkend AAAAAAAAAM}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+ssh_test.php File Reference\par \pard\plain 
+{\tc\tcl2 \v ssh_test.php}
+{\xe \v ssh_test.php}
+{\bkmkstart AAAAAAAAAN}
+{\bkmkend AAAAAAAAAN}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $debug} = TRUE\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $rem} = new {\b SExec}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $cout} = $rem->ssh_popen("jruser@cnb.uam.es", "kndlaria", "ls -C", "r")\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $cin} = $rem->ssh_popen("jruser@cnb.uam.es", "kndlaria", "/usr/sbin/Mail -s test jr", "w")\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b exit}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variable Documentation\par
+\pard\plain 
+{\xe \v $cin\:ssh_test.php}
+{\xe \v ssh_test.php\:$cin}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$cin = $rem->ssh_popen("jruser@cnb.uam.es", "kndlaria", "/usr/sbin/Mail -s test jr", "w")}
+}\par
+{\bkmkstart AAAAAAAADG}
+{\bkmkend AAAAAAAADG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 57 of file ssh_test.php.\par
+\par
+}
+{\xe \v $cout\:ssh_test.php}
+{\xe \v ssh_test.php\:$cout}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$cout = $rem->ssh_popen("jruser@cnb.uam.es", "kndlaria", "ls -C", "r")}
+}\par
+{\bkmkstart AAAAAAAADH}
+{\bkmkend AAAAAAAADH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 53 of file ssh_test.php.\par
+\par
+}
+{\xe \v $debug\:ssh_test.php}
+{\xe \v ssh_test.php\:$debug}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$debug = TRUE}
+}\par
+{\bkmkstart AAAAAAAADI}
+{\bkmkend AAAAAAAADI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 5 of file ssh_test.php.\par
+\par
+}
+{\xe \v $rem\:ssh_test.php}
+{\xe \v ssh_test.php\:$rem}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$rem = new {\b SExec}}
+}\par
+{\bkmkstart AAAAAAAADJ}
+{\bkmkend AAAAAAAADJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 9 of file ssh_test.php.\par
+\par
+}
+{\xe \v exit\:ssh_test.php}
+{\xe \v ssh_test.php\:exit}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+{\b exit}}
+}\par
+{\bkmkstart AAAAAAAADK}
+{\bkmkend AAAAAAAADK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 62 of file ssh_test.php.\par
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+ssh_test.php File Reference\par \pard\plain 
+{\tc\tcl2 \v ssh_test.php}
+{\xe \v ssh_test.php}
+{\bkmkstart AAAAAAAAAO}
+{\bkmkend AAAAAAAAAO}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $debug} = TRUE\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $rem} = new {\b SExec}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $p} = $rem->ssh_open_command("jruser@cnb.uam.es", "kndlaria", "ls")\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b exit}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variable Documentation\par
+\pard\plain 
+{\xe \v $debug\:test/ssh_test.php}
+{\xe \v test/ssh_test.php\:$debug}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$debug = TRUE}
+}\par
+{\bkmkstart AAAAAAAADL}
+{\bkmkend AAAAAAAADL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 3 of file test/ssh_test.php.\par
+\par
+}
+{\xe \v $p\:test/ssh_test.php}
+{\xe \v test/ssh_test.php\:$p}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$p = $rem->ssh_open_command("jruser@cnb.uam.es", "kndlaria", "ls")}
+}\par
+{\bkmkstart AAAAAAAADM}
+{\bkmkend AAAAAAAADM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 25 of file test/ssh_test.php.\par
+\par
+Referenced by SExec::ssh_open_command(), and SExec::ssh_open_shell().\par
+}
+{\xe \v $rem\:test/ssh_test.php}
+{\xe \v test/ssh_test.php\:$rem}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$rem = new {\b SExec}}
+}\par
+{\bkmkstart AAAAAAAADN}
+{\bkmkend AAAAAAAADN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 7 of file test/ssh_test.php.\par
+\par
+}
+{\xe \v exit\:test/ssh_test.php}
+{\xe \v test/ssh_test.php\:exit}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+{\b exit}}
+}\par
+{\bkmkstart AAAAAAAADO}
+{\bkmkend AAAAAAAADO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 48 of file test/ssh_test.php.\par
+\par
+Referenced by TinkerApp::get_user_data(), and letal().\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+tinkerApp.php File Reference\par \pard\plain 
+{\tc\tcl2 \v tinkerApp.php}
+{\xe \v tinkerApp.php}
+{\bkmkstart AAAAAAAAAP}
+{\bkmkend AAAAAAAAAP}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Classes\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b TinkerApp}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+util.php File Reference\par \pard\plain 
+{\tc\tcl2 \v util.php}
+{\xe \v util.php}
+{\bkmkstart AAAAAAAAAQ}
+{\bkmkend AAAAAAAAAQ}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Namespaces\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+namespace {\b egTINKER}\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_header} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Start the display of a www page. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_footer} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i close a web page }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b warning} ($msg)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i print a warning }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b error} ($where, $what)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i print an error message and exit }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b letal} ($what, $where)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i print a letal error message and die }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_passthru} ($remote, $password, $command, $status)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Execute a single command remotely using ssh and return its entire output (like passthru). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_copy} ($origin, $destination, $password)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Copy a file or directory from one source to a destination. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_open} ($remote, $password)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v error\:util.php}
+{\xe \v util.php\:error}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+error ($ {\i where}, $ {\i what})}
+}\par
+{\bkmkstart AAAAAAAADP}
+{\bkmkend AAAAAAAADP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+print an error message and exit \par
+Whenever we detect something wrong, we must tell the user. This function will take an error message as its argument, format it suitably and spit it out.\par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid This might look nicer using javascript to pop up a nice window with the error message. Style sheets would be nice too.\par
+}{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i where} the name of the caller routine or the process where the error occurred \par
+{\i what} a description of the abnormal condition that triggered the error \par
+}
+\par
+Definition at line 105 of file util.php.\par
+\par
+Referenced by letal().\par
+}
+{\xe \v letal\:util.php}
+{\xe \v util.php\:letal}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+letal ($ {\i what}, $ {\i where})}
+}\par
+{\bkmkstart AAAAAAAADQ}
+{\bkmkend AAAAAAAADQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+print a letal error message and die \par
+This function is called whenever a letal error (one that prevents further processing) is detected. The function will spit out an error message, close the page and exit the program. It should seldomly be used, since it may potentially disrupt the page layout (e.g. amid a table) by not closing open tags of which it is unaware. Actually it is a wrapper for error + terminate.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i where} location (physical or logical) where the error was detected: a physical location (routine name/line number) may be helpful for debugging, a logical location (during which part of the processing it happened) will be more helful to the user.\par
+{\i what} a descrition of the abnormality detected. \par
+}
+\par
+Definition at line 139 of file util.php.\par
+\par
+References error(), exit, and set_footer().\par
+Referenced by ssh_open(), SExec::ssh_open_command(), and SExec::ssh_open_shell().\par
+}
+{\xe \v set_footer\:util.php}
+{\xe \v util.php\:set_footer}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+set_footer ()}
+}\par
+{\bkmkstart AAAAAAAADR}
+{\bkmkend AAAAAAAADR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+close a web page \par
+Make sure we end the page with all the appropriate formulisms: close the body, include copyright notice, state creator and any needed details, and close the page. \par
+Definition at line 55 of file util.php.\par
+\par
+References $app_dir, and $maintainer.\par
+Referenced by letal().\par
+}
+{\xe \v set_header\:util.php}
+{\xe \v util.php\:set_header}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+set_header ()}
+}\par
+{\bkmkstart AAAAAAAADS}
+{\bkmkend AAAAAAAADS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Start the display of a www page. \par
+We have it as a function so we can customise all pages generated as needed. This routine will open HTML, create the page header, and include any needed style sheets (if any) to provide a common look-and-feel for all pages generated. \par
+Definition at line 28 of file util.php.\par
+\par
+References $app_dir.\par
+}
+{\xe \v ssh_copy\:util.php}
+{\xe \v util.php\:ssh_copy}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+ssh_copy ($ {\i origin}, $ {\i destination}, $ {\i password})}
+}\par
+{\bkmkstart AAAAAAAADT}
+{\bkmkend AAAAAAAADT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Copy a file or directory from one source to a destination. \par
+This function copies source to dest, where one of them is a local filespec and the other a remote filespec of the form [user@]host:path\par
+If the original source is a directory, it will be copied recursively to destination (hence easing file transfers).\par
+The function returns TRUE on success or FALSE on failure. \par
+Definition at line 207 of file util.php.\par
+\par
+References $status.\par
+}
+{\xe \v ssh_open\:util.php}
+{\xe \v util.php\:ssh_open}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+ssh_open ($ {\i remote}, $ {\i password})}
+}\par
+{\bkmkstart AAAAAAAADU}
+{\bkmkend AAAAAAAADU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 225 of file util.php.\par
+\par
+References $debug, $php_version, $process, $status, letal(), and warning().\par
+}
+{\xe \v ssh_passthru\:util.php}
+{\xe \v util.php\:ssh_passthru}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+ssh_passthru ($ {\i remote}, $ {\i password}, $ {\i command}, $ {\i status})}
+}\par
+{\bkmkstart AAAAAAAADV}
+{\bkmkend AAAAAAAADV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Execute a single command remotely using ssh and return its entire output (like passthru). \par
+This might be done as well using a pipe on /tmp and making the command 'cat' the pipe: when ssh runs, it runs the command 'cat' on the pipe and hangs on read. Then we just need a thread to open the pipe, put the password and close the pipe. This other way the password is never wirtten down. But, OTOH, the file life is so ephemeral that most of the time it will only exist in the internal system cache, so this approach is not that bad either.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i remote} The remote end to run the command, in the form 'user' (or 'host' if the username is the same). \par
+{\i password} The remote password. Note that if direct RSA/DSA/.shosts/.rhosts login is enabled then the password should be ignored as SSH should not run the ASKPASS command). \par
+{\i command} The command to execute on the remote end NOTE: if you want to use redirection, the entire remote command line should be enclosed in additional quotes! \par
+{\i status} Optional, this will hold the termination status of SSH after invocation, which should be the exit status of the remote command or 255 if an error occurred \par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid output The output of the remote command. \par
+}\par
+Definition at line 179 of file util.php.\par
+\par
+}
+{\xe \v warning\:util.php}
+{\xe \v util.php\:warning}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+warning ($ {\i msg})}
+}\par
+{\bkmkstart AAAAAAAADW}
+{\bkmkend AAAAAAAADW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+print a warning \par
+Prints a warning in a separate pop-up window. A warning is issued when a non-critical problem has been detected. Execution can be resumed using some defaults, but the user should be notified. In order to not disrupt the web page we are displaying we use a JavaScript pop-up alert to notify the user.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i msg} the warning message to send the user \par
+}
+\par
+Definition at line 82 of file util.php.\par
+\par
+Referenced by ssh_open().\par
+}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Index\par 
+\pard\plain 
+{\tc \v Index}
+{\field\fldedit {\*\fldinst INDEX \\c2 \\*MERGEFORMAT}{\fldrslt INDEX}}
+}

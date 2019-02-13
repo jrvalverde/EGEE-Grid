@@ -1,0 +1,14 @@
+
+### begin MODELLER6v2 ######################################################
+
+MODINSTALL6v2=/data/www/EMBnet/cgi-src/Grid/YaMIv7/software/x86
+EXECUTABLE_TYPE6v2=i386-absoft
+LIBS_LIB6v2=$MODINSTALL6v2/modlib/libs.lib
+KEY_MODELLER6v2=MODELIRANJE
+mod=mod6v2
+export MODINSTALL6v2 EXECUTABLE_TYPE6v2 LIBS_LIB6v2 KEY_MODELLER6v2 mod
+PATH=$PATH:$MODINSTALL6v2/bin
+ulimit -S -s unlimited
+
+### end MODELLER6v2 ########################################################
+

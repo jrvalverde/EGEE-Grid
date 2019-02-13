@@ -1,0 +1,13 @@
+# Example for: RANDOMIZE_XYZ
+
+# This will randomize the X,Y,Z of the model:
+
+READ_MODEL FILE = '1fas'
+
+# Change existing X,Y,Z for +- 4 angstroms:
+RANDOMIZE_XYZ DEVIATION = 4.0
+WRITE_MODEL FILE = '1fas.ini1'
+
+# Assign X,Y,Z in the range from -100 to 100 angstroms:
+RANDOMIZE_XYZ DEVIATION = -100.0
+WRITE_MODEL FILE = '1fas.ini2'

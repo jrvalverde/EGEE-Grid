@@ -1,0 +1,17 @@
+#!/bin/sh
+
+rm -r to-be-refined.tmp *.rsr *.deb *.ini *.mod *.rdeb *.sch *.B* *.R* \
+   *.D* *.log *.tmod *.mat *.rmod ftn90 fort.90 *.dih.Z *.psa.Z *.ngh.Z \
+   *.V* *.E* *.L*
+rm *.log *.ps *.mat alignment.seg.dat alignment.seg.top *.fit
+rm fort.* *_fit.pdb alignment.tmp
+rm *.psa *.sol *.asgl profile.top define-symmetry*.atm *.ssm
+rm 1fas-1.atm toxin.pap *.trc *.ca *.dih *.psa *.ngh *.ini1 *.ini2
+rm *.log *.fit *.lib *.B *.crd *.ini *.sol *.princ *.var junk* core
+rm toxin-str.* toxin-seq.* *.clr color_aln_model.pap 1fas.rsr
+rm 2ctx.ssm 2ctx.ssm.pdb 1nbt.fit.pdb align2d.pap align2d.ali
+rm 2ctx.aln.pdb *.iup toxin-expand.ali *.ps *.mat
+rm define_symmetry*.atm t2-?.atm 1fas.fit.pdb 1fas.noSS
+rm fort.* toxin-search.pap segmatch.*.pap segmatch.*.ali
+rm segmatch.dat 1fas-[12].rsr 1fas-ca.rsr 1fas.sch 2ctx.var
+rm *_fit.pdb *.xref? 1fdn.reg

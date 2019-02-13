@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.3.6">
+  <compounddef id="auth_8php" kind="file">
+    <compoundname>auth.php</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="auth_8php_1a0" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$username</definition>
+        <argsstring></argsstring>
+        <name>$username</name>
+        <initializer>$_POST[&quot;username&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php" line="10" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="auth_8php_1a1" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$password</definition>
+        <argsstring></argsstring>
+        <name>$password</name>
+        <initializer>$_POST[&quot;password&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php" line="11" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="auth_8php_1a2" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$life</definition>
+        <argsstring></argsstring>
+        <name>$life</name>
+        <initializer>$_POST[&quot;life&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php" line="12" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="auth_8php_1a3" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$program</definition>
+        <argsstring></argsstring>
+        <name>$program</name>
+        <initializer> &quot;/opt/globus/bin/myproxy/bin/myproxy-get-delegation&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php" line="21" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="auth_8php_1a4" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$outfile</definition>
+        <argsstring></argsstring>
+        <name>$outfile</name>
+        <initializer> &quot;/data/www/EMBnet/tmp/grid/$username.cred&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php" line="24" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="auth_8php_1a5" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$args</definition>
+        <argsstring></argsstring>
+        <name>$args</name>
+        <initializer> &quot;-s localhost -l $username -t $life -o $outfile&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php" line="27" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="auth_8php_1a6" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$findme</definition>
+        <argsstring></argsstring>
+        <name>$findme</name>
+        <initializer> &apos; &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php" line="39" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="auth_8php_1a7" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$pos</definition>
+        <argsstring></argsstring>
+        <name>$pos</name>
+        <initializer> strpos($username, $findme)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php" line="40" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="auth_8php_1a8" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$len</definition>
+        <argsstring></argsstring>
+        <name>$len</name>
+        <initializer> strlen($password)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php" line="48" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;!DOCTYPE<sp/>HTML<sp/>PUBLIC<sp/></highlight><highlight class="stringliteral">&quot;-//W3C//DTD<sp/>HTML<sp/>4.01<sp/>Transitional//EN&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;http://www.w3.org/TR/html4/loose.dtd&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal">&lt;html&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">&lt;head&gt;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;meta<sp/>http-equiv=</highlight><highlight class="stringliteral">&quot;Content-Type&quot;</highlight><highlight class="normal"><sp/>content=</highlight><highlight class="stringliteral">&quot;text/html;<sp/>charset=UTF-8&quot;</highlight><highlight class="normal"><sp/>&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;title&gt;Results&lt;/title&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">&lt;/head&gt;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">&lt;?</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><ref refid="auth_8php_1a0" kindref="member">$username</ref>=$_POST[</highlight><highlight class="stringliteral">&quot;username&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><ref refid="auth_8php_1a1" kindref="member">$password</ref>=$_POST[</highlight><highlight class="stringliteral">&quot;password&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><ref refid="auth_8php_1a2" kindref="member">$life</ref>=$_POST[</highlight><highlight class="stringliteral">&quot;life&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//escapeshellcmd()<sp/>escapes<sp/>any<sp/>characters<sp/>in<sp/>a<sp/>string<sp/>that<sp/>might<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//be<sp/>used<sp/>to<sp/>trick<sp/>a<sp/>shell<sp/>command<sp/>into<sp/>executing<sp/>arbitrary<sp/>commands.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><ref refid="auth_8php_1a0" kindref="member">$username</ref>=<sp/>escapeshellcmd($username);</highlight></codeline>
+<codeline lineno="17" refid="auth_8php_1a1" refkind="member"><highlight class="normal"><ref refid="auth_8php_1a1" kindref="member">$password</ref>=<sp/>escapeshellcmd($password);</highlight></codeline>
+<codeline lineno="18" refid="auth_8php_1a2" refkind="member"><highlight class="normal"><ref refid="auth_8php_1a2" kindref="member">$life</ref>=<sp/>escapeshellcmd($life);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//MyProxy<sp/>installation<sp/>program</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="auth_8php_1a3" refkind="member"><highlight class="normal"><ref refid="auth_8php_1a3" kindref="member">$program</ref><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;/opt/globus/bin/myproxy/bin/myproxy-get-delegation&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//Outfile</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="auth_8php_1a4" refkind="member"><highlight class="normal"><ref refid="auth_8php_1a4" kindref="member">$outfile</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;/data/www/EMBnet/tmp/grid/$username.cred&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//Program<sp/>arguments</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="auth_8php_1a5" refkind="member"><highlight class="normal"><ref refid="auth_8php_1a5" kindref="member">$args</ref><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;-s<sp/>localhost<sp/>-l<sp/>$username<sp/>-t<sp/>$life<sp/>-o<sp/>$outfile&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&quot;EOOOO<sp/>$username<sp/>$password<sp/>$life&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//The<sp/>fields<sp/>are<sp/>required</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="auth_8php_1a0" kindref="member">$username</ref>==</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>||<sp/>(<ref refid="auth_8php_1a1" kindref="member">$password</ref>==</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>||<sp/>(<ref refid="auth_8php_1a2" kindref="member">$life</ref>==</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">))<sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>required_fields();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">//Zap<sp/>everything<sp/>past<sp/>first<sp/>nonword<sp/>character</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="auth_8php_1a0" refkind="member"><highlight class="normal"><ref refid="auth_8php_1a0" kindref="member">$username</ref><sp/>=<sp/>ltrim($username);</highlight></codeline>
+<codeline lineno="39" refid="auth_8php_1a6" refkind="member"><highlight class="normal"><ref refid="auth_8php_1a6" kindref="member">$findme</ref><sp/><sp/>=<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40" refid="auth_8php_1a7" refkind="member"><highlight class="normal"><ref refid="auth_8php_1a7" kindref="member">$pos</ref><sp/>=<sp/>strpos($username,<sp/>$findme);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(is_numeric($pos)<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="auth_8php_1a0" kindref="member">$username</ref>=substr($username,<sp/>0,<sp/>$pos);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}<sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//We<sp/>check<sp/>the<sp/>password<sp/>length</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="auth_8php_1a8" refkind="member"><highlight class="normal"><ref refid="auth_8php_1a8" kindref="member">$len</ref><sp/>=<sp/>strlen($password);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(($len<sp/>&lt;<sp/>5)<sp/>||<sp/>($len<sp/>&gt;<sp/>10))<sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>passwordtoolong();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(is_numeric($lifetime)<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>invalidlifetime();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">function<sp/>required_fields</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;h1&gt;Error.<sp/>All<sp/>fields<sp/>are<sp/>required.&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="results_8php_1a1" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">function<sp/>passwordtoolong</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;h1&gt;The<sp/>password<sp/>must<sp/>be<sp/>between<sp/>5<sp/>and<sp/>10<sp/>characters.&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="results_8php_1a1" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="74"><highlight class="comment">Perl<sp/>Translation!!!</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"></highlight></codeline>
+<codeline lineno="76"><highlight class="comment">#<sp/>use<sp/>expect<sp/>to<sp/>run<sp/>the<sp/>command</highlight></codeline>
+<codeline lineno="77"><highlight class="comment">my<sp/>$cmd_filehandle<sp/>=<sp/>Expect-&gt;spawn(&quot;$program<sp/>$args&quot;);</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"></highlight></codeline>
+<codeline lineno="79"><highlight class="comment">#<sp/>this<sp/>looks<sp/>for<sp/>the<sp/>string<sp/>&quot;Pass<sp/>Phrase:&quot;<sp/>for<sp/>20<sp/>seconds</highlight></codeline>
+<codeline lineno="80"><highlight class="comment">#<sp/>and<sp/>failing<sp/>that,<sp/>does<sp/>the<sp/>&quot;error&quot;<sp/>subroutine.</highlight></codeline>
+<codeline lineno="81"><highlight class="comment">unless<sp/>($cmd_filehandle-&gt;expect(20,<sp/>&quot;Pass<sp/>Phrase:&quot;))<sp/></highlight></codeline>
+<codeline lineno="82"><highlight class="comment">{</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/>printerror();</highlight></codeline>
+<codeline lineno="84"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"></highlight></codeline>
+<codeline lineno="86"><highlight class="comment">print<sp/>$cmd_filehandle<sp/>&quot;$password\n&quot;;</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"></highlight></codeline>
+<codeline lineno="88"><highlight class="comment">#<sp/>gather<sp/>the<sp/>output<sp/>into<sp/>the<sp/>array</highlight></codeline>
+<codeline lineno="89"><highlight class="comment">@output<sp/>=<sp/>&lt;$cmd_filehandle&gt;;</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"></highlight></codeline>
+<codeline lineno="91"><highlight class="comment">#<sp/>close<sp/>the<sp/>filehandle<sp/>to<sp/>the<sp/>command</highlight></codeline>
+<codeline lineno="92"><highlight class="comment">$cmd_filehandle-&gt;soft_close();</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"></highlight></codeline>
+<codeline lineno="94"><highlight class="comment">#<sp/>now<sp/>you<sp/>have<sp/>an<sp/>array<sp/>called<sp/>@outputmsg<sp/>which<sp/>has<sp/>the<sp/>rest<sp/>of<sp/>the<sp/>output...<sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="comment">#<sp/>get<sp/>rid<sp/>of<sp/>output[0],<sp/>since<sp/>it<sp/>contains<sp/>the<sp/>password</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"></highlight></codeline>
+<codeline lineno="97"><highlight class="comment">$outputmsg<sp/>=<sp/>join(&quot;<sp/>&quot;,<sp/>$output[1]);</highlight></codeline>
+<codeline lineno="98"><highlight class="comment">if<sp/>($cmd_filehandle-&gt;exitstatus()<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/><sp/><sp/><sp/>$outputmsg<sp/>=~<sp/>s/(.*):\s//;</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/><sp/><sp/><sp/>&amp;printerror($outputmsg);</highlight></codeline>
+<codeline lineno="101"><highlight class="comment">}<sp/>else<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/><sp/>&amp;printsuccess;</highlight></codeline>
+<codeline lineno="103"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"></highlight></codeline>
+<codeline lineno="105"><highlight class="comment"></highlight></codeline>
+<codeline lineno="106"><highlight class="comment"></highlight></codeline>
+<codeline lineno="107"><highlight class="comment">sub<sp/>printerror</highlight></codeline>
+<codeline lineno="108"><highlight class="comment">{</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/><sp/><sp/><sp/>my<sp/>$errmsg<sp/>=<sp/>$_[0];</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/><sp/><sp/><sp/>print<sp/>header;</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/><sp/><sp/><sp/>print<sp/>&quot;&lt;BODY<sp/>BGCOLOR=#efefef&gt;&quot;;<sp/></highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/><sp/>print<sp/>&quot;&lt;TITLE&gt;Error!&lt;/TITLE&gt;&quot;;</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/><sp/><sp/><sp/>print<sp/>&quot;&lt;H1&gt;&lt;FONT<sp/>FACE=Arial<sp/>COLOR=Red&gt;&lt;STRONG&gt;&quot;;</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/><sp/><sp/><sp/>print<sp/>&quot;Error<sp/>executing<sp/>myproxy-get-delegation!\n&quot;;</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/><sp/><sp/><sp/>print<sp/>&quot;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;/H1&gt;&quot;;</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/><sp/><sp/><sp/>print<sp/>&quot;$errmsg&quot;;</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/><sp/><sp/>exit;</highlight></codeline>
+<codeline lineno="118"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"></highlight></codeline>
+<codeline lineno="120"><highlight class="comment">sub<sp/>printsuccess</highlight></codeline>
+<codeline lineno="121"><highlight class="comment">{</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/><sp/><sp/><sp/>print<sp/>header;</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/><sp/><sp/><sp/>print<sp/>&quot;&lt;BODY<sp/>BGCOLOR=#efefef&gt;&quot;;<sp/></highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/><sp/><sp/><sp/>print<sp/><sp/>&quot;&lt;TITLE&gt;Error!&lt;/TITLE&gt;&quot;;</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/><sp/><sp/><sp/>print<sp/>&quot;&lt;H1&gt;&lt;FONT<sp/>FACE=Arial<sp/>COLOR=Blue&gt;&lt;STRONG&gt;&quot;;</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/><sp/><sp/><sp/>print<sp/>&quot;Received<sp/>a<sp/>delegated<sp/>proxy<sp/>for<sp/>$username<sp/>good<sp/>for<sp/>$lifetime<sp/>hours.&quot;;</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/><sp/><sp/><sp/>print<sp/>&quot;&lt;/STRONG&gt;&lt;/FONT&gt;&lt;/H1&gt;&quot;;</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/><sp/><sp/><sp/>exit;</highlight></codeline>
+<codeline lineno="129"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"></highlight></codeline>
+<codeline lineno="131"><highlight class="comment">*/</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">?&gt;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">&lt;center&gt;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">&lt;table&gt;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">&lt;tr&gt;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;td<sp/>align=center&gt;&lt;img<sp/>src=</highlight><highlight class="stringliteral">&quot;../interface/egee.jpg&quot;</highlight><highlight class="normal"><sp/>alt=</highlight><highlight class="stringliteral">&quot;[EGEE]&quot;</highlight><highlight class="normal">&gt;&lt;/a&gt;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/td&gt;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">&lt;/tr&gt;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">&lt;/table&gt;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">&lt;p&gt;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;http://validator.w3.org/check?uri=referer&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;img<sp/>border=</highlight><highlight class="stringliteral">&quot;0&quot;</highlight><highlight class="normal"><sp/>src=</highlight><highlight class="stringliteral">&quot;http://www.w3.org/Icons/valid-html401&quot;</highlight><highlight class="normal">alt=</highlight><highlight class="stringliteral">&quot;Valid<sp/>HTML<sp/>4.01!&quot;</highlight><highlight class="normal"><sp/>height=</highlight><highlight class="stringliteral">&quot;31&quot;</highlight><highlight class="normal"><sp/>width=</highlight><highlight class="stringliteral">&quot;88&quot;</highlight><highlight class="normal">&gt;&lt;/a&gt;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">&lt;/p&gt;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">&lt;/center&gt;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal">&lt;/body&gt;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">&lt;/html&gt;</highlight></codeline>
+    </programlisting>
+    <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php"/>
+  </compounddef>
+</doxygen>

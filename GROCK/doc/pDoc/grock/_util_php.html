@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Docs for page util.php</title>
+	<link rel="stylesheet" type="text/css" id="layout" href="../media/layout.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../media/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../media/print.css" media="print">
+</head>
+
+<body>
+<div id="header">
+	<div id="navLinks">
+		[ <a href="../classtrees_grock.html">Class Tree: grock</a> ]
+		[ <a href="../elementindex_grock.html">Index: grock</a> ]
+		[ <a href="../elementindex.html">All elements</a> ]
+	</div>
+	<div id="packagePosition">
+		<div id="packageTitle2">grock</div>
+		<div id="packageTitle">grock</div>
+		<div id="elementPath"> &middot; </div>
+	</div>
+</div>
+
+<div id="nav" class="small">
+	<div id="packages">
+		Packages:
+					<p><a href="../li_GROCK.html">GROCK</a></p>
+					<p><a href="../li_Grid.html">Grid</a></p>
+					<p><a href="../li_grock.html">grock</a></p>
+					<p><a href="../li_SExec.html">SExec</a></p>
+			</div>
+
+				<div id="index">
+			<div id="files">
+								Files:<br>
+								<a href="../grock/_config_php.html">		config.php
+		</a><br>
+			<a href="../grock/_database_php.html">		database.php
+		</a><br>
+			<a href="../grock/_dock_php.html">		dock.php
+		</a><br>
+			<a href="../grock/_explore_complex_php.html">		explore_complex.php
+		</a><br>
+			<a href="../grock/_explore_match_php.html">		explore_match.php
+		</a><br>
+			<a href="../grock/_explore_molecule_php.html">		explore_molecule.php
+		</a><br>
+			<a href="../grock/_fishy_php.html">		fishy.php
+		</a><br>
+			<a href="../grock/_gramm_php.html">		gramm.php
+		</a><br>
+			<a href="../grock/_grid_config_php.html">		grid_config.php
+		</a><br>
+			<a href="../grock/_grock-ws_php.html">		grock-ws.php
+		</a><br>
+			<a href="../grock/_grock_php.html">		grock.php
+		</a><br>
+			<a href="../grock/_grock_lib_php.html">		grock_lib.php
+		</a><br>
+			<a href="../grock/_processor_php.html">		processor.php
+		</a><br>
+			<a href="../grock/_report_php.html">		report.php
+		</a><br>
+			<a href="../grock/_ssh_php.html">		ssh.php
+		</a><br>
+			<a href="../grock/_util_php.html">		util.php
+		</a><br>
+				</div>
+			<div id="classes">
+							</div>
+		</div>
+	</div>
+
+<div id="body">
+			<h1>Procedural File: util.php</h1>
+	<p style="margin: 0px;">Source Location: /util.php</p>
+	
+<br>
+<br>
+
+<div class="contents">
+<h2>Classes:</h2>
+<dl>
+</dl>
+</div>
+
+<h2>Page Details:</h2>
+<p align="center"><strong>General utility functions
+</strong></p>
+<p>This library is free software; you can redistribute it and/or  modify it under the terms of the GNU Lesser General Public  License as published by the Free Software Foundation; either  version 2.1 of the License, or (at your option) any later version.</p><p>This library is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  Lesser General Public License for more details.</p><p>You should have received a copy of the GNU Lesser General Public  License along with this library; if not, write to the Free Software  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</p><h4>Tags:</h4>
+<ul>
+	<li><b>see</b> - <a href="../grock/_gramm_php.html">gramm.php</a></li>
+	<li><b>link</b> - <a href="http://savannah.cern.ch/projects/GridGRAMM">http://savannah.cern.ch/projects/GridGRAMM</a></li>
+	<li><b>since</b> - File available since release 0.0</li>
+	<li><b>see</b> - <a href="../grock/_util_php.html">util.php</a></li>
+	<li><b>version</b> - $Id$</li>
+	<li><b>author</b> - Jose R. Valverde &lt;<a href="mailto:david@cnb.uam.es">mailto:david@cnb.uam.es</a>&gt;</li>
+	<li><b>copyright</b> - CSIC</li>
+	<li><b>license</b> - ../c/lgpl.txt</li>
+	<li><b>author</b> - David Garcia &lt;<a href="mailto:david@cnb.uam.es">mailto:david@cnb.uam.es</a>&gt;</li>
+</ul>
+<hr>
+Includes:<br>
+require_once(<a href="../grock/_config_php.html">"config.php"</a>) <span class="linenumber">[line 36]</span>
+<br />
+<p align="center"><strong>include global configuration definitions
+</strong></p>
+<hr>
+<div id="global">
+</div><hr>
+<div id="define">
+</div><hr>
+<div id="function">
+	<a name="functionactivate_new_sandbox"></a>
+	<h3>activate_new_sandbox</h3>
+	<div class="indent">
+		<code>string activate_new_sandbox(
+)</code>
+		<p class="linenumber">[line 232]</p>
+		<p align="center"><strong>Generate a session directory to be used for doing all our work
+</strong></p>
+<p>We will create a session directory on the system scratch space  to perform all our subsequent work.</p><p>We need to know the systemwide scratch/tmp directory (which is a  global defined in the 'config.php' file).</p><p>We do all our work on the system scratch space, but to avoid clashes  between simultaneous instances of this same service, we generate a  unique session_ID and use it to ensure that we are using a namespace that  is not being used by anyone else.</p><p>To generate the unique name, we use the fact that mkdir(2) should be  atomic and return an error (EEXIST) if the specified pathname already  exists.</p><p>To avoid an infinite loop in the event of an error, we allow a maximum  number of tries.</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - a unique name for the sandbox. This name should be               unique or we risk colliding with other simultaneous               runs.</li>
+</ul>
+		
+		<h4>Parameters</h4>
+		<ul>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionecho_error"></a>
+	<h3>echo_error</h3>
+	<div class="indent">
+		<code>void echo_error(
+mixed $where, mixed $what)</code>
+		<p class="linenumber">[line 183]</p>
+		<p align="center"><strong>Output an error indicating where it took place and what happened
+</strong></p>
+		
+		<h4>Parameters</h4>
+		<ul>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionecho_warning"></a>
+	<h3>echo_warning</h3>
+	<div class="indent">
+		<code>void echo_warning(
+mixed $what)</code>
+		<p class="linenumber">[line 173]</p>
+		<p align="center"><strong>Output a plain-text warning
+</strong></p>
+		
+		<h4>Parameters</h4>
+		<ul>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionerror"></a>
+	<h3>error</h3>
+	<div class="indent">
+		<code>void error(
+where $where, what $what)</code>
+		<p class="linenumber">[line 126]</p>
+		<p align="center"><strong>print an error message and exit
+</strong></p>
+<p>Whenever we detect something wrong, we must tell the user. This function  will take an error message as its argument, format it suitably and  spit it out.</p>		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">where</span>
+			<b>$where</b> 
+			- 
+			the name of the caller routine or the process where the          error occurred</li>
+					<li>
+			<span class="type">what</span>
+			<b>$what</b> 
+			- 
+			a description of the abnormal condition that triggered           the error</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionletal"></a>
+	<h3>letal</h3>
+	<div class="indent">
+		<code>void letal(
+where $where, where $what, what 2)</code>
+		<p class="linenumber">[line 163]</p>
+		<p align="center"><strong>print a letal error message and die
+</strong></p>
+<p>This function is called whenever a letal error (one that prevents  further processing) is detected. The function will spit out an  error message, close the page and exit the program.  It should seldomly be used, since it may potentially disrupt the  page layout (e.g. amid a table) by not closing open tags of which  it is unaware.  Actually it is a wrapper for error + terminate.</p>		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">what</span>
+			<b>2</b> 
+			- 
+			a description of the abnormal condition that triggered           the error</li>
+					<li>
+			<span class="type">where</span>
+			<b>$where</b> 
+			- 
+			location (physical or logical) where the error was  detected: a physical location (routine name/line number) may be  helpful for debugging, a logical location (during which part of  the processing it happened) will be more helful to the user.</li>
+					<li>
+			<span class="type">where</span>
+			<b>$what</b> 
+			- 
+			the name of the caller routine or the process where the          error occurred</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionrandom_number"></a>
+	<h3>random_number</h3>
+	<div class="indent">
+		<code>integer random_number(
+)</code>
+		<p class="linenumber">[line 195]</p>
+		<p align="center"><strong>Generate a random number using srand()/rand()
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - random number</li>
+</ul>
+		
+		<h4>Parameters</h4>
+		<ul>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionset_footer"></a>
+	<h3>set_footer</h3>
+	<div class="indent">
+		<code>void set_footer(
+)</code>
+		<p class="linenumber">[line 75]</p>
+		<p align="center"><strong>close a web page
+</strong></p>
+<p>Make sure we end the page with all the appropriate formulisms:  close the body, include copyright notice, state creator and  any needed details, and close the page.</p>		
+		<h4>Parameters</h4>
+		<ul>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionset_header"></a>
+	<h3>set_header</h3>
+	<div class="indent">
+		<code>void set_header(
+)</code>
+		<p class="linenumber">[line 48]</p>
+		<p align="center"><strong>Start the display of a www page
+</strong></p>
+<p>We have it as a function so we can customise all pages generated as  needed. This routine will open HTML, create the page header, and  include any needed style sheets (if any) to provide a common  look-and-feel for all pages generated.</p>		
+		<h4>Parameters</h4>
+		<ul>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionupload_probe_data"></a>
+	<h3>upload_probe_data</h3>
+	<div class="indent">
+		<code>string upload_probe_data(
+)</code>
+		<p class="linenumber">[line 276]</p>
+		<p align="center"><strong>Upload the probe molecule specified by the user to the session directory  as 'probe.pdb'.
+</strong></p>
+<p>This function accesses the global variable $_FILES with the known name  for the user file option to upload the user data. If the user data name  is changed in the form, it should be also changed here.</p><p>To locate the session directory we need a global variable to tell us  which is the default work directory, and a session_id to identify a  unique session directory within it to store safely the file without  colliding with other simultaneous instances.</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - containing the original name of the file uploaded if all goes well,       otherwise die after printing an error message.</li>
+</ul>
+		
+		<h4>Parameters</h4>
+		<ul>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionwarning"></a>
+	<h3>warning</h3>
+	<div class="indent">
+		<code>void warning(
+msg $msg)</code>
+		<p class="linenumber">[line 102]</p>
+		<p align="center"><strong>print a warning
+</strong></p>
+<p>Prints a warning in a separate pop-up window.  A warning is issued when a non-critical problem has been detected.  Execution can be resumed using some defaults, but the user should  be notified. In order to not disrupt the web page we are displaying  we use a JavaScript pop-up alert to notify the user.</p>		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">msg</span>
+			<b>$msg</b> 
+			- 
+			the warning message to send the user</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+</div>
+	<div id="credit">
+		<hr>
+		Documentation generated on Thu, 27 Oct 2005 13:03:41 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.2.3</a>
+	</div>
+</div>
+</body>
+</html>

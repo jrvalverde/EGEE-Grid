@@ -1,0 +1,6 @@
+#!/bin/sh
+
+rm *_fit.pdb
+rm *.B* *.ini *.lrsr *.rsr *.IL* *.V* *.sch *.log *.D* fort.*
+rm -r clustor.log* run_clustor* *.tmpl std??? .atjob* .atc*
+rm model-loop_*.*

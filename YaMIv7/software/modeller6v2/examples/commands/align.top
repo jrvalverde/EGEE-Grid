@@ -1,0 +1,11 @@
+# Example for: ALIGN
+
+# This will read two sequences, align them, and write the alignment
+# to a file:
+
+SET OUTPUT_CONTROL = 1 1 1 1 1
+
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = '1fas' '2ctx'
+# The as1.sim.mat similarity matrix is used by default:
+ALIGN GAP_PENALTIES_1D = -600 -400
+WRITE_ALIGNMENT FILE = 'toxin-seq.ali'

@@ -1,0 +1,24 @@
+# Example for: SEGMENT_MATCHING
+
+SET OUTPUT_CONTROL = 1 1 1 1 0
+
+SET ALIGNMENT_FORMAT = 'PAP'
+READ_ALIGNMENT FILE = 'ednf2.pap', ALIGN_CODES = '7rsa' 'edn' 'templ', ;
+               REMOVE_GAPS = on
+
+SET OUTPUT_DIRECTORY = './'
+SET FILE = 'segmatch.dat'
+SET ALIGN_BLOCK = 1
+SET RR_FILE = '$(LIB)/as1.sim.mat'
+
+SET SEGMENT_SHIFTS   =     -8 8     0 0
+SET SEGMENT_GROWTH_N =      0 0     0 0
+SET SEGMENT_GROWTH_C =      0 0     0 0
+SET MIN_LOOP_LENGTH  =   0      2       0
+
+SET SEGMENT_REPORT = 1E6
+SET SEGMENT_CUTOFF = 0
+# SET SEGMENT_CUTOFF = 1E8
+SET ROOT_NAME = 'segmatch', FILE_EXT = '.ali'
+
+SEGMENT_MATCHING

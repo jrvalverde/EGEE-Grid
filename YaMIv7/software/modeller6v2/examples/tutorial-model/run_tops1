@@ -1,0 +1,9 @@
+#!/bin/sh
+
+mod6v2 initial
+mod6v2 model-default
+mod6v2 model-segment
+mod6v2 model-fast
+mod6v2 model-loop
+# procheck 1fdx.B999901 2.0
+mod6v2 compare

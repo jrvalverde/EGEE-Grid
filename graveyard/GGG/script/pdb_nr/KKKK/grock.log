@@ -1,0 +1,22 @@
+Content-type: text/html
+X-Powered-By: PHP/4.3.3
+
+
+Empezamos<br>
+Llamo a la funcion grock<br>
+
+-----------------------------------------
+
+08th of April 06:04:49 [R] connect + grid-proxy-init
+08th of April 06:04:49 [L] mkdir /data/www/EMBnet/tmp/grid/grock/new/1EVY_A
+mkdir: cannot create directory `/data/www/EMBnet/tmp/grid/grock/new/1EVY_A': File exists
+08th of April 06:04:49 [R] mkdir -p /tmp/grock/data/new/1EVY_A
+Connection to villon closed.
+08th of April 06:05:10 [L] echo 1EVY_A >> /data/www/EMBnet/tmp/grid/grock/new/pdb_list.txt
+08th of April 06:05:11 [L] /opt/structure/mmtsb_tools/perl//convpdb.pl -chain A /data/gen/pdb/pdb1evy.ent > /data/www/EMBnet/tmp/grid/grock/new/1EVY_A/pdb1evy.ent
+08th of April 06:05:12 [L] scp /data/gen/pdb/pdb1evy.ent david@villon:/tmp/grock/data/new/1EVY_A/receptor.pdb
+08th of April 06:05:15 [L] scp ../aspirin.pdb david@villon:/tmp/grock/data/new/1EVY_A/ligand.pdb
+08th of April 06:05:18 [L] generating gramm-go.tgz
+08th of April 06:05:19 [L] scp /data/www/EMBnet/tmp/grid/grock/new/1EVY_A/gramm-go.tar.gz david@villon:/tmp/grock/data/new/1EVY_A/gramm-go.tar.gz
+08th of April 06:05:22 [L] scp /data/www/EMBnet/cgi-src/Grid/GGG/script/pdb_nr/KKKK/grock.sh david@villon:/tmp/grock/data/new/1EVY_A/grock.sh
+08th of April 06:05:25 [L] scp /data/www/EMBnet/cgi-src/Grid/GGG/script/pdb_nr/KKKK/grock.jdl david@villon:/tmp/grock/data/new/1EVY_A/grock.jdl

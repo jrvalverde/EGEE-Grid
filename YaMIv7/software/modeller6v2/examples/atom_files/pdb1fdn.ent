@@ -1,0 +1,550 @@
+HEADER    ELECTRON TRANSPORT                      31-MAR-94   1FDN      1FDN   2
+COMPND    FERREDOXIN                                                    1FDN   3
+SOURCE    (CLOSTRIDIUM ACIDIURICI) ATCC: 7906                           1FDN   4
+AUTHOR    E.DUEE,E.FANCHON,J.VICAT,L.C.SIEKER,J.MEYER,J-M.MOULIS        1FDN   5
+REVDAT   1   31-AUG-94 1FDN    0                                        1FDN   6
+JRNL        AUTH   E.DUEE,E.FANCHON,J.VICAT,L.C.SIEKER,J.MEYER,         1FDN   7
+JRNL        AUTH 2 J.M.MOULIS                                           1FDN   8
+JRNL        TITL   REFINED CRYSTAL STRUCTURE OF THE 2[4FE-4S]           1FDN   9
+JRNL        TITL 2 FERREDOXIN FROM CLOSTRIDIUM ACIDURICI AT 1.84        1FDN  10
+JRNL        TITL 3 ANGSTROMS RESOLUTION                                 1FDN  11
+JRNL        REF    TO BE PUBLISHED                                      1FDN  12
+JRNL        REFN                                                  0353  1FDN  13
+REMARK   1                                                              1FDN  14
+REMARK   1 REFERENCE 1                                                  1FDN  15
+REMARK   1  AUTH   J.MEYER,J.-M.MOULIS,N.SCHERRER,J.GAGNON,J.ULRICH     1FDN  16
+REMARK   1  TITL   SEQUENCES OF CLOSTRIDIAL FERREDOXINS                 1FDN  17
+REMARK   1  REF    BIOCHEM.J.                    V. 294   622 1993      1FDN  18
+REMARK   1  REFN   ASTM BIJOAK  UK ISSN 0306-3275                 0043  1FDN  19
+REMARK   1 REFERENCE 2                                                  1FDN  20
+REMARK   1  AUTH   H.M.KRISHNAMURTHY,W.A.HENDRICKSON,W.H.ORME-JOHNSON,  1FDN  21
+REMARK   1  AUTH 2 E.A.MERRITT,R.P.PHIZACKERLEY                         1FDN  22
+REMARK   1  TITL   CRYSTAL STRUCTURE OF CLOSTRIDIUM ACIDI-URICI         1FDN  23
+REMARK   1  TITL 2 FERREDOXIN AT 5 ANGSTROMS RESOLUTION BASED ON        1FDN  24
+REMARK   1  TITL 3 MEASUREMENTS OF ANOMALOUS X-RAY SCATTERING AT        1FDN  25
+REMARK   1  TITL 4 MULTIPLE WAVELENGTHS                                 1FDN  26
+REMARK   1  REF    J.BIOL.CHEM.                  V. 263 18430 1988      1FDN  27
+REMARK   1  REFN   ASTM JBCHA3  US ISSN 0021-9258                 0071  1FDN  28
+REMARK   2                                                              1FDN  29
+REMARK   2 RESOLUTION. 1.84 ANGSTROMS.                                  1FDN  30
+REMARK   3                                                              1FDN  31
+REMARK   3 REFINEMENT.                                                  1FDN  32
+REMARK   3   PROGRAM                    X-PLOR                          1FDN  33
+REMARK   3   AUTHORS                    BRUNGER                         1FDN  34
+REMARK   3   R VALUE                    0.169                           1FDN  35
+REMARK   3   RMSD BOND DISTANCES        0.012  ANGSTROMS                1FDN  36
+REMARK   3   RMSD BOND ANGLES           2.58   DEGREES                  1FDN  37
+REMARK   3                                                              1FDN  38
+REMARK   3   NUMBER OF REFLECTIONS      3772                            1FDN  39
+REMARK   3   RESOLUTION RANGE       18. - 1.84 ANGSTROMS                1FDN  40
+REMARK   3   DATA CUTOFF                2.     SIGMA(F)                 1FDN  41
+REMARK   3   PERCENT COMPLETION         88.0                            1FDN  42
+REMARK   3                                                              1FDN  43
+REMARK   3   NUMBER OF PROTEIN ATOMS                        383         1FDN  44
+REMARK   3   NUMBER OF NUCLEIC ACID ATOMS                     0         1FDN  45
+REMARK   3   NUMBER OF SOLVENT ATOMS                         46         1FDN  46
+REMARK   3                                                              1FDN  47
+REMARK   3  THE R VALUE IS 0.171 FOR ALL 3847 REFLECTIONS.              1FDN  48
+REMARK   4                                                              1FDN  49
+REMARK   4 THIS PROTEIN HAS TWO [4FE-4S] CLUSTERS LIGATED BY CYSTEINES  1FDN  50
+REMARK   4 8, 11, 14, 47 AND 18, 37, 40, 43, RESPECTIVELY.              1FDN  51
+REMARK   5                                                              1FDN  52
+REMARK   5 CROSS REFERENCE TO SEQUENCE DATABASE                         1FDN  53
+REMARK   5 SWISS-PROT ENTRY NAME       PDB ENTRY CHAIN NAME             1FDN  54
+REMARK   5    FER_CLOAC                                                 1FDN  55
+SEQRES   1     55  ALA TYR VAL ILE ASN GLU ALA CYS ILE SER CYS GLY ALA  1FDN  56
+SEQRES   2     55  CYS GLU PRO GLU CYS PRO VAL ASN ALA ILE SER SER GLY  1FDN  57
+SEQRES   3     55  ASP ASP ARG TYR VAL ILE ASP ALA ASP THR CYS ILE ASP  1FDN  58
+SEQRES   4     55  CYS GLY ALA CYS ALA GLY VAL CYS PRO VAL ASP ALA PRO  1FDN  59
+SEQRES   5     55  VAL GLN ALA                                          1FDN  60
+FTNOTE   1                                                              1FDN  61
+FTNOTE   1 TWO ALTERNATE POSITIONS FOR THE SIDE CHAIN OF ASN 21 HAVE    1FDN  62
+FTNOTE   1 BEEN OBSERVED AND GIVEN OCCUPANCIES OF 0.5.                  1FDN  63
+FTNOTE   2                                                              1FDN  64
+FTNOTE   2 THE EXACT POSITIONS OF ASP 27 AND ASP 28 ARE UNDEFINED       1FDN  65
+FTNOTE   2 FROM THE X-RAY DATA.  THESE RESIDUES HAVE BEEN BUILT WITH A  1FDN  66
+FTNOTE   2 GOOD GEOMETRY FOR THE MAIN CHAIN AND REASONABLE CHI ANGLES   1FDN  67
+FTNOTE   2 FOR THE SIDE CHAINS.                                         1FDN  68
+HET    FS4     56       8     IRON/SULFUR CLUSTER                       1FDN  69
+HET    FS4     57       8     IRON/SULFUR CLUSTER                       1FDN  70
+FORMUL   2  FS4    2(FE4 S4)                                            1FDN  71
+FORMUL   3  HOH   *46(H2 O1)                                            1FDN  72
+CRYST1   34.440   34.440   74.780  90.00  90.00  90.00 P 43 21 2     8  1FDN  73
+ORIGX1      1.000000  0.000000  0.000000        0.00000                 1FDN  74
+ORIGX2      0.000000  1.000000  0.000000        0.00000                 1FDN  75
+ORIGX3      0.000000  0.000000  1.000000        0.00000                 1FDN  76
+SCALE1      0.029036  0.000000  0.000000        0.00000                 1FDN  77
+SCALE2      0.000000  0.029036  0.000000        0.00000                 1FDN  78
+SCALE3      0.000000  0.000000  0.013373        0.00000                 1FDN  79
+ATOM      1  N   ALA     1       9.611  24.690  63.812  1.00 11.15      1FDN  80
+ATOM      2  CA  ALA     1       8.406  24.139  64.388  1.00 11.73      1FDN  81
+ATOM      3  C   ALA     1       8.593  22.762  64.987  1.00 11.21      1FDN  82
+ATOM      4  O   ALA     1       9.443  22.015  64.526  1.00 11.57      1FDN  83
+ATOM      5  CB  ALA     1       7.321  24.011  63.339  1.00 11.49      1FDN  84
+ATOM      6  N   TYR     2       7.902  22.454  66.060  1.00 11.24      1FDN  85
+ATOM      7  CA  TYR     2       7.795  21.075  66.505  1.00 11.03      1FDN  86
+ATOM      8  C   TYR     2       6.504  20.539  65.887  1.00 10.92      1FDN  87
+ATOM      9  O   TYR     2       5.645  21.317  65.461  1.00 10.42      1FDN  88
+ATOM     10  CB  TYR     2       7.664  20.949  68.023  1.00 11.10      1FDN  89
+ATOM     11  CG  TYR     2       8.994  20.865  68.747  1.00 11.90      1FDN  90
+ATOM     12  CD1 TYR     2       9.986  21.815  68.482  1.00 11.44      1FDN  91
+ATOM     13  CD2 TYR     2       9.214  19.834  69.671  1.00 11.49      1FDN  92
+ATOM     14  CE1 TYR     2      11.209  21.742  69.146  1.00 11.59      1FDN  93
+ATOM     15  CE2 TYR     2      10.442  19.751  70.338  1.00 13.04      1FDN  94
+ATOM     16  CZ  TYR     2      11.421  20.710  70.061  1.00 13.74      1FDN  95
+ATOM     17  OH  TYR     2      12.652  20.633  70.674  1.00 14.24      1FDN  96
+ATOM     18  N   VAL     3       6.341  19.223  65.770  1.00  9.50      1FDN  97
+ATOM     19  CA  VAL     3       5.103  18.626  65.305  1.00  9.51      1FDN  98
+ATOM     20  C   VAL     3       4.839  17.445  66.248  1.00 10.00      1FDN  99
+ATOM     21  O   VAL     3       5.768  16.767  66.712  1.00  9.74      1FDN 100
+ATOM     22  CB  VAL     3       5.271  18.199  63.809  1.00  8.75      1FDN 101
+ATOM     23  CG1 VAL     3       6.379  17.179  63.634  1.00  9.61      1FDN 102
+ATOM     24  CG2 VAL     3       3.957  17.620  63.311  1.00  9.83      1FDN 103
+ATOM     25  N   ILE     4       3.587  17.263  66.657  1.00  9.05      1FDN 104
+ATOM     26  CA  ILE     4       3.204  16.165  67.531  1.00  9.65      1FDN 105
+ATOM     27  C   ILE     4       2.977  14.961  66.644  1.00 10.61      1FDN 106
+ATOM     28  O   ILE     4       2.171  15.043  65.716  1.00 11.05      1FDN 107
+ATOM     29  CB  ILE     4       1.941  16.587  68.304  1.00  8.61      1FDN 108
+ATOM     30  CG1 ILE     4       2.360  17.676  69.283  1.00  9.26      1FDN 109
+ATOM     31  CG2 ILE     4       1.323  15.427  69.064  1.00  7.79      1FDN 110
+ATOM     32  CD1 ILE     4       1.239  18.368  70.064  1.00 10.35      1FDN 111
+ATOM     33  N   ASN     5       3.717  13.878  66.858  1.00 10.52      1FDN 112
+ATOM     34  CA  ASN     5       3.551  12.729  65.991  1.00 11.91      1FDN 113
+ATOM     35  C   ASN     5       2.482  11.763  66.487  1.00 12.50      1FDN 114
+ATOM     36  O   ASN     5       1.794  12.018  67.477  1.00 11.77      1FDN 115
+ATOM     37  CB  ASN     5       4.928  12.033  65.826  1.00 13.38      1FDN 116
+ATOM     38  CG  ASN     5       5.545  11.386  67.055  1.00 13.93      1FDN 117
+ATOM     39  OD1 ASN     5       4.853  10.975  67.986  1.00 15.00      1FDN 118
+ATOM     40  ND2 ASN     5       6.867  11.269  67.114  1.00 13.74      1FDN 119
+ATOM     41  N   GLU     6       2.365  10.586  65.880  1.00 13.65      1FDN 120
+ATOM     42  CA  GLU     6       1.298   9.656  66.203  1.00 14.52      1FDN 121
+ATOM     43  C   GLU     6       1.336   8.975  67.553  1.00 13.73      1FDN 122
+ATOM     44  O   GLU     6       0.359   8.344  67.939  1.00 14.42      1FDN 123
+ATOM     45  CB  GLU     6       1.250   8.610  65.111  1.00 16.54      1FDN 124
+ATOM     46  CG  GLU     6       0.683   9.222  63.841  1.00 20.90      1FDN 125
+ATOM     47  CD  GLU     6       0.736   8.344  62.594  1.00 23.76      1FDN 126
+ATOM     48  OE1 GLU     6       1.029   7.151  62.694  1.00 24.78      1FDN 127
+ATOM     49  OE2 GLU     6       0.487   8.876  61.508  1.00 26.96      1FDN 128
+ATOM     50  N   ALA     7       2.443   9.071  68.274  1.00 11.73      1FDN 129
+ATOM     51  CA  ALA     7       2.512   8.504  69.598  1.00 11.89      1FDN 130
+ATOM     52  C   ALA     7       1.608   9.233  70.601  1.00 11.54      1FDN 131
+ATOM     53  O   ALA     7       1.353   8.663  71.657  1.00 11.54      1FDN 132
+ATOM     54  CB  ALA     7       3.952   8.550  70.098  1.00 11.60      1FDN 133
+ATOM     55  N   CYS     8       1.131  10.460  70.328  1.00 10.85      1FDN 134
+ATOM     56  CA  CYS     8       0.296  11.226  71.241  1.00 10.12      1FDN 135
+ATOM     57  C   CYS     8      -0.900  10.438  71.742  1.00 10.87      1FDN 136
+ATOM     58  O   CYS     8      -1.654   9.855  70.962  1.00 11.93      1FDN 137
+ATOM     59  CB  CYS     8      -0.208  12.503  70.545  1.00  9.11      1FDN 138
+ATOM     60  SG  CYS     8      -1.257  13.598  71.545  1.00  8.20      1FDN 139
+ATOM     61  N   ILE     9      -1.056  10.442  73.066  1.00 10.87      1FDN 140
+ATOM     62  CA  ILE     9      -2.195   9.766  73.670  1.00 11.39      1FDN 141
+ATOM     63  C   ILE     9      -3.261  10.759  74.124  1.00 11.90      1FDN 142
+ATOM     64  O   ILE     9      -4.154  10.400  74.891  1.00 10.44      1FDN 143
+ATOM     65  CB  ILE     9      -1.721   8.877  74.880  1.00 11.20      1FDN 144
+ATOM     66  CG1 ILE     9      -0.970   9.694  75.938  1.00 11.40      1FDN 145
+ATOM     67  CG2 ILE     9      -0.867   7.740  74.316  1.00 10.03      1FDN 146
+ATOM     68  CD1 ILE     9      -0.616   8.916  77.222  1.00 12.01      1FDN 147
+ATOM     69  N   SER    10      -3.192  12.030  73.689  1.00 11.95      1FDN 148
+ATOM     70  CA  SER    10      -4.176  13.057  74.024  1.00 11.90      1FDN 149
+ATOM     71  C   SER    10      -4.473  13.283  75.504  1.00 12.14      1FDN 150
+ATOM     72  O   SER    10      -5.595  13.520  75.949  1.00 11.02      1FDN 151
+ATOM     73  CB  SER    10      -5.474  12.739  73.267  1.00 12.54      1FDN 152
+ATOM     74  OG  SER    10      -5.264  12.826  71.866  1.00 15.45      1FDN 153
+ATOM     75  N   CYS    11      -3.391  13.235  76.279  1.00 11.68      1FDN 154
+ATOM     76  CA  CYS    11      -3.468  13.467  77.705  1.00 11.60      1FDN 155
+ATOM     77  C   CYS    11      -3.704  14.944  78.061  1.00 12.35      1FDN 156
+ATOM     78  O   CYS    11      -4.143  15.290  79.160  1.00 12.98      1FDN 157
+ATOM     79  CB  CYS    11      -2.163  12.930  78.284  1.00 11.60      1FDN 158
+ATOM     80  SG  CYS    11      -0.693  13.981  78.230  1.00 10.69      1FDN 159
+ATOM     81  N   GLY    12      -3.320  15.857  77.157  1.00 10.84      1FDN 160
+ATOM     82  CA  GLY    12      -3.537  17.273  77.379  1.00 11.08      1FDN 161
+ATOM     83  C   GLY    12      -2.511  17.966  78.251  1.00 10.77      1FDN 162
+ATOM     84  O   GLY    12      -2.591  19.188  78.417  1.00 11.10      1FDN 163
+ATOM     85  N   ALA    13      -1.497  17.281  78.771  1.00 11.49      1FDN 164
+ATOM     86  CA  ALA    13      -0.536  17.912  79.664  1.00 11.69      1FDN 165
+ATOM     87  C   ALA    13       0.335  19.015  79.058  1.00 12.34      1FDN 166
+ATOM     88  O   ALA    13       0.692  19.978  79.766  1.00 13.43      1FDN 167
+ATOM     89  CB  ALA    13       0.381  16.842  80.254  1.00 13.26      1FDN 168
+ATOM     90  N   CYS    14       0.598  18.949  77.744  1.00 11.14      1FDN 169
+ATOM     91  CA  CYS    14       1.445  19.925  77.095  1.00 11.60      1FDN 170
+ATOM     92  C   CYS    14       0.758  21.242  76.830  1.00 12.58      1FDN 171
+ATOM     93  O   CYS    14       1.420  22.281  76.887  1.00 13.50      1FDN 172
+ATOM     94  CB  CYS    14       1.959  19.433  75.765  1.00 10.21      1FDN 173
+ATOM     95  SG  CYS    14       0.630  18.855  74.679  1.00 10.58      1FDN 174
+ATOM     96  N   GLU    15      -0.558  21.243  76.594  1.00 13.00      1FDN 175
+ATOM     97  CA  GLU    15      -1.233  22.468  76.209  1.00 14.98      1FDN 176
+ATOM     98  C   GLU    15      -1.027  23.669  77.132  1.00 14.53      1FDN 177
+ATOM     99  O   GLU    15      -0.616  24.704  76.599  1.00 12.83      1FDN 178
+ATOM    100  CB  GLU    15      -2.733  22.195  76.047  1.00 17.08      1FDN 179
+ATOM    101  CG  GLU    15      -3.470  23.465  75.615  1.00 21.32      1FDN 180
+ATOM    102  CD  GLU    15      -4.926  23.266  75.240  1.00 24.57      1FDN 181
+ATOM    103  OE1 GLU    15      -5.631  22.506  75.911  1.00 26.31      1FDN 182
+ATOM    104  OE2 GLU    15      -5.346  23.888  74.266  1.00 27.83      1FDN 183
+ATOM    105  N   PRO    16      -1.211  23.642  78.463  1.00 15.21      1FDN 184
+ATOM    106  CA  PRO    16      -0.917  24.763  79.344  1.00 15.10      1FDN 185
+ATOM    107  C   PRO    16       0.546  25.160  79.352  1.00 15.41      1FDN 186
+ATOM    108  O   PRO    16       0.864  26.301  79.688  1.00 16.54      1FDN 187
+ATOM    109  CB  PRO    16      -1.361  24.337  80.719  1.00 15.86      1FDN 188
+ATOM    110  CG  PRO    16      -2.288  23.181  80.477  1.00 16.42      1FDN 189
+ATOM    111  CD  PRO    16      -1.638  22.506  79.281  1.00 15.36      1FDN 190
+ATOM    112  N   GLU    17       1.452  24.238  79.017  1.00 14.95      1FDN 191
+ATOM    113  CA  GLU    17       2.855  24.518  79.193  1.00 14.36      1FDN 192
+ATOM    114  C   GLU    17       3.564  25.242  78.066  1.00 13.69      1FDN 193
+ATOM    115  O   GLU    17       4.678  25.732  78.301  1.00 12.55      1FDN 194
+ATOM    116  CB  GLU    17       3.561  23.198  79.518  1.00 16.92      1FDN 195
+ATOM    117  CG  GLU    17       3.071  22.604  80.856  1.00 20.21      1FDN 196
+ATOM    118  CD  GLU    17       3.122  23.575  82.043  1.00 22.30      1FDN 197
+ATOM    119  OE1 GLU    17       4.211  24.034  82.389  1.00 22.35      1FDN 198
+ATOM    120  OE2 GLU    17       2.066  23.872  82.614  1.00 24.45      1FDN 199
+ATOM    121  N   CYS    18       2.923  25.334  76.894  1.00 11.61      1FDN 200
+ATOM    122  CA  CYS    18       3.486  26.069  75.782  1.00 11.47      1FDN 201
+ATOM    123  C   CYS    18       3.565  27.554  76.149  1.00 10.96      1FDN 202
+ATOM    124  O   CYS    18       2.508  28.170  76.343  1.00  9.92      1FDN 203
+ATOM    125  CB  CYS    18       2.607  25.905  74.547  1.00 11.17      1FDN 204
+ATOM    126  SG  CYS    18       3.323  26.760  73.127  1.00  9.74      1FDN 205
+ATOM    127  N   PRO    19       4.737  28.216  76.161  1.00 11.67      1FDN 206
+ATOM    128  CA  PRO    19       4.849  29.627  76.500  1.00 12.43      1FDN 207
+ATOM    129  C   PRO    19       4.149  30.548  75.511  1.00 12.14      1FDN 208
+ATOM    130  O   PRO    19       3.868  31.690  75.864  1.00 14.00      1FDN 209
+ATOM    131  CB  PRO    19       6.353  29.858  76.612  1.00 12.50      1FDN 210
+ATOM    132  CG  PRO    19       6.951  28.856  75.665  1.00 12.76      1FDN 211
+ATOM    133  CD  PRO    19       6.058  27.635  75.910  1.00 12.19      1FDN 212
+ATOM    134  N   VAL    20       3.855  30.121  74.279  1.00 11.40      1FDN 213
+ATOM    135  CA  VAL    20       3.194  30.996  73.325  1.00 11.12      1FDN 214
+ATOM    136  C   VAL    20       1.834  30.479  72.873  1.00 11.80      1FDN 215
+ATOM    137  O   VAL    20       1.300  30.918  71.851  1.00 11.56      1FDN 216
+ATOM    138  CB  VAL    20       4.123  31.232  72.092  1.00  9.99      1FDN 217
+ATOM    139  CG1 VAL    20       5.328  32.042  72.553  1.00 10.12      1FDN 218
+ATOM    140  CG2 VAL    20       4.559  29.926  71.455  1.00  9.62      1FDN 219
+ATOM    141  N   ASN    21       1.243  29.541  73.624  1.00 11.97   1  1FDN 220
+ATOM    142  CA  ASN    21      -0.096  29.011  73.359  1.00 13.20   1  1FDN 221
+ATOM    143  C   ASN    21      -0.241  28.409  71.960  1.00 12.84   1  1FDN 222
+ATOM    144  O   ASN    21      -1.267  28.555  71.279  1.00 12.50   1  1FDN 223
+ATOM    145  CB  ASN    21      -1.137  30.142  73.571  1.00 14.64   1  1FDN 224
+ATOM    146  CG AASN    21      -2.588  29.683  73.579  0.50 16.26   1  1FDN 225
+ATOM    147  CG BASN    21      -0.960  30.794  74.932  0.50 14.78   1  1FDN 226
+ATOM    148  OD1AASN    21      -3.002  28.950  74.470  0.50 18.53   1  1FDN 227
+ATOM    149  OD1BASN    21      -0.516  31.937  75.034  0.50 16.18   1  1FDN 228
+ATOM    150  ND2AASN    21      -3.409  30.038  72.593  0.50 17.88   1  1FDN 229
+ATOM    151  ND2BASN    21      -1.215  30.110  76.038  0.50 15.21   1  1FDN 230
+ATOM    152  N   ALA    22       0.787  27.698  71.490  1.00 11.63      1FDN 231
+ATOM    153  CA  ALA    22       0.718  27.152  70.145  1.00 11.40      1FDN 232
+ATOM    154  C   ALA    22       0.008  25.798  70.039  1.00 11.64      1FDN 233
+ATOM    155  O   ALA    22      -0.290  25.354  68.920  1.00 10.90      1FDN 234
+ATOM    156  CB  ALA    22       2.137  27.018  69.574  1.00 10.54      1FDN 235
+ATOM    157  N   ILE    23      -0.325  25.148  71.161  1.00 11.05      1FDN 236
+ATOM    158  CA  ILE    23      -0.908  23.818  71.144  1.00 11.78      1FDN 237
+ATOM    159  C   ILE    23      -2.409  23.851  71.373  1.00 12.50      1FDN 238
+ATOM    160  O   ILE    23      -2.887  24.582  72.236  1.00 12.22      1FDN 239
+ATOM    161  CB  ILE    23      -0.234  22.943  72.242  1.00 11.58      1FDN 240
+ATOM    162  CG1 ILE    23       1.255  22.853  71.942  1.00 11.72      1FDN 241
+ATOM    163  CG2 ILE    23      -0.861  21.534  72.308  1.00 11.29      1FDN 242
+ATOM    164  CD1 ILE    23       2.060  22.037  72.974  1.00 10.72      1FDN 243
+ATOM    165  N   SER    24      -3.160  23.086  70.596  1.00 13.18      1FDN 244
+ATOM    166  CA  SER    24      -4.568  22.902  70.853  1.00 15.86      1FDN 245
+ATOM    167  C   SER    24      -4.952  21.430  70.648  1.00 17.09      1FDN 246
+ATOM    168  O   SER    24      -4.181  20.607  70.124  1.00 15.67      1FDN 247
+ATOM    169  CB  SER    24      -5.381  23.805  69.927  1.00 15.91      1FDN 248
+ATOM    170  OG  SER    24      -5.156  23.541  68.554  1.00 19.88      1FDN 249
+ATOM    171  N   SER    25      -6.122  21.055  71.149  1.00 19.09      1FDN 250
+ATOM    172  CA  SER    25      -6.659  19.719  71.003  1.00 22.36      1FDN 251
+ATOM    173  C   SER    25      -7.171  19.570  69.579  1.00 23.52      1FDN 252
+ATOM    174  O   SER    25      -7.838  20.468  69.064  1.00 24.49      1FDN 253
+ATOM    175  CB  SER    25      -7.778  19.554  72.010  1.00 22.89      1FDN 254
+ATOM    176  OG  SER    25      -8.152  18.209  72.221  1.00 28.19      1FDN 255
+ATOM    177  N   GLY    26      -6.847  18.466  68.927  1.00 25.26      1FDN 256
+ATOM    178  CA  GLY    26      -7.345  18.240  67.584  1.00 27.53      1FDN 257
+ATOM    179  C   GLY    26      -8.099  16.922  67.496  1.00 28.76      1FDN 258
+ATOM    180  O   GLY    26      -8.475  16.300  68.496  1.00 29.17      1FDN 259
+ATOM    181  N   ASP    27      -8.411  16.508  66.270  1.00 29.48   2  1FDN 260
+ATOM    182  CA  ASP    27      -8.990  15.195  66.041  1.00 30.30   2  1FDN 261
+ATOM    183  C   ASP    27      -7.828  14.223  66.048  1.00 30.63   2  1FDN 262
+ATOM    184  O   ASP    27      -6.859  14.502  65.337  1.00 32.93   2  1FDN 263
+ATOM    185  CB  ASP    27      -9.701  15.145  64.676  1.00 63.01   2  1FDN 264
+ATOM    186  CG  ASP    27     -11.007  15.874  64.644  1.00 58.53   2  1FDN 265
+ATOM    187  OD1 ASP    27     -12.027  15.262  64.935  1.00 59.05   2  1FDN 266
+ATOM    188  OD2 ASP    27     -11.024  17.059  64.337  1.00 33.74   2  1FDN 267
+ATOM    189  N   ASP    28      -7.889  13.148  66.846  1.00 29.36   2  1FDN 268
+ATOM    190  CA  ASP    28      -6.865  12.108  66.904  1.00 27.48   2  1FDN 269
+ATOM    191  C   ASP    28      -5.689  12.433  67.814  1.00 26.18   2  1FDN 270
+ATOM    192  O   ASP    28      -5.339  11.579  68.633  1.00 27.46   2  1FDN 271
+ATOM    193  CB  ASP    28      -6.268  11.767  65.530  1.00 62.88   2  1FDN 272
+ATOM    194  CG  ASP    28      -7.055  10.774  64.672  1.00 59.56   2  1FDN 273
+ATOM    195  OD1 ASP    28      -6.766   9.613  64.885  1.00 53.65   2  1FDN 274
+ATOM    196  OD2 ASP    28      -7.905  11.141  63.864  1.00 34.86   2  1FDN 275
+ATOM    197  N   ARG    29      -5.116  13.631  67.736  1.00 23.20      1FDN 276
+ATOM    198  CA  ARG    29      -3.979  14.002  68.558  1.00 19.26      1FDN 277
+ATOM    199  C   ARG    29      -4.007  15.510  68.698  1.00 16.80      1FDN 278
+ATOM    200  O   ARG    29      -4.824  16.209  68.081  1.00 16.14      1FDN 279
+ATOM    201  CB  ARG    29      -2.631  13.571  67.918  1.00 20.06      1FDN 280
+ATOM    202  CG  ARG    29      -2.341  13.983  66.474  1.00 21.59      1FDN 281
+ATOM    203  CD  ARG    29      -1.016  13.410  65.958  1.00 23.16      1FDN 282
+ATOM    204  NE  ARG    29      -1.164  12.799  64.637  1.00 24.36      1FDN 283
+ATOM    205  CZ  ARG    29      -0.322  13.011  63.611  1.00 24.01      1FDN 284
+ATOM    206  NH1 ARG    29       0.735  13.815  63.684  1.00 22.62      1FDN 285
+ATOM    207  NH2 ARG    29      -0.529  12.393  62.456  1.00 25.24      1FDN 286
+ATOM    208  N   TYR    30      -3.171  16.015  69.596  1.00 13.42      1FDN 287
+ATOM    209  CA  TYR    30      -3.008  17.449  69.761  1.00 11.94      1FDN 288
+ATOM    210  C   TYR    30      -2.216  18.031  68.582  1.00  9.50      1FDN 289
+ATOM    211  O   TYR    30      -1.499  17.306  67.894  1.00  8.73      1FDN 290
+ATOM    212  CB  TYR    30      -2.314  17.688  71.110  1.00 11.45      1FDN 291
+ATOM    213  CG  TYR    30      -3.327  17.705  72.254  1.00 11.86      1FDN 292
+ATOM    214  CD1 TYR    30      -4.097  16.569  72.550  1.00 11.14      1FDN 293
+ATOM    215  CD2 TYR    30      -3.499  18.880  72.996  1.00 11.58      1FDN 294
+ATOM    216  CE1 TYR    30      -5.037  16.612  73.587  1.00 11.54      1FDN 295
+ATOM    217  CE2 TYR    30      -4.437  18.928  74.033  1.00 12.05      1FDN 296
+ATOM    218  CZ  TYR    30      -5.195  17.793  74.310  1.00 12.25      1FDN 297
+ATOM    219  OH  TYR    30      -6.158  17.869  75.291  1.00 14.17      1FDN 298
+ATOM    220  N   VAL    31      -2.317  19.323  68.295  1.00  9.09      1FDN 299
+ATOM    221  CA  VAL    31      -1.689  19.937  67.126  1.00 10.26      1FDN 300
+ATOM    222  C   VAL    31      -0.913  21.180  67.501  1.00  8.89      1FDN 301
+ATOM    223  O   VAL    31      -1.352  21.954  68.354  1.00  7.75      1FDN 302
+ATOM    224  CB  VAL    31      -2.640  20.486  66.020  1.00 12.44      1FDN 303
+ATOM    225  CG1 VAL    31      -2.202  19.854  64.728  1.00 13.68      1FDN 304
+ATOM    226  CG2 VAL    31      -4.102  20.305  66.352  1.00 13.97      1FDN 305
+ATOM    227  N   ILE    32       0.220  21.374  66.831  1.00  8.63      1FDN 306
+ATOM    228  CA  ILE    32       1.021  22.573  67.005  1.00  8.70      1FDN 307
+ATOM    229  C   ILE    32       0.768  23.554  65.870  1.00  7.88      1FDN 308
+ATOM    230  O   ILE    32       0.728  23.186  64.695  1.00  7.76      1FDN 309
+ATOM    231  CB  ILE    32       2.506  22.172  67.058  1.00  8.80      1FDN 310
+ATOM    232  CG1 ILE    32       2.716  21.409  68.362  1.00  9.94      1FDN 311
+ATOM    233  CG2 ILE    32       3.437  23.402  66.955  1.00  8.54      1FDN 312
+ATOM    234  CD1 ILE    32       4.112  20.804  68.599  1.00  9.93      1FDN 313
+ATOM    235  N   ASP    33       0.525  24.811  66.208  1.00  8.36      1FDN 314
+ATOM    236  CA  ASP    33       0.465  25.867  65.213  1.00  8.37      1FDN 315
+ATOM    237  C   ASP    33       1.915  26.201  64.836  1.00  8.89      1FDN 316
+ATOM    238  O   ASP    33       2.643  26.905  65.559  1.00  8.39      1FDN 317
+ATOM    239  CB  ASP    33      -0.225  27.086  65.815  1.00  9.86      1FDN 318
+ATOM    240  CG  ASP    33      -0.245  28.374  64.983  1.00 13.64      1FDN 319
+ATOM    241  OD1 ASP    33       0.093  28.378  63.799  1.00 14.22      1FDN 320
+ATOM    242  OD2 ASP    33      -0.608  29.406  65.550  1.00 15.42      1FDN 321
+ATOM    243  N   ALA    34       2.336  25.777  63.645  1.00  8.65      1FDN 322
+ATOM    244  CA  ALA    34       3.700  25.983  63.187  1.00  9.00      1FDN 323
+ATOM    245  C   ALA    34       4.003  27.450  62.950  1.00  9.78      1FDN 324
+ATOM    246  O   ALA    34       5.166  27.843  62.916  1.00 10.43      1FDN 325
+ATOM    247  CB  ALA    34       3.939  25.229  61.889  1.00  8.96      1FDN 326
+ATOM    248  N   ASP    35       2.997  28.304  62.799  1.00 10.15      1FDN 327
+ATOM    249  CA  ASP    35       3.281  29.718  62.631  1.00 11.42      1FDN 328
+ATOM    250  C   ASP    35       3.473  30.454  63.944  1.00 11.25      1FDN 329
+ATOM    251  O   ASP    35       3.684  31.665  63.918  1.00 11.95      1FDN 330
+ATOM    252  CB  ASP    35       2.156  30.357  61.818  1.00 13.41      1FDN 331
+ATOM    253  CG  ASP    35       2.080  29.898  60.369  1.00 16.24      1FDN 332
+ATOM    254  OD1 ASP    35       3.085  29.474  59.786  1.00 17.23      1FDN 333
+ATOM    255  OD2 ASP    35       0.982  29.971  59.825  1.00 18.53      1FDN 334
+ATOM    256  N   THR    36       3.413  29.768  65.086  1.00 10.60      1FDN 335
+ATOM    257  CA  THR    36       3.618  30.386  66.386  1.00 11.00      1FDN 336
+ATOM    258  C   THR    36       4.731  29.698  67.165  1.00 11.08      1FDN 337
+ATOM    259  O   THR    36       5.380  30.339  67.992  1.00 12.13      1FDN 338
+ATOM    260  CB  THR    36       2.277  30.336  67.165  1.00 11.03      1FDN 339
+ATOM    261  OG1 THR    36       1.356  31.054  66.354  1.00 14.14      1FDN 340
+ATOM    262  CG2 THR    36       2.300  30.964  68.544  1.00 12.30      1FDN 341
+ATOM    263  N   CYS    37       4.968  28.408  66.917  1.00 10.99      1FDN 342
+ATOM    264  CA  CYS    37       5.969  27.645  67.630  1.00 10.45      1FDN 343
+ATOM    265  C   CYS    37       7.353  28.258  67.483  1.00 10.71      1FDN 344
+ATOM    266  O   CYS    37       7.825  28.523  66.368  1.00 10.92      1FDN 345
+ATOM    267  CB  CYS    37       5.977  26.211  67.095  1.00  9.84      1FDN 346
+ATOM    268  SG  CYS    37       7.181  25.162  67.937  1.00  9.24      1FDN 347
+ATOM    269  N   ILE    38       8.030  28.423  68.614  1.00 11.43      1FDN 348
+ATOM    270  CA  ILE    38       9.384  28.944  68.558  1.00 11.87      1FDN 349
+ATOM    271  C   ILE    38      10.442  27.917  68.975  1.00 12.42      1FDN 350
+ATOM    272  O   ILE    38      11.534  28.275  69.420  1.00 12.99      1FDN 351
+ATOM    273  CB  ILE    38       9.463  30.277  69.419  1.00 12.86      1FDN 352
+ATOM    274  CG1 ILE    38       8.666  30.265  70.714  1.00 12.91      1FDN 353
+ATOM    275  CG2 ILE    38       8.883  31.389  68.553  1.00 12.64      1FDN 354
+ATOM    276  CD1 ILE    38       9.161  29.324  71.820  1.00 13.51      1FDN 355
+ATOM    277  N   ASP    39      10.175  26.603  68.825  1.00 12.67      1FDN 356
+ATOM    278  CA  ASP    39      11.133  25.519  69.087  1.00 12.49      1FDN 357
+ATOM    279  C   ASP    39      11.761  25.409  70.470  1.00 12.79      1FDN 358
+ATOM    280  O   ASP    39      12.884  24.926  70.627  1.00 13.83      1FDN 359
+ATOM    281  CB  ASP    39      12.282  25.580  68.070  1.00 12.59      1FDN 360
+ATOM    282  CG  ASP    39      11.885  25.354  66.628  1.00 15.36      1FDN 361
+ATOM    283  OD1 ASP    39      10.933  24.615  66.371  1.00 14.93      1FDN 362
+ATOM    284  OD2 ASP    39      12.553  25.916  65.764  1.00 16.07      1FDN 363
+ATOM    285  N   CYS    40      11.024  25.792  71.497  1.00 11.64      1FDN 364
+ATOM    286  CA  CYS    40      11.557  25.752  72.836  1.00 11.51      1FDN 365
+ATOM    287  C   CYS    40      11.718  24.358  73.416  1.00 11.98      1FDN 366
+ATOM    288  O   CYS    40      12.442  24.155  74.395  1.00 12.97      1FDN 367
+ATOM    289  CB  CYS    40      10.639  26.593  73.695  1.00 10.73      1FDN 368
+ATOM    290  SG  CYS    40       9.070  25.962  74.343  1.00 10.55      1FDN 369
+ATOM    291  N   GLY    41      10.972  23.386  72.881  1.00 10.58      1FDN 370
+ATOM    292  CA  GLY    41      11.030  22.023  73.392  1.00 10.61      1FDN 371
+ATOM    293  C   GLY    41      10.247  21.793  74.686  1.00 11.07      1FDN 372
+ATOM    294  O   GLY    41      10.228  20.649  75.162  1.00 11.51      1FDN 373
+ATOM    295  N   ALA    42       9.560  22.768  75.304  1.00 10.90      1FDN 374
+ATOM    296  CA  ALA    42       8.819  22.536  76.554  1.00 11.25      1FDN 375
+ATOM    297  C   ALA    42       7.768  21.422  76.508  1.00 10.11      1FDN 376
+ATOM    298  O   ALA    42       7.699  20.593  77.431  1.00 10.31      1FDN 377
+ATOM    299  CB  ALA    42       8.115  23.822  76.986  1.00 10.80      1FDN 378
+ATOM    300  N   CYS    43       7.015  21.326  75.409  1.00  9.81      1FDN 379
+ATOM    301  CA  CYS    43       5.983  20.319  75.241  1.00 10.28      1FDN 380
+ATOM    302  C   CYS    43       6.554  18.913  75.252  1.00 10.51      1FDN 381
+ATOM    303  O   CYS    43       5.997  18.025  75.888  1.00  9.88      1FDN 382
+ATOM    304  CB  CYS    43       5.230  20.542  73.933  1.00  9.78      1FDN 383
+ATOM    305  SG  CYS    43       6.282  20.864  72.496  1.00  9.64      1FDN 384
+ATOM    306  N   ALA    44       7.711  18.704  74.613  1.00  9.51      1FDN 385
+ATOM    307  CA  ALA    44       8.352  17.399  74.628  1.00 10.81      1FDN 386
+ATOM    308  C   ALA    44       8.778  17.041  76.055  1.00 10.71      1FDN 387
+ATOM    309  O   ALA    44       8.678  15.888  76.484  1.00 10.23      1FDN 388
+ATOM    310  CB  ALA    44       9.591  17.399  73.734  1.00 10.22      1FDN 389
+ATOM    311  N   GLY    45       9.196  18.030  76.860  1.00 10.66      1FDN 390
+ATOM    312  CA  GLY    45       9.630  17.812  78.234  1.00 10.04      1FDN 391
+ATOM    313  C   GLY    45       8.517  17.371  79.168  1.00 10.42      1FDN 392
+ATOM    314  O   GLY    45       8.785  16.747  80.204  1.00 10.86      1FDN 393
+ATOM    315  N   VAL    46       7.267  17.725  78.883  1.00 10.23      1FDN 394
+ATOM    316  CA  VAL    46       6.167  17.268  79.722  1.00  9.97      1FDN 395
+ATOM    317  C   VAL    46       5.352  16.159  79.055  1.00  9.82      1FDN 396
+ATOM    318  O   VAL    46       4.348  15.709  79.610  1.00 10.73      1FDN 397
+ATOM    319  CB  VAL    46       5.222  18.466  80.117  1.00  9.83      1FDN 398
+ATOM    320  CG1 VAL    46       6.021  19.433  80.996  1.00  9.49      1FDN 399
+ATOM    321  CG2 VAL    46       4.674  19.198  78.898  1.00  9.19      1FDN 400
+ATOM    322  N   CYS    47       5.813  15.644  77.917  1.00  9.39      1FDN 401
+ATOM    323  CA  CYS    47       5.117  14.582  77.240  1.00  9.84      1FDN 402
+ATOM    324  C   CYS    47       5.560  13.214  77.740  1.00  8.72      1FDN 403
+ATOM    325  O   CYS    47       6.703  12.813  77.516  1.00  8.61      1FDN 404
+ATOM    326  CB  CYS    47       5.368  14.644  75.759  1.00 10.01      1FDN 405
+ATOM    327  SG  CYS    47       4.285  13.480  74.893  1.00  9.24      1FDN 406
+ATOM    328  N   PRO    48       4.683  12.402  78.330  1.00  9.38      1FDN 407
+ATOM    329  CA  PRO    48       5.011  11.063  78.807  1.00 11.10      1FDN 408
+ATOM    330  C   PRO    48       5.506  10.122  77.714  1.00 12.10      1FDN 409
+ATOM    331  O   PRO    48       6.367   9.283  77.967  1.00 13.62      1FDN 410
+ATOM    332  CB  PRO    48       3.726  10.600  79.473  1.00 10.12      1FDN 411
+ATOM    333  CG  PRO    48       2.638  11.296  78.690  1.00 10.42      1FDN 412
+ATOM    334  CD  PRO    48       3.253  12.675  78.495  1.00  9.21      1FDN 413
+ATOM    335  N   VAL    49       4.977  10.272  76.498  1.00 12.17      1FDN 414
+ATOM    336  CA  VAL    49       5.329   9.404  75.392  1.00 12.37      1FDN 415
+ATOM    337  C   VAL    49       6.282  10.063  74.403  1.00 13.04      1FDN 416
+ATOM    338  O   VAL    49       6.543   9.499  73.343  1.00 14.77      1FDN 417
+ATOM    339  CB  VAL    49       4.028   8.939  74.658  1.00 12.46      1FDN 418
+ATOM    340  CG1 VAL    49       3.213   8.045  75.593  1.00 12.58      1FDN 419
+ATOM    341  CG2 VAL    49       3.186  10.144  74.222  1.00 11.00      1FDN 420
+ATOM    342  N   ASP    50       6.769  11.275  74.709  1.00 12.96      1FDN 421
+ATOM    343  CA  ASP    50       7.684  12.052  73.880  1.00 12.73      1FDN 422
+ATOM    344  C   ASP    50       7.225  12.226  72.428  1.00 12.16      1FDN 423
+ATOM    345  O   ASP    50       7.990  12.079  71.470  1.00 12.28      1FDN 424
+ATOM    346  CB  ASP    50       9.070  11.379  73.958  1.00 14.80      1FDN 425
+ATOM    347  CG  ASP    50      10.253  12.282  73.636  1.00 16.12      1FDN 426
+ATOM    348  OD1 ASP    50      10.298  13.429  74.086  1.00 17.14      1FDN 427
+ATOM    349  OD2 ASP    50      11.147  11.817  72.937  1.00 18.93      1FDN 428
+ATOM    350  N   ALA    51       5.944  12.555  72.248  1.00 10.59      1FDN 429
+ATOM    351  CA  ALA    51       5.395  12.753  70.913  1.00 10.95      1FDN 430
+ATOM    352  C   ALA    51       5.768  14.035  70.153  1.00 11.26      1FDN 431
+ATOM    353  O   ALA    51       5.825  13.959  68.912  1.00 11.71      1FDN 432
+ATOM    354  CB  ALA    51       3.868  12.671  70.976  1.00  8.84      1FDN 433
+ATOM    355  N   PRO    52       6.000  15.227  70.742  1.00 10.41      1FDN 434
+ATOM    356  CA  PRO    52       6.460  16.409  70.023  1.00  9.53      1FDN 435
+ATOM    357  C   PRO    52       7.896  16.212  69.552  1.00 10.02      1FDN 436
+ATOM    358  O   PRO    52       8.769  15.921  70.376  1.00  7.98      1FDN 437
+ATOM    359  CB  PRO    52       6.307  17.554  71.015  1.00  9.20      1FDN 438
+ATOM    360  CG  PRO    52       5.280  17.048  71.993  1.00  9.84      1FDN 439
+ATOM    361  CD  PRO    52       5.681  15.592  72.120  1.00  9.31      1FDN 440
+ATOM    362  N   VAL    53       8.170  16.367  68.253  1.00 10.40      1FDN 441
+ATOM    363  CA  VAL    53       9.519  16.247  67.727  1.00 12.01      1FDN 442
+ATOM    364  C   VAL    53       9.804  17.460  66.856  1.00 12.49      1FDN 443
+ATOM    365  O   VAL    53       8.916  18.038  66.217  1.00 11.32      1FDN 444
+ATOM    366  CB  VAL    53       9.724  14.953  66.870  1.00 12.73      1FDN 445
+ATOM    367  CG1 VAL    53       9.619  13.719  67.765  1.00 13.04      1FDN 446
+ATOM    368  CG2 VAL    53       8.661  14.832  65.805  1.00 13.94      1FDN 447
+ATOM    369  N   GLN    54      11.043  17.930  66.892  1.00 13.66      1FDN 448
+ATOM    370  CA  GLN    54      11.475  19.057  66.085  1.00 14.74      1FDN 449
+ATOM    371  C   GLN    54      11.593  18.646  64.627  1.00 14.89      1FDN 450
+ATOM    372  O   GLN    54      12.192  17.612  64.316  1.00 14.96      1FDN 451
+ATOM    373  CB  GLN    54      12.810  19.547  66.604  1.00 16.61      1FDN 452
+ATOM    374  CG  GLN    54      13.305  20.802  65.916  1.00 19.41      1FDN 453
+ATOM    375  CD  GLN    54      14.300  21.580  66.749  1.00 22.23      1FDN 454
+ATOM    376  OE1 GLN    54      14.926  20.984  67.621  1.00 24.69      1FDN 455
+ATOM    377  NE2 GLN    54      14.545  22.874  66.562  1.00 22.97      1FDN 456
+ATOM    378  N   ALA    55      10.944  19.443  63.797  1.00 15.58      1FDN 457
+ATOM    379  CA  ALA    55      10.963  19.288  62.360  1.00 17.56      1FDN 458
+ATOM    380  C   ALA    55      11.639  20.488  61.674  1.00 20.19      1FDN 459
+ATOM    381  O   ALA    55      11.963  21.481  62.349  1.00 21.27      1FDN 460
+ATOM    382  CB  ALA    55       9.535  19.161  61.853  1.00 17.65      1FDN 461
+ATOM    383  OXT ALA    55      11.826  20.430  60.457  1.00 21.80      1FDN 462
+TER     384      ALA    55                                              1FDN 463
+HETATM  385 FE1  FS4    56       2.260  14.394  74.719  1.00 10.77      1FDN 464
+HETATM  386 FE2  FS4    56       0.728  16.628  74.564  1.00 10.52      1FDN 465
+HETATM  387 FE3  FS4    56      -0.061  14.381  73.264  1.00 10.25      1FDN 466
+HETATM  388 FE4  FS4    56      -0.098  14.443  76.081  1.00 11.02      1FDN 467
+HETATM  389  S1  FS4    56       1.661  15.767  76.430  1.00  9.67      1FDN 468
+HETATM  390  S2  FS4    56       1.808  15.575  72.849  1.00  9.54      1FDN 469
+HETATM  391  S3  FS4    56       0.583  12.793  74.702  1.00 10.90      1FDN 470
+HETATM  392  S4  FS4    56      -1.348  15.643  74.660  1.00 10.48      1FDN 471
+HETATM  393 FE1  FS4    57       5.014  25.513  72.285  1.00 10.77      1FDN 472
+HETATM  394 FE2  FS4    57       6.208  23.060  72.024  1.00 10.23      1FDN 473
+HETATM  395 FE3  FS4    57       6.588  24.973  70.112  1.00 10.49      1FDN 474
+HETATM  396 FE4  FS4    57       7.688  25.302  72.660  1.00 10.61      1FDN 475
+HETATM  397  S1  FS4    57       6.104  24.336  73.877  1.00  9.79      1FDN 476
+HETATM  398  S2  FS4    57       4.631  23.969  70.683  1.00  9.39      1FDN 477
+HETATM  399  S3  FS4    57       6.636  26.830  71.364  1.00  9.97      1FDN 478
+HETATM  400  S4  FS4    57       8.216  23.741  71.127  1.00  9.69      1FDN 479
+HETATM  401  O   HOH    58       1.359  18.942  65.443  1.00  5.47      1FDN 480
+HETATM  402  O   HOH    59       1.597  20.848  63.551  1.00  9.80      1FDN 481
+HETATM  403  O   HOH    60      12.856  16.497  68.681  1.00 10.55      1FDN 482
+HETATM  404  O   HOH    61      -0.979  25.935  73.983  1.00 12.42      1FDN 483
+HETATM  405  O   HOH    62       7.664  27.302  63.932  1.00 12.67      1FDN 484
+HETATM  406  O   HOH    63       4.363  22.020  63.140  1.00 12.68      1FDN 485
+HETATM  407  O   HOH    64      -0.348  16.719  65.255  1.00 13.21      1FDN 486
+HETATM  408  O   HOH    65       5.227  33.050  68.704  1.00 15.89      1FDN 487
+HETATM  409  O   HOH    66       1.576   5.916  72.168  1.00 20.46      1FDN 488
+HETATM  410  O   HOH    67      -2.727  24.653  67.543  1.00 20.95      1FDN 489
+HETATM  411  O   HOH    68      -2.878  16.572  63.630  1.00 21.78      1FDN 490
+HETATM  412  O   HOH    69      14.003  17.040  60.751  1.00 22.75      1FDN 491
+HETATM  413  O   HOH    70      -7.537  22.977  72.807  1.00 23.16      1FDN 492
+HETATM  414  O   HOH    71      10.330  23.555  61.429  1.00 23.56      1FDN 493
+HETATM  415  O   HOH    72      -5.146  20.555  78.365  1.00 23.89      1FDN 494
+HETATM  416  O   HOH    73       3.481  12.256  62.728  1.00 24.90      1FDN 495
+HETATM  417  O   HOH    74       9.854  13.467  77.013  1.00 25.79      1FDN 496
+HETATM  418  O   HOH    75       8.852  21.398  79.994  1.00 25.89      1FDN 497
+HETATM  419  O   HOH    76      13.232  23.653  63.962  1.00 26.09      1FDN 498
+HETATM  420  O   HOH    77      12.431  15.944  75.694  1.00 26.18      1FDN 499
+HETATM  421  O   HOH    78       7.535   9.406  69.581  1.00 26.86      1FDN 500
+HETATM  422  O   HOH    79      -5.335  16.656  65.147  1.00 27.89      1FDN 501
+HETATM  423  O   HOH    80      -1.516   7.034  70.544  1.00 30.75      1FDN 502
+HETATM  424  O   HOH    81      11.353  15.213  71.141  1.00 31.29      1FDN 503
+HETATM  425  O   HOH    82      -2.259  10.286  68.142  1.00 31.57      1FDN 504
+HETATM  426  O   HOH    83      12.590  19.015  75.527  1.00 31.70      1FDN 505
+HETATM  427  O   HOH    84       6.963   6.619  77.422  1.00 35.22      1FDN 506
+HETATM  428  O   HOH    85      14.738  16.637  65.225  1.00 35.46      1FDN 507
+HETATM  429  O   HOH    86      12.815  22.543  58.748  1.00 37.30      1FDN 508
+HETATM  430  O   HOH    87      -4.613  10.202  71.088  1.00 37.46      1FDN 509
+HETATM  431  O   HOH    88      -7.194   9.189  71.809  1.00 37.64      1FDN 510
+HETATM  432  O   HOH    89       6.832  23.097  81.259  1.00 39.02      1FDN 511
+HETATM  433  O   HOH    90      -7.639  15.416  75.757  1.00 40.70      1FDN 512
+HETATM  434  O   HOH    91       1.331   5.134  68.250  1.00 42.62      1FDN 513
+HETATM  435  O   HOH    92      -3.160  27.455  69.101  1.00 42.84      1FDN 514
+HETATM  436  O   HOH    93      13.164  18.712  72.608  1.00 44.29      1FDN 515
+HETATM  437  O   HOH    94      -8.791  11.596  72.330  1.00 44.45      1FDN 516
+HETATM  438  O   HOH    95      14.604  25.308  76.018  1.00 44.91      1FDN 517
+HETATM  439  O   HOH    96      -6.938  15.580  70.623  1.00 48.67      1FDN 518
+HETATM  440  O   HOH    97      -3.648  25.198  64.934  1.00 48.80      1FDN 519
+HETATM  441  O   HOH    98      18.119  22.955  69.807  1.00 49.32      1FDN 520
+HETATM  442  O   HOH    99       6.568  28.768  60.652  1.00 52.18      1FDN 521
+HETATM  443  O   HOH   100      15.311  18.055  69.118  1.00 52.99      1FDN 522
+HETATM  444  O   HOH   101       0.510  33.616  70.961  1.00 57.12      1FDN 523
+HETATM  445  O   HOH   102      -3.874   6.676  69.085  1.00 60.16      1FDN 524
+HETATM  446  O   HOH   103      17.845  20.398  66.333  1.00 63.08      1FDN 525
+CONECT   60   59  387                                                   1FDN 526
+CONECT   80   79  388                                                   1FDN 527
+CONECT   95   94  386                                                   1FDN 528
+CONECT  126  125  393                                                   1FDN 529
+CONECT  268  267  395                                                   1FDN 530
+CONECT  290  289  396                                                   1FDN 531
+CONECT  305  304  394                                                   1FDN 532
+CONECT  327  326  385                                                   1FDN 533
+CONECT  385  327  389  390  391                                         1FDN 534
+CONECT  386   95  389  390  392                                         1FDN 535
+CONECT  387   60  390  391  392                                         1FDN 536
+CONECT  388   80  389  391  392                                         1FDN 537
+CONECT  389  385  386  388                                              1FDN 538
+CONECT  390  385  386  387                                              1FDN 539
+CONECT  391  385  387  388                                              1FDN 540
+CONECT  392  386  387  388                                              1FDN 541
+CONECT  393  126  397  398  399                                         1FDN 542
+CONECT  394  305  397  398  400                                         1FDN 543
+CONECT  395  268  398  399  400                                         1FDN 544
+CONECT  396  290  397  399  400                                         1FDN 545
+CONECT  397  393  394  396                                              1FDN 546
+CONECT  398  393  394  395                                              1FDN 547
+CONECT  399  393  395  396                                              1FDN 548
+CONECT  400  394  395  396                                              1FDN 549
+MASTER       42    8    2    0    0    0    0    6  445    1   24    5  1FDN 550
+END                                                                     1FDN 551

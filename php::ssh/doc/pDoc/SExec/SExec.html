@@ -1,0 +1,749 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Docs For Class SExec</title>
+	<link rel="stylesheet" type="text/css" id="layout" href="../media/layout.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../media/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../media/print.css" media="print">
+</head>
+
+<body>
+<div id="header">
+	<div id="navLinks">
+		[ <a href="../classtrees_SExec.html">Class Tree: SExec</a> ]
+		[ <a href="../elementindex_SExec.html">Index: SExec</a> ]
+		[ <a href="../elementindex.html">All elements</a> ]
+	</div>
+	<div id="packagePosition">
+		<div id="packageTitle2">SExec</div>
+		<div id="packageTitle">SExec</div>
+		<div id="elementPath"> &middot; </div>
+	</div>
+</div>
+
+<div id="nav" class="small">
+	<div id="packages">
+		Packages:
+					<p><a href="../li_SExec.html">SExec</a></p>
+			</div>
+
+				<div id="index">
+			<div id="files">
+								Files:<br>
+								<a href="../SExec/_remotessh_php.html">		remotessh.php
+		</a><br>
+			<a href="../SExec/_ssh_php.html">		ssh.php
+		</a><br>
+			<a href="../SExec/_ssh_test_php.html">		ssh_test.php
+		</a><br>
+			<a href="../SExec/_test-pers_php.html">		test-pers.php
+		</a><br>
+			<a href="../SExec/_util_php.html">		util.php
+		</a><br>
+				</div>
+			<div id="classes">
+				Classes:<br>
+								<a href="../SExec/SExec.html">		SExec
+		</a><br>
+				</div>
+		</div>
+	</div>
+
+<div id="body">
+			<h1>Class: SExec</h1>
+	<p style="margin: 0px;">Source Location: /ssh.php</p>
+	
+
+<div class="leftcol">
+	<h3><a href="#class_details">Class Overview</a> <span class="smalllinenumber">[line 214]</span></h3>
+	<div id="classTree"><pre></pre>
+</div>
+	<div class="small">
+	<p>Allow for remote execution of commands using SSH</p>
+		<h4>Author(s):</h4>
+	<ul>
+																																						<li>José R. Valverde &lt;<a href="mailto:jrvalverde@acm.org">mailto:jrvalverde@acm.org</a>&gt;</li>
+						</ul>
+	<h4>Version:</h4>
+	<ul>
+																							<li>Release: 2.1</li>
+																					</ul>
+
+	<h4>Copyright:</h4>
+	<ul>
+																												<li>José R. Valverde &lt;jrvalverde@es.embnet.org&gt;</li>
+																</li>
+	</div>
+</div>
+
+<div class="middlecol">
+	<h3><a href="#class_vars">Variables</a></h3>
+	<ul class="small">
+				<li><a href="../SExec/SExec.html#var$master">$master</a></li>
+				<li><a href="../SExec/SExec.html#var$master_input">$master_input</a></li>
+				<li><a href="../SExec/SExec.html#var$mplex_socket">$mplex_socket</a></li>
+				<li><a href="../SExec/SExec.html#var$password">$password</a></li>
+				<li><a href="../SExec/SExec.html#var$remote">$remote</a></li>
+				<li><a href="../SExec/SExec.html#var$scp">$scp</a></li>
+				<li><a href="../SExec/SExec.html#var$ssh">$ssh</a></li>
+				<li><a href="../SExec/SExec.html#var$version">$version</a></li>
+				<li><a href="../SExec/SExec.html#var$workdir">$workdir</a></li>
+			</ul>
+</div>
+<div class="rightcol">
+	<h3><a href="#class_methods">Methods</a></h3>
+	<ul class="small">
+				<li><a href="../SExec/SExec.html#methodSExec">SExec</a></li>
+				<li><a href="../SExec/SExec.html#methoddestruct">destruct</a></li>
+				<li><a href="../SExec/SExec.html#methodssh_close">ssh_close</a></li>
+				<li><a href="../SExec/SExec.html#methodssh_copy">ssh_copy</a></li>
+				<li><a href="../SExec/SExec.html#methodssh_copy_from">ssh_copy_from</a></li>
+				<li><a href="../SExec/SExec.html#methodssh_copy_to">ssh_copy_to</a></li>
+				<li><a href="../SExec/SExec.html#methodssh_exec">ssh_exec</a></li>
+				<li><a href="../SExec/SExec.html#methodssh_open_command">ssh_open_command</a></li>
+				<li><a href="../SExec/SExec.html#methodssh_open_shell">ssh_open_shell</a></li>
+				<li><a href="../SExec/SExec.html#methodssh_out_expect">ssh_out_expect</a></li>
+				<li><a href="../SExec/SExec.html#methodssh_passthru">ssh_passthru</a></li>
+				<li><a href="../SExec/SExec.html#methodssh_pclose">ssh_pclose</a></li>
+				<li><a href="../SExec/SExec.html#methodssh_popen">ssh_popen</a></li>
+			</ul>
+</div>
+
+<div id="content">
+<hr>
+	<div class="contents">
+	</div>
+
+	<div class="leftCol">
+	<h2>Inherited Variables</h2>
+		</div>
+
+	<div class="rightCol">
+	<h2>Inherited Methods</h2>
+		</div>
+	<br clear="all">
+	<hr>
+
+	<a name="class_details"></a>
+	<h2>Class Details</h2>
+	<p align="center"><strong>Allow for remote execution of commands using SSH
+</strong></p>
+<p>The SExec class provides a number of facilities for remote  command execution using SSH.</p><p>The name SExec comes after &quot;rexec&quot; (the remote execution library)  and the &quot;exec&quot; facilities available under PHP. As a matter of fact,  we try to mimic to some extent the execution facilities offered by  PHP over SSH: thus you will find ssh_popen() akin to popen(), etc.</p><p><strong>RATIONALE</strong></p><p>The reason for this class is to allow executing code on a remote  back-end avoiding MITM spoofs in your communications. This allows you  to provide a web front-end (possibly redundant) and call a remote  back-end to execute the job.</p><p>Furthermore, you may have fallback features where if execution  on a remote back-end fails you can restart the command on a fallback  remote host, increasing reliability.</p><p><strong>DEPENDENCIES</strong></p><p>The class relies on an underlying installation of SSH. It has  been tested with OpenSSH on Linux, but should work on other systems  with OpenSSH as well.</p><p>Further, the class in its current inception relies on OpenSSH  version being greater than 3.8. If you have an older SSH, please use  version 1.0 of this class instead.</p><p><strong>DESIGN RATIONALE</strong></p><p>The reasons for the choices taken are simple: we might have  relied on an SSH library (like libSSH) and integrated it with PHP,  but then, any weakness/bug/change on said library would require a  recompilation of the library and PHP. This is a serious inconvenience.  More to that, it would require the maintenance of two simultaneous  SSH installations, viz. OpenSSH and the library, duplicating the work  of tracking security/bug issues.</p><p>By using the underlying SSH commands, we become independent of  them: if anything is discovered, you just have to update your system  SSH, and nothing else. Otherwise you would have a dependency on SSH  to remember, which is always forgotten. This way we avoid getting out  of sync with the system's SSH.</p><p>Better yet: this easies development, making this class a lot  simpler to write, understand, maintain and debug.</p><p>Finally, the dependency on SSH being OpenSSH 3.8 or greater is  due to efficiency reasons. Establishing an SSH connection is costly  in time. If you are going to make many, this would impose a heavy  cost on your scripts. We routinely launch several thousand remote  jobs, and authentication delays soon proved unacceptable.</p><p>OpenSSH 3.8 introduced the possibility of sharing a single SSH  channel between many &quot;connections&quot;. This means that only the first  (or master) instance (which will provide the shared channel) needs  to authenticate, hence saving significant time.</p><p>The constructor then creates a master channel, leaves it idle  all the object's lifetime and closses it at the end. This channel  might be used as well, but we felt it wasn't such a big loss to keep  it idle, and furthermore, being the master, we didn't want to risk  getting into any trouble that might close it prematurely. So it stands.</p><p>All other routines (which actually do the work) simply hijack on  the master channel, hence avoiding the costly authentication step (and  executing significantly faster). The only exception are the &quot;COPY&quot;  routines, which can not hijack the master channel and hence must do  authentication every time.</p><p>One more detail: some methods allow for interactive communication  with the remote end. We have simply used a terminal-less connection  for them, using regular files as the intermediate communication channels.  A pipe implementation is also possible, and works as well, but we have  found that dealing with pipes is tricky and error-prone, while using  files is simple and intuitive, so we opted for using files.</p><p>The difference has to do with the way you communicate with the  other end: using pipes you may block on read and/or write, and so  may the other end. Since there may occur errors in the process, that  implies that getting into a deadlock is trivial. Just picture this  scenarios:</p><p>You send a command -&gt; the remote ends starts the command and  prompts for input on stdout, hangs reding on stdin -&gt; you read the  prompt and send the input -&gt; the remote end wakes and processes it.</p><p>You send a command -&gt; the remote end fails, logs an error on  stderr, gets back the system prompt and hangs on reading stdin -&gt; you  notice the prompt and read stderr... since you can't predict the  length of the error message you must empty the pipe... and when doing it  you hang after reading the last char... -&gt; deadlock</p><p>You send a command -&gt; the remote end fails, logs an error on stderr,  gets back the system prompt and hangs on reading stdin -&gt; you don't read  stderr to avoid hanging, so submit a new command... this goes on and on  until the remote side's stderr buffer fills, then the remote side locks  waiting for you to read stderr -&gt; you can't know it hang, so you try  to submit a new command, and hang on writing waiting for the other end  to read your command -&gt; deadlock</p><p>More scenarios are possible, and since you (or the other side)  can't predict what's going to happen, it is very tricky to avoid them.</p><p>Now, using files, you don't have that problem: whenever you reach  the current end-of-file, you get an EOF, no need to hang waiting for  the other side to fill it in with data. The other side doesn't hang on  writing unless your disk space fills up. It's a lot simpler.</p><p>Your problem with files is continuing reads after new data becomes  available: the safest way is to call flush() before reading and seeking  to the last position read to avoid having to re-read everything (which  implies that after finishing reading you must ftell() your position.</p><p>See the included test script for examples.</p><p><strong>CUSTOMIZATION</strong></p><p>You <em>must</em> state to the class where your SSH executables (ssh and  scp) are located. This allows you to have them placed anywhere, but  also implies the responsability of using full pathnames to reduce  hacking dangers. It also allows you to use/test a new SSH implementation  installed in a non-standard place before switching to it, or even to  keep various SSH installations on the system (e.g. if the system's  SSH is not up-to-date, you may install one on your home and use it).</p><p>You may also indicate where to store temporary files. This must  be a directory followed by a prefix to use when creating a temporal  directory. The parent directory must be writeable by the user who runs  the class (usually it will be run by apache, www or some such). Most commonly  the parent directory will be /tmp or $DocumentRoot/tmp or something similar.</p><p>The directory+prefix you state will be used to create a unique  temporary work directory for each object instantiated. Examples of  a valid specifications are &quot;/tmp/phpSsh-&quot; or &quot;/tmp/&quot;. When the object is  instantiated, a random string will be appended to this value to create  the actual temporary directory name.</p><p>The reason for allowing specifying a prefix is so that debugging  may be easier by facilitating identification of temporaries generated  by this class.</p><p><strong>DEBUGGING</strong></p><p>The class comes with extensive debugging aids. To enable them,  just set a global variable called $debug_sexec to TRUE. This will output  abundant debugging information and leave copies of communication log  files for your reference.</p><p>Additionally, there is a sample demo script that shows how to  use this class and may help you debug it. This script is included  in the distribution (or should be) as 'ssh_debug.php'. See notes  and comments within it for more details.</p><h4>Tags:</h4>
+<ul>
+	<li><b>see</b> - ssh(1), scp(1)</li>
+	<li><b>since</b> - File available since Release 1.0</li>
+	<li><b>link</b> - <a href="http://savannah.cern.ch/projects/GridGRAMM">http://savannah.cern.ch/projects/GridGRAMM</a></li>
+	<li><b>version</b> - Release: 2.1</li>
+	<li><b>copyright</b> - José R. Valverde &lt;jrvalverde@es.embnet.org&gt;</li>
+	<li><b>license</b> - doc/lic/</li>
+	<li><b>author</b> - José R. Valverde &lt;<a href="mailto:jrvalverde@acm.org">mailto:jrvalverde@acm.org</a>&gt;</li>
+</ul>
+	<p class="small" style="color: #334B66;">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_vars"></a>
+	<h2>Class Variables</h2>
+		<a name="var$master"></a>
+	<p></p>
+	<h4>$master = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 280]</p>
+		<p align="center"><strong>handle to process controlling the master channel
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> string</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$master_input"></a>
+	<p></p>
+	<h4>$master_input = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 288]</p>
+		<p align="center"><strong>stdin of process controlling the master channel
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> string</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$mplex_socket"></a>
+	<p></p>
+	<h4>$mplex_socket = <span class="value">&nbsp;&quot;/tmp/ssh.mplex&quot;</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 272]</p>
+		<p align="center"><strong>name of multiplexing socket
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> string</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$password"></a>
+	<p></p>
+	<h4>$password = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 240]</p>
+		<p align="center"><strong>remote password
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> string</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$remote"></a>
+	<p></p>
+	<h4>$remote = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 232]</p>
+		<p align="center"><strong>remote endpoint ([user@]host[:port])
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> string</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$scp"></a>
+	<p></p>
+	<h4>$scp = <span class="value">&nbsp;&quot;/usr/bin/scp&quot;</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 256]</p>
+		<p align="center"><strong>location of scp program
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> string</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$ssh"></a>
+	<p></p>
+	<h4>$ssh = <span class="value">&nbsp;&quot;/usr/bin/ssh&quot;</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 248]</p>
+		<p align="center"><strong>location of ssh program
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> string</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$version"></a>
+	<p></p>
+	<h4>$version = <span class="value">&quot;2.2&quot;</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 224]</p>
+		<p align="center"><strong>The current version of the class
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		<p><b>Type:</b> string</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$workdir"></a>
+	<p></p>
+	<h4>$workdir = <span class="value">&nbsp;&quot;/tmp/phpSsh&quot;</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 264]</p>
+		<p align="center"><strong>tmp. dir prefix specification
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> string</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_methods"></a>
+	<h2>Class Methods</h2>
+		<a name="methodSExec"></a>
+	<p></p>
+	<h3>SExec</h3>
+	<div class="indent">
+		<p>
+		<code><a href="../SExec/SExec.html">SExec</a>|false SExec(
+string
+$remote, string
+$password)</code>
+		</p>
+	
+		<p class="linenumber">[line 374]</p>
+		<p align="center"><strong>Class constructor.
+</strong></p>
+<p>Generate a new instance of a remote execution environment.  The object returned allows you to invoke commands to be executed  remotely in a way similar to PHP exec commands (popen, proc_open...)  over SSH (so that your communications can be secure).</p><p>You may specify a remote endpoint and a password, a remote endpoint  alone, or nothing at all.</p><p>If you provide a remote endpoint and password they are used to drive  the communications and execute your commands.</p><p>If no password is provided, then a default of &quot;xxyzzy&quot; (the canonical  computer magic word) is used. Unless this is your password (not  recommended), this means that the default password is useless unless  you are working in a trusted environment where it is not needed and  ignored. That may be the case if you enable trusting mechanisms with  .shosts/.rhosts or passphraseless RSA/DSA authentication. Not that  we endorse them either, but in these cases any password provided will  be ignored and it doesn't make sense to provide a real one: xxyzzy  can do as well as any other.</p><p>If no password and no remote end is provided, then &quot;localhost&quot; is  used as the remote end, assuming no password is required (as described  above). This is only useful if localhost is trusted, and you have reasons  to use SSH internally... Some people does.</p><p>Regarding the remote end specification, it can be any valid single-string  SSH remote end description: the basic format is</p><p>[username@]remote.host[:port]</p><p><ul><li>&quot;username&quot; is the remote user name to log in as. It is optional. If provided,
+ 	  it must be separated from the remote host by an &quot;@&quot; sign. If it is not
+    provided, the remote username is assumed to be the same as the current local
+    one.</li></ul> <ul><li>&quot;remote.host&quot; is a valid host specification, either a numeric IP address
+    or a valid host name (which may require a full name or not depending on
+    your settings).</li></ul> <ul><li>&quot;port&quot; is the remote port where SSH is listening and which we want to
+    connect to. It is optional, and if provided, must follow the remote host
+    specification separated from it by a colon &quot;:&quot;. If not provided, the
+    default port (22) is used.</li></ul> 	Examples of remote host specifications are &quot;user@host.example.net:22&quot;,  &quot;someone@host:22&quot;, &quot;host.example.net:22&quot;, &quot;host:22&quot;,  &quot;somebody@host.example.net&quot;, &quot;user@host&quot;, &quot;host.example.net&quot;, &quot;host&quot;.</p><p>Here is an example of how to use this constructor:  <pre><code><pre><br />1     <font color="blue">require_once</font> <font color="#66cccc">'ssh.php'</font>;<br />2     <br />3       <strong>$remote</strong> = <font color="#66cccc">&quot;jruser@example.com&quot;</font>;<br />4       <strong>$password</strong> = <font color="#66cccc">&quot;PASSWORD&quot;</font>;<br />5     <br />6       <strong>$rmt</strong> = new <a href="../SExec/SExec.html#methodSExec">SExec</a><strong>(</strong><strong>$remote</strong><strong>,</strong> <strong>$password</strong><strong>)</strong>;<br />7        <font color="blue">if</font> <strong>(</strong><strong>!</strong> <strong>$rmt</strong><strong>)</strong><br />8           echo &quot;Couldn't connect to <strong>$remote</strong>\n&quot;;</pre></code></pre></p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - a new connection object with the remote end or                         FALSE if the connection could not be established.</li>
+	<li><b>since</b> - Method available since Release 1.0</li>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$remote</b> 
+		- 
+		The remote end to run the command, in                   the form 'user@host:port' (you may                         omit the 'user@' or ':port' parts                         if the default values [i.e. same user                         or standard port] are OK).</li>
+			<li>
+		<span class="type">string</span>
+		<b>$password</b> 
+		- 
+		The remote password. Note that if direct                   RSA/DSA/.shosts/.rhosts login is enabled                   then the password will be ignored as                   SSH should not run the ASKPASS command).</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methoddestruct"></a>
+	<p></p>
+	<h3>destruct</h3>
+	<div class="indent">
+		<p>
+		<code>integer destruct(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 501]</p>
+		<p align="center"><strong>Class destructor
+</strong></p>
+<p>Destroy all working processes and data streams and structures  used by an instance of this class.</p><p>This method will send a termination message to the other end  of the master channel, close the control stream of the master  channel and terminate its controlling process, finally unsetting  the object and setting the object handle to NULL.</p><p>If a global $debug_sexec is not set to TRUE, then it will also remove  all communication traces of this object: i.e. all log files for  interactive and master sessions, communications socket, etc...</p><p>If global $debug_sexec is set to TRUE, then a copy of all log files  created during the lifetime of the object will be left on a  temporary directory for your perusal and reference.</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - exit status of the master channel control process.</li>
+	<li><b>since</b> - Method available since Release 1.0</li>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_close"></a>
+	<p></p>
+	<h3>ssh_close</h3>
+	<div class="indent">
+		<p>
+		<code>integer ssh_close(
+mixed
+$p)</code>
+		</p>
+	
+		<p class="linenumber">[line 1212]</p>
+		<p align="center"><strong>Close an SSH interactive session
+</strong></p>
+<p>This method terminates a previously open interactive remote  session. It will send a termination notification to the  remote end, close the connection with control and communication  streams, and terminate the local control process.</p><p>Copies of the log files that contain the output and error  of the communication are left out for later reference and  local peruse. If you don't need them any longer, you may  delete them or just leave them around until the class destructor  is called (which will remove all session traces),</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - the exit status of the remote interactive session.</li>
+	<li><b>since</b> - Method available since Release 1.0</li>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">mixed</span>
+		<b>$p</b> 
+		- 
+		p an associative array with the description of the interactive         session control process, obtained by a previous call to one         of the interactive session creation methods ssh_open_shell()         or ssh_open_command().</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_copy"></a>
+	<p></p>
+	<h3>ssh_copy</h3>
+	<div class="indent">
+		<p>
+		<code>bool ssh_copy(
+string
+$origin, string
+$destination, string
+$password)</code>
+		</p>
+	
+		<p class="linenumber">[line 579]</p>
+		<p align="center"><strong>Copy a file or directory from one source to a destination
+</strong></p>
+<p>This function copies source to dest, where one of them is a  local filespec and the other a remote filespec of the form  [user@]host:path</p><p>If the original source is a directory, it will be copied  recursively to destination (hence easing file transfers).</p><p>The function returns TRUE on success or FALSE on failure.</p><p><strong>EFFICIENCY NOTICE:</strong></p><p>The copy routines use 'scp' to do their actual work. Since  scp seems to be unable to hitchhike on the master channel,  we must do authentication for each copy operation (subroutine  call). These routines are hence a lot more time-expensive  than all the other ones.</p><p>You may want to consider whether you can group several  copies into one single call to reduce authentication  overheads.</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - TRUE if all went well, or FALSE on failure.</li>
+	<li><b>deprecated</b> - Method deprecated as of Release 2.1</li>
+	<li><b>since</b> - Method available since Release 1.0</li>
+	<li><b>access</b> - public</li>
+	<li><b>see</b> - scp(1)</li>
+	<li><b>note</b> - DEPRECATED (inconsistent with the class)</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$origin</b> 
+		- 
+		The origin path, of the form                     [user@][host][:port]path                     You may omit the optional sections if                     the default values (local username, local                     host, standard SSH port) are OK</li>
+			<li>
+		<span class="type">string</span>
+		<b>$destination</b> 
+		- 
+		The destination path, of the form                     [user@][host][:port:]path                     You may omit the optional sections if                     the default values (local username, local                     host, standard SSH port) are OK</li>
+			<li>
+		<span class="type">string</span>
+		<b>$password</b> 
+		- 
+		The password to use to connect to the remote                     end of the copy (be it the origin or the                     destination, it's all the same). If connection                     is automatic by some means (.shosts or RSA/DSA                     authentication) then it should be ignored and                     any password should do.</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_copy_from"></a>
+	<p></p>
+	<h3>ssh_copy_from</h3>
+	<div class="indent">
+		<p>
+		<code>bool ssh_copy_from(
+string
+$remotepath, string
+$localpath, array
+&$out)</code>
+		</p>
+	
+		<p class="linenumber">[line 752]</p>
+		<p align="center"><strong>Copy a file or directory from a remote source to a local destination
+</strong></p>
+<p>This function copies source to dest, where first of them is a  remote filespec and then comes a local filespec, both specified  as normal system paths.</p><p>Both, local and remote paths may be absolute or relative.</p><p>If the original source is a directory, it will be copied  recursively to destination (hence easing file transfers).</p><p>The function returns TRUE on success or FALSE on failure.</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - TRUE if all went well, or FALSE on failure.</li>
+	<li><b>since</b> - Method available since Release 1.0</li>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$remotepath</b> 
+		- 
+		The origin remote path, either absolute or             relative to the login home. If it denotes a             directory, the copy will be recursive.</li>
+			<li>
+		<span class="type">string</span>
+		<b>$localpath</b> 
+		- 
+		The local destination path, either             absolute or relative to the current working             directory.</li>
+			<li>
+		<span class="type">array</span>
+		<b>&$out</b> 
+		- 
+		An optional array of strings to be appended the                     copy operation's output for debugging/diagnostics.</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_copy_to"></a>
+	<p></p>
+	<h3>ssh_copy_to</h3>
+	<div class="indent">
+		<p>
+		<code>bool ssh_copy_to(
+string
+$localpath, string
+$remotepath, array
+&$out)</code>
+		</p>
+	
+		<p class="linenumber">[line 635]</p>
+		<p align="center"><strong>Copy a file or directory from a local source to a remote destination
+</strong></p>
+<p>This function copies source to dest, where first of them is a  local filespec and then comes a remote filespec as a normal  system path.</p><p>Both, local and remote paths may be absolute or relative.</p><p>If the original source is a directory, it will be copied  recursively to destination (hence easing file transfers).</p><p>The function returns TRUE on success or FALSE on failure.</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - TRUE if all went well, or FALSE on failure.</li>
+	<li><b>since</b> - Method available since Release 2.1</li>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$localpath</b> 
+		- 
+		The origin local path, either absolute or             relative to the current working directory.             If it denotes a directory, the copy will             be recursive.</li>
+			<li>
+		<span class="type">string</span>
+		<b>$remotepath</b> 
+		- 
+		The destination path, either             absolute or relative to the login home.</li>
+			<li>
+		<span class="type">array</span>
+		<b>&$out</b> 
+		- 
+		An optional array of strings to be appended the                     copy operation's output for debugging/diagnostics.</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_exec"></a>
+	<p></p>
+	<h3>ssh_exec</h3>
+	<div class="indent">
+		<p>
+		<code>integer ssh_exec(
+string
+$command, array
+&$out)</code>
+		</p>
+	
+		<p class="linenumber">[line 934]</p>
+		<p align="center"><strong>Execute a remote command using SSH
+</strong></p>
+<p>This function sort of mimics rexec(3) using SSH as the transport  protocol.</p><p>The function returns the exit status of the remote command, and  appends the remote job output to an optional argument.</p><p>This function is intended to be used as a one-time  all-at-once non-interactive execution mechanism which  will run the command remotely and return its output.</p><p>If you try to issue an interactive command using this  function, all you will get is unneccessary trouble. So  don't!</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - status  will hold the termination                   status of SSH after invocation, which                   should be the exit status of the remote                   command or 255 if an error occurred</li>
+	<li><b>since</b> - Method available since Release 1.0</li>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$command</b> 
+		- 
+		command  The command to execute on the remote end                   NOTE: if you want to use redirection, the                   entire remote command line should be                   enclosed in additional quotes!</li>
+			<li>
+		<span class="type">array</span>
+		<b>&$out</b> 
+		- 
+		If the output argument is present, then the specified                         array will be filled with every line of output                         from the command. Line endings, such as \n, are                         not included in this array. Note that if the array                         already contains some elements, exec() will append                         to the end of the array. If you do not want the                         function to append elements, call unset() on the                         array before passing it to exec().</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_open_command"></a>
+	<p></p>
+	<h3>ssh_open_command</h3>
+	<div class="indent">
+		<p>
+		<code>mixed|false ssh_open_command(
+string
+$command)</code>
+		</p>
+	
+		<p class="linenumber">[line 1098]</p>
+		<p align="center"><strong>Open an SSH connection to run an interactive command on a remote  site
+</strong></p>
+<p>Connects to a remote host and runs an interactive command  with NO controlling terminal.</p><p>This routine creates communication streams with the remote shell,  and stores all output (standard and error) of the connection into  two separate local log files (one for stdout and one for stderr).</p><p>Returns a process_control array which contains the process resource  ID and an the standard file descriptors which the caller may use to  interact with the remote shell.</p><p>The process control array contains:</p><p>'process' -- the process resource for the newly created connection</p><p>'std_in' -- handle to the standard input of the new connection</p><p>'std_out' -- handle to standard output of the new connection</p><p>'std_err' -- handle to standard error of the new connection</p><p>'stdout_file' -- actual filename of the local log file for the 		new connection standard output</p><p>'stderr_file' -- actual filename of the local log file for the 		new connection standard error</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - a process control associative array or FALSE             on failure.</li>
+	<li><b>since</b> - Method available since Release 1.0</li>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$command</b> 
+		- 
+		command to be executed interactively on the remote end</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_open_shell"></a>
+	<p></p>
+	<h3>ssh_open_shell</h3>
+	<div class="indent">
+		<p>
+		<code>mixed|false ssh_open_shell(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 986]</p>
+		<p align="center"><strong>Open an SSH connection to a remote site with a shell to run  interactive commands
+</strong></p>
+<p>Connects to a remote host and opens an interactive shell session  with NO controlling terminal.</p><p>This routine creates communication streams with the remote shell,  and stores all output (standard and error) of the connection into  two separate local log files (one for stdout and one for stderr).</p><p>Returns a process_control array which contains the process resource  ID and an the standard file descriptors which the caller may use to  interact with the remote shell.</p><p>The process control array contains:</p><p>'process' -- the process resource for the newly created connection</p><p>'std_in' -- handle to the standard input of the new connection</p><p>'std_out' -- handle to standard output of the new connection</p><p>'std_err' -- handle to standard error of the new connection</p><p>'stdout_file' -- actual filename of the local log file for the 		new connection standard output</p><p>'stderr_file' -- actual filename of the local log file for the 		new connection standard error</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - a process control associative array or FALSE             on failure.</li>
+	<li><b>since</b> - Method available since Release 1.0</li>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_out_expect"></a>
+	<p></p>
+	<h3>ssh_out_expect</h3>
+	<div class="indent">
+		<p>
+		<code>void ssh_out_expect(
+mixed
+$p, [mixed
+$expr = "^# "])</code>
+		</p>
+	
+		<p class="linenumber">[line 1177]</p>
+		<p align="center"><strong>Get output until we reach a given regular expression
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>note</b> - EXPERIMENTAL, requires more thought and experience.</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_passthru"></a>
+	<p></p>
+	<h3>ssh_passthru</h3>
+	<div class="indent">
+		<p>
+		<code>void ssh_passthru(
+string
+$command, integer
+&$status)</code>
+		</p>
+	
+		<p class="linenumber">[line 880]</p>
+		<p align="center"><strong>Execute a single command remotely
+</strong></p>
+<p>Execute a single command remotely using ssh and  display its output, optionally returning its exit  status (like passthru)</p><p>This function is intended to be used as a one-time  all-at-once non-interactive execution mechanism which  will run the command remotely and display its output.</p><p>If you try to issue an interactive command using this  function, all you will get is unneccessary trouble. So  don't!</p><p>This might be done as well using a pipe on /tmp and  making the command 'cat' the pipe: when ssh runs, it  runs the command 'cat' on the pipe and hangs on read.   Then we just need a thread to open the pipe, put the  password and close the pipe.</p><p>This other way the password is never wirtten down.  But, OTOH, the file life is so ephemeral that most  of the time it will only exist in the internal system  cache, so this approach is not that bad either.</p><h4>Tags:</h4>
+<ul>
+	<li><b>since</b> - Method available since Release 1.0</li>
+	<li><b>access</b> - public</li>
+	<li><b>see</b> - <a href="http://www.php.net/passthru">passthru()</a></li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$command</b> 
+		- 
+		command  The command to execute on the remote end                   NOTE: if you want to use redirection, the                   entire remote command line should be                   enclosed in additional quotes!</li>
+			<li>
+		<span class="type">integer</span>
+		<b>&$status</b> 
+		- 
+		status   Optional, this will hold the termination                   status of SSH after invocation, which                   should be the exit status of the remote                   command or 255 if an error occurred</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_pclose"></a>
+	<p></p>
+	<h3>ssh_pclose</h3>
+	<div class="indent">
+		<p>
+		<code>integer ssh_pclose(
+resource
+$f)</code>
+		</p>
+	
+		<p class="linenumber">[line 1293]</p>
+		<p align="center"><strong>Close a piped remote execution command control pipe.
+</strong></p>
+<p>This routine accepts as input the handle for the control stream  of a remote command and closes it, terminating the command as well.  The handle must be valid and obtained through a call to ssh_popen().</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - the termination status of the command that was run.</li>
+	<li><b>since</b> - Method available since Release 1.0</li>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">resource</span>
+		<b>$f</b> 
+		- 
+		f is the file handle associated with the pipe control stream</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_popen"></a>
+	<p></p>
+	<h3>ssh_popen</h3>
+	<div class="indent">
+		<p>
+		<code>resource ssh_popen(
+string
+$command, string
+$mode)</code>
+		</p>
+	
+		<p class="linenumber">[line 1271]</p>
+		<p align="center"><strong>Execute a remote command and keep an unidirectional stream  contact with it.
+</strong></p>
+<p>This routine mimics 'popen()' but uses ssh to connect to  a remote host and run the requested command: in other words,  it opens a pipe to a remotely executed command. This pipe is  unidirectional, with the communications direction controlled  by a method parameter.</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - a handle to the unidirectional communication stream,         similar to that returned by fopen(), or FALSE on         failure. This handle must be closed with ssh_pclose().</li>
+	<li><b>since</b> - Method available since Release 1.0</li>
+	<li><b>access</b> - public</li>
+	<li><b>see</b> - popen() for more details.</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$command</b> 
+		- 
+		command is the command to execute on the remote end</li>
+			<li>
+		<span class="type">string</span>
+		<b>$mode</b> 
+		- 
+		mode specifies the communications direction for the         pipe: if set to &quot;r&quot; (read), then we will be able to         collect command output only; if set to &quot;w&quot; (write)         then we may only send input to the remote command.</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+</div>
+	<div id="credit">
+		<hr>
+		Documentation generated on Thu, 16 Jun 2005 11:03:53 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.2.3</a>
+	</div>
+</div>
+</body>
+</html>

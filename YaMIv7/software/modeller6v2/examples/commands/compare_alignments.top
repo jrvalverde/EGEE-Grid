@@ -1,0 +1,30 @@
+# Example for: COMPARE_ALIGNMENTS, SEQUENCE_TO_ALI
+
+# Compare two alignments of two proteins each. In this case, the first
+# alignment is a sequence-sequence alignment and the second alignment
+# is a structure-structure alignment.
+
+# ATOM_FILES and ALIGN_CODES have to be set explicitly so that the alignment 
+# file has this information (ATOM_FILES is copied to the alignment array 
+# during SEQUENCE_TO_ALI):
+
+SET OUTPUT_CONTROL = 1 1 1 1 0
+
+# Generate and save sequence-sequence alignment:
+READ_MODEL FILE = '1fas'
+SEQUENCE_TO_ALI ALIGN_CODES = '1fas', ATOM_FILES = ALIGN_CODES
+READ_MODEL FILE = '2ctx'
+SEQUENCE_TO_ALI ADD_SEQUENCE = on, ALIGN_CODES = ALIGN_CODES '2ctx', ATOM_FILES = ALIGN_CODES
+ALIGN GAP_PENALTIES_1D= -600 -400
+WRITE_ALIGNMENT FILE = 'toxin-seq.ali'
+
+# Generate and save structure-structure alignment:
+ALIGN3D GAP_PENALTIES_3D=  0 2.0
+WRITE_ALIGNMENT FILE = 'toxin-str.ali'
+
+SET ADD_SEQUENCE = off
+
+# Compare the two pairwise alignments:
+READ_ALIGNMENT  FILE = 'toxin-seq.ali', ALIGN_CODES = 'all'
+READ_ALIGNMENT2 FILE = 'toxin-str.ali', ALIGN_CODES2 = 'all'
+COMPARE_ALIGNMENTS

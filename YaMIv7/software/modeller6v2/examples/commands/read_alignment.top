@@ -1,0 +1,14 @@
+# Example for: READ_ALIGNMENT, WRITE_ALIGNMENT, 
+#              READ_ALIGNMENT2, WRITE_ALIGNMENT2,
+#              CHECK_ALIGNMENT
+
+# Read an alignment, write it out in the 'PAP' format, and 
+# check the alignment of the N-1 structures as well as the 
+# alignment of the N-th sequence with each of the N-1 structures.
+
+SET OUTPUT_CONTROL = 1 1 1 1 0
+
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = 'all'
+WRITE_ALIGNMENT FILE = 'toxin.pap', ALIGNMENT_FORMAT = 'PAP'
+WRITE_ALIGNMENT FILE = 'toxin.fasta', ALIGNMENT_FORMAT = 'FASTA'
+CHECK_ALIGNMENT

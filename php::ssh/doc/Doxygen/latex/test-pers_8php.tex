@@ -1,0 +1,132 @@
+\section{test-pers.php File Reference}
+\label{test-pers_8php}\index{test-pers.php@{test-pers.php}}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+{\bf \$debug} = TRUE
+\item 
+{\bf \$remote} = \char`\"{}user@example.com\char`\"{}
+\item 
+{\bf \$password} = \char`\"{}password\char`\"{}
+\item 
+{\bf \$workdir} = \char`\"{}/tmp\char`\"{}
+\item 
+{\bf \$tmpfname} = tempnam(\$workdir, open-)
+\item 
+{\bf \$fp} = fopen(\$tmpfname, \char`\"{}w\char`\"{})
+\item 
+{\bf \$child\_\-stdout} = tempnam(\$workdir, \char`\"{}open\_\-sh-O-\char`\"{})
+\item 
+{\bf \$child\_\-stderr} = tempnam(\$workdir, \char`\"{}open\_\-sh-E-\char`\"{})
+\item 
+{\bf \$descriptorspec}
+\item 
+{\bf \$process}
+\item 
+{\bf \$f} = popen(\char`\"{}ssh -x -t -t -S /tmp/open-sock \$remote ls\char`\"{}, \char`\"{}w\char`\"{})
+\end{CompactItemize}
+
+
+\subsection{Variable Documentation}
+\index{test-pers.php@{test-pers.php}!$child_stderr@{\$child\_\-stderr}}
+\index{$child_stderr@{\$child\_\-stderr}!test-pers.php@{test-pers.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$child\_\-stderr = tempnam(\$workdir, \char`\"{}open\_\-sh-E-\char`\"{})}\label{test-pers_8php_a7}
+
+
+
+
+Definition at line 28 of file test-pers.php.\index{test-pers.php@{test-pers.php}!$child_stdout@{\$child\_\-stdout}}
+\index{$child_stdout@{\$child\_\-stdout}!test-pers.php@{test-pers.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$child\_\-stdout = tempnam(\$workdir, \char`\"{}open\_\-sh-O-\char`\"{})}\label{test-pers_8php_a6}
+
+
+
+
+Definition at line 27 of file test-pers.php.\index{test-pers.php@{test-pers.php}!$debug@{\$debug}}
+\index{$debug@{\$debug}!test-pers.php@{test-pers.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$debug = TRUE}\label{test-pers_8php_a0}
+
+
+
+
+Definition at line 3 of file test-pers.php.
+
+Referenced by ssh\_\-open().\index{test-pers.php@{test-pers.php}!$descriptorspec@{\$descriptorspec}}
+\index{$descriptorspec@{\$descriptorspec}!test-pers.php@{test-pers.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$descriptorspec}\label{test-pers_8php_a8}
+
+
+{\bf Initial value:}
+
+\footnotesize\begin{verbatim} array(
+    0 => array("pipe", "r"),  // connect childs stdin to the read end of a pipe
+    1 => array("file", $child_stdout, "a"),  // connect childs stdout to the write end of a pipe
+    2 => array("file", $child_stderr, "a")   // stderr is a pipe to read from
+)
+\end{verbatim}\normalsize 
+
+
+Definition at line 30 of file test-pers.php.
+
+Referenced by ssh\_\-open().\index{test-pers.php@{test-pers.php}!$f@{\$f}}
+\index{$f@{\$f}!test-pers.php@{test-pers.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$f = popen(\char`\"{}ssh -x -t -t -S /tmp/open-sock \$remote ls\char`\"{}, \char`\"{}w\char`\"{})}\label{test-pers_8php_a10}
+
+
+
+
+Definition at line 52 of file test-pers.php.\index{test-pers.php@{test-pers.php}!$fp@{\$fp}}
+\index{$fp@{\$fp}!test-pers.php@{test-pers.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$fp = fopen(\$tmpfname, \char`\"{}w\char`\"{})}\label{test-pers_8php_a5}
+
+
+
+
+Definition at line 18 of file test-pers.php.
+
+Referenced by do\_\-scp(), do\_\-ssh(), ssh\_\-copy(), ssh\_\-open(), and ssh\_\-passthru().\index{test-pers.php@{test-pers.php}!$password@{\$password}}
+\index{$password@{\$password}!test-pers.php@{test-pers.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$password = \char`\"{}password\char`\"{}}\label{test-pers_8php_a2}
+
+
+
+
+Definition at line 5 of file test-pers.php.\index{test-pers.php@{test-pers.php}!$process@{\$process}}
+\index{$process@{\$process}!test-pers.php@{test-pers.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$process}\label{test-pers_8php_a9}
+
+
+{\bf Initial value:}
+
+\footnotesize\begin{verbatim} proc_open("ssh -x -t -t -M -S /tmp/open-sock $remote", 
+                 $descriptorspec,
+                 $pipes)
+\end{verbatim}\normalsize 
+
+
+Definition at line 38 of file test-pers.php.
+
+Referenced by ssh\_\-open().\index{test-pers.php@{test-pers.php}!$remote@{\$remote}}
+\index{$remote@{\$remote}!test-pers.php@{test-pers.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$remote = \char`\"{}user@example.com\char`\"{}}\label{test-pers_8php_a1}
+
+
+
+
+Definition at line 4 of file test-pers.php.\index{test-pers.php@{test-pers.php}!$tmpfname@{\$tmpfname}}
+\index{$tmpfname@{\$tmpfname}!test-pers.php@{test-pers.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$tmpfname = tempnam(\$workdir, open-)}\label{test-pers_8php_a4}
+
+
+
+
+Definition at line 10 of file test-pers.php.
+
+Referenced by do\_\-scp(), do\_\-ssh(), ssh\_\-copy(), ssh\_\-open(), and ssh\_\-passthru().\index{test-pers.php@{test-pers.php}!$workdir@{\$workdir}}
+\index{$workdir@{\$workdir}!test-pers.php@{test-pers.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$workdir = \char`\"{}/tmp\char`\"{}}\label{test-pers_8php_a3}
+
+
+
+
+Definition at line 6 of file test-pers.php.

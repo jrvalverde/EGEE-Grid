@@ -1,0 +1,10 @@
+Matching mode (generic/helix) ....................... mmode= generic
+Grid step ............................................. eta= 6.8
+Repulsion (attraction is always -1) .................... ro= 6.5.
+Attraction double range (fraction of single range) ..... fr= 0.
+Potential range type (atom_radius, grid_step) ....... crang= grid_step
+Projection (blackwhite, gray) ................ ....... ccti= gray
+Representation (all, hydrophobic) .................... crep= all
+Number of matches to output .......................... maxm= 1000
+Angle for rotations, deg (10,12,15,18,20,30, 0-no rot.)  ai= 20
+

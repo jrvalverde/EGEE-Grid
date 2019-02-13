@@ -1,0 +1,24 @@
+# Example for: ROTATE_DIHEDRALS
+
+# This will optimize and randomize dihedrals in a MODEL
+
+READ_TOPOLOGY   FILE = '$(LIB)/top_heav.lib'
+READ_PARAMETERS FILE = '$(LIB)/par.lib'
+
+# Select dihedral angle types for optimization and randomization:
+SET DIHEDRALS = 'phi psi omega chi1 chi2 chi3 chi4 chi5'
+
+# Read the sequence, get its topology and coordinates:
+READ_MODEL FILE = '1fas'
+SEQUENCE_TO_ALI ALIGN_CODES = '1fas', ATOM_FILES = ALIGN_CODES
+SEQUENCE_TO_ALI ADD_SEQUENCE = on, ALIGN_CODES = ALIGN_CODES '1fas_ini', ATOM_FILES = ALIGN_CODES
+GENERATE_TOPOLOGY SEQUENCE = '1fas_ini'
+TRANSFER_XYZ
+BUILD_MODEL INITIALIZE_XYZ = off
+ROTATE_DIHEDRALS CHANGE = 'RANDOMIZE', RAND_SEED = -2312, DEVIATION = 90.0
+WRITE_MODEL FILE = '1fas.ini1'
+
+# Get restraints from somewhere and optimize dihedrals:
+MAKE_RESTRAINTS RESTRAINT_TYPE = 'stereo'
+ROTATE_DIHEDRALS CHANGE = 'OPTIMIZE'
+WRITE_MODEL FILE = '1fas.ini2'

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+rm -r to-be-refined.tmp *.rsr *.deb *.ini *.mod *.rdeb *.sch *.B* *.R* \
+   *.D* *.log *.tmod *.mat *.rmod ftn90 fort.90 *.dih.Z *.psa.Z *.ngh.Z \
+   *.V* *.E* *.L*
+rm *.log *.pap *.ali *.ps *.mat alignment.seg.dat alignment.seg.top *.fit
+rm fort.* *_fit.pdb alignment.tmp

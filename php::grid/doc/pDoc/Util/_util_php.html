@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Docs for page util.php</title>
+	<link rel="stylesheet" type="text/css" id="layout" href="../media/layout.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../media/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../media/print.css" media="print">
+</head>
+
+<body>
+<div id="header">
+	<div id="navLinks">
+		[ <a href="../classtrees_Util.html">Class Tree: Util</a> ]
+		[ <a href="../elementindex_Util.html">Index: Util</a> ]
+		[ <a href="../elementindex.html">All elements</a> ]
+	</div>
+	<div id="packagePosition">
+		<div id="packageTitle2">Util</div>
+		<div id="packageTitle">Util</div>
+		<div id="elementPath"> &middot; </div>
+	</div>
+</div>
+
+<div id="nav" class="small">
+	<div id="packages">
+		Packages:
+					<p><a href="../li_Grid.html">Grid</a></p>
+					<p><a href="../li_grock.html">grock</a></p>
+					<p><a href="../li_SExec.html">SExec</a></p>
+					<p><a href="../li_Util.html">Util</a></p>
+			</div>
+
+				<div id="index">
+			<div id="files">
+								Files:<br>
+								<a href="../Util/_util_php.html">		util.php
+		</a><br>
+				</div>
+			<div id="classes">
+							</div>
+		</div>
+	</div>
+
+<div id="body">
+	    		<h1>Procedural File: util.php</h1>
+	<p style="margin: 0px;">Source Location: /util.php</p>
+	
+<br>
+<br>
+
+<div class="contents">
+<h2>Classes:</h2>
+<dl>
+</dl>
+</div>
+
+<h2>Page Details:</h2>
+<p align="center"><strong>General utility functions
+</strong></p>
+<p>This file contains convenience functions used throughout the package.</p><h4>Tags:</h4>
+<ul>
+	<li><b>copyright</b> - José R. Valverde &lt;jrvalverde@acm.org&gt;
+  This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+  This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+  You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</li>
+	<li><b>version</b> - 1.0</li>
+	<li><b>author</b> - José R. Valverde &lt;jrvalverde@es.embnet.org&gt;</li>
+</ul>
+<hr>
+Includes:<br>
+require_once(<a href="../grock/_grid_config_php.html">"./grid_config.php"</a>) <span class="linenumber">[line 33]</span>
+<br />
+<p align="center"><strong>include global configuration definitions
+</strong></p>
+<hr>
+<div id="global">
+</div><hr>
+<div id="define">
+</div><hr>
+<div id="function">
+	<a name="functionerror"></a>
+	<h3>error</h3>
+	<div class="indent">
+		<code>void error(
+where $where, what $what)</code>
+		<p class="linenumber">[line 122]</p>
+		<p align="center"><strong>print an error message and exit
+</strong></p>
+<p>Whenever we detect something wrong, we must tell the user. This function  will take an error message as its argument, format it suitably and  spit it out.</p><h4>Tags:</h4>
+<ul>
+	<li><b>note</b> - This might look nicer using javascript to pop up a nice window with  the error message. Style sheets would be nice too.</li>
+</ul>
+		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">where</span>
+			<b>$where</b> 
+			- 
+			the name of the caller routine or the process where the          error occurred</li>
+					<li>
+			<span class="type">what</span>
+			<b>$what</b> 
+			- 
+			a description of the abnormal condition that triggered           the error</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionletal"></a>
+	<h3>letal</h3>
+	<div class="indent">
+		<code>void letal(
+where $what, what $where)</code>
+		<p class="linenumber">[line 156]</p>
+		<p align="center"><strong>print a letal error message and die
+</strong></p>
+<p>This function is called whenever a letal error (one that prevents  further processing) is detected. The function will spit out an  error message, close the page and exit the program.  It should seldomly be used, since it may potentially disrupt the  page layout (e.g. amid a table) by not closing open tags of which  it is unaware.  Actually it is a wrapper for error + terminate.</p>		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">where</span>
+			<b>$what</b> 
+			- 
+			location (physical or logical) where the error was  detected: a physical location (routine name/line number) may be  helpful for debugging, a logical location (during which part of  the processing it happened) will be more helful to the user.</li>
+					<li>
+			<span class="type">what</span>
+			<b>$where</b> 
+			- 
+			a descrition of the abnormality detected.</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionset_footer"></a>
+	<h3>set_footer</h3>
+	<div class="indent">
+		<code>void set_footer(
+)</code>
+		<p class="linenumber">[line 72]</p>
+		<p align="center"><strong>close a web page
+</strong></p>
+<p>Make sure we end the page with all the appropriate formulisms:  close the body, include copyright notice, state creator and  any needed details, and close the page.</p>		
+		<h4>Parameters</h4>
+		<ul>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionset_header"></a>
+	<h3>set_header</h3>
+	<div class="indent">
+		<code>void set_header(
+)</code>
+		<p class="linenumber">[line 45]</p>
+		<p align="center"><strong>Start the display of a www page
+</strong></p>
+<p>We have it as a function so we can customise all pages generated as  needed. This routine will open HTML, create the page header, and  include any needed style sheets (if any) to provide a common  look-and-feel for all pages generated.</p>		
+		<h4>Parameters</h4>
+		<ul>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionssh_copy"></a>
+	<h3>ssh_copy</h3>
+	<div class="indent">
+		<code>void ssh_copy(
+mixed $origin, mixed $destination, mixed $password)</code>
+		<p class="linenumber">[line 224]</p>
+		<p align="center"><strong>Copy a file or directory from one source to a destination
+</strong></p>
+<p>This function copies source to dest, where one of them is a  local filespec and the other a remote filespec of the form  [user@]host:path</p><p>If the original source is a directory, it will be copied  recursively to destination (hence easing file transfers).</p><p>The function returns TRUE on success or FALSE on failure.</p>		
+		<h4>Parameters</h4>
+		<ul>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionssh_open"></a>
+	<h3>ssh_open</h3>
+	<div class="indent">
+		<code>void ssh_open(
+mixed $remote, mixed $password)</code>
+		<p class="linenumber">[line 242]</p>
+				
+		<h4>Parameters</h4>
+		<ul>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionssh_passthru"></a>
+	<h3>ssh_passthru</h3>
+	<div class="indent">
+		<code>output ssh_passthru(
+remote $remote, password $password, command $command, status $status)</code>
+		<p class="linenumber">[line 196]</p>
+		<p align="center"><strong>Execute a single command remotely using ssh and  return its entire output (like passthru)
+</strong></p>
+<p>This might be done as well using a pipe on /tmp and  making the command 'cat' the pipe: when ssh runs, it  runs the command 'cat' on the pipe and hangs on read.   Then we just need a thread to open the pipe, put the  password and close the pipe.   This other way the password is never wirtten down.  But, OTOH, the file life is so ephemeral that most  of the time it will only exist in the internal system  cache, so this approach is not that bad either.</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - The output of the remote command.</li>
+</ul>
+		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">remote</span>
+			<b>$remote</b> 
+			- 
+			The remote end to run the command, in                   the form 'user@host' (or 'host' if the                   username is the same).</li>
+					<li>
+			<span class="type">password</span>
+			<b>$password</b> 
+			- 
+			The remote password. Note that if direct                   RSA/DSA/.shosts/.rhosts login is enabled                   then the password should be ignored as                   SSH should not run the ASKPASS command).</li>
+					<li>
+			<span class="type">command</span>
+			<b>$command</b> 
+			- 
+			The command to execute on the remote end                   NOTE: if you want to use redirection, the                   entire remote command line should be                   enclosed in additional quotes!</li>
+					<li>
+			<span class="type">status</span>
+			<b>$status</b> 
+			- 
+			Optional, this will hold the termination                   status of SSH after invocation, which                   should be the exit status of the remote                   command or 255 if an error occurred</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionwarning"></a>
+	<h3>warning</h3>
+	<div class="indent">
+		<code>void warning(
+msg $msg)</code>
+		<p class="linenumber">[line 99]</p>
+		<p align="center"><strong>print a warning
+</strong></p>
+<p>Prints a warning in a separate pop-up window.  A warning is issued when a non-critical problem has been detected.  Execution can be resumed using some defaults, but the user should  be notified. In order to not disrupt the web page we are displaying  we use a JavaScript pop-up alert to notify the user.</p>		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">msg</span>
+			<b>$msg</b> 
+			- 
+			the warning message to send the user</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+</div>
+	<div id="credit">
+		<hr>
+		Documentation generated on Thu, 22 Jun 2006 10:01:07 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.3.0RC4</a>
+	</div>
+</div>
+</body>
+</htm

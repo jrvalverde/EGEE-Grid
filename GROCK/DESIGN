@@ -1,0 +1,100 @@
+These are design notes for GROCK.
+---------------------------------
+
+Goals:
+	1) adapt GridGRAMM to run a ligand against a database of receptor
+	molecules
+	
+	2) adapt GridGRAMM to run a receptor against a database of ligands
+	
+	3) authenticate users properly
+	
+	4) accept different docking methods:
+		GRAMM
+		FTDock
+		3D-Dock
+		AutoDock
+		...
+1 -- run a ligand against NR-PDB
+	- generate NR-PDB (see pdb_nr directory) listing of molecules
+	
+	- use listing to extract molecules on the fly, generate jobs
+	and send them to the Grid
+	
+	- collect results dynamically (ASAP)
+	
+	- before results start coming
+		generate a page asking for patience
+	- when results start coming
+		generate a page with temporary data
+	- when results have come
+		similar page, indicate it is done
+	
+	- collate results for display as they come
+		collect all incoming data
+			- collect as little as needed
+		sort by score
+			- generate tuples containing
+			ligand-receptor pair - results directory
+		display a table of available results
+			- with options to generate images/structures on demand
+
+2 - similar but the converse action
+	GROCK may be designed to accept a molecule (ligand or receptor)
+	and select a database to search (PDB or ligands).
+
+3 - check
+	- User on GrUI
+	- Rafael Marco method
+	- MyProxy
+	- Genius
+	- Bioinfo classic:
+		Have the user identify himself as usual in most Bioinfo
+	environments, only adding the Cert password as well. Use HTTPS.
+	Store passwords as session cookies with expiration in user site
+	and logout to delete them.
+
+4 - accept other dockers / scorers:
+	Design Grock modularly to use docking-plug-ins:
+	
+	Abstract information that needs to be collected from the user
+	and sent to the docking-plug-ins
+	
+	Abstract information that needs to be extracted from docker's
+	output to generate user report
+	
+	Define a filter interface to re-score docking results before
+	showing to the user (on a separate column) and implement the
+	rescoring functions as score-plug-ins as well
+	
+	Reorganize GROCK to use PHP classes:
+		- HTML-Form-UI
+		- XML-Interface
+		- Processor
+		- Dock-plug-in
+		- Score-plug-in
+		- Display-plug-in
+		- HTML-Report-UI
+		- egeeGrid
+		- jobMgr?
+	
+	Define options available in a configuration file.
+
+5 - Work on easy installation/customization system.
+
+Methods and tools:
+	dotProject for planning
+		- provide public access
+
+	Savannah.cern.ch as web interface
+		- tasks
+		- tracker
+		- bugs
+		- lists
+
+	CVS on anarchy
+	
+	Documentation and X-ref system
+		- LITERATE PROGRAMMING IS A MUST!!!
+	
+	Keep things simple through abstraction.

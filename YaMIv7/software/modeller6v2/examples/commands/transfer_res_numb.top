@@ -1,0 +1,14 @@
+# Example for: TRANSFER_RES_NUMB
+
+# This will transfer residue numbers and chain ids from model2 to model.
+
+SET OUTPUT_CONTROL = 1 1 1 1 0
+
+# Optionally, read an alignment for the transfer (otherwise 1:1 is assumed):
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = '2ctx' '1fas'
+# Read the template and target models:
+READ_MODEL2 FILE = '2ctx'
+READ_MODEL  FILE = '1fas'
+# Transfer the residue and chain ids and write out the new MODEL:
+TRANSFER_RES_NUMB
+WRITE_MODEL FILE = '1fas.ini'

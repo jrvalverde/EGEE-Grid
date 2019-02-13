@@ -1,0 +1,50 @@
+# Homology modelling by the MODELLER TOP routine 'model'.
+# Demonstrates how to refine only a part of the model.
+#
+# This can be ran with run_clustor model-loop.top, too.
+#
+# The difference with model-segment is that the loop is 
+# refined on the basis of sequence alone, in the context
+# of the rest of the structure.
+
+
+INCLUDE                             # Include the predefined TOP routines
+
+SET OUTPUT_CONTROL = 1 1 1 1 1
+SET SEQUENCE = '1fdx'               # code of the target
+SET LOOP_MODEL = '1fdx.B99990001'   # initial model of the target
+SET ATOM_FILES_DIRECTORY = './:../atom_files' # directories for input atom files
+# index of the first loop model:
+SET LOOP_STARTING_MODEL = 20
+# index of the last loop model:
+SET LOOP_ENDING_MODEL = 23
+SET LOOP_MD_LEVEL = 'refine_1'       # the loop refinement method (1 fast / 3 slow)
+
+CALL ROUTINE = 'loop'
+
+
+
+# This routine picks model residues that need to be refined (necessary):
+
+SUBROUTINE ROUTINE = 'select_loop_atoms'
+  # Uncomment if you also want to optimize the loop environment:
+  # SET SELECTION_SEARCH = 'SPHERE_SEGMENT', SPHERE_RADIUS = 6
+
+  # 4 residue insertion (1st loop):
+  PICK_ATOMS SELECTION_SEGMENT = '19:' '28:', SELECTION_STATUS = 'initialize'
+
+  # 2 residue insertion (2nd loop):
+  # PICK_ATOMS SELECTION_SEGMENT = '46:' '55:', SELECTION_STATUS = 'add'
+
+  RETURN
+END_SUBROUTINE
+
+
+
+
+# This routine adds any special restraints (optional):
+#
+# SUBROUTINE ROUTINE = 'special_restraints'
+#   MAKE_RESTRAINTS RESTRAINT_TYPE = 'ALPHA', RESIDUE_IDS = '46:' '55:'
+#   RETURN
+# END_SUBROUTINE

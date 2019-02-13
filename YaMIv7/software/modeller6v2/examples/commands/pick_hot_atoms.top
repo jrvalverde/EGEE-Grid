@@ -1,0 +1,26 @@
+# Example for: PICK_HOT_ATOMS
+
+# This will pick atoms violated by some restraints (bond length restraints here),
+# select restraints operating on violated atoms, and calculate the energy for 
+# the selected restraints only (note that a list of violated restraints
+# can be obtained by the ENERGY command alone, without preceding it with
+# PICK_HOT_ATOMS).
+
+READ_TOPOLOGY   FILE = '$(LIB)/top_heav.lib'
+READ_PARAMETERS FILE = '$(LIB)/par.lib'
+# Read the sequence, calculate its topology and coordinates:
+READ_MODEL FILE = '1fas'
+SEQUENCE_TO_ALI ATOM_FILES = '1fas', ALIGN_CODES = '1fas'
+SEQUENCE_TO_ALI ADD_SEQUENCE = on, ATOM_FILES = ATOM_FILES '1fas.ini', ;
+                ALIGN_CODES = ALIGN_CODES '1fas-ini'
+GENERATE_TOPOLOGY SEQUENCE = '1fas-ini'
+TRANSFER_XYZ
+# Just to get some violations:
+RANDOMIZE_XYZ DEVIATION = 0.03
+# Create the bond length restraints and ignore the hard sphere overlap:
+MAKE_RESTRAINTS RESTRAINT_TYPE = 'bond', DYNAMIC_SPHERE = off
+# Pick hot atoms and the corresponding violated and neighbouring restraints:
+PICK_HOT_ATOMS
+PICK_RESTRAINTS ADD_RESTRAINTS = off
+# Calculate the energy of the selected restraints and write them out in detail:
+ENERGY OUTPUT = 'VERY_LONG'

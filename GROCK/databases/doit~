@@ -1,0 +1,63 @@
+#
+# NOTE: in the las releases we have seen molecules which are included
+#	in pdb_all_aa.fasta but have no counterpart in PDB format 
+#	(although they are available in other formats). Since most any
+#	existing docking program requires structures in PDB format, we
+#	are forced to ignore those or to convert them to PDB). For the
+#	time being we prefer to ignor them using the awful hack of a
+#	program included here: "filterout.c"
+#
+/opt/structure/cd-hit/cd-hit -i pdb_all_aa_existing.fasta -o pdb90 -n 5 -c 0.9
+
+/opt/structure/cd-hit/cd-hit -i pdb90 -o pdb65 -n 4 -c 0.65
+
+/opt/structure/cd-hit/mcd-hit -i pdb65 -o pdb40 -n 2 -c 0.40
+
+grep "^>PDB:" pdb40 > pdb40.lst
+
+grep "^>PDB:" pdb50 > pdb50.lst
+
+grep "^>PDB:" pdb65 > pdb65.lst
+
+grep "^>PDB:" pdb90 > pdb90.lst
+
+grep "^>PDB:" pdb_all_aa_existing.fasta > pdb_all.lst
+
+# for each entry in pdbXX.lst
+# parse line:
+# >PDB:ENTR_X ...
+#    remove ">", ":" and everything after (and including) first space
+#	PDBENTR_X
+#
+#    extract letters before underscore
+#	PDBENTR
+#
+#    convert to lower case and add ".ent"
+#	pdbentr.ent
+#
+## or else
+##	delete *: and _*
+##	leaves the entry name
+##	delete *_ and " "*
+##	leaves the chain
+##	if the chain is empty
+##		cp $PDB_PATH/pdb%s.ent .	%s=lowercase(entry_name)
+##	if not
+##		extract chain
+##		convpdb.pl -chain CHAIN $PDB_PATH/pdb%s.ent > $wd/pdb%s_%s.ent
+##
+#    prepend path to PDB database: this is the structure file
+#	$PDB_PATH/pdbentr.ent
+#
+#    check if there is anything after the "_":
+#	if nothing, then there is only one molecule and we use it
+#	    cp $PDB_PATH/pdbentr.ent $work_dir
+#
+#	if anything, then that is the chain name we want: get it
+#
+#		export MMTSB=/opt/structure/mmtsb_tools
+#		export PATH=$MMTSB/perl:$MMSTB/bin:$PATH
+#		convpdb.pl -chain X $PDB_PATH/pdbentr.ent > $work_dir/pdbentr_X.ent
+#
+# and now submit to the grid the jobs...
+#

@@ -1,0 +1,377 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Docs for page gramm.php</title>
+	<link rel="stylesheet" type="text/css" id="layout" href="../media/layout.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../media/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../media/print.css" media="print">
+</head>
+
+<body>
+<div id="header">
+	<div id="navLinks">
+		[ <a href="../classtrees_grock.html">Class Tree: grock</a> ]
+		[ <a href="../elementindex_grock.html">Index: grock</a> ]
+		[ <a href="../elementindex.html">All elements</a> ]
+	</div>
+	<div id="packagePosition">
+		<div id="packageTitle2">grock</div>
+		<div id="packageTitle">grock</div>
+		<div id="elementPath"> &middot; </div>
+	</div>
+</div>
+
+<div id="nav" class="small">
+	<div id="packages">
+		Packages:
+					<p><a href="../li_GROCK.html">GROCK</a></p>
+					<p><a href="../li_Grid.html">Grid</a></p>
+					<p><a href="../li_grock.html">grock</a></p>
+					<p><a href="../li_SExec.html">SExec</a></p>
+			</div>
+
+				<div id="index">
+			<div id="files">
+								Files:<br>
+								<a href="../grock/_config_php.html">		config.php
+		</a><br>
+			<a href="../grock/_database_php.html">		database.php
+		</a><br>
+			<a href="../grock/_dock_php.html">		dock.php
+		</a><br>
+			<a href="../grock/_explore_complex_php.html">		explore_complex.php
+		</a><br>
+			<a href="../grock/_explore_match_php.html">		explore_match.php
+		</a><br>
+			<a href="../grock/_explore_molecule_php.html">		explore_molecule.php
+		</a><br>
+			<a href="../grock/_fishy_php.html">		fishy.php
+		</a><br>
+			<a href="../grock/_gramm_php.html">		gramm.php
+		</a><br>
+			<a href="../grock/_grid_config_php.html">		grid_config.php
+		</a><br>
+			<a href="../grock/_grock-ws_php.html">		grock-ws.php
+		</a><br>
+			<a href="../grock/_grock_php.html">		grock.php
+		</a><br>
+			<a href="../grock/_grock_lib_php.html">		grock_lib.php
+		</a><br>
+			<a href="../grock/_processor_php.html">		processor.php
+		</a><br>
+			<a href="../grock/_report_php.html">		report.php
+		</a><br>
+			<a href="../grock/_ssh_php.html">		ssh.php
+		</a><br>
+			<a href="../grock/_util_php.html">		util.php
+		</a><br>
+				</div>
+			<div id="classes">
+							</div>
+		</div>
+	</div>
+
+<div id="body">
+			<h1>Procedural File: gramm.php</h1>
+	<p style="margin: 0px;">Source Location: /gramm.php</p>
+	
+<br>
+<br>
+
+<div class="contents">
+<h2>Classes:</h2>
+<dl>
+</dl>
+</div>
+
+<h2>Page Details:</h2>
+<p align="center"><strong>GRAMM specific dock handling routines
+</strong></p>
+<p>This file contains routines to manipulate GRAMM jobs: generate jobs,  analyze results and display and navigate the results.</p><p>This library is free software; you can redistribute it and/or  modify it under the terms of the GNU Lesser General Public  License as published by the Free Software Foundation; either  version 2.1 of the License, or (at your option) any later version.</p><p>This library is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  Lesser General Public License for more details.</p><p>You should have received a copy of the GNU Lesser General Public  License along with this library; if not, write to the Free Software  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</p><h4>Tags:</h4>
+<ul>
+	<li><b>see</b> - <a href="../grock/_util_php.html">util.php</a></li>
+	<li><b>link</b> - <a href="http://savannah.cern.ch/projects/GridGRAMM">http://savannah.cern.ch/projects/GridGRAMM</a></li>
+	<li><b>since</b> - File available since release 0.0</li>
+	<li><b>version</b> - $Id$</li>
+	<li><b>license</b> - ../c/lgpl.txt</li>
+	<li><b>author</b> - Jose R. Valverde &lt;<a href="mailto:david@cnb.uam.es">mailto:david@cnb.uam.es</a>&gt;</li>
+	<li><b>copyright</b> - CSIC</li>
+	<li><b>author</b> - David Garcia &lt;<a href="mailto:david@cnb.uam.es">mailto:david@cnb.uam.es</a>&gt;</li>
+</ul>
+<hr>
+Includes:<br>
+require_once(<a href="../grock/_util_php.html">'util.php'</a>) <span class="linenumber">[line 33]</span>
+<br />
+<hr>
+<div id="global">
+</div><hr>
+<div id="define">
+	<a name="defineGRAMM_DISPLAY"></a>
+	<h3>GRAMM_DISPLAY</h3>
+	<div class="indent">
+	<p class="linenumber">[line 37]</p>
+	<p><code>GRAMM_DISPLAY = 50</code></p>
+			</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="defineGRAMM_NJOBS"></a>
+	<h3>GRAMM_NJOBS</h3>
+	<div class="indent">
+	<p class="linenumber">[line 36]</p>
+	<p><code>GRAMM_NJOBS = 1000</code></p>
+			</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+</div><hr>
+<div id="function">
+	<a name="functiongramm_create_job"></a>
+	<h3>gramm_create_job</h3>
+	<div class="indent">
+		<code>boolean gramm_create_job(
+$probe $probe, $target $target, $options $options)</code>
+		<p class="linenumber">[line 96]</p>
+		<p align="center"><strong>Create a GRAMM job
+</strong></p>
+<p>This functions sets up a GRAMM job for submission to the Grid.  The job created will match a mobile molecule against a fixed  one (where the mobile should be the smaller one and the fixed  the bigger for efficiency).</p><p>In order to submit a job, it must be self-contained: we create  a directory named after the probe and target molecules and store  there all info needed: <ul><li>the GRAMM command</li><li>GRAMM configuration files (according to user preferences)</li><li>the ligand/mobile molecule</li><li>the receptor/fixed molecule</li><li>a shell script to drive the execution</li><li>the JDL describing the job</li></ul>   We'll take the executable and most of the configuration files  from the application directory (where we are installed, $app_dir).</p><p>For simplicity, we will use the molecules called 'ligand.pdb'  (the mobile, smaller one) and 'receptor.pdb' (the bigger one),  and we expect them to be available in the current directory.</p><p>We might as well use &quot;$probe.pdb&quot; and &quot;$target.pdb&quot; as the file  names, but this has two implications, a minor and a major one:</p><p>The minor one is that we would have to tweak other config files  as well and use $probe+$target as job name.</p><p>The major one is that we would need to pass this information to  the show_results.php script, which is run separately and independently  from us, making the logic somewhat more convoluted (for the time  being; may be we could pass this as hidden form variables?).</p><p>NOTE: these functions expect actual data to be located   always in ./ligand.pdb and ./receptor.pdb   independent of the names they receive.</p><p>./ligand.pdb should be the smaller of the two   	    molecules, which is to be moved around the bigger   	./receptor.pdb should be the bigger, which is   	    to remain statically fixed during the docking process.</p><p>There is NO WAY to associate $user_probe or $db_target with   the actual filenames (ligand.pdb or receptor.pdb) in the   current implementation.</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - TRUE is all went well, FALSE otherwise.</li>
+</ul>
+		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">$probe</span>
+			<b>$probe</b> 
+			- 
+			is the original user-provided probe molecule name</li>
+					<li>
+			<span class="type">$target</span>
+			<b>$target</b> 
+			- 
+			is the original name of the db molecule being                   screened</li>
+					<li>
+			<span class="type">$options</span>
+			<b>$options</b> 
+			- 
+			The user selected options</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functiongramm_generate_scores"></a>
+	<h3>gramm_generate_scores</h3>
+	<div class="indent">
+		<code>void gramm_generate_scores(
+string $docker)</code>
+		<p class="linenumber">[line 267]</p>
+		<p align="center"><strong>Generate scores files
+</strong></p>
+<p>This routine evaluates the output got to date and generates one or  more scores files:</p><p><ul><li>scores.txt containing all the sorted scores for all matches between the</li></ul>  probe molecule and all target molecules screened from the database <ul><li>top_scores.txt containing only the topmost score for each match of</li></ul>  the probe molecule against each molecules screened from the database   sorted by energy.</p><p>Note that it may silently fail to generate any scores at all, e.g.  if no results are yet available, but also if there is an error.</p>		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">string</span>
+			<b>$docker</b> 
+			- 
+			The docking method selected by the user</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functiongramm_show_complex"></a>
+	<h3>gramm_show_complex</h3>
+	<div class="indent">
+		<code>void gramm_show_complex(
+string $message, string $relurl, [string $probe_name = 'none'], [string $probe_type = 'none'], [string $target_name = 'none'])</code>
+		<p class="linenumber">[line 555]</p>
+		<p align="center"><strong>Show the structure of a docked complex using a variety of choices
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">string</span>
+			<b>$message</b> 
+			- 
+			A message to prepend</li>
+					<li>
+			<span class="type">string</span>
+			<b>$relurl</b> 
+			- 
+			A relative URL path to the complex file</li>
+					<li>
+			<span class="type">string</span>
+			<b>$probe_name</b> 
+			- 
+			Name of the molecule used as a probe</li>
+					<li>
+			<span class="type">string</span>
+			<b>$probe_type</b> 
+			- 
+			How the probe has been used by GRAMM</li>
+					<li>
+			<span class="type">string</span>
+			<b>$target_name</b> 
+			- 
+			Name of the target molecule</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functiongramm_show_dock"></a>
+	<h3>gramm_show_dock</h3>
+	<div class="indent">
+		<code>void gramm_show_dock(
+string $docker, string $id, string $probe, string $pt, string $target, integer $from, integer $to)</code>
+		<p class="linenumber">[line 414]</p>
+		<p align="center"><strong>Show results of running the docking program GRAMM for a probe and a  target.
+</strong></p>
+<p>Called by explore_match.php</p>		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">string</span>
+			<b>$docker</b> 
+			- 
+			The program used to perform the match (used to process                           job output)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$id</b> 
+			- 
+			Session id the docking job belongs to</li>
+					<li>
+			<span class="type">string</span>
+			<b>$probe</b> 
+			- 
+			The name of the probe molecule submitted by the user</li>
+					<li>
+			<span class="type">string</span>
+			<b>$pt</b> 
+			- 
+			How to treat the probe molecule (ligand or receptor)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$target</b> 
+			- 
+			The name of the target molecule</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$from</b> 
+			- 
+			Top result at which display should start</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$to</b> 
+			- 
+			Top result at which display should end</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functiongramm_show_structure"></a>
+	<h3>gramm_show_structure</h3>
+	<div class="indent">
+		<code>void gramm_show_structure(
+string $message, string $relurl, string $name)</code>
+		<p class="linenumber">[line 520]</p>
+		<p align="center"><strong>Show the structure of a molecule using a choice of presentation options
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">string</span>
+			<b>$message</b> 
+			- 
+			A message to prepend the molecule</li>
+					<li>
+			<span class="type">string</span>
+			<b>$relurl</b> 
+			- 
+			The molecule location (relative URL)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$name</b> 
+			- 
+			The molecule name</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functiongramm_show_top_scores"></a>
+	<h3>gramm_show_top_scores</h3>
+	<div class="indent">
+		<code>void gramm_show_top_scores(
+string $docker, mixed $id, string $probe, string $pt, [integer $from = 1], [integer $to = GRAMM_DISPLAY])</code>
+		<p class="linenumber">[line 320]</p>
+		<p align="center"><strong>Show a selection from the listing of top scores
+</strong></p>
+<p>NOTE: we expect to be called through dock::show_top_scores() and   that $from and $to have already been checked for validity there.</p>		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">string</span>
+			<b>$docker</b> 
+			- 
+			The program used to perform the match (used to process                           job output)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$probe</b> 
+			- 
+			The name of the probe molecule submitted by the user</li>
+					<li>
+			<span class="type">string</span>
+			<b>$pt</b> 
+			- 
+			How to treat the probe molecule (ligand or receptor)</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$from</b> 
+			- 
+			Top result at which display should start</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$to</b> 
+			- 
+			Top result at which display should end</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionwrite_rpar_gr"></a>
+	<h3>write_rpar_gr</h3>
+	<div class="indent">
+		<code>boolean write_rpar_gr(
+$directory $directory, $options $options)</code>
+		<p class="linenumber">[line 207]</p>
+		<p align="center"><strong>Write parameter file to drive the docking job.
+</strong></p>
+<p>NOTE currently there is no error checking. If an fwrite fails we won't  notice.</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - TRUE if all went well, FALSE otherwise</li>
+	<li><b>access</b> - private</li>
+</ul>
+		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">$directory</span>
+			<b>$directory</b> 
+			- 
+			where we want it located</li>
+					<li>
+			<span class="type">$options</span>
+			<b>$options</b> 
+			- 
+			array containing user selected preferences</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+</div>
+	<div id="credit">
+		<hr>
+		Documentation generated on Thu, 27 Oct 2005 13:03:32 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.2.3</a>
+	</div>
+</div>
+</body>
+</html>

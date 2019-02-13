@@ -1,0 +1,549 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.3.6">
+  <compounddef id="config_8php" kind="file">
+    <compoundname>config.php</compoundname>
+    <innernamespace refid="namespaceTINKER">TINKER</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="config_8php_1a0" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$php_version</definition>
+        <argsstring></argsstring>
+        <name>$php_version</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="11" bodystart="11" bodyend="-1"/>
+        <referencedby refid="util_8php_1a7" compoundref="util_8php" startline="225" endline="333">ssh_open</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a1" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$maintainer</definition>
+        <argsstring></argsstring>
+        <name>$maintainer</name>
+        <initializer>&quot;netadmin@es.embnet.org&quot;</initializer>
+        <briefdescription>
+<para>email address of the service maintainer </para>        </briefdescription>
+        <detaileddescription>
+<para>Used to point users to some help desk reference if anything goes wrong i.e. YOU</para><para>string $maintainer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="21" bodystart="21" bodyend="-1"/>
+        <referencedby refid="util_8php_1a1" compoundref="util_8php" startline="55" endline="69">set_footer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a2" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$document_root</definition>
+        <argsstring></argsstring>
+        <name>$document_root</name>
+        <initializer>&quot;/data/www/EMBnet&quot;</initializer>
+        <briefdescription>
+<para>Path to server Document Root. </para>        </briefdescription>
+        <detaileddescription>
+<para>string $serverpath </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="30" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a3" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$app_dir</definition>
+        <argsstring></argsstring>
+        <name>$app_dir</name>
+        <initializer>&quot;/Services/MolBio/egTINKER/&quot;</initializer>
+        <briefdescription>
+<para>Path to where this program has been installed. </para>        </briefdescription>
+        <detaileddescription>
+<para>We will use this path to avoid duplicating common files. In order to do so, we need to know the path relative to Document Root, since that is how it will be accessed over the Web. Should we need a full path we can always rebuild it by concatenating this with $documentroot</para><para>string $app_dir </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="42" bodystart="42" bodyend="-1"/>
+        <referencedby refid="util_8php_1a1" compoundref="util_8php" startline="55" endline="69">set_footer</referencedby>
+        <referencedby refid="util_8php_1a0" compoundref="util_8php" startline="28" endline="46">set_header</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a4" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$httptmp</definition>
+        <argsstring></argsstring>
+        <name>$httptmp</name>
+        <initializer>&quot;/tmp/egTINKER&quot;</initializer>
+        <briefdescription>
+<para>Path to a temporary directory. </para>        </briefdescription>
+        <detaileddescription>
+<para>This directory needs to be inside the server path, so we just specify here its relative path to DocumentRoot. We can always reconstruct the full absolute path by concatenating with $serverpath</para><para>global string $httptmp </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="54" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a5" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$wd_path</definition>
+        <argsstring></argsstring>
+        <name>$wd_path</name>
+        <initializer>&quot;$document_root/$httptmp&quot;</initializer>
+        <briefdescription>
+<para>Path to the working directories in the local machine starting from /. </para>        </briefdescription>
+        <detaileddescription>
+<para>This must be a directory within the Web server accessible area. Typically a directory below the &apos;htdocs&apos; or $DocumentRoot</para><para>We&apos;ll use this path to store user data files below into separate directories with random names (to make it more difficult to guess)</para><para>This directory must be non-browseable (e.g. with a suitable index.html).</para><para><simplesect kind="note"><para>At EMBnet/CNB we host many servers, each has its own DocumentRoot hanging from /data/www/.</para></simplesect>
+string $wd_path </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="72" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a6" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$grid_wd_path</definition>
+        <argsstring></argsstring>
+        <name>$grid_wd_path</name>
+        <initializer>&quot;services/egTINKER&quot;</initializer>
+        <briefdescription>
+<para>Remote work directory in the <ref refid="classGrid" kindref="compound">Grid</ref> UI server. </para>        </briefdescription>
+        <detaileddescription>
+<para>We will use this to separate different services into alternate hierarchies in the grid server, as well as to avoid cluttering the remote user&apos;s dir with too many directories.</para><para>This should be a path relative to the user home OR an actual correct full path. For the sake of versatility it is better to use a relative path.</para><para>string $grid_wd_path </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="97" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a7" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$grid_error_log</definition>
+        <argsstring></argsstring>
+        <name>$grid_error_log</name>
+        <initializer>&quot;./error.txt&quot;</initializer>
+        <briefdescription>
+<para>where the error log of the grid connection should be stored locally </para>        </briefdescription>
+        <detaileddescription>
+<para>string $grid_error_log </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="104" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a8" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$babel</definition>
+        <argsstring></argsstring>
+        <name>$babel</name>
+        <initializer>&quot;/opt/structure/bin/babel&quot;</initializer>
+        <briefdescription>
+<para>Path to BABEL in the local machine. </para>        </briefdescription>
+        <detaileddescription>
+<para>We&apos;ll use BABEL to convert input files in any acceptable format to PDB format</para><para>string $babel </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="114" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a9" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$babel_dir</definition>
+        <argsstring></argsstring>
+        <name>$babel_dir</name>
+        <initializer>&quot;/opt/structure/babel&quot;</initializer>
+        <briefdescription>
+<para>BABEL_DIR directory holding babel files. </para>        </briefdescription>
+        <detaileddescription>
+<para>BABEL requires some additional files to run. These must be placed in a directory pointed to by environment variable BABEL_DIR</para><para>string babel_dir </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="124" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a10" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$tinker_dir</definition>
+        <argsstring></argsstring>
+        <name>$tinker_dir</name>
+        <initializer>&quot;/opt/structure/tinker&quot;</initializer>
+        <briefdescription>
+<para>Directory where tinker is installed. </para>        </briefdescription>
+        <detaileddescription>
+<para>global string $tinker_dir </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="131" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a11" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$tinker_bin</definition>
+        <argsstring></argsstring>
+        <name>$tinker_bin</name>
+        <initializer>&quot;$tinker_dir/bin&quot;</initializer>
+        <briefdescription>
+<para>Application binaries are stored here. </para>        </briefdescription>
+        <detaileddescription>
+<para>global string $tinker_bin </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="138" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a12" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$tinker_params</definition>
+        <argsstring></argsstring>
+        <name>$tinker_params</name>
+        <initializer>&quot;$tinker_dir/params&quot;</initializer>
+        <briefdescription>
+<para>Tinker params files are stored here. </para>        </briefdescription>
+        <detaileddescription>
+<para>global string $tinker_params </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="145" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a13" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$mailprog</definition>
+        <argsstring></argsstring>
+        <name>$mailprog</name>
+        <initializer>&quot;/usr/lib/sendmail&quot;</initializer>
+        <briefdescription>
+<para>Program used to send e-mail. </para>        </briefdescription>
+        <detaileddescription>
+<para>global string $mailprog </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="152" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a14" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$wapprog</definition>
+        <argsstring></argsstring>
+        <name>$wapprog</name>
+        <initializer>&quot;/usr/sbin/Mail&quot;</initializer>
+        <briefdescription>
+<para>Program used to send wap messages. </para>        </briefdescription>
+        <detaileddescription>
+<para>global string $wapprog </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="159" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a15" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$grid_user</definition>
+        <argsstring></argsstring>
+        <name>$grid_user</name>
+        <initializer>&quot;jr&quot;</initializer>
+        <briefdescription>
+<para>user name to use to connect to the <ref refid="classGrid" kindref="compound">Grid</ref> UI host  string $server_user </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="169" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a16" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$grid_host</definition>
+        <argsstring></argsstring>
+        <name>$grid_host</name>
+        <initializer>&quot;villon.cnb.uam.es&quot;</initializer>
+        <briefdescription>
+<para>name of the <ref refid="classGrid" kindref="compound">Grid</ref> UI host  string $server_host </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="175" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a17" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$grid_server</definition>
+        <argsstring></argsstring>
+        <name>$grid_server</name>
+        <initializer>&quot;$grid_user@$grid_host&quot;</initializer>
+        <briefdescription>
+<para>Who acts as the grid server for us  string $server. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="181" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a18" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$grid_password</definition>
+        <argsstring></argsstring>
+        <name>$grid_password</name>
+        <initializer>&quot;BETTER USE GRID::SET_PASSWORD&quot;</initializer>
+        <briefdescription>
+<para>Default password to login on the UI machine. </para>        </briefdescription>
+        <detaileddescription>
+<para>string $grid_password </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="188" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a19" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$grid_passphrase</definition>
+        <argsstring></argsstring>
+        <name>$grid_passphrase</name>
+        <initializer>&quot;USE GRID::SET_PASSPHRASE&quot;</initializer>
+        <briefdescription>
+<para>Default passphrase to unlock certificate of remote user at the UI. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="193" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a20" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$pkg_name</definition>
+        <argsstring></argsstring>
+        <name>$pkg_name</name>
+        <initializer>&quot;egTINKER&quot;</initializer>
+        <briefdescription>
+<para>Title to use for displaying in all the page headers. </para>        </briefdescription>
+        <detaileddescription>
+<para>string $pkg_name </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="202" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="config_8php_1a21" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$debug</definition>
+        <argsstring></argsstring>
+        <name>$debug</name>
+        <initializer>FALSE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="204" bodystart="204" bodyend="-1"/>
+        <referencedby refid="classGrid_1a19" compoundref="grid_8php" startline="964" endline="971">Grid::destroy</referencedby>
+        <referencedby refid="classGrid_1a8" compoundref="grid_8php" startline="331" endline="334">Grid::get_init_status</referencedby>
+        <referencedby refid="classGrid_1a20" compoundref="grid_8php" startline="978" endline="990">Grid::new_session</referencedby>
+        <referencedby refid="classGrid_1a10" compoundref="grid_8php" startline="521" endline="565">Grid::pdisconnect</referencedby>
+        <referencedby refid="classGrid_1a11" compoundref="grid_8php" startline="602" endline="653">Grid::pinitialize</referencedby>
+        <referencedby refid="classGrid_1a16" compoundref="grid_8php" startline="814" endline="844">Grid::pjob_status</referencedby>
+        <referencedby refid="classSExec_1a7" compoundref="ssh-files_8php" startline="410" endline="421">SExec::ssh_close</referencedby>
+        <referencedby refid="classSExec_1a8" compoundref="ssh-files_8php" startline="423" endline="439">SExec::ssh_close_bck</referencedby>
+        <referencedby refid="classSExec_1a4" compoundref="ssh-files_8php" startline="177" endline="195">SExec::ssh_copy</referencedby>
+        <referencedby refid="classSExec_1a3" compoundref="ssh-files_8php" startline="125" endline="142">SExec::ssh_exec</referencedby>
+        <referencedby refid="util_8php_1a7" compoundref="util_8php" startline="225" endline="333">ssh_open</referencedby>
+        <referencedby refid="classSExec_1a6" compoundref="ssh-files_8php" startline="318" endline="405">SExec::ssh_open_command</referencedby>
+        <referencedby refid="classSExec_1a5" compoundref="ssh-files_8php" startline="218" endline="305">SExec::ssh_open_shell</referencedby>
+        <referencedby refid="classSExec_1a2" compoundref="ssh-files_8php" startline="63" endline="86">SExec::ssh_passthru</referencedby>
+        <referencedby refid="classSExec_1a9" compoundref="ssh-files_8php" startline="449" endline="469">SExec::ssh_popen</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="2"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Variables<sp/>used<sp/>to<sp/>connect<sp/>with<sp/>the<sp/>user<sp/>interface<sp/>host</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>@package<sp/>TINKER</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>@author<sp/>Jose<sp/>R.<sp/>Valverde<sp/>&lt;jrvalverde@acm.org&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>@copyright<sp/>CSIC<sp/>-<sp/>GPL</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>@version<sp/>1.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="config_8php_1a0" refkind="member"><highlight class="normal"><ref refid="config_8php_1a0" kindref="member">$php_version</ref>=4;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>email<sp/>address<sp/>of<sp/>the<sp/>service<sp/>maintainer</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>Used<sp/>to<sp/>point<sp/>users<sp/>to<sp/>some<sp/>help<sp/>desk<sp/>reference<sp/>if<sp/>anything<sp/>goes<sp/>wrong</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>i.e.<sp/>YOU</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>@global<sp/>string<sp/>$maintainer</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="config_8php_1a1" refkind="member"><highlight class="normal"><ref refid="config_8php_1a1" kindref="member">$maintainer</ref>=</highlight><highlight class="stringliteral">&quot;netadmin@es.embnet.org&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>L<sp/>O<sp/>C<sp/>A<sp/>L<sp/><sp/><sp/><sp/>P<sp/>A<sp/>T<sp/>H<sp/>S</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="25"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>Path<sp/>to<sp/>server<sp/>Document<sp/>Root</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>@global<sp/>string<sp/>$serverpath</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="config_8php_1a2" refkind="member"><highlight class="normal"><ref refid="config_8php_1a2" kindref="member">$document_root</ref>=</highlight><highlight class="stringliteral">&quot;/data/www/EMBnet&quot;</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>$ENV{&quot;DOCUMENT_ROOT&quot;};</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>Path<sp/>to<sp/>where<sp/>this<sp/>program<sp/>has<sp/>been<sp/>installed</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>We<sp/>will<sp/>use<sp/>this<sp/>path<sp/>to<sp/>avoid<sp/>duplicating<sp/>common<sp/>files.<sp/>In<sp/>order</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>to<sp/>do<sp/>so,<sp/>we<sp/>need<sp/>to<sp/>know<sp/>the<sp/>path<sp/>relative<sp/>to<sp/>Document<sp/>Root,<sp/>since</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>that<sp/>is<sp/>how<sp/>it<sp/>will<sp/>be<sp/>accessed<sp/>over<sp/>the<sp/>Web.<sp/>Should<sp/>we<sp/>need<sp/>a<sp/>full</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>path<sp/>we<sp/>can<sp/>always<sp/>rebuild<sp/>it<sp/>by<sp/>concatenating<sp/>this<sp/>with<sp/>$documentroot</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>@global<sp/>string<sp/>$app_dir<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="config_8php_1a3" refkind="member"><highlight class="normal"><ref refid="config_8php_1a3" kindref="member">$app_dir</ref>=</highlight><highlight class="stringliteral">&quot;/Services/MolBio/egTINKER/&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="44"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/>Path<sp/>to<sp/>a<sp/>temporary<sp/>directory</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>directory<sp/>needs<sp/>to<sp/>be<sp/>inside<sp/>the<sp/>server<sp/>path,<sp/>so<sp/>we</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/>just<sp/>specify<sp/>here<sp/>its<sp/>relative<sp/>path<sp/>to<sp/>DocumentRoot.<sp/>We</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/><sp/>can<sp/>always<sp/>reconstruct<sp/>the<sp/>full<sp/>absolute<sp/>path<sp/>by<sp/>concatenating</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/><sp/>with<sp/>$serverpath</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>global<sp/>string<sp/>$httptmp</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="config_8php_1a4" refkind="member"><highlight class="normal"><ref refid="config_8php_1a4" kindref="member">$httptmp</ref>=</highlight><highlight class="stringliteral">&quot;/tmp/egTINKER&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="56"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/>Path<sp/>to<sp/>the<sp/>working<sp/>directories<sp/>in<sp/>the<sp/>local<sp/>machine<sp/>starting<sp/>from<sp/>/</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/>This<sp/>must<sp/>be<sp/>a<sp/>directory<sp/>within<sp/>the<sp/>Web<sp/>server<sp/>accessible<sp/>area.</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/>Typically<sp/>a<sp/>directory<sp/>below<sp/>the<sp/>&apos;htdocs&apos;<sp/>or<sp/>$DocumentRoot</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/>We&apos;ll<sp/>use<sp/>this<sp/>path<sp/>to<sp/>store<sp/>user<sp/>data<sp/>files<sp/>below<sp/>into<sp/>separate</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/>directories<sp/>with<sp/>random<sp/>names<sp/>(to<sp/>make<sp/>it<sp/>more<sp/>difficult<sp/>to<sp/>guess)</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/>This<sp/>directory<sp/>must<sp/>be<sp/>non-browseable<sp/>(e.g.<sp/>with<sp/>a<sp/>suitable<sp/>index.html).</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/>@note<sp/>At<sp/>EMBnet/CNB<sp/>we<sp/>host<sp/>many<sp/>servers,<sp/>each<sp/>has<sp/>its<sp/>own<sp/>DocumentRoot</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>hanging<sp/>from<sp/>/data/www/.</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/>@global<sp/>string<sp/>$wd_path</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="config_8php_1a5" refkind="member"><highlight class="normal"><ref refid="config_8php_1a5" kindref="member">$wd_path</ref>=</highlight><highlight class="stringliteral">&quot;$document_root/$httptmp&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment">//<sp/>XXX<sp/>-<sp/>JR<sp/>-<sp/>XXX<sp/>--<sp/>REMOVE<sp/>THIS<sp/>DEPENDENCY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>I.E.<sp/>COPY<sp/>DATA<sp/>TO<sp/>USER<sp/>HOME<sp/>USING<sp/>SCP<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>was<sp/>not<sp/>done<sp/>formerly<sp/>for<sp/>we<sp/>failed<sp/>to<sp/>call<sp/>SSH<sp/>directly.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>We<sp/>are<sp/>close<sp/>to<sp/>getting<sp/>it<sp/>done...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">//<sp/>User<sp/>Interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Remember<sp/>that<sp/>the<sp/>User<sp/>Interface<sp/>has<sp/>mounted<sp/>/data/...<sp/>directory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>We<sp/>are<sp/>assuming<sp/>that<sp/>what<sp/>we<sp/>store<sp/>locally<sp/>will<sp/>be<sp/>placed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>in<sp/>the<sp/>same<sp/>place<sp/>remotely<sp/>automagically<sp/>by<sp/>way<sp/>of<sp/>NFS<sp/>mount.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="84"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*<sp/>Remote<sp/>work<sp/>directory<sp/>in<sp/>the<sp/>Grid<sp/>UI<sp/>server</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*<sp/><sp/>We<sp/>will<sp/>use<sp/>this<sp/>to<sp/>separate<sp/>different<sp/>services<sp/>into<sp/>alternate</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*<sp/><sp/>hierarchies<sp/>in<sp/>the<sp/>grid<sp/>server,<sp/>as<sp/>well<sp/>as<sp/>to<sp/>avoid<sp/>cluttering</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>remote<sp/>user&apos;s<sp/>dir<sp/>with<sp/>too<sp/>many<sp/>directories.</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>should<sp/>be<sp/>a<sp/>path<sp/>relative<sp/>to<sp/>the<sp/>user<sp/>home<sp/>OR<sp/>an<sp/>actual</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/><sp/>correct<sp/>full<sp/>path.<sp/>For<sp/>the<sp/>sake<sp/>of<sp/>versatility<sp/>it<sp/>is<sp/>better<sp/>to</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*<sp/><sp/>use<sp/>a<sp/>relative<sp/>path.</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*<sp/><sp/>@global<sp/>string<sp/>$grid_wd_path</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="config_8php_1a6" refkind="member"><highlight class="normal"><ref refid="config_8php_1a6" kindref="member">$grid_wd_path</ref>=</highlight><highlight class="stringliteral">&quot;services/egTINKER&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="99"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*<sp/>where<sp/>the<sp/>error<sp/>log<sp/>of<sp/>the<sp/>grid<sp/>connection<sp/>should<sp/>be<sp/>stored<sp/>locally</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*<sp/>@global<sp/>string<sp/>$grid_error_log</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="config_8php_1a7" refkind="member"><highlight class="normal"><ref refid="config_8php_1a7" kindref="member">$grid_error_log</ref>=</highlight><highlight class="stringliteral">&quot;./error.txt&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="106"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/>Path<sp/>to<sp/>BABEL<sp/>in<sp/>the<sp/>local<sp/>machine</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*<sp/><sp/>We&apos;ll<sp/>use<sp/>BABEL<sp/>to<sp/>convert<sp/>input<sp/>files<sp/>in<sp/>any<sp/>acceptable<sp/>format<sp/>to</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*<sp/><sp/>PDB<sp/>format</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*<sp/>@global<sp/>string<sp/>$babel</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="config_8php_1a8" refkind="member"><highlight class="normal"><ref refid="config_8php_1a8" kindref="member">$babel</ref>=</highlight><highlight class="stringliteral">&quot;/opt/structure/bin/babel&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="116"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/>BABEL_DIR<sp/>directory<sp/>holding<sp/>babel<sp/>files</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/>BABEL<sp/>requires<sp/>some<sp/>additional<sp/>files<sp/>to<sp/>run.<sp/>These<sp/>must<sp/>be<sp/>placed<sp/>in</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/>a<sp/>directory<sp/>pointed<sp/>to<sp/>by<sp/>environment<sp/>variable<sp/>BABEL_DIR</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/>@global<sp/>string<sp/>babel_dir</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="config_8php_1a9" refkind="member"><highlight class="normal"><ref refid="config_8php_1a9" kindref="member">$babel_dir</ref>=</highlight><highlight class="stringliteral">&quot;/opt/structure/babel&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="126"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*<sp/>Directory<sp/>where<sp/>tinker<sp/>is<sp/>installed</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*<sp/>global<sp/>string<sp/>$tinker_dir</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="config_8php_1a10" refkind="member"><highlight class="normal"><ref refid="config_8php_1a10" kindref="member">$tinker_dir</ref>=</highlight><highlight class="stringliteral">&quot;/opt/structure/tinker&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="133"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*<sp/>Application<sp/>binaries<sp/>are<sp/>stored<sp/>here</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/>*<sp/>global<sp/>string<sp/>$tinker_bin</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="config_8php_1a11" refkind="member"><highlight class="normal"><ref refid="config_8php_1a11" kindref="member">$tinker_bin</ref>=</highlight><highlight class="stringliteral">&quot;$tinker_dir/bin&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="140"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/>*<sp/>Tinker<sp/>params<sp/>files<sp/>are<sp/>stored<sp/>here</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/>*<sp/>global<sp/>string<sp/>$tinker_params</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="config_8php_1a12" refkind="member"><highlight class="normal"><ref refid="config_8php_1a12" kindref="member">$tinker_params</ref>=</highlight><highlight class="stringliteral">&quot;$tinker_dir/params&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="147"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/>*<sp/>Program<sp/>used<sp/>to<sp/>send<sp/>e-mail</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*<sp/>global<sp/>string<sp/>$mailprog</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="config_8php_1a13" refkind="member"><highlight class="normal"><ref refid="config_8php_1a13" kindref="member">$mailprog</ref>=</highlight><highlight class="stringliteral">&quot;/usr/lib/sendmail&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="154"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*<sp/>Program<sp/>used<sp/>to<sp/>send<sp/>wap<sp/>messages</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*<sp/>global<sp/>string<sp/>$wapprog</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159" refid="config_8php_1a14" refkind="member"><highlight class="normal"><ref refid="config_8php_1a14" kindref="member">$wapprog</ref>=</highlight><highlight class="stringliteral">&quot;/usr/sbin/Mail&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="comment">//<sp/>C<sp/>O<sp/>N<sp/>N<sp/>E<sp/>C<sp/>T<sp/>I<sp/>N<sp/>G<sp/><sp/><sp/><sp/>T<sp/>O<sp/><sp/><sp/><sp/>T<sp/>H<sp/>E<sp/><sp/><sp/><sp/>G<sp/>R<sp/>I<sp/>D</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="164"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/>*<sp/>user<sp/>name<sp/>to<sp/>use<sp/>to<sp/>connect<sp/>to<sp/>the<sp/>Grid<sp/>UI<sp/>host</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/>*<sp/>@global<sp/>string<sp/>$server_user</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="comment">//$server_user=&quot;embnet.es&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169" refid="config_8php_1a15" refkind="member"><highlight class="normal"><ref refid="config_8php_1a15" kindref="member">$grid_user</ref>=</highlight><highlight class="stringliteral">&quot;jr&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="171"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/>*<sp/>name<sp/>of<sp/>the<sp/>Grid<sp/>UI<sp/>host</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/>*<sp/>@global<sp/>string<sp/>$server_host</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175" refid="config_8php_1a16" refkind="member"><highlight class="normal"><ref refid="config_8php_1a16" kindref="member">$grid_host</ref>=</highlight><highlight class="stringliteral">&quot;villon.cnb.uam.es&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="177"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/>*<sp/>Who<sp/>acts<sp/>as<sp/>the<sp/>grid<sp/>server<sp/>for<sp/>us</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/>*<sp/>@global<sp/>string<sp/>$server</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181" refid="config_8php_1a17" refkind="member"><highlight class="normal"><ref refid="config_8php_1a17" kindref="member">$grid_server</ref>=</highlight><highlight class="stringliteral">&quot;$grid_user@$grid_host&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="183"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/>*<sp/>Default<sp/>password<sp/>to<sp/>login<sp/>on<sp/>the<sp/>UI<sp/>machine</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/>*<sp/>@global<sp/>string<sp/>$grid_password</highlight></codeline>
+<codeline lineno="187"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="config_8php_1a18" refkind="member"><highlight class="normal"><ref refid="config_8php_1a18" kindref="member">$grid_password</ref>=</highlight><highlight class="stringliteral">&quot;BETTER<sp/>USE<sp/>GRID::SET_PASSWORD&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="190"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="191"><highlight class="comment"><sp/>*<sp/>Default<sp/>passphrase<sp/>to<sp/>unlock<sp/>certificate<sp/>of<sp/>remote<sp/>user<sp/>at<sp/>the<sp/>UI</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193" refid="config_8php_1a19" refkind="member"><highlight class="normal"><ref refid="config_8php_1a19" kindref="member">$grid_passphrase</ref>=</highlight><highlight class="stringliteral">&quot;USE<sp/>GRID::SET_PASSPHRASE&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="comment">//<sp/>L<sp/>O<sp/>O<sp/>K<sp/><sp/><sp/><sp/>A<sp/>N<sp/>D<sp/><sp/><sp/><sp/>F<sp/>E<sp/>E<sp/>L</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="197"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/>*<sp/>Title<sp/>to<sp/>use<sp/>for<sp/>displaying<sp/>in<sp/>all<sp/>the<sp/>page<sp/>headers</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="200"><highlight class="comment"><sp/>*<sp/>@global<sp/>string<sp/>$pkg_name</highlight></codeline>
+<codeline lineno="201"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202" refid="config_8php_1a20" refkind="member"><highlight class="normal"><ref refid="config_8php_1a20" kindref="member">$pkg_name</ref>=</highlight><highlight class="stringliteral">&quot;egTINKER&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204" refid="config_8php_1a21" refkind="member"><highlight class="normal"><ref refid="config_8php_1a21" kindref="member">$debug</ref>=FALSE;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php"/>
+  </compounddef>
+</doxygen>

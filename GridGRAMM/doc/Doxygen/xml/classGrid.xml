@@ -1,0 +1,516 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.3.6">
+  <compounddef id="classGrid" kind="class" prot="public">
+    <compoundname>Grid</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classGrid_1a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Grid::Grid</definition>
+        <argsstring>()</argsstring>
+        <name>Grid</name>
+        <briefdescription>
+<para>Constructor for the class. </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the values for the class variables using defaults provided in &apos;config.php&apos;</para><para>These defaults can be overridden using the functions provided below. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="241" bodystart="241" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="classGrid_1a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Grid::set_user</definition>
+        <argsstring>($user)</argsstring>
+        <name>set_user</name>
+        <param>
+          <type>$</type>
+          <declname>user</declname>
+        </param>
+        <briefdescription>
+<para>set the Grid user name </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parametername>user</parametername>
+<parameterdescription>
+<para>identity to use in the Grid UI host </para></parameterdescription></parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="261" bodystart="260" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="classGrid_1a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Grid::set_host</definition>
+        <argsstring>($host)</argsstring>
+        <name>set_host</name>
+        <param>
+          <type>$</type>
+          <declname>host</declname>
+        </param>
+        <briefdescription>
+<para>set the name of the Grid access host </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parametername>host</parametername>
+<parameterdescription>
+<para>name of the remote UI host </para></parameterdescription></parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="272" bodystart="271" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="classGrid_1a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Grid::set_password</definition>
+        <argsstring>($pass)</argsstring>
+        <name>set_password</name>
+        <param>
+          <type>$</type>
+          <declname>pass</declname>
+        </param>
+        <briefdescription>
+<para>set the password for the remote grid user/server </para>        </briefdescription>
+        <detaileddescription>
+<para>This is specific to the remote UI server selected.</para><para><parameterlist kind="param"><parametername>pass</parametername>
+<parameterdescription>
+<para>password needed to login on to the grid UI server </para></parameterdescription></parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="285" bodystart="284" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="classGrid_1a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Grid::set_passphrase</definition>
+        <argsstring>($pass)</argsstring>
+        <name>set_passphrase</name>
+        <param>
+          <type>$</type>
+          <declname>pass</declname>
+        </param>
+        <briefdescription>
+<para>set the passphrase for the remote grid user </para>        </briefdescription>
+        <detaileddescription>
+<para>This is grid-wise and independent of the UI-node used.</para><para><parameterlist kind="param"><parametername>pass</parametername>
+<parameterdescription>
+<para>passphrase needed to unlock the grid certificate </para></parameterdescription></parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="297" bodystart="296" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="classGrid_1a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Grid::set_work_dir</definition>
+        <argsstring>($wd)</argsstring>
+        <name>set_work_dir</name>
+        <param>
+          <type>$</type>
+          <declname>wd</declname>
+        </param>
+        <briefdescription>
+<para>set working directory on the Grid server </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parametername>work_dir</parametername>
+<parameterdescription>
+<para>the remote path of the working directory </para></parameterdescription></parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="307" bodystart="306" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="classGrid_1a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Grid::set_error_log</definition>
+        <argsstring>($errlog)</argsstring>
+        <name>set_error_log</name>
+        <param>
+          <type>$</type>
+          <declname>errlog</declname>
+        </param>
+        <briefdescription>
+<para>set error log </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parametername>errlog</parametername>
+<parameterdescription>
+<para>path to a local file where we will store the error log (i.e. stderr of the grid connection) </para></parameterdescription></parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="318" bodystart="317" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="classGrid_1a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Grid::get_connection_status</definition>
+        <argsstring>()</argsstring>
+        <name>get_connection_status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="323" bodystart="322" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="classGrid_1a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Grid::get_init_status</definition>
+        <argsstring>()</argsstring>
+        <name>get_init_status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="328" bodystart="327" bodyend="330"/>
+        <references refid="grid__test_8php_1a0" compoundref="grid__test_8php" startline="8">$debug</references>
+      </memberdef>
+      <memberdef kind="function" id="classGrid_1a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Grid::pconnect</definition>
+        <argsstring>()</argsstring>
+        <name>pconnect</name>
+        <briefdescription>
+<para>open a persistent connection to the Grid UI server </para>        </briefdescription>
+        <detaileddescription>
+<para>The Grid User Interface Server is the entry point to the Grid for users and user applications. This is where jobs are launched from.</para><para>This package has been designed to be able to be installed in any host, independent of whether it is an UI or not. Thus, to be able to submit jobs to the Grid, the server hosting the Web UI must connect to a Grid UI host to do the work.</para><para>This routine opens a connection to a Grid UI host using an specified username (i.e. all jobs will be run under said username). To allow the caller to communicate with the remote end, it creates two pipes/pty, one for input and one for output, and redirects error messages to a file.</para><para>We need to redirect stderr to a file. This is so to avoid blocking on reading to check for errors and to avoid (if we use PTYs) interleave of error messages and normal I/O.</para><para>These pipes lead to a child process that actually manages the communication. Using a child process has several advantages: it simplifies the communication process by offloading the comm. logic to a separate, convenience tool, and by being able to use SSH as the child, we can increase security taking advantage of its encryption capabilities.</para><para>The panorama therefore will look like this:</para><para>HTML front-end --&gt; <ref refid="processor_8php" kindref="compound">processor.php</ref> &lt;--&gt; SSH &lt;--&gt; remote host &lt;--&gt; Grid</para><para>This allows for better resilience: should a GridUI host be unavailable, we can detect the error condition and try another one. If the GridUI runs the front-end, then we have a single point of failure, which is a no-no.</para><para><simplesect kind="note"><para>Use of persistent connections is greatly DISCOURAGED: all I/O will go through pipes, and any end of the line may hang waiting on read (if there is nothing to be read at the other end) or write (if there is noone to retrieve the data at the other end).</para></simplesect>
+Just picture this: you open a connection to a GridUI and the remote host issues an unusually large &apos;motd&apos; that fills the pipe. The remote shell will hang waiting for someone to read and empty the pipe before continuing. Now, on the local side we do issue a remote command (without checking the output): we hang waiting for the other end to read it, but the other end is hung. Sadly a &apos;motd&apos; may contain anything, and we can&apos;t predict what the remote prompt will look like...</para><para>Be careful. Be _very_ careful.</para><para>AND always consider setting the pipe ends to non-blocking status. This is actually the default, but has its tricks too. Be careful. Be _very_ careful.</para><para><simplesect kind="note"><para>There is no easy way to know the exit status of a remote command while using persisten connections. Your only chance is to review the output log and check it yourself for error messages.</para></simplesect>
+We could be doing better here, but for now we will leave this for later. After all, the point here is to give the user maximum efficiency.</para><para><simplesect kind="return"><para>TRUE on success, FALSE otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="406" bodystart="405" bodyend="503"/>
+      </memberdef>
+      <memberdef kind="function" id="classGrid_1a10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Grid::pdisconnect</definition>
+        <argsstring>()</argsstring>
+        <name>pdisconnect</name>
+        <briefdescription>
+<para>Close the connection with the remote Grid access point (UI node). </para>        </briefdescription>
+        <detaileddescription>
+<para>What we are going to do is close the communication pipes and kill the child process that actually handles communication with the remote Grid UI host (ssh). This function returns the exit status of the connection (i.e. of the intermediate program that handles the connection --in this case SSH).</para><para><simplesect kind="return"><para>integer exit status of the connection (or the handling program) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="518" bodystart="517" bodyend="561"/>
+        <references refid="grid__test_8php_1a0" compoundref="grid__test_8php" startline="8">$debug</references>
+      </memberdef>
+      <memberdef kind="function" id="classGrid_1a11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Grid::pinitialize</definition>
+        <argsstring>($hours=12, $minutes=0)</argsstring>
+        <name>pinitialize</name>
+        <param>
+          <type>$</type>
+          <declname>hours</declname>
+          <defval>12</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>minutes</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Start the Grid services. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function starts the grid services on the remote UI server host. This is done by unlocking the certificate that we are going to use to run our jobs on the grid using the passphrase provided.</para><para>We need to have a connection open with the remote grid server as the user with whose identity we want to run the jobs. This connection is created by <ref refid="classGrid_1a9" kindref="member">Grid::pconnect()</ref>.</para><para>To ease things up, we check if we are already connected, and if we aren&apos;t, we try to connect ourselves. That is, there is no need to call Grid::Connect() first unless you want to do something else on the Grid-UI before initializing the Grid.</para><para>Grid services have a lifetime of their own. By default they are available for 12:00 hours (that&apos;s the default value of grid-proxy-init itself), but their duration may be fine tuned if we have some knowledge about the time required to run our job.</para><para>Session duration is specified in hours+minutes. If the number of minutes is negative, the specified minutes are substracted from the specified hours (e.g: 1, -15 is fifteen minutes to one hour, i.e. 45 minutes). If the total time specified is negative then the default of 12:00 is used.</para><para><parameterlist kind="param"><parametername>hours</parametername>
+<parameterdescription>
+<para>Estimated duration in hours of the session</para></parameterdescription><parametername>minutes</parametername>
+<parameterdescription>
+<para>Estimated duration in minutes of the session </para></parameterdescription></parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="599" bodystart="598" bodyend="646"/>
+      </memberdef>
+      <memberdef kind="function" id="classGrid_1a12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Grid::pdestroy</definition>
+        <argsstring>()</argsstring>
+        <name>pdestroy</name>
+        <briefdescription>
+<para>Destroy remote grid identity. </para>        </briefdescription>
+        <detaileddescription>
+<para>We destroy the certification we initialized so that no more jobs can be launched under our identity.</para><para><parameterlist kind="param"><parametername>pipes</parametername>
+<parameterdescription>
+<para>The set of pipes to communicate (stdin/stdout) with the remote grid server entry point </para></parameterdescription></parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="658" bodystart="657" bodyend="667"/>
+        <references refid="results_8php_1a2" compoundref="results_8php" startline="76">$status</references>
+      </memberdef>
+      <memberdef kind="function" id="classGrid_1a13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Grid::pjob_submit</definition>
+        <argsstring>($job)</argsstring>
+        <name>pjob_submit</name>
+        <param>
+          <type>$</type>
+          <declname>job</declname>
+        </param>
+        <briefdescription>
+<para>Submit a job to the Grid. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>STUB. DO NOT USE YET </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="679" bodystart="678" bodyend="717"/>
+      </memberdef>
+      <memberdef kind="function" id="classGrid_1a14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Grid::pjob_get_id</definition>
+        <argsstring>($job)</argsstring>
+        <name>pjob_get_id</name>
+        <param>
+          <type>$</type>
+          <declname>job</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="721" bodystart="720" bodyend="747"/>
+        <references refid="results_8php_1a2" compoundref="results_8php" startline="76">$status</references>
+        <references refid="classSExec_1a7" compoundref="ssh_8php" startline="417" endline="428">SExec::ssh_close</references>
+        <references refid="classSExec_1a9" compoundref="ssh_8php" startline="455" endline="475">SExec::ssh_popen</references>
+      </memberdef>
+      <memberdef kind="function" id="classGrid_1a15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Grid::pjob_status</definition>
+        <argsstring>($job)</argsstring>
+        <name>pjob_status</name>
+        <param>
+          <type>$</type>
+          <declname>job</declname>
+        </param>
+        <briefdescription>
+<para>check job status </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>STUB. DO NOT USE YET </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="755" bodystart="754" bodyend="761"/>
+        <references refid="results_8php_1a2" compoundref="results_8php" startline="76">$status</references>
+      </memberdef>
+      <memberdef kind="function" id="classGrid_1a16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Grid::pjob_retrieve</definition>
+        <argsstring>($job)</argsstring>
+        <name>pjob_retrieve</name>
+        <param>
+          <type>$</type>
+          <declname>job</declname>
+        </param>
+        <briefdescription>
+<para>retrieve results </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>STUB. DO NOT USE YET </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="769" bodystart="768" bodyend="773"/>
+        <references refid="classSExec_1a3" compoundref="ssh_8php" startline="130" endline="148">SExec::ssh_exec</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classGrid_1o0" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>Grid::$entry_point</definition>
+        <argsstring></argsstring>
+        <name>$entry_point</name>
+        <briefdescription>
+<para>the grid entry point, should not be needed </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="215" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGrid_1o1" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>Grid::$username</definition>
+        <argsstring></argsstring>
+        <name>$username</name>
+        <briefdescription>
+<para>user name to use to connect to the grid </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="216" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGrid_1o2" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>Grid::$hostname</definition>
+        <argsstring></argsstring>
+        <name>$hostname</name>
+        <briefdescription>
+<para>name of host that provides access to the grid </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="217" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGrid_1o3" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>Grid::$password</definition>
+        <argsstring></argsstring>
+        <name>$password</name>
+        <briefdescription>
+<para>password to login on the UI node </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="218" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGrid_1o4" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>Grid::$passphrase</definition>
+        <argsstring></argsstring>
+        <name>$passphrase</name>
+        <briefdescription>
+<para>key to unlock the grid access certificate </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="219" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGrid_1o5" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>Grid::$work_dir</definition>
+        <argsstring></argsstring>
+        <name>$work_dir</name>
+        <briefdescription>
+<para>a GrUI directory where we can work </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="220" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGrid_1o6" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>Grid::$error_log</definition>
+        <argsstring></argsstring>
+        <name>$error_log</name>
+        <briefdescription>
+<para>a local file to store the error log </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="221" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGrid_1o7" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>Grid::$std_in</definition>
+        <argsstring></argsstring>
+        <name>$std_in</name>
+        <briefdescription>
+<para>Internal. </para>        </briefdescription>
+        <detaileddescription>
+<para>Standard input of the grid entry </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="223" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGrid_1o8" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>Grid::$std_out</definition>
+        <argsstring></argsstring>
+        <name>$std_out</name>
+        <briefdescription>
+<para>Internal. </para>        </briefdescription>
+        <detaileddescription>
+<para>Standard output of the grid entry </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="224" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGrid_1o9" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>Grid::$std_err</definition>
+        <argsstring></argsstring>
+        <name>$std_err</name>
+        <briefdescription>
+<para>Internal. </para>        </briefdescription>
+        <detaileddescription>
+<para>Standard error of the grid entry </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="225" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGrid_1o10" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>Grid::$connected</definition>
+        <argsstring></argsstring>
+        <name>$connected</name>
+        <briefdescription>
+<para>Internal: Have we already connected? </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="230" bodystart="230" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGrid_1o11" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>Grid::$initialized</definition>
+        <argsstring></argsstring>
+        <name>$initialized</name>
+        <briefdescription>
+<para>Internal: Have we already identified ourselves? </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="231" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Grid access class. </para>    </briefdescription>
+    <detaileddescription>
+<para>CAUTION: THIS CLASS IS UNDERGOING A GENERAL OVERHAUL. DO NOT USE NOW.</para><para>This class allows you to connect to a remote Grid UI server and launch and monitor jobs on it.</para><para>The reason for this class is mostly one of resilience: if you put all your services directly on a GrUI host, then whenever that host if offline, your services will be as well.</para><para>An alternative is to replicate the services on various GrUI nodes.</para><para>Or better yet: use this class and set up your services wherever you want. You may put them on an HA system and ensure this way their continuous availability. Your service will be always up and running, ready to accept jobs.</para><para>Your next problem is dealing with the Grid UI. You still need to log-in on a Grid access point to submit your jobs. But once you have detached from a specific GrUI node, you are free to attempt a connection to a given remote access point, and if it is available (and while it is) submit jobs as needed. If at any time it is not available, nothing is lost: just look for another one and use this to continue working. You may thus enter the grid through any door.</para><para>There is a side advantage too: with your services on a GrUI node you can only launch jobs from it. With your services detached from any given Grid door, you may use _any_ AND _as many_ as you want: this means you may launch jobs using various GrUI nodes simultaneously if you so wish. And even split the jobs througho various, separate Grids if you feel like it, hence potentially increasing your throughput and computing power, harnessing even more resources.</para><para>Detaching your jobs from the GrUI has one serious drawback though: all your job information must travel from your service user interface to the grid user interface through the Internet, which may be potentially dangerous. We deal with this security issue using SSH to handle all communications and provide encryption. As long as you use strong passwords you may feel secure. Actually, it is as weak (or strong) as working directly on the GrUI node: access to it is still managed by standard password mechanisms and subject to the same types of attacks. However, remember you now have an extra system (the front-end) to maintain and secure. Please, be always cautious with any server you use.</para><para>Sounds convincing? Then read ahead to learn how to use this class.</para><para>Using this class you may access the Grid in two different ways: connected or disconnected mode (or if you prefer, using persistent connections or disconnected mode).</para><para>It is important to understand the differences among them:</para><para>PERSISTENT CONNECTIONS</para><para>When working with persistent connections, you first issue a Grid::connect() call to stablish a connection to the GrUI. This will be kept open during all the time until you call Grid::disconnect(). All commands issued will travel over the same wire, and hence communications will be more efficient.</para><para>Output of all your commands is collected on a single I/O channel that persists during the whole session.</para><para>On the minus side, persistent connections drive all communications between your front-end and the grid access point through pipes, and are subject to serious deadlock problems. You must make sure you avoid them by clearing periodically the communication buffers. In addition, error checking is relayed to YOU: all information will travel through the persistent I/O channels, and it will be YOUR responsability to detect errors and act accordingly. Debugging is thus more difficult.</para><para>DISCONNECTED MODE</para><para>When working in disconnected mode, the connections are open and closed for each command you issue. This imposes a heavier tax on your communications, which may become serious for submitting huge numbers of jobs.</para><para>Each command will return its output separately since it uses a new I/O channel every time.</para><para>On the plus side, you will retrieve job completion status inmediately and won&apos;t risk deadlocks while running remote jobs. Development and debugging will be a lot easier.</para><para>JOB MANAGEMENT</para><para>In order to submit your jobs to the grid you need to understand how job management has been defined for this class. On the command line you would have a lot more versatility, but to make this class more useful some compromises had to be reached. We have defined a strict protocol to generate/prepare your jobs before submitting them to the grid, and you must stick to it if you want to avoid problems.</para><para>To understand why this has been designed the way it is, you should keep in mind that you will be preparing your jobs on one (or many) front-end and submitting them from it to one (or many) GrUI nodes. Further to it, this has been designhed to make it easy to deploy web-based services for users. Therefore many similar jobs might be launched simultaneously and we need some way to avoid collusion among them. To avoid one job stepping over other we must isolate every one from each other. This means providing an isolated environment for every job.</para><para>The easiest way to achieve our goal is to have every job submitted placed on an independent directory (which we pair to the job name). For single jobs, this means that you should make sure that no two potentially simultaneous/overlapping jobs have the same name (i.e. are stored in the same directory so there is no risk one overwrites files of the other).</para><para>Sometimes this may result inconvenient to you. E.g. if your whole job is submitted split into many separate sub-jobs (which each is a separate job from the point of view of the grid) you may want to follow some naming convention for your sub-jobs that makes it easier to identify and keep track of them. In this case, if you had two simultaneous runs, then the names would collide.</para><para>For example, let&apos;s say you are rendering frames of a movie and want to identify each job by frame number: 0000, 0001, 0002, 0003... If you now try to generate a second movie while the first is being processed, then the frames of the second movie (named as well 0000, 0001, etc...) would overwrite the frames of the first one. Generating random names for each frame would be an option, but too cumbersome and expensive as you would need to keep track of the association of the random names with the actual frames.</para><para>To deal with this scenario we define &apos;sessions&apos;. A session is identified by a unique identifier, and guarantees that all jobs belonging to this session are kept separate from similarly named jobs from other sessions.</para><para>Actually when you create a session, what we actually do is create a subdirectory in the GrUI and direct all further jobs to this subdirectory. This way, jobs of two sessions may have the same name and not step into each other.</para><para>PREPARING JOBS FOR THE GRID</para><para>To prepare a job for the grid you must assign it a name. The same preacutions that apply to any local job hold for your grid work too: if various simultaneous jobs of the same kind may be run, then each must be kept separate from the others by using a different name.</para><para>Once you have decided the name, you must create a directory locally with the same name as your job. In this directory you must install everything needed to run your job: executables, libraries, input data and a JDL file.</para><para>The JDL file defines the work that we will ask the grid to carry out. Since each single job gets its own directory, you will only submit one JDL file for each, and to make processing easier, we request that this JDL file have a fixed name: &quot;job.jdl&quot;.</para><para>The grid processing will generate various auxiliary files, for internal housekeeping. Again, for simplicity, we have chosen to call each of them &apos;job.*&apos;, i.e. &apos;job.&apos; something. This means that other than &apos;job.jdl&apos; you should NOT create any file named job.anything on your job directory to avoid collusion with possible temporary files.</para><para>In brief, to prepare a job:<itemizedlist>
+<listitem><para>select a name</para></listitem><listitem><para>create a directory named after the job</para></listitem><listitem><para>populate this directory with all files needed to run your job</para></listitem><listitem><para>generate the file &apos;job.jdl&apos; with the description of the work to be carried out by the grid</para></listitem><listitem><para>avoid having files named &apos;job.*&apos; (starting with &apos;job.&apos;)</para></listitem></itemizedlist>
+</para><para>SUBMITTING JOBS TO THE GRID</para><para>First consider whether you will be using unique job names or if you will follow a convenient naming convention that may cause name collisions with other jobs.</para><para>If you feel pretty safe that the job name is unique (e.g. has been generated using one or more random strings), then simply call the appropriate *job_submit() function.</para><para>If you are using names that have low entropy or reusing names for similar jobs then it is advisable that you first call one of the *new_session() routines to ensure all your jobs will be kept isolated from other similarly named jobs, and then use the *job_submit() routines to send your jobs.</para><para>For the curious: when you submit your job, the directory and all of its contents will be sent to the remote Grid UI selected and then the &apos;job.jdl&apos; will be submitted to the grid. In the process, several files will be generated holding information about your job identity in the grid context that will be kept for housekeeping and future reference.</para><para>The above is to be kept in mind when submitting light or numerous jobs: the transfer time may become sensibly relevant. Please do take it into consideration in your equations when designing jobs for the grid using this class. You may find it interesting to first store all or some of your job data/execs on the grid and keep them already there instead of having to copy them.</para><para>Grid file management routines are not included yet, but are intended for a future release of this class. </para>    </detaileddescription>
+    <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" line="213" bodystart="213" bodyend="774"/>
+    <listofallmembers>
+      <member refid="classGrid_1o10" prot="public" virt="non-virtual"><scope>Grid</scope><name>$connected</name></member>
+      <member refid="classGrid_1o0" prot="public" virt="non-virtual"><scope>Grid</scope><name>$entry_point</name></member>
+      <member refid="classGrid_1o6" prot="public" virt="non-virtual"><scope>Grid</scope><name>$error_log</name></member>
+      <member refid="classGrid_1o2" prot="public" virt="non-virtual"><scope>Grid</scope><name>$hostname</name></member>
+      <member refid="classGrid_1o11" prot="public" virt="non-virtual"><scope>Grid</scope><name>$initialized</name></member>
+      <member refid="classGrid_1o4" prot="public" virt="non-virtual"><scope>Grid</scope><name>$passphrase</name></member>
+      <member refid="classGrid_1o3" prot="public" virt="non-virtual"><scope>Grid</scope><name>$password</name></member>
+      <member refid="classGrid_1o9" prot="public" virt="non-virtual"><scope>Grid</scope><name>$std_err</name></member>
+      <member refid="classGrid_1o7" prot="public" virt="non-virtual"><scope>Grid</scope><name>$std_in</name></member>
+      <member refid="classGrid_1o8" prot="public" virt="non-virtual"><scope>Grid</scope><name>$std_out</name></member>
+      <member refid="classGrid_1o1" prot="public" virt="non-virtual"><scope>Grid</scope><name>$username</name></member>
+      <member refid="classGrid_1o5" prot="public" virt="non-virtual"><scope>Grid</scope><name>$work_dir</name></member>
+      <member refid="classGrid_1a7" prot="public" virt="non-virtual"><scope>Grid</scope><name>get_connection_status</name></member>
+      <member refid="classGrid_1a8" prot="public" virt="non-virtual"><scope>Grid</scope><name>get_init_status</name></member>
+      <member refid="classGrid_1a0" prot="public" virt="non-virtual"><scope>Grid</scope><name>Grid</name></member>
+      <member refid="classGrid_1a9" prot="public" virt="non-virtual"><scope>Grid</scope><name>pconnect</name></member>
+      <member refid="classGrid_1a12" prot="public" virt="non-virtual"><scope>Grid</scope><name>pdestroy</name></member>
+      <member refid="classGrid_1a10" prot="public" virt="non-virtual"><scope>Grid</scope><name>pdisconnect</name></member>
+      <member refid="classGrid_1a11" prot="public" virt="non-virtual"><scope>Grid</scope><name>pinitialize</name></member>
+      <member refid="classGrid_1a14" prot="public" virt="non-virtual"><scope>Grid</scope><name>pjob_get_id</name></member>
+      <member refid="classGrid_1a16" prot="public" virt="non-virtual"><scope>Grid</scope><name>pjob_retrieve</name></member>
+      <member refid="classGrid_1a15" prot="public" virt="non-virtual"><scope>Grid</scope><name>pjob_status</name></member>
+      <member refid="classGrid_1a13" prot="public" virt="non-virtual"><scope>Grid</scope><name>pjob_submit</name></member>
+      <member refid="classGrid_1a6" prot="public" virt="non-virtual"><scope>Grid</scope><name>set_error_log</name></member>
+      <member refid="classGrid_1a2" prot="public" virt="non-virtual"><scope>Grid</scope><name>set_host</name></member>
+      <member refid="classGrid_1a4" prot="public" virt="non-virtual"><scope>Grid</scope><name>set_passphrase</name></member>
+      <member refid="classGrid_1a3" prot="public" virt="non-virtual"><scope>Grid</scope><name>set_password</name></member>
+      <member refid="classGrid_1a1" prot="public" virt="non-virtual"><scope>Grid</scope><name>set_user</name></member>
+      <member refid="classGrid_1a5" prot="public" virt="non-virtual"><scope>Grid</scope><name>set_work_dir</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

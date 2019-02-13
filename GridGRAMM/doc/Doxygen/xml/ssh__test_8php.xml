@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.3.6">
+  <compounddef id="ssh__test_8php" kind="file">
+    <compoundname>ssh_test.php</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="ssh__test_8php_1a0" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$debug</definition>
+        <argsstring></argsstring>
+        <name>$debug</name>
+        <initializer> TRUE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/ssh_test.php" line="25" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ssh__test_8php_1a1" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$remote</definition>
+        <argsstring></argsstring>
+        <name>$remote</name>
+        <initializer> &quot;user@example.com&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/ssh_test.php" line="29" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ssh__test_8php_1a2" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$password</definition>
+        <argsstring></argsstring>
+        <name>$password</name>
+        <initializer> &quot;password&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/ssh_test.php" line="30" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ssh__test_8php_1a3" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$rmt</definition>
+        <argsstring></argsstring>
+        <name>$rmt</name>
+        <initializer> new <ref refid="classSExec" kindref="compound">SExec</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/ssh_test.php" line="32" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ssh__test_8php_1a4" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$cout</definition>
+        <argsstring></argsstring>
+        <name>$cout</name>
+        <initializer> $rmt-&gt;ssh_popen($remote, $password, &quot;ls -C&quot;, &quot;r&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/ssh_test.php" line="76" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ssh__test_8php_1a5" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$cin</definition>
+        <argsstring></argsstring>
+        <name>$cin</name>
+        <initializer> $rmt-&gt;ssh_popen($remote, $password, &quot;/usr/sbin/Mail -s test jr&quot;, &quot;w&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/ssh_test.php" line="80" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ssh__test_8php_1a6" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>exit</definition>
+        <argsstring></argsstring>
+        <name>exit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/ssh_test.php" line="85" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>@package<sp/>SSH</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>@author<sp/>José<sp/>R.<sp/>Valverde<sp/>&lt;jrvalverde@acm.org&gt;</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>@version<sp/>1.0</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>@copyright<sp/>José<sp/>R.<sp/>Valverde<sp/>&lt;jrvalverde@es.embnet.org&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>library<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>modify<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>License<sp/>as<sp/>published<sp/>by<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>library<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the<sp/>GNU</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>License<sp/>along<sp/>with<sp/>this<sp/>library;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>59<sp/>Temple<sp/>Place,<sp/>Suite<sp/>330,<sp/>Boston,<sp/>MA<sp/><sp/>02111-1307<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>run<sp/>with<sp/>ssh<sp/>-x<sp/>-T<sp/>localhost<sp/>&quot;(cd<sp/>`pwd`<sp/>;<sp/>php<sp/>ssh_test.php)&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="ssh__test_8php_1a0" refkind="member"><highlight class="normal"><ref refid="grid__test_8php_1a0" kindref="member">$debug</ref><sp/>=<sp/>TRUE;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">require<sp/>&apos;ssh.php&apos;;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="ssh__test_8php_1a1" refkind="member"><highlight class="normal">$remote<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;user@example.com&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30" refid="ssh__test_8php_1a2" refkind="member"><highlight class="normal"><ref refid="auth_8php_1a1" kindref="member">$password</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;password&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="ssh__test_8php_1a3" refkind="member"><highlight class="normal"><ref refid="ssh__test_8php_1a3" kindref="member">$rmt</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classSExec" kindref="compound">SExec</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isset($debug_passthru))</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a3" kindref="member">$rmt</ref>-&gt;ssh_passthru($remote,<sp/>$password,<sp/></highlight><highlight class="stringliteral">&quot;ls&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isset($debug_exec))<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a3" kindref="member">$rmt</ref>-&gt;ssh_exec($remote,<sp/>$password,<sp/></highlight><highlight class="stringliteral">&quot;ls&quot;</highlight><highlight class="normal">,<sp/>$out);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>print_r($out);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>foreach<sp/>($out<sp/>as<sp/>$line)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/>$line<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isset($debug_copy))</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a3" kindref="member">$rmt</ref>-&gt;ssh_copy(</highlight><highlight class="stringliteral">&quot;/data/www/EMBnet/cgi-src/Grid/egTinker/src/SSH&quot;</highlight><highlight class="normal">,<sp/>$remote,<sp/>$password);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isset($debug_persistent))</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isset($debug_shell))</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$p<sp/>=<sp/><ref refid="ssh__test_8php_1a3" kindref="member">$rmt</ref>-&gt;ssh_open_shell($remote,<sp/>$password);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$p<sp/>=<sp/><ref refid="ssh__test_8php_1a3" kindref="member">$rmt</ref>-&gt;ssh_open_command($remote,<sp/>$password,<sp/></highlight><highlight class="stringliteral">&quot;ls&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;after<sp/>open<sp/>I<sp/>got<sp/>this\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>print_r($p);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#echo<sp/>&quot;sending<sp/>touch<sp/>beenhere\n&quot;;</highlight></codeline>
+<codeline lineno="58"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#fwrite($p[&apos;std_in&apos;],<sp/>&quot;touch<sp/>beenhere\n&quot;);</highlight></codeline>
+<codeline lineno="59"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;flushing<sp/>pipes\nstdout\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rewind($p[</highlight><highlight class="stringliteral">&quot;std_out&quot;</highlight><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$line<sp/>=<sp/>fgets($p[</highlight><highlight class="stringliteral">&quot;std_out&quot;</highlight><highlight class="normal">],<sp/>1024);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal">.$line.</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!<sp/>feof($p[</highlight><highlight class="stringliteral">&quot;std_out&quot;</highlight><highlight class="normal">])<sp/>);;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/>echo<sp/>&quot;stderr\n&quot;;</highlight></codeline>
+<codeline lineno="67"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/>do<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/>$line<sp/>=<sp/>fgets($p[&quot;std_err&quot;],<sp/>1024);</highlight></codeline>
+<codeline lineno="69"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/>echo<sp/>&quot;&gt;&gt;<sp/>&quot;.$line.&quot;\n&quot;;</highlight></codeline>
+<codeline lineno="70"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/>}<sp/>while<sp/>(!<sp/>feof($p[&apos;std_err&apos;])<sp/>&amp;&amp;<sp/>(strlen($line)<sp/>!=<sp/>0));;</highlight></codeline>
+<codeline lineno="71"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a3" kindref="member">$rmt</ref>-&gt;ssh_close($p);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="ssh__test_8php_1a4" refkind="member"><highlight class="normal"><ref refid="ssh__test_8php_1a4" kindref="member">$cout</ref><sp/>=<sp/><ref refid="ssh__test_8php_1a3" kindref="member">$rmt</ref>-&gt;ssh_popen($remote,<sp/>$password,<sp/></highlight><highlight class="stringliteral">&quot;ls<sp/>-C&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;r&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">echo<sp/>fread($cout,<sp/>8192);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><ref refid="ssh__test_8php_1a3" kindref="member">$rmt</ref>-&gt;ssh_pclose($cout);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80" refid="ssh__test_8php_1a5" refkind="member"><highlight class="normal"><ref refid="ssh__test_8php_1a5" kindref="member">$cin</ref><sp/>=<sp/><ref refid="ssh__test_8php_1a3" kindref="member">$rmt</ref>-&gt;ssh_popen($remote,<sp/>$password,<sp/></highlight><highlight class="stringliteral">&quot;/usr/sbin/Mail<sp/>-s<sp/>test<sp/>jr&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/>fputs($cin,<sp/></highlight><highlight class="stringliteral">&quot;\nTest&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/>fputs($cin,<sp/></highlight><highlight class="stringliteral">&quot;.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><ref refid="ssh__test_8php_1a3" kindref="member">$rmt</ref>-&gt;ssh_pclose($cin);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="ssh__test_8php_1a6" refkind="member"><highlight class="normal"><ref refid="results_8php_1a1" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/ssh_test.php"/>
+  </compounddef>
+</doxygen>

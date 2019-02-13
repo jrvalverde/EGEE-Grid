@@ -1,0 +1,207 @@
+#!/bin/sh -f
+
+# Run this script to install MODELLER interactively, and to install 
+# the current user as a MODELLER user. 
+
+# set default values:
+version="6v2"
+MOD=MODELLER$version
+exectype1="i386-absoft"
+exectype2="sun4"
+exectype3="iris4d"
+exectype4="alpha"
+exectype5="i386-lfs"
+exectype6="rs6000"
+exectype7="mac10v1-absoft"
+exectype8="mac10v2-absoft"
+
+DEFexectype=1
+DEFmodinstall=`(cd ; pwd)`/bin/modeller$version
+DEFlogscript=`(cd ; pwd)`/.cshrc
+if [ $SHELL = /bin/bash ]; then DEFlogscript=`(cd ; pwd)`/.bashrc; fi
+
+
+clear
+echo "Installation of $MOD"
+echo
+echo "This script will install $MOD into a specified directory"
+echo "for which you have read/write permissions. It will also install"
+echo "the current user as a $MOD user. To allow other users running"
+echo "$MOD, you need to follow instructions at the end of this"
+echo "script or in the INSTALLATION file."
+echo 
+echo "This installation will modify your login script, but only after you"
+echo "agree to it explicitly. The original login script will be backed up."
+echo
+echo "Your login shell needs to be csh, tcsh or a compatible shell."
+echo 
+echo "You can generally find your current shell by typing 'echo \$shell'."
+echo
+echo "If your login shell is not csh compatible, exit now (ctrl-c),"
+echo "edit the scripts/logscript.template file to comply with your"
+echo "shell or change your login shell to csh or tcsh, and then run"
+echo "this installation script again."
+echo
+echo "To accept the default answers indicated in [...], press <Enter> only."
+echo
+
+echo "------------------------------------------------------------------------"
+echo
+echo "The currently supported architectures are as follows:"
+echo
+echo '   1) Linux PC (e.g. RedHat, SuSe).'
+echo '   2) SUN Inc. Solaris workstation.'
+echo '   3) Silicon Graphics Inc. IRIX workstation.'
+echo '   4) DEC Inc. Alpha OSF/1 workstation.'
+echo '   5) Linux PC (Mandrake).'
+echo '   6) IBM AIX OS.'
+echo '   7) Apple Mac OS X 10.1.x.'
+echo '   8) Apple Mac OS X 10.2.x (Jaguar).'
+echo
+echo -n "Select the type of your computer from the list above [$DEFexectype]: "
+read ans
+if [ x$ans != x ] ; then
+  exectype=$ans
+else
+  exectype=$DEFexectype
+fi
+if [ $exectype = 1 ] ; then EXECUTABLE_TYPE6v2=$exectype1 ; fi
+if [ $exectype = 2 ] ; then EXECUTABLE_TYPE6v2=$exectype2 ; fi
+if [ $exectype = 3 ] ; then EXECUTABLE_TYPE6v2=$exectype3 ; fi
+if [ $exectype = 4 ] ; then EXECUTABLE_TYPE6v2=$exectype4 ; fi
+if [ $exectype = 5 ] ; then EXECUTABLE_TYPE6v2=$exectype5 ; fi
+if [ $exectype = 6 ] ; then EXECUTABLE_TYPE6v2=$exectype6 ; fi
+if [ $exectype = 7 ] ; then EXECUTABLE_TYPE6v2=$exectype7 ; fi
+if [ $exectype = 8 ] ; then EXECUTABLE_TYPE6v2=$exectype8 ; fi
+
+
+echo
+echo
+echo "Full directory name for the installed $MOD"
+echo -n "[$DEFmodinstall]: "
+read ans
+if [ x$ans != x ] ; then 
+   MODINSTALL6v2=$ans
+else
+   MODINSTALL6v2=$DEFmodinstall
+fi
+if [ ! -d $MODINSTALL6v2 ] ; then
+  echo "There is no such directory; it will be created."
+else
+  echo "There is already such a directory; it will be removed first."
+fi
+
+
+echo
+echo
+echo -n "Full file name of your login script [$DEFlogscript]: "
+read ans
+if [ x$ans != x ] ; then 
+   logscript=$ans
+else
+   logscript=$DEFlogscript
+fi
+if [ ! -f $logscript ] ; then
+  echo "There is no such file; it will be created."
+else
+  echo "There is already such a file; it will be backed up and then modified."
+fi
+
+
+echo 
+echo
+echo "KEY_$MOD, obtained from our academic license server at"
+echo -n "http://guitar.rockefeller.edu/modeller/registration.shtml: "
+read KEY_MODELLER
+
+
+echo
+echo "------------------------------------------------------------------------"
+echo
+echo "The following settings will be used: "
+echo
+echo "The type of this machine          : $EXECUTABLE_TYPE6v2"
+echo "Destination installation directory: $MODINSTALL6v2"
+echo "The name of the login script      : $logscript"
+echo "KEY_$MOD                   : $KEY_MODELLER"
+echo
+echo "If they are incorrect, abort installation (ctrl-c) and run Install again."
+echo "No changes to your system have been made yet. Installation involves:"
+echo
+echo "  1. The destination installation directory will be deleted and then"
+echo "     created from scratch."
+echo
+echo "  2. The login script will be backed up and then modified."
+echo
+echo -n "Press <Enter> to begin the installation: "
+read ans
+echo
+echo "------------------------------------------------------------------------"
+echo
+
+echo "Running make install ..."
+
+if [ -d $MODINSTALL6v2 ] ; then rm -rf $MODINSTALL6v2 ; fi
+export EXECUTABLE_TYPE6v2; export MODINSTALL6v2
+(cd src/main; make install)
+
+echo
+echo "------------------------------------------------------------------------"
+echo
+
+echo "Editing the login script $logscript ..."
+
+# Save the old login script file:
+if [ -f $logscript ] ; then
+   backup_logscript=$logscript.$MOD.backup.`date +%m-%d-%y_%T`
+   cp $logscript $backup_logscript
+   # remove previous MODELLER-version definitions (when interactive, use \!p):
+   sed -n -e "/begin $MOD/,/end $MOD/ !p" $logscript > \
+       logscript.tmp1
+echo "Your login script $logscript was modified."
+echo "Backup of the original file is in"
+echo "$backup_logscript"
+else
+   touch logscript.tmp1
+fi
+# create new MODELLER definitions:
+
+LoginScrTempl=logscript.template
+if [ $SHELL = /bin/bash ] ; then LoginScrTempl=logscript_bash.template ; fi
+
+sed -e "s;edit_modinstall;$MODINSTALL6v2;" \
+    -e "s;edit_modroot;`pwd`;" \
+    -e "s;edit_key_modeller;$KEY_MODELLER;" \
+    -e "s;edit_executable;$EXECUTABLE_TYPE6v2;" \
+    -e "s;edit_script;mod$version;" \
+    scripts/$LoginScrTempl > logscript.tmp2
+# concatenate the two files:
+cat logscript.tmp1 logscript.tmp2 > $logscript
+
+find $MODINSTALL6v2 -type d -exec chmod a+rwx {} \;
+find $MODINSTALL6v2 -type f -exec chmod a+rw {} \;
+
+echo
+echo "------------------------------------------------------------------------"
+echo
+echo "If you have problems with installation, please see the INSTALLATION file."
+echo
+echo "$MOD documentation in the PDF and HTML formats can be found in the"
+echo "$MODINSTALL6v2/doc directory."
+echo
+echo "A simple homology modeling test case is in examples/tutorial-model/."
+echo 
+echo "To complete instalation of $MOD, please type now"
+echo "source $logscript"
+echo
+echo "To allow other users on this system to use $MOD, please include the"
+echo "following lines into their login script:"
+echo
+cat logscript.tmp2
+rm logscript.tmp1 logscript.tmp2
+echo
+echo "------------------------------------------------------------------------"
+echo
+echo "Happy modeling!"
+echo "MODELLER Team, 2002"
+echo

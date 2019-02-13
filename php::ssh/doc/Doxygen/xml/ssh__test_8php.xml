@@ -1,0 +1,322 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.3.6">
+  <compounddef id="ssh__test_8php" kind="file">
+    <compoundname>ssh_test.php</compoundname>
+    <innernamespace refid="namespaceSExec">SExec</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="ssh__test_8php_1a0" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$debug_sexec</definition>
+        <argsstring></argsstring>
+        <name>$debug_sexec</name>
+        <initializer> TRUE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/ssh_test.php" line="32" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ssh__test_8php_1a1" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$rmt</definition>
+        <argsstring></argsstring>
+        <name>$rmt</name>
+        <initializer> new <ref refid="classSExec" kindref="compound">SExec</ref>($remote, $password)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/ssh_test.php" line="41" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ssh__test_8php_1a2" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>exit</definition>
+        <argsstring></argsstring>
+        <name>exit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/ssh_test.php" line="87" bodystart="192" bodyend="-1"/>
+        <referencedby refid="util_8php_1a4" compoundref="util_8php" startline="138" endline="143">letal</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="ssh__test_8php_1a3" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$last</definition>
+        <argsstring></argsstring>
+        <name>$last</name>
+        <initializer> ftell($p[&quot;std_out&quot;])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/ssh_test.php" line="104" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ssh__test_8php_1a4" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$debug_persistent_cmd</definition>
+        <argsstring></argsstring>
+        <name>$debug_persistent_cmd</name>
+        <initializer> TRUE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/ssh_test.php" line="135" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ssh__test_8php_1a5" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$p</definition>
+        <argsstring></argsstring>
+        <name>$p</name>
+        <initializer> $rmt-&gt;ssh_open_command(&quot;./interact.sh&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/ssh_test.php" line="141" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ssh__test_8php_1a6" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$line</definition>
+        <argsstring></argsstring>
+        <name>$line</name>
+        <initializer> fgets($p[&quot;std_out&quot;], 1024)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/ssh_test.php" line="146" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ssh__test_8php_1a7" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$out</definition>
+        <argsstring></argsstring>
+        <name>$out</name>
+        <initializer> fgets($p[std_out], 1024)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/ssh_test.php" line="155" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="2"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>SExec<sp/>test<sp/>routines</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>@package<sp/>SExec</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>@author<sp/>José<sp/>R.<sp/>Valverde<sp/>&lt;jrvalverde@acm.org&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>@version<sp/>1.0</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>@copyright<sp/>José<sp/>R.<sp/>Valverde<sp/>&lt;jrvalverde@es.embnet.org&gt;</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>This<sp/>library<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>modify<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>License<sp/>as<sp/>published<sp/>by<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>This<sp/>library<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the<sp/>GNU</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>License<sp/>along<sp/>with<sp/>this<sp/>library;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>59<sp/>Temple<sp/>Place,<sp/>Suite<sp/>330,<sp/>Boston,<sp/>MA<sp/><sp/>02111-1307<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/>To<sp/>test<sp/>the<sp/>class<sp/>from<sp/>the<sp/>command<sp/>line<sp/>we<sp/>need<sp/>a<sp/>shell<sp/>with<sp/>no<sp/>control</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/>terminal<sp/>to<sp/>avoid<sp/>SSH<sp/>from<sp/>prompting<sp/>interactively<sp/>for<sp/>the<sp/>password:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//<sp/>run<sp/>this<sp/>with<sp/>&apos;<sp/>ssh<sp/>-x<sp/>-T<sp/>localhost<sp/>&quot;(cd<sp/>`pwd`<sp/>;<sp/>php<sp/>ssh_test.php)&quot;<sp/>&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">//<sp/>To<sp/>test<sp/>on<sp/>the<sp/>web,<sp/>just<sp/>invoke<sp/>this<sp/>script.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="ssh__test_8php_1a0" refkind="member"><highlight class="normal"><ref refid="ssh__test_8php_1a0" kindref="member">$debug_sexec</ref><sp/>=<sp/>TRUE;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">require_once<sp/>&apos;ssh.php&apos;;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">//$remote<sp/>=<sp/>&quot;jruser@example.com&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">//$password<sp/>=<sp/>&quot;XXX&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;pre&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="ssh__test_8php_1a1" refkind="member"><highlight class="normal"><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>SExec($remote,<sp/>$password);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref><sp/>==<sp/>FALSE)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;Couldn&apos;t<sp/>open<sp/>the<sp/>connection\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a2" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&quot;Created\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#$debug_passthru<sp/>=<sp/>TRUE;</highlight></codeline>
+<codeline lineno="50"><highlight class="preprocessor"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isset($debug_passthru))<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;Using<sp/>passthru<sp/>to<sp/>send<sp/>ls...\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref>-&gt;ssh_passthru(</highlight><highlight class="stringliteral">&quot;ls&quot;</highlight><highlight class="normal">,<sp/>$status=0);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\nExit<sp/>status<sp/>was<sp/>$status&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#$debug_exec<sp/>=<sp/>TRUE;</highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isset($debug_exec))<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref>-&gt;ssh_exec(</highlight><highlight class="stringliteral">&quot;ls&quot;</highlight><highlight class="normal">,<sp/>$out=</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/>$rmt-&gt;ssh_exec(&quot;ls&quot;);</highlight></codeline>
+<codeline lineno="60"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>print_r($out);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>foreach<sp/>($out<sp/>as<sp/>$line)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/><ref refid="ssh__test_8php_1a6" kindref="member">$line</ref><sp/>.<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#$debug_copy_to<sp/>=<sp/>TRUE;</highlight></codeline>
+<codeline lineno="66"><highlight class="preprocessor"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isset($debug_copy_to))<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\nCopy<sp/>ldir<sp/>./CVS<sp/>to<sp/>rdir<sp/>$remote:k/.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref>-&gt;ssh_copy_to(</highlight><highlight class="stringliteral">&quot;./CVS&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;k&quot;</highlight><highlight class="normal">,<sp/>$out);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\nCopy<sp/>lfile<sp/>./CVS/Entries<sp/>to<sp/>rdir<sp/>$remote:k/.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref>-&gt;ssh_copy_to(</highlight><highlight class="stringliteral">&quot;./CVS/Entries&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;k&quot;</highlight><highlight class="normal">,<sp/>$out);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\nCopy<sp/>ldir<sp/>./CVS<sp/>to<sp/>rfile<sp/>$remote:k/p\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref>-&gt;ssh_copy_to(</highlight><highlight class="stringliteral">&quot;./CVS&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;k/p&quot;</highlight><highlight class="normal">,<sp/>$out);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\nCopy<sp/>lfile<sp/>./CVS/Entries<sp/>to<sp/>rfile<sp/>$remote:k/p\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref>-&gt;ssh_copy_to(</highlight><highlight class="stringliteral">&quot;./CVS/Entries&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;k/p&quot;</highlight><highlight class="normal">,<sp/>$out);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#$debug_copy_from<sp/>=<sp/>TRUE;</highlight></codeline>
+<codeline lineno="78"><highlight class="preprocessor"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isset($debug_copy_from))<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\nCopy<sp/>rdir<sp/>./k/CVS<sp/>to<sp/>ldir<sp/>k/.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref>-&gt;ssh_copy_from(</highlight><highlight class="stringliteral">&quot;./k/CVS&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;k&quot;</highlight><highlight class="normal">,<sp/>$out);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\nCopy<sp/>rfile<sp/>./k/CVS/Entries<sp/>to<sp/>ldir<sp/>k/.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref>-&gt;ssh_copy_from(</highlight><highlight class="stringliteral">&quot;./k/CVS/Entries&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;k&quot;</highlight><highlight class="normal">,<sp/>$out);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\nCopy<sp/>rdir<sp/>./k/CVS<sp/>to<sp/>lfile<sp/>k/p\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref>-&gt;ssh_copy_from(</highlight><highlight class="stringliteral">&quot;./k/CVS&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;k/p&quot;</highlight><highlight class="normal">,<sp/>$out);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\nCopy<sp/>rfile<sp/>./k/CVS/Entries<sp/>to<sp/>lfile<sp/>k/p\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref>-&gt;ssh_copy_from(</highlight><highlight class="stringliteral">&quot;./k/CVS/Entries&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;k/p&quot;</highlight><highlight class="normal">,<sp/>$out);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref>-&gt;destruct()<sp/>;<sp/><ref refid="ssh__test_8php_1a2" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#$debug_persistent_shell<sp/>=<sp/>TRUE;</highlight></codeline>
+<codeline lineno="91"><highlight class="preprocessor"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isset($debug_persistent_shell))</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a5" kindref="member">$p</ref><sp/>=<sp/><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref>-&gt;ssh_open_shell();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;after<sp/>open<sp/>I<sp/>got<sp/>this\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>print_r($p);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>sleep(1);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;[1]<sp/>flushing<sp/>stdout<sp/>after<sp/>login\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a6" kindref="member">$line</ref><sp/>=<sp/>fgets($p[</highlight><highlight class="stringliteral">&quot;std_out&quot;</highlight><highlight class="normal">],<sp/>1024);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal">.$line;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>((!<sp/>feof($p[</highlight><highlight class="stringliteral">&quot;std_out&quot;</highlight><highlight class="normal">])<sp/>)<sp/>&amp;&amp;<sp/>(!<sp/>ereg(</highlight><highlight class="stringliteral">&quot;bossa-nova&quot;</highlight><highlight class="normal">,<sp/>$line)));</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a3" kindref="member">$last</ref><sp/>=<sp/>ftell($p[</highlight><highlight class="stringliteral">&quot;std_out&quot;</highlight><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\n[2]sending<sp/>hello\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite($p[&apos;std_in&apos;],<sp/></highlight><highlight class="stringliteral">&quot;./hello\n&quot;</highlight><highlight class="normal">);<sp/>fflush($p[&apos;std_in&apos;]);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>sleep(1);<sp/>flush();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>fseek($p[</highlight><highlight class="stringliteral">&quot;std_out&quot;</highlight><highlight class="normal">],<sp/>$last);<sp/></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>print_r(fgets($p[</highlight><highlight class="stringliteral">&quot;std_out&quot;</highlight><highlight class="normal">],<sp/>1024));</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>print_r(fgets($p[</highlight><highlight class="stringliteral">&quot;std_out&quot;</highlight><highlight class="normal">],<sp/>1024));</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115" refid="ssh__test_8php_1a3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a3" kindref="member">$last</ref><sp/>=<sp/>ftell($p[</highlight><highlight class="stringliteral">&quot;std_out&quot;</highlight><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite($p[&apos;std_in&apos;],<sp/></highlight><highlight class="stringliteral">&quot;Oh<sp/>yes<sp/>I<sp/>do\n&quot;</highlight><highlight class="normal">);<sp/>fflush($p[&apos;std_in&apos;]);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>sleep(2);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;flushing<sp/>files\n\tstdout\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>flush();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>fseek($p[</highlight><highlight class="stringliteral">&quot;std_out&quot;</highlight><highlight class="normal">],<sp/>$last);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a6" kindref="member">$line</ref><sp/>=<sp/>fgets($p[</highlight><highlight class="stringliteral">&quot;std_out&quot;</highlight><highlight class="normal">],<sp/>1024);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&gt;&gt;<sp/>&quot;</highlight><highlight class="normal">.$line;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!<sp/>feof($p[</highlight><highlight class="stringliteral">&quot;std_out&quot;</highlight><highlight class="normal">])<sp/>);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/>echo<sp/>&quot;stderr\n&quot;;</highlight></codeline>
+<codeline lineno="127"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/>do<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/>$line<sp/>=<sp/>fgets($p[&quot;std_err&quot;],<sp/>1024);</highlight></codeline>
+<codeline lineno="129"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/>echo<sp/>&quot;&gt;&gt;&gt;<sp/>&quot;.$line.&quot;\n&quot;;</highlight></codeline>
+<codeline lineno="130"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#<sp/><sp/><sp/><sp/>}<sp/>while<sp/>(!<sp/>feof($p[&apos;std_err&apos;])<sp/>&amp;&amp;<sp/>(strlen($line)<sp/>!=<sp/>0));;</highlight></codeline>
+<codeline lineno="131"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref>-&gt;ssh_close($p);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="ssh__test_8php_1a4" refkind="member"><highlight class="normal"><ref refid="ssh__test_8php_1a4" kindref="member">$debug_persistent_cmd</ref><sp/>=<sp/>TRUE;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isset($debug_persistent_cmd))</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\nCopying<sp/>interactive<sp/>script<sp/>to<sp/>$remote:\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref>-&gt;ssh_copy_to(</highlight><highlight class="stringliteral">&quot;./interact.sh&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">,<sp/>$out);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="141" refid="ssh__test_8php_1a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a5" kindref="member">$p</ref><sp/>=<sp/><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref>-&gt;ssh_open_command(</highlight><highlight class="stringliteral">&quot;./interact.sh&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;after<sp/>open<sp/>I<sp/>got<sp/>this\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>print_r($p);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>sleep(1);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a6" kindref="member">$line</ref><sp/>=<sp/>fgets($p[</highlight><highlight class="stringliteral">&quot;std_out&quot;</highlight><highlight class="normal">],<sp/>1024);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal">.$line<sp/>.</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="148" refid="ssh__test_8php_1a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a6" kindref="member">$line</ref><sp/>=<sp/>fgets($p[</highlight><highlight class="stringliteral">&quot;std_out&quot;</highlight><highlight class="normal">],<sp/>1024);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal">.$line<sp/>.</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>sleep(1);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\nSending<sp/>&apos;SExecClient&apos;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite($p[&apos;std_in&apos;],<sp/>&apos;SExecClient\n&apos;);<sp/>fflush($p[&apos;std_in&apos;]);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>sleep(1);</highlight></codeline>
+<codeline lineno="155" refid="ssh__test_8php_1a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a7" kindref="member">$out</ref><sp/>=<sp/>fgets($p[&apos;std_out&apos;],<sp/>1024);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\nGot<sp/>[&quot;</highlight><highlight class="normal">.<sp/><ref refid="ssh__test_8php_1a7" kindref="member">$out</ref><sp/>.<sp/></highlight><highlight class="stringliteral">&quot;]\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;flushing<sp/>files\nstdout\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>flush();</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a6" kindref="member">$line</ref><sp/>=<sp/>fgets($p[</highlight><highlight class="stringliteral">&quot;std_out&quot;</highlight><highlight class="normal">],<sp/>1024);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal">.$line<sp/>.</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!<sp/>feof($p[</highlight><highlight class="stringliteral">&quot;std_out&quot;</highlight><highlight class="normal">])<sp/>);;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;stderr\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a6" kindref="member">$line</ref><sp/>=<sp/>fgets($p[</highlight><highlight class="stringliteral">&quot;std_err&quot;</highlight><highlight class="normal">],<sp/>1024);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&gt;&gt;<sp/>&quot;</highlight><highlight class="normal">.$line.</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!<sp/>feof($p[&apos;std_err&apos;]));;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref>-&gt;ssh_close($p);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="preprocessor">#$debug_popen<sp/>=<sp/>TRUE;</highlight></codeline>
+<codeline lineno="174"><highlight class="preprocessor"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isset($debug_popen))<sp/>{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>$cout<sp/>=<sp/><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref>-&gt;ssh_popen(</highlight><highlight class="stringliteral">&quot;ls<sp/>-C&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;r&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/>fread($cout,<sp/>8192);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref>-&gt;ssh_pclose($cout);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/><sp/><sp/><sp/>$cin<sp/>=<sp/>$rmt-&gt;ssh_popen(&quot;/usr/sbin/Mail<sp/>-s<sp/>test<sp/>jr&quot;,<sp/>&quot;w&quot;);</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fputs($cin,<sp/>&quot;\nTest&quot;);</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fputs($cin,<sp/>&quot;.\n&quot;);</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fputs($cin,<sp/>&quot;\004&quot;);</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/><sp/><sp/><sp/>$rmt-&gt;ssh_pclose($cin);</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><ref refid="ssh__test_8php_1a1" kindref="member">$rmt</ref>-&gt;destruct();</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/pre&gt;\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="192" refid="ssh__test_8php_1a2" refkind="member"><highlight class="normal"><ref refid="ssh__test_8php_1a2" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="/auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/ssh_test.php"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,104 @@
+<?
+
+require_once("./config.php");
+require_once("./util.php");
+
+function remote_cmd($command, $grid_password, $interactive)
+{
+
+    umask(0077);
+    $tmpfname = tempnam('/tmp', 'phpSsh');
+    chmod($tmpfname, 0700);
+
+    $debug = TRUE;
+
+    if ($debug) echo $tmpfname . "\n";
+
+    putenv('DISPLAY=none:0.');
+    putenv("SSH_ASKPASS=$tmpfname");
+
+    $fp = fopen($tmpfname, "w");
+    fputs($fp, "#!/bin/sh\necho $grid_password\n");
+    fputs($fp, "rm -f $tmpfname\n");
+    fclose($fp);
+
+    //TO CHANGE!!!
+    $remote = "david@villon.cnb.uam.es";
+
+    if ($interactive=="")
+    {	
+    	echo "<pre>";
+    	system("ssh -x -t -t $remote \"$command\"");
+	//exec("ssh -x -t -t $remote \"$command\"");
+	echo "</pre>";
+    } else
+    {   
+    	// Prepare I/O
+    	$descriptorspec = array(
+    	    0 => array("pipe", "r"),  // stdin is a pipe that the child will read from
+    	    1 => array("pipe", "w"),  // stdout is a pipe that the child will write to
+    	    2 => array("file", "/data/www/EMBnet/tmp/grid/test/error-output.txt", "a") // stderr is a file to write to
+    	);
+    
+    	$process = proc_open("ssh -x -t -t $remote \"$command\"", $descriptorspec, $pipes);
+    	fflush($pipes[0]);
+    	fwrite($pipes[0], "$interactive\n");
+    	fwrite($pipes[0], "exit\n");
+
+    	fclose($pipes[0]);
+
+    	if ($debug)
+	{
+    	    while (!feof($pipes[1]))
+    	    {
+    	      	echo "<pre>";
+	     	echo fgets($pipes[1], 1024)."<br />";
+	     	echo "</pre>";
+    	    }
+	}
+	
+    	fclose($pipes[1]);
+	
+    	//echo "\ncommand returned $return_value\n";
+    }
+	
+}
+
+function remote_copy($local_dir, $remote_dir, $grid_password, $from)
+{
+    umask(0077);
+    $tmpfname = tempnam('/tmp', 'phpSsh');
+    chmod($tmpfname, 0700);
+
+    $debug = TRUE;
+
+    if ($debug) echo $tmpfname . "\n";
+
+    putenv('DISPLAY=none:0.');
+    putenv("SSH_ASKPASS=$tmpfname");
+
+    $fp = fopen($tmpfname, "w");
+    fputs($fp, "#!/bin/sh\necho $grid_password\n");
+    fputs($fp, "rm -f $tmpfname\n");
+    fclose($fp);
+
+    //TO CHANGE!!!
+    $remote = "david@villon.cnb.uam.es";
+    
+    if ($from=="local")
+    {
+    	echo "scp -r $local_dir $remote:$remote_dir<br>";
+    	echo "<pre>";
+    	system("scp -r $local_dir $remote:$remote_dir");
+    	echo "</pre>";
+    }else
+    {
+    	echo "scp -r $remote:$remote_dir $local_dir<br>";
+    	echo "<pre>";
+    	system("scp -r $remote:$remote_dir $local_dir");
+    	echo "</pre>";
+    }
+}
+     
+?>
+

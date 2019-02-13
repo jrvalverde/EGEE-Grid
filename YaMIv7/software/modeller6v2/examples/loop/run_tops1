@@ -1,0 +1,7 @@
+#!/bin/sh
+
+for file in `ls *.top`
+do
+  mod6v2 $file 
+done
+

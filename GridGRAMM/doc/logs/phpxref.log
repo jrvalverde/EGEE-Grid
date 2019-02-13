@@ -1,0 +1,5 @@
+PHPXref 0.4.1 
+(c) Gareth Watts 2003
+
+Processing GridGRAMM v1.00...
+Error opening header file /opt/tools/phpxref-0.4.1/sample_header.html for read: Permission denied at /opt/tools/phpxref-0.4.1/phpxref.pl line 100.

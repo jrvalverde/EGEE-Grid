@@ -1,0 +1,24 @@
+# This script illustrates the use of the SWAP_ATOMS_IN_RES
+# argument to the SUPERPOSE command:
+
+# Need to make sure that the topologies of the two molecules
+# superposed are exactly the same:
+
+READ_TOPOLOGY FILE = '$(LIB)/top_heav.lib'
+READ_PARAMETERS FILE = '$(LIB)/par.lib'
+READ_MODEL FILE = '../tutorial-model/1fdx.atm'
+SEQUENCE_TO_ALI ALIGN_CODES = '1fdx', ATOM_FILES = FILE
+SEQUENCE_TO_ALI ADD_SEQUENCE = on, ALIGN_CODES = ALIGN_CODES '1fdx', ATOM_FILES = ATOM_FILES FILE
+GENERATE_TOPOLOGY SEQUENCE = '1fdx'
+TRANSFER_XYZ
+BUILD_MODEL INITIALIZE_XYZ = off
+
+# READ_MODEL2 FILE = '../tutorial-model/1fdx.B99990002'
+READ_MODEL2 FILE = './1fdx.swap.atm'
+SET SWAP_ATOMS_IN_RES = ''
+SUPERPOSE 
+SET SWAP_ATOMS_IN_RES = 'DEFHLNQRVY'
+SUPERPOSE FIT = off
+SET SWAP_ATOMS_IN_RES = ''
+SUPERPOSE FIT = on
+

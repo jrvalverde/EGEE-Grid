@@ -1,0 +1,12 @@
+### begin MODELLER6v2 ######################################################
+
+setenv MODINSTALL6v2      edit_modinstall
+setenv EXECUTABLE_TYPE6v2 edit_executable
+setenv LIBS_LIB6v2        $MODINSTALL6v2/modlib/libs.lib
+setenv KEY_MODELLER6v2    edit_key_modeller
+alias  mod                edit_script
+set    path=($path $MODINSTALL6v2/bin)
+limit  stacksize unlimited
+
+### end MODELLER6v2 ########################################################
+

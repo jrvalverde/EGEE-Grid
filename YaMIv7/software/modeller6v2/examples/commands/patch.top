@@ -1,0 +1,28 @@
+# Example for: PATCH, READ_TOPOLOGY, READ_PARAMETERS
+
+# This will define a CYS-CYS disulfide bond between residues 3 and 22.
+
+READ_TOPOLOGY   FILE = '$(LIB)/top_heav.lib'
+READ_PARAMETERS FILE = '$(LIB)/par.lib'
+
+# Read the sequence: 
+READ_MODEL FILE = '1fas'
+# have two copies of the sequence in the alignment, for TRANSFER_XYZ later:
+SEQUENCE_TO_ALI ATOM_FILES = '1fas', ALIGN_CODES = '1fas'
+SEQUENCE_TO_ALI ADD_SEQUENCE = on, ATOM_FILES = ATOM_FILES '1fas.ini', ;
+                ALIGN_CODES = ALIGN_CODES '1fas-ini'
+GENERATE_TOPOLOGY SEQUENCE = '1fas-ini'
+
+# Create the disulfide bond:
+PATCH RESIDUE_TYPE = 'DISU', RESIDUE_IDS = '3' '22'
+
+# Get MODEL's coordinates from the template, using the alignment (1:1 here):
+TRANSFER_XYZ
+# Calculate missing coordinates using internal coordinates:
+BUILD_MODEL INITIALIZE_XYZ = off
+
+# Create the stereochemical restraints
+MAKE_RESTRAINTS RESTRAINT_TYPE = 'stereo'
+
+# Calculate the energy to test the disulfide:
+ENERGY

@@ -1,0 +1,594 @@
+<?php
+/**
+ * ######## processor.php. functions ########
+ */
+
+require_once("./config.php");	    // installer preferences
+require_once("./ssh.php");  	    // to connect to back-end
+require_once("./grid.php"); 	    // to manipulate the grid
+require_once("./database.php");     // to manipulate databases
+require_once("./dock.php"); 	    // to manipulate docking jobs
+
+/**
+ *  Run a high throughput docking search using a remote grid
+ *  back-end.
+ *
+ *  DOCS NEEDED
+ */ 
+function grock_submit($session_id, $options, $auth)
+{   	
+    // we use globals to retrieve configuration file values
+    global $db_dir;
+    global $debug;
+
+    if ($debug) echo "<h3>Running GROCK</H3>\n";
+    // for clarity
+    $probe = $options['probe'];
+    $database = $options['database'];
+
+    grock_set_status('started');
+    
+    // Get data files
+    //  We have two cases here:
+    //	    1- If the user selected a PDB database then his probe
+    //	    data will be mobile during docking, and the database
+    //	    macromolecules will be static. We want the user data
+    //	    uploaded to $session_directory/ligand.pdb
+    //
+    //	    2- If the user selected a compound database, then
+    //	    his probe data is a macromolecule that must remain fixed
+    //	    and should be uploaded as $session_directory/target.pdb
+    //	    while thedatabase compounds whill be mobile and stored
+    //	    on ligand.pdb
+    if (strcmp(substr($database, 0, 3), 'pdb') == 0) {
+    	$user_file = 'ligand.pdb';
+	$db_file = 'receptor.pdb';
+    }
+    else {
+    	$user_file = 'receptor.pdb';
+	$db_file = 'ligand.pdb';
+    }
+    if ($debug) echo "<p>Your data will be $user_file and matched against $db_file</p>\n";
+    
+    // upload user data into correct file
+    $probe = get_probe_data($user_file);
+    // $probe is the original user file name
+    if ($debug) echo "<p>Successfully uploaded $probe as $user_file</p>\n";
+    
+    // check if the list of entries database file is available
+    if ($debug) echo "<p>opening $db_dir/$database.lst</p>\n";
+    $fp = fopen("$db_dir/$database.lst", "r");
+    if (!$fp)
+    	letal("GROCK", "Cannot read the target database list file.");
+
+    // Start a loop to prepare all the jobs to be sent to the grid.
+    // There is a job for each ligand-receptor pair.
+    //
+    //  Note that we don't submit them one by one, we wait until
+    // all jobs are ready and then launch them at once 'en masse'.
+    // ************************************************************
+    // NOTE THIS SHOULD BE DATABASE INDEPENDENT!
+    // e.g. by setting $get_db_entry = "get_${database}_entry"
+    //  	and calling $$get_db_entry() or some such
+    // ************************************************************
+
+    $i = 0;
+    while (!feof($fp)) 
+    {	
+	// Read the DB list file.
+    	$line = fgets( $fp );
+	$i++;
+	if ($debug) {
+	    echo "<p>Processing\t".$i."\t:[".$line . "]</p>\n";
+	    flush();
+	}
+	if (strcmp(trim($line), '') == 0)
+	{
+	    continue;
+	}
+
+    	// retrieve the entry chain from PDB, overwriting any
+	// previous one
+	$target = PDB_get_entry_name($line);
+    	if (!PDB_get_entry_file($target, $db_file)) {
+	    // complain and die
+	    letal("GROCK", "Error processing database entry $target");
+	}
+	// Prepare a docking job to be sent over to the grid
+	//
+	//  The molecular data are already stored using always
+	// the same file names 'ligand.pdb' and 'receptor.pdb'
+	if (!create_dock_job($probe, $target, $options)) {
+	    error("GROCK", "couldn't create job for $probe+$target on $session_id");
+    	    // at this point, if we are not debugging, we should
+	    // delete all directories created to date...
+	    if (! $debug) {
+	    	exec("rm -rf ./*"); //we won't care about its output
+	    }
+	    exit;
+	}
+    }
+    if ($debug) {
+    	echo "<pre>";
+    	passthru("ls -l *");
+    	echo "</pre>";
+    }
+
+    // OK, we are ready, let's go for the jugular
+    // we need to pass $session_id for the remote back-end, do we?
+    submit_session_jobs($session_id, $auth);
+
+    // Close the target list DB
+    rewind ( $fp  );
+    fclose( $fp );
+
+    // The signal to notice the job is done is the "jobs_sent.txt" file
+    grock_set_status('submitted');
+}
+
+
+/**
+ *  Upload the probe molecule specified by the user to the current directory).
+ *
+ *  This function accesses the global variable $_FILES with the known name
+ * for the user file option to upload the user data. If the user data name
+ * is changed in the form, it should be also changed here.
+ *
+ *  @param $user_file the name to assign the newly uploaded data file.
+ *
+ *  @return string containing the name of the file uploaded if all goes well,
+ *  	otherwise die after printing an error message.
+ *
+ */
+function get_probe_data($user_file)
+{
+    global $debug;
+    
+    if ($debug) echo "<p>Uploading user data to ".getcwd()."/$user_file</p>\n";
+
+    // We want to know the name of the file uploaded. For commodity (to us)
+    //	we'll use a supplied name. Would probably be better to use something
+    //	else (the original name) and return it to the caller.
+    //$uploadfile = getcwd() . basename($_FILES['upload']['name'][0]); 
+    $uploadfile = getcwd().'/'.$user_file;
+
+    $probe_file = $_FILES['upload']['tmp_name'][0];
+    $probe_filename = $_FILES['upload']['name'][0];
+    $probe_filesize = $_FILES['upload']['size'][0];
+    
+    if ($probe_file == 'none' || $probe_file = '')
+    {	
+    	// letal prints an error and dies
+    	letal("Get_probe", "No file uploaded");
+    }
+    
+    if ($probe_filesize == 0)
+    {
+    	letal("Get_probe", "Uploaded file has zero length");
+    }
+
+    // seems OK, get it
+    if (move_uploaded_file($_FILES['upload']['tmp_name'][0], $uploadfile)) 
+    {
+    	return basename($_FILES['upload']['name'][0]);	// original user file name
+    } 
+    else 
+    {
+    	letal("Get_probe", "Could not upload your probe molecule");
+    }
+}
+
+
+/**
+ * Activate the grid on the remote UI node.
+ *
+ *  Activate a grid session on the remote back end, using $session_id as
+ * the working directory and location of log files.
+ *
+ *  This function will open a connection and create a proxy that is
+ * valid for 48 hours. That should be enough for running our jobs.
+ *
+ *  @param $session_id	session_id
+ *  @param $auth The authentication token to connect to a remote back-end
+ */
+function activate_grid($session_id, $auth)
+{
+    global $local_tmp_path;
+    global $gridUI_tmp_path;
+    global $debug;
+    
+    $grid_server = $auth['server'];
+    $pos = strpos($grid_server, "@");
+    $ru = substr($grid_server, 0, $pos);
+    $rh = substr($grid_server, $pos+1, strlen($grid_server));
+    
+    if ($debug) {
+    	echo "<h3>Activating the Grid</h3>";
+    	echo "<pre>\n";
+
+    	$debug_sexec = TRUE;
+    	$debug_grid = TRUE;
+    }
+    $eg = new Grid;
+    if ($eg == FALSE) {
+     	letal("Activating grid", 
+	"Cannot open connection to Grid back_end $grid_server!\n");
+    }
+    $eg->set_host($rh);
+    $eg->set_user($ru);
+    $eg->set_password($auth['password']);
+    $eg->set_passphrase($auth['passphrase']);
+    $eg->set_work_dir("$gridUI_tmp_path/$session_id");
+    $eg->set_error_log("$local_tmp_path/$session_id/error-output.txt");
+    $eg->connect();
+    $eg->initialize(48, 0); 	// ask for a 48h proxy
+    if ($debug) {
+        echo $eg->get_init_status();
+//    	$eg->destroy();
+    	echo "</pre>\n";
+    }
+    $eg->destruct();
+}
+
+/**
+ *  Submit all session jobs at once to the remote back-end.
+ *
+ *  This function expects a session_id which identifies a directory
+ * holding a collection of jobs to be submitted on the local temporary
+ * work directory.
+ *
+ *  All jobs are sent to the remote back-end, stored there on the remote
+ * temporary work directory and then launched for execution on the grid.
+ *
+ *  Since we are to use a remote back-end connected to the Grid, we need
+ * to know all the authentication details:
+ *  	$auth is an array that holds
+ *  	    'server' => user@server identifier
+ *  	    'password' => password to use to connect to 'server'
+ *  	    'passphrase' => passphrase needed to unlock the Grid from 'server'
+ *
+ *  In order to convert a session_id into a directory we also need to access
+ * the GLOBALS
+ *  	$local_tmp_path
+ *  	$gridUI_tmp_path
+ *
+ *  As a SIDE EFFECT, the LCG-tools will be installed on the remote temporary
+ * work directory so they may be used for submission, AND BE LEFT there (so
+ * they might be shared by other instances).
+ *
+ *  @param  $session_id     The identifier for our current session
+ *  @param  $auth   	    an array holding authentication information
+ *
+ *  @return void if everything OK, die with an error otherwise.
+ */
+function submit_session_jobs($session_id, $auth)
+{
+    global $debug;
+    global $debug_sexec;
+    global $local_tmp_path;
+    global $gridUI_tmp_path;
+    global $app_dir;	    	// to locate LCG-tools
+ 
+    if ($debug) {
+    	echo "<h3>Submitting session jobs</h3>\n";
+	flush();
+	//return;     // DO NOT SUBMIT WHILE DEBUGGING
+	$debug_sexec = TRUE;
+	echo "<pre>";
+    }
+    
+    $local_dir = "$local_tmp_path/$session_id";
+    $remote_dir = "$gridUI_tmp_path/$session_id";
+    
+    $rmt = new SExec($auth['server'], $auth['password']);
+    if ($rmt == FALSE) {
+    	letal("Submit session jobs",
+	    "Could not connect to remote system ${auth['server']}");
+    }
+    if ($debug) echo "Connected to ${auth['server']}\n";
+    
+    // Copy the whole session directory with all the job files 
+    if (! $rmt->ssh_copy_to($local_dir, $remote_dir, $out)) {
+    	$rmt->destruct();
+	if ($debug) print_r($out);
+    	letal("Submit session jobs",
+	    "Could not copy jobs to remote back-end for execution");
+    //echo $out;
+    }
+    if ($debug) echo "Copied session $session_id\n";
+    
+    // There are files that we don't need in the remote directory, 
+    // ligand.pdb, receptor.pdb and pdb_list.txt
+    $cmd = "rm -f $remote_dir/ligand.pdb $remote_dir/receptor.pdb $remote_dir/target_list.txt";
+    $exit = $rmt->ssh_exec("$cmd", $out);
+    if ($exit != 0) {
+    	warning("Could not remove unneeded files");
+	echo "<pre>$out</pre>\n";
+    }
+    unset($out);
+    if ($debug) echo "Removed unneeded files\n";
+
+    // Install LCG tools
+    //   We will be using auxiliary tools to launch all the jobs 
+    //   'en masse'. Since they are not yet on the standard install,
+    //   we must copy them over so we can use'm.
+    //      The submitter will loop over all subdirs in $session_id,
+    //      hence it must be placed outside $session_id.
+    //	    We may as well share them between sessions: first come
+    //	installs the tools, followers use them.
+    $lcg_dir = "$app_dir/lcg-tools";
+    // is it already there? 
+    $exit = $rmt->ssh_exec("test -x $gridUI_tmp_path/lcg-tools/lcg-submitter-biomed-beta11.pl", $out);
+    unset($out);    // we don't care about it
+    if ($exit != 0) {
+    	if ($debug) echo "Installing LCG-tools\n";
+    	// It is not already there yet. Install it as $gridUI_tmp_path/lcg-tools.
+    	if (! $rmt->ssh_copy_to($lcg_dir, "$gridUI_tmp_path/lcg-tools", $out)) {
+    	    // we are toasted
+	    $rmt->destruct();
+	    if ($debug) print_r($out);
+    	    letal("Submit session jobs",
+	    "Couldn't make a copy of the LCG tools to $session_id<br>\n");
+	}
+    }
+    
+    // Prepare the grid for work
+    activate_grid($session_id, $auth);
+    
+    // The submiter tool launches all the jobs.
+    if ($debug) echo "Submitting jobs with lch-submitter\n";
+    $cmd = "/usr/bin/perl $gridUI_tmp_path/lcg-tools/lcg-submitter-biomed-beta11.pl -session $remote_dir";
+    $exit = $rmt->ssh_exec("$cmd", $out);
+    if ($exit != 0) {
+    	$rmt->destruct();
+	if ($debug) print_r($out);
+    	letal("Submit session jobs",
+	    "An error occurred during submission of $session_id</pre>");
+    }
+
+    if ($debug) {
+    	// Stop here (move me around for debugging different sections)
+	$rmt->destruct();
+	echo "</pre>";
+	return;
+    }
+    
+    $rmt->destruct();
+    if ($debug) echo "</pre>\n";
+}
+
+/**
+ *  Set work progression status
+ *
+ *  Ours is a lengthy process, we do not want users to be tied
+ * to a terminal waiting for this to finish. Since we are web
+ * based, this is done by a separate web page, hence we need 
+ * some persistent way to monitor work progress.
+ *
+ *  This routine isolates the persistence implementation of
+ * progression status.
+ *
+ *  @param $status   status to set
+ *
+ *  @return boolean  TRUE if all goes OK,
+    	    	    FALSE and a warning if something goes awry
+ */
+grock_set_status($status) {
+    $sf = fopen('grock_status');
+    if (! $sf) {
+    	warning('GROCK set status: Can not create status file');
+	return FALSE;
+    }
+    if (! fwrite($sf, $status)) {
+    	warning('GROCK set status: Can not update status');
+	return FALSE;
+    }
+    fclose($sf);
+    return TRUE;
+}
+
+/**
+ *  Obtain status of GROCK process
+ *
+ *  As we need to provide access to a running GROCK jobs from
+ * indpenendent instances of web pages invoked by the user at
+ * his/her convenience, we need some way to access a presistent
+ * instance of the progression status.
+ *
+ *  This routine allows us to access persistent storage hiding
+ * implementation details.
+ *
+ *  @return string status of running GROCK or FALSE if the status
+ *  	could not be obtained (denotes a possible error condition). 
+ */
+grock_get_status()
+{
+    clearstatcache(); 
+
+    if (!file_exists('grock_status'))
+    	return FALSE;
+
+    $sf = fopen('grock_status', "r");
+    if (! $sf)
+    	return FALSE;
+    $status = fgets($sf);
+    fclose($sf);
+    return $status;
+}
+
+/**
+ * ######## result.php functions ########
+ */
+ 
+function remote_session_jobs($remote_wd, $grid_server, $grid_password)
+{
+    $remote = $grid_server;
+    $password = $grid_password;
+    echo "<pre>";
+    $rmt = new SExec($remote, $password);
+    
+    /**
+     * To check the results a grid proxy is mandatory
+     */
+    $cmd = "/usr/bin/perl /home/$USER/lcg-tools/get_output.pl -session $remote_wd";
+    
+    $rmt->ssh_passthru("$cmd", $status=0);
+    //echo $status;
+    echo "</pre>";
+    $rmt->destruct();
+}
+
+function get_session_jobs($local_wd, $remote_wd, $grid_server, $grid_password, $line)
+{
+    $remote = $grid_server;
+    $password = $grid_password;
+    echo "<pre>";
+    $rmt = new SExec($remote, $password);
+    
+    /**
+     * Copy the job output
+     */
+    $rmt->ssh_copy_from("$remote_wd/$line/OUTPUT/test_x.outputdir", "$local_wd/$line/OUTPUT/test_x.outputdir", $out);
+    
+    echo "</pre>";
+    $rmt->destruct();
+}
+
+function get_grid_results($local_wd, $remote_wd, $session_id, $app_dir, $grid_server, $grid_password, $grid_passphrase, $UI_grid_path)
+{   	    
+	
+	/**
+	 * COMMENTS
+	 */
+	activate_grid($grid_server, $grid_password, $grid_passphrase);
+	remote_session_jobs($remote_wd,  $grid_server, $grid_password);
+
+	/**
+	 * Copy the grid output to the local machine
+	 */
+    	$fp = fopen("$local_wd/pdb_list.txt", "r");
+    	if (!$fp)
+    	{
+    	    letal("Receptors list", "Cannot read the receptors list file in the local machine.");
+    	}
+	
+	$i = 0;
+	while (!feof($fp)) 
+	{ 
+	    /*
+	     * Read the PDB list file.
+	     */
+    	    $line = trim(fgets( $fp ));
+	    $i++;
+	    //echo $i."\t:["."$remote_wd/$line" . "]<br>\n";
+	    if ($line=="")
+	    {
+	     	continue;
+	    }
+	    
+	    /**
+	     * We get the job output
+	     */
+	    //TO CHANGE
+	    get_session_jobs($local_wd, $remote_wd, $grid_server, $grid_password, $line);
+	}
+	
+	/**
+	 * We close the receptors list
+	 */
+    	rewind ($fp );
+    	fclose($fp);
+}
+
+function check_results($local_wd)
+{ 
+    if ($handle = opendir("$local_wd")) 
+    {
+    	 /**
+	  * We read the local session directory. Inside are all jobs directories, with 
+	  * the receptor name. 'check_results' searches inside each job directory if the
+	  * results are available. If all the results are avaliable, returns TRUE.
+	  * Otherwise, returns FALSE. 
+	  */
+	  
+	 $check=TRUE;
+	 
+    	 while (false !== ($file = readdir($handle))) 
+	 {  
+	     	/**
+	     	 * We only want to check the directories with the receptor name.
+	     	 */
+             	if ($file != "." && $file != ".." && is_dir("$local_wd/$file")) 
+	     	{
+		    echo "<h1>$local_wd/$file/OUTPUT</h1>";
+		    chdir("$local_wd/$file/OUTPUT");
+		    /**
+		     * If at least one job is not done this functions returns FALSE
+		     */
+		    if (!file_exists("./test_x.outputdir")) 
+    	    	    {
+    	    	    	$check=FALSE;
+    	     	    } 
+	    	}
+	 }	 
+    }
+    closedir($handle); 
+    
+    return $check;
+}
+
+function score_file($local_wd, $app_dir, $session_ligand)
+{
+    /**
+     * The score.txt file is generated comparing all receptor-ligand.res files.
+     * SEE 
+     */
+     
+    chdir($local_wd);
+    $fp_score = fopen("./score.txt", "w");
+    //chmod("./score.txt", 0644);
+    
+    if (!$fp_score)
+    {
+    	   letal("Score file", "Cannot write the score file.");
+    }
+    
+    fwrite($fp_score, "We show in this file the GROCK score results, using the\n"); 
+    fwrite($fp_score, "$session_ligand ligand and multiple receptors [R]\n\r\r");
+    
+    fwrite($fp_score, "___________________________________________________________\n");
+    fwrite($fp_score, "  No. Energy\tRotation\t   Translation\t       [R]\n");
+    fwrite($fp_score, "       (-)\n");
+    fwrite($fp_score, "___________________________________________________________\n");
+    fwrite($fp_score, "[match]\n");
+    
+    fclose($fp_score);
+    echo "ls | xargs -i -t $app_dir/script/get-results.sh {} | sort -r -n -k 2 >> score.txt";
+    exec("ls | xargs -i -t $app_dir/script/get-results.sh {} | sort -r -n -k 2 >> ./score.txt"); 
+}
+
+function grock_results($local_wd)
+{ 
+ 
+  chdir("$local_wd");
+  if ($handle = opendir(".")) 
+  {
+    echo "<center><table border=\"1\">";
+    echo "<tr><td><b>Receptors</b></td></tr>";
+    /* This is the correct way to loop over the directory. */
+    while (false !== ($file = readdir($handle))) 
+    {    
+    	if ( "$file" !== "." && "$file" !== ".." && is_dir($file) )
+	{            
+	    $receptor="$local_wd/$file";
+            echo "<tr><td><a href=\"browse-results.php?receptor=$receptor\" \">$file</a></td></tr>\n";
+	}
+	clearstatcache();
+    }
+    echo "</table></center>";
+    closedir($handle);
+ } 
+    	
+}
+
+?>

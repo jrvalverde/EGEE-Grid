@@ -1,0 +1,90 @@
+\section{auth.php File Reference}
+\label{auth_8php}\index{auth.php@{auth.php}}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+{\bf \$username} = \$\_\-POST[\char`\"{}username\char`\"{}]
+\item 
+{\bf \$password} = \$\_\-POST[\char`\"{}password\char`\"{}]
+\item 
+{\bf \$life} = \$\_\-POST[\char`\"{}life\char`\"{}]
+\item 
+{\bf \$program} = \char`\"{}/opt/globus/bin/myproxy/bin/myproxy-get-delegation\char`\"{}
+\item 
+{\bf \$outfile} = \char`\"{}/data/www/EMBnet/tmp/grid/\$username.cred\char`\"{}
+\item 
+{\bf \$args} = \char`\"{}-s localhost -l \$username -t \$life -o \$outfile\char`\"{}
+\item 
+{\bf \$findme} = ' '
+\item 
+{\bf \$pos} = strpos(\$username, \$findme)
+\item 
+{\bf \$len} = strlen(\$password)
+\end{CompactItemize}
+
+
+\subsection{Variable Documentation}
+\index{auth.php@{auth.php}!$args@{\$args}}
+\index{$args@{\$args}!auth.php@{auth.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$args = \char`\"{}-s localhost -l \$username -t \$life -o \$outfile\char`\"{}}\label{auth_8php_a5}
+
+
+
+
+Definition at line 27 of file auth.php.\index{auth.php@{auth.php}!$findme@{\$findme}}
+\index{$findme@{\$findme}!auth.php@{auth.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$findme = ' '}\label{auth_8php_a6}
+
+
+
+
+Definition at line 39 of file auth.php.\index{auth.php@{auth.php}!$len@{\$len}}
+\index{$len@{\$len}!auth.php@{auth.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$len = strlen(\$password)}\label{auth_8php_a8}
+
+
+
+
+Definition at line 48 of file auth.php.\index{auth.php@{auth.php}!$life@{\$life}}
+\index{$life@{\$life}!auth.php@{auth.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$life = \$\_\-POST[\char`\"{}life\char`\"{}]}\label{auth_8php_a2}
+
+
+
+
+Definition at line 18 of file auth.php.\index{auth.php@{auth.php}!$outfile@{\$outfile}}
+\index{$outfile@{\$outfile}!auth.php@{auth.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$outfile = \char`\"{}/data/www/EMBnet/tmp/grid/\$username.cred\char`\"{}}\label{auth_8php_a4}
+
+
+
+
+Definition at line 24 of file auth.php.\index{auth.php@{auth.php}!$password@{\$password}}
+\index{$password@{\$password}!auth.php@{auth.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$password = \$\_\-POST[\char`\"{}password\char`\"{}]}\label{auth_8php_a1}
+
+
+
+
+Definition at line 17 of file auth.php.\index{auth.php@{auth.php}!$pos@{\$pos}}
+\index{$pos@{\$pos}!auth.php@{auth.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$pos = strpos(\$username, \$findme)}\label{auth_8php_a7}
+
+
+
+
+Definition at line 40 of file auth.php.\index{auth.php@{auth.php}!$program@{\$program}}
+\index{$program@{\$program}!auth.php@{auth.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$program = \char`\"{}/opt/globus/bin/myproxy/bin/myproxy-get-delegation\char`\"{}}\label{auth_8php_a3}
+
+
+
+
+Definition at line 21 of file auth.php.\index{auth.php@{auth.php}!$username@{\$username}}
+\index{$username@{\$username}!auth.php@{auth.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$username = \$\_\-POST[\char`\"{}username\char`\"{}]}\label{auth_8php_a0}
+
+
+
+
+Definition at line 38 of file auth.php.

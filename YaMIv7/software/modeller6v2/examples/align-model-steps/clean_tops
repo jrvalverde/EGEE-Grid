@@ -1,0 +1,7 @@
+#!/bin/sh
+
+rm *.dih.Z *.ngh.Z *.psa.Z *.fit *.V* 1fdx.*
+rm *.rsr to-be-refined.tmp *.D* *.B*
+rm *.ps *.log fort.90 *.seg.ali
+rm *.ali
+rm fort.*

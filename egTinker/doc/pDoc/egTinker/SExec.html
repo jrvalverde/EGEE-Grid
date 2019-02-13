@@ -1,0 +1,478 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Docs For Class SExec</title>
+	<link rel="stylesheet" type="text/css" id="layout" href="../media/layout.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../media/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../media/print.css" media="print">
+</head>
+
+<body>
+<div id="header">
+	<div id="navLinks">
+		[ <a href="../classtrees_egTinker.html">Class Tree: egTinker</a> ]
+		[ <a href="../elementindex_egTinker.html">Index: egTinker</a> ]
+		[ <a href="../elementindex.html">All elements</a> ]
+	</div>
+	<div id="packagePosition">
+		<div id="packageTitle2">egTinker</div>
+		<div id="packageTitle">egTinker</div>
+		<div id="elementPath"> &middot; </div>
+	</div>
+</div>
+
+<div id="nav" class="small">
+	<div id="packages">
+		Packages:
+					<p><a href="../li_egTinker.html">egTinker</a></p>
+					<p><a href="../li_egTINKER.html">egTINKER</a></p>
+					<p><a href="../li_GridGRAMM.html">GridGRAMM</a></p>
+					<p><a href="../li_TINKER.html">TINKER</a></p>
+			</div>
+
+				<div id="index">
+			<div id="files">
+								Files:<br>
+								<a href="../egTinker/_analyze_php.html">		analyze.php
+		</a><br>
+			<a href="../egTinker/_auth_php.html">		auth.php
+		</a><br>
+			<a href="../egTinker/_grid_php.html">		grid.php
+		</a><br>
+			<a href="../egTinker/_test_grid_test_php.html">		grid_test.php
+		</a><br>
+			<a href="../egTinker/_remotessh_php.html">		remotessh.php
+		</a><br>
+			<a href="../egTinker/_ssh-files_php.html">		ssh-files.php
+		</a><br>
+			<a href="../egTinker/_ssh-pipes_php.html">		ssh-pipes.php
+		</a><br>
+			<a href="../egTinker/_ssh_php.html">		ssh.php
+		</a><br>
+			<a href="../egTinker/_test_ssh_test_php.html">		ssh_test.php
+		</a><br>
+			<a href="../egTinker/_ssh_test_php.html">		ssh_test.php
+		</a><br>
+			<a href="../egTinker/_tinkerApp_php.html">		tinkerApp.php
+		</a><br>
+				</div>
+			<div id="classes">
+				Classes:<br>
+								<a href="../egTinker/Analyze.html">		Analyze
+		</a><br>
+			<a href="../egTinker/Grid.html">		Grid
+		</a><br>
+			<a href="../egTinker/SExec.html">		SExec
+		</a><br>
+			<a href="../egTinker/TinkerApp.html">		TinkerApp
+		</a><br>
+				</div>
+		</div>
+	</div>
+
+<div id="body">
+			<h1>Class: SExec</h1>
+	<p style="margin: 0px;">Source Location: /ssh-files.php</p>
+	
+
+<div class="leftcol">
+	<h3><a href="#class_details">Class Overview</a> <span class="smalllinenumber">[line 3]</span></h3>
+	<div id="classTree"><pre></pre>
+</div>
+	<div class="small">
+	<p></p>
+		<h4>Author(s):</h4>
+	<ul>
+			</ul>
+	<h4>Version:</h4>
+	<ul>
+			</ul>
+
+	<h4>Copyright:</h4>
+	<ul>
+			</li>
+	</div>
+</div>
+
+<div class="middlecol">
+	<h3><a href="#class_vars">Variables</a></h3>
+	<ul class="small">
+				<li><a href="../egTinker/SExec.html#var$password">$password</a></li>
+				<li><a href="../egTinker/SExec.html#var$remote">$remote</a></li>
+				<li><a href="../egTinker/SExec.html#var$version">$version</a></li>
+			</ul>
+</div>
+<div class="rightcol">
+	<h3><a href="#class_methods">Methods</a></h3>
+	<ul class="small">
+				<li><a href="../egTinker/SExec.html#methodSExec">SExec</a></li>
+				<li><a href="../egTinker/SExec.html#methodset_remote_end">set_remote_end</a></li>
+				<li><a href="../egTinker/SExec.html#methodssh_close">ssh_close</a></li>
+				<li><a href="../egTinker/SExec.html#methodssh_close_bck">ssh_close_bck</a></li>
+				<li><a href="../egTinker/SExec.html#methodssh_copy">ssh_copy</a></li>
+				<li><a href="../egTinker/SExec.html#methodssh_exec">ssh_exec</a></li>
+				<li><a href="../egTinker/SExec.html#methodssh_open_command">ssh_open_command</a></li>
+				<li><a href="../egTinker/SExec.html#methodssh_open_shell">ssh_open_shell</a></li>
+				<li><a href="../egTinker/SExec.html#methodssh_passthru">ssh_passthru</a></li>
+				<li><a href="../egTinker/SExec.html#methodssh_pclose">ssh_pclose</a></li>
+				<li><a href="../egTinker/SExec.html#methodssh_popen">ssh_popen</a></li>
+			</ul>
+</div>
+
+<div id="content">
+<hr>
+	<div class="contents">
+	</div>
+
+	<div class="leftCol">
+	<h2>Inherited Variables</h2>
+		</div>
+
+	<div class="rightCol">
+	<h2>Inherited Methods</h2>
+		</div>
+	<br clear="all">
+	<hr>
+
+	<a name="class_details"></a>
+	<h2>Class Details</h2>
+		<p class="small" style="color: #334B66;">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_vars"></a>
+	<h2>Class Variables</h2>
+		<a name="var$password"></a>
+	<p></p>
+	<h4>$password = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 7]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$remote"></a>
+	<p></p>
+	<h4>$remote = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 6]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$version"></a>
+	<p></p>
+	<h4>$version = <span class="value">&quot;1.0&quot;</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 5]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_methods"></a>
+	<h2>Class Methods</h2>
+		<a name="methodSExec"></a>
+	<p></p>
+	<h3>SExec</h3>
+	<div class="indent">
+		<p>
+		<code>SExec SExec(
+[mixed
+$remote = "localhost"], [mixed
+$password = "xxyzzy"])</code>
+		</p>
+	
+		<p class="linenumber">[line 9]</p>
+				
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodset_remote_end"></a>
+	<p></p>
+	<h3>set_remote_end</h3>
+	<div class="indent">
+		<p>
+		<code>void set_remote_end(
+mixed
+$remote, [mixed
+$password = "xxyzzy"])</code>
+		</p>
+	
+		<p class="linenumber">[line 15]</p>
+				
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_close"></a>
+	<p></p>
+	<h3>ssh_close</h3>
+	<div class="indent">
+		<p>
+		<code>void ssh_close(
+mixed
+$p)</code>
+		</p>
+	
+		<p class="linenumber">[line 410]</p>
+		<p align="center"><strong>Close an SSH interactive session
+</strong></p>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_close_bck"></a>
+	<p></p>
+	<h3>ssh_close_bck</h3>
+	<div class="indent">
+		<p>
+		<code>void ssh_close_bck(
+mixed
+$p)</code>
+		</p>
+	
+		<p class="linenumber">[line 423]</p>
+				
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_copy"></a>
+	<p></p>
+	<h3>ssh_copy</h3>
+	<div class="indent">
+		<p>
+		<code>status ssh_copy(
+origin
+$origin, destination
+$destination, mixed
+$password)</code>
+		</p>
+	
+		<p class="linenumber">[line 177]</p>
+		<p align="center"><strong>Copy a file or directory from one source to a destination
+</strong></p>
+<p>This function copies source to dest, where one of them is a  local filespec and the other a remote filespec of the form  [user@]host:path</p><p>If the original source is a directory, it will be copied  recursively to destination (hence easing file transfers).</p><p>The function returns TRUE on success or FALSE on failure.</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - TRUE if all went well, or FALSE on failure.</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">origin</span>
+		<b>$origin</b> 
+		- 
+		The origin path, of the form                     [user@][host][:port]path                     You may omit the optional sections if                     the default values (local username, local                     host, standard SSH port) are OK</li>
+			<li>
+		<span class="type">destination</span>
+		<b>$destination</b> 
+		- 
+		The destination path, of the form                     [user@][host][:port]path                     You may omit the optional sections if                     the default values (local username, local                     host, standard SSH port) are OK</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_exec"></a>
+	<p></p>
+	<h3>ssh_exec</h3>
+	<div class="indent">
+		<p>
+		<code>status ssh_exec(
+remote
+$remote, password
+$password, command
+$command, output
+&$out)</code>
+		</p>
+	
+		<p class="linenumber">[line 125]</p>
+		<p align="center"><strong>Execute a remote command using SSH
+</strong></p>
+<p>This function sort of mimics rexec(3) using SSH as the transport  protocol.</p><p>The function returns the exit status of the remote command, and  appends the remote job output to an optional argument.</p><p>This function is intended to be used as a one-time  all-at-once non-interactive execution mechanism which  will run the command remotely and return its output.</p><p>If you try to issue an interactive command using this  function, all you will get is unneccessary trouble. So  don't!</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - will hold the termination                   status of SSH after invocation, which                   should be the exit status of the remote                   command or 255 if an error occurred</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">remote</span>
+		<b>$remote</b> 
+		- 
+		The remote end to run the command, in                   the form 'user@host:port' (you may                         omit the 'user@' or ':port' parts                         if the default values [i.e. same user                         or standard port] are OK).</li>
+			<li>
+		<span class="type">password</span>
+		<b>$password</b> 
+		- 
+		The remote password. Note that if direct                   RSA/DSA/.shosts/.rhosts login is enabled                   then the password should be ignored as                   SSH should not run the ASKPASS command).</li>
+			<li>
+		<span class="type">command</span>
+		<b>$command</b> 
+		- 
+		The command to execute on the remote end                   NOTE: if you want to use redirection, the                   entire remote command line should be                   enclosed in additional quotes!</li>
+			<li>
+		<span class="type">output</span>
+		<b>&$out</b> 
+		- 
+		Optional, the collated (stdout+stderr) output                         of the remote command.</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_open_command"></a>
+	<p></p>
+	<h3>ssh_open_command</h3>
+	<div class="indent">
+		<p>
+		<code>void ssh_open_command(
+mixed
+$remote, mixed
+$password, mixed
+$command)</code>
+		</p>
+	
+		<p class="linenumber">[line 318]</p>
+		<p align="center"><strong>Open an SSH connection to run an interactive command on a remote  site
+</strong></p>
+<p>Connects to a remote host and runs an interactive command  with NO controlling terminal.</p><p>Returns a process_control array which contains the process resource  ID and an the standard file descriptors which the caller may use to  interact with the remote shell.</p>		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_open_shell"></a>
+	<p></p>
+	<h3>ssh_open_shell</h3>
+	<div class="indent">
+		<p>
+		<code>void ssh_open_shell(
+remote
+$remote, password
+$password)</code>
+		</p>
+	
+		<p class="linenumber">[line 218]</p>
+		<p align="center"><strong>Open an SSH connection to a remote site with a shell to run  interactive commands
+</strong></p>
+<p>Connects to a remote host and opens an interactive shell session  with NO controlling terminal.</p><p>Returns a process_control array which contains the process resource  ID and an the standard file descriptors which the caller may use to  interact with the remote shell.</p>		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">remote</span>
+		<b>$remote</b> 
+		- 
+		The remote end to run the shell, in                   the form 'user@host:port' (you may                         omit the 'user@' or ':port' parts                         if the default values [i.e. same user                         or standard port] are OK).</li>
+			<li>
+		<span class="type">password</span>
+		<b>$password</b> 
+		- 
+		The remote password. Note that if direct                   RSA/DSA/.shosts/.rhosts login is enabled                   then the password should be ignored as                   SSH should not run the ASKPASS command).</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_passthru"></a>
+	<p></p>
+	<h3>ssh_passthru</h3>
+	<div class="indent">
+		<p>
+		<code>void ssh_passthru(
+remote
+$remote, password
+$password, command
+$command, status
+&$status)</code>
+		</p>
+	
+		<p class="linenumber">[line 63]</p>
+		<p align="center"><strong>Execute a single command remotely using ssh and  display its output, optionally returning its exit  status (like passthru)
+</strong></p>
+<p>This function is intended to be used as a one-time  all-at-once non-interactive execution mechanism which  will run the command remotely and display its output.</p><p>If you try to issue an interactive command using this  function, all you will get is unneccessary trouble. So  don't!</p><p>This might be done as well using a pipe on /tmp and  making the command 'cat' the pipe: when ssh runs, it  runs the command 'cat' on the pipe and hangs on read.   Then we just need a thread to open the pipe, put the  password and close the pipe.   This other way the password is never wirtten down.  But, OTOH, the file life is so ephemeral that most  of the time it will only exist in the internal system  cache, so this approach is not that bad either.</p>		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">remote</span>
+		<b>$remote</b> 
+		- 
+		The remote end to run the command, in                   the form 'user@host:port' (you may                         omit the 'user@' or ':port' parts                         if the default values [i.e. same user                         or standard port] are OK).</li>
+			<li>
+		<span class="type">password</span>
+		<b>$password</b> 
+		- 
+		The remote password. Note that if direct                   RSA/DSA/.shosts/.rhosts login is enabled                   then the password should be ignored as                   SSH should not run the ASKPASS command).</li>
+			<li>
+		<span class="type">command</span>
+		<b>$command</b> 
+		- 
+		The command to execute on the remote end                   NOTE: if you want to use redirection, the                   entire remote command line should be                   enclosed in additional quotes!</li>
+			<li>
+		<span class="type">status</span>
+		<b>&$status</b> 
+		- 
+		Optional, this will hold the termination                   status of SSH after invocation, which                   should be the exit status of the remote                   command or 255 if an error occurred</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_pclose"></a>
+	<p></p>
+	<h3>ssh_pclose</h3>
+	<div class="indent">
+		<p>
+		<code>void ssh_pclose(
+mixed
+$f)</code>
+		</p>
+	
+		<p class="linenumber">[line 471]</p>
+				
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodssh_popen"></a>
+	<p></p>
+	<h3>ssh_popen</h3>
+	<div class="indent">
+		<p>
+		<code>void ssh_popen(
+mixed
+$remote, mixed
+$password, mixed
+$command, mixed
+$mode)</code>
+		</p>
+	
+		<p class="linenumber">[line 449]</p>
+		<p align="center"><strong>Execute a remore command and keep an unidirectional stream  contact with it.
+</strong></p>
+<p>This routine mimics 'popen()' but uses ssh to connect to  a remote host and run the requested command.</p>		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+</div>
+	<div id="credit">
+		<hr>
+		Documentation generated on Fri, 15 Apr 2005 16:37:07 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.2.3</a>
+	</div>
+</div>
+</body>
+</html>

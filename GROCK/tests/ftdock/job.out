@@ -1,0 +1,53 @@
+
+Running preprocess-pdb.perl ...
+pdb file     :: ligand.pdb
+warn         :: 0
+multidock    :: 0
+
+
+Chains       :: 3
+
+
+Running preprocess-pdb.perl ...
+pdb file     :: receptor.pdb
+warn         :: 0
+multidock    :: 0
+
+
+Chains       :: 4
+
+Computing molecule sizes
+Running ftdock
+Scoring
+Building best 10 models
+
+          3D-Dock Suite (March 2001)
+          Copyright (C) 1997-2000 Gidon Moont
+          This program comes with ABSOLUTELY NO WARRANTY
+          for details see license. This program is free software,
+          and you may redistribute it under certain conditions.
+
+          Biomolecular Modelling Laboratory
+          Imperial Cancer Research Fund
+          44 Lincoln's Inn Fields
+          London WC2A 3PX
+          +44 (0)20 7269 3348
+          http://www.bmm.icnet.uk/
+
+Starting Build program
+  reading parsed pdb file: receptor.parsed
+  reading parsed pdb file: ligand.parsed
+Building complexes G_DATA 1 -> 10
+Writing file: Complex_1g.pdb
+Writing file: Complex_2g.pdb
+Writing file: Complex_3g.pdb
+Writing file: Complex_4g.pdb
+Writing file: Complex_5g.pdb
+Writing file: Complex_6g.pdb
+Writing file: Complex_7g.pdb
+Writing file: Complex_8g.pdb
+Writing file: Complex_9g.pdb
+Writing file: Complex_10g.pdb
+Finished
+
+Computing pair centres

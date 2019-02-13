@@ -1,0 +1,16 @@
+This is the directory that goes with the Primer section in the MODELLER manual.
+
+1) Finding structures related to the target sequence: SEARCH.TOP
+ 
+2) Preparing initial family alignment of all structures and the target 
+   sequence: MALIGN.TOP
+
+3) Becoming familiar with the family fold and improving the alignment: 
+   use RASMOL, QUANTA, or INSIGHT; no script files here.
+
+4) Selecting the templates: CLUSTER.TOP
+
+5) Modeling: GET-MODEL.TOP
+
+6) Evaluating the models: use PROCHECK, QUANTA, INSIGHT, threading, etc; 
+   no script files here.

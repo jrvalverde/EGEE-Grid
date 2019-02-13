@@ -1,0 +1,73 @@
+\section{auth.php File Reference}
+\label{auth_8php}\index{auth.php@{auth.php}}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf required\_\-fields} ()
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+{\bf \$username} = \$\_\-POST[\char`\"{}username\char`\"{}]
+\item 
+{\bf \$password} = \$\_\-POST[\char`\"{}password\char`\"{}]
+\item 
+{\bf \$passphrase} = \$\_\-POST[\char`\"{}passphrase\char`\"{}]
+\item 
+{\bf \$process} = proc\_\-open(\char`\"{}bash\char`\"{}, \$descriptorspec, \$pipes)
+\item 
+{\bf \$return\_\-value} = proc\_\-close(\$process)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{auth.php@{auth.php}!required_fields@{required\_\-fields}}
+\index{required_fields@{required\_\-fields}!auth.php@{auth.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}required\_\-fields ()}\label{auth_8php_a5}
+
+
+
+
+Definition at line 83 of file auth.php.
+
+\subsection{Variable Documentation}
+\index{auth.php@{auth.php}!$passphrase@{\$passphrase}}
+\index{$passphrase@{\$passphrase}!auth.php@{auth.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$passphrase = \$\_\-POST[\char`\"{}passphrase\char`\"{}]}\label{auth_8php_a2}
+
+
+
+
+Definition at line 23 of file auth.php.
+
+Referenced by test\_\-grid\_\-init(), test\_\-grid\_\-pconnect(), test\_\-grid\_\-pinit(), test\_\-job\_\-get\_\-id(), test\_\-job\_\-output(), test\_\-job\_\-status(), test\_\-job\_\-submit(), test\_\-pjob\_\-get\_\-id(), test\_\-pjob\_\-output(), test\_\-pjob\_\-status(), and test\_\-pjob\_\-submit().\index{auth.php@{auth.php}!$password@{\$password}}
+\index{$password@{\$password}!auth.php@{auth.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$password = \$\_\-POST[\char`\"{}password\char`\"{}]}\label{auth_8php_a1}
+
+
+
+
+Definition at line 22 of file auth.php.\index{auth.php@{auth.php}!$process@{\$process}}
+\index{$process@{\$process}!auth.php@{auth.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$process = proc\_\-open(\char`\"{}bash\char`\"{}, \$descriptorspec, \$pipes)}\label{auth_8php_a3}
+
+
+
+
+Definition at line 51 of file auth.php.
+
+Referenced by ssh\_\-open(), SExec::ssh\_\-open\_\-command(), and SExec::ssh\_\-open\_\-shell().\index{auth.php@{auth.php}!$return_value@{\$return\_\-value}}
+\index{$return_value@{\$return\_\-value}!auth.php@{auth.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$return\_\-value = proc\_\-close(\$process)}\label{auth_8php_a4}
+
+
+
+
+Definition at line 79 of file auth.php.\index{auth.php@{auth.php}!$username@{\$username}}
+\index{$username@{\$username}!auth.php@{auth.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$username = \$\_\-POST[\char`\"{}username\char`\"{}]}\label{auth_8php_a0}
+
+
+
+
+Definition at line 21 of file auth.php.

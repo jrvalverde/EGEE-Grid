@@ -1,0 +1,532 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Docs for page report.php</title>
+	<link rel="stylesheet" type="text/css" id="layout" href="../media/layout.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../media/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../media/print.css" media="print">
+</head>
+
+<body>
+<div id="header">
+	<div id="navLinks">
+		[ <a href="../classtrees_grock.html">Class Tree: grock</a> ]
+		[ <a href="../elementindex_grock.html">Index: grock</a> ]
+		[ <a href="../elementindex.html">All elements</a> ]
+	</div>
+	<div id="packagePosition">
+		<div id="packageTitle2">grock</div>
+		<div id="packageTitle">grock</div>
+		<div id="elementPath"> &middot; </div>
+	</div>
+</div>
+
+<div id="nav" class="small">
+	<div id="packages">
+		Packages:
+					<p><a href="../li_GROCK.html">GROCK</a></p>
+					<p><a href="../li_Grid.html">Grid</a></p>
+					<p><a href="../li_grock.html">grock</a></p>
+					<p><a href="../li_SExec.html">SExec</a></p>
+			</div>
+
+				<div id="index">
+			<div id="files">
+								Files:<br>
+								<a href="../grock/_config_php.html">		config.php
+		</a><br>
+			<a href="../grock/_database_php.html">		database.php
+		</a><br>
+			<a href="../grock/_dock_php.html">		dock.php
+		</a><br>
+			<a href="../grock/_explore_complex_php.html">		explore_complex.php
+		</a><br>
+			<a href="../grock/_explore_match_php.html">		explore_match.php
+		</a><br>
+			<a href="../grock/_explore_molecule_php.html">		explore_molecule.php
+		</a><br>
+			<a href="../grock/_fishy_php.html">		fishy.php
+		</a><br>
+			<a href="../grock/_gramm_php.html">		gramm.php
+		</a><br>
+			<a href="../grock/_grid_config_php.html">		grid_config.php
+		</a><br>
+			<a href="../grock/_grock-ws_php.html">		grock-ws.php
+		</a><br>
+			<a href="../grock/_grock_php.html">		grock.php
+		</a><br>
+			<a href="../grock/_grock_lib_php.html">		grock_lib.php
+		</a><br>
+			<a href="../grock/_processor_php.html">		processor.php
+		</a><br>
+			<a href="../grock/_report_php.html">		report.php
+		</a><br>
+			<a href="../grock/_ssh_php.html">		ssh.php
+		</a><br>
+			<a href="../grock/_util_php.html">		util.php
+		</a><br>
+				</div>
+			<div id="classes">
+							</div>
+		</div>
+	</div>
+
+<div id="body">
+			<h1>Procedural File: report.php</h1>
+	<p style="margin: 0px;">Source Location: /report.php</p>
+	
+<br>
+<br>
+
+<div class="contents">
+<h2>Classes:</h2>
+<dl>
+</dl>
+</div>
+
+<h2>Page Details:</h2>
+<p align="center"><strong>Monitor GROCK status and analyze its output.
+</strong></p>
+<p>This library is free software; you can redistribute it and/or  modify it under the terms of the GNU Lesser General Public  License as published by the Free Software Foundation; either  version 2.1 of the License, or (at your option) any later version.</p><p>This library is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  Lesser General Public License for more details.</p><p>You should have received a copy of the GNU Lesser General Public  License along with this library; if not, write to the Free Software  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</p><h4>Tags:</h4>
+<ul>
+	<li><b>see</b> - <a href="../Grid/_grid_php.html">grid.php</a></li>
+	<li><b>see</b> - <a href="../grock/_grock_lib_php.html">grock_lib.php</a></li>
+	<li><b>link</b> - <a href="http://savannah.cern.ch/projects/GridGRAMM">http://savannah.cern.ch/projects/GridGRAMM</a></li>
+	<li><b>since</b> - File available since release 0.0</li>
+	<li><b>see</b> - <a href="../grock/_config_php.html">config.php</a></li>
+	<li><b>version</b> - $Id$</li>
+	<li><b>author</b> - Jose R. Valverde &lt;<a href="mailto:david@cnb.uam.es">mailto:david@cnb.uam.es</a>&gt;</li>
+	<li><b>copyright</b> - CSIC</li>
+	<li><b>license</b> - ../c/gpl.txt</li>
+	<li><b>author</b> - David Garcia &lt;<a href="mailto:david@cnb.uam.es">mailto:david@cnb.uam.es</a>&gt;</li>
+</ul>
+<hr>
+Includes:<br>
+require_once(<a href="../Grid/_grid_php.html">"grid.php"</a>) <span class="linenumber">[line 34]</span>
+<br />
+require_once(<a href="../grock/_grock_lib_php.html">"grock_lib.php"</a>) <span class="linenumber">[line 35]</span>
+<br />
+require_once(<a href="../grock/_config_php.html">"config.php"</a>) <span class="linenumber">[line 33]</span>
+<br />
+<hr>
+<div id="global">
+</div><hr>
+<div id="define">
+</div><hr>
+<div id="function">
+	<a name="functionauto_update"></a>
+	<h3>auto_update</h3>
+	<div class="indent">
+		<code>void auto_update(
+string $status, mixed $when, string $id, string $probe, string $pt, string $db, string $docker, [integer $from = 1], [integer $to = 50])</code>
+		<p class="linenumber">[line 755]</p>
+		<p align="center"><strong>Output a web page header with the title and an auto-update page  directive.
+</strong></p>
+		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">string</span>
+			<b>$status</b> 
+			- 
+			A status message to include in the page title</li>
+					<li>
+			<span class="type">string</span>
+			<b>$id</b> 
+			- 
+			The Job ID (to be used in the output report and to back-link       to ourselves for auto-updating)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$probe</b> 
+			- 
+			The name of the probe molecule submitted by the user</li>
+					<li>
+			<span class="type">string</span>
+			<b>$pt</b> 
+			- 
+			How to treat the probe molecule (ligand or receptor)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$db</b> 
+			- 
+			The name of the database being screened</li>
+					<li>
+			<span class="type">string</span>
+			<b>$docker</b> 
+			- 
+			The program used to perform the match (used to process       job output)</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$from</b> 
+			- 
+			Top result at which display should start</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$to</b> 
+			- 
+			Top result at which display should end</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionshow_abort"></a>
+	<h3>show_abort</h3>
+	<div class="indent">
+		<code>void show_abort(
+string $id, string $probe, string $pt, string $db, string $docker, [integer $from = 1], [integer $to = 50])</code>
+		<p class="linenumber">[line 154]</p>
+		<p align="center"><strong>Show an error message stating that the process was aborted  for some specific reason.
+</strong></p>
+<p>This page should: <ul><li>apologize profusely</li><li>notify the user of the error situation</li><li>show the error log of GROCK</li><li>display the target_list so the user may know how far it
+   went before aborting</li><li>offer a contact address and notification form</li><li>offer a return link to the submission form</li></ul></p>		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">string</span>
+			<b>$id</b> 
+			- 
+			The Job ID (to be used in the output report and to back-link       to ourselves for auto-updating)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$probe</b> 
+			- 
+			The name of the probe molecule submitted by the user</li>
+					<li>
+			<span class="type">string</span>
+			<b>$pt</b> 
+			- 
+			How to treat the probe molecule (ligand or receptor)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$db</b> 
+			- 
+			The name of the database being screened</li>
+					<li>
+			<span class="type">string</span>
+			<b>$docker</b> 
+			- 
+			The program used to perform the match (used to process       job output)</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$from</b> 
+			- 
+			Top result at which display should start</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$to</b> 
+			- 
+			Top result at which display should end</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionshow_nav_links"></a>
+	<h3>show_nav_links</h3>
+	<div class="indent">
+		<code>void show_nav_links(
+integer $prev_from, integer $prev_to, integer $next_from, integer $next_to, string $id, string $probe, string $pt, string $db, string $docker)</code>
+		<p class="linenumber">[line 795]</p>
+		<p align="center"><strong>Show navigation links (backwards, save results, forwards)
+</strong></p>
+<p>We need to know the previous results to display, following results to  display and all additional paramaters required by the form.</p><p>NOTE: we might try to do it simpler with superglobals, i.e., simply  substituting 'from' and 'to' by the new values and using the same  $_GET with which we were invoked. Would this be better? Think of it.</p>		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">integer</span>
+			<b>$prev_from</b> 
+			- 
+			Top result at which previous display should start</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$prev_to</b> 
+			- 
+			Top result at which previous display should end</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$next_from</b> 
+			- 
+			Top result at which next display should start</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$next_to</b> 
+			- 
+			Top result at which next display should end</li>
+					<li>
+			<span class="type">string</span>
+			<b>$id</b> 
+			- 
+			The Job ID (to be used in the output report and to back-link       to ourselves for auto-updating)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$probe</b> 
+			- 
+			The name of the probe molecule submitted by the user</li>
+					<li>
+			<span class="type">string</span>
+			<b>$pt</b> 
+			- 
+			How to treat the probe molecule (ligand or receptor)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$db</b> 
+			- 
+			The name of the database being screened</li>
+					<li>
+			<span class="type">string</span>
+			<b>$docker</b> 
+			- 
+			The program used to perform the match (used to process       job output)</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionshow_partial_results"></a>
+	<h3>show_partial_results</h3>
+	<div class="indent">
+		<code>void show_partial_results(
+string $id, string $probe, string $pt, string $db, string $docker, [integer $from = 1], [integer $to = 50])</code>
+		<p class="linenumber">[line 454]</p>
+		<p align="center"><strong>Display a page that allows the user to navigate through partial results.
+</strong></p>
+		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">string</span>
+			<b>$id</b> 
+			- 
+			The Job ID (to be used in the output report and to back-link       to ourselves for auto-updating)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$probe</b> 
+			- 
+			The name of the probe molecule submitted by the user</li>
+					<li>
+			<span class="type">string</span>
+			<b>$pt</b> 
+			- 
+			How to treat the probe molecule (ligand or receptor)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$db</b> 
+			- 
+			The name of the database being screened</li>
+					<li>
+			<span class="type">string</span>
+			<b>$docker</b> 
+			- 
+			The program used to perform the match (used to process       job output)</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$from</b> 
+			- 
+			Top result at which display should start</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$to</b> 
+			- 
+			Top result at which display should end</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionshow_results"></a>
+	<h3>show_results</h3>
+	<div class="indent">
+		<code>void show_results(
+string $id, string $probe, string $pt, string $db, string $docker, [integer $from = 1], [integer $to = 50])</code>
+		<p class="linenumber">[line 591]</p>
+		<p align="center"><strong>Display a page that allows the user to navigate the results
+</strong></p>
+		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">string</span>
+			<b>$id</b> 
+			- 
+			The Job ID (to be used in the output report and to back-link       to ourselves for auto-updating)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$probe</b> 
+			- 
+			The name of the probe molecule submitted by the user</li>
+					<li>
+			<span class="type">string</span>
+			<b>$pt</b> 
+			- 
+			How to treat the probe molecule (ligand or receptor)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$db</b> 
+			- 
+			The name of the database being screened</li>
+					<li>
+			<span class="type">string</span>
+			<b>$docker</b> 
+			- 
+			The program used to perform the match (used to process       job output)</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$from</b> 
+			- 
+			Top result at which display should start</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$to</b> 
+			- 
+			Top result at which display should end</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionshow_submission_log"></a>
+	<h3>show_submission_log</h3>
+	<div class="indent">
+		<code>void show_submission_log(
+string $id, string $probe, string $pt, string $db, string $docker, [integer $from = 1], [integer $to = 50])</code>
+		<p class="linenumber">[line 236]</p>
+		<p align="center"><strong>Show submission progression
+</strong></p>
+<p>This function is called when GROCK has started submitting jobs to  the grid, but has not finished yet submitting all of them.</p><p>To allow for persistence, GROCK logs its submission progress report  to a file in the current session directory. We must be there (in the  session directory) when being called, so we can open the GROCK report  and pass it along to the user so s/he may monitor its progress.</p><p>If the submission has any problem, then GROCK won't procceed to  the 'submitted' stage, and this will allow us to see what happened  during the submission process (and hopefully what went wrong).</p><p>Since the submission is an ongoing process and will be followed by  further processing, we want to monitor it on an ongoing basis: we  just resubmit ourselves every so often and notify the user so they  may update the report manually as well or make a bookmark.</p>		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">string</span>
+			<b>$id</b> 
+			- 
+			The Job ID (to be used in the output report and to back-link       to ourselves for auto-updating)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$probe</b> 
+			- 
+			The name of the probe molecule submitted by the user</li>
+					<li>
+			<span class="type">string</span>
+			<b>$pt</b> 
+			- 
+			How to treat the probe molecule (ligand or receptor)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$db</b> 
+			- 
+			The name of the database being screened</li>
+					<li>
+			<span class="type">string</span>
+			<b>$docker</b> 
+			- 
+			The program used to perform the match (used to process       job output)</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$from</b> 
+			- 
+			Top result at which display should start</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$to</b> 
+			- 
+			Top result at which display should end</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionshow_submitting_page"></a>
+	<h3>show_submitting_page</h3>
+	<div class="indent">
+		<code>void show_submitting_page(
+string $id, string $probe, string $pt, string $db, string $docker, [integer $from = 1], [integer $to = 50])</code>
+		<p class="linenumber">[line 310]</p>
+		<p align="center"><strong>Display a page asking the user to wait while his jobs are being submitted
+</strong></p>
+<p>This function helps tell the user his job is being launched,  and that since it takes too long, s/he should wait for it to  start producing output. Once there is any output available,  status will change and a different page will be shown.</p><p>For this reason we need to auto-update ourselves and/or  tell the user to update the page manually or bookmark it.</p>		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">string</span>
+			<b>$id</b> 
+			- 
+			The Job ID (to be used in the output report and to back-link       to ourselves for auto-updating)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$probe</b> 
+			- 
+			The name of the probe molecule submitted by the user</li>
+					<li>
+			<span class="type">string</span>
+			<b>$pt</b> 
+			- 
+			How to treat the probe molecule (ligand or receptor)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$db</b> 
+			- 
+			The name of the database being screened</li>
+					<li>
+			<span class="type">string</span>
+			<b>$docker</b> 
+			- 
+			The program used to perform the match (used to process       job output)</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$from</b> 
+			- 
+			Top result at which display should start</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$to</b> 
+			- 
+			Top result at which display should end</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionshow_wait_page"></a>
+	<h3>show_wait_page</h3>
+	<div class="indent">
+		<code>void show_wait_page(
+string $id, string $probe, string $pt, string $db, string $docker, [integer $from = 1], [integer $to = 50])</code>
+		<p class="linenumber">[line 386]</p>
+		<p align="center"><strong>Display a page asking the user to wait for completion
+</strong></p>
+<p>This function helps tell the user his job is up and running,  and that since it takes too long, s/he should wait for it to  start producing output. Once there is any output available,  status will change and a different page will be shown.</p><p>For this reason we need to auto-update ourselves and/or  tell the user to update the page manually or bookmark it.</p>		
+		<h4>Parameters</h4>
+		<ul>
+					<li>
+			<span class="type">string</span>
+			<b>$id</b> 
+			- 
+			The Job ID (to be used in the output report and to back-link       to ourselves for auto-updating)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$probe</b> 
+			- 
+			The name of the probe molecule submitted by the user</li>
+					<li>
+			<span class="type">string</span>
+			<b>$pt</b> 
+			- 
+			How to treat the probe molecule (ligand or receptor)</li>
+					<li>
+			<span class="type">string</span>
+			<b>$db</b> 
+			- 
+			The name of the database being screened</li>
+					<li>
+			<span class="type">string</span>
+			<b>$docker</b> 
+			- 
+			The program used to perform the match (used to process       job output)</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$from</b> 
+			- 
+			Top result at which display should start</li>
+					<li>
+			<span class="type">integer</span>
+			<b>$to</b> 
+			- 
+			Top result at which display should end</li>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+</div>
+	<div id="credit">
+		<hr>
+		Documentation generated on Thu, 27 Oct 2005 13:03:39 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.2.3</a>
+	</div>
+</div>
+</body>
+</html>

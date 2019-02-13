@@ -1,0 +1,16 @@
+INCLUDE                               # Include the predefined TOP routines
+
+SET ALNFILE  = 'align2d_15.ali'      # alignment filename
+SET KNOWNS   = '1b3qA'            # codes of the templates
+SET SEQUENCE = 'ST000391_15'               # code of the target
+
+SET CUT_OVERHANGS = on                
+
+SET STARTING_MODEL = 1
+SET ENDING_MODEL = 1
+SET DEVIATION = 6.0
+SET MD_LEVEL = 'nothing'
+#SET OUTPUT_CONTROL = 1 1 1 1
+SET OUTPUT_CONTROL = 1 0 0 1 0
+
+CALL ROUTINE = 'model'              # do homology modelling

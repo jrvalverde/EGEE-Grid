@@ -1,0 +1,71 @@
+\section{grid.php File Reference}
+\label{grid_8php}\index{grid.php@{grid.php}}
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+class {\bf Grid}
+\begin{CompactList}\small\item\em Grid access class. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf initialize} (\$hours=12, \$minutes=0)
+\begin{CompactList}\small\item\em Start the {\bf Grid}{\rm (p.\,\pageref{classGrid})} services. \item\end{CompactList}\item 
+{\bf destroy} ()
+\begin{CompactList}\small\item\em Destroy remote grid identity. \item\end{CompactList}\item 
+{\bf job\_\-submit} (\$job, \&\$out)
+\begin{CompactList}\small\item\em submit a job to the grid \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{grid.php@{grid.php}!destroy@{destroy}}
+\index{destroy@{destroy}!grid.php@{grid.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}destroy ()}\label{grid_8php_a1}
+
+
+Destroy remote grid identity. 
+
+We destroy the certification we initialized so that no more jobs can be launched under our identity.
+
+\begin{Desc}
+\item[Note:]Be careful when using this function: as it destroys our Grid-ID, no more work will be able to be executed on the grid on our behalf. In other words, please, make sure there is no work pending and that all your work has terminated before destroying your Grid-ID.\end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pipes}]The set of pipes to communicate (stdin/stdout) with the remote grid server entry point\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]exit status of the destroy command. \end{Desc}
+
+
+Definition at line 844 of file grid.php.\index{grid.php@{grid.php}!initialize@{initialize}}
+\index{initialize@{initialize}!grid.php@{grid.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}initialize (\$ {\em hours} = 12, \$ {\em minutes} = 0)}\label{grid_8php_a0}
+
+
+Start the {\bf Grid}{\rm (p.\,\pageref{classGrid})} services. 
+
+This function starts the grid services on the remote UI server host. This is done by unlocking the certificate that we are going to use to run our jobs on the grid using the passphrase provided.
+
+{\bf Grid}{\rm (p.\,\pageref{classGrid})} services have a lifetime of their own. By default they are available for 12:00 hours (that's the default value of grid-proxy-init itself), but their duration may be fine tuned if we have some knowledge about the time required to run our job.
+
+Session duration is specified in hours+minutes. If the number of minutes is negative, the specified minutes are substracted from the specified hours (e.g: 1, -15 is fifteen minutes to one hour, i.e. 45 minutes). If the total time specified is negative then the default of 12:00 is used.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em hours}]Estimated duration in hours of the session\item[{\em minutes}]Estimated duration in minutes of the session\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE on success, FALSE otherwise \end{Desc}
+
+
+Definition at line 805 of file grid.php.\index{grid.php@{grid.php}!job_submit@{job\_\-submit}}
+\index{job_submit@{job\_\-submit}!grid.php@{grid.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}job\_\-submit (\$ {\em job}, \&\$ {\em out})}\label{grid_8php_a2}
+
+
+submit a job to the grid 
+
+
+
+Definition at line 852 of file grid.php.

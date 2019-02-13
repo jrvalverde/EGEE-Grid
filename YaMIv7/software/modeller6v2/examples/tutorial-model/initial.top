@@ -1,0 +1,11 @@
+# A quick calculation of sequence identities between sequences in the
+# input alignment file.
+
+SET OUTPUT_CONTROL = 1 1 1 1 0
+
+READ_ALIGNMENT ALIGNMENT_FORMAT = 'PIR', FILE = 'alignment.ali'
+ID_TABLE MATRIX_FILE = 'id.mat'
+
+# This provides some basic data about the proteins in the alignment
+# (disulfides, cis-prolines, charges, etc.)
+DESCRIBE ATOM_FILES_DIRECTORY = './:../atom_files'

@@ -1,0 +1,798 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.3.4">
+  <compounddef id="functions_8php" kind="file">
+    <compoundname>functions.php</compoundname>
+    <innernamespace refid="namespaceGridGRAMM">GridGRAMM</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="functions_8php_1a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>open_connection</definition>
+        <argsstring>($server, $grid_path, $process, $descriptorspec, $pipes)</argsstring>
+        <name>open_connection</name>
+        <param>
+          <type>$</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>grid_path</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>process</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>descriptorspec</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>pipes</declname>
+        </param>
+        <briefdescription>
+<para>open a connection to the Grid UI server </para>        </briefdescription>
+        <detaileddescription>
+<para>The Grid User Interface server is the entry point to the Grid for users and user applications. This is where jobs are launched from.</para><para><ref refid="namespaceGridGRAMM" kindref="compound">GridGRAMM</ref> has been designed to be able to be installed in any host, independent of whether it is an UI or not. Thus, to be able to submit jobs to the Grid, the server hosting <ref refid="namespaceGridGRAMM" kindref="compound">GridGRAMM</ref> must connect to a Grid UI host to do the work.</para><para>This routine opens a connection to a Grid UI host using a predefined username (i.e. all jobs will be run under said username). To allow the caller to communicate with the remote end, it creates two pipes, one for input and one for output, and redirect error messages to a file.</para><para>These pipes lead to a child process that actually manages the communication. Using a child process has several advantages: it simplifies the communication process by offloading the comm. logic to a separate, convenience tool, and by being able to use SSH as the child, we can increase security taking advantage of its encryption capabilities.</para><para>The panorama therefore will look like this:</para><para>HTML front-end --&gt; <ref refid="processor_8php" kindref="compound">processor.php</ref> &lt;--&gt; SSH &lt;--&gt; remote host &lt;--&gt; Grid</para><para><parameterlist kind="param"><parametername>server</parametername>
+<parameterdescription>
+<para>A <ulink url="mailto:username@remove.grid.ui.host">username@remove.grid.ui.host</ulink> pair to use a command processor </para></parameterdescription><parametername>grid_path</parametername>
+<parameterdescription>
+<para>Path to working directory in the local machine </para></parameterdescription><parametername>process</parametername>
+<parameterdescription>
+<para>A handle to the child process that manages communication with the Grid access point </para></parameterdescription><parametername>descriptorspec</parametername>
+<parameterdescription>
+<para></para></parameterdescription><parametername>pipes</parametername>
+<parameterdescription>
+<para>An array of file descriptors to be used to communicate withe the Grid UI through the child process. </para></parameterdescription></parameterlist>
+</para>        </detaileddescription>
+        <location file="/root/GridGRAMM/script/functions.php" line="54" bodystart="53" bodyend="84"/>
+        <references refid="kkk_8php_1a2" compoundref="kkk_8php" startline="12">$descriptorspec</references>
+        <references refid="kkk_8php_1a3" compoundref="kkk_8php" startline="18">$process</references>
+        <references refid="results_8php_1a1" compoundref="results_8php" startline="50">exit</references>
+      </memberdef>
+      <memberdef kind="function" id="functions_8php_1a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>close_connection</definition>
+        <argsstring>($process, $descriptorspec, $pipes)</argsstring>
+        <name>close_connection</name>
+        <param>
+          <type>$</type>
+          <declname>process</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>descriptorspec</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>pipes</declname>
+        </param>
+        <briefdescription>
+<para>Close the connection with the remote Grid access point (UI node). </para>        </briefdescription>
+        <detaileddescription>
+<para>What we are going to do is to close the communication pipes and kill the child processes that actually handles communication with the remote Grid UI host (ssh).</para><para><simplesect kind="note"><para>CLOSE_CONNECTION IS USEFUL TO DEBUG!!!</para></simplesect>
+<parameterlist kind="param"><parametername>$process</parametername>
+<parameterdescription>
+<para></para></parameterdescription><parametername>$descriptorspec</parametername>
+<parameterdescription>
+<para></para></parameterdescription><parametername>$pipes</parametername>
+<parameterdescription>
+<para></para></parameterdescription></parameterlist>
+</para>        </detaileddescription>
+        <location file="/root/GridGRAMM/script/functions.php" line="101" bodystart="100" bodyend="123"/>
+        <references refid="kkk_8php_1a4" compoundref="kkk_8php" startline="42">$return_value</references>
+      </memberdef>
+      <memberdef kind="function" id="functions_8php_1a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>install_gramm</definition>
+        <argsstring>($grid_path, $random_value)</argsstring>
+        <name>install_gramm</name>
+        <param>
+          <type>$</type>
+          <declname>grid_path</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>random_value</declname>
+        </param>
+        <briefdescription>
+<para>Install the program and scripts needed to run it on a suitable place. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function installs the docking program GRAMM and the scripts needed to run it on a suitable local directory.</para><para>Since we may potentially be called many times in a short period we need a way to make sure their jobs don&apos;t clash with one another, most specially, that they don&apos;t overwrite each others&apos; workspace.</para><para>For this reason, we use a separate working directory for each request. This function will install GRAMM on the specified working directory.</para><para><parameterlist kind="param"><parametername>grid_path</parametername>
+<parameterdescription>
+<para>local directory devoted to Grid work </para></parameterdescription><parametername>random_value</parametername>
+<parameterdescription>
+<para>a random value to generate a unique name for the working directory. </para></parameterdescription></parameterlist>
+</para>        </detaileddescription>
+        <location file="/root/GridGRAMM/script/functions.php" line="144" bodystart="143" bodyend="179"/>
+        <references refid="results_8php_1a1" compoundref="results_8php" startline="50">exit</references>
+      </memberdef>
+      <memberdef kind="function" id="functions_8php_1a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>enter_grid</definition>
+        <argsstring>($pipes, $grid_pass)</argsstring>
+        <name>enter_grid</name>
+        <param>
+          <type>$</type>
+          <declname>pipes</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>grid_pass</declname>
+        </param>
+        <briefdescription>
+<para>Start the Grid services. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/root/GridGRAMM/script/functions.php" line="185" bodystart="184" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="functions_8php_1a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>create_working_directory</definition>
+        <argsstring>($grid_path)</argsstring>
+        <name>create_working_directory</name>
+        <param>
+          <type>$</type>
+          <declname>grid_path</declname>
+        </param>
+        <briefdescription>
+<para>Create working directory. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/root/GridGRAMM/script/functions.php" line="198" bodystart="197" bodyend="221"/>
+        <references refid="results_8php_1a1" compoundref="results_8php" startline="50">exit</references>
+      </memberdef>
+      <memberdef kind="function" id="functions_8php_1a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>job_identifier</definition>
+        <argsstring>()</argsstring>
+        <name>job_identifier</name>
+        <briefdescription>
+<para>Get job identifier. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/root/GridGRAMM/script/functions.php" line="227" bodystart="226" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="functions_8php_1a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>check_status</definition>
+        <argsstring>()</argsstring>
+        <name>check_status</name>
+        <briefdescription>
+<para>Check job status. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/root/GridGRAMM/script/functions.php" line="242" bodystart="241" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="functions_8php_1a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>upload_user_data</definition>
+        <argsstring>($grid_path, $random_value)</argsstring>
+        <name>upload_user_data</name>
+        <param>
+          <type>$</type>
+          <declname>grid_path</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>random_value</declname>
+        </param>
+        <briefdescription>
+<para>Upload user data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/root/GridGRAMM/script/functions.php" line="260" bodystart="259" bodyend="309"/>
+        <references refid="results_8php_1a1" compoundref="results_8php" startline="50">exit</references>
+      </memberdef>
+      <memberdef kind="function" id="functions_8php_1a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>create_gr_files</definition>
+        <argsstring>($grid_path, $random_value, $resolution)</argsstring>
+        <name>create_gr_files</name>
+        <param>
+          <type>$</type>
+          <declname>grid_path</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>random_value</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>resolution</declname>
+        </param>
+        <briefdescription>
+<para>Create configuration files needed to run GRAMM. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/root/GridGRAMM/script/functions.php" line="315" bodystart="314" bodyend="374"/>
+        <references refid="processor_8php_1a0" compoundref="processor_8php" startline="61">$resolution</references>
+      </memberdef>
+      <memberdef kind="function" id="functions_8php_1a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>create_jdl_file</definition>
+        <argsstring>($grid_path, $random_value)</argsstring>
+        <name>create_jdl_file</name>
+        <param>
+          <type>$</type>
+          <declname>grid_path</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>random_value</declname>
+        </param>
+        <briefdescription>
+<para>Create JDL description of the job to be submitted to the Grid. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/root/GridGRAMM/script/functions.php" line="380" bodystart="379" bodyend="397"/>
+      </memberdef>
+      <memberdef kind="function" id="functions_8php_1a10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>unpack_results</definition>
+        <argsstring>()</argsstring>
+        <name>unpack_results</name>
+        <briefdescription>
+<para>Extract results gathered from the Grid. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/root/GridGRAMM/script/functions.php" line="403" bodystart="402" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="function" id="functions_8php_1a11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>show_results</definition>
+        <argsstring>()</argsstring>
+        <name>show_results</name>
+        <briefdescription>
+<para>Show the results to the user. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/root/GridGRAMM/script/functions.php" line="426" bodystart="425" bodyend="536"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="2"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>General<sp/>utility<sp/>functions</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>contains<sp/>convenience<sp/>functions<sp/>used<sp/>throughout<sp/>the<sp/>package.<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>@package<sp/>GridGRAMM</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>@author<sp/>David<sp/>Garcia<sp/>Aristegui<sp/>&lt;david@cnb.uam.es&gt;</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>@version<sp/>1.0</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>@copyright<sp/>CSIC<sp/>-<sp/>GPL</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>include<sp/>global<sp/>configuration<sp/>definitions</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">require(</highlight><highlight class="stringliteral">&quot;./variables.php&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>open<sp/>a<sp/>connection<sp/>to<sp/>the<sp/>Grid<sp/>UI<sp/>server</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>	The<sp/>Grid<sp/>User<sp/>Interface<sp/>server<sp/>is<sp/>the<sp/>entry<sp/>point<sp/>to<sp/>the<sp/>Grid</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/><sp/>for<sp/>users<sp/>and<sp/>user<sp/>applications.<sp/>This<sp/>is<sp/>where<sp/>jobs<sp/>are<sp/>launched<sp/>from.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>	GridGRAMM<sp/>has<sp/>been<sp/>designed<sp/>to<sp/>be<sp/>able<sp/>to<sp/>be<sp/>installed<sp/>in<sp/>any</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/><sp/>host,<sp/>independent<sp/>of<sp/>whether<sp/>it<sp/>is<sp/>an<sp/>UI<sp/>or<sp/>not.<sp/>Thus,<sp/>to<sp/>be<sp/>able<sp/>to</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/><sp/>submit<sp/>jobs<sp/>to<sp/>the<sp/>Grid,<sp/>the<sp/>server<sp/>hosting<sp/>GridGRAMM<sp/>must<sp/>connect<sp/>to</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/><sp/>a<sp/>Grid<sp/>UI<sp/>host<sp/>to<sp/>do<sp/>the<sp/>work.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>	This<sp/>routine<sp/>opens<sp/>a<sp/>connection<sp/>to<sp/>a<sp/>Grid<sp/>UI<sp/>host<sp/>using<sp/>a<sp/>predefined</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/><sp/>username<sp/>(i.e.<sp/>all<sp/>jobs<sp/>will<sp/>be<sp/>run<sp/>under<sp/>said<sp/>username).<sp/>To<sp/>allow<sp/>the</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/><sp/>caller<sp/>to<sp/>communicate<sp/>with<sp/>the<sp/>remote<sp/>end,<sp/>it<sp/>creates<sp/>two<sp/>pipes,<sp/>one<sp/>for</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/><sp/>input<sp/>and<sp/>one<sp/>for<sp/>output,<sp/>and<sp/>redirect<sp/>error<sp/>messages<sp/>to<sp/>a<sp/>file.</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>	These<sp/>pipes<sp/>lead<sp/>to<sp/>a<sp/>child<sp/>process<sp/>that<sp/>actually<sp/>manages<sp/>the<sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/>communication.<sp/>Using<sp/>a<sp/>child<sp/>process<sp/>has<sp/>several<sp/>advantages:<sp/>it<sp/>simplifies</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>communication<sp/>process<sp/>by<sp/>offloading<sp/>the<sp/>comm.<sp/>logic<sp/>to<sp/>a<sp/>separate,</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/>convenience<sp/>tool,<sp/>and<sp/>by<sp/>being<sp/>able<sp/>to<sp/>use<sp/>SSH<sp/>as<sp/>the<sp/>child,<sp/>we<sp/>can<sp/>increase</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/>security<sp/>taking<sp/>advantage<sp/>of<sp/>its<sp/>encryption<sp/>capabilities.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>	The<sp/>panorama<sp/>therefore<sp/>will<sp/>look<sp/>like<sp/>this:</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>	HTML<sp/>front-end<sp/>--&gt;<sp/>processor.php<sp/>&lt;--&gt;<sp/>SSH<sp/>&lt;--&gt;<sp/>remote<sp/>host<sp/>&lt;--&gt;<sp/>Grid</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/>	@param<sp/>server	A<sp/>username@remove.grid.ui.host<sp/>pair<sp/>to<sp/>use<sp/>a<sp/>command</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/>			processor</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>	@param<sp/>grid_path<sp/>Path<sp/>to<sp/>working<sp/>directory<sp/>in<sp/>the<sp/>local<sp/>machine</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>	@param<sp/>process	A<sp/>handle<sp/>to<sp/>the<sp/>child<sp/>process<sp/>that<sp/>manages<sp/>communication</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>			with<sp/>the<sp/>Grid<sp/>access<sp/>point</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>	@param<sp/>descriptorspec</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>	@param<sp/>pipes	An<sp/>array<sp/>of<sp/>file<sp/>descriptors<sp/>to<sp/>be<sp/>used<sp/>to<sp/>communicate</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>			withe<sp/>the<sp/>Grid<sp/>UI<sp/>through<sp/>the<sp/>child<sp/>process.</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="functions_8php_1a0" refkind="member"><highlight class="normal">function<sp/><ref refid="functions_8php_1a0" kindref="member">open_connection</ref>($server,<sp/>$grid_path,<sp/>$process,<sp/>$descriptorspec,<sp/>$pipes)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>The<sp/>ssh<sp/>connection<sp/>is<sp/>a<sp/>&apos;child&apos;<sp/>process,<sp/>in<sp/>the<sp/>User<sp/>Interface<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>opened<sp/>wit<sp/>&apos;proc_open&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">	global<sp/><ref refid="kkk_8php_1a3" kindref="member">$process</ref>,<sp/><ref refid="kkk_8php_1a2" kindref="member">$descriptorspec</ref>,<sp/>$pipes;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">	<ref refid="kkk_8php_1a2" kindref="member">$descriptorspec</ref><sp/>=<sp/>array(</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>	0<sp/>=&gt;<sp/>array(</highlight><highlight class="stringliteral">&quot;pipe&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;r&quot;</highlight><highlight class="normal">),<sp/><sp/></highlight><highlight class="comment">//<sp/>stdin<sp/>is<sp/>a<sp/>pipe<sp/>that<sp/>the<sp/>child<sp/>will<sp/>read<sp/>from</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>	1<sp/>=&gt;<sp/>array(</highlight><highlight class="stringliteral">&quot;pipe&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">),<sp/><sp/></highlight><highlight class="comment">//<sp/>stdout<sp/>is<sp/>a<sp/>pipe<sp/>that<sp/>the<sp/>child<sp/>will<sp/>write<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>	2<sp/>=&gt;<sp/>array(</highlight><highlight class="stringliteral">&quot;file&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;$grid_path/error-output.txt&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;a&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="comment">//<sp/>stderr<sp/>is<sp/>a<sp/>file<sp/>to<sp/>write<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">	);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>Open<sp/>the<sp/>child<sp/>process<sp/>with<sp/>&apos;proc_open&apos;<sp/>function.<sp/>SSH<sp/>connection<sp/>with</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">	</highlight><highlight class="comment">//<sp/><sp/>-x<sp/>parameter,<sp/>we<sp/>need<sp/>to<sp/>disable<sp/>the<sp/>X11<sp/>forwarding.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>$process<sp/>=<sp/>proc_open(&quot;ssh<sp/>-t<sp/>-t<sp/>$server&quot;,<sp/>$descriptorspec,<sp/>$pipes);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>Is<sp/>required<sp/>to<sp/>us<sp/>twice<sp/>the<sp/>parameter<sp/>-t,<sp/>otherwise<sp/>we<sp/>get<sp/>the<sp/>error:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>&quot;Pseudo-terminal<sp/>will<sp/>not<sp/>be<sp/>allocated<sp/>because<sp/>stdin<sp/>is<sp/>not<sp/>a<sp/>terminal&quot;.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">	<ref refid="kkk_8php_1a3" kindref="member">$process</ref><sp/>=<sp/>proc_open(</highlight><highlight class="stringliteral">&quot;ssh<sp/>-x<sp/>-t<sp/>-t<sp/>$server&quot;</highlight><highlight class="normal">,<sp/>$descriptorspec,<sp/>$pipes);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>$pipes<sp/>now<sp/>looks<sp/>like<sp/>this:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">	</highlight><highlight class="comment">//<sp/><sp/><sp/>0<sp/>=&gt;<sp/>writeable<sp/>handle<sp/>connected<sp/>to<sp/>child<sp/>stdin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">	</highlight><highlight class="comment">//<sp/><sp/><sp/>1<sp/>=&gt;<sp/>readable<sp/>handle<sp/>connected<sp/>to<sp/>child<sp/>stdout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>Any<sp/>error<sp/>output<sp/>will<sp/>be<sp/>appended<sp/>to<sp/>$grid_path/error-output.txt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">	</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!is_resource($process))<sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">	{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">		echo<sp/></highlight><highlight class="stringliteral">&quot;connection<sp/>error!!!&lt;br<sp/>\&gt;&lt;/body&gt;&lt;/html&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">		<ref refid="results_8php_1a1" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">	}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="87"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*<sp/>Close<sp/>the<sp/>connection<sp/>with<sp/>the<sp/>remote<sp/>Grid<sp/>access<sp/>point<sp/>(UI<sp/>node)</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/>	What<sp/>we<sp/>are<sp/>going<sp/>to<sp/>do<sp/>is<sp/>to<sp/>close<sp/>the<sp/>communication<sp/>pipes</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*<sp/><sp/>and<sp/>kill<sp/>the<sp/>child<sp/>processes<sp/>that<sp/>actually<sp/>handles<sp/>communication</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/><sp/>with<sp/>the<sp/>remote<sp/>Grid<sp/>UI<sp/>host<sp/>(ssh).</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*<sp/><sp/>@note<sp/>CLOSE_CONNECTION<sp/>IS<sp/>USEFUL<sp/>TO<sp/>DEBUG!!!</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/>*<sp/><sp/>@param<sp/>$process</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/>*<sp/><sp/>@param<sp/>$descriptorspec</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*<sp/><sp/>@param<sp/>$pipes</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="functions_8php_1a1" refkind="member"><highlight class="normal">function<sp/><ref refid="functions_8php_1a1" kindref="member">close_connection</ref>($process,<sp/>$descriptorspec,<sp/>$pipes)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>Required<sp/>to<sp/>close<sp/>the<sp/>&apos;child&apos;<sp/>process,<sp/>otherwise<sp/>&apos;proc_close&apos;<sp/>function<sp/>hangs!!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal">	fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;exit\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal">	fclose($pipes[0]);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>The<sp/>output<sp/>from<sp/>the<sp/>commands</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>Uncomment<sp/>to<sp/>debug<sp/>the<sp/>&apos;child&apos;<sp/>process!!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal">	</highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="111"><highlight class="comment">	while<sp/>(!feof($pipes[1]))</highlight></codeline>
+<codeline lineno="112"><highlight class="comment">	{</highlight></codeline>
+<codeline lineno="113"><highlight class="comment">		echo<sp/>fgets($pipes[1],<sp/>1024).&quot;&lt;br<sp/>/&gt;&quot;;</highlight></codeline>
+<codeline lineno="114"><highlight class="comment">	}</highlight></codeline>
+<codeline lineno="115"><highlight class="comment">	*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal">	fclose($pipes[1]);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>It&apos;s<sp/>important<sp/>that<sp/>you<sp/>close<sp/>any<sp/>pipes<sp/>before<sp/>calling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>proc_close<sp/>in<sp/>order<sp/>to<sp/>avoid<sp/>a<sp/>deadlock</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">	<ref refid="kkk_8php_1a4" kindref="member">$return_value</ref><sp/>=<sp/>proc_close($process);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>echo<sp/>&quot;\ncommand<sp/>returned<sp/>$return_value\n&quot;;	</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="125"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/>Install<sp/>the<sp/>program<sp/>and<sp/>scripts<sp/>needed<sp/>to<sp/>run<sp/>it<sp/>on<sp/>a<sp/>suitable<sp/>place</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*	This<sp/>function<sp/>installs<sp/>the<sp/>docking<sp/>program<sp/>GRAMM<sp/>and<sp/>the<sp/>scripts</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*<sp/>needed<sp/>to<sp/>run<sp/>it<sp/>on<sp/>a<sp/>suitable<sp/>local<sp/>directory.</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>*	Since<sp/>we<sp/>may<sp/>potentially<sp/>be<sp/>called<sp/>many<sp/>times<sp/>in<sp/>a<sp/>short<sp/>period</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/>*<sp/>we<sp/>need<sp/>a<sp/>way<sp/>to<sp/>make<sp/>sure<sp/>their<sp/>jobs<sp/>don&apos;t<sp/>clash<sp/>with<sp/>one<sp/>another,</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/>*<sp/>most<sp/>specially,<sp/>that<sp/>they<sp/>don&apos;t<sp/>overwrite<sp/>each<sp/>others&apos;<sp/>workspace.</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*	For<sp/>this<sp/>reason,<sp/>we<sp/>use<sp/>a<sp/>separate<sp/>working<sp/>directory<sp/>for<sp/>each</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/>*<sp/>request.<sp/>This<sp/>function<sp/>will<sp/>install<sp/>GRAMM<sp/>on<sp/>the<sp/>specified<sp/>working</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/>*<sp/>directory.</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/>*	@param<sp/>grid_path	local<sp/>directory<sp/>devoted<sp/>to<sp/>Grid<sp/>work</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/>*	@param<sp/>random_value	a<sp/>random<sp/>value<sp/>to<sp/>generate<sp/>a<sp/>unique</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/>*				name<sp/>for<sp/>the<sp/>working<sp/>directory.</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="functions_8php_1a2" refkind="member"><highlight class="normal">function<sp/><ref refid="functions_8php_1a2" kindref="member">install_gramm</ref>($grid_path,<sp/>$random_value)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">{	</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>We<sp/>copy<sp/>the<sp/>results.php<sp/>to<sp/>the<sp/>working<sp/>directory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal">	</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!copy(<sp/></highlight><highlight class="stringliteral">&quot;./results.php&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;$grid_path/$random_value/index.php&quot;</highlight><highlight class="normal"><sp/>))	</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">	{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">		echo<sp/></highlight><highlight class="stringliteral">&quot;Error,<sp/>can&apos;t<sp/>copy<sp/>results.php<sp/>to<sp/>the<sp/>working<sp/>directory&lt;br<sp/>/&gt;&lt;/body&gt;&lt;/html&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">		<ref refid="results_8php_1a1" kindref="member">exit</ref>;	</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">	}<sp/></highlight></codeline>
+<codeline lineno="151"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>We<sp/>copy<sp/>the<sp/>functions.php<sp/>to<sp/>the<sp/>working<sp/>directory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal">	</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!copy(<sp/></highlight><highlight class="stringliteral">&quot;./functions.php&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;$grid_path/$random_value/functions.php&quot;</highlight><highlight class="normal"><sp/>))	</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">	{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">		echo<sp/></highlight><highlight class="stringliteral">&quot;Error,<sp/>can&apos;t<sp/>copy<sp/>functions.php<sp/>to<sp/>the<sp/>working<sp/>directory&lt;br<sp/>/&gt;&lt;/body&gt;&lt;/html&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">		<ref refid="results_8php_1a1" kindref="member">exit</ref>;	</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">	}<sp/></highlight></codeline>
+<codeline lineno="158"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>We<sp/>copy<sp/>the<sp/>variables.php<sp/>to<sp/>the<sp/>working<sp/>directory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal">	</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!copy(<sp/></highlight><highlight class="stringliteral">&quot;./variables.php&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;$grid_path/$random_value/variables.php&quot;</highlight><highlight class="normal"><sp/>))	</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">	{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">		echo<sp/></highlight><highlight class="stringliteral">&quot;Error,<sp/>can&apos;t<sp/>copy<sp/>variables.php<sp/>to<sp/>the<sp/>working<sp/>directory&lt;br<sp/>/&gt;&lt;/body&gt;&lt;/html&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">		<ref refid="results_8php_1a1" kindref="member">exit</ref>;	</highlight></codeline>
+<codeline lineno="164"><highlight class="normal">	}<sp/></highlight></codeline>
+<codeline lineno="165"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>We<sp/>copy<sp/>the<sp/>egee<sp/>logo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal">	</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!copy(<sp/></highlight><highlight class="stringliteral">&quot;../interface/egee.jpg&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;$grid_path/$random_value/egee.jpg&quot;</highlight><highlight class="normal"><sp/>))	</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">	{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">		echo<sp/></highlight><highlight class="stringliteral">&quot;Error,<sp/>can&apos;t<sp/>copy<sp/><sp/>egee.jpg<sp/>to<sp/>the<sp/>working<sp/>directory&lt;br<sp/>/&gt;&lt;/body&gt;&lt;/html&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">		<ref refid="results_8php_1a1" kindref="member">exit</ref>;	</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">	}<sp/></highlight></codeline>
+<codeline lineno="172"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>We<sp/>move<sp/>the<sp/>gramm<sp/>files<sp/>to<sp/>the<sp/>working<sp/>directory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>XXX<sp/>JR<sp/>XXX<sp/>--<sp/>this<sp/>should<sp/>suffice</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exec(</highlight><highlight class="stringliteral">&quot;cp<sp/>-f<sp/>gramm/*<sp/>$grid_path/$random_value/gramm/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>otherwise<sp/>use</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-<sp/>in<sp/>variables.php</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-<sp/>$my_location=&quot;/data/www/EMBnet/cgi-src/Grid/GridGRAMM&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>exec(&quot;cp<sp/>-f<sp/>$my_location/script/gramm/*<sp/>$grid_path/$random_value/gramm/&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="181"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/>*<sp/>Start<sp/>the<sp/>Grid<sp/>services</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184" refid="functions_8php_1a3" refkind="member"><highlight class="normal">function<sp/><ref refid="functions_8php_1a3" kindref="member">enter_grid</ref>($pipes,<sp/>$grid_pass)</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>Remote<sp/>EGEE<sp/>middleware<sp/>interaction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>We<sp/>run<sp/>the<sp/>Globus<sp/>and<sp/>Middelware<sp/>commands<sp/>in<sp/>the<sp/>User<sp/>Interface,<sp/>but<sp/>the<sp/>output<sp/>goes<sp/>to<sp/>the<sp/>local<sp/>machine<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>in<sp/>the<sp/>mounted<sp/>directory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal">	fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;grid-proxy-init<sp/><sp/>-pwstdin\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal">	sleep(2);<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="191"><highlight class="normal">	fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;$grid_pass\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="194"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/>*<sp/>Create<sp/>working<sp/>directory</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197" refid="functions_8php_1a4" refkind="member"><highlight class="normal">function<sp/><ref refid="functions_8php_1a4" kindref="member">create_working_directory</ref>($grid_path)</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>Random<sp/>value<sp/>for<sp/>the<sp/>directory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal">	global<sp/>$random_value;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal">	srand((</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)microtime()*10000);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">	$random_value<sp/>=<sp/>rand();</highlight></codeline>
+<codeline lineno="203"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="204"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>Working<sp/>directory<sp/>in<sp/>the<sp/>local<sp/>machine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal">	</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mkdir(</highlight><highlight class="stringliteral">&quot;$grid_path/$random_value&quot;</highlight><highlight class="normal">,<sp/>0777))</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">	{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">		echo<sp/></highlight><highlight class="stringliteral">&quot;Error,<sp/>can&apos;t<sp/>generate<sp/>the<sp/>working<sp/>directory&lt;br<sp/>/&gt;&lt;/body&gt;&lt;/html&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal">		<ref refid="results_8php_1a1" kindref="member">exit</ref>;	</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">	}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>Mkdir<sp/>don&apos;t<sp/>work<sp/>properly<sp/>with<sp/>the<sp/>permissions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal">	chmod(<sp/></highlight><highlight class="stringliteral">&quot;$grid_path/$random_value&quot;</highlight><highlight class="normal">,<sp/>0777<sp/>);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="213"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>Gramm<sp/>directory<sp/>in<sp/>the<sp/>local<sp/>machine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal">	</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mkdir<sp/>(</highlight><highlight class="stringliteral">&quot;$grid_path/$random_value/gramm&quot;</highlight><highlight class="normal">,<sp/>0777))</highlight></codeline>
+<codeline lineno="215"><highlight class="normal">	{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal">		echo<sp/></highlight><highlight class="stringliteral">&quot;Error,<sp/>can&apos;t<sp/>generate<sp/>the<sp/>gramm<sp/>directory&lt;br<sp/>/&gt;&lt;/body&gt;&lt;/html&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal">		<ref refid="results_8php_1a1" kindref="member">exit</ref>;	</highlight></codeline>
+<codeline lineno="218"><highlight class="normal">	}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>Mkdir<sp/>don&apos;t<sp/>work<sp/>properly<sp/>with<sp/>the<sp/>permissions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal">	chmod(<sp/></highlight><highlight class="stringliteral">&quot;$grid_path/$random_value/gramm&quot;</highlight><highlight class="normal">,<sp/>0777<sp/>);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="223"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="224"><highlight class="comment"><sp/>*<sp/>Get<sp/>job<sp/>identifier</highlight></codeline>
+<codeline lineno="225"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226" refid="functions_8php_1a5" refkind="member"><highlight class="normal">function<sp/><ref refid="functions_8php_1a5" kindref="member">job_identifier</ref>()</highlight></codeline>
+<codeline lineno="227"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>Each<sp/>grid<sp/>job<sp/>has<sp/>a<sp/>unique<sp/>identifier</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal">	global<sp/>$identifier;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal">	$identifier=</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal">	$lines=file(</highlight><highlight class="stringliteral">&quot;./gramm/identifier.txt&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>We<sp/>retrieve<sp/>the<sp/>identifier</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal">	$identifier=$lines[1];</highlight></codeline>
+<codeline lineno="234"><highlight class="normal">	$identifier=rtrim(</highlight><highlight class="stringliteral">&quot;$identifier&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="238"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="239"><highlight class="comment"><sp/>*<sp/>Check<sp/>job<sp/>status</highlight></codeline>
+<codeline lineno="240"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241" refid="functions_8php_1a6" refkind="member"><highlight class="normal">function<sp/><ref refid="functions_8php_1a6" kindref="member">check_status</ref>()</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>array<sp/>with<sp/>all<sp/>the<sp/>text<sp/>lines</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal">	</highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>file_exists(</highlight><highlight class="stringliteral">&quot;./gramm/status.txt&quot;</highlight><highlight class="normal">)<sp/>)</highlight></codeline>
+<codeline lineno="245"><highlight class="normal">	{	</highlight></codeline>
+<codeline lineno="246"><highlight class="normal">		$lines=file(</highlight><highlight class="stringliteral">&quot;./gramm/status.txt&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal">		</highlight><highlight class="comment">//We<sp/>retrieve<sp/>the<sp/>information</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>	$value=$lines[6];</highlight></codeline>
+<codeline lineno="249"><highlight class="normal">		</highlight><highlight class="comment">//Last<sp/>character<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>	$value=rtrim(</highlight><highlight class="stringliteral">&quot;$value&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal">		</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>$value;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal">	}</highlight></codeline>
+<codeline lineno="253"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="254"><highlight class="normal">}	</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="256"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="257"><highlight class="comment"><sp/>*<sp/>Upload<sp/>user<sp/>data</highlight></codeline>
+<codeline lineno="258"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259" refid="functions_8php_1a7" refkind="member"><highlight class="normal">function<sp/><ref refid="functions_8php_1a7" kindref="member">upload_user_data</ref>($grid_path,<sp/>$random_value)</highlight></codeline>
+<codeline lineno="260"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Two<sp/>files<sp/>to<sp/>upload:<sp/>Receptor<sp/>file<sp/>and<sp/>Ligand<sp/>file,<sp/>for<sp/>the<sp/>gramm<sp/>program</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>This<sp/>loop<sp/>is<sp/>dirty<sp/>trick<sp/>to<sp/>get<sp/>Receptor<sp/>and<sp/>Ligand<sp/>files</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal">	</highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>($i=0;<sp/>$i&lt;2;<sp/>$i++)<sp/></highlight></codeline>
+<codeline lineno="264"><highlight class="normal">	{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="266"><highlight class="normal">		</highlight><highlight class="keywordflow">if</highlight><highlight class="normal">($i==0)</highlight></codeline>
+<codeline lineno="267"><highlight class="normal">		{</highlight></codeline>
+<codeline lineno="268"><highlight class="normal">			$file_str=</highlight><highlight class="stringliteral">&quot;Receptor&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="269"><highlight class="normal">			$upfile=</highlight><highlight class="stringliteral">&quot;$grid_path/$random_value/gramm/receptor.pdb&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal">		}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal">		{</highlight></codeline>
+<codeline lineno="272"><highlight class="normal">			$file_str=</highlight><highlight class="stringliteral">&quot;Ligand&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal">			$upfile=</highlight><highlight class="stringliteral">&quot;$grid_path/$random_value/gramm/ligand.pdb&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal">		}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal">		</highlight></codeline>
+<codeline lineno="277"><highlight class="normal">		$userfile<sp/>=<sp/>$_FILES[&apos;upload&apos;][&apos;tmp_name&apos;][$i];</highlight></codeline>
+<codeline lineno="278"><highlight class="normal">		$userfile_name<sp/>=<sp/>$_FILES[&apos;upload&apos;][&apos;name&apos;][$i];</highlight></codeline>
+<codeline lineno="279"><highlight class="normal">		$userfile_size<sp/>=<sp/>$_FILES[&apos;upload&apos;][&apos;size&apos;][$i];</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal">		</highlight><highlight class="comment">//<sp/>We<sp/>check<sp/>if<sp/>the<sp/>files<sp/>upload<sp/>are<sp/>correct<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/>		</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($_FILES[&apos;upload&apos;][&apos;tmp_name&apos;][$i]==</highlight><highlight class="stringliteral">&quot;none&quot;</highlight><highlight class="normal"><sp/>||<sp/>$_FILES[&apos;upload&apos;][&apos;tmp_name&apos;][$i]==</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/>		{</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>			echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;h1&gt;Problem:<sp/>no<sp/>$file_str<sp/>file<sp/>uploaded&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>			<ref refid="results_8php_1a1" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/>		}</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/>		</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($_FILES[&apos;upload&apos;][&apos;size&apos;][$i]==0)</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/>		{</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/>			echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;h1&gt;Problem:<sp/>uploaded<sp/>$file_str<sp/>file<sp/>is<sp/>zero<sp/>length&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/>			<ref refid="results_8php_1a1" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/>		}</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/>		</highlight><highlight class="comment">//<sp/>$upfile<sp/>=<sp/>&quot;./$userfile_name&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal">		</highlight></codeline>
+<codeline lineno="296"><highlight class="normal">		</highlight><highlight class="comment">//<sp/>move_uploaded_file<sp/>this<sp/>function<sp/>checks<sp/>to<sp/>ensure<sp/>that<sp/>the<sp/>file<sp/>designated<sp/>by<sp/>filename<sp/>is<sp/>a<sp/>valid<sp/>upload<sp/>file<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal">		</highlight><highlight class="comment">//<sp/>(meaning<sp/>that<sp/>it<sp/>was<sp/>uploaded<sp/>via<sp/>PHP&apos;s<sp/>HTTP<sp/>POST<sp/>upload<sp/>mechanism).<sp/>If<sp/>the<sp/>file<sp/>is<sp/>valid,<sp/>it<sp/>will<sp/>be<sp/>moved<sp/>to<sp/>the<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal">		</highlight><highlight class="comment">//<sp/>filename<sp/>given<sp/>by<sp/>destination.If<sp/>filename<sp/>is<sp/>not<sp/>a<sp/>valid<sp/>upload<sp/>file,<sp/>then<sp/>no<sp/>action<sp/>will<sp/>occur,<sp/>and<sp/>move_uploaded_file()<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal">		</highlight><highlight class="comment">//<sp/>will<sp/>return<sp/>FALSE.<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/>		</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!move_uploaded_file($userfile,<sp/>$upfile))<sp/></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/>		{</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/>			echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;h1&gt;$userfile<sp/>y<sp/>$upfile<sp/>Problem:<sp/>Could<sp/>not<sp/>move<sp/>file<sp/>into<sp/>directory&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/>			<ref refid="results_8php_1a1" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/>		}</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal">	}</highlight></codeline>
+<codeline lineno="308"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="309"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="311"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="312"><highlight class="comment"><sp/>*<sp/>Create<sp/>configuration<sp/>files<sp/>needed<sp/>to<sp/>run<sp/>GRAMM</highlight></codeline>
+<codeline lineno="313"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="314" refid="functions_8php_1a8" refkind="member"><highlight class="normal">function<sp/><ref refid="functions_8php_1a8" kindref="member">create_gr_files</ref>($grid_path,<sp/>$random_value,<sp/>$resolution)</highlight></codeline>
+<codeline lineno="315"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight><highlight class="comment">//<sp/>We<sp/>generate<sp/>rmol.gr,<sp/>rpar.gr<sp/>and<sp/>wlist.gr,<sp/>requiered<sp/>to<sp/>run<sp/>gramm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Writing<sp/>rmol.gr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal">$rmol=</highlight><highlight class="stringliteral">&quot;$grid_path/$random_value/gramm/rmol.gr&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal">$receptor<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;receptor&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal">$ligand<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;ligand&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal">$fp<sp/>=<sp/>fopen(<sp/></highlight><highlight class="stringliteral">&quot;$rmol&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal">	fwrite(<sp/>$fp,<sp/></highlight><highlight class="stringliteral">&quot;#<sp/>Filename<sp/><sp/>Fragment<sp/><sp/>ID<sp/><sp/><sp/><sp/><sp/><sp/>Filename<sp/><sp/>Fragment<sp/><sp/>ID<sp/><sp/><sp/><sp/><sp/>[paral/anti<sp/><sp/>max.ang]\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal">	fwrite(<sp/>$fp,<sp/></highlight><highlight class="stringliteral">&quot;#<sp/>----------------------------------------------------------------------------\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="328"><highlight class="normal">	fwrite(<sp/>$fp,<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="329"><highlight class="normal">	fwrite(<sp/>$fp,<sp/></highlight><highlight class="stringliteral">&quot;$receptor.pdb<sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>receptor<sp/><sp/>$ligand.pdb<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>ligand\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal">fclose(<sp/>$fp<sp/>);</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Writing<sp/>rpar.gr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal">$rpar=</highlight><highlight class="stringliteral">&quot;$grid_path/$random_value/gramm/rpar.gr&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal">$fp1<sp/>=<sp/>fopen(<sp/></highlight><highlight class="stringliteral">&quot;$rpar&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal">	</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="processor_8php_1a0" kindref="member">$resolution</ref>==</highlight><highlight class="stringliteral">&quot;low&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/>	{	</highlight></codeline>
+<codeline lineno="340"><highlight class="normal">		fwrite(<sp/>$fp1,<sp/></highlight><highlight class="stringliteral">&quot;Matching<sp/>mode<sp/>(generic/helix)<sp/>.......................<sp/>mmode=<sp/>generic\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="341"><highlight class="normal">		fwrite(<sp/>$fp1,<sp/></highlight><highlight class="stringliteral">&quot;Grid<sp/>step<sp/>.............................................<sp/>eta=<sp/>6.8\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="342"><highlight class="normal">		fwrite(<sp/>$fp1,<sp/></highlight><highlight class="stringliteral">&quot;Repulsion<sp/>(attraction<sp/>is<sp/>always<sp/>-1)<sp/>....................<sp/>ro=<sp/>6.5.\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="343"><highlight class="normal">		fwrite(<sp/>$fp1,<sp/></highlight><highlight class="stringliteral">&quot;Attraction<sp/>double<sp/>range<sp/>(fraction<sp/>of<sp/>single<sp/>range)<sp/>.....<sp/>fr=<sp/>0.\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="344"><highlight class="normal">		fwrite(<sp/>$fp1,<sp/></highlight><highlight class="stringliteral">&quot;Potential<sp/>range<sp/>type<sp/>(atom_radius,<sp/>grid_step)<sp/>.......<sp/>crang=<sp/>grid_step\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal">		fwrite(<sp/>$fp1,<sp/></highlight><highlight class="stringliteral">&quot;Projection<sp/>(blackwhite,<sp/>gray)<sp/>................<sp/>.......<sp/>ccti=<sp/>gray\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="346"><highlight class="normal">		fwrite(<sp/>$fp1,<sp/></highlight><highlight class="stringliteral">&quot;Representation<sp/>(all,<sp/>hydrophobic)<sp/>....................<sp/>crep=<sp/>all\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="347"><highlight class="normal">		fwrite(<sp/>$fp1,<sp/></highlight><highlight class="stringliteral">&quot;Number<sp/>of<sp/>matches<sp/>to<sp/>output<sp/>..........................<sp/>maxm=<sp/>1000\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="348"><highlight class="normal">		fwrite(<sp/>$fp1,<sp/></highlight><highlight class="stringliteral">&quot;Angle<sp/>for<sp/>rotations,<sp/>deg<sp/>(10,12,15,18,20,30,<sp/>0-no<sp/>rot.)<sp/><sp/>ai=<sp/>20\n&quot;</highlight><highlight class="normal"><sp/>);	</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/>	}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/>	{</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>		fwrite(<sp/>$fp1,<sp/></highlight><highlight class="stringliteral">&quot;Matching<sp/>mode<sp/>(generic/helix)<sp/>.......................<sp/>mmode=<sp/>generic\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/>		fwrite(<sp/>$fp1,<sp/></highlight><highlight class="stringliteral">&quot;Grid<sp/>step<sp/>.............................................<sp/>eta=<sp/>1.7\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/>		fwrite(<sp/>$fp1,<sp/></highlight><highlight class="stringliteral">&quot;Repulsion<sp/>(attraction<sp/>is<sp/>always<sp/>-1)<sp/>....................<sp/>ro=<sp/>30.\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/>		fwrite(<sp/>$fp1,<sp/></highlight><highlight class="stringliteral">&quot;Attraction<sp/>double<sp/>range<sp/>(fraction<sp/>of<sp/>single<sp/>range)<sp/>.....<sp/>fr=<sp/>0.\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/>		fwrite(<sp/>$fp1,<sp/></highlight><highlight class="stringliteral">&quot;Potential<sp/>range<sp/>type<sp/>(atom_radius,<sp/>grid_step)<sp/>.......<sp/>crang=<sp/>atom_radius\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>		fwrite(<sp/>$fp1,<sp/></highlight><highlight class="stringliteral">&quot;Projection<sp/>(blackwhite,<sp/>gray)<sp/>................<sp/>.......<sp/>ccti=<sp/>gray\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>		fwrite(<sp/>$fp1,<sp/></highlight><highlight class="stringliteral">&quot;Representation<sp/>(all,<sp/>hydrophobic)<sp/>....................<sp/>crep=<sp/>all\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/>		fwrite(<sp/>$fp1,<sp/></highlight><highlight class="stringliteral">&quot;Number<sp/>of<sp/>matches<sp/>to<sp/>output<sp/>..........................<sp/>maxm=<sp/>1000\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/>		fwrite(<sp/>$fp1,<sp/></highlight><highlight class="stringliteral">&quot;Angle<sp/>for<sp/>rotations,<sp/>deg<sp/>(10,12,15,18,20,30,<sp/>0-no<sp/>rot.)<sp/><sp/>ai=<sp/>10\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/>	<sp/>}</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal">fclose(<sp/>$fp1<sp/>);</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Writing<sp/>wlist.gr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal">$wlist=</highlight><highlight class="stringliteral">&quot;$grid_path/$random_value/gramm/wlist.gr&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal">$fp2<sp/>=<sp/>fopen(<sp/></highlight><highlight class="stringliteral">&quot;$wlist&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal">	fwrite(<sp/>$fp2,<sp/></highlight><highlight class="stringliteral">&quot;#<sp/>File_of_predictions<sp/><sp/><sp/>First_match<sp/><sp/><sp/>Last_match<sp/><sp/><sp/>separate/joint<sp/><sp/>+init_lig\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="370"><highlight class="normal">	fwrite(<sp/>$fp2,<sp/></highlight><highlight class="stringliteral">&quot;#<sp/>----------------------------------------------------------------------------\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="371"><highlight class="normal">	fwrite(<sp/>$fp2,<sp/></highlight><highlight class="stringliteral">&quot;$receptor-$ligand.res	1<sp/><sp/><sp/>10	separ	no\n&quot;</highlight><highlight class="normal"><sp/>);	</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal">fclose(<sp/>$fp2<sp/>);</highlight></codeline>
+<codeline lineno="374"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="376"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="377"><highlight class="comment"><sp/>*<sp/>Create<sp/>JDL<sp/>description<sp/>of<sp/>the<sp/>job<sp/>to<sp/>be<sp/>submitted<sp/>to<sp/>the<sp/>Grid</highlight></codeline>
+<codeline lineno="378"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="379" refid="functions_8php_1a9" refkind="member"><highlight class="normal">function<sp/><ref refid="functions_8php_1a9" kindref="member">create_jdl_file</ref>($grid_path,<sp/>$random_value)</highlight></codeline>
+<codeline lineno="380"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight><highlight class="comment">//<sp/>JDL<sp/>file<sp/>to<sp/>run<sp/>the<sp/>middleware<sp/>command<sp/>edg-job-submit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal">$new_jdl=</highlight><highlight class="stringliteral">&quot;$grid_path/$random_value/gramm/file.jdl&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight></codeline>
+<codeline lineno="384"><highlight class="normal">$fp<sp/>=<sp/>fopen(<sp/></highlight><highlight class="stringliteral">&quot;$new_jdl&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal">	fwrite(<sp/>$fp,<sp/></highlight><highlight class="stringliteral">&quot;Type<sp/>=<sp/>\&quot;Job\&quot;;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="387"><highlight class="normal">	fwrite(<sp/>$fp,<sp/></highlight><highlight class="stringliteral">&quot;JobType<sp/>=<sp/>\&quot;normal\&quot;;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="388"><highlight class="normal">	fwrite(<sp/>$fp,<sp/></highlight><highlight class="stringliteral">&quot;VirtualOrganisation=<sp/>\&quot;biomed\&quot;;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="389"><highlight class="normal">	fwrite(<sp/>$fp,<sp/></highlight><highlight class="stringliteral">&quot;Executable<sp/>=<sp/>\&quot;gramm.sh\&quot;;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="390"><highlight class="normal">	fwrite(<sp/>$fp,<sp/></highlight><highlight class="stringliteral">&quot;StdOutput<sp/>=<sp/>\&quot;gramm.out\&quot;;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="391"><highlight class="normal">	fwrite(<sp/>$fp,<sp/></highlight><highlight class="stringliteral">&quot;StdError<sp/>=<sp/>\&quot;gramm.err\&quot;;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="392"><highlight class="normal">	fwrite(<sp/>$fp,<sp/></highlight><highlight class="stringliteral">&quot;InputSandbox<sp/>=<sp/>{\&quot;$grid_path/$random_value/gramm/gramm.sh\&quot;,\&quot;$grid_path/$random_value/gramm/gramm-go.tar.gz\&quot;};\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="393"><highlight class="normal">	fwrite(<sp/>$fp,<sp/></highlight><highlight class="stringliteral">&quot;OutputSandbox<sp/>=<sp/>{\&quot;gridgramm.out\&quot;,\&quot;gridgramm.err\&quot;,\&quot;gramm-come.tar.gz\&quot;};\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal">fclose(<sp/>$fp<sp/>);</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="399"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="400"><highlight class="comment"><sp/>*<sp/>Extract<sp/>results<sp/>gathered<sp/>from<sp/>the<sp/>Grid</highlight></codeline>
+<codeline lineno="401"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="402" refid="functions_8php_1a10" refkind="member"><highlight class="normal">function<sp/><ref refid="functions_8php_1a10" kindref="member">unpack_results</ref>()</highlight></codeline>
+<codeline lineno="403"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"></highlight><highlight class="comment">//<sp/>We<sp/>search<sp/>the<sp/>directory<sp/>with<sp/>the<sp/>user<sp/>results!!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="405"><highlight class="normal"></highlight></codeline>
+<codeline lineno="406"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>results<sp/>directory<sp/>generated<sp/>by<sp/>the<sp/>grid<sp/>middleware<sp/>starts<sp/>with<sp/>the<sp/>grid<sp/>user<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="407"><highlight class="normal">$dir<sp/>=<sp/>dir(</highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">);	</highlight></codeline>
+<codeline lineno="408"><highlight class="normal">$dir-&gt;rewind();</highlight></codeline>
+<codeline lineno="409"><highlight class="normal">	</highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>($file<sp/>=<sp/>$dir-&gt;read())</highlight></codeline>
+<codeline lineno="410"><highlight class="normal">	{	</highlight></codeline>
+<codeline lineno="411"><highlight class="normal">		</highlight><highlight class="comment">//<sp/>To<sp/>change:<sp/>$user</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="412"><highlight class="normal">		</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>substr($file,<sp/>0,<sp/>5)==</highlight><highlight class="stringliteral">&quot;$server_user&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="413"><highlight class="normal">		{</highlight></codeline>
+<codeline lineno="414"><highlight class="normal">			</highlight><highlight class="comment">//<sp/>We<sp/>extract<sp/>the<sp/>gramm<sp/>results</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="415"><highlight class="normal">			exec(</highlight><highlight class="stringliteral">&quot;tar<sp/>-zxvf<sp/>$file/gramm-come.tar.gz<sp/>-C<sp/>.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="416"><highlight class="normal">			$aux=</highlight><highlight class="stringliteral">&quot;OK&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="417"><highlight class="normal">			</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>$aux;</highlight></codeline>
+<codeline lineno="418"><highlight class="normal">		}</highlight></codeline>
+<codeline lineno="419"><highlight class="normal">	}</highlight></codeline>
+<codeline lineno="420"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="421"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="422"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="423"><highlight class="comment"><sp/>*<sp/>Show<sp/>the<sp/>results<sp/>to<sp/>the<sp/>user</highlight></codeline>
+<codeline lineno="424"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="425" refid="functions_8php_1a11" refkind="member"><highlight class="normal">function<sp/><ref refid="functions_8php_1a11" kindref="member">show_results</ref>()</highlight></codeline>
+<codeline lineno="426"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="427"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;center&gt;&lt;h1&gt;GridGramm<sp/>results:&lt;br&gt;&lt;/h1&gt;&lt;center&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="428"><highlight class="normal">	echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;hr&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"></highlight></codeline>
+<codeline lineno="430"><highlight class="normal">	echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;center&gt;&lt;table<sp/>border=2&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="431"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><sp/><sp/>	$dir<sp/>=<sp/>dir(</highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="433"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="434"><highlight class="normal">	$dir-&gt;rewind();</highlight></codeline>
+<codeline lineno="435"><highlight class="normal">	</highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>($file<sp/>=<sp/>$dir-&gt;read())</highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/>	{	</highlight></codeline>
+<codeline lineno="437"><highlight class="normal">		</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>$file==</highlight><highlight class="stringliteral">&quot;receptor.pdb&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="438"><highlight class="normal">		{</highlight></codeline>
+<codeline lineno="439"><highlight class="normal">			echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;tr&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="440"><highlight class="normal">			echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;td&gt;Structure<sp/>of<sp/>your<sp/>receptor<sp/>molecule.&lt;/td&gt;&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="441"><highlight class="normal">			echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;td&gt;&lt;a<sp/>href=./$file&gt;$file&lt;/a&gt;&lt;/td&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="442"><highlight class="normal">			echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/tr&gt;&quot;</highlight><highlight class="normal">;	</highlight></codeline>
+<codeline lineno="443"><highlight class="normal">		}</highlight></codeline>
+<codeline lineno="444"><highlight class="normal">	}</highlight></codeline>
+<codeline lineno="445"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="446"><highlight class="normal">	$dir-&gt;rewind();</highlight></codeline>
+<codeline lineno="447"><highlight class="normal">	</highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>($file<sp/>=<sp/>$dir-&gt;read())</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/>	{	</highlight></codeline>
+<codeline lineno="449"><highlight class="normal">		</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>$file==</highlight><highlight class="stringliteral">&quot;ligand.pdb&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="450"><highlight class="normal">		{</highlight></codeline>
+<codeline lineno="451"><highlight class="normal">			echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;tr&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="452"><highlight class="normal">			echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;td&gt;Structure<sp/>of<sp/>your<sp/>ligand<sp/>molecule.&lt;/td&gt;&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="453"><highlight class="normal">			echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;td&gt;&lt;a<sp/>href=./$file&gt;$file&lt;/a&gt;&lt;/td&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="454"><highlight class="normal">			echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/tr&gt;&quot;</highlight><highlight class="normal">;	</highlight></codeline>
+<codeline lineno="455"><highlight class="normal">		}</highlight></codeline>
+<codeline lineno="456"><highlight class="normal">	}</highlight></codeline>
+<codeline lineno="457"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"></highlight></codeline>
+<codeline lineno="459"><highlight class="normal">	$dir-&gt;rewind();</highlight></codeline>
+<codeline lineno="460"><highlight class="normal">	</highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>($file<sp/>=<sp/>$dir-&gt;read())</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"><sp/><sp/>	{</highlight></codeline>
+<codeline lineno="462"><highlight class="normal">		</highlight><highlight class="comment">//<sp/>Regular<sp/>expression<sp/>to<sp/>show<sp/>the<sp/>receptor-ligand<sp/>files</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="463"><highlight class="normal">		</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>ereg(</highlight><highlight class="stringliteral">&quot;^receptor-ligand+_[0-9]+.pdb$&quot;</highlight><highlight class="normal">,<sp/>$file))</highlight></codeline>
+<codeline lineno="464"><highlight class="normal">		{</highlight></codeline>
+<codeline lineno="465"><highlight class="normal">			$filename<sp/>=<sp/>basename($file,<sp/></highlight><highlight class="stringliteral">&quot;.pdb&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="466"><highlight class="normal">			echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;tr&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="467"><highlight class="normal">			echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;td&gt;Structure<sp/>of<sp/>the<sp/>receptor-ligand<sp/>complex&lt;/td&gt;&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="468"><highlight class="normal">			echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;td&gt;&lt;a<sp/>href=\&quot;$filename.pdb\&quot;&gt;$filename&lt;/a&gt;&lt;/td&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="469"><highlight class="normal">			echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/tr&gt;&quot;</highlight><highlight class="normal">;	</highlight></codeline>
+<codeline lineno="470"><highlight class="normal">		}</highlight></codeline>
+<codeline lineno="471"><highlight class="normal">	}</highlight></codeline>
+<codeline lineno="472"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="473"><highlight class="normal">	$dir-&gt;rewind();</highlight></codeline>
+<codeline lineno="474"><highlight class="normal">	</highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>($file<sp/>=<sp/>$dir-&gt;read())</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/>	{</highlight></codeline>
+<codeline lineno="476"><highlight class="normal">		</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>$file==</highlight><highlight class="stringliteral">&quot;receptor-ligand.res&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="477"><highlight class="normal">		{</highlight></codeline>
+<codeline lineno="478"><highlight class="normal">			echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;tr&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="479"><highlight class="normal">			echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;td&gt;Listing<sp/>of<sp/>the<sp/>1000<sp/>best<sp/>scoring<sp/>docks&lt;/td&gt;&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="480"><highlight class="normal">			echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;td<sp/>colspan=\&quot;4\&quot;&gt;&lt;a<sp/>href=./$file&gt;$file&lt;/a&gt;&lt;/td&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="481"><highlight class="normal">			echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/tr&gt;&quot;</highlight><highlight class="normal">;	</highlight></codeline>
+<codeline lineno="482"><highlight class="normal">		}</highlight></codeline>
+<codeline lineno="483"><highlight class="normal">	}</highlight></codeline>
+<codeline lineno="484"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="485"><highlight class="normal">	$dir-&gt;rewind();</highlight></codeline>
+<codeline lineno="486"><highlight class="normal">	</highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>($file<sp/>=<sp/>$dir-&gt;read())</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/>	{</highlight></codeline>
+<codeline lineno="488"><highlight class="normal">		</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>$file==</highlight><highlight class="stringliteral">&quot;gramm.log&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="489"><highlight class="normal">			{</highlight></codeline>
+<codeline lineno="490"><highlight class="normal">				echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;tr&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="491"><highlight class="normal">				echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;td&gt;Log<sp/>output<sp/>produced<sp/>by<sp/>GRAMM&lt;/td&gt;&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="492"><highlight class="normal">				echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;td<sp/>colspan=\&quot;4\&quot;&gt;&lt;a<sp/>href=./$file&gt;$file&lt;/a&gt;&lt;/td&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="493"><highlight class="normal">				echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/tr&gt;&quot;</highlight><highlight class="normal">;	</highlight></codeline>
+<codeline lineno="494"><highlight class="normal">			}</highlight></codeline>
+<codeline lineno="495"><highlight class="normal">	}</highlight></codeline>
+<codeline lineno="496"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="497"><highlight class="normal">	$dir-&gt;rewind();</highlight></codeline>
+<codeline lineno="498"><highlight class="normal">	</highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>($file<sp/>=<sp/>$dir-&gt;read())</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/>	{</highlight></codeline>
+<codeline lineno="500"><highlight class="normal">		</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>$file==</highlight><highlight class="stringliteral">&quot;rpar.gr&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="501"><highlight class="normal">			{</highlight></codeline>
+<codeline lineno="502"><highlight class="normal">				echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;tr&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="503"><highlight class="normal">				echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;td&gt;Parameters<sp/>used<sp/>for<sp/>the<sp/>docking<sp/>procedure&lt;/td&gt;&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="504"><highlight class="normal">				echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;td<sp/>colspan=\&quot;4\&quot;&gt;&lt;a<sp/>href=./$file&gt;$file&lt;/a&gt;&lt;/td&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="505"><highlight class="normal">				echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/tr&gt;&quot;</highlight><highlight class="normal">;	</highlight></codeline>
+<codeline lineno="506"><highlight class="normal">			}</highlight></codeline>
+<codeline lineno="507"><highlight class="normal">	}</highlight></codeline>
+<codeline lineno="508"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="509"><highlight class="normal">	$dir-&gt;rewind();</highlight></codeline>
+<codeline lineno="510"><highlight class="normal">	</highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>($file<sp/>=<sp/>$dir-&gt;read())</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"><sp/><sp/>	{</highlight></codeline>
+<codeline lineno="512"><highlight class="normal">		</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>$file==</highlight><highlight class="stringliteral">&quot;rmol.gr&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="513"><highlight class="normal">			{</highlight></codeline>
+<codeline lineno="514"><highlight class="normal">				echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;tr&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="515"><highlight class="normal">				echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;td&gt;Description<sp/>of<sp/>the<sp/>molecules.&lt;/td&gt;&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="516"><highlight class="normal">				echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;td<sp/>colspan=\&quot;4\&quot;&gt;&lt;a<sp/>href=./$file&gt;$file&lt;/a&gt;&lt;/td&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="517"><highlight class="normal">				echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/tr&gt;&quot;</highlight><highlight class="normal">;	</highlight></codeline>
+<codeline lineno="518"><highlight class="normal">			}</highlight></codeline>
+<codeline lineno="519"><highlight class="normal">	}</highlight></codeline>
+<codeline lineno="520"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="521"><highlight class="normal">	$dir-&gt;rewind();</highlight></codeline>
+<codeline lineno="522"><highlight class="normal">	</highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>($file<sp/>=<sp/>$dir-&gt;read())</highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/>	{</highlight></codeline>
+<codeline lineno="524"><highlight class="normal">		</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>$file==</highlight><highlight class="stringliteral">&quot;wlist.gr&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="525"><highlight class="normal">			{</highlight></codeline>
+<codeline lineno="526"><highlight class="normal">				echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;tr&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="527"><highlight class="normal">				echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;td&gt;Config<sp/>file<sp/>to<sp/>set<sp/>the<sp/>results&lt;/td&gt;&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="528"><highlight class="normal">				echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;td<sp/>colspan=\&quot;4\&quot;&gt;&lt;a<sp/>href=./$file&gt;$file&lt;/a&gt;&lt;/td&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="529"><highlight class="normal">				echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/tr&gt;&quot;</highlight><highlight class="normal">;	</highlight></codeline>
+<codeline lineno="530"><highlight class="normal">			}</highlight></codeline>
+<codeline lineno="531"><highlight class="normal">	}</highlight></codeline>
+<codeline lineno="532"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="533"><highlight class="normal">	$dir-&gt;close();</highlight></codeline>
+<codeline lineno="534"><highlight class="normal">	echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/table&gt;&lt;/center&gt;&quot;</highlight><highlight class="normal">;	</highlight></codeline>
+<codeline lineno="535"><highlight class="normal">	echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;hr&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="536"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="537"><highlight class="normal"></highlight></codeline>
+<codeline lineno="538"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="/root/GridGRAMM/script/functions.php"/>
+  </compounddef>
+</doxygen>

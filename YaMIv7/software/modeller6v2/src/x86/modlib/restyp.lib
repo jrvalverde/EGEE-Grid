@@ -1,0 +1,175 @@
+# Version: August 13, 1993
+#
+# LIBRARY OF RESIDUE TYPES AND RESIDUE PATCHES
+#
+# MODELLER 1.1, Copyright Andrej Sali
+#
+#
+# Several residue naming schemes exist: 
+# 
+#   (1) Three-letter Brookhaven Protein Data Bank, extended.
+#   (2) Single-letter Brookhaven Protein Data Bank, extended.
+#   (3) Four letter CHARMM, extended.
+# 
+# 
+# This file gives:
+# 
+#   (1) The residue names in those three sets.
+#   (2) Equivalences between the three sets.
+# 
+# Each residue type may have several PDB-3 names, but only one PDB-1 
+# name and one CHARMM name. The naming schemes are case sensitive. If
+# a certain existing CHARMM residue type does not have an equivalent 
+# in the PDB-1/3 lists, its name is invented, or the name of a similar 
+# residue is used. In contrast, if an existing PDB residue type does 
+# not occur in the CHARMM list, its name is kept undefined (####) 
+# so that the lack of the CHARMM topology entry is properly flagged. 
+# This means that a certain residue's name may appear several times 
+# within the same scheme (for example, CHARMM charged and neutral
+# species are not distinguished in the PDB list).
+#
+# 
+#
+#     PDB-3               PDB-1 CHARMM    DESCRIPTION
+#-----------------------------------------------------------------------------
+  1 | ALA                 | A | ALA  | alanine
+  2 | CYS CYS CSH         | C | CYS  | cysteine
+  3 | ASP                 | D | ASP  | aspartic acid, +1
+  4 | GLU                 | E | GLU  | glutamic acid, +1
+  5 | PHE                 | F | PHE  | phenylalanine
+  6 | GLY                 | G | GLY  | glycine
+  7 | HIS                 | H | HSD  | histidine, neutral, proton on ND1
+  8 | ILE                 | I | ILE  | isoleucine
+  9 | LYS                 | K | LYS  | lysine, +1
+ 10 | LEU                 | L | LEU  | leucine
+ 11 | MET                 | M | MET  | methionine
+ 12 | ASN                 | N | ASN  | asparagine
+ 13 | PRO PR0 PRZ         | P | PRO  | proline
+ 14 | GLN                 | Q | GLN  | glutamine
+ 15 | ARG                 | R | ARG  | arginine, +1
+ 16 | SER                 | S | SER  | serine
+ 17 | THR                 | T | THR  | threonine
+ 18 | VAL                 | V | VAL  | valine
+ 19 | TRP                 | W | TRP  | tryptophan
+ 20 | TYR                 | Y | TYR  | tryrosine
+ 21 | GAP                 | - | GAP  | an alignment gap
+ 22 | ASX                 | B | ASX  | ASP/ASN ambiguous
+ 23 | GLX                 | Z | GLX  | GLU/GLN ambiguous
+ 24 | UNK                 | X | UNK  | unknown residue type
+ 25 | PCA PGA             | p | #### | pyrrolidine carboxylic acid (pyroglutamate)
+ 26 | HSE                 | 6 | HSE  | histidine, neutral, proton on NE2
+ 27 | HSP                 | 7 | HSP  | histidine, +1 (proton on NE2 and ND1)
+ 28 | HOH H2O OH2 MOH WAT | w | TIP3 | water
+ 29 | CAL CA              | 3 | CAL  | calcium ion, +2
+ 30 | ZN2                 | z | ZN2  | zinc, +2
+ 31 | HEM                 | h | HEME | heme ligand
+ 32 | NTR                 | n | NTER | patch for standard N-terminus, +1
+ 33 | GLP                 | # | GLYP | patch for glycine N-terminus
+ 34 | PRP                 | # | PROP | patch for proline N-terminus
+ 35 | ACE                 | e | ACE  | patch for acetylated N-terminus
+ 36 | TER                 | c | CTER | patch for standard C-terminus
+ 37 | CT1                 | # | CT1  | patch for methylated C-terminus from methyl acetate
+ 38 | CT2                 | # | CT2  | patch for amidated C-terminus
+ 39 | CT3                 | # | CT3  | patch for N-Methylamide C-terminus
+ 40 | ASP                 | # | ASPP | protonated aspartate, proton on OD2
+ 41 | GLU                 | # | GLUP | protonated glutamate, proton on OE2
+ 42 | LNK                 | # | LINK | patch for linkage of images or segments
+ 43 | DIS                 | # | DISU | patch for disulfide
+ 44 | HS2                 | # | HS2  | patch for neutr His, + from ND1 to NE2
+ 45 | O2                  | # | O2   | O2 ligand for heme
+ 46 | CO                  | # | CO   | CO ligand for heme
+ 47 | FHM                 | # | FHEM | patch for heme
+ 48 | PHM                 | # | PHEM | patch for heme
+ 49 | PLO                 | # | PLO2 | patch for heme
+ 50 | LIG                 | # | PLIG | patch for heme
+ 51 | LWA                 | # | PLWA | patch for heme
+ 52 | CYS CSS CYX         | C | CSS  | cystine
+ 53 | ABU                 | g | #### | amino-butyric acid
+ 54 | ACD                 | d | #### | acidic unknown
+ 55 | ALB                 | l | #### | beta-alanine
+ 56 | ALI                 | a | #### | aliphatic unknown
+ 57 | ARO                 | r | #### | aromatic unknown
+ 58 | BAS                 | b | #### | basic unknown
+ 59 | HYP                 | # | #### | hydroxyproline
+ 60 | SAR                 | s | #### | sarcosine
+ 61 | FOR                 | f | #### | formyl
+ 62 | MSE                 | M | #### | selenomethionine
+ 63 | MEX                 | C | #### | cysteine bridged with beta-mercaptoethanol
+ 64 | SO4                 | # | SO4  | sulphate ion -2
+ 65 | ABU                 | # | #### | similar to Cys, but SG->CG
+ 66 | ACP                 | # | ACP  | acetylated N-terminus for proline 
+ 67 | BRK                 | / | BRK  | chain break
+ 68 | HIS                 | H | HIS  | histidine for TOPH19
+ 69 | HIS                 | H | HSC  | doubly protonated HIS for TOPH19
+ 70 | PEN                 | # | PEN  | Penicillamine for TOPH19
+ 71 | FRM                 | # | FORM | for TOPH19
+ 72 | AMN                 | # | AMN  | for TOPH19
+ 73 | CBX                 | # | CBX  | for TOPH19
+ 74 | ETH                 | # | ETH  | for TOPH19
+ 75 | OHH                 | # | OH2  | TIPS3P water model for TOPH19
+ 76 | COH                 | # | COH  | for TOPH19
+ 77 | ST2                 | # | ST2  | for TOPH19
+ 78 | LTD                 | # | LTOD | patch for TOPH19
+ 79 | LG1                 | # | LIG1 | cyclic patch
+ 80 | LG2                 | # | LIG2 | cyclic patch
+ 81 | LG3                 | # | LIG3 | cyclic patch
+ 82 | BLK                 | . | BLK  | BLOCK, place holder
+ 83 | 5PH                 | # | 5PHO | 5'terminal PHOSPHATE patch
+ 84 | 3TE                 | # | 3TER | 3'terminal HYDROXYL patch, from MeOH
+ 85 | 3PH                 | # | 3PHO | 3'terminal PHOSPHATE patch
+ 86 | 9MG                 | # | 9MG  | 9-Methyl guanine patch
+ 87 | 9EG                 | # | 9EG  | 9-Ethyl guanine patch
+ 88 | 9MA                 | # | 9MA  | 9-Methyl adenine patch
+ 89 | 1MC                 | # | 1MC  | 1-Methyl Cytosine patch
+ 90 | 1MT                 | # | 1MT  | 1-Methyl Thymine patch
+ 91 | NAG                 | 1 | NAG  | N-ACETYL-D-GLUCOSAMINE
+ 92 | MAN                 | 2 | MAN  | ALPHA-D-MANNOSE
+ 93 | MN                  | 4 | MN   | manganese ion, +2
+ 94 | MYR                 | 5 | MYR  | MYRISTATE
+ 95 | GDP                 | x | GDP  | GDP
+ 96 | GTP                 | y | GTP  | GTP
+ 97 | LN2                 | # | LNK2 | NH3 Lys - CONH Gln (sc to sc) link patch
+ 98 | LN3                 | # | LNK3 | CO to NH3 Lys (backb to sdch) link patch
+ 99 | LN4                 | # | LNK4 | COOH to NH sdch to backb link patch
+100 | IGL                 | q | IGLN | iso-glutamin
+101 | 156                 | i | 0156 | 0156
+102 | ATP                 | @ | ATP  | ATP
+103 | MG                  | $ | MG   | magnesium ion
+104 | K                   | % | K    | potassium ion
+105 | 25P                 | # | 25P1 | patch to convert a 3'-5' phosphodiester
+106 | 25P                 | # | 25P2 | patch to convert a 3'-5' phosphodiester
+107 | 5DP                 | # | 5DP  | patch to create 5' diphosphate on nucleotides, jjp1/adm jr.
+108 | 5MC                 | # | 5MC1 | Patch to generate 5-methylcytosine (base only)
+109 | 5MC                 | # | 5MC2 | Patch to convert cytosine to 5-methylcytosine
+110 | 5ME                 | # | 5MET | 5'-ribose METHYL patch
+111 | 5TE                 | # | 5TER | 5'-terminal HYDROXYL patch, from MeOH
+112 | ADE                 | # | ADE  | 
+113 | ADP                 | # | ADP  | adenosine diphosphate, jjp1/adm jr.
+114 | CYT                 | # | CYT  | 
+115 | DEO                 | # | DEO1 | Patch to make DEOXYribose in PYRIMIDINES
+116 | DEO                 | # | DEO2 | Patch to make DEOXYribose in PURINES
+117 | DEO                 | # | DEOT | DEOXYRIBOSE, Wilma Olsen's dihedral model
+118 | DMP                 | # | DMPA | Dimethylphosphate
+119 | DUM                 | # | DUM  | DUMMY ATOM
+120 | GUA                 | # | GUA  | 
+121 | INO                 | # | INO1 | patch to convert guanine to inosine
+122 | MP_                 | # | MP_0 | Methylphosphate, neutral
+123 | MP_                 | # | MP_1 | Methylphosphate, anionic
+124 | MP_                 | # | MP_2 | Methylphosphate, dianionic 
+125 | NAD                 | # | NAD  | oxidized nicotinamide adenine dinucleotide, jjp1/adm jr.
+126 | NAD                 | # | NADH | reduced nicotinamide adenine dinucleotide, jjp1/adm jr.
+127 | NIC                 | # | NIC  | oxidized nicotinamide, jjp1/adm jr.
+128 | NIC                 | # | NICH | reduced nicotinamide, jjp1/adm jr.
+129 | PPI                 | # | PPI1 | Inorganic phosphate, jjp1/adm jr.
+130 | PUR                 | # | PURA | Patch to generate ADENINE (purine)         
+131 | PUR                 | # | PURG | Patch to generate GUANINE (purine)         
+132 | PYR                 | # | PYRC | Patch to generate CYTOSINE (pyrimidine)
+133 | PYR                 | # | PYRU | Patch to generate URACIL or THYMINE (pyrimidine)
+134 | RIB                 | # | RIBT | RIBOSE, Wilma Olsen's dihedral model
+135 | SOD                 | # | SOD  | Sodium Ion
+136 | THY                 | # | THY  | 
+137 | TP1                 | # | TP1  | convert tyrosine to monoanionic phosphotyrosine
+138 | TP1                 | # | TP1A | patch to convert tyrosine to
+139 | TP2                 | # | TP2  | patch to convert tyrosine to
+140 | TP2                 | # | TP2A | patch to convert tyrosine to
+141 | URA                 | # | URA  | 

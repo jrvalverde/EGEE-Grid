@@ -1,0 +1,27 @@
+# Example for: PICK_RESTRAINTS, CONDENSE_RESTRAINTS
+
+# This will pick only restraints that include at least one
+# CA atom and write them to a file.
+
+SET OUTPUT_CONTROL = 1 1 1 1 1
+
+READ_TOPOLOGY   FILE = '$(LIB)/top_heav.lib'
+READ_PARAMETERS FILE = '$(LIB)/par.lib'
+READ_MODEL FILE = '1fas'
+SEQUENCE_TO_ALI ATOM_FILES = '1fas', ALIGN_CODES = '1fas'
+SEQUENCE_TO_ALI ADD_SEQUENCE = on, ATOM_FILES = ATOM_FILES '1fas.ini', ;
+                ALIGN_CODES = ALIGN_CODES '1fas-ini'
+GENERATE_TOPOLOGY SEQUENCE = '1fas-ini'
+TRANSFER_XYZ
+BUILD_MODEL INITIALIZE_XYZ = off
+
+MAKE_RESTRAINTS RESTRAINT_TYPE = 'stereo'
+ENERGY
+
+PICK_ATOMS ATOM_TYPES = 'CA N C O'
+PICK_RESTRAINTS ADD_RESTRAINTS = off, RESTRAINT_SEL_ATOMS = 1
+# Delete the unselected restraints from memory:
+CONDENSE_RESTRAINTS
+ENERGY
+
+WRITE_RESTRAINTS FILE = '1fas.rsr'

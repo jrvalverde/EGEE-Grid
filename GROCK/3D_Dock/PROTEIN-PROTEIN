@@ -1,0 +1,14 @@
+../scripts/preprocess-pdb.perl -nowarn -pdb probe.pdb
+../scripts/preprocess-pdb.perl -nowarn -pdb target.pdb
+psize=`grep "^ATOM " probe.parsed | wc -l`
+tsize=`grep "^ATOM " target.parsed | wc -l`
+if [ $psize -gt $tsize ] ; then
+    larger=probe
+    smaller=target
+else
+    larger=target
+    smaller=probe
+fi
+../bin/ftdock -static $larger.parsed -mobile $smaller.parsed > 3ddock_output 
+cp ../progs/i90_p05d4.5_2dp.matrix best.matrix
+../bin/rpscore > rpscore_output

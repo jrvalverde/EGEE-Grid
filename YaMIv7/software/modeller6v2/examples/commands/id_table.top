@@ -1,0 +1,21 @@
+# Example for: ID_TABLE, SEQUENCE_COMPARISON, PRINCIPAL_COMPONENTS, DENDROGRAM
+
+# Pairwise sequence identity between sequences in the alignment.
+
+# Read all entries in this alignment:
+READ_ALIGNMENT FILE = 'toxin.ali'
+
+# Calculate pairwise sequence identities:
+ID_TABLE MATRIX_FILE = 'toxin_id.mat'
+
+# Calculate pairwise sequence similarities:
+SET RR_FILE = '$(LIB)/as1.sim.mat', MAX_GAPS_MATCH = 1
+READ_MODEL FILE = '2ctx', MODEL_SEGMENT = '1:' '71:'
+SEQUENCE_COMPARISON MATRIX_FILE = 'toxin.mat', VARIABILITY_FILE = 'toxin.var'
+WRITE_MODEL FILE = '2ctx.var'
+
+# Do principal components clustering using sequence similarities:
+PRINCIPAL_COMPONENTS MATRIX_FILE = 'toxin.mat', FILE = 'toxin.princ'
+
+# Dendrogram in the log file:
+DENDROGRAM

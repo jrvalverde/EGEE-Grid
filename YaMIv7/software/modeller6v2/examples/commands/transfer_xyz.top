@@ -1,0 +1,23 @@
+# Example for: TRANSFER_XYZ
+
+# This will build a model for a given sequence by copying 
+# coordinates from aligned templates. When the templates
+# have the same sequence as the target, this procedure ensures 
+# that the new model corresponds to the MODELLER topology library.
+
+READ_TOPOLOGY   FILE = '$(LIB)/top_heav.lib'
+READ_PARAMETERS FILE = '$(LIB)/par.lib'
+
+# Read the sequence and calculate its topology:
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = '2ctx' '1nbt'
+MALIGN3D FIT = off
+SET ADD_SEQUENCE = on
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = ALIGN_CODES '1fas'
+GENERATE_TOPOLOGY SEQUENCE = '1fas'
+# Assign the average of the equivalent template coordinates to MODEL:
+TRANSFER_XYZ
+# Get the remaining undefined coordinates from internal coordinates:
+BUILD_MODEL INITIALIZE_XYZ = off
+
+# Write the fonal MODEL coordinates to a PDB file:
+WRITE_MODEL FILE = '1fas.ini'

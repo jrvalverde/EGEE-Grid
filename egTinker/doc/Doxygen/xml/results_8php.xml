@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.3.6">
+  <compounddef id="results_8php" kind="file">
+    <compoundname>results.php</compoundname>
+    <innernamespace refid="namespaceGridGRAMM">GridGRAMM</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="results_8php_1a0" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$current_directory</definition>
+        <argsstring></argsstring>
+        <name>$current_directory</name>
+        <initializer>getcwd()</initializer>
+        <briefdescription>
+<para>Current directory. </para>        </briefdescription>
+        <detaileddescription>
+<para>The &apos;child&apos; process needs to know were is the working directory, to generate there the middleware output files</para><para>string $current_directory </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/results.php" line="36" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="results_8php_1a1" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>exit</definition>
+        <argsstring></argsstring>
+        <name>exit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/results.php" line="50" bodystart="50" bodyend="-1"/>
+        <referencedby refid="functions_8php_1a4" compoundref="functions_8php" startline="145" endline="196">get_user_data</referencedby>
+        <referencedby refid="functions_8php_1a1" compoundref="functions_8php" startline="94" endline="107">go_to_work</referencedby>
+        <referencedby refid="functions_8php_1a0" compoundref="functions_8php" startline="41" endline="77">install_gramm</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="results_8php_1a2" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$status</definition>
+        <argsstring></argsstring>
+        <name>$status</name>
+        <initializer>check_status()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/results.php" line="76" bodystart="76" bodyend="-1"/>
+        <referencedby refid="classGrid_1a19" compoundref="grid_8php" startline="964" endline="971">Grid::destroy</referencedby>
+        <referencedby refid="classGrid_1a21" compoundref="grid_8php" startline="995" endline="1008">Grid::destroy_session</referencedby>
+        <referencedby refid="classGrid_1a18" compoundref="grid_8php" startline="908" endline="945">Grid::initialize</referencedby>
+        <referencedby refid="classGrid_1a23" compoundref="grid_8php" startline="1057" endline="1083">Grid::job_get_id</referencedby>
+        <referencedby refid="classGrid_1a20" compoundref="grid_8php" startline="978" endline="990">Grid::new_session</referencedby>
+        <referencedby refid="util_8php_1a6" compoundref="util_8php" startline="207" endline="223">ssh_copy</referencedby>
+        <referencedby refid="classSExec_1a4" compoundref="ssh-files_8php" startline="177" endline="195">SExec::ssh_copy</referencedby>
+        <referencedby refid="util_8php_1a7" compoundref="util_8php" startline="225" endline="333">ssh_open</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;!DOCTYPE<sp/>HTML<sp/>PUBLIC<sp/></highlight><highlight class="stringliteral">&quot;-//W3C//DTD<sp/>HTML<sp/>4.01<sp/>Transitional//EN&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;http://www.w3.org/TR/html4/loose.dtd&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal">&lt;html&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">&lt;head&gt;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;meta<sp/>http-equiv=</highlight><highlight class="stringliteral">&quot;Content-Type&quot;</highlight><highlight class="normal"><sp/>content=</highlight><highlight class="stringliteral">&quot;text/html;<sp/>charset=UTF-8&quot;</highlight><highlight class="normal"><sp/>&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;meta<sp/>http-equiv=</highlight><highlight class="stringliteral">&quot;Refresh&quot;</highlight><highlight class="normal"><sp/>content=</highlight><highlight class="stringliteral">&quot;15;<sp/>url=./index.php&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;title&gt;Results&lt;/title&gt;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">&lt;/head&gt;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">&lt;?</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="11"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>Display<sp/>results</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Present<sp/>the<sp/>results<sp/>to<sp/>the<sp/>user<sp/>and<sp/>allow<sp/>him/her<sp/>to<sp/>browse,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>navigate<sp/>and<sp/>visualize<sp/>them<sp/>in<sp/>a<sp/>number<sp/>of<sp/>ways.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>@package<sp/>GridGRAMM</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>@author<sp/>David<sp/>Garcia<sp/>Aristegui<sp/>&lt;david@cnb.uam.es&gt;</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>@copyright<sp/>CSIC<sp/>-<sp/>GPL</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>@version<sp/>1.0</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="23"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>General<sp/>utility<sp/>functions</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">require(</highlight><highlight class="stringliteral">&quot;./functions.php&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="28"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>Current<sp/>directory</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>The<sp/>&apos;child&apos;<sp/>process<sp/>needs<sp/>to<sp/>know<sp/>were<sp/>is<sp/>the<sp/>working<sp/>directory,<sp/>to<sp/>generate</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>there<sp/>the<sp/>middleware<sp/>output<sp/>files</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@global<sp/>string<sp/>$current_directory</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="results_8php_1a0" refkind="member"><highlight class="normal"><ref refid="results_8php_1a0" kindref="member">$current_directory</ref>=getcwd();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">//<sp/>We<sp/>check<sp/>the<sp/>job<sp/>status...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>a<sp/>particular<sp/>case,<sp/>the<sp/>job<sp/>is<sp/>done,<sp/>we<sp/>only<sp/>show<sp/>the<sp/>results,<sp/>otherwise<sp/>we<sp/>have<sp/>to<sp/>connect...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/><ref refid="functions_8php_1a3" kindref="member">check_status</ref>()==</highlight><highlight class="stringliteral">&quot;Current<sp/>Status:<sp/><sp/><sp/><sp/><sp/>Cleared&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="functions_8php_1a8" kindref="member">show_results</ref>($current_directory);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;center&gt;&lt;table&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;tr&gt;&lt;td<sp/>align=\&quot;center\&quot;&gt;&lt;img<sp/>src=\&quot;egee.jpg\&quot;<sp/>alt=\&quot;[EGEE]\&quot;&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/table&gt;&lt;/center&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;p&gt;&lt;a<sp/>href=\&quot;http://validator.w3.org/check?uri=referer\&quot;&gt;&lt;img<sp/>border=\&quot;0\&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;src=\&quot;http://www.w3.org/Icons/valid-html401\&quot;alt=\&quot;Valid<sp/>HTML<sp/>4.01!\&quot;<sp/>height=\&quot;31\&quot;<sp/>width=\&quot;88\&quot;&gt;&lt;/a&gt;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50" refid="results_8php_1a1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="results_8php_1a1" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">//<sp/>If<sp/>the<sp/>job<sp/>is<sp/>not<sp/>&apos;Cleared&apos;,<sp/>we<sp/>continue.<sp/>First<sp/>we<sp/>check<sp/>the<sp/>grid<sp/>job<sp/>identifier</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>file_exists(</highlight><highlight class="stringliteral">&quot;./tinker/identifier.txt&quot;</highlight><highlight class="normal">)<sp/>)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>function<sp/>opens<sp/>the<sp/>&apos;child&apos;<sp/>process,<sp/>is<sp/>a<sp/>ssh<sp/>connection<sp/>with<sp/>the<sp/>User<sp/>Interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>open_connection($server,<sp/>$wd_path,<sp/>$process,<sp/>$descriptorspec,<sp/>$pipes);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enter<sp/>the<sp/>Grid!!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enter_grid($pipes,<sp/>$grid_pass);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>need<sp/>the<sp/>job<sp/>identifier<sp/>to<sp/>run<sp/>retrieve<sp/>all<sp/>the<sp/>job<sp/>information<sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="functions_8php_1a2" kindref="member">job_identifier</ref>();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Job<sp/>status<sp/>output</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;edg-job-status<sp/>$identifier<sp/>&gt;<sp/>$current_directory/gramm/status.txt\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>wait<sp/>until<sp/>the<sp/>file<sp/>is<sp/>available</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!file_exists(</highlight><highlight class="stringliteral">&quot;./tinker/status.txt&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sleep(1);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>check<sp/>again<sp/>the<sp/>job<sp/>status...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="results_8php_1a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="results_8php_1a2" kindref="member">$status</ref>=<ref refid="functions_8php_1a3" kindref="member">check_status</ref>();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;h1&gt;Error,<sp/>there<sp/>is<sp/>no<sp/>job<sp/>identifier<sp/>file!!!&lt;/h1&gt;&lt;br<sp/>/&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="results_8php_1a1" kindref="member">exit</ref>;<sp/></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">//<sp/>We<sp/>have<sp/>a<sp/>new<sp/>status</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="results_8php_1a2" kindref="member">$status</ref>==</highlight><highlight class="stringliteral">&quot;Current<sp/>Status:<sp/><sp/><sp/><sp/><sp/>Done<sp/>(Success)&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>control<sp/>when<sp/>we<sp/>get<sp/>the<sp/>job<sp/>output<sp/>with<sp/>the<sp/>output.txt<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>output.txt<sp/>don&apos;t<sp/>exists<sp/>we<sp/>have<sp/>to<sp/>execute<sp/>&apos;edg-job-get-output&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!file_exists(</highlight><highlight class="stringliteral">&quot;./output.txt&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>job<sp/>output</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;edg-job-get-output<sp/>--dir<sp/>$current_directory<sp/>$identifier<sp/>&gt;<sp/>$current_directory/output.txt\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>wait<sp/>until<sp/>the<sp/>file<sp/>is<sp/>available</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!file_exists(</highlight><highlight class="stringliteral">&quot;./output.txt&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sleep(1);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;pre&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//We<sp/>read<sp/>the<sp/>middleware<sp/>output</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>readfile(</highlight><highlight class="stringliteral">&quot;./output.txt&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/pre&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>can<sp/>show<sp/>the<sp/>files<sp/>if<sp/>they<sp/>are<sp/>unpacked<sp/>only!!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="functions_8php_1a7" kindref="member">unpack_results</ref>()==</highlight><highlight class="stringliteral">&quot;OK&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="functions_8php_1a8" kindref="member">show_results</ref>();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;center&gt;&lt;h2&gt;Please<sp/>reload<sp/>this<sp/>page<sp/>to<sp/>show<sp/>results.<sp/>GridGramm<sp/>is<sp/>unpacking<sp/>the<sp/>results.&lt;/h2&gt;&lt;/center&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal">{<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;center&gt;&lt;table<sp/>border=2&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;tr&gt;&lt;td&gt;&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;pre&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//We<sp/>read<sp/>the<sp/>middleware<sp/>output</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>readfile(</highlight><highlight class="stringliteral">&quot;./gramm/submit.txt&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/pre&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/table&gt;&lt;/center&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;hr&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;center&gt;&lt;h2&gt;GridGramm<sp/>results<sp/>are<sp/>not<sp/>available.<sp/>$status&lt;/h2&gt;&lt;/center&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;center&gt;&lt;h1&gt;Please,<sp/>bookmark<sp/>this<sp/>page.<sp/>This<sp/>page<sp/>is<sp/>updated<sp/>every<sp/>15<sp/>seconds.&lt;/h1&gt;&lt;/center&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal">fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;grid-proxy-destroy\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Closes<sp/>the<sp/>ssh<sp/>connection<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">close_connection($process,<sp/>$descriptorspec,<sp/>$pipes);<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="133"><highlight class="normal">?&gt;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">&lt;center&gt;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">&lt;table&gt;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">&lt;tr&gt;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;td<sp/>align=center&gt;&lt;img<sp/>src=</highlight><highlight class="stringliteral">&quot;egee.jpg&quot;</highlight><highlight class="normal"><sp/>alt=</highlight><highlight class="stringliteral">&quot;[EGEE]&quot;</highlight><highlight class="normal">&gt;&lt;/a&gt;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/td&gt;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">&lt;/tr&gt;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">&lt;/table&gt;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">&lt;p&gt;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;http://validator.w3.org/check?uri=referer&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;img<sp/>border=</highlight><highlight class="stringliteral">&quot;0&quot;</highlight><highlight class="normal"><sp/>src=</highlight><highlight class="stringliteral">&quot;http://www.w3.org/Icons/valid-html401&quot;</highlight><highlight class="normal">alt=</highlight><highlight class="stringliteral">&quot;Valid<sp/>HTML<sp/>4.01!&quot;</highlight><highlight class="normal"><sp/>height=</highlight><highlight class="stringliteral">&quot;31&quot;</highlight><highlight class="normal"><sp/>width=</highlight><highlight class="stringliteral">&quot;88&quot;</highlight><highlight class="normal">&gt;&lt;/a&gt;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">&lt;/p&gt;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">&lt;/center&gt;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal">&lt;/body&gt;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">&lt;/html&gt;</highlight></codeline>
+    </programlisting>
+    <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/results.php"/>
+  </compounddef>
+</doxygen>

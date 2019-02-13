@@ -1,0 +1,6 @@
+# This will swap certain atom names in some planar sidechains to satisfy
+# the IUPAC convention.
+SET OUTPUT_CONTROL = 1 1 1 1 0
+READ_MODEL FILE = '2abx'
+IUPAC_MODEL
+WRITE_MODEL FILE = '2abx.iup'

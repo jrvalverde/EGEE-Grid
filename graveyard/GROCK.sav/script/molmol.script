@@ -1,0 +1,17 @@
+ReadPdb structure.pdb
+SelectAtom ''
+Fit to_axes
+SelectMol 'num=1'
+SelectAtom 'mol.num=1'
+AddSurface vdw contact 1.4 shaded 0
+ColorPrim 1 0 0
+SelectMol 'num=2'
+SelectAtom 'mol.num=2'
+AddSurface vdw contact 1.4 shaded 0
+
+BackColor 0 0 0
+PlotPar 21 29.7 18 0 500 0 1 1 0 3 1.0 75
+PlotPs structure.ps
+PlotVrml1 structure.vrml
+PlotVrml2 structure.wrl
+Quit no

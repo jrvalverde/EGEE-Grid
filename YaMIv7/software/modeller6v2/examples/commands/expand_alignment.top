@@ -1,0 +1,8 @@
+# Example for: EXPAND_ALIGNMENT
+
+# This will add models to the alignment.
+
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = '2ctx' '2abx'
+EXPAND_ALIGNMENT EXPAND_CONTROL = 9999 9999 1 3 0, ;
+                 ROOT_NAME = '2abx', FILE_ID = '.B', FILE_EXT = ''
+WRITE_ALIGNMENT FILE = 'toxin-expand.ali'

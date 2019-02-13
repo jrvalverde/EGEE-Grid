@@ -1,0 +1,22 @@
+#!/bin/sh
+
+currdir=`pwd`
+scriptname=clean_tops
+
+for script in `find . -name $scriptname  -print`
+do
+  dir=`dirname $script`
+  cd $dir
+  ./$scriptname
+  echo $dir
+  cd $currdir
+done
+
+rm *.log
+
+find . -name core  -exec rm {} \; -print
+find . -name 'fort.*' -exec rm {} \; -print
+find . -name '*~' -exec rm {} \; -print
+
+rm atom_files/*.fit atom_files/*.fit.Z 
+rm atom_files/*.sol atom_files/*.psa

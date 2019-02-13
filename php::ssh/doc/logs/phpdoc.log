@@ -1,0 +1,267 @@
+Parsing configuration file phpDocumentor.ini...
+done
+using experimental tokenizer Parser
+
+
+Grabbing README/INSTALL/CHANGELOG
+
+done
+
+
+Tutorial/Extended Documentation Parsing Stage
+
+done
+
+
+General Parsing Stage
+
+Reading file /auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/CVS/Entries -- File not parsed, not a php file
+Reading file /auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/CVS/Repository -- File not parsed, not a php file
+Reading file /auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/CVS/Root -- File not parsed, not a php file
+Reading file /auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/CVS/ssh_test.php,t -- File not parsed, not a php file
+Reading file /auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/interact.sh -- File not parsed, not a php file
+Reading file /auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/remotessh.php -- Parsing file
+Reading file /auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/ssh.php -- Parsing file
+Reading file /auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/ssh_test.php -- Parsing file
+WARNING in ssh_test.php on line 26: package SExec is already in category Net, will now replace with category default
+WARNING in ssh_test.php on line 33: Page-level DocBlock precedes "require_once ssh_test.php", use another DocBlock to document the source element
+Reading file /auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/test-pers.php -- Parsing file
+WARNING in test-pers.php on line 64: File "/auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/test-pers.php" has no page-level DocBlock, use @package in the first DocBlock to create one
+Reading file /auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/util.php -- Parsing file
+WARNING in util.php on line 14: no @package tag was used in a DocBlock for file /auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/util.php
+done
+
+Converting From Abstract Parsed Data
+
+Processing Class Inheritance
+
+
+Processing Root Trees
+
+
+Processing leftover classes (classes that extend root classes not found in the same package)
+done processing leftover classes
+
+Processing Procedural Page Element Name Conflicts
+
+
+Sorting page elements...done
+Formatting @uses list...done
+
+creating /data/www/EMBnet/cgi-src/Grid/php::ssh/doc/pDoc/media
+copying /data/www/EMBnet/cgi-src/Grid/php::ssh/doc/pDoc/media/layout.css
+copying /data/www/EMBnet/cgi-src/Grid/php::ssh/doc/pDoc/media/print.css
+copying /data/www/EMBnet/cgi-src/Grid/php::ssh/doc/pDoc/media/style.css
+Building indexes...done
+
+Sorting Indexes...done
+
+Sorting @todo list...done
+Converting tutorials/extended docs
+Formatting Package Indexes...    Writing /data/www/EMBnet/cgi-src/Grid/php::ssh/doc/pDoc/elementindex_SExec.html
+
+done
+Formatting Index...
+    Writing /data/www/EMBnet/cgi-src/Grid/php::ssh/doc/pDoc/elementindex.html
+
+    Writing /data/www/EMBnet/cgi-src/Grid/php::ssh/doc/pDoc/li_SExec.html
+
+    Writing /data/www/EMBnet/cgi-src/Grid/php::ssh/doc/pDoc/index.html
+done
+
+Formatting Left Quick Index...
+    Writing /data/www/EMBnet/cgi-src/Grid/php::ssh/doc/pDoc/classtrees_SExec.html
+
+done
+
+Converting /auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/remotessh.php Procedural Page Elements... Classes... done
+    Writing /data/www/EMBnet/cgi-src/Grid/php::ssh/doc/pDoc/SExec/_remotessh_php.html
+Converting /auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/ssh.php Procedural Page Elements... Classes...
+    Writing /data/www/EMBnet/cgi-src/Grid/php::ssh/doc/pDoc/SExec/SExec.html
+ done
+    Writing /data/www/EMBnet/cgi-src/Grid/php::ssh/doc/pDoc/SExec/_ssh_php.html
+Converting /auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/ssh_test.php Procedural Page Elements... Classes... done
+    Writing /data/www/EMBnet/cgi-src/Grid/php::ssh/doc/pDoc/SExec/_ssh_test_php.html
+Converting /auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/test-pers.php Procedural Page Elements... Classes... done
+    Writing /data/www/EMBnet/cgi-src/Grid/php::ssh/doc/pDoc/SExec/_test-pers_php.html
+Converting /auto/volva.data/www/EMBnet/cgi-src/Grid/php::ssh/src/util.php Procedural Page Elements... Classes... done
+    Writing /data/www/EMBnet/cgi-src/Grid/php::ssh/doc/pDoc/SExec/_util_php.html
+
+Converting @todo List...done
+
+Converting Error Log...    Writing /data/www/EMBnet/cgi-src/Grid/php::ssh/doc/pDoc/errors.html
+
+
+To view errors and warnings, look at /data/www/EMBnet/cgi-src/Grid/php::ssh/doc/pDoc/errors.html
+done
+
+Parsing time: 7 seconds
+
+Conversion time: 2 seconds
+
+Total Documentation Time: 9 seconds
+done
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(2294) :  Freeing 0x11637B10 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_variables.c(122) : Actual location (location was relayed)
+Last leak repeated 164 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_hash.c(188) :  Freeing 0x11632528 (32 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 10633 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_hash.c(416) :  Freeing 0x114DC1B8 (35 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 27707 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_hash.c(272) :  Freeing 0x114DC338 (43 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 5537 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(1826) :  Freeing 0x11624028 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 95 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(143) :  Freeing 0x115EDAB0 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_variables.c(135) : Actual location (location was relayed)
+Last leak repeated 69 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(499) :  Freeing 0x1163D2B0 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 826 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(488) :  Freeing 0x11618738 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 230 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(491) :  Freeing 0x114B41A8 (5 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_variables.c(111) : Actual location (location was relayed)
+Last leak repeated 84 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_hash.c(450) :  Freeing 0x1162D478 (64 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 560 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(2033) :  Freeing 0x115F5990 (11 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_variables.c(111) : Actual location (location was relayed)
+Last leak repeated 41 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(2030) :  Freeing 0x1162B698 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 1181 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(278) :  Freeing 0x115FBB20 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 14 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(2018) :  Freeing 0x1163E390 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 1257 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(763) :  Freeing 0x115EC910 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 2155 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(281) :  Freeing 0x11609AA8 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_variables.c(122) : Actual location (location was relayed)
+Last leak repeated 4 times
+/usr/local/src/build/www/php-4.3.3/ext/standard/array.c(1577) :  Freeing 0x11622930 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 1 time
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(766) :  Freeing 0x11618190 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_API.c(562) : Actual location (location was relayed)
+Last leak repeated 2155 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_operators.c(1056) :  Freeing 0x116191D0 (27 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 109 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(774) :  Freeing 0x1162DED8 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 765 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(1188) :  Freeing 0x114C3DE8 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 41 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(1224) :  Freeing 0x114C02D8 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 18 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(2010) :  Freeing 0x1163F2B8 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_API.c(562) : Actual location (location was relayed)
+Last leak repeated 7914 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(1735) :  Freeing 0x1162CAD0 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 115 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_operators.c(1049) :  Freeing 0x115E6058 (30 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 151 times
+/usr/local/src/build/www/php-4.3.3/ext/standard/string.c(570) :  Freeing 0x115E4410 (250 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 489 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(1611) :  Freeing 0x11605D00 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 790 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(2350) :  Freeing 0x11605B00 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 43 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_operators.c(1047) :  Freeing 0x115EE478 (274 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 44 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(1758) :  Freeing 0x11608450 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 7562 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_hash.c(1066) :  Freeing 0x11608378 (10 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 45 times
+/usr/local/src/build/www/php-4.3.3/ext/standard/array.c(2055) :  Freeing 0x116069B0 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_API.c(562) : Actual location (location was relayed)
+Last leak repeated 21 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(1761) :  Freeing 0x116065D0 (24 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_variables.c(111) : Actual location (location was relayed)
+Last leak repeated 61 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(1725) :  Freeing 0x115DDC58 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 51 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_operators.c(1017) :  Freeing 0x11478800 (41 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 1 time
+/usr/local/src/build/www/php-4.3.3/Zend/zend_API.c(594) :  Freeing 0x115CB748 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_API.c(582) : Actual location (location was relayed)
+Last leak repeated 302 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute_API.c(314) :  Freeing 0x114C3378 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 76 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute_API.c(341) :  Freeing 0x114C32C8 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_variables.c(122) : Actual location (location was relayed)
+Last leak repeated 23 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(1979) :  Freeing 0x1146CB40 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 302 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(1854) :  Freeing 0x114E72E8 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/ext/standard/string.c(2742) :  Freeing 0x11495EF0 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 6253 times
+/usr/local/src/build/www/php-4.3.3/ext/standard/string.c(2542) :  Freeing 0x114A4950 (10 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 6263 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute_API.c(374) :  Freeing 0x11502B90 (26 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_variables.c(111) : Actual location (location was relayed)
+Last leak repeated 33 times
+/usr/local/src/build/www/php-4.3.3/ext/standard/array.c(2171) :  Freeing 0x11462388 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_API.c(562) : Actual location (location was relayed)
+Last leak repeated 1 time
+/usr/local/src/build/www/php-4.3.3/ext/standard/html.c(867) :  Freeing 0x114779B8 (128 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 8 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_API.c(776) :  Freeing 0x115CC358 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 5292 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_API.c(842) :  Freeing 0x114C6038 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 2380 times
+/usr/local/src/build/www/php-4.3.3/ext/standard/file.c(2381) :  Freeing 0x114FF550 (98 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 3 times
+/usr/local/src/build/www/php-4.3.3/ext/standard/datetime.c(405) :  Freeing 0x114A69E0 (32 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 1 time
+/usr/local/src/build/www/php-4.3.3/Zend/zend_constants.c(239) :  Freeing 0x115C7648 (22 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_variables.c(111) : Actual location (location was relayed)
+Last leak repeated 4 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_API.c(843) :  Freeing 0x115C3A18 (2 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 2380 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute_API.c(372) :  Freeing 0x10D38808 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 33 times
+/usr/local/src/build/www/php-4.3.3/main/output.c(650) :  Freeing 0x114CB630 (354 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 1 time
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(1729) :  Freeing 0x114B3B30 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_variables.c(135) : Actual location (location was relayed)
+Last leak repeated 41 times
+/usr/local/src/build/www/php-4.3.3/ext/standard/string.c(2297) :  Freeing 0x10F61B40 (2 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 1 time
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(937) :  Freeing 0x114AAE08 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_variables.c(135) : Actual location (location was relayed)
+Last leak repeated 160 times
+/usr/local/src/build/www/php-4.3.3/ext/standard/string.c(1690) :  Freeing 0x11448D40 (60 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 116 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_API.c(914) :  Freeing 0x10DD3958 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 1 time
+/usr/local/src/build/www/php-4.3.3/ext/standard/string.c(1116) :  Freeing 0x1133A080 (9 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 4 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(464) :  Freeing 0x10EE8120 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_variables.c(135) : Actual location (location was relayed)
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(1805) :  Freeing 0x1131F2D0 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 35 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(1809) :  Freeing 0x113214A8 (7 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_variables.c(111) : Actual location (location was relayed)
+Last leak repeated 35 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(446) :  Freeing 0x10FB7820 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_variables.c(135) : Actual location (location was relayed)
+/usr/local/src/build/www/php-4.3.3/Zend/zend_execute.c(1347) :  Freeing 0x10D2DC58 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 3 times
+Zend/zend_language_parser.c(2665) :  Freeing 0x10BDB678 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_API.c(562) : Actual location (location was relayed)
+Last leak repeated 33 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_compile.c(1674) :  Freeing 0x10BDB450 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 141 times
+/usr/local/src/build/www/php-4.3.3/Zend/zend_compile.c(1870) :  Freeing 0x10BDA8F8 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 96 times
+Zend/zend_language_parser.c(2677) :  Freeing 0x10BDA698 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_API.c(562) : Actual location (location was relayed)
+Last leak repeated 4 times
+Zend/zend_language_scanner.c(4718) :  Freeing 0x10AE9F98 (13 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 103 times
+Zend/zend_language_parser.c(2680) :  Freeing 0x10AE82D8 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/Zend/zend_API.c(562) : Actual location (location was relayed)
+Last leak repeated 4 times
+Zend/zend_language_scanner.c(4627) :  Freeing 0x10AE7DD0 (6 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/main/main.c(1564) :  Freeing 0x1025D5C8 (6 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/main/main.c(1561) :  Freeing 0x1025D588 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/main/php_variables.c(175) :  Freeing 0x1025CBD8 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/usr/local/src/build/www/php-4.3.3/main/php_variables.c(52) :  Freeing 0x1025CB88 (32 bytes), script=/opt/tools/phpDocumentor/phpdoc

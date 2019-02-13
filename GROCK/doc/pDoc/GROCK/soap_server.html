@@ -1,0 +1,850 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Docs For Class soap_server</title>
+	<link rel="stylesheet" type="text/css" id="layout" href="../media/layout.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../media/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../media/print.css" media="print">
+</head>
+
+<body>
+<div id="header">
+	<div id="navLinks">
+		[ <a href="../classtrees_GROCK.html">Class Tree: GROCK</a> ]
+		[ <a href="../elementindex_GROCK.html">Index: GROCK</a> ]
+		[ <a href="../elementindex.html">All elements</a> ]
+	</div>
+	<div id="packagePosition">
+		<div id="packageTitle2">GROCK</div>
+		<div id="packageTitle">GROCK</div>
+		<div id="elementPath"> &middot; </div>
+	</div>
+</div>
+
+<div id="nav" class="small">
+	<div id="packages">
+		Packages:
+					<p><a href="../li_GROCK.html">GROCK</a></p>
+					<p><a href="../li_Grid.html">Grid</a></p>
+					<p><a href="../li_grock.html">grock</a></p>
+					<p><a href="../li_SExec.html">SExec</a></p>
+			</div>
+
+				<div id="index">
+			<div id="files">
+								Files:<br>
+								<a href="../GROCK/_lib_class_nusoap_base_php.html">		class.nusoap_base.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soapclient_php.html">		class.soapclient.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_fault_php.html">		class.soap_fault.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_parser_php.html">		class.soap_parser.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_server_php.html">		class.soap_server.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_transport_http_php.html">		class.soap_transport_http.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_val_php.html">		class.soap_val.php
+		</a><br>
+			<a href="../GROCK/_lib_class_wsdl_php.html">		class.wsdl.php
+		</a><br>
+			<a href="../GROCK/_lib_class_wsdlcache_php.html">		class.wsdlcache.php
+		</a><br>
+			<a href="../GROCK/_lib_class_xmlschema_php.html">		class.xmlschema.php
+		</a><br>
+			<a href="../GROCK/_lib_nusoap_php.html">		nusoap.php
+		</a><br>
+			<a href="../GROCK/_lib_nusoapmime_php.html">		nusoapmime.php
+		</a><br>
+				</div>
+			<div id="classes">
+				Classes:<br>
+								<a href="../GROCK/nusoap_base.html">		nusoap_base
+		</a><br>
+			<a href="../GROCK/soapclient.html">		soapclient
+		</a><br>
+			<a href="../GROCK/soapclientmime.html">		soapclientmime
+		</a><br>
+			<a href="../GROCK/soapval.html">		soapval
+		</a><br>
+			<a href="../GROCK/soap_fault.html">		soap_fault
+		</a><br>
+			<a href="../GROCK/soap_parser.html">		soap_parser
+		</a><br>
+			<a href="../GROCK/soap_server.html">		soap_server
+		</a><br>
+			<a href="../GROCK/soap_transport_http.html">		soap_transport_http
+		</a><br>
+			<a href="../GROCK/wsdl.html">		wsdl
+		</a><br>
+			<a href="../GROCK/wsdlcache.html">		wsdlcache
+		</a><br>
+			<a href="../GROCK/XMLSchema.html">		XMLSchema
+		</a><br>
+				</div>
+		</div>
+	</div>
+
+<div id="body">
+			<h1>Class: soap_server</h1>
+	<p style="margin: 0px;">Source Location: /lib/class.soap_server.php</p>
+	
+
+<div class="leftcol">
+	<h3><a href="#class_details">Class Overview</a> <span class="smalllinenumber">[line 17]</span></h3>
+	<div id="classTree"><pre>nusoap_base
+   |
+   --soap_server</pre>
+</div>
+	<div class="small">
+	<p>soap_server allows the user to create a SOAP server  that is capable of receiving messages and returning responses</p>
+		<h4>Author(s):</h4>
+	<ul>
+																		<li>Dietrich Ayala &lt;<a href="mailto:dietrich@ganx4.com">mailto:dietrich@ganx4.com</a>&gt;</li>
+						</ul>
+	<h4>Version:</h4>
+	<ul>
+													<li>$Id: class.soap_server.php,v 1.34 2004/04/30 12:23:24 snichol Exp $</li>
+											</ul>
+
+	<h4>Copyright:</h4>
+	<ul>
+																		</li>
+	</div>
+</div>
+
+<div class="middlecol">
+	<h3><a href="#class_vars">Variables</a></h3>
+	<ul class="small">
+				<li><a href="../GROCK/soap_server.html#var$debug_flag">$debug_flag</a></li>
+				<li><a href="../GROCK/soap_server.html#var$document">$document</a></li>
+				<li><a href="../GROCK/soap_server.html#var$externalWSDLURL">$externalWSDLURL</a></li>
+				<li><a href="../GROCK/soap_server.html#var$fault">$fault</a></li>
+				<li><a href="../GROCK/soap_server.html#var$headers">$headers</a></li>
+				<li><a href="../GROCK/soap_server.html#var$methodname">$methodname</a></li>
+				<li><a href="../GROCK/soap_server.html#var$methodparams">$methodparams</a></li>
+				<li><a href="../GROCK/soap_server.html#var$methodreturn">$methodreturn</a></li>
+				<li><a href="../GROCK/soap_server.html#var$methodreturnisliteralxml">$methodreturnisliteralxml</a></li>
+				<li><a href="../GROCK/soap_server.html#var$methodURI">$methodURI</a></li>
+				<li><a href="../GROCK/soap_server.html#var$operations">$operations</a></li>
+				<li><a href="../GROCK/soap_server.html#var$outgoing_headers">$outgoing_headers</a></li>
+				<li><a href="../GROCK/soap_server.html#var$request">$request</a></li>
+				<li><a href="../GROCK/soap_server.html#var$requestHeaders">$requestHeaders</a></li>
+				<li><a href="../GROCK/soap_server.html#var$requestSOAP">$requestSOAP</a></li>
+				<li><a href="../GROCK/soap_server.html#var$response">$response</a></li>
+				<li><a href="../GROCK/soap_server.html#var$responseHeaders">$responseHeaders</a></li>
+				<li><a href="../GROCK/soap_server.html#var$responseSOAP">$responseSOAP</a></li>
+				<li><a href="../GROCK/soap_server.html#var$result">$result</a></li>
+				<li><a href="../GROCK/soap_server.html#var$SOAPAction">$SOAPAction</a></li>
+				<li><a href="../GROCK/soap_server.html#var$wsdl">$wsdl</a></li>
+				<li><a href="../GROCK/soap_server.html#var$xml_encoding">$xml_encoding</a></li>
+			</ul>
+</div>
+<div class="rightcol">
+	<h3><a href="#class_methods">Methods</a></h3>
+	<ul class="small">
+				<li><a href="../GROCK/soap_server.html#methodsoap_server">soap_server</a></li>
+				<li><a href="../GROCK/soap_server.html#methodadd_to_map">add_to_map</a></li>
+				<li><a href="../GROCK/soap_server.html#methodconfigureWSDL">configureWSDL</a></li>
+				<li><a href="../GROCK/soap_server.html#methodfault">fault</a></li>
+				<li><a href="../GROCK/soap_server.html#methodinvoke_method">invoke_method</a></li>
+				<li><a href="../GROCK/soap_server.html#methodparse_http_headers">parse_http_headers</a></li>
+				<li><a href="../GROCK/soap_server.html#methodparse_request">parse_request</a></li>
+				<li><a href="../GROCK/soap_server.html#methodregister">register</a></li>
+				<li><a href="../GROCK/soap_server.html#methodsend_response">send_response</a></li>
+				<li><a href="../GROCK/soap_server.html#methodserialize_return">serialize_return</a></li>
+				<li><a href="../GROCK/soap_server.html#methodservice">service</a></li>
+				<li><a href="../GROCK/soap_server.html#methodverify_method">verify_method</a></li>
+				<li><a href="../GROCK/soap_server.html#methodwebDescription">webDescription</a></li>
+			</ul>
+</div>
+
+<div id="content">
+<hr>
+	<div class="contents">
+	</div>
+
+	<div class="leftCol">
+	<h2>Inherited Variables</h2>
+		</div>
+
+	<div class="rightCol">
+	<h2>Inherited Methods</h2>
+		</div>
+	<br clear="all">
+	<hr>
+
+	<a name="class_details"></a>
+	<h2>Class Details</h2>
+	<p align="center"><strong>soap_server allows the user to create a SOAP server  that is capable of receiving messages and returning responses
+</strong></p>
+<p>NOTE: WSDL functionality is experimental</p><h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+	<li><b>version</b> - $Id: class.soap_server.php,v 1.34 2004/04/30 12:23:24 snichol Exp $</li>
+	<li><b>author</b> - Dietrich Ayala &lt;<a href="mailto:dietrich@ganx4.com">mailto:dietrich@ganx4.com</a>&gt;</li>
+</ul>
+	<p class="small" style="color: #334B66;">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_vars"></a>
+	<h2>Class Variables</h2>
+		<a name="var$debug_flag"></a>
+	<p></p>
+	<h4>$debug_flag = <span class="value">&nbsp;false</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 41]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$document"></a>
+	<p></p>
+	<h4>$document = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 21]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$externalWSDLURL"></a>
+	<p></p>
+	<h4>$externalWSDLURL = <span class="value">&nbsp;false</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 40]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$fault"></a>
+	<p></p>
+	<h4>$fault = <span class="value">&nbsp;false</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 35]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$headers"></a>
+	<p></p>
+	<h4>$headers = <span class="value">array()</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 18]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$methodname"></a>
+	<p></p>
+	<h4>$methodname = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 24]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$methodparams"></a>
+	<p></p>
+	<h4>$methodparams = <span class="value">array()</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 25]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$methodreturn"></a>
+	<p></p>
+	<h4>$methodreturn = <span class="value">&nbsp;false</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 33]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$methodreturnisliteralxml"></a>
+	<p></p>
+	<h4>$methodreturnisliteralxml = <span class="value">&nbsp;false</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 34]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$methodURI"></a>
+	<p></p>
+	<h4>$methodURI = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 23]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$operations"></a>
+	<p></p>
+	<h4>$operations = <span class="value">array()</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 38]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$outgoing_headers"></a>
+	<p></p>
+	<h4>$outgoing_headers = <span class="value">array()</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 29]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$request"></a>
+	<p></p>
+	<h4>$request = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 19]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$requestHeaders"></a>
+	<p></p>
+	<h4>$requestHeaders = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 20]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$requestSOAP"></a>
+	<p></p>
+	<h4>$requestSOAP = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 22]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$response"></a>
+	<p></p>
+	<h4>$response = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 30]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$responseHeaders"></a>
+	<p></p>
+	<h4>$responseHeaders = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 31]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$responseSOAP"></a>
+	<p></p>
+	<h4>$responseSOAP = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 32]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$result"></a>
+	<p></p>
+	<h4>$result = <span class="value">&nbsp;'successful'</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 36]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$SOAPAction"></a>
+	<p></p>
+	<h4>$SOAPAction = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 27]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$wsdl"></a>
+	<p></p>
+	<h4>$wsdl = <span class="value">&nbsp;false</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 39]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$xml_encoding"></a>
+	<p></p>
+	<h4>$xml_encoding = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 26]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_methods"></a>
+	<h2>Class Methods</h2>
+		<a name="methodsoap_server"></a>
+	<p></p>
+	<h3>soap_server</h3>
+	<div class="indent">
+		<p>
+		<code>soap_server soap_server(
+[mixed
+$wsdl = false])</code>
+		</p>
+	
+		<p class="linenumber">[line 50]</p>
+		<p align="center"><strong>constructor  the optional parameter is a path to a WSDL file that you'd like to bind the server instance to.
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">mixed</span>
+		<b>$wsdl</b> 
+		- 
+		file path or URL (string), or wsdl instance (object)</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodadd_to_map"></a>
+	<p></p>
+	<h3>add_to_map</h3>
+	<div class="indent">
+		<p>
+		<code>void add_to_map(
+string
+$methodname, string
+$in, string
+$out)</code>
+		</p>
+	
+		<p class="linenumber">[line 569]</p>
+		<p align="center"><strong>add a method to the dispatch map
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$methodname</b> 
+		- 
+		</li>
+			<li>
+		<span class="type">string</span>
+		<b>$in</b> 
+		- 
+		array of input values</li>
+			<li>
+		<span class="type">string</span>
+		<b>$out</b> 
+		- 
+		array of output values</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodconfigureWSDL"></a>
+	<p></p>
+	<h3>configureWSDL</h3>
+	<div class="indent">
+		<p>
+		<code>void configureWSDL(
+mixed
+$serviceName, [string
+$namespace = false], [string
+$endpoint = false], [string
+$style = 'rpc'], [string
+$transport = 'http://schemas.xmlsoap.org/soap/http'], [string
+$schemaTargetNamespace = false], string
+$serviceName,)</code>
+		</p>
+	
+		<p class="linenumber">[line 682]</p>
+		<p align="center"><strong>sets up wsdl object  this acts as a flag to enable internal WSDL generation
+</strong></p>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$serviceName,</b> 
+		- 
+		name of the service</li>
+			<li>
+		<span class="type">string</span>
+		<b>$namespace</b> 
+		- 
+		optional tns namespace</li>
+			<li>
+		<span class="type">string</span>
+		<b>$endpoint</b> 
+		- 
+		optional URL of service endpoint</li>
+			<li>
+		<span class="type">string</span>
+		<b>$style</b> 
+		- 
+		optional (rpc|document) WSDL style (also specified by operation)</li>
+			<li>
+		<span class="type">string</span>
+		<b>$transport</b> 
+		- 
+		optional SOAP transport</li>
+			<li>
+		<span class="type">string</span>
+		<b>$schemaTargetNamespace</b> 
+		- 
+		optional targetNamespace for service schema</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodfault"></a>
+	<p></p>
+	<h3>fault</h3>
+	<div class="indent">
+		<p>
+		<code>void fault(
+string
+$faultcode, string
+$faultstring, [string
+$faultactor = ''], [string
+$faultdetail = ''])</code>
+		</p>
+	
+		<p class="linenumber">[line 630]</p>
+		<p align="center"><strong>create a fault. this also acts as a flag to the server that a fault has occured.
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$faultcode</b> 
+		- 
+		faultcode</li>
+			<li>
+		<span class="type">string</span>
+		<b>$faultstring</b> 
+		- 
+		faultstring</li>
+			<li>
+		<span class="type">string</span>
+		<b>$faultactor</b> 
+		- 
+		faultactor</li>
+			<li>
+		<span class="type">string</span>
+		<b>$faultdetail</b> 
+		- 
+		faultdetail</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodinvoke_method"></a>
+	<p></p>
+	<h3>invoke_method</h3>
+	<div class="indent">
+		<p>
+		<code>void invoke_method(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 338]</p>
+		<p align="center"><strong>invokes a PHP function for the requested SOAP method
+</strong></p>
+<p>The following fields are set by this function (when successful)</p><p>methodreturn</p><p>Note that the PHP function that is called may also set the following  fields to affect the response sent to the client</p><p>responseHeaders  outgoing_headers</p><p>This sets the fault field on error</p><h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodparse_http_headers"></a>
+	<p></p>
+	<h3>parse_http_headers</h3>
+	<div class="indent">
+		<p>
+		<code>void parse_http_headers(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 155]</p>
+		<p align="center"><strong>parses HTTP request headers.
+</strong></p>
+<p>The following fields are set by this function (when successful)</p><p>headers  request  xml_encoding  SOAPAction</p><h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodparse_request"></a>
+	<p></p>
+	<h3>parse_request</h3>
+	<div class="indent">
+		<p>
+		<code>void parse_request(
+[string
+$data = ''])</code>
+		</p>
+	
+		<p class="linenumber">[line 271]</p>
+		<p align="center"><strong>parses a request
+</strong></p>
+<p>The following fields are set by this function (when successful)</p><p>headers  request  xml_encoding  SOAPAction  request  requestSOAP  methodURI  methodname  methodparams  requestHeaders  document</p><p>This sets the fault field on error</p><h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$data</b> 
+		- 
+		XML string</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodregister"></a>
+	<p></p>
+	<h3>register</h3>
+	<div class="indent">
+		<p>
+		<code>void register(
+mixed
+$name, [string
+$in = false], [string
+$out = false], [string
+$namespace = false], [string
+$soapaction = false], [string
+$style = false], [string
+$use = false], [string
+$documentation = ''], string
+$methodname)</code>
+		</p>
+	
+		<p class="linenumber">[line 586]</p>
+		<p align="center"><strong>register a service with the server
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$methodname</b> 
+		- 
+		</li>
+			<li>
+		<span class="type">string</span>
+		<b>$in</b> 
+		- 
+		assoc array of input values: key = param name, value = param type</li>
+			<li>
+		<span class="type">string</span>
+		<b>$out</b> 
+		- 
+		assoc array of output values: key = param name, value = param type</li>
+			<li>
+		<span class="type">string</span>
+		<b>$namespace</b> 
+		- 
+		</li>
+			<li>
+		<span class="type">string</span>
+		<b>$soapaction</b> 
+		- 
+		</li>
+			<li>
+		<span class="type">string</span>
+		<b>$style</b> 
+		- 
+		optional (rpc|document)</li>
+			<li>
+		<span class="type">string</span>
+		<b>$use</b> 
+		- 
+		optional (encoded|literal)</li>
+			<li>
+		<span class="type">string</span>
+		<b>$documentation</b> 
+		- 
+		optional Description to include in WSDL</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodsend_response"></a>
+	<p></p>
+	<h3>send_response</h3>
+	<div class="indent">
+		<p>
+		<code>void send_response(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 477]</p>
+		<p align="center"><strong>sends an HTTP response
+</strong></p>
+<p>The following fields are set by this function (when successful)</p><p>outgoing_headers  response</p><h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodserialize_return"></a>
+	<p></p>
+	<h3>serialize_return</h3>
+	<div class="indent">
+		<p>
+		<code>void serialize_return(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 406]</p>
+		<p align="center"><strong>serializes the return value from a PHP function into a full SOAP Envelope
+</strong></p>
+<p>The following fields are set by this function (when successful)</p><p>responseSOAP</p><p>This sets the fault field on error</p><h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodservice"></a>
+	<p></p>
+	<h3>service</h3>
+	<div class="indent">
+		<p>
+		<code>void service(
+string
+$data)</code>
+		</p>
+	
+		<p class="linenumber">[line 103]</p>
+		<p align="center"><strong>processes request and returns response
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$data</b> 
+		- 
+		usually is the value of $HTTP_RAW_POST_DATA</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodverify_method"></a>
+	<p></p>
+	<h3>verify_method</h3>
+	<div class="indent">
+		<p>
+		<code>boolean verify_method(
+mixed
+$operation, mixed
+$request)</code>
+		</p>
+	
+		<p class="linenumber">[line 550]</p>
+		<p align="center"><strong>takes the value that was created by parsing the request  and compares to the method's signature, if available.
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">mixed</span>
+		<b>$operation</b> 
+		- 
+		</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodwebDescription"></a>
+	<p></p>
+	<h3>webDescription</h3>
+	<div class="indent">
+		<p>
+		<code>void webDescription(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 639]</p>
+		<p align="center"><strong>prints html description of services
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+</div>
+	<div id="credit">
+		<hr>
+		Documentation generated on Thu, 27 Oct 2005 13:03:22 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.2.3</a>
+	</div>
+</div>
+</body>
+</html>

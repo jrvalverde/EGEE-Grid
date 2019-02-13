@@ -1,0 +1,157 @@
+# Version: March 11, 1996
+#
+# LIBRARY OF ATOM RADII FOR DIFFERENT TOPOLOGY MODELS
+#
+# RADII14.LIB   radii for 1-4 interactions
+#
+# MODELLER 3.0, Copyright Andrej Sali
+#
+#
+# The library contains radii of each atom type for each topology model.
+#
+# Search for ? to find radii that have to be checked and possibly corrected.
+# The rule: add 0.05 A for each H when dealing with extended atoms.
+#
+#
+# RS: Order of records is not important anymore. 
+# RS: It can differ from the CHARMM residue topology library.
+# RS: The first column (atom type index) in neglected.
+# RS: radii14.lib and radii.lib have the same format. 
+# 
+#
+# START:
+ 10
+          ALLH  POLH  HEAV  MCCB  MNCH  MCWO  CA    MNSS  CA3   CACB
+  1 H     0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! polar H
+  2 HC    0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! N-ter H
+  3 HA    0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! nonpolar H
+  4 HT    0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! TIPS3P WATER HYDROGEN
+  5 HP    0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! aromatic H
+  6 HB    0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! backbone H
+  7 HR1   0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! his he1, (+) his HG,HD2
+  8 HR2   0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! (+) his HE1
+  9 HR3   0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! neutral his HG, HD2
+ 10 HS    0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! cys
+ 11 C     1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! polar C
+ 12 CA    1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! aromatic C
+ 13 CT1   1.80  1.80  1.80  1.80  1.80  1.80  2.65  1.80  1.80  1.80 ! aliphatic sp3 C for CH
+ 14 CT2   1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! aliphatic sp3 C for CH2
+ 15 CT3   1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! aliphatic sp3 C for CH3
+ 16 CPH1  1.80  1.85  1.85  1.85  1.85  1.85  1.85  1.85  1.85  1.80 ! his CG and CD2 carbons
+ 17 CPH2  1.80  1.90  1.90  1.90  1.90  1.90  1.95  1.90  1.90  1.80 ! his CE1 carbon
+ 18 CPT   1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! trp C between rings
+ 19 CY    1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! TRP C in pyrrole ring
+ 20 CP1   1.80  1.85  1.85  1.85  1.85  1.85  1.85  1.85  1.85  1.80 ! tetrahedral C (proline CA)
+ 21 CP2   1.80  1.90  1.90  1.90  1.90  1.90  1.90  1.90  1.90  1.80 ! tetrahedral C (proline CB/CG) ?
+ 22 CP3   1.80  1.90  1.90  1.90  1.90  1.90  1.90  1.90  1.90  1.80 ! tetrahedral C (proline CD) ?
+ 23 CC    1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! carbonyl C for sidechains asn,asp,gln,glu
+ 24 CD    1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! carbonyl C for none amides, asp,glu,cter
+ 25 CPA   1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! heme alpha-C ?
+ 26 CPB   1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! heme beta-C ?
+ 27 CPM   1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! heme meso-C ?
+ 28 CM    1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! heme CO carbon ?
+ 29 CS    1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! thiolate carbon ?
+ 31 N     1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60 ! proline N
+ 32 NR1   1.60  1.60  1.70  1.70  1.70  1.70  1.70  1.70  1.70  1.60 ! neutral his protonated ring nitrogen ?
+ 33 NR2   1.60  1.60  1.65  1.65  1.65  1.65  1.65  1.65  1.65  1.60 ! neutral his unprotonated ring nitrogen ?
+ 34 NR3   1.60  1.60  1.65  1.65  1.65  1.65  1.65  1.65  1.65  1.60 ! charged his ring nitrogen ?
+ 35 NH1   1.60  1.60  1.65  1.65  1.65  1.65  1.65  1.65  1.65  1.60 ! peptide nitrogen
+ 36 NH2   1.60  1.60  1.70  1.70  1.70  1.70  1.70  1.70  1.70  1.60 ! amide nitrogen
+ 37 NH3   1.60  1.60  1.75  1.75  1.75  1.75  1.75  1.75  1.75  1.60 ! ammonium nitrogen
+ 38 NC2   1.60  1.60  1.70  1.70  1.70  1.70  1.70  1.70  1.70  1.60 ! guanidinium nitrogen ?
+ 39 NY    1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60 ! TRP N in pyrrole ring ?
+ 40 NP    1.60  1.60  1.70  1.70  1.70  1.70  1.70  1.70  1.70  1.60 ! Proline ring NH2+ (N-terminal)
+ 41 NPH   1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60 ! heme pyrrole N ?
+ 42 NP1   1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60 ! heme pyrrole N ?
+ 45 PA    1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! PB ; correct
+ 46 PB    1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! PB ; correct
+ 51 O     1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55 ! carbonyl oxygen
+ 52 OB    1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55 ! carbonyl oxygen in acetic acid
+ 53 OC    1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55 ! carboxylate oxygen
+ 54 OH1   1.55  1.55  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.55 ! hydroxyl oxygen
+ 55 OS    1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55 ! ester oxygen
+ 56 OT    1.55  1.55  1.65  1.65  1.65  1.65  1.65  1.65  1.65  1.55 ! TIPS3P WATER OXYGEN
+ 57 OM    1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55 ! heme CO/O2 oxygen
+ 58 CAH   2.54  2.54  2.54  2.54  2.54  2.54  2.54  2.54  2.54  2.54 ! Helical CA 
+ 59 CAS   2.54  2.54  2.54  2.54  2.54  2.54  2.54  2.54  2.54  2.54 ! Strand CA
+ 60 CAT   2.54  2.54  2.54  2.54  2.54  2.54  2.54  2.54  2.54  2.54 ! Turn CA
+ 61 VCC   2.28  2.28  2.28  2.28  2.28  2.28  2.28  2.28  2.28  2.28 ! HH model
+ 62 VCCC  2.36  2.36  2.36  2.36  2.36  2.36  2.36  2.36  2.36  2.36 ! HH model
+ 63 CCCL  2.36  2.36  2.36  2.36  2.36  2.36  2.36  2.36  2.36  2.36 ! HH model
+ 64 CCCP  2.36  2.36  2.36  2.36  2.36  2.36  2.36  2.36  2.36  2.36 ! HH model
+ 65 V6RF  2.59  2.59  2.59  2.59  2.59  2.59  2.59  2.59  2.59  2.59 ! HH model
+ 66 V6RY  2.69  2.69  2.69  2.69  2.69  2.69  2.69  2.69  2.69  2.69 ! HH model
+ 67 VCCN  2.28  2.28  2.28  2.28  2.28  2.28  2.28  2.28  2.28  2.28 ! HH model
+ 68 VCCO  2.31  2.31  2.31  2.31  2.31  2.31  2.31  2.31  2.31  2.31 ! HH model
+ 69 VCO2  2.16  2.16  2.16  2.16  2.16  2.16  2.16  2.16  2.16  2.16 ! HH model
+ 70 VCON  2.21  2.21  2.21  2.21  2.21  2.21  2.21  2.21  2.21  2.21 ! HH model
+ 71 VCOH  2.37  2.37  2.37  2.37  2.37  2.37  2.37  2.37  2.37  2.37 ! HH model
+ 72 VCS   2.19  2.19  2.19  2.19  2.19  2.19  2.19  2.19  2.19  2.19 ! HH model
+ 73 VCSC  2.44  2.44  2.44  2.44  2.44  2.44  2.44  2.44  2.44  2.44 ! HH model
+ 74 VN3C  2.30  2.30  2.30  2.30  2.30  2.30  2.30  2.30  2.30  2.30 ! HH model
+ 75 V5RH  2.33  2.33  2.33  2.33  2.33  2.33  2.33  2.33  2.33  2.33 ! HH model
+ 76 VNH3  1.70  1.70  1.70  1.70  1.70  1.70  1.70  1.70  1.70  1.70 ! HH model
+ 77 CH3E  1.90  1.90  1.90  1.90  1.90  1.90  1.90  1.90  1.90  1.90 ! HH model
+ 78 CH2E  1.90  1.90  1.90  1.90  1.90  1.90  1.90  1.90  1.90  1.90 ! HH model
+ 81 S     1.90  1.90  1.95  1.95  1.95  1.95  1.95  1.95  1.95  1.90 ! sulphur
+ 82 SM    1.90  1.90  1.90  1.90  1.90  1.90  1.90  1.90  1.90  1.90 ! sulfur C-S-S-C type
+ 83 SS    1.90  1.90  1.90  1.90  1.90  1.90  1.90  1.90  1.90  1.90 ! thiolate sulfur
+ 90 CAL   0.94  0.94  0.94  0.94  0.94  0.94  0.94  0.94  0.94  0.94 ! calcium 2+
+ 91 ZN    0.74  0.74  0.74  0.74  0.74  0.74  0.74  0.74  0.74  0.74 ! zinc (II) cation
+ 92 FE    0.65  0.65  0.65  0.65  0.65  0.65  0.65  0.65  0.65  0.65 ! heme iron 56
+ 93 UNDF  1.70  1.70  1.70  1.70  1.70  1.70  1.70  1.70  1.70  1.70 ! undefined
+ 94 OE    1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55 ! ether O
+ 95 MMG   0.72  0.72  0.72  0.72  0.72  0.72  0.72  0.72  0.72  0.72 ! magnesium (II), coordination no 6
+ 96 MK    1.38  1.38  1.38  1.38  1.38  1.38  1.38  1.38  1.38  1.38 ! potassium, coordination no 6
+ 97 CE1   1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! for alkene; RHC=CR
+ 98 CE2   1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! for alkene; H2C=CR
+ 99 CN1   1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! Nucleic acid carbonyl carbon
+100 CN1A  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! NAD+/NADH amide carbonyl carbon
+101 CN2   1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! Nucleic acid aromatic carbon to amide
+102 CN3   1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! Nucleic acid aromatic carbon 
+103 CN3A  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! NAD+ aromatic carbon
+104 CN3B  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! NAD+ aromatic carbon
+105 CN3C  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! NADH aromatic carbon
+106 CN3D  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! Nucleic acid aromatic carbon for 5MC
+107 CN4   1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! Nucleic acid purine C8 and ADE C2  
+108 CN5   1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! Nucleic acid purine C4 and C5
+109 CN6   1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! Nucleic acid sp3 ribose ring carbon
+110 CN6B  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! Nucleic acid sp3 ribose ring carbon, C1'
+111 CN6C  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! Nucleic acid sp3 deoxyribose ring carbon, C2'
+112 CN7   1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! Nucleic acid carbon (equivalent to protein CT1)
+113 CN8   1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! Nucleic acid carbon (equivalent to protein CT2)
+114 CN9   1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! Nucleic acid carbon (equivalent to protein CT3)
+115 DUM   0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00 ! dummy atom
+116 HA1   0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! for alkene; RHC=CR
+117 HA2   0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! for alkene; H2C=CR
+118 HE    0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! helium
+119 HN1   0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! Nucleic acid amine proton
+120 HN2   0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! Nucleic acid ring nitrogen proton
+121 HN3   0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! Nucleic acid aromatic carbon proton
+122 HN3B  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! NAD+ aromatic hydrogen
+123 HN4   0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! Nucleic acid phosphate hydroxyl proton
+124 HN5   0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! Nucleic acid ribose hydroxyl proton
+125 HN6   0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! Nucleic acid ribose aliphatic proton
+126 HN7   0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80  0.80 ! Nucleic acid proton (equivalent to protein HA)
+127 MG    0.72  0.72  0.72  0.72  0.72  0.72  0.72  0.72  0.72  0.72 ! Magnesium Ion
+128 NE    1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60 ! neon
+129 NN1   1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60 ! Nucleic acid amide nitrogen
+130 NN2   1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60 ! Nucleic acid protonated ring nitrogen
+131 NN2G  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60 ! Nucleic acid protonated ring nitrogen, gua N1
+132 NN2U  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60 ! Nucleic acid protonated ring nitrogen, ura N3
+133 NN3   1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60 ! Nucleic acid unprotonated ring nitrogen 
+134 NN3A  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60 ! Nucleic acid unprotonated ring nitrogen, ade N1 and N3
+135 NN3I  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60 ! Nucleic acid unprotonated ring nitrogen, inosine N3
+136 NN4   1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60 ! Nucleic acid purine N7
+137 NN5   1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60  1.60 ! Nucleic acid sp2 amine nitrogen
+138 ON1   1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55 ! Nucleic acid carbonyl oxygen
+139 ON1C  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55 ! Nucleic acid carbonyl oxygen, cyt O2
+140 ON2   1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55 ! Nucleic acid phosphate ester oxygen
+141 ON2B  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55 ! Nucleic acid phosphate ester oxygen, tyr-phosphate
+142 ON3   1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55 ! Nucleic acid =O in phosphate 
+143 ON4   1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55 ! Nucleic acid phosphate hydroxyl oxygen
+144 ON5   1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55 ! Nucleic acid ribose hydroxyl oxygen
+145 ON6   1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55  1.55 ! Nucleic acid ribose ring oxygen
+146 P     1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! phosphorus
+147 P2    1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80  1.80 ! pyrophosphate phosphorus
+148 SOD   1.90  1.90  1.95  1.95  1.95  1.95  1.95  1.95  1.95  1.90 ! Sodium Ion

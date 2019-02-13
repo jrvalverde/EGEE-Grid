@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.3.4">
+  <compounddef id="auth_8php" kind="file">
+    <compoundname>auth.php</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="auth_8php_1a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>required_fields</definition>
+        <argsstring>()</argsstring>
+        <name>required_fields</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/auto/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php" line="84" bodystart="83" bodyend="88"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="auth_8php_1a0" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$username</definition>
+        <argsstring></argsstring>
+        <name>$username</name>
+        <initializer>$_POST[&quot;username&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/auto/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php" line="15" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="auth_8php_1a1" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$password</definition>
+        <argsstring></argsstring>
+        <name>$password</name>
+        <initializer>$_POST[&quot;password&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/auto/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php" line="16" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="auth_8php_1a2" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$passphrase</definition>
+        <argsstring></argsstring>
+        <name>$passphrase</name>
+        <initializer>$_POST[&quot;passphrase&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/auto/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php" line="17" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="auth_8php_1a3" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$process</definition>
+        <argsstring></argsstring>
+        <name>$process</name>
+        <initializer> proc_open(&quot;bash&quot;, $descriptorspec, $pipes)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/auto/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php" line="51" bodystart="51" bodyend="-1"/>
+        <referencedby refid="functions_8php_1a0" compoundref="functions_8php" startline="53" endline="84">open_connection</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="auth_8php_1a4" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>$return_value</definition>
+        <argsstring></argsstring>
+        <name>$return_value</name>
+        <initializer> proc_close($process)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <location file="/auto/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php" line="79" bodystart="79" bodyend="-1"/>
+        <referencedby refid="functions_8php_1a1" compoundref="functions_8php" startline="100" endline="123">close_connection</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;!DOCTYPE<sp/>HTML<sp/>PUBLIC<sp/></highlight><highlight class="stringliteral">&quot;-//W3C//DTD<sp/>HTML<sp/>4.01<sp/>Transitional//EN&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;http://www.w3.org/TR/html4/loose.dtd&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal">&lt;html&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">&lt;head&gt;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">	&lt;meta<sp/>http-equiv=</highlight><highlight class="stringliteral">&quot;Content-Type&quot;</highlight><highlight class="normal"><sp/>content=</highlight><highlight class="stringliteral">&quot;text/html;<sp/>charset=UTF-8&quot;</highlight><highlight class="normal"><sp/>&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">	&lt;title&gt;Results&lt;/title&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">&lt;/head&gt;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">&lt;?</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>General<sp/>utility<sp/>functions</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">require(</highlight><highlight class="stringliteral">&quot;./functions.php&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><ref refid="auth_8php_1a0" kindref="member">$username</ref>=$_POST[</highlight><highlight class="stringliteral">&quot;username&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><ref refid="auth_8php_1a1" kindref="member">$password</ref>=$_POST[</highlight><highlight class="stringliteral">&quot;password&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><ref refid="auth_8php_1a2" kindref="member">$passphrase</ref>=$_POST[</highlight><highlight class="stringliteral">&quot;passphrase&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//escapeshellcmd()<sp/>escapes<sp/>any<sp/>characters<sp/>in<sp/>a<sp/>string<sp/>that<sp/>might<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//be<sp/>used<sp/>to<sp/>trick<sp/>a<sp/>shell<sp/>command<sp/>into<sp/>executing<sp/>arbitrary<sp/>commands.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="auth_8php_1a0" refkind="member"><highlight class="normal"><ref refid="auth_8php_1a0" kindref="member">$username</ref>=<sp/>escapeshellcmd($username);</highlight></codeline>
+<codeline lineno="22" refid="auth_8php_1a1" refkind="member"><highlight class="normal"><ref refid="auth_8php_1a1" kindref="member">$password</ref>=<sp/>escapeshellcmd($password);</highlight></codeline>
+<codeline lineno="23" refid="auth_8php_1a2" refkind="member"><highlight class="normal"><ref refid="auth_8php_1a2" kindref="member">$passphrase</ref>=<sp/>escapeshellcmd($passphrase);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&quot;EOOOO<sp/>$username<sp/>$password<sp/>$passphrase&lt;br&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//The<sp/>fields<sp/>are<sp/>required</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(<ref refid="auth_8php_1a0" kindref="member">$username</ref>==</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>||<sp/>(<ref refid="auth_8php_1a1" kindref="member">$password</ref>==</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)||<sp/>(<ref refid="auth_8php_1a2" kindref="member">$passphrase</ref>==</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>)<sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//required_fields();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">//Zap<sp/>everything<sp/>past<sp/>first<sp/>nonword<sp/>character</highlight></codeline>
+<codeline lineno="34"><highlight class="comment">$username<sp/>=<sp/>ltrim($username);</highlight></codeline>
+<codeline lineno="35"><highlight class="comment">$findme<sp/><sp/>=<sp/>&apos;<sp/>&apos;;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment">$pos<sp/>=<sp/>strpos($username,<sp/>$findme);</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"></highlight></codeline>
+<codeline lineno="38"><highlight class="comment">if<sp/>(<sp/>is_numeric($pos)<sp/>==<sp/>true<sp/>)<sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="comment">{</highlight></codeline>
+<codeline lineno="40"><highlight class="comment">	$username=substr($username,<sp/>0,<sp/>$pos);</highlight></codeline>
+<codeline lineno="41"><highlight class="comment">}<sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="comment">*/</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="43"><highlight class="comment">//////////////////////////////</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"></highlight><highlight class="normal">$descriptorspec<sp/>=<sp/>array(</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>	0<sp/>=&gt;<sp/>array(</highlight><highlight class="stringliteral">&quot;pipe&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;r&quot;</highlight><highlight class="normal">),<sp/><sp/></highlight><highlight class="comment">//<sp/>stdin<sp/>is<sp/>a<sp/>pipe<sp/>that<sp/>the<sp/>child<sp/>will<sp/>read<sp/>from</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>	1<sp/>=&gt;<sp/>array(</highlight><highlight class="stringliteral">&quot;pipe&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">),<sp/><sp/></highlight><highlight class="comment">//<sp/>stdout<sp/>is<sp/>a<sp/>pipe<sp/>that<sp/>the<sp/>child<sp/>will<sp/>write<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>	2<sp/>=&gt;<sp/>array(</highlight><highlight class="stringliteral">&quot;file&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;/tmp/error-output.txt&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;a&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="comment">//<sp/>stderr<sp/>is<sp/>a<sp/>file<sp/>to<sp/>write<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">	);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">	echo<sp/></highlight><highlight class="stringliteral">&quot;OOOOOOOOO&lt;br&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51" refid="auth_8php_1a3" refkind="member"><highlight class="normal">	<ref refid="auth_8php_1a3" kindref="member">$process</ref><sp/>=<sp/>proc_open(</highlight><highlight class="stringliteral">&quot;bash&quot;</highlight><highlight class="normal">,<sp/>$descriptorspec,<sp/>$pipes);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">	fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;whoami\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">	fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;pwd\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">	fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;echo<sp/>cambiamos\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">	fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;sudo<sp/>-u<sp/>david<sp/>ls<sp/>-la<sp/>/home/david\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">	sleep(5);<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">	fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>Required<sp/>to<sp/>close<sp/>the<sp/>&apos;child&apos;<sp/>process,<sp/>otherwise<sp/>&apos;proc_close&apos;<sp/>function<sp/>hangs!!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">	fwrite($pipes[0],<sp/></highlight><highlight class="stringliteral">&quot;exit\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal">	fclose($pipes[0]);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>The<sp/>output<sp/>from<sp/>the<sp/>commands</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>Uncomment<sp/>to<sp/>debug<sp/>the<sp/>&apos;child&apos;<sp/>process!!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">	</highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!feof($pipes[1]))</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">	{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">		echo<sp/>fgets($pipes[1],<sp/>1024).</highlight><highlight class="stringliteral">&quot;&lt;br<sp/>/&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">	}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">	fclose($pipes[1]);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>It&apos;s<sp/>important<sp/>that<sp/>you<sp/>close<sp/>any<sp/>pipes<sp/>before<sp/>calling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">	</highlight><highlight class="comment">//<sp/>proc_close<sp/>in<sp/>order<sp/>to<sp/>avoid<sp/>a<sp/>deadlock</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="auth_8php_1a4" refkind="member"><highlight class="normal">	<ref refid="auth_8php_1a4" kindref="member">$return_value</ref><sp/>=<sp/>proc_close($process);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">	</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">	echo<sp/></highlight><highlight class="stringliteral">&quot;\ncommand<sp/>returned<sp/>$return_value\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="auth_8php_1a5" refkind="member"><highlight class="normal">function<sp/><ref refid="auth_8php_1a5" kindref="member">required_fields</ref>()</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;h1&gt;Error.<sp/>Username,<sp/>password<sp/>and<sp/>passphrase<sp/>are<sp/>required.&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//exit;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">?&gt;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">&lt;center&gt;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">&lt;table&gt;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">&lt;tr&gt;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">	&lt;td<sp/>align=center&gt;&lt;img<sp/>src=</highlight><highlight class="stringliteral">&quot;../interface/egee.jpg&quot;</highlight><highlight class="normal"><sp/>alt=</highlight><highlight class="stringliteral">&quot;[EGEE]&quot;</highlight><highlight class="normal">&gt;&lt;/a&gt;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">	&lt;/td&gt;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">&lt;/tr&gt;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">&lt;/table&gt;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">&lt;p&gt;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">	&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;http://validator.w3.org/check?uri=referer&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">	&lt;img<sp/>border=</highlight><highlight class="stringliteral">&quot;0&quot;</highlight><highlight class="normal"><sp/>src=</highlight><highlight class="stringliteral">&quot;http://www.w3.org/Icons/valid-html401&quot;</highlight><highlight class="normal">alt=</highlight><highlight class="stringliteral">&quot;Valid<sp/>HTML<sp/>4.01!&quot;</highlight><highlight class="normal"><sp/>height=</highlight><highlight class="stringliteral">&quot;31&quot;</highlight><highlight class="normal"><sp/>width=</highlight><highlight class="stringliteral">&quot;88&quot;</highlight><highlight class="normal">&gt;&lt;/a&gt;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">&lt;/p&gt;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">&lt;/center&gt;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">&lt;/body&gt;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">&lt;/html&gt;</highlight></codeline>
+    </programlisting>
+    <location file="/auto/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php"/>
+  </compounddef>
+</doxygen>

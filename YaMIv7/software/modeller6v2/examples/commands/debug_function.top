@@ -1,0 +1,23 @@
+# Example for: DEBUG_FUNCTION
+
+# This will use default MODELLER scripts to construct homology
+# restraints for 1fas. It will then use DEBUG_FUNCTION to test
+# the source code for the function and derivatives calculation
+# by comparing analytical and numerical first derivatives.
+# Some discrepancies will be reported but ignore them here.
+
+INCLUDE
+
+SET OUTPUT_CONTROL = 1 1 1 1 1
+
+SET ALNFILE = 'debug_function.ali'
+SET SEQUENCE = '1fas'
+SET KNOWNS = '2ctx' '1nbt'
+SET SPLINE_ON_SITE = off
+CALL ROUTINE = 'model', EXIT_STAGE = 1
+
+# To assign 0 weights to restraints whose numerical derivatives
+# code does not work (i.e., splines for angles and dihedrals):
+READ_SCHEDULE FILE = 'debug_function.sched'
+ENERGY
+DEBUG_FUNCTION DEBUG_FUNCTION_CUTOFF = 15.00 0.10 0.1, DETAILED_DEBUGGING = on

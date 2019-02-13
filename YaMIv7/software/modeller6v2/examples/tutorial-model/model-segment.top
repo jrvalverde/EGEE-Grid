@@ -1,0 +1,27 @@
+# Homology modelling by the MODELLER TOP routine 'model'.
+# Demonstrates how to refine only a part of the model.
+#
+# You may want to use the more exhaustive "loop" modeling routines instead.
+#
+
+INCLUDE                             # Include the predefined TOP routines
+SET OUTPUT_CONTROL = 1 1 1 1 0
+
+SET ALNFILE  = 'alignment.ali'      # alignment filename
+SET KNOWNS   = '5fd1'               # codes of the templates
+SET SEQUENCE = '1fdx'               # code of the target
+SET ATOM_FILES_DIRECTORY = './:../atom_files' # directories for input atom files
+SET STARTING_MODEL= 3               # index of the first model 
+SET ENDING_MODEL  = 3               # index of the last model
+                                    # (determines how many models to calculate)
+SET NONBONDED_SEL_ATOMS = 2         # selected atoms do not feel the neighbourhood
+
+CALL ROUTINE = 'model'              # do homology modelling
+
+
+SUBROUTINE ROUTINE = 'select_atoms'
+  PICK_ATOMS SELECTION_SEGMENT='1:' '2:', SELECTION_SEARCH='segment', ;
+             PICK_ATOMS_SET=1, RES_TYPES='all', ATOM_TYPES='all', ;
+             SELECTION_FROM='all', SELECTION_STATUS='initialize'
+  RETURN
+END_SUBROUTINE

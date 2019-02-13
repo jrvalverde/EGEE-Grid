@@ -1,0 +1,145 @@
+\section{functions.php File Reference}
+\label{functions_8php}\index{functions.php@{functions.php}}
+\subsection*{Namespaces}
+\begin{CompactItemize}
+\item 
+namespace {\bf eg\-TINKER}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf install\_\-gramm} (\$wd\_\-path, \$random\_\-value)
+\begin{CompactList}\small\item\em Install the program and scripts needed to run it on a suitable place. \item\end{CompactList}\item 
+{\bf go\_\-to\_\-work} (\$user\_\-wd\_\-path, \$options)
+\begin{CompactList}\small\item\em Create working directory and move to it. \item\end{CompactList}\item 
+{\bf job\_\-identifier} ()
+\begin{CompactList}\small\item\em Get job identifier. \item\end{CompactList}\item 
+{\bf check\_\-status} ()
+\begin{CompactList}\small\item\em Check job status. \item\end{CompactList}\item 
+{\bf get\_\-user\_\-data} (\$user\_\-wd\_\-path, \$options)
+\begin{CompactList}\small\item\em Upload user data. \item\end{CompactList}\item 
+{\bf create\_\-gr\_\-files} (\$user\_\-wd\_\-path, \$resolution)
+\begin{CompactList}\small\item\em Create configuration files needed to run GRAMM. \item\end{CompactList}\item 
+{\bf create\_\-jdl\_\-file} (\$user\_\-wd\_\-path)
+\begin{CompactList}\small\item\em Create JDL description of the job to be submitted to the {\bf Grid}{\rm (p.\,\pageref{classGrid})}. \item\end{CompactList}\item 
+{\bf unpack\_\-results} ()
+\begin{CompactList}\small\item\em Extract results gathered from the {\bf Grid}{\rm (p.\,\pageref{classGrid})}. \item\end{CompactList}\item 
+{\bf show\_\-results} ()
+\begin{CompactList}\small\item\em Show the results to the user. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{functions.php@{functions.php}!check_status@{check\_\-status}}
+\index{check_status@{check\_\-status}!functions.php@{functions.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}check\_\-status ()}\label{functions_8php_a3}
+
+
+Check job status. 
+
+
+
+Definition at line 127 of file functions.php.\index{functions.php@{functions.php}!create_gr_files@{create\_\-gr\_\-files}}
+\index{create_gr_files@{create\_\-gr\_\-files}!functions.php@{functions.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}create\_\-gr\_\-files (\$ {\em user\_\-wd\_\-path}, \$ {\em resolution})}\label{functions_8php_a5}
+
+
+Create configuration files needed to run GRAMM. 
+
+
+
+Definition at line 201 of file functions.php.\index{functions.php@{functions.php}!create_jdl_file@{create\_\-jdl\_\-file}}
+\index{create_jdl_file@{create\_\-jdl\_\-file}!functions.php@{functions.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}create\_\-jdl\_\-file (\$ {\em user\_\-wd\_\-path})}\label{functions_8php_a6}
+
+
+Create JDL description of the job to be submitted to the {\bf Grid}{\rm (p.\,\pageref{classGrid})}. 
+
+
+
+Definition at line 266 of file functions.php.\index{functions.php@{functions.php}!get_user_data@{get\_\-user\_\-data}}
+\index{get_user_data@{get\_\-user\_\-data}!functions.php@{functions.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}get\_\-user\_\-data (\$ {\em user\_\-wd\_\-path}, \$ {\em options})}\label{functions_8php_a4}
+
+
+Upload user data. 
+
+
+
+Definition at line 145 of file functions.php.
+
+References exit.\index{functions.php@{functions.php}!go_to_work@{go\_\-to\_\-work}}
+\index{go_to_work@{go\_\-to\_\-work}!functions.php@{functions.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}go\_\-to\_\-work (\$ {\em user\_\-wd\_\-path}, \$ {\em options})}\label{functions_8php_a1}
+
+
+Create working directory and move to it. 
+
+The goal is to go to the working directory. If it does not exist, we create it (it shouldn't) and move inside.
+
+Ideally we would also create an .htaccess file and a .htpasswd with a random password to return to the user. Should that be done here?
+
+\begin{Desc}
+\item[Note:]The working directory should not exist!\end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em \$user\_\-wd\_\-path}]the \_\-absolute\_\- path to the local directory where we will be storing user data. \end{description}
+\end{Desc}
+
+
+Definition at line 94 of file functions.php.
+
+References exit.\index{functions.php@{functions.php}!install_gramm@{install\_\-gramm}}
+\index{install_gramm@{install\_\-gramm}!functions.php@{functions.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}install\_\-gramm (\$ {\em wd\_\-path}, \$ {\em random\_\-value})}\label{functions_8php_a0}
+
+
+Install the program and scripts needed to run it on a suitable place. 
+
+This function installs the docking program GRAMM and the scripts needed to run it on a suitable local directory.
+
+Since we may potentially be called many times in a short period we need a way to make sure their jobs don't clash with one another, most specially, that they don't overwrite each others' workspace.
+
+For this reason, we use a separate working directory for each request. This function will install GRAMM on the specified working directory.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em wd\_\-path}]local directory devoted to {\bf Grid}{\rm (p.\,\pageref{classGrid})} work \item[{\em random\_\-value}]a random value to generate a unique name for the working directory. \end{description}
+\end{Desc}
+
+
+Definition at line 41 of file functions.php.
+
+References exit.\index{functions.php@{functions.php}!job_identifier@{job\_\-identifier}}
+\index{job_identifier@{job\_\-identifier}!functions.php@{functions.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}job\_\-identifier ()}\label{functions_8php_a2}
+
+
+Get job identifier. 
+
+
+
+Definition at line 112 of file functions.php.\index{functions.php@{functions.php}!show_results@{show\_\-results}}
+\index{show_results@{show\_\-results}!functions.php@{functions.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}show\_\-results ()}\label{functions_8php_a8}
+
+
+Show the results to the user. 
+
+
+
+Definition at line 312 of file functions.php.
+
+References \$dir.\index{functions.php@{functions.php}!unpack_results@{unpack\_\-results}}
+\index{unpack_results@{unpack\_\-results}!functions.php@{functions.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unpack\_\-results ()}\label{functions_8php_a7}
+
+
+Extract results gathered from the {\bf Grid}{\rm (p.\,\pageref{classGrid})}. 
+
+
+
+Definition at line 289 of file functions.php.
+
+References \$dir.

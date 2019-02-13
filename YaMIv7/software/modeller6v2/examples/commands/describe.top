@@ -1,0 +1,6 @@
+# Example for: DESCRIBE
+
+# Describe the sequences and structures in the alignment.
+
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = '2ctx' '2abx'
+DESCRIBE

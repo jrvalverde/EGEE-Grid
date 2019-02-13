@@ -1,0 +1,6 @@
+# Example for: READ_ATOM_CLASSES
+
+# This will read an atom classification for non-bonded statistical potentials
+# of mean force.
+
+READ_ATOM_CLASSES ATOM_CLASSES_FILE = '$(LIB)/atmcls-melo.lib'

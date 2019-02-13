@@ -1,0 +1,12 @@
+# Example for: SEQUENCE_SEARCH
+
+# This will search the MODELLER database of representative protein chains
+# for chains similar to the specified sequence.
+
+SET OUTPUT_CONTROL = 1 1 1 1 1
+SET SEARCH_RANDOMIZATIONS = 20 # should use 100 in real life;
+SET GAP_PENALTIES_1D = -800 -400
+SET SEARCH_CHAINS_LIST = 'very-short-for-test.cod'
+SEQUENCE_SEARCH FILE = 'toxin.ali', ALIGN_CODES = '1nbt'
+MALIGN
+WRITE_ALIGNMENT FILE = 'toxin-search.pap', ALIGNMENT_FORMAT = 'PAP'

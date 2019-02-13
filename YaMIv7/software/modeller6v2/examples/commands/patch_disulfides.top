@@ -1,0 +1,41 @@
+# Example for: PATCH_SS_TEMPLATES and PATCH_SS_MODEL
+
+# This will patch CYS-CYS disulfide bonds using disulfides in aligned templates:
+
+SET OUTPUT_CONTROL = 1 1 1 1 1
+
+READ_TOPOLOGY   FILE = '$(LIB)/top_heav.lib'
+READ_PARAMETERS FILE = '$(LIB)/par.lib'
+
+# Read the sequence, calculate its topology, and coordinates:
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = '2ctx' '2abx' 
+# Superpose the two template structures without changing the alignment.
+# This is for TRANSFER_XYZ to work properly. It relies on not reading
+# the atom files again before TRANSFER_XYZ.
+MALIGN3D FIT = off  # This is for TRANSFER_XYZ to work properly.
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = ALIGN_CODES '1fas'
+GENERATE_TOPOLOGY SEQUENCE = '1fas'
+TRANSFER_XYZ
+BUILD_MODEL INITIALIZE_XYZ = on
+WRITE_MODEL FILE = '1fas.noSS'
+# Create the disulfide bonds using equivalent disulfide bonds in templates:
+PATCH_SS_TEMPLATES
+
+# Create the stereochemical restraints
+MAKE_RESTRAINTS RESTRAINT_TYPE = 'stereo'
+
+# Calculate energy to test the disulfide restraints (bonds, angles, dihedrals):
+ENERGY
+
+READ_MODEL  FILE = '1fas.noSS'
+# Create the disulfide bonds guessing by coordinates
+PATCH_SS_MODEL
+
+# Create the stereochemical restraints
+MAKE_RESTRAINTS RESTRAINT_TYPE = 'stereo'
+
+# Calculate energy to test the disulfide restraints (bonds, angles, dihedrals):
+ENERGY
+
+
+

@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//Dtd HTML 4.01 transitional//EN" "http://www.w3.org/tr/html4/loose.dtd">
+<html>
+<head>
+<title>
+YaMI (Yet another Modeller Interface)
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<script language="JavaScript">
+
+// function used to open the help window
+function openNewWindow(fileName,windowName,theWidth,theHeight) 
+{
+        window.open(fileName,windowName,"toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=0,width="+theWidth+",height="+theHeight);
+}
+
+
+function showalig(str)
+    	  { 
+            var yesoptions="<table width=\"70%\" bgcolor=\"lightblue\" border=\"1\" cellpadding=\"5\" cellspacing=\"0\"><td valign=\"center\" width=\"30%\"> Alignment file</td><td valign=\"center\" align=\"center\"> <p> <input type=\"file\" name=\"alignment\" size=\"40\"></td></tr><tr> <td valign=\"center\">Target code</td><td valign=\"center\" align=\"center\"> <input type=\"text\" name=\"target\"></td></tr></table><p>";
+	    //var nooptions="No alignment file required<p>";
+	    var nooptions="";
+	    
+	    switch (str)
+	    {
+	    
+    	    	case "yes":
+		document.getElementById("alig-options").innerHTML=yesoptions;
+		break;
+		case "no":
+		document.getElementById("alig-options").innerHTML=nooptions;
+		break;
+    	    	default : 
+		document.getElementById("alig-options").innerHTML=yesoptions;
+    	    }
+	
+          } 
+
+</script>
+
+<body background="6h2o-w-small.gif">
+<center>
+<p><h1>YaMI</h1>
+
+<b>Yet another Modeller Interface (Grid enabled)</b>
+
+<form name="YaMIform" enctype="multipart/form-data" method="post" action="./script/processor.php">
+
+<table width="80%" bgcolor="lightblue" cellpadding="5" cellspacing="0" border="0">
+
+<tr><td>
+		<table width="100%" border="1" cellpadding="5" cellspacing="0">
+		<tr> 
+			<td valign="center"width="30%"><b>User name</b></td>
+			<td width="70%" valign="center" align="center"> 
+			<input type="text" name="user_login">
+		</td>
+		</tr>
+		<tr> 
+			<td valign="center">Password</td>
+			<td valign="center" align="center"> 
+			<input type="password" name="user_password">
+			</td>
+		</tr>
+		<tr> 
+			<td valign="center">Passphrase</td>
+			<td valign="center" align="center"> 
+			<input type="password" name="passphrase">
+			</td>
+		</tr>
+		</table>
+</td></tr>
+
+<tr>
+<td>
+		<table width="100%" border="1" cellpadding="5" cellspacing="0">
+		<tr> 
+			<td width="30%" valign="center"><b>Sequence File <u>in PIR format</u></b></td>
+			<td width="70%" valign="center" align="center"> 
+			<input type="file" name="pir-file" size="40">
+			<!--<input type="hidden" name="MAX_FILE_SIZE" value="3000000">-->
+			</td>
+		</tr>
+		</table>
+</tr>
+</td>
+
+
+<tr><td>
+		<table width="100%" border="1" cellpadding="5" cellspacing="0">
+		<tr> 
+			<td valign="center"width="30%">Codes of template PDB molecules</td>
+			<td width="70%" valign="center" align="center"> 
+			<input type="text" name="knowns">
+		</td>
+		</tr>
+		<tr> 
+			<td valign="center">Number of models to generate</td>
+			<td valign="center" align="center"> 
+			<input type="text" name="ending_model">
+			</td>
+		</tr>
+		<tr> 
+			<td valign="center">Refinement method</td>
+			<td valign="center" align="center"> 
+			<select name ="md">
+			<option selected>Very Fast MD</option>
+			<option>Fast MD</option>
+			<option>Thorough MD</option>
+			<option>None</option>
+			</select>
+			</td>
+		</tr>
+		</table>
+</td></tr>
+
+
+<tr>
+<td>
+		<table width="100%" border="1" cellpadding="5" cellspacing="0">
+		<tr> 
+			<td valign="center" width="30%">Include hetero atoms</td>
+			<td width="70%" valign="center" align="center"> Yes 
+			<input type="radio" name="hetatm_io" value="on">
+			No 
+			<input type="radio" name="hetatm_io" value="off" checked>
+			</td>
+		</tr>
+		<tr> 
+			<td valign="center">Include waters</td>
+			<td valign="center" align="center"> Yes 
+			<input type="radio" name="water_io" value="on" >
+			No 
+			<input type="radio" name="water_io" value="off" checked>
+			</td>
+		</tr>
+		<tr> 
+			<td valign="center">Include hydrogens</td>
+			<td valign="center" align="center"> Yes 
+			<input type="radio" name="hydrogen_io" value="on">
+			No 
+			<input type="radio" name="hydrogen_io" value="off" checked>
+			</td>
+		</tr>
+		</table>
+</table>
+<p>
+		<!-- Dinamic part of the form -->
+		
+		<table width="70%" bgcolor="lightblue" border="1" cellpadding="5" cellspacing="0">
+		<tr> 
+			<td valign="center" width="30%">Use alignment</td>
+			<td valign="center" width="70%" align="center"> 
+			<select name="alig" onchange="showalig(this.value)">
+			<option value="yes">YES
+			<option value="no">NO
+			</select></td>
+			</td>
+		</tr>
+		</table>
+		<p>
+		
+		<div id="alig-options">
+		<table width="70%" bgcolor="lightblue" border="1" cellpadding="5" cellspacing="0">
+		<tr>
+			<td valign="center"  width="30%"> Alignment file</td>
+			<td valign="center" width="70%" align="center"> 
+			<p> 
+			<input type="file" name="alignment-file" size="40">
+			</td>
+		</tr>
+		<tr> 
+			<td valign="center">Target code</td>
+			<td valign="center" align="center"> 
+			<input type="text" name="target">
+			</td>
+		</tr>
+		</table>
+		<p>
+		</div>
+		
+		<table>
+		<tr><td>
+		<center><input type="submit" value="Run Modeller"></center>
+		</td></tr>
+
+		<tr><td>&nbsp</td></tr>
+
+		<tr><td>
+		<center>
+			<a href="JavaScript:openNewWindow('./help.html','Help',650,370)"><IMG SRC="help.gif" ALT="[HELP]"></a>
+		</center>
+		</td></tr>
+		</table>
+</form>
+                                       
+</center>
+<hr>
+<table WIDTH="100%">
+<tr><td ALIGN=center>
+<address>
+<!-- app info here -->
+<p>If you have any trouble, please contact our
+    <a HREF="/cgi-bin/emailto?Bioinformatics+Administrator">Bioinformatics
+    Administrator</a></p>
+<p><a HREF="./Copyright-CSIC.html">&copy; EMBnet/CNB</a></p>
+</address>
+</td></tr>
+</table>
+
+</body>
+</html>

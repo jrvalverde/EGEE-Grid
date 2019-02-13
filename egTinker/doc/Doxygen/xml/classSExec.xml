@@ -1,0 +1,672 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.3.6">
+  <compounddef id="classSExec" kind="class" prot="public">
+    <compoundname>SExec</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSExec_1a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::SExec</definition>
+        <argsstring>($remote=&quot;localhost&quot;, $password=&quot;xxyzzy&quot;)</argsstring>
+        <name>SExec</name>
+        <param>
+          <type>$</type>
+          <declname>remote</declname>
+          <defval>&quot;localhost&quot;</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+          <defval>&quot;xxyzzy&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-files.php" line="10" bodystart="9" bodyend="13"/>
+        <references refid="classSExec_1o1" compoundref="ssh-pipes_8php" startline="6">$remote</references>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::set_remote_end</definition>
+        <argsstring>($remote, $password=&quot;xxyzzy&quot;)</argsstring>
+        <name>set_remote_end</name>
+        <param>
+          <type>$</type>
+          <declname>remote</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+          <defval>&quot;xxyzzy&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-files.php" line="16" bodystart="15" bodyend="19"/>
+        <references refid="classSExec_1o2" compoundref="ssh-pipes_8php" startline="7">$password</references>
+        <references refid="classSExec_1o1" compoundref="ssh-pipes_8php" startline="6">$remote</references>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::ssh_passthru</definition>
+        <argsstring>($remote, $password, $command, &amp;$status)</argsstring>
+        <name>ssh_passthru</name>
+        <param>
+          <type>$</type>
+          <declname>remote</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>&amp;$</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+<para>Execute a single command remotely using ssh and display its output, optionally returning its exit status (like passthru). </para>        </briefdescription>
+        <detaileddescription>
+<para>This function is intended to be used as a one-time all-at-once non-interactive execution mechanism which will run the command remotely and display its output.</para><para>If you try to issue an interactive command using this function, all you will get is unneccessary trouble. So don&apos;t!</para><para>This might be done as well using a pipe on /tmp and making the command &apos;cat&apos; the pipe: when ssh runs, it runs the command &apos;cat&apos; on the pipe and hangs on read. Then we just need a thread to open the pipe, put the password and close the pipe. This other way the password is never wirtten down. But, OTOH, the file life is so ephemeral that most of the time it will only exist in the internal system cache, so this approach is not that bad either.</para><para><parameterlist kind="param"><parametername>remote</parametername>
+<parameterdescription>
+<para>The remote end to run the command, in the form &apos;user:port&apos; (you may omit the &apos;user@&apos; or &apos;:port&apos; parts if the default values [i.e. same user or standard port] are OK). </para></parameterdescription><parametername>password</parametername>
+<parameterdescription>
+<para>The remote password. Note that if direct RSA/DSA/.shosts/.rhosts login is enabled then the password should be ignored as SSH should not run the ASKPASS command). </para></parameterdescription><parametername>command</parametername>
+<parameterdescription>
+<para>The command to execute on the remote end NOTE: if you want to use redirection, the entire remote command line should be enclosed in additional quotes! </para></parameterdescription><parametername>status</parametername>
+<parameterdescription>
+<para>Optional, this will hold the termination status of SSH after invocation, which should be the exit status of the remote command or 255 if an error occurred </para></parameterdescription></parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-files.php" line="64" bodystart="63" bodyend="86"/>
+        <references refid="config_8php_1a21" compoundref="config_8php" startline="204">$debug</references>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::ssh_exec</definition>
+        <argsstring>($remote, $password, $command, &amp;$out)</argsstring>
+        <name>ssh_exec</name>
+        <param>
+          <type>$</type>
+          <declname>remote</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>&amp;$</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+<para>Execute a remote command using SSH. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function sort of mimics rexec(3) using SSH as the transport protocol.</para><para>The function returns the exit status of the remote command, and appends the remote job output to an optional argument.</para><para>This function is intended to be used as a one-time all-at-once non-interactive execution mechanism which will run the command remotely and return its output.</para><para>If you try to issue an interactive command using this function, all you will get is unneccessary trouble. So don&apos;t!</para><para><parameterlist kind="param"><parametername>remote</parametername>
+<parameterdescription>
+<para>The remote end to run the command, in the form &apos;user:port&apos; (you may omit the &apos;user@&apos; or &apos;:port&apos; parts if the default values [i.e. same user or standard port] are OK). </para></parameterdescription><parametername>password</parametername>
+<parameterdescription>
+<para>The remote password. Note that if direct RSA/DSA/.shosts/.rhosts login is enabled then the password should be ignored as SSH should not run the ASKPASS command). </para></parameterdescription><parametername>command</parametername>
+<parameterdescription>
+<para>The command to execute on the remote end NOTE: if you want to use redirection, the entire remote command line should be enclosed in additional quotes! </para></parameterdescription><parametername>output</parametername>
+<parameterdescription>
+<para>Optional, the collated (stdout+stderr) output of the remote command. </para></parameterdescription></parameterlist>
+<simplesect kind="return"><para>status will hold the termination status of SSH after invocation, which should be the exit status of the remote command or 255 if an error occurred </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-files.php" line="126" bodystart="125" bodyend="142"/>
+        <references refid="config_8php_1a21" compoundref="config_8php" startline="204">$debug</references>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::ssh_copy</definition>
+        <argsstring>($origin, $destination, $password)</argsstring>
+        <name>ssh_copy</name>
+        <param>
+          <type>$</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>destination</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+        </param>
+        <briefdescription>
+<para>Copy a file or directory from one source to a destination. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function copies source to dest, where one of them is a local filespec and the other a remote filespec of the form [user@]host:path</para><para>If the original source is a directory, it will be copied recursively to destination (hence easing file transfers).</para><para>The function returns TRUE on success or FALSE on failure.</para><para><parameterlist kind="param"><parametername>origin</parametername>
+<parameterdescription>
+<para>The origin path, of the form [user@][host][:port]path You may omit the optional sections if the default values (local username, local host, standard SSH port) are OK</para></parameterdescription><parametername>destination</parametername>
+<parameterdescription>
+<para>The destination path, of the form [user@][host][:port]path You may omit the optional sections if the default values (local username, local host, standard SSH port) are OK</para></parameterdescription></parameterlist>
+password The password to use to connect to the remote end of the copy (be it the origin or the destination, it&apos;s all the same). If connection is automatic by some means (.shosts or RSA/DSA authentication) then it should be ignored and any password should do.</para><para><simplesect kind="return"><para>status TRUE if all went well, or FALSE on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-files.php" line="178" bodystart="177" bodyend="195"/>
+        <references refid="config_8php_1a21" compoundref="config_8php" startline="204">$debug</references>
+        <references refid="results_8php_1a2" compoundref="results_8php" startline="76">$status</references>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::ssh_open_shell</definition>
+        <argsstring>($remote, $password)</argsstring>
+        <name>ssh_open_shell</name>
+        <param>
+          <type>$</type>
+          <declname>remote</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+        </param>
+        <briefdescription>
+<para>Open an SSH connection to a remote site with a shell to run interactive commands. </para>        </briefdescription>
+        <detaileddescription>
+<para>Connects to a remote host and opens an interactive shell session with NO controlling terminal.</para><para>Returns a process_control array which contains the process resource ID and an the standard file descriptors which the caller may use to interact with the remote shell.</para><para><parameterlist kind="param"><parametername>remote</parametername>
+<parameterdescription>
+<para>The remote end to run the shell, in the form &apos;user:port&apos; (you may omit the &apos;user@&apos; or &apos;:port&apos; parts if the default values [i.e. same user or standard port] are OK). </para></parameterdescription><parametername>password</parametername>
+<parameterdescription>
+<para>The remote password. Note that if direct RSA/DSA/.shosts/.rhosts login is enabled then the password should be ignored as SSH should not run the ASKPASS command). </para></parameterdescription></parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-files.php" line="219" bodystart="218" bodyend="305"/>
+        <references refid="config_8php_1a21" compoundref="config_8php" startline="204">$debug</references>
+        <references refid="test_2ssh__test_8php_1a2" compoundref="test_2ssh__test_8php" startline="25">$p</references>
+        <references refid="auth_8php_1a3" compoundref="auth_8php" startline="51">$process</references>
+        <references refid="util_8php_1a4" compoundref="util_8php" startline="139" endline="144">letal</references>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::ssh_open_command</definition>
+        <argsstring>($remote, $password, $command)</argsstring>
+        <name>ssh_open_command</name>
+        <param>
+          <type>$</type>
+          <declname>remote</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+<para>Open an SSH connection to run an interactive command on a remote site. </para>        </briefdescription>
+        <detaileddescription>
+<para>Connects to a remote host and runs an interactive command with NO controlling terminal.</para><para>Returns a process_control array which contains the process resource ID and an the standard file descriptors which the caller may use to interact with the remote shell. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-files.php" line="319" bodystart="318" bodyend="405"/>
+        <references refid="config_8php_1a21" compoundref="config_8php" startline="204">$debug</references>
+        <references refid="test_2ssh__test_8php_1a2" compoundref="test_2ssh__test_8php" startline="25">$p</references>
+        <references refid="auth_8php_1a3" compoundref="auth_8php" startline="51">$process</references>
+        <references refid="util_8php_1a4" compoundref="util_8php" startline="139" endline="144">letal</references>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::ssh_close</definition>
+        <argsstring>($p)</argsstring>
+        <name>ssh_close</name>
+        <param>
+          <type>$</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para>Close an SSH interactive session. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-files.php" line="411" bodystart="410" bodyend="421"/>
+        <references refid="config_8php_1a21" compoundref="config_8php" startline="204">$debug</references>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::ssh_close_bck</definition>
+        <argsstring>($p)</argsstring>
+        <name>ssh_close_bck</name>
+        <param>
+          <type>$</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-files.php" line="424" bodystart="423" bodyend="439"/>
+        <references refid="config_8php_1a21" compoundref="config_8php" startline="204">$debug</references>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::ssh_popen</definition>
+        <argsstring>($remote, $password, $command, $mode)</argsstring>
+        <name>ssh_popen</name>
+        <param>
+          <type>$</type>
+          <declname>remote</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+<para>Execute a remore command and keep an unidirectional stream contact with it. </para>        </briefdescription>
+        <detaileddescription>
+<para>This routine mimics &apos;popen()&apos; but uses ssh to connect to a remote host and run the requested command. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-files.php" line="450" bodystart="449" bodyend="469"/>
+        <references refid="config_8php_1a21" compoundref="config_8php" startline="204">$debug</references>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::ssh_pclose</definition>
+        <argsstring>($f)</argsstring>
+        <name>ssh_pclose</name>
+        <param>
+          <type>$</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-files.php" line="472" bodystart="471" bodyend="474"/>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::SExec</definition>
+        <argsstring>($remote=&quot;localhost&quot;, $password=&quot;xxyzzy&quot;)</argsstring>
+        <name>SExec</name>
+        <param>
+          <type>$</type>
+          <declname>remote</declname>
+          <defval>&quot;localhost&quot;</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+          <defval>&quot;xxyzzy&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-pipes.php" line="10" bodystart="9" bodyend="13"/>
+        <references refid="classSExec_1o1" compoundref="ssh-pipes_8php" startline="6">$remote</references>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::set_remote_end</definition>
+        <argsstring>($remote, $password=&quot;xxyzzy&quot;)</argsstring>
+        <name>set_remote_end</name>
+        <param>
+          <type>$</type>
+          <declname>remote</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+          <defval>&quot;xxyzzy&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-pipes.php" line="16" bodystart="15" bodyend="19"/>
+        <references refid="classSExec_1o2" compoundref="ssh-pipes_8php" startline="7">$password</references>
+        <references refid="classSExec_1o1" compoundref="ssh-pipes_8php" startline="6">$remote</references>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::ssh_passthru</definition>
+        <argsstring>($remote, $password, $command, &amp;$status)</argsstring>
+        <name>ssh_passthru</name>
+        <param>
+          <type>$</type>
+          <declname>remote</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>&amp;$</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+<para>Execute a single command remotely using ssh and display its output, optionally returning its exit status (like passthru). </para>        </briefdescription>
+        <detaileddescription>
+<para>This function is intended to be used as a one-time all-at-once non-interactive execution mechanism which will run the command remotely and display its output.</para><para>If you try to issue an interactive command using this function, all you will get is unneccessary trouble. So don&apos;t!</para><para>This might be done as well using a pipe on /tmp and making the command &apos;cat&apos; the pipe: when ssh runs, it runs the command &apos;cat&apos; on the pipe and hangs on read. Then we just need a thread to open the pipe, put the password and close the pipe. This other way the password is never wirtten down. But, OTOH, the file life is so ephemeral that most of the time it will only exist in the internal system cache, so this approach is not that bad either.</para><para><parameterlist kind="param"><parametername>remote</parametername>
+<parameterdescription>
+<para>The remote end to run the command, in the form &apos;user:port&apos; (you may omit the &apos;user@&apos; or &apos;:port&apos; parts if the default values [i.e. same user or standard port] are OK). </para></parameterdescription><parametername>password</parametername>
+<parameterdescription>
+<para>The remote password. Note that if direct RSA/DSA/.shosts/.rhosts login is enabled then the password should be ignored as SSH should not run the ASKPASS command). </para></parameterdescription><parametername>command</parametername>
+<parameterdescription>
+<para>The command to execute on the remote end NOTE: if you want to use redirection, the entire remote command line should be enclosed in additional quotes! </para></parameterdescription><parametername>status</parametername>
+<parameterdescription>
+<para>Optional, this will hold the termination status of SSH after invocation, which should be the exit status of the remote command or 255 if an error occurred </para></parameterdescription></parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-pipes.php" line="64" bodystart="63" bodyend="86"/>
+        <references refid="config_8php_1a21" compoundref="config_8php" startline="204">$debug</references>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::ssh_exec</definition>
+        <argsstring>($remote, $password, $command, &amp;$out)</argsstring>
+        <name>ssh_exec</name>
+        <param>
+          <type>$</type>
+          <declname>remote</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>&amp;$</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+<para>Execute a remote command using SSH. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function sort of mimics rexec(3) using SSH as the transport protocol.</para><para>The function returns the exit status of the remote command, and appends the remote job output to an optional argument.</para><para>This function is intended to be used as a one-time all-at-once non-interactive execution mechanism which will run the command remotely and return its output.</para><para>If you try to issue an interactive command using this function, all you will get is unneccessary trouble. So don&apos;t!</para><para><parameterlist kind="param"><parametername>remote</parametername>
+<parameterdescription>
+<para>The remote end to run the command, in the form &apos;user:port&apos; (you may omit the &apos;user@&apos; or &apos;:port&apos; parts if the default values [i.e. same user or standard port] are OK). </para></parameterdescription><parametername>password</parametername>
+<parameterdescription>
+<para>The remote password. Note that if direct RSA/DSA/.shosts/.rhosts login is enabled then the password should be ignored as SSH should not run the ASKPASS command). </para></parameterdescription><parametername>command</parametername>
+<parameterdescription>
+<para>The command to execute on the remote end NOTE: if you want to use redirection, the entire remote command line should be enclosed in additional quotes! </para></parameterdescription><parametername>output</parametername>
+<parameterdescription>
+<para>Optional, the collated (stdout+stderr) output of the remote command. </para></parameterdescription></parameterlist>
+<simplesect kind="return"><para>status will hold the termination status of SSH after invocation, which should be the exit status of the remote command or 255 if an error occurred </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-pipes.php" line="126" bodystart="125" bodyend="142"/>
+        <references refid="config_8php_1a21" compoundref="config_8php" startline="204">$debug</references>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::ssh_copy</definition>
+        <argsstring>($origin, $destination, $password)</argsstring>
+        <name>ssh_copy</name>
+        <param>
+          <type>$</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>destination</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+        </param>
+        <briefdescription>
+<para>Copy a file or directory from one source to a destination. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function copies source to dest, where one of them is a local filespec and the other a remote filespec of the form [user@]host:path</para><para>If the original source is a directory, it will be copied recursively to destination (hence easing file transfers).</para><para>The function returns TRUE on success or FALSE on failure.</para><para><parameterlist kind="param"><parametername>origin</parametername>
+<parameterdescription>
+<para>The origin path, of the form [user@][host][:port]path You may omit the optional sections if the default values (local username, local host, standard SSH port) are OK</para></parameterdescription><parametername>destination</parametername>
+<parameterdescription>
+<para>The destination path, of the form [user@][host][:port]path You may omit the optional sections if the default values (local username, local host, standard SSH port) are OK</para></parameterdescription></parameterlist>
+password The password to use to connect to the remote end of the copy (be it the origin or the destination, it&apos;s all the same). If connection is automatic by some means (.shosts or RSA/DSA authentication) then it should be ignored and any password should do.</para><para><simplesect kind="return"><para>status TRUE if all went well, or FALSE on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-pipes.php" line="178" bodystart="177" bodyend="195"/>
+        <references refid="config_8php_1a21" compoundref="config_8php" startline="204">$debug</references>
+        <references refid="results_8php_1a2" compoundref="results_8php" startline="76">$status</references>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::ssh_open_shell</definition>
+        <argsstring>($remote, $password)</argsstring>
+        <name>ssh_open_shell</name>
+        <param>
+          <type>$</type>
+          <declname>remote</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+        </param>
+        <briefdescription>
+<para>Open an SSH connection to a remote site with a shell to run interactive commands. </para>        </briefdescription>
+        <detaileddescription>
+<para>Connects to a remote host and opens an interactive shell session with NO controlling terminal.</para><para>Returns a process_control array which contains the process resource ID and an the standard file descriptors which the caller may use to interact with the remote shell.</para><para><parameterlist kind="param"><parametername>remote</parametername>
+<parameterdescription>
+<para>The remote end to run the shell, in the form &apos;user:port&apos; (you may omit the &apos;user@&apos; or &apos;:port&apos; parts if the default values [i.e. same user or standard port] are OK). </para></parameterdescription><parametername>password</parametername>
+<parameterdescription>
+<para>The remote password. Note that if direct RSA/DSA/.shosts/.rhosts login is enabled then the password should be ignored as SSH should not run the ASKPASS command). </para></parameterdescription></parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-pipes.php" line="219" bodystart="218" bodyend="310"/>
+        <references refid="config_8php_1a21" compoundref="config_8php" startline="204">$debug</references>
+        <references refid="test_2ssh__test_8php_1a2" compoundref="test_2ssh__test_8php" startline="25">$p</references>
+        <references refid="auth_8php_1a3" compoundref="auth_8php" startline="51">$process</references>
+        <references refid="util_8php_1a4" compoundref="util_8php" startline="139" endline="144">letal</references>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::ssh_open_command</definition>
+        <argsstring>($remote, $password, $command)</argsstring>
+        <name>ssh_open_command</name>
+        <param>
+          <type>$</type>
+          <declname>remote</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+<para>Open an SSH connection to run an interactive command on a remote site. </para>        </briefdescription>
+        <detaileddescription>
+<para>Connects to a remote host and runs an interactive command with NO controlling terminal.</para><para>Returns a process_control array which contains the process resource ID and an the standard file descriptors which the caller may use to interact with the remote shell. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-pipes.php" line="324" bodystart="323" bodyend="406"/>
+        <references refid="config_8php_1a21" compoundref="config_8php" startline="204">$debug</references>
+        <references refid="test_2ssh__test_8php_1a2" compoundref="test_2ssh__test_8php" startline="25">$p</references>
+        <references refid="auth_8php_1a3" compoundref="auth_8php" startline="51">$process</references>
+        <references refid="util_8php_1a4" compoundref="util_8php" startline="139" endline="144">letal</references>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::ssh_close</definition>
+        <argsstring>($p)</argsstring>
+        <name>ssh_close</name>
+        <param>
+          <type>$</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para>Close an SSH interactive session. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-pipes.php" line="412" bodystart="411" bodyend="422"/>
+        <references refid="config_8php_1a21" compoundref="config_8php" startline="204">$debug</references>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::ssh_popen</definition>
+        <argsstring>($remote, $password, $command, $mode)</argsstring>
+        <name>ssh_popen</name>
+        <param>
+          <type>$</type>
+          <declname>remote</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+<para>Execute a remore command and keep an unidirectional stream contact with it. </para>        </briefdescription>
+        <detaileddescription>
+<para>This routine mimics &apos;popen()&apos; but uses ssh to connect to a remote host and run the requested command. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-pipes.php" line="432" bodystart="431" bodyend="451"/>
+        <references refid="config_8php_1a21" compoundref="config_8php" startline="204">$debug</references>
+      </memberdef>
+      <memberdef kind="function" id="classSExec_1a20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SExec::ssh_pclose</definition>
+        <argsstring>($f)</argsstring>
+        <name>ssh_pclose</name>
+        <param>
+          <type>$</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-pipes.php" line="454" bodystart="453" bodyend="456"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classSExec_1o0" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>SExec::$version</definition>
+        <argsstring></argsstring>
+        <name>$version</name>
+        <initializer>&quot;1.0&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-files.php" line="5" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSExec_1o1" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>SExec::$remote</definition>
+        <argsstring></argsstring>
+        <name>$remote</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-files.php" line="6" bodystart="6" bodyend="-1"/>
+        <referencedby refid="classSExec_1a1" compoundref="ssh-files_8php" startline="15" endline="19">set_remote_end</referencedby>
+        <referencedby refid="classSExec_1a0" compoundref="ssh-files_8php" startline="9" endline="13">SExec</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSExec_1o2" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>SExec::$password</definition>
+        <argsstring></argsstring>
+        <name>$password</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-files.php" line="7" bodystart="7" bodyend="-1"/>
+        <referencedby refid="classSExec_1a1" compoundref="ssh-files_8php" startline="15" endline="19">set_remote_end</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/ssh-files.php" line="3" bodystart="3" bodyend="476"/>
+    <listofallmembers>
+      <member refid="classSExec_1o2" prot="public" virt="non-virtual"><scope>SExec</scope><name>$password</name></member>
+      <member refid="classSExec_1o1" prot="public" virt="non-virtual"><scope>SExec</scope><name>$remote</name></member>
+      <member refid="classSExec_1o0" prot="public" virt="non-virtual"><scope>SExec</scope><name>$version</name></member>
+      <member refid="classSExec_1a1" prot="public" virt="non-virtual"><scope>SExec</scope><name>set_remote_end</name></member>
+      <member refid="classSExec_1a12" prot="public" virt="non-virtual"><scope>SExec</scope><name>set_remote_end</name></member>
+      <member refid="classSExec_1a0" prot="public" virt="non-virtual"><scope>SExec</scope><name>SExec</name></member>
+      <member refid="classSExec_1a11" prot="public" virt="non-virtual"><scope>SExec</scope><name>SExec</name></member>
+      <member refid="classSExec_1a7" prot="public" virt="non-virtual"><scope>SExec</scope><name>ssh_close</name></member>
+      <member refid="classSExec_1a18" prot="public" virt="non-virtual"><scope>SExec</scope><name>ssh_close</name></member>
+      <member refid="classSExec_1a8" prot="public" virt="non-virtual"><scope>SExec</scope><name>ssh_close_bck</name></member>
+      <member refid="classSExec_1a4" prot="public" virt="non-virtual"><scope>SExec</scope><name>ssh_copy</name></member>
+      <member refid="classSExec_1a15" prot="public" virt="non-virtual"><scope>SExec</scope><name>ssh_copy</name></member>
+      <member refid="classSExec_1a3" prot="public" virt="non-virtual"><scope>SExec</scope><name>ssh_exec</name></member>
+      <member refid="classSExec_1a14" prot="public" virt="non-virtual"><scope>SExec</scope><name>ssh_exec</name></member>
+      <member refid="classSExec_1a6" prot="public" virt="non-virtual"><scope>SExec</scope><name>ssh_open_command</name></member>
+      <member refid="classSExec_1a17" prot="public" virt="non-virtual"><scope>SExec</scope><name>ssh_open_command</name></member>
+      <member refid="classSExec_1a5" prot="public" virt="non-virtual"><scope>SExec</scope><name>ssh_open_shell</name></member>
+      <member refid="classSExec_1a16" prot="public" virt="non-virtual"><scope>SExec</scope><name>ssh_open_shell</name></member>
+      <member refid="classSExec_1a2" prot="public" virt="non-virtual"><scope>SExec</scope><name>ssh_passthru</name></member>
+      <member refid="classSExec_1a13" prot="public" virt="non-virtual"><scope>SExec</scope><name>ssh_passthru</name></member>
+      <member refid="classSExec_1a10" prot="public" virt="non-virtual"><scope>SExec</scope><name>ssh_pclose</name></member>
+      <member refid="classSExec_1a20" prot="public" virt="non-virtual"><scope>SExec</scope><name>ssh_pclose</name></member>
+      <member refid="classSExec_1a9" prot="public" virt="non-virtual"><scope>SExec</scope><name>ssh_popen</name></member>
+      <member refid="classSExec_1a19" prot="public" virt="non-virtual"><scope>SExec</scope><name>ssh_popen</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

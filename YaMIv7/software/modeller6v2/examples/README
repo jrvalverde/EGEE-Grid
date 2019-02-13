@@ -1,0 +1,26 @@
+---
+Sub-directories here are:
+
+tutorial-model\    ... sample modeling, given an alignment
+align-model-steps\ ... sample alignment and modeling, given templates
+all-steps\         ... sample template searching, alignment, and modeling
+loop\              ... sample loop modeling, given a template
+sidechain_INT\     ... sample point mutation modeling, internal development stuff
+wild_card\         ... sample wild card use in an alignment file
+commands\          ... sample .top files for each MODELLER command
+debug-energy_INT\  ... energy testing, internal development stuff
+misc_INT\          ... miscellanous, internal development stuff
+atom_files\        ... atoms files for some TOP files
+
+---
+
+To execute all .top files                    :  Run_tests          
+
+To check all the resulting log files         :  Scan_all_err
+
+To clean everything                          :  Clean_all
+
+Notes:
+
+You need to have ASGL installed for all-steps/cluster.top not to fail
+                     (FILE:  ./all-steps/./alignment.seg.log message)

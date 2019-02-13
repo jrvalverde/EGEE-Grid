@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.3.6">
+  <compound refid="namespaceSExec" kind="namespace"><name>SExec</name>
+  </compound>
+  <compound refid="remotessh_8php" kind="file"><name>remotessh.php</name>
+    <member refid="remotessh_8php_1a0" kind="function"><name>do_ssh</name></member>
+    <member refid="remotessh_8php_1a1" kind="function"><name>do_scp</name></member>
+  </compound>
+  <compound refid="ssh_8php" kind="file"><name>ssh.php</name>
+  </compound>
+  <compound refid="ssh__test_8php" kind="file"><name>ssh_test.php</name>
+    <member refid="ssh__test_8php_1a0" kind="variable"><name>$debug_sexec</name></member>
+    <member refid="ssh__test_8php_1a1" kind="variable"><name>$rmt</name></member>
+    <member refid="ssh__test_8php_1a2" kind="variable"><name>exit</name></member>
+    <member refid="ssh__test_8php_1a3" kind="variable"><name>$last</name></member>
+    <member refid="ssh__test_8php_1a4" kind="variable"><name>$debug_persistent_cmd</name></member>
+    <member refid="ssh__test_8php_1a5" kind="variable"><name>$p</name></member>
+    <member refid="ssh__test_8php_1a6" kind="variable"><name>$line</name></member>
+    <member refid="ssh__test_8php_1a7" kind="variable"><name>$out</name></member>
+  </compound>
+  <compound refid="test-pers_8php" kind="file"><name>test-pers.php</name>
+    <member refid="test-pers_8php_1a0" kind="variable"><name>$debug</name></member>
+    <member refid="test-pers_8php_1a1" kind="variable"><name>$remote</name></member>
+    <member refid="test-pers_8php_1a2" kind="variable"><name>$password</name></member>
+    <member refid="test-pers_8php_1a3" kind="variable"><name>$workdir</name></member>
+    <member refid="test-pers_8php_1a4" kind="variable"><name>$tmpfname</name></member>
+    <member refid="test-pers_8php_1a5" kind="variable"><name>$fp</name></member>
+    <member refid="test-pers_8php_1a6" kind="variable"><name>$child_stdout</name></member>
+    <member refid="test-pers_8php_1a7" kind="variable"><name>$child_stderr</name></member>
+    <member refid="test-pers_8php_1a8" kind="variable"><name>$descriptorspec</name></member>
+    <member refid="test-pers_8php_1a9" kind="variable"><name>$process</name></member>
+    <member refid="test-pers_8php_1a10" kind="variable"><name>$f</name></member>
+  </compound>
+  <compound refid="util_8php" kind="file"><name>util.php</name>
+    <member refid="util_8php_1a0" kind="function"><name>set_header</name></member>
+    <member refid="util_8php_1a1" kind="function"><name>set_footer</name></member>
+    <member refid="util_8php_1a2" kind="function"><name>warning</name></member>
+    <member refid="util_8php_1a3" kind="function"><name>error</name></member>
+    <member refid="util_8php_1a4" kind="function"><name>letal</name></member>
+    <member refid="util_8php_1a5" kind="function"><name>ssh_passthru</name></member>
+    <member refid="util_8php_1a6" kind="function"><name>ssh_copy</name></member>
+    <member refid="util_8php_1a7" kind="function"><name>ssh_open</name></member>
+  </compound>
+</doxygenindex>

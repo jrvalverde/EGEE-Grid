@@ -1,0 +1,537 @@
+Parsing configuration file phpDocumentor.ini...
+done
+using experimental tokenizer Parser
+
+
+Grabbing README/INSTALL/CHANGELOG
+
+done
+
+
+Tutorial/Extended Documentation Parsing Stage
+
+done
+
+
+General Parsing Stage
+
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/CVS/Entries -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/CVS/Repository -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/CVS/Root -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/CVS/grock-ws.php,t -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/DEADJOE -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/NOTES -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/SSH/CVS/Entries -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/SSH/CVS/Repository -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/SSH/CVS/Root -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/SSH/SSH-pipes.sh -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/SSH/SSH.sh -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/config.php -- Parsing file
+
+	ERROR in config.php on line 50: global variable $serverpath specified in @global tag was never found
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/database.php -- Parsing file
+WARNING in database.php on line 28: Page-level DocBlock precedes "require_once database.php", use another DocBlock to document the source element
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/dock.php -- Parsing file
+WARNING in dock.php on line 38: Page-level DocBlock precedes "require_once dock.php", use another DocBlock to document the source element
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/explore_complex.php -- Parsing file
+WARNING in explore_complex.php on line 36: Page-level DocBlock precedes "require_once explore_complex.php", use another DocBlock to document the source element
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/explore_match.php -- Parsing file
+WARNING in explore_match.php on line 40: Page-level DocBlock precedes "require_once explore_match.php", use another DocBlock to document the source element
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/explore_molecule.php -- Parsing file
+WARNING in explore_molecule.php on line 34: Page-level DocBlock precedes "require_once explore_molecule.php", use another DocBlock to document the source element
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/fishy.php -- Parsing file
+WARNING in fishy.php on line 33: Page-level DocBlock precedes "require fishy.php", use another DocBlock to document the source element
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/get-results.sh -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/gramm.php -- Parsing file
+WARNING in gramm.php on line 32: Page-level DocBlock precedes "require_once gramm.php", use another DocBlock to document the source element
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/grid.php -- Parsing file
+WARNING in grid.php on line 238: Unknown tag "@pre" used
+WARNING in grid.php on line 787: Unknown tag "@note" used
+WARNING in grid.php on line 894: Unknown tag "@note" used
+WARNING in grid.php on line 1024: Unknown tag "@note" used
+WARNING in grid.php on line 1454: Unknown tag "@note" used
+WARNING in grid.php on line 1596: Unknown tag "@note" used
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/grid_config.php -- Parsing file
+WARNING in grid_config.php on line 42: package GROCK is already in category Net, will now replace with category default
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/grock-ws.php -- Parsing file
+WARNING in grock-ws.php on line 49: Page-level DocBlock precedes "require_once grock-ws.php", use another DocBlock to document the source element
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/grock.php -- Parsing file
+WARNING in grock.php on line 47: Page-level DocBlock precedes "require_once grock.php", use another DocBlock to document the source element
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/grock_lib.php -- Parsing file
+WARNING in grock_lib.php on line 39: Page-level DocBlock precedes "require_once grock_lib.php", use another DocBlock to document the source element
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/CVS/Entries -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/CVS/Repository -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/CVS/Root -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/CVS/changelog,t -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/CVS/class.nusoap_base.php,t -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/CVS/class.soap_fault.php,t -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/CVS/class.soap_parser.php,t -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/CVS/class.soap_server.php,t -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/CVS/class.soap_transport_http.php,t -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/CVS/class.soap_val.php,t -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/CVS/class.soapclient.php,t -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/CVS/class.wsdl.php,t -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/CVS/class.wsdlcache.php,t -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/CVS/class.xmlschema.php,t -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/CVS/nusoap.php,t -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/CVS/nusoapmime.php,t -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/changelog -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.nusoap_base.php -- Parsing file
+WARNING in class.nusoap_base.php on line 60: no @package tag was used in a DocBlock for class nusoap_base
+WARNING in class.nusoap_base.php on line 657: File "/mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.nusoap_base.php" has no page-level DocBlock, use @package in the first DocBlock to create one
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_fault.php -- Parsing file
+WARNING in class.soap_fault.php on line 13: no @package tag was used in a DocBlock for class soap_fault
+WARNING in class.soap_fault.php on line 64: File "/mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_fault.php" has no page-level DocBlock, use @package in the first DocBlock to create one
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_parser.php -- Parsing file
+WARNING in class.soap_parser.php on line 13: no @package tag was used in a DocBlock for class soap_parser
+WARNING in class.soap_parser.php on line 529: File "/mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_parser.php" has no page-level DocBlock, use @package in the first DocBlock to create one
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_server.php -- Parsing file
+WARNING in class.soap_server.php on line 16: no @package tag was used in a DocBlock for class soap_server
+WARNING in class.soap_server.php on line 743: File "/mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_server.php" has no page-level DocBlock, use @package in the first DocBlock to create one
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_transport_http.php -- Parsing file
+WARNING in class.soap_transport_http.php on line 13: no @package tag was used in a DocBlock for class soap_transport_http
+WARNING in class.soap_transport_http.php on line 761: File "/mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_transport_http.php" has no page-level DocBlock, use @package in the first DocBlock to create one
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_val.php -- Parsing file
+WARNING in class.soap_val.php on line 12: no @package tag was used in a DocBlock for class soapval
+WARNING in class.soap_val.php on line 57: File "/mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_val.php" has no page-level DocBlock, use @package in the first DocBlock to create one
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soapclient.php -- Parsing file
+WARNING in class.soapclient.php on line 24: no @package tag was used in a DocBlock for class soapclient
+
+	ERROR in class.soapclient.php on line 60: DocBlock has multiple @var tags, illegal. ignoring additional tag "@var faultcode "
+
+	ERROR in class.soapclient.php on line 60: DocBlock has multiple @var tags, illegal. ignoring additional tag "@var faultstring "
+
+	ERROR in class.soapclient.php on line 60: DocBlock has multiple @var tags, illegal. ignoring additional tag "@var faultdetail "
+WARNING in class.soapclient.php on line 633: File "/mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soapclient.php" has no page-level DocBlock, use @package in the first DocBlock to create one
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.wsdl.php -- Parsing file
+WARNING in class.wsdl.php on line 12: no @package tag was used in a DocBlock for class wsdl
+WARNING in class.wsdl.php on line 1300: File "/mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.wsdl.php" has no page-level DocBlock, use @package in the first DocBlock to create one
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.wsdlcache.php -- Parsing file
+WARNING in class.wsdlcache.php on line 12: no @package tag was used in a DocBlock for class wsdlcache
+WARNING in class.wsdlcache.php on line 159: File "/mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.wsdlcache.php" has no page-level DocBlock, use @package in the first DocBlock to create one
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.xmlschema.php -- Parsing file
+WARNING in class.xmlschema.php on line 16: no @package tag was used in a DocBlock for class XMLSchema
+WARNING in class.xmlschema.php on line 765: File "/mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.xmlschema.php" has no page-level DocBlock, use @package in the first DocBlock to create one
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/nusoap.php -- Parsing file
+WARNING in nusoap.php on line 60: no @package tag was used in a DocBlock for class nusoap_base
+WARNING in nusoap.php on line 668: no @package tag was used in a DocBlock for class soap_fault
+WARNING in nusoap.php on line 733: no @package tag was used in a DocBlock for class XMLSchema
+WARNING in nusoap.php on line 1493: no @package tag was used in a DocBlock for class soapval
+WARNING in nusoap.php on line 1550: no @package tag was used in a DocBlock for class soap_transport_http
+WARNING in nusoap.php on line 2312: no @package tag was used in a DocBlock for class soap_server
+WARNING in nusoap.php on line 3049: no @package tag was used in a DocBlock for class wsdl
+WARNING in nusoap.php on line 4348: no @package tag was used in a DocBlock for class soap_parser
+WARNING in nusoap.php on line 4886: no @package tag was used in a DocBlock for class soapclient
+
+	ERROR in nusoap.php on line 4922: DocBlock has multiple @var tags, illegal. ignoring additional tag "@var faultcode "
+
+	ERROR in nusoap.php on line 4922: DocBlock has multiple @var tags, illegal. ignoring additional tag "@var faultstring "
+
+	ERROR in nusoap.php on line 4922: DocBlock has multiple @var tags, illegal. ignoring additional tag "@var faultdetail "
+WARNING in nusoap.php on line 5495: File "/mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/nusoap.php" has no page-level DocBlock, use @package in the first DocBlock to create one
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/nusoapmime.php -- Parsing file
+WARNING in nusoapmime.php on line 48: no @package tag was used in a DocBlock for class soapclientmime
+WARNING in nusoapmime.php on line 244: File "/mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/nusoapmime.php" has no page-level DocBlock, use @package in the first DocBlock to create one
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/molmol.script -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/processor.php -- Parsing file
+WARNING in processor.php on line 23: Page-level DocBlock precedes "require_once processor.php", use another DocBlock to document the source element
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/report.php -- Parsing file
+WARNING in report.php on line 32: Page-level DocBlock precedes "require_once report.php", use another DocBlock to document the source element
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/ssh.php -- Parsing file
+WARNING in ssh.php on line 577: Unknown tag "@note" used
+WARNING in ssh.php on line 1178: Unknown tag "@note" used
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/util.php -- Parsing file
+WARNING in util.php on line 125: Unknown tag "@note" used
+done
+
+Converting From Abstract Parsed Data
+
+Processing Class Inheritance
+
+
+Processing Root Trees
+
+WARNING: Class soap_fault in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_fault.php has multiple possible parents named nusoap_base.  Cannot resolve name conflict,
+ try ignoring a file that contains the conflicting parent class
+WARNING: Class soap_parser in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_parser.php has multiple possible parents named nusoap_base.  Cannot resolve name conflict,
+ try ignoring a file that contains the conflicting parent class
+WARNING: Class soap_server in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_server.php has multiple possible parents named nusoap_base.  Cannot resolve name conflict,
+ try ignoring a file that contains the conflicting parent class
+WARNING: Class soap_transport_http in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_transport_http.php has multiple possible parents named nusoap_base.  Cannot resolve name conflict,
+ try ignoring a file that contains the conflicting parent class
+WARNING: Class soapval in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_val.php has multiple possible parents named nusoap_base.  Cannot resolve name conflict,
+ try ignoring a file that contains the conflicting parent class
+WARNING: Class soapclient in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soapclient.php has multiple possible parents named nusoap_base.  Cannot resolve name conflict,
+ try ignoring a file that contains the conflicting parent class
+WARNING: Class soapclientmime in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/nusoapmime.php has multiple possible parents named soapclient.  Cannot resolve name conflict,
+ try ignoring a file that contains the conflicting parent class
+WARNING: Class wsdl in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.wsdl.php has multiple possible parents named nusoap_base.  Cannot resolve name conflict,
+ try ignoring a file that contains the conflicting parent class
+WARNING: Class XMLSchema in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.xmlschema.php has multiple possible parents named nusoap_base.  Cannot resolve name conflict,
+ try ignoring a file that contains the conflicting parent class
+
+Processing leftover classes (classes that extend root classes not found in the same package)
+done processing leftover classes
+WARNING: 
+duplicate class element "nusoap_base" in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/nusoap.php will be ignored.
+Use an @ignore tag on the original if you want this case to be documented.
+WARNING: 
+duplicate class element "soap_fault" in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/nusoap.php will be ignored.
+Use an @ignore tag on the original if you want this case to be documented.
+WARNING: 
+duplicate class element "soap_parser" in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/nusoap.php will be ignored.
+Use an @ignore tag on the original if you want this case to be documented.
+WARNING: 
+duplicate class element "soap_server" in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/nusoap.php will be ignored.
+Use an @ignore tag on the original if you want this case to be documented.
+WARNING: 
+duplicate class element "soap_transport_http" in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/nusoap.php will be ignored.
+Use an @ignore tag on the original if you want this case to be documented.
+WARNING: 
+duplicate class element "soapval" in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/nusoap.php will be ignored.
+Use an @ignore tag on the original if you want this case to be documented.
+WARNING: 
+duplicate class element "soapclient" in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/nusoap.php will be ignored.
+Use an @ignore tag on the original if you want this case to be documented.
+WARNING: 
+duplicate class element "wsdl" in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/nusoap.php will be ignored.
+Use an @ignore tag on the original if you want this case to be documented.
+WARNING: 
+duplicate class element "XMLSchema" in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/nusoap.php will be ignored.
+Use an @ignore tag on the original if you want this case to be documented.
+
+Processing Procedural Page Element Name Conflicts
+
+WARNING: 
+duplicate function element "timestamp_to_iso8601" in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/nusoap.php will be ignored.
+Use an @ignore tag on the original if you want this case to be documented.
+WARNING: 
+duplicate function element "iso8601_to_timestamp" in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/nusoap.php will be ignored.
+Use an @ignore tag on the original if you want this case to be documented.
+WARNING: 
+duplicate function element "usleepWindows" in file /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/nusoap.php will be ignored.
+Use an @ignore tag on the original if you want this case to be documented.
+
+Sorting page elements...done
+Formatting @uses list...done
+
+creating /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/media
+Creating Directory /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/media
+copying /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/media/layout.css
+copying /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/media/print.css
+copying /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/media/style.css
+Building indexes...done
+
+Sorting Indexes...done
+
+Sorting @todo list...done
+Converting tutorials/extended docs
+Formatting Package Indexes...    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/elementindex_GROCK.html
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/elementindex_grock.html
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/elementindex_Grid.html
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/elementindex_SExec.html
+
+done
+Formatting Index...
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/elementindex.html
+
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/li_grock.html
+
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/li_GROCK.html
+
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/li_Grid.html
+
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/li_SExec.html
+
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/index.html
+done
+
+Formatting Left Quick Index...
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/classtrees_grock.html
+
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/classtrees_GROCK.html
+
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/classtrees_Grid.html
+
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/classtrees_SExec.html
+
+done
+
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.nusoap_base.php Procedural Page Elements... Classes...
+Creating Directory /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/nusoap_base.html
+ done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/_lib_class_nusoap_base_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soapclient.php Procedural Page Elements... Classes...
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/soapclient.html
+ done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/_lib_class_soapclient_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_fault.php Procedural Page Elements... Classes...
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/soap_fault.html
+ done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/_lib_class_soap_fault_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_parser.php Procedural Page Elements... Classes...
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/soap_parser.html
+ done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/_lib_class_soap_parser_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_server.php Procedural Page Elements... Classes...
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/soap_server.html
+ done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/_lib_class_soap_server_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_transport_http.php Procedural Page Elements... Classes...
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/soap_transport_http.html
+ done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/_lib_class_soap_transport_http_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.soap_val.php Procedural Page Elements... Classes...
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/soapval.html
+ done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/_lib_class_soap_val_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.wsdl.php Procedural Page Elements... Classes...
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/wsdl.html
+ done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/_lib_class_wsdl_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.wsdlcache.php Procedural Page Elements... Classes...
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/wsdlcache.html
+ done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/_lib_class_wsdlcache_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/class.xmlschema.php Procedural Page Elements... Classes...
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/XMLSchema.html
+ done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/_lib_class_xmlschema_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/config.php Procedural Page Elements... Classes... done
+Creating Directory /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/grock
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/grock/_config_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/database.php Procedural Page Elements... Classes... done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/grock/_database_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/dock.php Procedural Page Elements... Classes... done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/grock/_dock_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/explore_complex.php Procedural Page Elements... Classes... done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/grock/_explore_complex_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/explore_match.php Procedural Page Elements... Classes... done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/grock/_explore_match_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/explore_molecule.php Procedural Page Elements... Classes... done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/grock/_explore_molecule_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/fishy.php Procedural Page Elements... Classes... done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/grock/_fishy_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/gramm.php Procedural Page Elements... Classes... done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/grock/_gramm_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/grid.php Procedural Page Elements... Classes...
+Creating Directory /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/Grid
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/Grid/Grid.html
+ done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/Grid/_grid_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/grid_config.php Procedural Page Elements... Classes... done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/grock/_grid_config_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/grock-ws.php Procedural Page Elements... Classes... done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/grock/_grock-ws_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/grock.php Procedural Page Elements... Classes... done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/grock/_grock_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/grock_lib.php Procedural Page Elements... Classes... done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/grock/_grock_lib_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/nusoap.php Procedural Page Elements... Classes... done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/_lib_nusoap_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/lib/nusoapmime.php Procedural Page Elements... Classes...
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/soapclientmime.html
+ done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/GROCK/_lib_nusoapmime_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/processor.php Procedural Page Elements... Classes... done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/grock/_processor_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/report.php Procedural Page Elements... Classes... done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/grock/_report_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/ssh.php Procedural Page Elements... Classes...
+Creating Directory /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/SExec
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/SExec/SExec.html
+ done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/grock/_ssh_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GROCK/script/util.php Procedural Page Elements... Classes... done
+    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/grock/_util_php.html
+
+Converting @todo List...done
+
+Converting Error Log...    Writing /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/errors.html
+
+
+To view errors and warnings, look at /data/www/EMBnet/cgi-src/Grid/GROCK/doc/pDoc/errors.html
+done
+
+Parsing time: 429 seconds
+
+Conversion time: 29 seconds
+
+Total Documentation Time: 458 seconds
+done
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(2294) :  Freeing 0x16EE1F88 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_variables.c(122) : Actual location (location was relayed)
+Last leak repeated 1188 times
+/src/build/lppc/php-4.3.3/Zend/zend_hash.c(188) :  Freeing 0x16F0CED0 (32 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 125322 times
+/src/build/lppc/php-4.3.3/Zend/zend_hash.c(416) :  Freeing 0x16E903C8 (35 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 361647 times
+/src/build/lppc/php-4.3.3/Zend/zend_hash.c(272) :  Freeing 0x16EBC5E0 (40 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 60717 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(1826) :  Freeing 0x16E20FD8 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 855 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(143) :  Freeing 0x16EB3FE8 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 811 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(499) :  Freeing 0x16EE8380 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 7078 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(488) :  Freeing 0x16EBA7A8 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 2534 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(491) :  Freeing 0x16EE8628 (5 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_variables.c(111) : Actual location (location was relayed)
+Last leak repeated 874 times
+/src/build/lppc/php-4.3.3/Zend/zend_hash.c(450) :  Freeing 0x16E85210 (64 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 8260 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(2033) :  Freeing 0x16E7C3F0 (11 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_variables.c(111) : Actual location (location was relayed)
+Last leak repeated 422 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(2030) :  Freeing 0x16E7C3B0 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 14044 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(763) :  Freeing 0x16EAE750 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 20729 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(278) :  Freeing 0x16EC0AF0 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 77 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(2018) :  Freeing 0x16E604E0 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 15296 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(281) :  Freeing 0x16EF4770 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_variables.c(122) : Actual location (location was relayed)
+Last leak repeated 57 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(1224) :  Freeing 0x16E8CBF0 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 71 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(766) :  Freeing 0x16EBBAA8 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_API.c(562) : Actual location (location was relayed)
+Last leak repeated 20729 times
+/src/build/lppc/php-4.3.3/Zend/zend_operators.c(1056) :  Freeing 0x16E48490 (27 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 662 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(774) :  Freeing 0x16F01EC0 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 5419 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(1188) :  Freeing 0x16E4B560 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 399 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(2010) :  Freeing 0x16F01A68 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_API.c(562) : Actual location (location was relayed)
+Last leak repeated 102754 times
+/src/build/lppc/php-4.3.3/ext/standard/array.c(1577) :  Freeing 0x16EF65A8 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 3 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(1735) :  Freeing 0x16EBA210 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 693 times
+/src/build/lppc/php-4.3.3/Zend/zend_operators.c(1049) :  Freeing 0x16E9D700 (30 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 954 times
+/src/build/lppc/php-4.3.3/ext/standard/string.c(570) :  Freeing 0x16ED7820 (250 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 2689 times
+/src/build/lppc/php-4.3.3/Zend/zend_hash.c(1066) :  Freeing 0x16DE7778 (7 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 122 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(1611) :  Freeing 0x16F004D0 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 4544 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(2350) :  Freeing 0x16F002D0 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 122 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(1758) :  Freeing 0x16EFE198 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 101421 times
+/src/build/lppc/php-4.3.3/Zend/zend_operators.c(1047) :  Freeing 0x16EDFB20 (274 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 410 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(1761) :  Freeing 0x16F09DC0 (24 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_variables.c(111) : Actual location (location was relayed)
+Last leak repeated 1450 times
+/src/build/lppc/php-4.3.3/ext/standard/array.c(2055) :  Freeing 0x16EB7398 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_API.c(562) : Actual location (location was relayed)
+Last leak repeated 65 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(1725) :  Freeing 0x16ECE1E0 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 505 times
+/src/build/lppc/php-4.3.3/Zend/zend_operators.c(1017) :  Freeing 0x16EA8F40 (70 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 5 times
+/src/build/lppc/php-4.3.3/Zend/zend_API.c(594) :  Freeing 0x16EB5C08 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_API.c(582) : Actual location (location was relayed)
+Last leak repeated 2956 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(1979) :  Freeing 0x16E0E078 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 2956 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(1854) :  Freeing 0x16EAEB28 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 17 times
+/src/build/lppc/php-4.3.3/ext/standard/string.c(2742) :  Freeing 0x16E66290 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 84879 times
+/src/build/lppc/php-4.3.3/ext/standard/string.c(2542) :  Freeing 0x16E8F688 (10 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 81115 times
+Zend/zend_language_scanner.c(3212) :  Freeing 0x145BD6C0 (189 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 81 times
+Zend/zend_language_scanner.c(3196) :  Freeing 0x16E5EB50 (188 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 81 times
+/src/build/lppc/php-4.3.3/ext/standard/array.c(2171) :  Freeing 0x16E9FB68 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_API.c(562) : Actual location (location was relayed)
+Last leak repeated 19 times
+/src/build/lppc/php-4.3.3/Zend/zend_API.c(843) :  Freeing 0x16E040A0 (2 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 36293 times
+/src/build/lppc/php-4.3.3/ext/standard/html.c(867) :  Freeing 0x15566B48 (128 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 23 times
+/src/build/lppc/php-4.3.3/Zend/zend_API.c(776) :  Freeing 0x16E748E8 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 78274 times
+/src/build/lppc/php-4.3.3/Zend/zend_API.c(842) :  Freeing 0x16E76268 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 36293 times
+/src/build/lppc/php-4.3.3/ext/standard/file.c(2381) :  Freeing 0x16E77338 (98 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 7 times
+/src/build/lppc/php-4.3.3/Zend/zend_constants.c(239) :  Freeing 0x14CE0890 (6 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_variables.c(111) : Actual location (location was relayed)
+Last leak repeated 8 times
+/src/build/lppc/php-4.3.3/ext/standard/datetime.c(405) :  Freeing 0x16E370E0 (32 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 3 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute_API.c(314) :  Freeing 0x1445C7E0 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 79 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute_API.c(341) :  Freeing 0x145E5288 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_variables.c(122) : Actual location (location was relayed)
+Last leak repeated 27 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute_API.c(374) :  Freeing 0x10DA56D0 (26 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_variables.c(111) : Actual location (location was relayed)
+Last leak repeated 33 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute_API.c(372) :  Freeing 0x1325EB48 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 33 times
+/src/build/lppc/php-4.3.3/main/output.c(650) :  Freeing 0x145A5E68 (61 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 7 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(1729) :  Freeing 0x150E8DF8 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_variables.c(135) : Actual location (location was relayed)
+Last leak repeated 472 times
+/src/build/lppc/php-4.3.3/ext/standard/string.c(2297) :  Freeing 0x14F63670 (2 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 1 time
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(937) :  Freeing 0x14104FC0 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_variables.c(135) : Actual location (location was relayed)
+Last leak repeated 2303 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(446) :  Freeing 0x146BF3D0 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_variables.c(135) : Actual location (location was relayed)
+Last leak repeated 1 time
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(464) :  Freeing 0x148551C8 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_variables.c(135) : Actual location (location was relayed)
+Last leak repeated 273 times
+/src/build/lppc/php-4.3.3/ext/mbstring/mbfilter.c(8046) :  Freeing 0x14D3B300 (70 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 1106 times
+/src/build/lppc/php-4.3.3/ext/standard/string.c(1116) :  Freeing 0x151C5E30 (9 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 28 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(1805) :  Freeing 0x15021338 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 386 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(1809) :  Freeing 0x150BC9C8 (7 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_variables.c(111) : Actual location (location was relayed)
+Last leak repeated 386 times
+/src/build/lppc/php-4.3.3/Zend/zend_execute.c(1347) :  Freeing 0x150F3840 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_variables.c(122) : Actual location (location was relayed)
+Last leak repeated 149 times
+Zend/zend_language_scanner.c(4819) :  Freeing 0x14DDFB30 (14 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 2 times
+/src/build/lppc/php-4.3.3/ext/standard/string.c(2547) :  Freeing 0x12C06448 (4 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 3821 times
+/src/build/lppc/php-4.3.3/ext/mbstring/mbfilter.c(2789) :  Freeing 0x11627828 (28 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 9 times
+Zend/zend_language_parser.c(2665) :  Freeing 0x10C60D20 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_API.c(562) : Actual location (location was relayed)
+Last leak repeated 29 times
+/src/build/lppc/php-4.3.3/Zend/zend_compile.c(1674) :  Freeing 0x10C60AF8 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 140 times
+/src/build/lppc/php-4.3.3/Zend/zend_compile.c(1870) :  Freeing 0x10C60010 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 96 times
+Zend/zend_language_parser.c(2677) :  Freeing 0x10C5FD70 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_API.c(562) : Actual location (location was relayed)
+Last leak repeated 4 times
+Zend/zend_language_scanner.c(4718) :  Freeing 0x10B4E230 (13 bytes), script=/opt/tools/phpDocumentor/phpdoc
+Last leak repeated 108 times
+Zend/zend_language_parser.c(2680) :  Freeing 0x10B4C570 (44 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/Zend/zend_API.c(562) : Actual location (location was relayed)
+Last leak repeated 4 times
+Zend/zend_language_scanner.c(4627) :  Freeing 0x10B4C068 (6 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/main/main.c(1564) :  Freeing 0x102C17F8 (6 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/main/main.c(1561) :  Freeing 0x102C17B8 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/main/php_variables.c(175) :  Freeing 0x102C0E08 (16 bytes), script=/opt/tools/phpDocumentor/phpdoc
+/src/build/lppc/php-4.3.3/main/php_variables.c(52) :  Freeing 0x102C0DB8 (32 bytes), script=/opt/tools/phpDocumentor/phpdoc

@@ -1,0 +1,1508 @@
+# Search for XX when adding new messages to use old space ...
+#
+# This lib contains text for:
+#
+#  output           (L=1)
+#  notes            (L=2)
+#  warning messages (L=3)
+#  error messages   (L=4)
+#  dyn mem messages (L=5)
+#
+# Arguments to the messages, as defined in CALL WRTMSG():
+#
+#   @I1   ... integer scalar 1, etc.
+#   @i1   ... integer array 1, etc.
+#
+#   @R1   ... real scalar 1, etc.
+#   @r1   ... real array 1, etc.
+#
+#   @S1   ... string array 1, etc.
+#   @s1   ... string scalar 1, etc.
+#
+#   @L1   ... logical scalar 1, etc.
+#   @l1   ... logical array 1, etc.
+#
+# Stopping the execution of MODELLER:
+#
+#   When S = 1     ... stop according to the STOP_ON_ERROR and ERROR_STATUS
+#                      TOP variables.
+#   When S = 0     ... do not stop.
+#
+#   STOP_FLAG      ... when defined, this argument to WRTMSG() always takes
+#                      precedence (if 1, stop; continue otherwise)
+#
+#
+#M n  L S
+#  TEXT
+#at least one empty line must separate the messages
+#-----------------------------------------------------------------------------
+M 201  4 1
+OPTIMIZATON_METHOD is out of range.
+ 
+M 202  4 1
+Not implemented.
+ 
+M 203  4 1
+CHARMM atom type is out of range;
+Probably because GENERATE_TOPOLOGY was not called.
+Atom index, atom type: @I1 @S1
+ 
+M 204  3 1
+Atomic radius very small; DYNAMIC_SPHERE term will be ignored for this atom.
+Atom index, atom type, atom radius: @I1 @S1 @R1
+ 
+M 205  3 1
+LENNARD_JONES_SWITCH[2] reset to LENNARD_JONES_SWITCH[1]+0.5.
+LENNARD_JONES_SWITCH[2]: @R1
+ 
+M 206  3 1
+COULOMB_SWITCH[2] reset to COULOMB_SWITCH[1]+0.5.
+COULOMB_SWITCH[2]: @R1
+ 
+M 207  3 1
+A or B too big, or MAXIT too small.
+ 
+M 208  4 1
+X < 0.
+ 
+M 209  3 1
+A too large or ITMAX too small.
+ 
+M 210  4 1
+A or X less than 0.
+ 
+M 211  4 1
+Bad argument, X < 0 or X > 1.
+ 
+M 212  4 1
+Too many iterations: @I1
+ 
+M 213  4 0
+Division by zero; divisor = @R1
+ 
+M 214  4 0
+File probably does not exist.
+Perhaps you have to increase swap space size.
+Filename: @S1
+Command : @S2
+ 
+M 215  4 1
+Dynamic memory allocation failed.
+Routine, variable, status: @S1 @S2 @I1
+ 
+M 216  1 0
+Testing filename: @S1
+ 
+M 217  3 0
+Filename for PDB code not found: @S1
+Directories: @S2
+Extensions : @S3
+ 
+M 218  3 0
+XX
+ 
+M 219  4 1
+Internal error. NPDBFIL corrupted.
+ 
+M 220  4 1
+PDB filename not conforming: @S1
+ 
+M 221  4 1
+Beginning of schedule not found.
+ 
+M 222  3 1
+Missing columns in schedule file at step: @I1
+automatically added scaling factors of 1.0.
+ 
+M 223  4 1
+Array too small. Increase @S1
+current maximum, current need: @I2 @I1
+ 
+M 224  2 1
+Open @I1 @S1 @S2 @S3
+ 
+M 225  4 0
+File does not exist: @S1
+ 
+M 226  4 0
+File already exists: @S1
+ 
+M 227  4 0
+Access="APPEND" not allowed for Format=UNFORMATTED: @S1
+ 
+M 228  4 0
+Error openning file: @S1
+ 
+M 229  2 0
+Trying filename: @S1
+ 
+M 230  4 0
+File not found: @S1
+Directories: @S2
+Extensions : @S3
+Prefixes   : nothing, pdb
+ 
+M 231  4 1
+CHARMM atom type is not recognized (not in RADII_LIB): @S1
+ 
+M 232  2 1
+parameters    BONDS   ANGLS  DIHEDS IMPROPS    MRFP    MODE
+@S1
+ 
+M 233  4 1
+No keyword before contents.
+ 
+M 234  4 1
+Format error.
+@S1
+ 
+M 235  4 1
+SELECT identifier out of range: @I1
+ 
+M 236  4 1
+Atom class is out of range: @S1
+ 
+M 237  4 1
+Residue type undefined: @I1
+ 
+M 238  2 1
+Reading CHARMM residue topology file version: @S1
+ 
+M 239  4 1
+Opt,dih,res mean out of range: @I1 @I2 @S1 @R1 @R2 @R3
+ 
+M 240  4 1
+Include residue type in RESTYP_LIB: @S1
+ 
+M 241  4 1
+Residue type defined multiple times: @S1
+ 
+M 242  4 1
+Numbers of dihedral angle entries and types not the same: @I1 @I2
+ 
+M 243  3 1
+This DELE keyword is not supported: @S1
+ 
+M 244  3 1
+Incorrect number of tokens: @I1
+ 
+M 245  3 1
+Number of atoms in MODEL2 <> MODEL: @I1 @I2
+ 
+M 246  3 1
+MODEL atom <> MODEL2 atom, atom index: @S1 @S2 @I1
+ 
+M 247  4 1
+Internal error: @I1 @I2
+ 
+M 248  3 1
+OFF_DIAGONAL <= OVERHANG: @I1 @I2
+ 
+M 249  4 1
+Can not align two alignments with a different number of sequences: @I1 @I2
+ 
+M 250  3 1
+Use OVERHANG=0 with local alignment.
+ 
+M 251  4 0
+MATRIX_OFFSET probably has an invalid value: @R1
+ 
+M 252  4 0
+Increase MAXRES or gap penalties.
+ 
+M 253  4 1
+Singular matrix.
+ 
+M 254  4 1
+Incorrect dimensions for matrix multiplication.
+ 
+M 255  4 1
+PDB residue type unrecognized: @S1
+ 
+M 256  4 1
+Dihedral angle correlation coeff. out of bounds (+-1): $I1 $I2 $R1
+ 
+M 257  2 1
+Number of classes: @I1
+ 
+M 258  4 1
+No "#START:" card in file: @S1
+ 
+M 259  4 1
+Incorrect number of items in a line: @S1
+ 
+M 260  4 1
+CHARMM residue type unrecognized: @S1
+ 
+M 261  4 1
+Premature end of file: @S1
+ 
+M 262  4 1
+TOPOLOGY_MODEL out of range: @I1
+ 
+M 263  2 1
+Number of dihedral angle types         : @I1
+Maximal number of dihedral angle optima: @I2
+Dihedral angle names                   : @s1
+ 
+M 264  4 1
+Weights sum to (almost) zero: @R1 @I1 @I2
+ 
+M 265  4 1
+Weights do not sum to 1: @R1 @I1 @I2
+Old weights: @r1
+ 
+M 266  2 1
+Number of residue groups: @I1
+ 
+M 267  4 1
+First line not #DISTANCE or #SIMILARITY.
+Line: @S1
+ 
+M 268  2 1
+Number of residue types: @I1
+ 
+M 269  4 1
+Single character residue type unrecognized: @S1
+ 
+M 270  4 1
+Error reading/processing file: @S1
+ 
+M 271  4 1
+Mainchain class code not recognized: @S1
+ 
+M 272  4 1
+Missing mainchain conformation class data for some residues.
+ 
+M 273  4 1
+Incorrect format or empty line in RESTYP_LIB: @S1
+ 
+M 274  2 1
+Mainchain residue conformation classes: @S1
+ 
+M 275  4 1
+E_o > 0: @R1
+ 
+M 276  2 1
+ALIGN_BLOCK changed to 1.
+ 
+M 277  4 1
+Residue identifier not found: @S1
+ 
+M 278  4 1
+No ":" in ATOM:RESID[:CHAINID] atom identifier: @S1
+ 
+M 279  3 0
+IUPAC atom not found in topology library; residue type index: @S1 @I1
+Possible reasons are a non-standard PDB file, or a new residue/atom types.
+Compare the offending residue in the PDB file with its definition in the topology library.
+ 
+M 280  3 0
+No TOPOLOGY_LIB in memory or assigning a BLK residue.
+Default CHARMM atom type assigned: @S1 --> @S2
+This message is written only for the first such atom.
+ 
+M 281  4 1
+Probably RADII_LIB and MODELS_LIB are inconsistent with TOPOLOGY_LIB.
+Residue_type, Atom_type_IUPAC, Atom_type_CHARMM: @I1 @S1 @S2
+ 
+M 282  4 1
+Internal error. Should not find "/" here.
+ 
+M 283  4 1
+Too few patched residues for this patching residue type: @I1 @I2
+ 
+M 284  4 1
+Beginning atom index for a residue out of bounds: @I1 @I2
+ 
+M 285  3 1
+Number of residues <> number of atoms; atom code: @I1 @I2 @S1
+ 
+M 286  3 1
+MODEL atom not classified: @S1 @S2
+ 
+M 287  4 1
+No ":" in RESID:CHAINID residue identifier: @S1
+ 
+M 288  3 1
+Protein not accepted: @I1 @S1
+ 
+M 289  2 1
+Proteins (all/accepted): @I1 @I2
+ 
+M 290  4 0
+Number of residues in the alignment and @S1 files are different: @I1 @I2
+For alignment entry: @I3
+ 
+M 291  4 0
+Sequence difference between alignment and @S1 :
+ 
+M 292  3 1
+Too many neighbours; overflow ignored: @I1 @I2
+ 
+M 293  3 1
+No TOPOLOGY_LIB is in memory. Use READ_TOPOLOGY to read one.
+ 
+M 294  4 1
+Probably cannot use SDCH=.T. here because of the atom order.
+ 
+M 295  4 1
+Strange eigenvalues of matrix p: @r1
+ 
+M 296  4 0
+Number of equivalent positions < 3: @I1
+ 
+M 297  2 1
+Segments, residues, atoms: @I1 @I2 @I3
+ 
+M 298  2 1
+Segment: @I1 @S1 @S2 @I2
+ 
+M 299  4 1
+Atom index is out of bounds: @I1 @I2
+ 
+M 300  2 1
+Number of pseudo atoms: @I1
+ 
+M 301  4 1
+Undefined input atom coordinates: @S1
+ 
+M 302  2 1
+This file probably contains only Calpha atoms: @S1
+ 
+M 303  4 0
+No atoms were read from the specified input PDB file:
+  1) Possibly because an incorrect/non-existent PDB file is specified.
+  2) Possibly because the segment is specified incorrectly in the
+     alignment file or by the TOP variable MODEL_SEGMENT. That is,
+     the beginning residue number and/or chain id in MODEL_SEGMENT
+     may not be found in the input PDB file; MODEL_SEGMENT: @S1:@S2
+To find out more, switch on maximal output by 'SET OUTPUT_CONTROL = 1 1 1 1 2'
+ 
+M 304  2 1
+Restraints in memory, selected restraints: @I1 @I2
+Explicitly excluded atom pairs in memory : @I3
+Pseudo atoms in memory                   : @I4
+ 
+M 305  4 1
+Incorrect record identifier in restraint file; card: @S1
+ 
+M 306  4 1
+Atom identifier not found: @S1
+ 
+M 307  2 1
+Number of restraints read    : @I1
+Number of excluded pairs read: @I2
+Number of pseudo atoms read  : @I3
+ 
+M 308  4 1
+Error interpreting restraints line: @S1
+ 
+M 309  4 1
+Mathematical form out of bounds; iform, icsr: @I1 @I2
+ 
+M 310  4 1
+Feature type out of bounds; iftyp, icsr: @I1 @I2
+ 
+M 311  4 1
+Restraint group out of bounds; group, icsr: @I1 @I2
+ 
+M 312  4 1
+UNFORMATTED file access in USER format not implemented.
+ 
+M 313  2 1
+The overhangs in the alignment have been cut. You have to
+re-read the alignment from a file to use it after this.
+ 
+M 314  3 1
+Only integer residue numbers are allowed: @S1
+ 
+M 315  3 1
+There should be two sequences in the alignment: @I1
+ 
+M 316  4 1
+OFF_DIAGONAL <= OVERHANG: @I1 @I2
+ 
+M 317  3 1
+M. Levitt suggests GAP_PENALTIES_3D should be 0 10: @R1 @R2
+ 
+M 318  2 1
+@I1 @I2 @I3 @R1 @R2 @R3
+ 
+M 319  4 0
+Not two structures in alignment; nothing done.
+ 
+M 320  3 1
+Alignment not refined.
+ 
+M 321  2 1
+Sequences initially aligned by previous TOP commands: @I1
+ 
+M 322  2 1
+Sequences start-points aligned initially: @I1
+ 
+M 323  2 1
+Sequences end-points aligned initially: @I1
+ 
+M 324  2 1
+Sequences mid-points aligned initially: @I1
+ 
+M 325  3 1
+A very bad case with no defined positions: @I1
+ 
+M 326  3 1
+No selected atoms for frw position: @I1
+ 
+M 327  3 1
+Only one structure; nothing done.
+ 
+M 328  2 1
+Initial framework positions: @I1
+ 
+M 329  3 1
+Insufficient overlap; nothing done.
+ 
+M 330  2 1
+Framework, Cycles, RMS_frw(i-1,i): @I1 @I2 @R1
+ 
+M 331  4 1
+Framework did not converge.
+ 
+M 332  2 1
+Framework: @I1
+ 
+M 333  4 1
+Internal error. NALN <> NRESN[IFRW]: @I1 @I2
+ 
+M 334  4 1
+Alignment did not converge.
+ 
+M 335  4 1
+No alignment.
+ 
+M 336  4 1
+No template structures.
+ 
+M 337  4 1
+Structure not read in: @I1
+ 
+M 338  2 1
+Both ATOM_FILES and ALIGN_CODES are empty for entry: @I1
+ 
+M 339  3 1
+MODEL residue <> ALIGNMENT, ires, ialn: @S1 @S2 @I1 @I2
+ 
+M 340  4 1
+IALN() refers to a residue beyond atom file: @I1 @I2
+ 
+M 341  3 1
+Check the N-terminus numbering.
+ 
+M 342  3 1
+Same residue numbers: @I1 @I2 @S1
+ 
+M 343  2 1
+>> BEGINNING OF COMMAND @S1
+ 
+M 344  2 1
+<< END OF COMMAND @S1
+ 
+M 345  4 1
+Alignment with two proteins is needed.
+ 
+M 346  4 1
+Reference structure and MODEL have different lengths: @I1 @I2
+ 
+M 347  4 1
+Reference structure and MODEL are different: @I1 @I2 @I3
+ 
+M 348  4 1
+RMS_CUTOFFS does not have the right number of elements: @I1 @I2
+Probably because the number of dihedral angle types changed.
+ 
+M 349  3 1
+Some residues are without DISTANCE_ATOMS[1] atom.
+ 
+M 350  4 1
+Sequences different; seq;pos;types: @I1 @I2 @I3
+ 
+M 351  4 1
+Lengths of sequences different; seq;lens: @I1 @I2 @I3
+ 
+M 352  4 1
+Number of sequences in the two alignments is different: @I1 @I2
+ 
+M 353  4 0
+All distances are equal.
+ 
+M 354  4 1
+Incorrect ID1, ID2 range: @i1
+ 
+M 355  4 1
+Too many models for EXPAND_ALIGNMENT: @I1 @I2
+ 
+M 356  2 1
+Coordinates swapped in residue: @I1 @S1 @R1 @R2
+ 
+M 357  3 1
+atm1nam <> atm2nam, ia, ires (no swap): @S1 @S2 @I1 @I2
+ 
+M 358  3 1
+iatmr1 <> katmr2, ires (no swap): @I1 @I2 @I3
+ 
+M 359  2 1
+Swapping atoms to minimize RMS in residues: @S1
+ 
+M 360  3 1
+nres1<>nres2 or natm1<>natm2 (no swap): @I1 @I2 @I3 @I4
+ 
+M 361  4 1
+nbound <> 2*nblk: @I1 @I2
+ 
+M 362  4 1
+Not a similarity matrix.
+ 
+M 363  4 1
+Not correct segm/loops.
+ 
+M 364  4 1
+Not correct segm/nnnshft.
+ 
+M 365  4 1
+Not correct segm/nncshft.
+ 
+M 366  4 1
+Target sequence length is 0.
+ 
+M 367  4 1
+Sequence not found; code: @S1
+ 
+M 368  4 1
+Search sequence length = 0; code: @S1
+ 
+M 369  4 1
+Internal error. LOWLIM or UPLIM are out of range: @I1 @I2
+ 
+M 370  2 1
+Group added to ALIGNMENT: @S1
+ 
+M 371  3 1
+Increase MVSPRM to @I1. The last @I2 sequences in this group of
+@I3 sequences are ignored in ALIGN_CODES & ATOM_FILES.
+ 
+M 372  4 1
+No PDB code in field 2 for structure: @S1
+Card: @S2
+ 
+M 373  4 1
+Protein specified in ALIGN_CODES(i) in the TOP file was not found
+in the alignment file; ALIGN_CODES(@I1) = @S1
+ 
+M 374  2 1
+Non-standard residue type,position,sequence: @S1 @I1 @I2
+ 
+M 375  4 1
+Unknown residue type,position,sequence: @S1 @I1 @I2
+ 
+M 376  3 1
+Not enough fields in the second line of the sequence entry: @S1
+Actual fields, should be: @I1 @I2
+(Fields are separated by a colon, :)
+ 
+M 377  3 1
+Too many fields in the second line of the sequence entry: @S1
+Actual fields, should be: @I1 @I2
+(Fields are separated by a colon, :)
+ 
+M 378  4 1
+Error reading sequence from PDB file: @I1
+ 
+M 379  4 1
+Alignment sequence not found in PDB file: @I1 @S1
+ 
+M 380  4 1
+Incorrect format in the PAP alignment file (no code): @S1
+ 
+M 381  4 1
+Error reading the PAP alignment file (no non-empty line): @S1
+ 
+M 382  4 1
+No : in Insight alignment file: @S1
+ 
+M 383  4 1
+Error reading the Insight alignment file: @S1
+ 
+M 384  4 1
+First sequence longer than MODEL: @I1 @I2 @I3 @S1
+ 
+M 385  4 1
+RR_FILE must be a distance matrix.
+Automatically converted: new_elem = -old_elem + max_elem
+ 
+M 386  3 1
+A potential that relies on two proteins is used, yet you only have
+an unknown in the alignment. Library, not MDT, potential is used.
+ 
+M 387  4 0
+UNDEFINED message
+ 
+M 388  4 1
+indhash() out of range: @I1 @I2
+ 
+M 389  4 1
+MDT table range is too small.
+MDT should be derived with the full range of possible values for
+the independent variables.
+ 
+M 390  4 1
+MDT index is out of range: @I1 @I2
+ 
+M 391  4 1
+nbinx <> ix1: @I1 @I2
+ 
+M 392  4 1
+Your library requires all bins zero; nbinx: @I1
+ 
+M 393  3 1
+Sum of p(x/a,b,...,c) < tenm4: @R1
+This is due to a bug or a very sparse pseudo-potential.
+Pdf arbitrarily set to even distribution.
+ 
+M 394  4 1
+NRESFEAT is incorrect: @I1
+ 
+M 395  3 1
+w(i) < 0; check a_i: @R1
+ 
+M 396  4 1
+SIMTOT < 1E-5: @R1
+ 
+M 397  4 1
+STDEV < 0: @R1
+Set to 1E-5.
+ 
+M 398  4 1
+SUM = 0: @R1
+ 
+M 399  4 1
+Incorrect number of parameters.
+ 
+M 400  2 1
+Distance function type: @I1
+ 
+M 401  2 1
+USER SYMMETRY, SYMMETRY: @I1 @L1
+SYMMETRIC = .T. ==> NALN*NALN/2
+SYMMETRIC = .F. ==> NALN*NALN
+All protein pairs always generated.
+ 
+M 402  3 1
+ires, irestp: @I1 @I2
+ 
+M 403  4 1
+Number of features in STEERING file <> MDT file: @I1 @I2
+ 
+M 404  4 1
+Dimensions in BIN <> MDT: @I1 @I2
+feature index in MDT: @I3
+feature index in INP: @I4
+feature index in BIN: @I5
+ 
+M 405  3 1
+istep <> INT * idmdt;
+istep, imdt, MDT ifeat: @I1 @I2 @I3
+istep reset to idmdt
+ 
+M 406  3 1
+istart <> i1mdt+INT*idmdt;
+istart, i1mdt, idmdt, MDT ifeat: @I1 @I2 @I3 @I4
+istart reset to i1mdt
+ 
+M 407  3 1
+istart < i1mdt, MDT ifeat;
+istart, i1mdt, MDT ifeat: @I1 @I2 @I3
+istart reset to i1mdt
+ 
+M 408  3 1
+iend > i2mdt, MDT ifeat;
+iend, i2mdt, MDT ifeat: @I1 @I2 @I3
+iend reset to i2mdt
+ 
+M 409  4 1
+iend < istart, STEER ifeat: @I1 @I2 @I3
+ 
+M 410  4 1
+Number of elements in STEER <> MDT: @I1 @I2
+ 
+M 411  4 1
+Feature not found: @I1
+ 
+M 412  3 1
+Undefined value; X,x1,x2,n,bin: @R1 @R2 @R3 @I1
+ 
+M 413  4 1
+Feature index out of range: @I1
+ 
+M 414  4 1
+Error in the format/contents of mdt1.ini.
+ 
+M 415  4 1
+rnpoints<>rnpnts2: @R1 @R2
+ 
+M 416  4 1
+NRES < 1: @I1
+ 
+M 417  2 1
+Restraint type to be calculated: @S1
+ 
+M 418  4 1
+NPHYCNS from $FEATS_LIB <> size(RESTRAINTS_FILTER): @I1 @I2
+ 
+M 419  4 1
+READ_TOPOLOGY first
+ 
+M 420  4 1
+READ_PARAMETERS first
+ 
+M 421  4 1
+GENERATE_TOPOLOGY first
+ 
+M 422  2 1
+Number of previous, current restraints         : @I1 @I2
+ 
+M 423  2 1
+Number of previous, current selected restraints: @I1 @I2
+ 
+M 424  3 1
+CIS peptide: @I1 - @I2 @S1 - @S2 @S3 - @S4 @i1
+ 
+M 425  3 1
+Unselected all O C +N +CA dihedrals: @I1
+ 
+M 426  4 1
+Need 2 atoms in ATOM_IDS for RESTRAINT_TYPE = 'SHEET': @I1
+ 
+M 427  2 1
+Restraining segment to helix: @I1 @I2
+ 
+M 428  4 1
+Alpha class undefined: @S1
+ 
+M 429  2 1
+Restraining segment to strand: @I1 @I2
+ 
+M 430  4 1
+Strand class undefined: @S1
+ 
+M 431  4 1
+Proline beta class undefined: @S1
+ 
+M 432  4 1
+Atoms for the first H-bond not found: @S1 @S2 @I1 @I2 @I3 @I4
+ 
+M 433  4 1
+First H-bond cannot be a MC H-bond: : @S1 @S2
+ 
+M 434  1 1
+Restraining segments to parallel sheet, H-bonds: @S1 @S2 @I1
+ 
+M 435  1 1
+Restraining segments to anti-parallel sheet, H-bonds: @S1 @S2 @I1
+ 
+M 436  1 1
+Number of user distances added: @I1
+Total number of restraints before, now: @I2 @I3
+ 
+M 437  3 1
+Standard deviation is very small: @R1
+ 
+M 438  3 1
+Force constant is very small: @R1
+ 
+M 439  4 1
+No MODEL in memory.
+ 
+M 440  3 1
+Adding params (mean,force,period): @R1 @R2 @I1
+For atoms: @s1
+ 
+M 441  1 1
+Number of restraints deleted: @I1
+ 
+M 442  4 1
+One or more atoms absent from MODEL: @s1
+ 
+M 443  1 1
+Restraints marked for deletion were removed.
+Total number of restraints before, now: @I1 @I2
+ 
+M 444  4 1
+Incorrect number of parameters; expected, specified: @I1 @I2
+ 
+M 445  4 1
+Excluded atom @S1 absent from MODEL.
+ 
+M 446  3 1
+A potential that relies on one protein is used, yet you have at
+least one known structure available. MDT, not library, potential is used.
+ 
+M 447  4 1
+MNCH bins from MDT <> LIB: @I1 @I2
+ 
+M 448  4 1
+indatm, wght < 0: @I1 @R1
+ 
+M 449  3 1
+No atoms selected; no restraints will be selected.
+ 
+M 450  4 1
+Probably because no MODEL is in memory; use READ_MODEL.
+ 
+M 451  3 1
+Requested schedule step not available: @I1
+SCHEDULE_STEP set to N_SCHEDULE.
+ 
+M 452  4 1
+Probably because no SCHEDULE was read/made; use READ_SCHEDULE/MAKE_SCHEDULE.
+ 
+M 453  3 1
+No fixed restraints selected; there may be some dynamic ones.
+ 
+M 454  3 1
+Restraints file was probably not read; use READ_RESTRAINTS.
+ 
+M 455  3 1
+None of the non-bonded terms selected.
+ 
+M 456  3 1
+Both soft sphere and Lennard-Jones terms selected.
+ 
+M 457  3 1
+Both soft sphere and statistical potential terms selected.
+ 
+M 458  3 1
+Both Lennard-Jones and statistical potential terms selected.
+ 
+M 459  4 1
+Increase MAXSPL to at least @I1
+ 
+M 460  4 1
+Center residue not found: @S1
+ 
+M 461  4 1
+Center atom not found: @S1
+ 
+M 462  2 1
+Number of selected atoms            : @I1
+ 
+M 463  2 1
+Number of splined restraints: @I1
+ 
+M 464  3 1
+Inventing the MODEL coordinates.
+ 
+M 465  3 1
+No seed atoms can be found in MODEL.
+ 
+M 466  3 1
+Some coordinates in MODEL not assigned.
+ 
+M 467  3 1
+All coordinates in MODEL have been assigned.
+ 
+M 468  3 1
+Some coordinates in MODEL are still undefined.
+ 
+M 469  4 1
+undefined message - use it for something new.
+ 
+M 470  3 1
+Atoms I-J-K are co-linear; L not built: @I1 @I2 @I3 @I4
+ 
+M 471  4 1
+Number of bonds/atom incorrect; possibly increase MAXBAT.
+Atom indices in bond: ', @I1 @I2
+Their bonds         : ', @I3 @I4
+ 
+M 472  4 1
+No template residues; number of templates: @I1
+ 
+M 473  4 1
+Atom indices for seed atoms are duplicated: @I1 @I2 @I3
+ 
+M 474  3 1
+Some IC values are zero for seed atoms.
+I,J,K,RIJ,RJK,THETA: @I1 @I2 @I3 @R1 @R2 @R3
+ 
+M 475  3 1
+Could not find parameters in the parameters library: @S1 @S2 @S3 @S4
+ 
+M 476  4 1
+No MODEL in memory.
+ 
+M 477  4 1
+No templates in the alignment.
+Number of sequences in the alignment: @1
+ 
+M 478  4 1
+Target sequence not the last sequence in the alignment.
+ 
+M 479  4 1
+Must not use patching residues here.
+Residue type index, residue type: @I1 @S1
+ 
+M 480  3 1
+Residue type ignored (aln position, sequence, type): @I1 @I2 @S1
+ 
+M 481  3 1
+This disulfide was already patched.
+ 
+M 482  4 1
+Patching residue identifier not found: @S1
+ 
+M 483  2 1
+CD1/2 CE1/2 swapped: @R1 @I1 @S1
+ 
+M 484  3 1
+Dihedral still outside +-90: @R1
+ 
+M 485  2 1
+OD1/2 swapped: @R1 @I1 @S1
+ 
+M 486  2 1
+OE1/2 swapped: @R1 @I1 @S1
+ 
+M 487  2 1
+NH1/2 swapped: @R1 @I1 @S1
+ 
+M 488  3 1
+CHARMM LIB atom not found in MODEL: @I1 @S1 @S2
+ 
+M 489  4 1
+CHARMM LIB atom not found in MODEL: @I1 @S1 @S2
+ 
+M 490  4 1
+MODEL residue does not have the same number of atoms as
+CHARMM TOPOL LIB residue: @I1 @S1 @I2 @I3
+ 
+M 491  2 1
+MODEL residue changed: @I1 @S1 @S2 @S3
+ 
+M 492  3 1
+Are you sure you want to calculate a normalized energy profile!
+ 
+M 493  4 1
+MODEL atom not found in MODEL2: @I1 @S1 @S2
+ 
+M 494  4 1
+MODEL residue does not have the same number of atoms as
+MODEL2 residue: @I1 @S1 @I2 @I3
+ 
+M 495  3 1
+MODEL residue type not in MODEL2: @I1 @S1
+ 
+M 496  2 1
+Amplitude is > 0; randomization is done.
+ 
+M 497  2 1
+Amplitude is < 0; random coordinates are assigned.
+ 
+M 498  2 1
+Atoms,selected atoms,random_seed,amplitude: @I1 @I2 @I3 @R1
+ 
+M 499  2 1
+Amplitude is 0; no randomization will be done.
+ 
+M 500  4 1
+Numbers of MODEL and MODEL2 residues not equal: @I1 @I2
+ 
+M 501  2 1
+Gravity center of MODEL: @R1 @R2 @R3
+ 
+M 502  4 1
+Order of RESI/ATOM/PRES is incorrect.
+ 
+M 503  4 1
+Number of atoms in TOPOLOGY LIBRARY > MODEL; residue: @I1 @I2 @S1
+ 
+M 504  3 1
+NSEQ1 <> NSEQMA:  @I1 @I2
+MALIGN3D is usually done for the templates first
+then add MODEL to alignment and run TRANSFER_XYZ
+ 
+M 505  2 1
+MODEL is an average of the largest cluster: @R1
+ 
+M 506  2 1
+MODEL is an average of all templates.
+ 
+M 507  3 1
+Number of residues in alignment different from that in MODEL: @I1 @I2
+ 
+M 508  3 1
+Residue type in ALIGNMENT different from that in MODEL.
+MODEL position, ALIGNMENT type, MODEL type: @I1 @I2 @I3
+ 
+M 509  4 1
+Structures not isomorphic; i,na,na",nr,nr": @I1 @I2 @I3 @I4 @I5
+ 
+M 510  4 1
+Structures not isomorphic; na,na",nr,nr": @I1 @I2 @I3 @I4
+ 
+M 511  2 1
+Number of templates for coordinate transfer: @I1
+After transfering coordinates of the equivalent template atoms,
+there are defined, undefined atoms in MODEL: @I2 @I3
+ 
+M 512  4 1
+Dihedral undefined: @i1
+ 
+M 513  3 1
+Local optimization without restraints selected.
+Thus, no change to structure at all.
+ 
+M 514  4 1
+Bad restraints; undefined mean.
+ 
+M 515  2 1
+Residues,dihedral type,all-selected,optimized: @I1 @I2 @I3 @I4
+ 
+M 516  2 1
+Residues, dihedral type, randomized: @I1 @I2 @I3
+ 
+M 517  2 1
+Local optimization around @S1
+ 
+M 518  2 1
+Local randomization around @S1 for @R1
+ 
+M 519  3 1
+Amplitude is 0; no randomization.
+ 
+M 520  3 1
+Normalization of charges failed: @I1 @R1 @R2
+ 
+M 521  2 1
+Reducing the topology to @I1
+ 
+M 522  1 1
+Number of disulfides patched in MODEL: @I1
+ 
+M 523  4 1
+The same SG atom occurs in more than one disulfide.
+Thus, the model is incorrect.
+ 
+M 524  4 1
+An SG atom is bonded to itself. Thus, the model is incorrect.
+ 
+M 525  4 1
+Error in TOP variable assignment.
+ 
+M 526  2 1
+Number of command lines, routines: @I1 @I2
+ 
+M 527  2 1
+Compiling the TOP program.
+ 
+M 528  2 1
+Executing the TOP program.
+ 
+M 529  2 1
+MODELLER, EXIT(0).
+ 
+M 530  4 1
+No ROUTINE name in: @S1
+ 
+M 531  3 1
+ROUTINE redefined: @S1
+ 
+M 532  3 1
+No include file name in: @S1
+ 
+M 533  4 1
+Too many nested INCLUDE calls.
+Increase the gap between IOMIN and IOMAX.
+ 
+M 534  4 1
+Command not recognized: @S1
+ 
+M 535  4 1
+No = in: @S1
+ 
+M 536  4 1
+No loop cntrl variable in: @S1
+ 
+M 537  4 1
+Real/integer variable is undefined: @S1
+Command line: @S2
+ 
+M 538  4 1
+Real/integer variable clash in loop variable: @S1
+ 
+M 539  4 1
+No label in: @S1
+ 
+M 540  4 1
+Numbers of expected, actual arguments are different: @I1 @I2
+Command line: @S1
+ 
+M 541  2 1
+Number of commands,reals,integers,strings,logicals: @i1
+ 
+M 542  4 1
+There may be too many F,I,L elms for BUFFR: @I1 @I2 @I3 @I4
+ 
+M 543  4 1
+There may be too long F,I,L elms for BUFFR.
+ 
+M 544  4 1
+Variable name not recognized: @S1
+Command line: @S2
+ 
+M 545  4 1
+No values for variable: @S1
+Command line: @S2
+ 
+M 546  4 1
+Internal error. Command line: @S1
+ 
+M 547  4 1
+Incorrect element type for variable: @S1
+Element, element type: @S2 @I1
+Command line: @S3
+ 
+M 548  4 1
+Cannot assign a value to a value: @S1
+Command line: @S2
+ 
+M 549  4 1
+No GO_TO code in the command.
+ 
+M 550  4 1
+No LABEL code in the command: @S1
+ 
+M 551  4 1
+No such routine: @S1
+ 
+M 552  4 1
+END_DO before free DO.
+ 
+M 553  4 1
+I/O stream not opened: @I1
+ 
+M 554  4 1
+I/O stream out of range: @I1
+ 
+M 555  4 1
+There should be exactly one RESULT variable: @I1
+ 
+M 556  4 1
+RESULT variable not REAL or INTEGER: @I1
+ 
+M 557  4 1
+RESULT variable not STRING: @I1
+ 
+M 558  4 1
+SUBROUTINE nesting not allowed.
+ 
+M 559  4 1
+No operands.
+ 
+M 560  4 1
+There should be two operands for division: @I1
+ 
+M 561  4 1
+Absolute value of divisor is too small: @R1
+ 
+M 562  4 1
+There should be two operands for module: @I1
+ 
+M 563  4 1
+Please correct the errors reported above and rerun MODELLER.
+ 
+M 564  4 1
+There should be two operands for exponent: @I1
+ 
+M 565  4 1
+Restraint index out of bounds (NCSR,NICSR,IC,I): @I1 @I2 @I3 @I4
+ 
+M 566  2 1
+Residues, atoms, charge: @I1 @I2 @R1
+ 
+M 567  2 1
+Residues, atoms: @I1 @I2
+ 
+M 568  2 1
+Residues, atoms, selected atoms: @I1 @I2 @I3
+ 
+M 569  4 1
+Incorrect type of the non-bonded pair routine: @I1
+ 
+M 570  3 1
+Unknown atom type for atom: @I1
+ 
+M 571  3 1
+Unspecified restraint for atoms, types: @I1 @I2 @I3 @I4
+ 
+M 572  3 1
+Unknown atom types for atoms: @I1 @I2 @I3 @I4
+ 
+M 573  3 1
+OBJFUNC() <> Sum FEATPDF: @R1 @R2
+ 
+M 574  4 1
+Not a valid key: @S1
+Make sure that "setenv $@S2 @S3" is defined properly.
+Go to http://guitar.rockefeller.edu/modeller/ for the key.
+ 
+M 575  4 1
+Undefined license; see file INSTALLATION.
+Possible reasons: Incomplete installation, too small a swap space.
+ 
+M 576  4 1
+Environment variable for application directory undefined.
+Program probably not installed correctly.
+ 
+M 577  2 1
+TOP initialized.
+ 
+M 578  2 1
+Initializing application @S1
+ 
+M 579  2 1
+Script to be executed: @S1
+ 
+M 580  3 1
+Weird SELECTION_STATUS: both initialization and removing selected.
+ 
+M 581  4 1
+Defining a pseudo atom with an undefined real atom: @I1 @I2
+ 
+M 582  4 1
+Run TRANSFER_XYZ, READ_MODEL or BUILD_MODEL first.
+ 
+M 583  4 1
+Run READ_TOPOLOGY and GENERATE_TOPOLOGY first.
+ 
+M 584  4 1
+Number of sequences in the alignment is 0.
+ 
+M 585  4 1
+nvdwmod <> ntopmod: @I1 @I2
+ 
+M 586  4 1
+Run READ_MODEL or BUILD_MODEL first.
+ 
+M 587  4 1
+Run READ_ALIGNMENT or make alignment first.
+ 
+M 588  4 1
+Run GENERATE_TOPOLOGY and READ_PARAMETERS first.
+ 
+M 589  4 1
+Run READ_TOPOLOGY first.
+ 
+M 590  4 1
+No topology generated for sequence: @S1
+Possibly because incorrect topology library is used.
+ 
+M 591  4 1
+Run GENERATE_TOPOLOGY first.
+ 
+M 592  4 1
+There is no such CODE in the alignment: @S1
+ 
+M 593  4 1
+There is no alignment in memory;
+Specify MODEL_SEGMENT correctly: @S1
+(use colon : after the residue number)
+ 
+M 594  4 1
+No atoms in memory. Run READ_MODEL or BUILD_MODEL.
+ 
+M 595  4 1
+Number of selected atoms in sets 2 & 3 is not the same: @I1 @I2
+ 
+M 596  4 1
+Atom index is out of range (iatm,natm): @I1 @I2
+ 
+M 597  4 1
+Atom type(s) out of range: @I1 @I2
+ 
+M 598  1 1
+Number of user atom restraints added  : @I1
+Total number of restraints before, now: @I2 @I3
+ 
+M 599  3 1
+Atom type not found; restraint ignored: @S1 @S2
+ 
+M 600  4 1
+Restraint for atom type not found.
+ 
+M 601  4 1
+Not one atom in restraint.
+ 
+M 602  4 1
+Incorrect physical restraint type: @I1
+ 
+M 603  4 1
+Impropers must have periodicity 0: @I1
+ 
+M 604  4 1
+Torsions must have periodicity 1,2,3,4,5,6: @I1
+ 
+M 605  4 1
+Force constant cannot be less than 0.
+ 
+M 606  2 1
+Stereochemical restraints were constructed from RTF & PRMF.
+Added bond,angle,dihedral,improper restraints  : @i1
+Total number of restraints before, now         : @I1 @I2
+ 
+M 607  3 0
+Cannot find params in params file:
+CHARMM atoms : @s1
+IUPAC atoms  : @s2
+Atom indices : @i1
+Residues     : @s3
+ 
+M 608  3 0
+Atomic shift > CHGMAX: @I1 @R1
+ 
+M 609  4 1
+Delta time too small: @R1
+ 
+M 610  3 0
+Precision problem; starting from scratch.
+ 
+M 611  3 0
+Precision problem; starting from scratch.
+Last such message in this OPTIMIZE.
+ 
+M 612  2 0
+Number of MODEL atoms, selected restraints; @I1 @I2
+ 
+M 613  3 1
+No selected restraints remain!
+ 
+M 614  4 1
+NOBJ <> NOBJ2: @I1 @I2
+ 
+M 615  3 1
+SEGMENT_IDS length < number of segments: @I1 @I2
+Segment ids set to blank for missing SEGMENT_IDS.
+ 
+M 616  3 1
+SEGMENT_IDS length > number of segments: @I1 @I2
+Additional SEGMENT_IDS are ignored.
+ 
+M 617  2 1
+End of the function/derivatives test
+ 
+M 618  3 1
+I,DX_I,NDX_I,ABS&FRAC ERR: @I1 @R1 @R2 @R3 @R4
+ 
+M 619  3 1
+I,DY_I,NDY_I,ABS&FRAC ERR: @I1 @R1 @R2 @R3 @R4
+ 
+M 620  3 1
+I,DZ_I,NDZ_I,ABS&FRAC ERR: @I1 @R1 @R2 @R3 @R4
+ 
+M 621  2 1
+Testing the objective function and derivatives code by comparison of 
+numerical and analytical derivatives. Any discrepancies with an absolute 
+and relative errors larger than the two cutoffs are written out.
+Absolute,fractional error cuttofs for whole function: @R1 @R2
+Derivatives for individual restraints evaluated     : @L1
+Absolute,fractional error cutoffs for restraints    : @R2 @R4
+This test does not work for splines of periodic features!
+ 
+M 622  4 1
+H must be nonzero.
+ 
+M 623  4 1
+IXYZ must be between 1 and 3.
+ 
+M 624  3 1
+ICSR,I,DX_I,NDX_I,ABS&FRAC ERR: @I1 @R1 @R2 @R3 @R4
+ 
+M 625  3 1
+ICSR,I,DY_I,NDY_I,ABS&FRAC ERR: @I1 @R1 @R2 @R3 @R4
+ 
+M 626  3 1
+ICSR,I,DZ_I,NDZ_I,ABS&FRAC ERR: @I1 @R1 @R2 @R3 @R4
+ 
+M 627  4 1
+No undefined atom type in RADII_LIB
+ 
+M 628  4 1
+nvdwtyp14 not equal nvdwtyp; possibly bad format in RADII14_LIB.
+ 
+M 629  4 1
+nvdwmod14 not equal nvdwmod; possibly bad format in RADII14_LIB.
+ 
+M 630  4 1
+Atom types differ in RADII_LIB and RADII14_LIB
+ 
+M 631  4 1
+No undefined atom type in RADII14_LIB
+ 
+M 632  4 1
+Number of mnch. conf. classes not the same in
+Ramachandran LIB and MNCH LIB: @I1 @I2
+ 
+M 633  4 1
+Number of mnch. conf. classes not the same in
+Ramachandran LIB and MNCH1 LIB: @I1 @I2
+ 
+M 634  4 1
+Number of mnch. conf. classes not the same in
+Ramachandran LIB and MNCH2 LIB: @I1 @I2
+ 
+M 635  4 1
+Number of mnch. conf. classes not the same in
+Ramachandran LIB and MNCH3 LIB: @I1 @I2
+ 
+M 636  4 1
+Must be a distance residue-residue weight matrix: @R1
+ 
+M 637  3 1
+No residue topology library is in memory.
+Better radii would be used if READ_TOPOLOGY is called first.
+
+M 638  2 1
+Missing atoms in a dihedral, residue index, residue type: @I1 @I2 @S1
+
+M 639  2 1
+Atoms are labelled incorrectly; swapped: @I1 @I2 @S1
+
+M 640  2 1
+Bond is too long (bond, dih.type, ires, resnam): @I1 @I2 I3 @S1
+
+M 641  2 1
+At least one atom has undefined XYZ (dih. type, residue index, residue type): @I1 @I2 @S1
+
+M 642  2 1
+SIZE1*SIZE2 = 0: (dih. type, residue index, residue type): @I1 @I2 @S1
+
+M 643  2 1
+Protein accepted: @S1
+
+M 644  3 1
+Two basis restraints have means too far apart:
+ICSR  MEAN1   MEAN2   STDEV1  STDEV2  R.VIOL1 R.VIOL2 NEW_SD1 NEW_SD2
+
+M 645  3 1
+New number of symmetry segments, atom pairs: @I1 @I2
+
+M 646  4 1
+No template residues; number of templates: @I1
+
+M 646  1 0
+REGION_SIZE, seed atom index, total_area: @I1 @I2 @R1
+
+M 647  4 1
+Not enough exposed atoms given the requested size of the patch: @I1 @I2
+
+M 648  4 1
+Alignment sequence not found in PDB file: @I1 @S1

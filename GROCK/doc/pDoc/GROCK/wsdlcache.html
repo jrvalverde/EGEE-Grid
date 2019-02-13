@@ -1,0 +1,439 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Docs For Class wsdlcache</title>
+	<link rel="stylesheet" type="text/css" id="layout" href="../media/layout.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../media/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../media/print.css" media="print">
+</head>
+
+<body>
+<div id="header">
+	<div id="navLinks">
+		[ <a href="../classtrees_GROCK.html">Class Tree: GROCK</a> ]
+		[ <a href="../elementindex_GROCK.html">Index: GROCK</a> ]
+		[ <a href="../elementindex.html">All elements</a> ]
+	</div>
+	<div id="packagePosition">
+		<div id="packageTitle2">GROCK</div>
+		<div id="packageTitle">GROCK</div>
+		<div id="elementPath"> &middot; </div>
+	</div>
+</div>
+
+<div id="nav" class="small">
+	<div id="packages">
+		Packages:
+					<p><a href="../li_GROCK.html">GROCK</a></p>
+					<p><a href="../li_Grid.html">Grid</a></p>
+					<p><a href="../li_grock.html">grock</a></p>
+					<p><a href="../li_SExec.html">SExec</a></p>
+			</div>
+
+				<div id="index">
+			<div id="files">
+								Files:<br>
+								<a href="../GROCK/_lib_class_nusoap_base_php.html">		class.nusoap_base.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soapclient_php.html">		class.soapclient.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_fault_php.html">		class.soap_fault.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_parser_php.html">		class.soap_parser.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_server_php.html">		class.soap_server.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_transport_http_php.html">		class.soap_transport_http.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_val_php.html">		class.soap_val.php
+		</a><br>
+			<a href="../GROCK/_lib_class_wsdl_php.html">		class.wsdl.php
+		</a><br>
+			<a href="../GROCK/_lib_class_wsdlcache_php.html">		class.wsdlcache.php
+		</a><br>
+			<a href="../GROCK/_lib_class_xmlschema_php.html">		class.xmlschema.php
+		</a><br>
+			<a href="../GROCK/_lib_nusoap_php.html">		nusoap.php
+		</a><br>
+			<a href="../GROCK/_lib_nusoapmime_php.html">		nusoapmime.php
+		</a><br>
+				</div>
+			<div id="classes">
+				Classes:<br>
+								<a href="../GROCK/nusoap_base.html">		nusoap_base
+		</a><br>
+			<a href="../GROCK/soapclient.html">		soapclient
+		</a><br>
+			<a href="../GROCK/soapclientmime.html">		soapclientmime
+		</a><br>
+			<a href="../GROCK/soapval.html">		soapval
+		</a><br>
+			<a href="../GROCK/soap_fault.html">		soap_fault
+		</a><br>
+			<a href="../GROCK/soap_parser.html">		soap_parser
+		</a><br>
+			<a href="../GROCK/soap_server.html">		soap_server
+		</a><br>
+			<a href="../GROCK/soap_transport_http.html">		soap_transport_http
+		</a><br>
+			<a href="../GROCK/wsdl.html">		wsdl
+		</a><br>
+			<a href="../GROCK/wsdlcache.html">		wsdlcache
+		</a><br>
+			<a href="../GROCK/XMLSchema.html">		XMLSchema
+		</a><br>
+				</div>
+		</div>
+	</div>
+
+<div id="body">
+			<h1>Class: wsdlcache</h1>
+	<p style="margin: 0px;">Source Location: /lib/class.wsdlcache.php</p>
+	
+
+<div class="leftcol">
+	<h3><a href="#class_details">Class Overview</a> <span class="smalllinenumber">[line 13]</span></h3>
+	<div id="classTree"><pre></pre>
+</div>
+	<div class="small">
+	<p>caches instances of the wsdl class</p>
+		<h4>Author(s):</h4>
+	<ul>
+																		<li>Ingo Fischer &lt;<a href="mailto:ingo@apollon.de">mailto:ingo@apollon.de</a>&gt;</li>
+											<li>Scott Nichol &lt;<a href="mailto:snichol@computer.org">mailto:snichol@computer.org</a>&gt;</li>
+						</ul>
+	<h4>Version:</h4>
+	<ul>
+													<li>$Id: class.wsdlcache.php,v 1.3 2004/03/15 22:07:36 snichol Exp $</li>
+																</ul>
+
+	<h4>Copyright:</h4>
+	<ul>
+																							</li>
+	</div>
+</div>
+
+<div class="middlecol">
+	<h3><a href="#class_vars">Variables</a></h3>
+	<ul class="small">
+				<li><a href="../GROCK/wsdlcache.html#var$cache_dir">$cache_dir</a></li>
+				<li><a href="../GROCK/wsdlcache.html#var$cache_lifetime">$cache_lifetime</a></li>
+				<li><a href="../GROCK/wsdlcache.html#var$debug_str">$debug_str</a></li>
+				<li><a href="../GROCK/wsdlcache.html#var$fplock">$fplock</a></li>
+			</ul>
+</div>
+<div class="rightcol">
+	<h3><a href="#class_methods">Methods</a></h3>
+	<ul class="small">
+				<li><a href="../GROCK/wsdlcache.html#methodwsdlcache">wsdlcache</a></li>
+				<li><a href="../GROCK/wsdlcache.html#methodcreateFilename">createFilename</a></li>
+				<li><a href="../GROCK/wsdlcache.html#methoddebug">debug</a></li>
+				<li><a href="../GROCK/wsdlcache.html#methodget">get</a></li>
+				<li><a href="../GROCK/wsdlcache.html#methodobtainMutex">obtainMutex</a></li>
+				<li><a href="../GROCK/wsdlcache.html#methodput">put</a></li>
+				<li><a href="../GROCK/wsdlcache.html#methodreleaseMutex">releaseMutex</a></li>
+				<li><a href="../GROCK/wsdlcache.html#methodremove">remove</a></li>
+			</ul>
+</div>
+
+<div id="content">
+<hr>
+	<div class="contents">
+	</div>
+
+	<div class="leftCol">
+	<h2>Inherited Variables</h2>
+		</div>
+
+	<div class="rightCol">
+	<h2>Inherited Methods</h2>
+		</div>
+	<br clear="all">
+	<hr>
+
+	<a name="class_details"></a>
+	<h2>Class Details</h2>
+	<p align="center"><strong>caches instances of the wsdl class
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+	<li><b>version</b> - $Id: class.wsdlcache.php,v 1.3 2004/03/15 22:07:36 snichol Exp $</li>
+	<li><b>author</b> - Ingo Fischer &lt;<a href="mailto:ingo@apollon.de">mailto:ingo@apollon.de</a>&gt;</li>
+	<li><b>author</b> - Scott Nichol &lt;<a href="mailto:snichol@computer.org">mailto:snichol@computer.org</a>&gt;</li>
+</ul>
+	<p class="small" style="color: #334B66;">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_vars"></a>
+	<h2>Class Variables</h2>
+		<a name="var$cache_dir"></a>
+	<p></p>
+	<h4>$cache_dir = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 16]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$cache_lifetime"></a>
+	<p></p>
+	<h4>$cache_lifetime = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 15]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$debug_str"></a>
+	<p></p>
+	<h4>$debug_str = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 17]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$fplock"></a>
+	<p></p>
+	<h4>$fplock = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 14]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_methods"></a>
+	<h2>Class Methods</h2>
+		<a name="methodwsdlcache"></a>
+	<p></p>
+	<h3>wsdlcache</h3>
+	<div class="indent">
+		<p>
+		<code>wsdlcache wsdlcache(
+[mixed
+$cache_dir = '.'], [mixed
+$cache_lifetime = 0])</code>
+		</p>
+	
+		<p class="linenumber">[line 26]</p>
+				
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodcreateFilename"></a>
+	<p></p>
+	<h3>createFilename</h3>
+	<div class="indent">
+		<p>
+		<code>string createFilename(
+string
+$wsdl)</code>
+		</p>
+	
+		<p class="linenumber">[line 39]</p>
+		<p align="center"><strong>creates the filename used to cache a wsdl instance
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - The filename used to cache the instance</li>
+	<li><b>access</b> - protected</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$wsdl</b> 
+		- 
+		The URL of the wsdl instance</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methoddebug"></a>
+	<p></p>
+	<h3>debug</h3>
+	<div class="indent">
+		<p>
+		<code>void debug(
+string
+$string)</code>
+		</p>
+	
+		<p class="linenumber">[line 49]</p>
+		<p align="center"><strong>adds debug data to the class level debug string
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$string</b> 
+		- 
+		debug data</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodget"></a>
+	<p></p>
+	<h3>get</h3>
+	<div class="indent">
+		<p>
+		<code>object The get(
+string
+$wsdl)</code>
+		</p>
+	
+		<p class="linenumber">[line 60]</p>
+		<p align="center"><strong>gets a wsdl instance from the cache
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - cached wsdl instance, null if the instance is not in the cache</li>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$wsdl</b> 
+		- 
+		The URL of the wsdl instance</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodobtainMutex"></a>
+	<p></p>
+	<h3>obtainMutex</h3>
+	<div class="indent">
+		<p>
+		<code>boolean obtainMutex(
+string
+$filename, string
+$mode)</code>
+		</p>
+	
+		<p class="linenumber">[line 96]</p>
+		<p align="center"><strong>obtains the local mutex
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - Lock successfully obtained ?!</li>
+	<li><b>access</b> - protected</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$filename</b> 
+		- 
+		The Filename of the Cache to lock</li>
+			<li>
+		<span class="type">string</span>
+		<b>$mode</b> 
+		- 
+		The open-mode (&quot;r&quot; or &quot;w&quot;) or the file - affects lock-mode</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodput"></a>
+	<p></p>
+	<h3>put</h3>
+	<div class="indent">
+		<p>
+		<code>void put(
+mixed
+$wsdl_instance)</code>
+		</p>
+	
+		<p class="linenumber">[line 116]</p>
+				
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodreleaseMutex"></a>
+	<p></p>
+	<h3>releaseMutex</h3>
+	<div class="indent">
+		<p>
+		<code>boolean releaseMutex(
+string
+$filename)</code>
+		</p>
+	
+		<p class="linenumber">[line 137]</p>
+		<p align="center"><strong>releases the local mutex
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - Lock successfully released</li>
+	<li><b>access</b> - protected</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$filename</b> 
+		- 
+		The Filename of the Cache to lock</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodremove"></a>
+	<p></p>
+	<h3>remove</h3>
+	<div class="indent">
+		<p>
+		<code>boolean remove(
+string
+$wsdl)</code>
+		</p>
+	
+		<p class="linenumber">[line 151]</p>
+		<p align="center"><strong>removes a wsdl instance from the cache
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - Whether there was an instance to remove</li>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$wsdl</b> 
+		- 
+		The URL of the wsdl instance</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+</div>
+	<div id="credit">
+		<hr>
+		Documentation generated on Thu, 27 Oct 2005 13:03:28 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.2.3</a>
+	</div>
+</div>
+</body>
+</html>

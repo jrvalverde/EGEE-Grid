@@ -1,0 +1,6 @@
+#!/bin/sh
+
+for file in `ls *.top`
+do
+  if [ $file != profile_ram.top ] ; then echo Doing $file; mod6v2 $file ; echo ; fi
+done

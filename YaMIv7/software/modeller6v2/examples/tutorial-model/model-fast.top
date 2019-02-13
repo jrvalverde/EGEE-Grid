@@ -1,0 +1,16 @@
+# Very fast homology modelling by the MODELLER TOP routine 'model'.
+
+INCLUDE                             # Include the predefined TOP routines
+SET ALNFILE  = 'alignment.ali'      # alignment filename
+SET KNOWNS   = '5fd1'               # codes of the templates
+SET SEQUENCE = '1fdx'               # code of the target
+SET ATOM_FILES_DIRECTORY = './:../atom_files' # directories for input atom files
+SET STARTING_MODEL = 2
+SET ENDING_MODEL = 2
+
+SET OUTPUT_CONTROL = 1 1 1 1 1
+# SET OUTPUT = 'LONG'
+SET FINAL_MALIGN3D = 1
+CALL ROUTINE = 'very_fast'          # prepare for extremely fast optimization
+
+CALL ROUTINE = 'model'              # do homology modelling

@@ -1,0 +1,9 @@
+Type = "Job";
+JobType = "normal";
+VirtualOrganisation= "biomed";
+Executable = "job.sh";
+StdOutput = "job.out";
+StdError = "job.err";
+InputSandbox = {"./ligand.pdb", "./receptor.pdb", "./ftdock-in.tar.gz", "./job.sh"};
+OutputSandbox = {"job.out","job.err","ftdock-out.tar.gz"};
+Requirements  = other.GlueCEPolicyMaxWallClockTime > 1440;

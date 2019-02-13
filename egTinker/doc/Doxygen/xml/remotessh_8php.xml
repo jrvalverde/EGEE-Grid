@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.3.6">
+  <compounddef id="remotessh_8php" kind="file">
+    <compoundname>remotessh.php</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="remotessh_8php_1a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>do_ssh</definition>
+        <argsstring>($host, $user, $password, $command)</argsstring>
+        <name>do_ssh</name>
+        <param>
+          <type>$</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>user</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/remotessh.php" line="5" bodystart="4" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="remotessh_8php_1a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>do_scp</definition>
+        <argsstring>($origin, $destination, $password)</argsstring>
+        <name>do_scp</name>
+        <param>
+          <type>$</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>destination</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/remotessh.php" line="20" bodystart="19" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Do<sp/>a<sp/>remote<sp/>ssh<sp/>connection<sp/>with<sp/>local<sp/>password</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="remotessh_8php_1a0" refkind="member"><highlight class="normal">function<sp/><ref refid="remotessh_8php_1a0" kindref="member">do_ssh</ref>($host,<sp/>$user,<sp/>$password,<sp/>$command)</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>umask(0077);</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$tmpfname<sp/>=<sp/>tempnam(</highlight><highlight class="stringliteral">&quot;/tmp&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;egTinker&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chmod($tmpfname,<sp/>0700);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$fp<sp/>=<sp/>fopen($tmpfname,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fputs($fp,<sp/></highlight><highlight class="stringliteral">&quot;#!/bin/sh\necho<sp/>$password\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fclose($fp);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>putenv(</highlight><highlight class="stringliteral">&quot;DISPLAY=none:0.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>putenv(</highlight><highlight class="stringliteral">&quot;SSH_ASKPASS=$tmpfname&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>system(</highlight><highlight class="stringliteral">&quot;ssh<sp/>-x<sp/>-t<sp/>-t<sp/>$host<sp/>-l$user<sp/>$command&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>unlink($tmpfname);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Do<sp/>a<sp/>remote<sp/>scp<sp/>connection<sp/>with<sp/>local<sp/>password</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="remotessh_8php_1a1" refkind="member"><highlight class="normal">function<sp/><ref refid="remotessh_8php_1a1" kindref="member">do_scp</ref>($origin,<sp/>$destination,<sp/>$password)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>umask(0077);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$tmpfname<sp/>=<sp/>tempnam(</highlight><highlight class="stringliteral">&quot;/tmp&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;egTinker&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chmod($tmpfname,<sp/>0700);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$fp<sp/>=<sp/>fopen($tmpfname,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fputs($fp,<sp/></highlight><highlight class="stringliteral">&quot;#!/bin/sh\necho<sp/>$password\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fclose($fp);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>putenv(</highlight><highlight class="stringliteral">&quot;DISPLAY=none:0.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>putenv(</highlight><highlight class="stringliteral">&quot;SSH_ASKPASS=$tmpfname&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>system(</highlight><highlight class="stringliteral">&quot;scp<sp/>-pqrC<sp/>$origin<sp/>$destination<sp/>&amp;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>unlink($tmpfname);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><ref refid="remotessh_8php_1a0" kindref="member">do_ssh</ref>(</highlight><highlight class="stringliteral">&quot;cnb.uam.es&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;jr&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;1/1K<sp/>way&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;ls&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><ref refid="remotessh_8php_1a1" kindref="member">do_scp</ref>(</highlight><highlight class="stringliteral">&quot;SSH&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;jr@cnb.uam.es:.&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;1/1K<sp/>way&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><ref refid="remotessh_8php_1a0" kindref="member">do_ssh</ref>(</highlight><highlight class="stringliteral">&quot;cnb.uam.es&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;jr&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;1/1K<sp/>way&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;ls&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><ref refid="remotessh_8php_1a0" kindref="member">do_ssh</ref>(</highlight><highlight class="stringliteral">&quot;cnb.uam.es&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;jr&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;1/1K<sp/>way&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;ls<sp/>SSH&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/remotessh.php"/>
+  </compounddef>
+</doxygen>

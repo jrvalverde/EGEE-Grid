@@ -1,0 +1,8 @@
+# Example for: ALIGN_CONSENSUS
+
+# This will read 2 sequences and prepare a consensus alignment
+# from many different pairwise alignments.
+
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = '2ctx' '2abx'
+ALIGN_CONSENSUS GAP_PENALTIES_1D= 0 0.4, ALIGN_BLOCK = 1
+WRITE_ALIGNMENT FILE = 'toxin-seq.pap', ALIGNMENT_FORMAT = 'PAP'

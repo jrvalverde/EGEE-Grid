@@ -1,0 +1,68 @@
+# Example for: DEFINE_SYMMETRY
+
+# This will force two copies of 1fas to have similar mainchain 
+# conformation.
+
+DEFINE_STRING VARIABLES = SEG1 SEG2
+
+SET OUTPUT_CONTROL = 1 1 1 1 0
+
+READ_TOPOLOGY FILE = '$(LIB)/top_heav.lib'
+READ_PARAMETERS FILE = '$(LIB)/par.lib'
+
+# Generate two copies of a segment:
+READ_MODEL FILE = '2abx', MODEL_SEGMENT = '1:A' '74:B'
+SEQUENCE_TO_ALI ALIGN_CODES = '2abx', ATOM_FILES = ALIGN_CODES
+SEQUENCE_TO_ALI ADD_SEQUENCE = on, ALIGN_CODES = ALIGN_CODES '2abx_ini', ;
+                ATOM_FILES = ALIGN_CODES
+GENERATE_TOPOLOGY SEQUENCE = '2abx_ini'
+TRANSFER_XYZ
+BUILD_MODEL INITIALIZE_XYZ = off
+RENAME_SEGMENTS SEGMENT_IDS = 'A' 'B', RENUMBER_RESIDUES = 1 1
+ENERGY DYNAMIC_SPHERE = off
+RANDOMIZE_XYZ DEVIATION = 6.0
+# Define the two segments (chains in this case) to be identical:
+CALL ROUTINE = 'defsym', SEG1 = '1:A' '74:A', SEG2 = '1:B' '74:B'
+
+# Make them identical by optimizing the initial randomized structure
+# without any other restraints:
+ENERGY 
+WRITE_MODEL FILE = 'define_symmetry-1.atm'
+OPTIMIZE MAX_ITERATIONS = 300
+WRITE_MODEL FILE = 'define_symmetry-2.atm'
+ENERGY 
+
+# Now optimize with stereochemical restraints so that the
+# result is not so distorted a structure (still distorted
+# because optimization is not thorough):
+SET DYNAMIC_SPHERE = on
+MAKE_RESTRAINTS RESTRAINT_TYPE = 'stereo'
+RANDOMIZE_XYZ DEVIATION = 3.0
+SET MAX_ITERATIONS = 300, MD_RETURN = 'FINAL'
+OPTIMIZE OPTIMIZATION_METHOD = 1 # Conjugate gradients
+OPTIMIZE OPTIMIZATION_METHOD = 3 # Molecular dynamics
+OPTIMIZE OPTIMIZATION_METHOD = 1 # Conjugate gradients
+WRITE_MODEL FILE = 'define_symmetry-3.atm'
+ENERGY 
+
+DELETE_ALIGNMENT
+READ_MODEL  MODEL_SEGMENT  = '1:A' '74:A'
+READ_MODEL2 MODEL2_SEGMENT = '1:B' '74:B'
+PICK_ATOMS ATOM_TYPES = 'MNCH'
+SUPERPOSE
+
+STOP
+
+
+SUBROUTINE ROUTINE = 'defsym'
+  SET ATOM_TYPES = 'MNCH'
+  SET SELECTION_STATUS = 'INITIALIZE'
+  SET SELECTION_SEARCH = 'SEGMENT'
+
+  SET SYMMETRY_WEIGHT = 1.0
+  PICK_ATOMS PICK_ATOMS_SET = 2, SELECTION_SEGMENT = SEG1
+  PICK_ATOMS PICK_ATOMS_SET = 3, SELECTION_SEGMENT = SEG2
+  DEFINE_SYMMETRY ADD_SYMMETRY = on off
+
+  RETURN
+END_SUBROUTINE

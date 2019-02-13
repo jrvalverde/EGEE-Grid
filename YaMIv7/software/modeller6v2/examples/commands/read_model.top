@@ -1,0 +1,7 @@
+# Example for: READ_MODEL, WRITE_MODEL
+
+# This will read a PDB file and write a CHARMM atom file without atomic charges
+# or radii. For assigning charges and radii, see the all_hydrogen.top script.
+
+READ_MODEL  FILE = '1fas'
+WRITE_MODEL FILE = '1fas.crd', MODEL_FORMAT = 'CHARMM'

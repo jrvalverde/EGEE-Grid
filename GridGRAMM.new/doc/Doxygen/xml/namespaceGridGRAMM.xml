@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.3.4">
+  <compounddef id="namespaceGridGRAMM" kind="namespace">
+    <compoundname>GridGRAMM</compoundname>
+    <briefdescription>
+<para>General utility functions. </para>    </briefdescription>
+    <detaileddescription>
+<para>This file contains convenience functions used throughout the package.</para><para><simplesect kind="author"><para>David Garcia Aristegui &lt;<ulink url="mailto:david@cnb.uam.es">david@cnb.uam.es</ulink>&gt; </para></simplesect>
+<simplesect kind="version"><para>1.0  CSIC - GPL </para></simplesect>
+</para>    </detaileddescription>
+    <location file="/auto/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/functions.php" line="7"/>
+  </compounddef>
+</doxygen>

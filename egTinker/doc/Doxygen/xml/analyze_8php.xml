@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.3.6">
+  <compounddef id="analyze_8php" kind="file">
+    <compoundname>analyze.php</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Analyze<sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/><ref refid="classTinkerApp" kindref="compound">TinkerApp</ref><sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Who<sp/>we<sp/>are</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">var<sp/>$app_name<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=</highlight><highlight class="stringliteral">&quot;analyze&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Generate<sp/>names<sp/>for<sp/>all<sp/>files<sp/>we&apos;ll<sp/>use</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">var<sp/>$fn=</highlight><highlight class="stringliteral">&quot;tinker&quot;</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>base<sp/>name<sp/>for<sp/>all<sp/>generated<sp/>files</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">var<sp/>$inuri<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=</highlight><highlight class="stringliteral">&quot;$httptmp/$dir/$fn.inp&quot;</highlight><highlight class="normal">;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>name<sp/>relative<sp/>to<sp/>DocumentRoot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">var<sp/>$infile<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=</highlight><highlight class="stringliteral">&quot;$serverpath/$inuri&quot;</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>absolute<sp/>file<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">var<sp/>$brkuri<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;$httptmp/$dir/$fn.brk&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">var<sp/>$brkfile<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;$serverpath/$brkuri&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">var<sp/>$xyzuri<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;$httptmp/$dir/$fn.xyz&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">var<sp/>$xyzfile<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;$serverpath/$xyzuri&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">var<sp/>$loguri<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;$httptmp/$dir/$fn.log&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">var<sp/>$logfile<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;$serverpath/$loguri&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">var<sp/>$resuri<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;$httptmp/$dir/$fn.xyz_2&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">var<sp/>$resfile<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;$serverpath/$resuri&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">var<sp/>$pdburi<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;$httptmp/$dir/$fn.pdb&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">var<sp/>$pdbfile<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;$serverpath/$pdburi&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">var<sp/>$sequri<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;$httptmp/$dir/$fn.seq&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">var<sp/>$seqfile<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;$serverpath/$sequri&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//<sp/>options<sp/>we<sp/>need<sp/>to<sp/>receive<sp/>from<sp/>user<sp/>form</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">var<sp/>$input_file;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>uploaded<sp/>a<sp/>local<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">var<sp/>$input_data;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>filled<sp/>in<sp/>data<sp/>text<sp/>box</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">var<sp/>$iformatopts;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">var<sp/>$force_field;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">var<sp/>$energy;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">var<sp/>$eatom;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">var<sp/>$elarge;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">var<sp/>$details;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">var<sp/>$inertia;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">var<sp/>$moment;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">var<sp/>$ffpar;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">var<sp/>$email;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">var<sp/>$wapmail;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">var<sp/>$job;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">var<sp/>$key;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">function<sp/>upload_user_data($workdir)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>$this-&gt;input_file<sp/><sp/>=<sp/>$_FILES[&apos;upload&apos;][&apos;tmp_name&apos;][0];</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>$file_name<sp/>=<sp/>$_FILES[&apos;upload&apos;][&apos;name&apos;][0];</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>$file_size<sp/>=<sp/>$_FILES[&apos;upload&apos;][&apos;size&apos;][0];</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>$this-&gt;iformatopts<sp/>=<sp/>$_POST[</highlight><highlight class="stringliteral">&quot;informat&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>$this-&gt;force_field<sp/>=<sp/>$_POST[</highlight><highlight class="stringliteral">&quot;forcefield&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>$this-&gt;energy<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>$_POST[</highlight><highlight class="stringliteral">&quot;energy&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>$this-&gt;eatom<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>$_POST[</highlight><highlight class="stringliteral">&quot;eatom&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>$this-&gt;elarge<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>$_POST[</highlight><highlight class="stringliteral">&quot;elarge&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>$this-&gt;details<sp/><sp/><sp/><sp/><sp/>=<sp/>$_POST[</highlight><highlight class="stringliteral">&quot;details&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>$this-&gt;inertia<sp/><sp/><sp/><sp/><sp/>=<sp/>$_POST[</highlight><highlight class="stringliteral">&quot;inertia&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>$this-&gt;moment<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>$_POST[</highlight><highlight class="stringliteral">&quot;moment&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>$this-&gt;ffpar<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>$_POST[</highlight><highlight class="stringliteral">&quot;ffpar&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>$this-&gt;email<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>$_POST[</highlight><highlight class="stringliteral">&quot;email&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>$this-&gt;wapmail<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>$_POST[</highlight><highlight class="stringliteral">&quot;wapmail&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>$this-&gt;job<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>$_POST[</highlight><highlight class="stringliteral">&quot;job&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>if<sp/>the<sp/>file<sp/>uploaded<sp/>is<sp/>correct<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($_FILES[&apos;upload&apos;][&apos;tmp_name&apos;][0]==</highlight><highlight class="stringliteral">&quot;none&quot;</highlight><highlight class="normal"><sp/>||<sp/>$_FILES[&apos;upload&apos;][&apos;tmp_name&apos;][0]==</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>haveinput=0;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($_FILES[&apos;upload&apos;][&apos;size&apos;][0]==0)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>haveinput=0;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>haveinput<sp/>==<sp/>0<sp/>check<sp/>whether<sp/>there<sp/>is<sp/>data<sp/>in<sp/>the<sp/>text<sp/>box<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>move<sp/>file<sp/>to<sp/>destination<sp/>working<sp/>directory.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!move_file($this-&gt;input_file,<sp/>$infile))</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;h1&gt;$this-&gt;input_file<sp/>and<sp/>$infile<sp/>problem:<sp/>can<sp/>not<sp/>move&lt;/H1&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="test_2ssh__test_8php_1a3" kindref="member">exit</ref>();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>check_mail_address($this-&gt;email);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($this-&gt;email<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>badaddress();<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>in<sp/>functions.php</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="test_2ssh__test_8php_1a3" kindref="member">exit</ref>();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>test<sp/>correct<sp/>email</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>verify<sp/>it<sp/>is<sp/>of<sp/>the<sp/>form<sp/>.*@.*\..*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>$remotehost<sp/>=<sp/>$this-&gt;email<sp/>minus<sp/>.*@</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gethostbyname($remotehost))<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>badaddress();</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="test_2ssh__test_8php_1a3" kindref="member">exit</ref>();</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($this-&gt;wapmail<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>check_mail_address($this-&gt;wapmail);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">function<sp/>print_options()</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">function<sp/><ref refid="functions_8php_1a1" kindref="member">go_to_work</ref>()</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal">function<sp/>run_application()</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/analyze.php"/>
+  </compounddef>
+</doxygen>

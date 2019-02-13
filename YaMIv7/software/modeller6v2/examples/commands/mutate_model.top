@@ -1,0 +1,48 @@
+# Example for: MUTATE_MODEL
+
+# This will read a PDB file, change its sequence a little, build new 
+# coordinates for any of the additional atoms using only the internal
+# geometry, and write the mutant PDB file.  It can be seen as primitive,
+# but rapid comparative modeling for substitution mutants. For insertion 
+# and deletion mutants, follow the standard comparative modeling procedure.
+
+# Read the topology library with non-hydrogen atoms only:
+READ_TOPOLOGY FILE = '$(LIB)/top_heav.lib', TOPOLOGY_MODEL = 3
+# To produce a mutant with all hydrogens, uncomment this line:
+# READ_TOPOLOGY FILE = '$(LIB)/top.lib', TOPOLOGY_MODEL = 1
+
+# Read the CHARMM parameter library:
+READ_PARAMETERS FILE = '$(LIB)/par.lib'
+
+# Read the original PDB file and copy its sequence to the alignment array:
+READ_MODEL FILE = '1fas'
+SEQUENCE_TO_ALI ADD_SEQUENCE = on, ATOM_FILES = '1fas', ALIGN_CODES = '1fas'
+
+# Select the residues to be mutated: in this case all ASP residues:
+PICK_ATOMS RES_TYPES = 'ASP'
+
+# The second example is commented out; it selects residues '1' and '10'.
+# SET SELECTION_SEARCH = 'SEGMENT', SELECTION_FROM   = 'ALL'
+# PICK_ATOMS SELECTION_SEGMENT =  '1'  '1',  SELECTION_STATUS = 'INITIALIZE'
+# PICK_ATOMS SELECTION_SEGMENT = '10' '10',  SELECTION_STATUS = 'ADD'
+
+# Mutate the selected residues into HSD residues (neutral HIS):
+MUTATE_MODEL RESIDUE_TYPE = 'HSD'
+
+# Add the mutated sequence to the alignment arrays (it is now the second 
+# sequence in the alignment):
+SEQUENCE_TO_ALI ADD_SEQUENCE = on, ALIGN_CODES = ALIGN_CODES '1fas-1'
+
+# Generate molecular topology for the mutant:
+GENERATE_TOPOLOGY SEQUENCE = '1fas-1'
+
+# Transfer all the coordinates you can from the template native structure
+# to the mutant (this works even if the order of atoms in the native PDB 
+# file is not standard):
+TRANSFER_XYZ
+
+# Build the remaining unknown coordinates for the mutant:
+BUILD_MODEL INITIALIZE_XYZ = off
+
+# Write the mutant to a file:
+WRITE_MODEL FILE = '1fas-1.atm'

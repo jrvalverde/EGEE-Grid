@@ -1,0 +1,430 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.3.6">
+  <compounddef id="classTinkerApp" kind="class" prot="public">
+    <compoundname>TinkerApp</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classTinkerApp_1a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TinkerApp::get_user_data</definition>
+        <argsstring>($workdir)</argsstring>
+        <name>get_user_data</name>
+        <param>
+          <type>$</type>
+          <declname>workdir</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="53" bodystart="52" bodyend="90"/>
+        <references refid="test_2ssh__test_8php_1a3" compoundref="test_2ssh__test_8php" startline="48">exit</references>
+      </memberdef>
+      <memberdef kind="function" id="classTinkerApp_1a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TinkerApp::print_user_data</definition>
+        <argsstring>()</argsstring>
+        <name>print_user_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="93" bodystart="92" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classTinkerApp_1a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TinkerApp::run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="98" bodystart="98" bodyend="100"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classTinkerApp_1o0" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$app_name</definition>
+        <argsstring></argsstring>
+        <name>$app_name</name>
+        <initializer>&quot;egTinker&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="6" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o1" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$fn</definition>
+        <argsstring></argsstring>
+        <name>$fn</name>
+        <initializer>&quot;tinker-$appname&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="10" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o2" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$inuri</definition>
+        <argsstring></argsstring>
+        <name>$inuri</name>
+        <initializer>&quot;$httptmp/$dir/$fn.inp&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="13" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o3" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$infile</definition>
+        <argsstring></argsstring>
+        <name>$infile</name>
+        <initializer>&quot;$serverpath/$inuri&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="14" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o4" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$brkuri</definition>
+        <argsstring></argsstring>
+        <name>$brkuri</name>
+        <initializer> &quot;$httptmp/$dir/$fn.brk&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="17" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o5" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$brkfile</definition>
+        <argsstring></argsstring>
+        <name>$brkfile</name>
+        <initializer> &quot;$serverpath/$brkuri&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="18" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o6" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$xyzuri</definition>
+        <argsstring></argsstring>
+        <name>$xyzuri</name>
+        <initializer> &quot;$httptmp/$dir/$fn.xyz&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="21" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o7" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$xyzfile</definition>
+        <argsstring></argsstring>
+        <name>$xyzfile</name>
+        <initializer> &quot;$serverpath/$xyzuri&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="22" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o8" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$loguri</definition>
+        <argsstring></argsstring>
+        <name>$loguri</name>
+        <initializer> &quot;$httptmp/$dir/$fn.log&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="25" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o9" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$logfile</definition>
+        <argsstring></argsstring>
+        <name>$logfile</name>
+        <initializer> &quot;$serverpath/$loguri&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="26" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o10" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$resuri</definition>
+        <argsstring></argsstring>
+        <name>$resuri</name>
+        <initializer> &quot;$httptmp/$dir/$fn.xyz_2&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="29" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o11" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$resfile</definition>
+        <argsstring></argsstring>
+        <name>$resfile</name>
+        <initializer> &quot;$serverpath/$resuri&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="30" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o12" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$pdburi</definition>
+        <argsstring></argsstring>
+        <name>$pdburi</name>
+        <initializer> &quot;$httptmp/$dir/$fn.pdb&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="33" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o13" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$pdbfile</definition>
+        <argsstring></argsstring>
+        <name>$pdbfile</name>
+        <initializer> &quot;$serverpath/$pdburi&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="34" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o14" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$sequri</definition>
+        <argsstring></argsstring>
+        <name>$sequri</name>
+        <initializer> &quot;$httptmp/$dir/$fn.seq&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="37" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o15" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$seqfile</definition>
+        <argsstring></argsstring>
+        <name>$seqfile</name>
+        <initializer> &quot;$serverpath/$sequri&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="38" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o16" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$input_file</definition>
+        <argsstring></argsstring>
+        <name>$input_file</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="41" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o17" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$input_data</definition>
+        <argsstring></argsstring>
+        <name>$input_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="42" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o18" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$iformatopts</definition>
+        <argsstring></argsstring>
+        <name>$iformatopts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="43" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o19" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$force_field</definition>
+        <argsstring></argsstring>
+        <name>$force_field</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="45" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o20" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$ffpar</definition>
+        <argsstring></argsstring>
+        <name>$ffpar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="46" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o21" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$email</definition>
+        <argsstring></argsstring>
+        <name>$email</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="47" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o22" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$wapmail</definition>
+        <argsstring></argsstring>
+        <name>$wapmail</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="48" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o23" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$job</definition>
+        <argsstring></argsstring>
+        <name>$job</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="49" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTinkerApp_1o24" prot="public" static="no" volatile="no" mutable="no">
+        <type></type>
+        <definition>TinkerApp::$key</definition>
+        <argsstring></argsstring>
+        <name>$key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="50" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/tinkerApp.php" line="3" bodystart="3" bodyend="101"/>
+    <listofallmembers>
+      <member refid="classTinkerApp_1o0" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$app_name</name></member>
+      <member refid="classTinkerApp_1o5" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$brkfile</name></member>
+      <member refid="classTinkerApp_1o4" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$brkuri</name></member>
+      <member refid="classTinkerApp_1o21" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$email</name></member>
+      <member refid="classTinkerApp_1o20" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$ffpar</name></member>
+      <member refid="classTinkerApp_1o1" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$fn</name></member>
+      <member refid="classTinkerApp_1o19" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$force_field</name></member>
+      <member refid="classTinkerApp_1o18" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$iformatopts</name></member>
+      <member refid="classTinkerApp_1o3" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$infile</name></member>
+      <member refid="classTinkerApp_1o17" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$input_data</name></member>
+      <member refid="classTinkerApp_1o16" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$input_file</name></member>
+      <member refid="classTinkerApp_1o2" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$inuri</name></member>
+      <member refid="classTinkerApp_1o23" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$job</name></member>
+      <member refid="classTinkerApp_1o24" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$key</name></member>
+      <member refid="classTinkerApp_1o9" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$logfile</name></member>
+      <member refid="classTinkerApp_1o8" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$loguri</name></member>
+      <member refid="classTinkerApp_1o13" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$pdbfile</name></member>
+      <member refid="classTinkerApp_1o12" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$pdburi</name></member>
+      <member refid="classTinkerApp_1o11" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$resfile</name></member>
+      <member refid="classTinkerApp_1o10" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$resuri</name></member>
+      <member refid="classTinkerApp_1o15" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$seqfile</name></member>
+      <member refid="classTinkerApp_1o14" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$sequri</name></member>
+      <member refid="classTinkerApp_1o22" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$wapmail</name></member>
+      <member refid="classTinkerApp_1o7" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$xyzfile</name></member>
+      <member refid="classTinkerApp_1o6" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>$xyzuri</name></member>
+      <member refid="classTinkerApp_1a0" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>get_user_data</name></member>
+      <member refid="classTinkerApp_1a1" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>print_user_data</name></member>
+      <member refid="classTinkerApp_1a2" prot="public" virt="non-virtual"><scope>TinkerApp</scope><name>run</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

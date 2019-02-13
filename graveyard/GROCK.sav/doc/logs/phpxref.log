@@ -1,0 +1,24 @@
+PHPXref 0.4.1 
+(c) Gareth Watts 2003
+
+Processing GridGRAMM v1.00...
+Source.............: /root/GridGRAMM/doc/../script
+Target.............: /root/GridGRAMM/doc/pXref
+Scanning Tree......: OK - 13 files to process
+Pass One...........: 0%..30%..100%
+Generating Output..: 0%..30%..100%
+Variable references: 0%..10%..20%..50%..60%..70%..100%
+Function references: 0%..10%..20%..30%..40%..50%..60%..70%..80%..90%..100%
+Class references...: 
+Table references...: 
+
+Summary statistics:
+Files Scanned: 13
+48 variable names in 71 definitions and 286 references.
+70 function/method names in 12 definitions and 251 references.
+0 class names in 0 definitions and 0 references.
+0 table names in 0 references.
+
+Local front page URL: file:///root/GridGRAMM/doc/pXref/index.html
+
+Done.

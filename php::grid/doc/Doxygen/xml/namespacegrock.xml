@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.3.6">
+  <compounddef id="namespacegrock" kind="namespace">
+    <compoundname>grock</compoundname>
+    <briefdescription>
+<para>Variables used to connect with the user interface host. </para>    </briefdescription>
+    <detaileddescription>
+<para>Note that you may set them directly using class methods, so there should not be any need for this file (unless you want to have a global, external site to state defaults). Actually the class GRID uses this file to set up its defaults.</para><para><simplesect kind="author"><para>Jose R. Valverde &lt;<ulink url="mailto:jrvalverde@acm.org">jrvalverde@acm.org</ulink>&gt; </para></simplesect>
+<simplesect kind="version"><para>1.0  José R. Valverde &lt;<ulink url="mailto:jrvalverde@acm.org">jrvalverde@acm.org</ulink>&gt;</para></simplesect>
+This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.</para><para>This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</para><para>You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA</para><para><simplesect kind="author"><para>David Garcia &lt;<ulink url="mailto:david@cnb.uam.es">david@cnb.uam.es</ulink>&gt; </para><para>Jose R. Valverde &lt;<ulink url="mailto:david@cnb.uam.es">david@cnb.uam.es</ulink>&gt;  CSIC  ../c/lgpl.txt </para></simplesect>
+<simplesect kind="version"><para>$Id$ </para></simplesect>
+<simplesect kind="see"><para>grid_config.php <ref refid="" kindref="compound">File available since release 0.0 </ref></para></simplesect>
+</para>    </detaileddescription>
+    <location file="/mnt/data/www/EMBnet/cgi-src/Grid/php::grid/src/grid_config.php" line="28"/>
+  </compounddef>
+</doxygen>

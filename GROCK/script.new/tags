@@ -1,0 +1,119 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.2	//
+DISPLAY_SIZE	explore_match.php	/^define('DISPLAY_SIZE', 50); 	\/\/ this is only an initial value, may (and will$/;"	d
+EODB	database.php	/^define('EODB', 255);$/;"	d
+FTDOCK_DISPLAY	ftdock.php	/^define('FTDOCK_DISPLAY', 50);$/;"	d
+FTDOCK_NJOBS	ftdock.php	/^define('FTDOCK_NJOBS', 100);$/;"	d
+GRAMM_DISPLAY	gramm.php	/^define('GRAMM_DISPLAY', 50);$/;"	d
+GRAMM_NJOBS	gramm.php	/^define('GRAMM_NJOBS', 1000);$/;"	d
+Grid	grid.php	/^    function Grid() {$/;"	f
+Grid	grid.php	/^class Grid {$/;"	c
+MAX_TRIES	grock_lib.php	/^define("MAX_TRIES", 5);     	    \/\/ 3 should be enough$/;"	d
+MSDchem_get_entry	database.php	/^function MSDchem_get_entry($db, $db_file, &$entry, &$description)$/;"	f
+PDB_get_entry	database.php	/^function PDB_get_entry($db, $db_file, &$entry, &$description)$/;"	f
+SExec	ssh.php	/^    function SExec($remote="localhost", $password="xxyzzy")$/;"	f
+SExec	ssh.php	/^class SExec {$/;"	c
+activate_grid	grock_lib.php	/^function activate_grid($session_id, $auth)$/;"	f
+activate_new_sandbox	util.php	/^function activate_new_sandbox()$/;"	f
+auto_update	report.php	/^function auto_update($status, $when, $id, $probe,  $pt, $db, $docker, $from=1, $to=50)$/;"	f
+bibliography	grock-ws.php	/^function bibliography()$/;"	f
+checkpoint	grock.php	/^function checkpoint($sig)$/;"	f
+checkpoint	grock_lib.php	/^function checkpoint($sig)$/;"	f
+connect	grid.php	/^    function connect()$/;"	f
+db_get_entry	database.php	/^function db_get_entry($db, $db_file, &$entry, &$description)$/;"	f
+destroy	grid.php	/^    function destroy()$/;"	f
+destruct	grid.php	/^    function destruct() {$/;"	f
+destruct	ssh.php	/^    function destruct()$/;"	f
+dock_create_job	dock.php	/^function dock_create_job($user_probe, $db_target, $options)$/;"	f
+dock_generate_scores	dock.php	/^function dock_generate_scores($docker)$/;"	f
+dock_show_dock	dock.php	/^function dock_show_dock($docker, $id, $probe, $pt, $target, $from, $to)$/;"	f
+dock_show_top_scores	dock.php	/^function dock_show_top_scores($docker, $id, $probe, $pt, $from=1, $to=50)$/;"	f
+error	util.php	/^function error($where, $what)$/;"	f
+ftdock_create_job	ftdock.php	/^function ftdock_create_job($probe, $target, $options)$/;"	f
+ftdock_generate_scores	ftdock.php	/^function ftdock_generate_scores($docker)$/;"	f
+ftdock_show_complex	ftdock.php	/^function ftdock_show_complex($message, $relurl, $probe_name='none', $probe_type='none', $target_name='none')$/;"	f
+ftdock_show_dock	ftdock.php	/^function ftdock_show_dock($docker, $id, $probe, $pt, $target, $from, $to)$/;"	f
+ftdock_show_structure	ftdock.php	/^function ftdock_show_structure($message, $relurl, $name)$/;"	f
+ftdock_show_top_scores	ftdock.php	/^function ftdock_show_top_scores($docker, $id, $probe, $pt, $from=1, $to=50)$/;"	f
+get_connection_status	grid.php	/^    function get_connection_status()$/;"	f
+get_gramm_options	processor.php	/^function get_gramm_options(&$options)$/;"	f
+get_init_status	grid.php	/^    function get_init_status()$/;"	f
+get_output	grock-ws.php	/^function get_output($output_handle)$/;"	f
+get_user_auth	processor.php	/^function get_user_auth(&$auth)$/;"	f
+gramm_create_job	gramm.php	/^function gramm_create_job($probe, $target, $options)$/;"	f
+gramm_generate_scores	gramm.php	/^function gramm_generate_scores($docker)$/;"	f
+gramm_show_complex	gramm.php	/^function gramm_show_complex($message, $relurl, $probe_name='none', $probe_type='none', $target_name='none')$/;"	f
+gramm_show_dock	gramm.php	/^function gramm_show_dock($docker, $id, $probe, $pt, $target, $from, $to)$/;"	f
+gramm_show_structure	gramm.php	/^function gramm_show_structure($message, $relurl, $name)$/;"	f
+gramm_show_top_scores	gramm.php	/^function gramm_show_top_scores($docker, $id, $probe, $pt, $from=1, $to=GRAMM_DISPLAY)$/;"	f
+grock	grock.php	/^function grock()$/;"	f
+grock	grock_lib.php	/^function grock()$/;"	f
+grock	grock_recall.php	/^function grock()$/;"	f
+grock_clean	grock_lib.php	/^function grock_clean()$/;"	f
+grock_get_output	grock_lib.php	/^function grock_get_output($session_id, $auth)$/;"	f
+grock_get_status	grock_lib.php	/^function grock_get_status()$/;"	f
+grock_it	grock-ws.php	/^function grock_it($auth_token, $grock_options)$/;"	f
+grock_letal	grock_lib.php	/^function grock_letal($where, $what)$/;"	f
+grock_mrproper	grock_lib.php	/^function grock_mrproper()$/;"	f
+grock_set_probe_type	grock_lib.php	/^function grock_set_probe_type($user_file)$/;"	f
+grock_set_status	grock_lib.php	/^function grock_set_status($status) {$/;"	f
+grock_submit	grock_lib.php	/^function grock_submit($session_id, $options, $auth)$/;"	f
+initialize	grid.php	/^    function initialize($hours=12, $minutes=0)$/;"	f
+job_cancel	grid.php	/^    function job_cancel($job, &$out, $session='default')$/;"	f
+job_get_id	grid.php	/^    function job_get_id($job, $session='default')$/;"	f
+job_get_output	grid.php	/^    function job_get_output($job, &$out, $session='default')$/;"	f
+job_resubmit	grock_lib.php	/^function job_resubmit($eg, $session_id, $job)$/;"	f
+job_status	grid.php	/^    function job_status($job, &$out, $session='default')$/;"	f
+job_submit	grid.php	/^    function job_submit($job, &$out, $session='default')$/;"	f
+job_submit_set_timeout	grid.php	/^    function job_submit_set_timeout($seconds=0)$/;"	f
+letal	util.php	/^function letal($where, $what)$/;"	f
+log_error	util.php	/^function log_error($where, $what)$/;"	f
+log_message	util.php	/^function log_message($what)$/;"	f
+log_notice	util.php	/^function log_notice($what)$/;"	f
+log_warning	util.php	/^function log_warning($what)$/;"	f
+random_number	util.php	/^function random_number()$/;"	f
+save_options	grock.php	/^function save_options()$/;"	f
+session_define	grid.php	/^    function session_define($session, $directory)$/;"	f
+session_destroy	grid.php	/^    function session_destroy($session='default')$/;"	f
+session_destroy_all	grid.php	/^    function session_destroy_all()$/;"	f
+session_directory	grid.php	/^    function session_directory($session='default')$/;"	f
+session_is_valid	grid.php	/^    function session_is_valid($session='default')$/;"	f
+session_list_all	grid.php	/^    function session_list_all()$/;"	f
+session_new	grid.php	/^    function session_new($hint="sess")$/;"	f
+set_auth_defaults	processor.php	/^function set_auth_defaults(&$auth)$/;"	f
+set_error_log	grid.php	/^    function set_error_log($errlog)$/;"	f
+set_footer	util.php	/^function set_footer()$/;"	f
+set_header	util.php	/^function set_header()$/;"	f
+set_host	grid.php	/^    function set_host($host)$/;"	f
+set_passphrase	grid.php	/^    function set_passphrase($pass)$/;"	f
+set_password	grid.php	/^    function set_password($pass)$/;"	f
+set_user	grid.php	/^    function set_user($user)$/;"	f
+set_work_dir	grid.php	/^    function set_work_dir($wd)$/;"	f
+show_abort	report.php	/^function show_abort($id, $probe, $pt, $db, $docker, $from=1, $to=50)$/;"	f
+show_nav_links	report.php	/^function show_nav_links($prev_from, $prev_to, $next_from, $next_to, $/;"	f
+show_partial_results	report.php	/^function show_partial_results($id, $probe, $pt, $db, $docker, $from=1, $to=50) {$/;"	f
+show_results	report.php	/^function show_results($id, $probe, $pt, $db, $docker, $from=1, $to=50) {$/;"	f
+show_submission_log	report.php	/^function show_submission_log($id, $probe, $pt, $db, $docker, $from=1, $to=50) {$/;"	f
+show_submitting_page	report.php	/^function show_submitting_page($id, $probe, $pt, $db, $docker, $from=1, $to=50) {$/;"	f
+show_wait_page	report.php	/^function show_wait_page($id, $probe, $pt, $db, $docker, $from=1, $to=50) {$/;"	f
+source_code	grock-ws.php	/^function source_code() {$/;"	f
+ssh_close	ssh.php	/^    function ssh_close($p)$/;"	f
+ssh_copy	ssh.php	/^    function ssh_copy($origin, $destination, $password)$/;"	f
+ssh_copy_from	ssh.php	/^    function ssh_copy_from($remotepath, $localpath, &$out)$/;"	f
+ssh_copy_to	ssh.php	/^    function ssh_copy_to($localpath, $remotepath, &$out)$/;"	f
+ssh_exec	ssh.php	/^    function ssh_exec($command, &$out)$/;"	f
+ssh_open_command	ssh.php	/^    function ssh_open_command($command)$/;"	f
+ssh_open_shell	ssh.php	/^    function ssh_open_shell()$/;"	f
+ssh_out_expect	ssh.php	/^    function ssh_out_expect($p, $expr="^# ")$/;"	f
+ssh_passthru	ssh.php	/^    function ssh_passthru($command, &$status)$/;"	f
+ssh_pclose	ssh.php	/^    function ssh_pclose($f)$/;"	f
+ssh_popen	ssh.php	/^    function ssh_popen($command, $mode)$/;"	f
+submit_session_jobs	grock_lib.php	/^function submit_session_jobs($session_id, $auth)$/;"	f
+upload_probe_data	util.php	/^function upload_probe_data()$/;"	f
+usage	grock-ws.php	/^function usage()$/;"	f
+warning	util.php	/^function warning($msg)$/;"	f
+write_rpar_gr	gramm.php	/^function write_rpar_gr($directory, $options)$/;"	f

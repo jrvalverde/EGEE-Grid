@@ -1,0 +1,27 @@
+# This TOP file will do two comparisons of 3D structures that illustrate
+# some useful comparisons in comparative modelling. It expects the
+# model produced by the model-*.top job in file 1fdx.B99990001.
+
+SET OUTPUT_CONTROL = 1 1 1 1 0
+
+# set the directory paths for searching for input atom files.
+SET ATOM_FILES_DIRECTORY = './:../atom_files'
+
+# Set alignment codes and atom file names for the actual X-ray structure
+# of 1fdx and its MODELLER model.
+SET ALIGN_CODES = '1fdx' '1fdx'
+SET ATOM_FILES  = '1fdx' '1fdx.B99990001'
+
+# Compare 3D structures with default settings
+COMPARE OUTPUT = 'LONG'
+
+# Repeat the same procedure for template, actual, model:
+SET ALIGN_CODES = '5fd1' '1fdx' '1fdxM'
+SET ATOM_FILES  = '5fd1' '1fdx.atm' '1fdx.B99990001'
+
+# Now we have to read the alignment because the relationship between the
+# three sequences (template 5fd1, actual 1fdx and its model) is not 1:1;
+READ_ALIGNMENT FILE = 'compare.ali'
+
+# Compare 3D structures with default settings
+COMPARE OUTPUT = 'LONG'

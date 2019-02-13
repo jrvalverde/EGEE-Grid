@@ -1,0 +1,9 @@
+\section{Bug List}\label{bug}
+\label{bug__bug000002}
+ \begin{description}
+\item[Member {\bf Grid::initialize}{\rm (p.\,\pageref{classGrid_a37})}(\$hours=12, \$minutes=0) ]: XXX JR XXX grid-proxy-init will use the time from the last issued command. To avoid setting a time shorter than one already existing we should first issue a grid-proxy-info, check if there is a running proxy, its time left, see if it is longer than what we want to set and if it is, then do NOTHING to avoid setting it shorter. \end{description}
+
+
+\label{bug__bug000001}
+ \begin{description}
+\item[Member {\bf Grid::initialize}{\rm (p.\,\pageref{classGrid_a11})}(\$hours=12, \$minutes=0) ]: XXX JR XXX grid-proxy-init will use the time from the last issued command. To avoid setting a time shorter than one already existing we should first issue a grid-proxy-info, check if there is a running proxy, its time left, see if it is longer than what we want to set and if it is, then do NOTHING to avoid setting it shorter. \end{description}

@@ -1,0 +1,8 @@
+Type = "Job";
+JobType = "normal";
+VirtualOrganisation= "biomed";
+Executable = "gramm.sh";
+StdOutput = "grock.out";
+StdError = "grock.err";
+InputSandbox = {"gramm.sh", "ligand.pdb", "receptor.pdb", "gramm-go.tar.gz"};
+OutputSandbox = {"grock.out","grock.err","gramm-come.tar.gz"};

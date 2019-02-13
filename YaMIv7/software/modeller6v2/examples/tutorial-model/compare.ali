@@ -1,0 +1,15 @@
+C; A sample alignment in the PIR format; used in tutorial
+
+>P1;5fd1
+structureX:5fd1:   1 : : 106 : :ferredoxin:Azotobacter vinelandii: 1.90:0.192
+AFVVTDNCIKCKYTDCVEVCPVDCFYEGPNFLVIHPDECIDCALCEPECPAQAIFSEDEVPEDMQEFIQLNAELA
+EVWPNITEKKDPLPDAEDWDGVKGKLQHLER*
+
+>P1;1fdx
+structureX:1fdx.atm:   1 : :  54 : :ferredoxin:Peptococcus aerogenes: 2.00:-1.00
+AYVINDSC--IACGACKPECPVNIIQGS--IYAIDADSCIDCGSCASVCPVGAPNPED*
+
+>P1;1fdxM
+structureX:1fdx.B99990001:   1 : :  54 : :ferredoxin:Peptococcus aerogenes: 2.00:-1.00
+AYVINDSC--IACGACKPECPVNIIQGS--IYAIDADSCIDCGSCASVCPVGAPNPED*
+

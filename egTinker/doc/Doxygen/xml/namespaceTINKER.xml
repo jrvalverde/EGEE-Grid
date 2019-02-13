@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.3.6">
+  <compounddef id="namespaceTINKER" kind="namespace">
+    <compoundname>TINKER</compoundname>
+    <briefdescription>
+<para>Variables used to connect with the user interface host. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jose R. Valverde &lt;<ulink url="mailto:jrvalverde@acm.org">jrvalverde@acm.org</ulink>&gt;  CSIC - GPL </para></simplesect>
+<simplesect kind="version"><para>1.0 </para></simplesect>
+</para>    </detaileddescription>
+    <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/config.php" line="5"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1092 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Docs For Class soapclient</title>
+	<link rel="stylesheet" type="text/css" id="layout" href="../media/layout.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../media/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../media/print.css" media="print">
+</head>
+
+<body>
+<div id="header">
+	<div id="navLinks">
+		[ <a href="../classtrees_GROCK.html">Class Tree: GROCK</a> ]
+		[ <a href="../elementindex_GROCK.html">Index: GROCK</a> ]
+		[ <a href="../elementindex.html">All elements</a> ]
+	</div>
+	<div id="packagePosition">
+		<div id="packageTitle2">GROCK</div>
+		<div id="packageTitle">GROCK</div>
+		<div id="elementPath"> &middot; </div>
+	</div>
+</div>
+
+<div id="nav" class="small">
+	<div id="packages">
+		Packages:
+					<p><a href="../li_GROCK.html">GROCK</a></p>
+					<p><a href="../li_Grid.html">Grid</a></p>
+					<p><a href="../li_grock.html">grock</a></p>
+					<p><a href="../li_SExec.html">SExec</a></p>
+			</div>
+
+				<div id="index">
+			<div id="files">
+								Files:<br>
+								<a href="../GROCK/_lib_class_nusoap_base_php.html">		class.nusoap_base.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soapclient_php.html">		class.soapclient.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_fault_php.html">		class.soap_fault.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_parser_php.html">		class.soap_parser.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_server_php.html">		class.soap_server.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_transport_http_php.html">		class.soap_transport_http.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_val_php.html">		class.soap_val.php
+		</a><br>
+			<a href="../GROCK/_lib_class_wsdl_php.html">		class.wsdl.php
+		</a><br>
+			<a href="../GROCK/_lib_class_wsdlcache_php.html">		class.wsdlcache.php
+		</a><br>
+			<a href="../GROCK/_lib_class_xmlschema_php.html">		class.xmlschema.php
+		</a><br>
+			<a href="../GROCK/_lib_nusoap_php.html">		nusoap.php
+		</a><br>
+			<a href="../GROCK/_lib_nusoapmime_php.html">		nusoapmime.php
+		</a><br>
+				</div>
+			<div id="classes">
+				Classes:<br>
+								<a href="../GROCK/nusoap_base.html">		nusoap_base
+		</a><br>
+			<a href="../GROCK/soapclient.html">		soapclient
+		</a><br>
+			<a href="../GROCK/soapclientmime.html">		soapclientmime
+		</a><br>
+			<a href="../GROCK/soapval.html">		soapval
+		</a><br>
+			<a href="../GROCK/soap_fault.html">		soap_fault
+		</a><br>
+			<a href="../GROCK/soap_parser.html">		soap_parser
+		</a><br>
+			<a href="../GROCK/soap_server.html">		soap_server
+		</a><br>
+			<a href="../GROCK/soap_transport_http.html">		soap_transport_http
+		</a><br>
+			<a href="../GROCK/wsdl.html">		wsdl
+		</a><br>
+			<a href="../GROCK/wsdlcache.html">		wsdlcache
+		</a><br>
+			<a href="../GROCK/XMLSchema.html">		XMLSchema
+		</a><br>
+				</div>
+		</div>
+	</div>
+
+<div id="body">
+			<h1>Class: soapclient</h1>
+	<p style="margin: 0px;">Source Location: /lib/class.soapclient.php</p>
+	
+
+<div class="leftcol">
+	<h3><a href="#class_details">Class Overview</a> <span class="smalllinenumber">[line 25]</span></h3>
+	<div id="classTree"><pre>nusoap_base
+   |
+   --soapclient</pre>
+</div>
+	<div class="small">
+	<p>soapclient higher level class for easy usage.</p>
+		<h4>Author(s):</h4>
+	<ul>
+																		<li>Dietrich Ayala &lt;<a href="mailto:dietrich@ganx4.com">mailto:dietrich@ganx4.com</a>&gt;</li>
+						</ul>
+	<h4>Version:</h4>
+	<ul>
+													<li>$Id: class.soapclient.php,v 1.39 2004/05/05 12:15:04 snichol Exp $</li>
+											</ul>
+
+	<h4>Copyright:</h4>
+	<ul>
+																		</li>
+	</div>
+</div>
+
+<div class="middlecol">
+	<h3><a href="#class_vars">Variables</a></h3>
+	<ul class="small">
+				<li><a href="../GROCK/soapclient.html#var$authtype">$authtype</a></li>
+				<li><a href="../GROCK/soapclient.html#var$decode_utf8">$decode_utf8</a></li>
+				<li><a href="../GROCK/soapclient.html#var$defaultRpcParams">$defaultRpcParams</a></li>
+				<li><a href="../GROCK/soapclient.html#var$document">$document</a></li>
+				<li><a href="../GROCK/soapclient.html#var$endpoint">$endpoint</a></li>
+				<li><a href="../GROCK/soapclient.html#var$endpointType">$endpointType</a></li>
+				<li><a href="../GROCK/soapclient.html#var$error_str">$error_str</a></li>
+				<li><a href="../GROCK/soapclient.html#var$fault">$fault</a></li>
+				<li><a href="../GROCK/soapclient.html#var$faultcode">$faultcode</a></li>
+				<li><a href="../GROCK/soapclient.html#var$faultdetail">$faultdetail</a></li>
+				<li><a href="../GROCK/soapclient.html#var$faultstring">$faultstring</a></li>
+				<li><a href="../GROCK/soapclient.html#var$http_encoding">$http_encoding</a></li>
+				<li><a href="../GROCK/soapclient.html#var$password">$password</a></li>
+				<li><a href="../GROCK/soapclient.html#var$persistentConnection">$persistentConnection</a></li>
+				<li><a href="../GROCK/soapclient.html#var$proxyhost">$proxyhost</a></li>
+				<li><a href="../GROCK/soapclient.html#var$proxypassword">$proxypassword</a></li>
+				<li><a href="../GROCK/soapclient.html#var$proxyport">$proxyport</a></li>
+				<li><a href="../GROCK/soapclient.html#var$proxyusername">$proxyusername</a></li>
+				<li><a href="../GROCK/soapclient.html#var$request">$request</a></li>
+				<li><a href="../GROCK/soapclient.html#var$requestHeaders">$requestHeaders</a></li>
+				<li><a href="../GROCK/soapclient.html#var$response">$response</a></li>
+				<li><a href="../GROCK/soapclient.html#var$responseData">$responseData</a></li>
+				<li><a href="../GROCK/soapclient.html#var$responseHeaders">$responseHeaders</a></li>
+				<li><a href="../GROCK/soapclient.html#var$response_timeout">$response_timeout</a></li>
+				<li><a href="../GROCK/soapclient.html#var$timeout">$timeout</a></li>
+				<li><a href="../GROCK/soapclient.html#var$username">$username</a></li>
+				<li><a href="../GROCK/soapclient.html#var$xml_encoding">$xml_encoding</a></li>
+			</ul>
+</div>
+<div class="rightcol">
+	<h3><a href="#class_methods">Methods</a></h3>
+	<ul class="small">
+				<li><a href="../GROCK/soapclient.html#methodsoapclient">soapclient</a></li>
+				<li><a href="../GROCK/soapclient.html#methodcall">call</a></li>
+				<li><a href="../GROCK/soapclient.html#methoddecodeUTF8">decodeUTF8</a></li>
+				<li><a href="../GROCK/soapclient.html#methodgetDefaultRpcParams">getDefaultRpcParams</a></li>
+				<li><a href="../GROCK/soapclient.html#methodgetHeaders">getHeaders</a></li>
+				<li><a href="../GROCK/soapclient.html#methodgetHTTPBody">getHTTPBody</a></li>
+				<li><a href="../GROCK/soapclient.html#methodgetHTTPContentType">getHTTPContentType</a></li>
+				<li><a href="../GROCK/soapclient.html#methodgetHTTPContentTypeCharset">getHTTPContentTypeCharset</a></li>
+				<li><a href="../GROCK/soapclient.html#methodgetOperationData">getOperationData</a></li>
+				<li><a href="../GROCK/soapclient.html#methodgetProxy">getProxy</a></li>
+				<li><a href="../GROCK/soapclient.html#methodparseResponse">parseResponse</a></li>
+				<li><a href="../GROCK/soapclient.html#methodsend">send</a></li>
+				<li><a href="../GROCK/soapclient.html#methodsetCredentials">setCredentials</a></li>
+				<li><a href="../GROCK/soapclient.html#methodsetDefaultRpcParams">setDefaultRpcParams</a></li>
+				<li><a href="../GROCK/soapclient.html#methodsetHeaders">setHeaders</a></li>
+				<li><a href="../GROCK/soapclient.html#methodsetHTTPEncoding">setHTTPEncoding</a></li>
+				<li><a href="../GROCK/soapclient.html#methodsetHTTPProxy">setHTTPProxy</a></li>
+				<li><a href="../GROCK/soapclient.html#methoduseHTTPPersistentConnection">useHTTPPersistentConnection</a></li>
+			</ul>
+</div>
+
+<div id="content">
+<hr>
+	<div class="contents">
+	</div>
+
+	<div class="leftCol">
+	<h2>Inherited Variables</h2>
+		</div>
+
+	<div class="rightCol">
+	<h2>Inherited Methods</h2>
+		</div>
+	<br clear="all">
+	<hr>
+
+	<a name="class_details"></a>
+	<h2>Class Details</h2>
+	<p align="center"><strong>soapclient higher level class for easy usage.
+</strong></p>
+<p>usage:</p><p>// instantiate client with server info  $soapclient = new soapclient( string path [ ,boolean wsdl] );</p><p>// call method, get results  echo $soapclient-&gt;call( string methodname [ ,array parameters] );</p><p>// bye bye client  unset($soapclient);</p><h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+	<li><b>version</b> - $Id: class.soapclient.php,v 1.39 2004/05/05 12:15:04 snichol Exp $</li>
+	<li><b>author</b> - Dietrich Ayala &lt;<a href="mailto:dietrich@ganx4.com">mailto:dietrich@ganx4.com</a>&gt;</li>
+</ul>
+	<p class="small" style="color: #334B66;">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_vars"></a>
+	<h2>Class Variables</h2>
+		<a name="var$authtype"></a>
+	<p></p>
+	<h4>$authtype = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 29]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$decode_utf8"></a>
+	<p></p>
+	<h4>$decode_utf8 = <span class="value">&nbsp;true</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 50]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$defaultRpcParams"></a>
+	<p></p>
+	<h4>$defaultRpcParams = <span class="value">&nbsp;false</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 45]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$document"></a>
+	<p></p>
+	<h4>$document = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 32]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$endpoint"></a>
+	<p></p>
+	<h4>$endpoint = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 33]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$endpointType"></a>
+	<p></p>
+	<h4>$endpointType = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 43]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$error_str"></a>
+	<p></p>
+	<h4>$error_str = <span class="value">&nbsp;false</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 34]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$fault"></a>
+	<p></p>
+	<h4>$fault = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 61]</p>
+		<p align="center"><strong>fault related variables
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		<p><b>Type:</b> fault</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$faultcode"></a>
+	<p></p>
+	<h4>$faultcode = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 61]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$faultdetail"></a>
+	<p></p>
+	<h4>$faultdetail = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 61]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$faultstring"></a>
+	<p></p>
+	<h4>$faultstring = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 61]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$http_encoding"></a>
+	<p></p>
+	<h4>$http_encoding = <span class="value">&nbsp;false</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 40]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$password"></a>
+	<p></p>
+	<h4>$password = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 28]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$persistentConnection"></a>
+	<p></p>
+	<h4>$persistentConnection = <span class="value">&nbsp;false</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 44]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$proxyhost"></a>
+	<p></p>
+	<h4>$proxyhost = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 35]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$proxypassword"></a>
+	<p></p>
+	<h4>$proxypassword = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 38]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$proxyport"></a>
+	<p></p>
+	<h4>$proxyport = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 36]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$proxyusername"></a>
+	<p></p>
+	<h4>$proxyusername = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 37]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$request"></a>
+	<p></p>
+	<h4>$request = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 46]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$requestHeaders"></a>
+	<p></p>
+	<h4>$requestHeaders = <span class="value">&nbsp;false</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 30]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$response"></a>
+	<p></p>
+	<h4>$response = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 47]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$responseData"></a>
+	<p></p>
+	<h4>$responseData = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 48]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$responseHeaders"></a>
+	<p></p>
+	<h4>$responseHeaders = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 31]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$response_timeout"></a>
+	<p></p>
+	<h4>$response_timeout = <span class="value">&nbsp;30</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 42]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$timeout"></a>
+	<p></p>
+	<h4>$timeout = <span class="value">&nbsp;0</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 41]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$username"></a>
+	<p></p>
+	<h4>$username = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 27]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$xml_encoding"></a>
+	<p></p>
+	<h4>$xml_encoding = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 39]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_methods"></a>
+	<h2>Class Methods</h2>
+		<a name="methodsoapclient"></a>
+	<p></p>
+	<h3>soapclient</h3>
+	<div class="indent">
+		<p>
+		<code>soapclient soapclient(
+mixed
+$endpoint, [bool
+$wsdl = false], [string
+$proxyhost = false], [string
+$proxyport = false], [string
+$proxyusername = false], [string
+$proxypassword = false], [integer
+$timeout = 0], [integer
+$response_timeout = 30], int
+$portName)</code>
+		</p>
+	
+		<p class="linenumber">[line 77]</p>
+		<p align="center"><strong>constructor
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">mixed</span>
+		<b>$endpoint</b> 
+		- 
+		SOAP server or WSDL URL (string), or wsdl instance (object)</li>
+			<li>
+		<span class="type">bool</span>
+		<b>$wsdl</b> 
+		- 
+		optional, set to true if using WSDL</li>
+			<li>
+		<span class="type">int</span>
+		<b>$portName</b> 
+		- 
+		optional portName in WSDL document</li>
+			<li>
+		<span class="type">string</span>
+		<b>$proxyhost</b> 
+		- 
+		</li>
+			<li>
+		<span class="type">string</span>
+		<b>$proxyport</b> 
+		- 
+		</li>
+			<li>
+		<span class="type">string</span>
+		<b>$proxyusername</b> 
+		- 
+		</li>
+			<li>
+		<span class="type">string</span>
+		<b>$proxypassword</b> 
+		- 
+		</li>
+			<li>
+		<span class="type">integer</span>
+		<b>$timeout</b> 
+		- 
+		set the connection timeout</li>
+			<li>
+		<span class="type">integer</span>
+		<b>$response_timeout</b> 
+		- 
+		set the response timeout</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodcall"></a>
+	<p></p>
+	<h3>call</h3>
+	<div class="indent">
+		<p>
+		<code>mixed call(
+mixed
+$operation, [array
+$params = array()], [string
+$namespace = ''], [string
+$soapAction = ''], [boolean
+$headers = false], [boolean
+$rpcParams = null], [string
+$style = 'rpc'], [string
+$use = 'encoded'], string
+$method)</code>
+		</p>
+	
+		<p class="linenumber">[line 141]</p>
+		<p align="center"><strong>calls method, returns PHP native type
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$method</b> 
+		- 
+		SOAP server URL or path</li>
+			<li>
+		<span class="type">array</span>
+		<b>$params</b> 
+		- 
+		An array, associative or simple, of the parameters                           for the method call, or a string that is the XML                           for the call.  For rpc style, this call will                           wrap the XML in a tag named after the method, as                           well as the SOAP Envelope and Body.  For document                           style, this will only wrap with the Envelope and Body.                           IMPORTANT: when using an array with document style,                           in which case there                          is really one parameter, the root of the fragment                          used in the call, which encloses what programmers                          normally think of parameters.  A parameter array                          *must* include the wrapper.</li>
+			<li>
+		<span class="type">string</span>
+		<b>$namespace</b> 
+		- 
+		optional method namespace (WSDL can override)</li>
+			<li>
+		<span class="type">string</span>
+		<b>$soapAction</b> 
+		- 
+		optional SOAPAction value (WSDL can override)</li>
+			<li>
+		<span class="type">boolean</span>
+		<b>$headers</b> 
+		- 
+		optional array of soapval objects for headers</li>
+			<li>
+		<span class="type">boolean</span>
+		<b>$rpcParams</b> 
+		- 
+		optional no longer used</li>
+			<li>
+		<span class="type">string</span>
+		<b>$style</b> 
+		- 
+		optional (rpc|document) the style to use when serializing parameters (WSDL can override)</li>
+			<li>
+		<span class="type">string</span>
+		<b>$use</b> 
+		- 
+		optional (encoded|literal) the use when serializing parameters (WSDL can override)</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methoddecodeUTF8"></a>
+	<p></p>
+	<h3>decodeUTF8</h3>
+	<div class="indent">
+		<p>
+		<code>void decodeUTF8(
+mixed
+$bool)</code>
+		</p>
+	
+		<p class="linenumber">[line 629]</p>
+				
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodgetDefaultRpcParams"></a>
+	<p></p>
+	<h3>getDefaultRpcParams</h3>
+	<div class="indent">
+		<p>
+		<code>void getDefaultRpcParams(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 518]</p>
+		<p align="center"><strong>gets the default RPC parameter setting.
+</strong></p>
+<p>If true, default is that call params are like RPC even for document style.  Each call() can override this value.</p><p>This is no longer used.</p><h4>Tags:</h4>
+<ul>
+	<li><b>deprecated</b> - </li>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodgetHeaders"></a>
+	<p></p>
+	<h3>getHeaders</h3>
+	<div class="indent">
+		<p>
+		<code>mixed getHeaders(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 453]</p>
+		<p align="center"><strong>get the response headers
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - object SOAPx4 soapval object or empty if no headers</li>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodgetHTTPBody"></a>
+	<p></p>
+	<h3>getHTTPBody</h3>
+	<div class="indent">
+		<p>
+		<code>string getHTTPBody(
+string
+$soapmsg)</code>
+		</p>
+	
+		<p class="linenumber">[line 594]</p>
+		<p align="center"><strong>gets the HTTP body for the current request.
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - The HTTP body, which includes the SOAP payload</li>
+	<li><b>access</b> - protected</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$soapmsg</b> 
+		- 
+		The SOAP payload</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodgetHTTPContentType"></a>
+	<p></p>
+	<h3>getHTTPContentType</h3>
+	<div class="indent">
+		<p>
+		<code>string getHTTPContentType(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 606]</p>
+		<p align="center"><strong>gets the HTTP content type for the current request.
+</strong></p>
+<p>Note: getHTTPBody must be called before this.</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - the HTTP content type for the current request.</li>
+	<li><b>access</b> - protected</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodgetHTTPContentTypeCharset"></a>
+	<p></p>
+	<h3>getHTTPContentTypeCharset</h3>
+	<div class="indent">
+		<p>
+		<code>string getHTTPContentTypeCharset(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 619]</p>
+		<p align="center"><strong>gets the HTTP content type charset for the current request.
+</strong></p>
+<p>returns false for non-text content types.</p><p>Note: getHTTPBody must be called before this.</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - the HTTP content type charset for the current request.</li>
+	<li><b>access</b> - protected</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodgetOperationData"></a>
+	<p></p>
+	<h3>getOperationData</h3>
+	<div class="indent">
+		<p>
+		<code>array getOperationData(
+string
+$operation)</code>
+		</p>
+	
+		<p class="linenumber">[line 293]</p>
+		<p align="center"><strong>get available data pertaining to an operation
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - array of data pertaining to the operation</li>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$operation</b> 
+		- 
+		operation name</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodgetProxy"></a>
+	<p></p>
+	<h3>getProxy</h3>
+	<div class="indent">
+		<p>
+		<code>object soap_proxy getProxy(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 540]</p>
+		<p align="center"><strong>dynamically creates proxy class, allowing user to directly call methods from wsdl
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - object</li>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodparseResponse"></a>
+	<p></p>
+	<h3>parseResponse</h3>
+	<div class="indent">
+		<p>
+		<code>mixed parseResponse(
+array
+$headers, string
+$data)</code>
+		</p>
+	
+		<p class="linenumber">[line 395]</p>
+		<p align="center"><strong>processes SOAP message returned from server
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - value of the message, decoded into a PHP type</li>
+	<li><b>access</b> - protected</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">array</span>
+		<b>$headers</b> 
+		- 
+		The HTTP headers</li>
+			<li>
+		<span class="type">string</span>
+		<b>$data</b> 
+		- 
+		unprocessed response data from server</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodsend"></a>
+	<p></p>
+	<h3>send</h3>
+	<div class="indent">
+		<p>
+		<code>mixed send(
+string
+$msg, [string
+$soapaction = ''], [integer
+$timeout = 0], [integer
+$response_timeout = 30])</code>
+		</p>
+	
+		<p class="linenumber">[line 314]</p>
+		<p align="center"><strong>send the SOAP message
+</strong></p>
+<p>Note: if the operation has multiple return values  the return value of this method will be an array  of those values.</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - native PHP types.</li>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$msg</b> 
+		- 
+		a SOAPx4 soapmsg object</li>
+			<li>
+		<span class="type">string</span>
+		<b>$soapaction</b> 
+		- 
+		SOAPAction value</li>
+			<li>
+		<span class="type">integer</span>
+		<b>$timeout</b> 
+		- 
+		set connection timeout in seconds</li>
+			<li>
+		<span class="type">integer</span>
+		<b>$response_timeout</b> 
+		- 
+		set response timeout in seconds</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodsetCredentials"></a>
+	<p></p>
+	<h3>setCredentials</h3>
+	<div class="indent">
+		<p>
+		<code>void setCredentials(
+string
+$username, string
+$password, [string
+$authtype = 'basic'])</code>
+		</p>
+	
+		<p class="linenumber">[line 483]</p>
+		<p align="center"><strong>if authenticating, set user credentials here
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$username</b> 
+		- 
+		</li>
+			<li>
+		<span class="type">string</span>
+		<b>$password</b> 
+		- 
+		</li>
+			<li>
+		<span class="type">string</span>
+		<b>$authtype</b> 
+		- 
+		(basic|digest)</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodsetDefaultRpcParams"></a>
+	<p></p>
+	<h3>setDefaultRpcParams</h3>
+	<div class="indent">
+		<p>
+		<code>void setDefaultRpcParams(
+boolean
+$rpcParams)</code>
+		</p>
+	
+		<p class="linenumber">[line 530]</p>
+		<p align="center"><strong>sets the default RPC parameter setting.
+</strong></p>
+<p>If true, default is that call params are like RPC even for document style  Each call() can override this value.</p><h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">boolean</span>
+		<b>$rpcParams</b> 
+		- 
+		</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodsetHeaders"></a>
+	<p></p>
+	<h3>setHeaders</h3>
+	<div class="indent">
+		<p>
+		<code>void setHeaders(
+$headers
+$headers)</code>
+		</p>
+	
+		<p class="linenumber">[line 443]</p>
+		<p align="center"><strong>set the SOAP headers
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">$headers</span>
+		<b>$headers</b> 
+		- 
+		string XML</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodsetHTTPEncoding"></a>
+	<p></p>
+	<h3>setHTTPEncoding</h3>
+	<div class="indent">
+		<p>
+		<code>void setHTTPEncoding(
+[string
+$enc = 'gzip, deflate'])</code>
+		</p>
+	
+		<p class="linenumber">[line 495]</p>
+		<p align="center"><strong>use HTTP encoding
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$enc</b> 
+		- 
+		</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodsetHTTPProxy"></a>
+	<p></p>
+	<h3>setHTTPProxy</h3>
+	<div class="indent">
+		<p>
+		<code>void setHTTPProxy(
+string
+$proxyhost, string
+$proxyport, [string
+$proxyusername = ''], [string
+$proxypassword = ''])</code>
+		</p>
+	
+		<p class="linenumber">[line 468]</p>
+		<p align="center"><strong>set proxy info here
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$proxyhost</b> 
+		- 
+		</li>
+			<li>
+		<span class="type">string</span>
+		<b>$proxyport</b> 
+		- 
+		</li>
+			<li>
+		<span class="type">string</span>
+		<b>$proxyusername</b> 
+		- 
+		</li>
+			<li>
+		<span class="type">string</span>
+		<b>$proxypassword</b> 
+		- 
+		</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methoduseHTTPPersistentConnection"></a>
+	<p></p>
+	<h3>useHTTPPersistentConnection</h3>
+	<div class="indent">
+		<p>
+		<code>void useHTTPPersistentConnection(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 504]</p>
+		<p align="center"><strong>use HTTP persistent connections if possible
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+</div>
+	<div id="credit">
+		<hr>
+		Documentation generated on Thu, 27 Oct 2005 13:03:18 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.2.3</a>
+	</div>
+</div>
+</body>
+</html>

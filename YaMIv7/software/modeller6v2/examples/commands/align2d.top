@@ -1,0 +1,40 @@
+# Demonstrating ALIGN2D, aligning with variable gap penalty
+
+SET OUTPUT_CONTROL = 1 1 1 1 1
+
+READ_TOPOLOGY FILE = '$(LIB)/top_heav.lib'
+
+# Read aligned structure(s):
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = '2ctx'
+# READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = '2ctx' '2abx'
+SET ADD_SEQUENCE = on, ALIGN_BLOCK = NUMB_OF_SEQUENCES
+# Read aligned sequence(s):
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = ALIGN_CODES '1nbt'
+ 
+# Structure sensitive variable gap penalty sequence-sequence alignment:
+SET OVERHANG = 0
+# SET RR_FILE = '$(LIB)/id.sim.mat'
+SET GAP_PENALTIES_1D = -450 0
+SET GAP_PENALTIES_2D = 0.35 1.2 0.9 1.2 0.6 8.6 1.2 0.0
+ALIGN2D 
+WRITE_ALIGNMENT FILE  = 'align2d.ali', ALIGNMENT_FORMAT = 'PIR',
+WRITE_ALIGNMENT FILE  = 'align2d.pap', ALIGNMENT_FORMAT = 'PAP', ;
+ ALIGNMENT_FEATURES='INDICES HELIX BETA STRAIGHTNESS ACCESSIBILITY CONSERVATION'
+CHECK_ALIGNMENT
+
+# Color the first template structure according to gaps in alignment:
+READ_ALIGNMENT FILE = 'align2d.ali', ALIGN_CODES = '2ctx' '1nbt', ;
+     ALIGNMENT_FORMAT = 'PIR', ADD_SEQUENCE = off, REMOVE_GAPS = on
+READ_MODEL MODEL_SEGMENT = '2ctx', FILE = '2ctx'
+COLOR_ALN_MODEL
+WRITE_MODEL FILE = '2ctx.aln.pdb'
+
+# Color the first template structure according to secondary structure:
+WRITE_DATA OUTPUT = 'SSM BISO_SSM', FILE = '2ctx'
+WRITE_MODEL FILE = '2ctx.ssm.pdb'
+
+# Superpose the target structure onto the first template:
+READ_MODEL2 FILE = '1nbt.pdb', MODEL2_SEGMENT = '1nbt' '1nbt'
+PICK_ATOMS ATOM_TYPES = 'CA'
+SUPERPOSE
+WRITE_MODEL2 FILE = '1nbt.fit.pdb'

@@ -1,0 +1,12 @@
+# Example for: MAKE_SCHEDULE, WRITE_SCHEDULE, READ_SCHEDULE
+
+# This will create an VTFM optimization schedule for a model 
+# and write it to a file.
+
+# MODEL has to be in memory for MAKE_SCHEDULE:
+READ_MODEL FILE = '1fas'
+MAKE_SCHEDULE LIBRARY_SCHEDULE = 1
+# Write the schedule to a file:
+WRITE_SCHEDULE FILE = '1fas.sch'
+# Read it in just for fun:
+READ_SCHEDULE FILE = '1fas.sch'

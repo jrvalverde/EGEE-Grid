@@ -1,0 +1,3076 @@
+    MODULE alloc_routines
+! --  a generic array allocation procedure
+! .. Implicit None Statement ..
+      IMPLICIT NONE
+! .. Generic Interface Blocks ..
+      INTERFACE alloc_array
+        MODULE PROCEDURE alloc1int
+        MODULE PROCEDURE alloc2int
+        MODULE PROCEDURE alloc3int
+        MODULE PROCEDURE alloc1real
+        MODULE PROCEDURE alloc2real
+        MODULE PROCEDURE alloc3real
+        MODULE PROCEDURE alloc1chr
+        MODULE PROCEDURE alloc2chr
+        MODULE PROCEDURE alloc3chr
+        MODULE PROCEDURE alloc1log
+        MODULE PROCEDURE alloc2log
+        MODULE PROCEDURE alloc3log
+      END INTERFACE
+      INTERFACE mem
+        MODULE PROCEDURE mem1int
+        MODULE PROCEDURE mem2int
+        MODULE PROCEDURE mem3int
+        MODULE PROCEDURE mem1real
+        MODULE PROCEDURE mem2real
+        MODULE PROCEDURE mem3real
+        MODULE PROCEDURE mem1chr
+        MODULE PROCEDURE mem2chr
+        MODULE PROCEDURE mem3chr
+        MODULE PROCEDURE mem1log
+        MODULE PROCEDURE mem2log
+        MODULE PROCEDURE mem3log
+      END INTERFACE
+
+    CONTAINS
+
+
+      SUBROUTINE inialloc(prn)
+! .. Use Statements ..
+        USE mod_common
+        USE top_common
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: prn
+
+        maxres = 1
+        maxseq = 1
+        maxchn = 1
+        mattmod = 1
+        maxrchn = 1
+        npdbfil = 1
+        maxatm = 1
+        maxacns = 1
+        maximp = 1
+        mpairs = 1
+        mresdb = 1
+        mgrpatm = 1
+        maxcns = 1
+        nbuckets = 1
+        maxbnd = 1
+        maxang = 1
+        maxdih = 1
+        maxlic = 1
+        mprmacns = 1
+        mattacns = 1
+        mprmcns = 1
+        matmcns = 1
+
+        NULLIFY(iseqdb)
+        NULLIFY(nseqdb)
+        NULLIFY(seqdb)
+        NULLIFY(codep)
+        NULLIFY(ialn2)
+        NULLIFY(nresn2)
+        NULLIFY(irestypn2)
+        NULLIFY(invaln2)
+        NULLIFY(nsegmn2)
+        NULLIFY(iress1n2)
+        NULLIFY(iress2n2)
+        NULLIFY(resol2)
+        NULLIFY(rfactr2)
+        NULLIFY(caln2)
+        NULLIFY(ccaln2)
+        NULLIFY(alnchn2)
+        NULLIFY(prottyp2)
+        NULLIFY(source2)
+        NULLIFY(range2)
+        NULLIFY(name2)
+        NULLIFY(segidn2)
+        NULLIFY(codein2)
+        NULLIFY(iattmod)
+        NULLIFY(iatmgrp)
+        NULLIFY(grpatm)
+        NULLIFY(attmod)
+        NULLIFY(var)
+        NULLIFY(pdf)
+        NULLIFY(ientry)
+        NULLIFY(jentry)
+        NULLIFY(nentries)
+        NULLIFY(iar)
+        NULLIFY(jar)
+        NULLIFY(kar)
+        NULLIFY(lar)
+        NULLIFY(b1ic)
+        NULLIFY(b2ic)
+        NULLIFY(t1ic)
+        NULLIFY(t2ic)
+        NULLIFY(pic)
+        NULLIFY(tar)
+        NULLIFY(xmin)
+        NULLIFY(ymin)
+        NULLIFY(zmin)
+        NULLIFY(ialn)
+        NULLIFY(nresn)
+        NULLIFY(irestypn)
+        NULLIFY(invaln)
+        NULLIFY(nsegmn)
+        NULLIFY(iress1n)
+        NULLIFY(iress2n)
+        NULLIFY(resol)
+        NULLIFY(rfactr)
+        NULLIFY(alnacc)
+        NULLIFY(prof)
+        NULLIFY(gapdst)
+        NULLIFY(caln)
+        NULLIFY(ccaln)
+        NULLIFY(alnchn)
+        NULLIFY(prottyp)
+        NULLIFY(source)
+        NULLIFY(range)
+        NULLIFY(name)
+        NULLIFY(segidn)
+        NULLIFY(atmfull)
+        NULLIFY(codein)
+        NULLIFY(iresatmn)
+        NULLIFY(natmn)
+        NULLIFY(iatmr1n)
+        NULLIFY(idih)
+        NULLIFY(idihc)
+        NULLIFY(iglbsim)
+        NULLIFY(isstruc)
+        NULLIFY(neigh)
+        NULLIFY(ineigh)
+        NULLIFY(iresol)
+        NULLIFY(indats2n)
+        NULLIFY(imnchw)
+        NULLIFY(iacont)
+        NULLIFY(idsta1)
+        NULLIFY(idsta2)
+        NULLIFY(fractglsim)
+        NULLIFY(xn)
+        NULLIFY(yn)
+        NULLIFY(zn)
+        NULLIFY(dih)
+        NULLIFY(acc)
+        NULLIFY(bison)
+        NULLIFY(curvn)
+        NULLIFY(atmnamn)
+        NULLIFY(resnumn)
+        NULLIFY(resnamn)
+        NULLIFY(chainn)
+        NULLIFY(accepts)
+        NULLIFY(memrange)
+        NULLIFY(memalnchn)
+        NULLIFY(mematmfull)
+        NULLIFY(iatc)
+        NULLIFY(natc)
+        NULLIFY(iata)
+        NULLIFY(iatd)
+        NULLIFY(iatb)
+        NULLIFY(iati)
+        NULLIFY(resseg)
+        NULLIFY(iatmr1)
+        NULLIFY(iattyp)
+        NULLIFY(iresatm)
+        NULLIFY(iatta)
+        NULLIFY(indats)
+        NULLIFY(irestyp)
+        NULLIFY(idihres)
+        NULLIFY(natngh)
+        NULLIFY(radii)
+        NULLIFY(charge)
+        NULLIFY(x)
+        NULLIFY(y)
+        NULLIFY(z)
+        NULLIFY(biso)
+        NULLIFY(vx)
+        NULLIFY(vy)
+        NULLIFY(vz)
+        NULLIFY(atmacc)
+        NULLIFY(resnam)
+        NULLIFY(atmnam)
+        NULLIFY(resnum)
+        NULLIFY(chain)
+        NULLIFY(picres)
+        NULLIFY(picatm)
+        NULLIFY(katmr1)
+        NULLIFY(kresatm)
+        NULLIFY(krestyp)
+        NULLIFY(x2)
+        NULLIFY(y2)
+        NULLIFY(z2)
+        NULLIFY(charg2)
+        NULLIFY(biso2)
+        NULLIFY(radii2)
+        NULLIFY(atm2nam)
+        NULLIFY(res2nam)
+        NULLIFY(chain2)
+        NULLIFY(res2num)
+        NULLIFY(dvx)
+        NULLIFY(dvy)
+        NULLIFY(dvz)
+        NULLIFY(pdbfil)
+        NULLIFY(pdblst)
+        NULLIFY(indatm)
+        NULLIFY(itcsr)
+        NULLIFY(iatm)
+        NULLIFY(ipcsr)
+        NULLIFY(indatt)
+        NULLIFY(itacsr)
+        NULLIFY(iatt)
+        NULLIFY(ipacsr)
+        NULLIFY(iapairs)
+        NULLIFY(iarsr2)
+        NULLIFY(iarsr)
+        NULLIFY(indcsr)
+        NULLIFY(pcsr)
+        NULLIFY(pacsr)
+        NULLIFY(iatsym1)
+        NULLIFY(iatsym2)
+        NULLIFY(wghsym)
+
+        CALL amatmcns(0,matmcns,indatm)
+        CALL amattacns(0,mattacns,indatt)
+        CALL amattmod(0,mattmod,iatmgrp,attmod)
+        CALL amaxacns(0,maxacns,nitcsr,itacsr,iatt,ipacsr)
+        CALL amaxang(0,maxang,iata)
+        CALL amaxatm(0,maxatm,maxseq,maxbat,iresatmn,indats2n,iatc,natc, &
+          iattyp,iresatm,iatta,indats,natngh,kresatm,iatsym1,iatsym2,xmin, &
+          ymin,zmin,xn,yn,zn,bison,radii,charge,x,y,z,biso,vx,vy,vz,atmacc,x2, &
+          y2,z2,charg2,biso2,radii2,dvx,dvy,dvz,wghsym,picatm,atmnamn,atmnam, &
+          atm2nam)
+        CALL amaxbnd(0,maxbnd,iatb)
+        CALL amaxcns(0,maxcns,nitcsr,itcsr,iatm,ipcsr,indcsr)
+        CALL amaxdih(0,maxdih,iatd)
+        CALL amaximp(0,maximp,iati)
+        CALL amaxlic(0,maxlic,iar,jar,kar,lar,b1ic,b2ic,t1ic,t2ic,pic,tar)
+        CALL amaxres(0,maxres,maxseq,mdihtyp,nprof,maxngh,ialn2,irestypn2, &
+          invaln2,ialn,irestypn,invaln,iatmr1n,idih,idihc,isstruc,neigh, &
+          ineigh,imnchw,idsta1,idsta2,iatmr1,irestyp,idihres,katmr1,krestyp, &
+          alnacc,prof,gapdst,dih,acc,curvn,picres,caln2,ccaln2,caln,ccaln, &
+          resnumn,resnamn,chainn,resseg,resnam,resnum,chain,res2nam,res2num, &
+          chain2)
+        CALL amaxseq(0,maxseq,maxres,maxatm,maxseg,mdihtyp,mfeatcorr,mrngcorr, &
+          maxngh,nmemtyp,ialn2,nresn2,irestypn2,invaln2,nsegmn2,iress1n2, &
+          iress2n2,ialn,nresn,irestypn,invaln,nsegmn,iress1n,iress2n,iresatmn, &
+          natmn,iatmr1n,idih,idihc,iglbsim,isstruc,neigh,ineigh,iresol, &
+          indats2n,imnchw,iacont,idsta1,idsta2,resol2,rfactr2,var,pdf,resol, &
+          rfactr,fractglsim,xn,yn,zn,dih,acc,bison,curvn,codein2,codein, &
+          accepts,caln2,ccaln2,alnchn2,prottyp2,source2,range2,name2,segidn2, &
+          caln,ccaln,alnchn,prottyp,source,range,name,segidn,atmfull,atmnamn, &
+          resnumn,resnamn,chainn,memrange,memalnchn,mematmfull,mvsprm)
+        CALL amgrpatm(0,mgrpatm,iattmod,iarsr2,iarsr,grpatm)
+        CALL ampairs(0,mpairs,iapairs)
+        CALL update_npdbfil(0,npdbfil,pdbfil,pdblst)
+        CALL amprmacns(0,mprmacns,pacsr)
+        CALL amprmcns(0,mprmcns,pcsr)
+        CALL anbuckets(0,nbuckets,maxbck,ientry,jentry,nentries,mijentry)
+        CALL amresdb(prn,mresdb,seqdb)
+        CALL amaxchn(prn,mresdb,iseqdb,nseqdb,codep)
+
+        RETURN
+      END SUBROUTINE inialloc
+
+
+
+      SUBROUTINE amatmcns(prn,matmcns,indatm)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: matmcns, prn
+! .. Array Arguments ..
+        INTEGER, POINTER :: indatm(:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        CALL alloc_array(indatm,1,matmcns,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amatmcns', &
+          str1='indatm',int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'amatmcns')
+
+        RETURN
+      END SUBROUTINE amatmcns
+
+
+      SUBROUTINE amattacns(prn,mattacns,indatt)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: mattacns, prn
+! .. Array Arguments ..
+        INTEGER, POINTER :: indatt(:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        CALL alloc_array(indatt,1,mattacns,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amattacns', &
+          str1='indatt',int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'amattacns')
+
+        RETURN
+      END SUBROUTINE amattacns
+
+
+      SUBROUTINE amattmod(prn,nmattmod,iatmgrp,attmod)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: nmattmod, prn
+! .. Array Arguments ..
+        INTEGER, POINTER :: iatmgrp(:)
+        CHARACTER (*), POINTER :: attmod(:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        CALL alloc_array(iatmgrp,1,nmattmod,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amattmod', &
+          str1='iatmgrp',int1=istat)
+
+        CALL alloc_array(attmod,1,nmattmod,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amattmod', &
+          str1='attmod',int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'amattmod')
+
+        RETURN
+      END SUBROUTINE amattmod
+
+
+      SUBROUTINE amaxacns(prn,nmaxacns,nitcsr,itacsr,iatt,ipacsr)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: nitcsr, nmaxacns, prn
+! .. Array Arguments ..
+        INTEGER, POINTER :: iatt(:), ipacsr(:), itacsr(:,:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        CALL alloc_array(itacsr,1,nitcsr,1,nmaxacns,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxacns', &
+          str1='itacsr',int1=istat)
+
+        CALL alloc_array(iatt,1,nmaxacns,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxacns',str1='iatt', &
+          int1=istat)
+
+        CALL alloc_array(ipacsr,1,nmaxacns,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxacns', &
+          str1='ipacsr',int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'amaxacns')
+
+        RETURN
+      END SUBROUTINE amaxacns
+
+
+
+      SUBROUTINE amaxang(prn,nmaxang,iata)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: nmaxang, prn
+! .. Array Arguments ..
+        INTEGER, POINTER :: iata(:,:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        CALL alloc_array(iata,1,3,1,nmaxang,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxang',str1='iata', &
+          int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'amaxang')
+
+        RETURN
+      END SUBROUTINE amaxang
+
+
+      SUBROUTINE amaxatm(prn,maxatm,maxseq,maxbat,iresatmn,indats2n,iatc, &
+          natc,iattyp,iresatm,iatta,indats,natngh,kresatm,iatsym1,iatsym2, &
+          xmin,ymin,zmin,xn,yn,zn,bison,radii,charge,x,y,z,biso,vx,vy,vz, &
+          atmacc,x2,y2,z2,charg2,biso2,radii2,dvx,dvy,dvz,wghsym,picatm, &
+          atmnamn,atmnam,atm2nam)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: maxbat, maxseq, maxatm, prn
+! .. Array Arguments ..
+        REAL, POINTER :: atmacc(:), biso(:), biso2(:), bison(:,:), charg2(:), &
+          charge(:), dvx(:), dvy(:), dvz(:), radii(:), radii2(:), vx(:), &
+          vy(:), vz(:), wghsym(:), x(:), x2(:), xmin(:), xn(:,:), y(:), y2(:), &
+          ymin(:), yn(:,:), z(:), z2(:), zmin(:), zn(:,:)
+        INTEGER, POINTER :: iatc(:,:), iatsym1(:), iatsym2(:), iatta(:), &
+          iattyp(:), indats(:,:), indats2n(:,:,:), iresatm(:), iresatmn(:,:), &
+          kresatm(:), natc(:), natngh(:)
+        LOGICAL, POINTER :: picatm(:,:)
+        CHARACTER (*), POINTER :: atm2nam(:), atmnam(:), atmnamn(:,:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        CALL alloc_array(iresatmn,1,maxatm,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm', &
+          str1='iresatmn',int1=istat)
+
+        CALL alloc_array(indats2n,1,2,1,maxatm,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm', &
+          str1='indats2n',int1=istat)
+
+        CALL alloc_array(iatc,1,maxbat,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='iatc', &
+          int1=istat)
+
+        CALL alloc_array(natc,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='natc', &
+          int1=istat)
+
+        CALL alloc_array(iattyp,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm', &
+          str1='iattyp',int1=istat)
+
+        CALL alloc_array(iresatm,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm', &
+          str1='iresatm',int1=istat)
+
+        CALL alloc_array(iatta,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='iatta', &
+          int1=istat)
+
+        CALL alloc_array(indats,1,maxatm,1,3,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm', &
+          str1='indats',int1=istat)
+
+        CALL alloc_array(natngh,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm', &
+          str1='natngh',int1=istat)
+
+        CALL alloc_array(kresatm,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm', &
+          str1='kresatm',int1=istat)
+
+        CALL alloc_array(iatsym1,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm', &
+          str1='iatsym1',int1=istat)
+
+        CALL alloc_array(iatsym2,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm', &
+          str1='iatsym2',int1=istat)
+
+        CALL alloc_array(xmin,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='xmin', &
+          int1=istat)
+
+        CALL alloc_array(ymin,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='ymin', &
+          int1=istat)
+
+        CALL alloc_array(zmin,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='zmin', &
+          int1=istat)
+
+        CALL alloc_array(xn,1,maxatm,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='xn', &
+          int1=istat)
+
+        CALL alloc_array(yn,1,maxatm,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='yn', &
+          int1=istat)
+
+        CALL alloc_array(zn,1,maxatm,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='zn', &
+          int1=istat)
+
+        CALL alloc_array(bison,1,maxatm,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='bison', &
+          int1=istat)
+
+        CALL alloc_array(radii,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='radii', &
+          int1=istat)
+
+        CALL alloc_array(charge,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm', &
+          str1='charge',int1=istat)
+
+        CALL alloc_array(x,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='x', &
+          int1=istat)
+
+        CALL alloc_array(y,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='y', &
+          int1=istat)
+
+        CALL alloc_array(z,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='z', &
+          int1=istat)
+
+        CALL alloc_array(biso,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='biso', &
+          int1=istat)
+
+        CALL alloc_array(vx,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='vx', &
+          int1=istat)
+
+        CALL alloc_array(vy,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='vy', &
+          int1=istat)
+
+        CALL alloc_array(vz,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='vz', &
+          int1=istat)
+
+        CALL alloc_array(atmacc,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm', &
+          str1='atmacc',int1=istat)
+
+        CALL alloc_array(x2,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='x2', &
+          int1=istat)
+
+        CALL alloc_array(y2,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='y2', &
+          int1=istat)
+
+        CALL alloc_array(z2,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='z2', &
+          int1=istat)
+
+        CALL alloc_array(charg2,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm', &
+          str1='charg2',int1=istat)
+
+        CALL alloc_array(biso2,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='biso2', &
+          int1=istat)
+
+        CALL alloc_array(radii2,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm', &
+          str1='radii2',int1=istat)
+
+        CALL alloc_array(dvx,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='dvx', &
+          int1=istat)
+
+        CALL alloc_array(dvy,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='dvy', &
+          int1=istat)
+
+        CALL alloc_array(dvz,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm',str1='dvz', &
+          int1=istat)
+
+        CALL alloc_array(wghsym,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm', &
+          str1='wghsym',int1=istat)
+
+! logical
+
+        CALL alloc_array(picatm,1,maxatm,1,3,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm', &
+          str1='picatm',int1=istat)
+
+! character
+
+        CALL alloc_array(atmnamn,1,maxatm,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm', &
+          str1='atmanamn',int1=istat)
+
+        CALL alloc_array(atmnam,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm', &
+          str1='atmnam',int1=istat)
+
+        CALL alloc_array(atm2nam,1,maxatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxatm', &
+          str1='atm2nam',int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'amaxatm')
+
+        RETURN
+      END SUBROUTINE amaxatm
+
+
+
+      SUBROUTINE amaxbnd(prn,nmaxbnd,iatb)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: nmaxbnd, prn
+! .. Array Arguments ..
+        INTEGER, POINTER :: iatb(:,:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        CALL alloc_array(iatb,1,2,1,nmaxbnd,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxbond',str1='iatb', &
+          int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'amaxbnd')
+
+        RETURN
+      END SUBROUTINE amaxbnd
+
+      SUBROUTINE amaxcns(prn,nmaxcns,nitcsr,itcsr,iatm,ipcsr,indcsr)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: nitcsr, nmaxcns, prn
+! .. Array Arguments ..
+        INTEGER, POINTER :: iatm(:), indcsr(:), ipcsr(:), itcsr(:,:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        CALL alloc_array(itcsr,1,nitcsr,1,nmaxcns,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxcns',str1='itcsr', &
+          int1=istat)
+
+        CALL alloc_array(iatm,1,nmaxcns,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxcns',str1='iatm', &
+          int1=istat)
+
+        CALL alloc_array(ipcsr,1,nmaxcns,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxcns',str1='ipcsr', &
+          int1=istat)
+
+        CALL alloc_array(indcsr,1,nmaxcns,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxcns', &
+          str1='indcsr',int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'amaxcns')
+
+        RETURN
+      END SUBROUTINE amaxcns
+
+
+      SUBROUTINE amaxdih(prn,nmaxdih,iatd)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: nmaxdih, prn
+! .. Array Arguments ..
+        INTEGER, POINTER :: iatd(:,:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        CALL alloc_array(iatd,1,4,1,nmaxdih,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxdih',str1='iatd', &
+          int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'amaxdih')
+
+        RETURN
+      END SUBROUTINE amaxdih
+
+
+      SUBROUTINE amaximp(prn,nmaximp,iati)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER :: nmaximp
+        INTEGER, INTENT (IN) :: prn
+! .. Array Arguments ..
+        INTEGER, POINTER :: iati(:,:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        CALL alloc_array(iati,1,4,1,nmaximp,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaximp',str1='iati', &
+          int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'amaximp')
+
+        RETURN
+      END SUBROUTINE amaximp
+
+
+
+      SUBROUTINE amaxlic(prn,nmaxlic,iar,jar,kar,lar,b1ic,b2ic,t1ic,t2ic,pic, &
+          tar)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: nmaxlic, prn
+! .. Array Arguments ..
+        REAL, POINTER :: b1ic(:), b2ic(:), pic(:), t1ic(:), t2ic(:)
+        INTEGER, POINTER :: iar(:), jar(:), kar(:), lar(:)
+        LOGICAL, POINTER :: tar(:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        CALL alloc_array(iar,1,nmaxlic,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxlic',str1='iar', &
+          int1=istat)
+
+        CALL alloc_array(jar,1,nmaxlic,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxlic',str1='jar', &
+          int1=istat)
+
+        CALL alloc_array(kar,1,nmaxlic,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxlic',str1='kar', &
+          int1=istat)
+
+        CALL alloc_array(lar,1,nmaxlic,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxlic',str1='lar', &
+          int1=istat)
+
+        CALL alloc_array(b1ic,1,nmaxlic,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxlic',str1='b1ic', &
+          int1=istat)
+
+        CALL alloc_array(b2ic,1,nmaxlic,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxlic',str1='b2ic', &
+          int1=istat)
+
+        CALL alloc_array(t1ic,1,nmaxlic,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxlic',str1='t1ic', &
+          int1=istat)
+
+        CALL alloc_array(t2ic,1,nmaxlic,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxlic',str1='t2ic', &
+          int1=istat)
+
+        CALL alloc_array(pic,1,nmaxlic,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxlic',str1='pic', &
+          int1=istat)
+
+        CALL alloc_array(tar,1,nmaxlic,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxlic',str1='tar', &
+          int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'amaxlic')
+
+        RETURN
+      END SUBROUTINE amaxlic
+
+
+      SUBROUTINE amaxres(prn,maxres,maxseq,mdihtyp,nprof,maxngh,ialn2, &
+          irestypn2,invaln2,ialn,irestypn,invaln,iatmr1n,idih,idihc,isstruc, &
+          neigh,ineigh,imnchw,idsta1,idsta2,iatmr1,irestyp,idihres,katmr1, &
+          krestyp,alnacc,prof,gapdst,dih,acc,curvn,picres,caln2,ccaln2,caln, &
+          ccaln,resnumn,resnamn,chainn,resseg,resnam,resnum,chain,res2nam, &
+          res2num,chain2)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: maxngh, maxseq, mdihtyp, maxres, nprof, prn
+! .. Array Arguments ..
+        REAL, POINTER :: acc(:,:), alnacc(:), curvn(:,:), dih(:,:,:), &
+          gapdst(:,:), prof(:,:)
+        INTEGER, POINTER :: ialn(:,:), ialn2(:,:), iatmr1(:), iatmr1n(:,:), &
+          idih(:,:,:), idihc(:,:,:), idihres(:,:,:), idsta1(:,:), idsta2(:,:), &
+          imnchw(:,:), ineigh(:,:,:), invaln(:,:), invaln2(:,:), irestyp(:), &
+          irestypn(:,:), irestypn2(:,:), isstruc(:,:), katmr1(:), krestyp(:), &
+          neigh(:,:)
+        LOGICAL, POINTER :: picres(:,:)
+        CHARACTER (*), POINTER :: caln(:,:), caln2(:,:), ccaln(:,:), &
+          ccaln2(:,:), chain(:), chain2(:), chainn(:,:), res2nam(:), &
+          res2num(:), resnam(:), resnamn(:,:), resnum(:), resnumn(:,:), &
+          resseg(:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        CALL alloc_array(ialn2,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres',str1='ialn2', &
+          int1=istat)
+
+        CALL alloc_array(irestypn2,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='irestypn2',int1=istat)
+
+        CALL alloc_array(invaln2,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='invaln2',int1=istat)
+
+        CALL alloc_array(ialn,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres',str1='ialn', &
+          int1=istat)
+
+        CALL alloc_array(irestypn,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='irestypn',int1=istat)
+
+        CALL alloc_array(invaln,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='invaln',int1=istat)
+
+        CALL alloc_array(iatmr1n,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='iatmr1n',int1=istat)
+
+        CALL alloc_array(idih,1,maxres,1,mdihtyp,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres',str1='idih', &
+          int1=istat)
+
+        CALL alloc_array(idihc,1,maxres,1,mdihtyp,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres',str1='idihc', &
+          int1=istat)
+
+        CALL alloc_array(isstruc,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='isstruc',int1=istat)
+
+        CALL alloc_array(neigh,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres',str1='neigh', &
+          int1=istat)
+
+        CALL alloc_array(ineigh,1,maxngh,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='ineigh',int1=istat)
+
+        CALL alloc_array(imnchw,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='imnchw',int1=istat)
+
+        CALL alloc_array(idsta1,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='idsta1',int1=istat)
+
+        CALL alloc_array(idsta2,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='idsta2',int1=istat)
+
+        CALL alloc_array(iatmr1,1,maxres,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='iatmr1',int1=istat)
+
+        CALL alloc_array(irestyp,1,maxres,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='irestyp',int1=istat)
+
+        CALL alloc_array(idihres,1,4,1,mdihtyp,1,maxres,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='idihres',int1=istat)
+
+        CALL alloc_array(katmr1,1,maxres,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='katmr1',int1=istat)
+
+        CALL alloc_array(krestyp,1,maxres,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='krestyp',int1=istat)
+
+! real
+
+        CALL alloc_array(prof,1,maxres,1,nprof,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres',str1='prof', &
+          int1=istat)
+
+        CALL alloc_array(gapdst,0,maxres+1,0,maxres+1,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='gapdst',int1=istat)
+
+        CALL alloc_array(dih,1,maxres,1,mdihtyp,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres',str1='dih', &
+          int1=istat)
+
+        CALL alloc_array(acc,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres',str1='acc', &
+          int1=istat)
+
+        CALL alloc_array(curvn,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres',str1='curvn', &
+          int1=istat)
+
+        CALL alloc_array(alnacc,1,maxres,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='alnacc',int1=istat)
+
+! logical
+
+        CALL alloc_array(picres,1,maxres,1,3,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='picres',int1=istat)
+
+! character
+        CALL alloc_array(caln2,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres',str1='caln2', &
+          int1=istat)
+
+        CALL alloc_array(ccaln2,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='ccaln2',int1=istat)
+
+        if (associated(caln)) then
+          m = ubound(caln,1)
+        else
+          m = 0
+        end if
+        CALL alloc_array(caln,1,maxres,1,maxseq,.TRUE.,istat)
+! ----- this is a fix:
+        IF (maxres > m) caln(m+1:maxres,1:maxseq) = '-'
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres',str1='caln', &
+          int1=istat)
+
+        CALL alloc_array(ccaln,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres',str1='ccaln', &
+          int1=istat)
+
+        CALL alloc_array(resnumn,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='resnumn',int1=istat)
+
+        CALL alloc_array(resnamn,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='resnamn',int1=istat)
+
+        CALL alloc_array(chainn,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='chainn',int1=istat)
+
+        CALL alloc_array(resseg,1,maxres,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='resseg',int1=istat)
+
+        CALL alloc_array(resnam,1,maxres,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='resnam',int1=istat)
+
+        CALL alloc_array(resnum,1,maxres,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='resnum',int1=istat)
+
+        CALL alloc_array(chain,1,maxres,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres',str1='chain', &
+          int1=istat)
+
+        CALL alloc_array(res2nam,1,maxres,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='res2nam',int1=istat)
+
+        CALL alloc_array(res2num,1,maxres,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='res2num',int1=istat)
+
+        CALL alloc_array(chain2,1,maxres,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxres', &
+          str1='chain2',int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'amaxres')
+
+        RETURN
+      END SUBROUTINE amaxres
+
+
+
+      SUBROUTINE amaxseq(prn,maxseq,maxres,maxatm,maxseg,mdihtyp,mfeatcorr, &
+          mrngcorr,maxngh,nmemtyp,ialn2,nresn2,irestypn2,invaln2,nsegmn2, &
+          iress1n2,iress2n2,ialn,nresn,irestypn,invaln,nsegmn,iress1n,iress2n, &
+          iresatmn,natmn,iatmr1n,idih,idihc,iglbsim,isstruc,neigh,ineigh, &
+          iresol,indats2n,imnchw,iacont,idsta1,idsta2,resol2,rfactr2,var,pdf, &
+          resol,rfactr,fractglsim,xn,yn,zn,dih,acc,bison,curvn,codein2,codein, &
+          accepts,caln2,ccaln2,alnchn2,prottyp2,source2,range2,name2,segidn2, &
+          caln,ccaln,alnchn,prottyp,source,range,name,segidn,atmfull,atmnamn, &
+          resnumn,resnamn,chainn,memrange,memalnchn,mematmfull,mvsprm)
+! .. Use Statements ..
+!        USE getdata_routines
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: maxatm, maxngh, maxres, maxseg, mdihtyp, &
+          mfeatcorr, mrngcorr, mvsprm, maxseq, nmemtyp, prn
+! .. Array Arguments ..
+        REAL, POINTER :: acc(:,:), bison(:,:), curvn(:,:), dih(:,:,:), &
+          fractglsim(:,:), pdf(:,:), resol(:), resol2(:), rfactr(:), &
+          rfactr2(:), var(:,:), xn(:,:), yn(:,:), zn(:,:)
+        INTEGER, POINTER :: iacont(:), ialn(:,:), ialn2(:,:), iatmr1n(:,:), &
+          idih(:,:,:), idihc(:,:,:), idsta1(:,:), idsta2(:,:), iglbsim(:,:), &
+          imnchw(:,:), indats2n(:,:,:), ineigh(:,:,:), invaln(:,:), &
+          invaln2(:,:), iresatmn(:,:), iresol(:), iress1n(:,:), iress1n2(:,:), &
+          iress2n(:,:), iress2n2(:,:), irestypn(:,:), irestypn2(:,:), &
+          isstruc(:,:), natmn(:), neigh(:,:), nresn(:), nresn2(:), nsegmn(:), &
+          nsegmn2(:)
+        LOGICAL, POINTER :: accepts(:), codein(:), codein2(:)
+        CHARACTER (*), POINTER :: alnchn(:,:), alnchn2(:,:), atmfull(:), &
+          atmnamn(:,:), caln(:,:), caln2(:,:), ccaln(:,:), ccaln2(:,:), &
+          chainn(:,:), memalnchn(:,:,:), mematmfull(:,:), memrange(:,:,:), &
+          name(:), name2(:), prottyp(:), prottyp2(:), range(:,:), range2(:,:), &
+          resnamn(:,:), resnumn(:,:), segidn(:,:), segidn2(:,:), source(:), &
+          source2(:)
+! .. Local Scalars ..
+        INTEGER :: istat, m, omaxseq
+! .. Intrinsic Functions ..
+        INTRINSIC ubound
+
+! ----- the current number of sequences:
+        if (associated(memrange)) then
+          omaxseq = ubound(memrange,3)
+        else
+          omaxseq = 0
+        end if
+
+        IF (maxseq>mvsprm) CALL wrtmsg(msg_index=223,routine='amaxseq', &
+          int1=maxseq,int2=mvsprm,str1='MVSPRM')
+
+        CALL alloc_array(ialn2,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='ialn2', &
+          int1=istat)
+
+        CALL alloc_array(irestypn2,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='irestypn2',int1=istat)
+
+        CALL alloc_array(invaln2,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='invaln2',int1=istat)
+
+        CALL alloc_array(nresn2,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='nresn2',int1=istat)
+
+        CALL alloc_array(nsegmn2,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='nsegmn2',int1=istat)
+
+        CALL alloc_array(iress1n2,1,maxseg,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='iress1n2',int1=istat)
+
+        CALL alloc_array(iress2n2,1,maxseg,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='iress2n2',int1=istat)
+
+        CALL alloc_array(ialn,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='ialn', &
+          int1=istat)
+
+        CALL alloc_array(nresn,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='nresn', &
+          int1=istat)
+
+        CALL alloc_array(nsegmn,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='nsegmn',int1=istat)
+
+        CALL alloc_array(iress1n,1,maxseg,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='iress1n',int1=istat)
+
+        CALL alloc_array(iress2n,1,maxseg,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='iress2n',int1=istat)
+
+        CALL alloc_array(iresatmn,1,maxatm,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='iresatmn',int1=istat)
+
+        CALL alloc_array(natmn,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='natmn', &
+          int1=istat)
+
+        CALL alloc_array(irestypn,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='irestypn',int1=istat)
+
+        CALL alloc_array(invaln,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='invaln',int1=istat)
+
+        CALL alloc_array(iatmr1n,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='iatmr1n',int1=istat)
+
+        CALL alloc_array(idih,1,maxres,1,mdihtyp,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='idih', &
+          int1=istat)
+
+        CALL alloc_array(idihc,1,maxres,1,mdihtyp,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='idihc', &
+          int1=istat)
+
+        CALL alloc_array(iglbsim,1,maxseq,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='iglbsim',int1=istat)
+
+        CALL alloc_array(isstruc,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='isstruc',int1=istat)
+
+        CALL alloc_array(neigh,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='neigh', &
+          int1=istat)
+
+        CALL alloc_array(ineigh,1,maxngh,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='ineigh',int1=istat)
+
+        CALL alloc_array(iresol,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='iresol',int1=istat)
+
+        CALL alloc_array(indats2n,1,2,1,maxatm,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='indats2n',int1=istat)
+
+        CALL alloc_array(iacont,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='iacont',int1=istat)
+
+        CALL alloc_array(imnchw,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='imnchw',int1=istat)
+
+        CALL alloc_array(idsta1,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='idsta1',int1=istat)
+
+        CALL alloc_array(idsta2,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='idsta2',int1=istat)
+
+        CALL alloc_array(resol2,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='resol2',int1=istat)
+
+        CALL alloc_array(rfactr2,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='rfactr2',int1=istat)
+
+        CALL alloc_array(var,1,maxseq,1,mfeatcorr,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='var', &
+          int1=istat)
+
+! ----- NAG -gc crashes here on the second pass (topappl1):
+        CALL alloc_array(pdf,1,maxseq,1,mrngcorr,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='pdf', &
+          int1=istat)
+
+        CALL alloc_array(resol,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='resol', &
+          int1=istat)
+
+        CALL alloc_array(rfactr,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='rfactr',int1=istat)
+
+        CALL alloc_array(fractglsim,1,maxseq,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='fractglsim',int1=istat)
+
+        CALL alloc_array(xn,1,maxatm,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='xn', &
+          int1=istat)
+
+        CALL alloc_array(yn,1,maxatm,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='yn', &
+          int1=istat)
+
+        CALL alloc_array(zn,1,maxatm,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='zn', &
+          int1=istat)
+
+        CALL alloc_array(bison,1,maxatm,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='bison', &
+          int1=istat)
+
+        CALL alloc_array(dih,1,maxres,1,mdihtyp,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='dih', &
+          int1=istat)
+
+        CALL alloc_array(acc,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='acc', &
+          int1=istat)
+
+        CALL alloc_array(curvn,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='curvn', &
+          int1=istat)
+
+
+! character
+
+        CALL alloc_array(caln2,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='caln2', &
+          int1=istat)
+
+        CALL alloc_array(ccaln2,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='ccaln2',int1=istat)
+
+        CALL alloc_array(alnchn2,1,2,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='alnchn2',int1=istat)
+
+        CALL alloc_array(prottyp2,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='prottyp2',int1=istat)
+
+        CALL alloc_array(source2,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='source2',int1=istat)
+
+        CALL alloc_array(range2,1,2,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='range2',int1=istat)
+
+        CALL alloc_array(name2,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='name2', &
+          int1=istat)
+
+        CALL alloc_array(segidn2,1,maxseg,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='segidn2',int1=istat)
+
+        CALL alloc_array(caln,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='caln', &
+          int1=istat)
+
+        CALL alloc_array(ccaln,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='ccaln', &
+          int1=istat)
+
+        CALL alloc_array(alnchn,1,2,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='alnchn',int1=istat)
+
+        CALL alloc_array(prottyp,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='prottyp',int1=istat)
+
+        CALL alloc_array(source,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='source',int1=istat)
+
+        CALL alloc_array(range,1,2,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='range', &
+          int1=istat)
+
+        CALL alloc_array(name,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq',str1='name', &
+          int1=istat)
+
+        CALL alloc_array(segidn,1,maxseg,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='segidn',int1=istat)
+
+        CALL alloc_array(atmfull,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='atmfull',int1=istat)
+
+        CALL alloc_array(atmnamn,1,maxatm,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='atmnamn',int1=istat)
+
+        CALL alloc_array(resnumn,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='resnumn',int1=istat)
+
+        CALL alloc_array(resnamn,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='resnamn',int1=istat)
+
+        CALL alloc_array(chainn,1,maxres,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='chainn',int1=istat)
+
+        CALL alloc_array(memrange,1,2,1,nmemtyp,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='memrange',int1=istat)
+
+        CALL alloc_array(memalnchn,1,2,1,nmemtyp,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='memalnchn',int1=istat)
+
+        CALL alloc_array(mematmfull,1,nmemtyp,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='mematmfull',int1=istat)
+
+! logical
+
+        CALL alloc_array(codein,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='codein',int1=istat)
+
+        CALL alloc_array(codein2,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='codein2',int1=istat)
+
+        CALL alloc_array(accepts,1,maxseq,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxseq', &
+          str1='accepts',int1=istat)
+
+        IF (maxseq>omaxseq) THEN
+          memrange(1:2,1:nmemtyp,omaxseq+1:maxseq) = '12@'
+          memalnchn(1:2,1:nmemtyp,omaxseq+1:maxseq) = '#'
+          mematmfull(1:nmemtyp,omaxseq+1:maxseq) = '56@'
+
+!          DO i = 1, nmemtyp
+!            DO j = omaxseq + 1, maxseq
+!              write(*,*) 'XX 1: ', i, j, maxseq, omaxseq
+!              write(*,*) 'XX 1: ', len(alnchn),len(range),len(atmfull)
+!              write(*,*) 'XX 1: ', size(alnchn),size(range),size(atmfull)
+!              write(*,*) 'XX 1: ', lbound(atmfull,1)
+!              write(*,*) 'XX 1: ', lbound(range,1)
+!              write(*,*) 'XX 1: ', lbound(range,2)
+!              write(*,*) 'XX 1: ', ubound(atmfull,1)
+!              write(*,*) 'XX 1: ', ubound(range,1)
+!              write(*,*) 'XX 1: ', ubound(range,2)
+!              write(*,*) 'XX 1: ', lbound(alnchn,1)
+!              write(*,*) 'XX 1: ', lbound(alnchn,2)
+!              write(*,*) 'XX 1: ', ubound(alnchn,1)
+!              write(*,*) 'XX 1: ', ubound(alnchn,2)
+!
+! ------------ RESOLVE: ANDREJ: NAG COMPLAINS ABOUT STRINGS (ALNCHN ...) SIZES
+!              WHEN THE SIZES OF STRING ARRAYS DEFINED EXPLICITLY IN THIS ROUTINE:
+! ------------ LOOKS LIKE A NAG BUG TO ME
+!              call tst2(alnchn,2,maxseq)
+!              CALL setmem(i,j,0,range,alnchn,atmfull)
+!            END DO
+!          END DO
+
+        END IF
+
+        IF (prn>0) m = mem_allocated(prn,'amaxseq')
+
+        RETURN
+      END SUBROUTINE amaxseq
+
+
+!      subroutine tst2(alnchn,n,m)
+!        integer, intent(in) :: n,m
+!        character(*), intent(in) :: alnchn(n,m)
+!        write(*,*) 'YY: ', len(alnchn)
+!        return
+!      end subroutine
+
+
+      SUBROUTINE amgrpatm(prn,nmgrpatm,iattmod,iarsr2,iarsr,grpatm)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: nmgrpatm, prn
+! .. Array Arguments ..
+        INTEGER, POINTER :: iarsr(:), iarsr2(:,:), iattmod(:)
+        CHARACTER (*), POINTER :: grpatm(:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        CALL alloc_array(iattmod,1,nmgrpatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amgrpatm', &
+          str1='iattmod',int1=istat)
+
+        CALL alloc_array(iarsr2,1,nmgrpatm,1,nmgrpatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amgrpatm', &
+          str1='iarsr2',int1=istat)
+
+        CALL alloc_array(iarsr,1,nmgrpatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amgrpatm', &
+          str1='iarsr',int1=istat)
+
+        CALL alloc_array(grpatm,1,nmgrpatm,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amgrpatm', &
+          str1='grpatm',int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'amgrpatm')
+
+        RETURN
+      END SUBROUTINE amgrpatm
+
+
+      SUBROUTINE ampairs(prn,nmpairs,iapairs)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: nmpairs, prn
+! .. Array Arguments ..
+        INTEGER, POINTER :: iapairs(:,:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        CALL alloc_array(iapairs,1,2,1,nmpairs,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='ampairs', &
+          str1='iapairs',int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'ampairs')
+
+        RETURN
+      END SUBROUTINE ampairs
+
+
+
+
+      SUBROUTINE amprmacns(prn,nmprmacns,pacsr)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER :: nmprmacns
+        INTEGER, INTENT (IN) :: prn
+! .. Array Arguments ..
+        REAL, POINTER :: pacsr(:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        CALL alloc_array(pacsr,1,nmprmacns,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amprmacns', &
+          str1='pacsr',int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'amprmacns')
+
+        RETURN
+      END SUBROUTINE amprmacns
+
+
+      SUBROUTINE amprmcns(prn,nmprmcns,pcsr)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER :: nmprmcns
+        INTEGER, INTENT (IN) :: prn
+! .. Array Arguments ..
+        REAL, POINTER :: pcsr(:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        CALL alloc_array(pcsr,1,nmprmcns,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amprmcns',str1='pcsr', &
+          int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'amprmcns')
+
+        RETURN
+      END SUBROUTINE amprmcns
+
+
+      SUBROUTINE anbuckets(prn,nbuckets,maxbck,ientry,jentry,nentries, &
+          mijentry)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: maxbck, nbuckets, prn
+        INTEGER, INTENT (OUT) :: mijentry
+! .. Array Arguments ..
+        INTEGER, POINTER :: ientry(:), jentry(:), nentries(:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        mijentry = nbuckets*maxbck
+
+        CALL alloc_array(ientry,1,mijentry,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='anbuckets', &
+          str1='ientry',int1=istat)
+
+        CALL alloc_array(jentry,1,mijentry,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='anbuckets', &
+          str1='jentry',int1=istat)
+
+        CALL alloc_array(nentries,1,nbuckets,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='anbuckets', &
+          str1='nentries',int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'anbuckets')
+
+        RETURN
+      END SUBROUTINE anbuckets
+
+      FUNCTION maxres2maxatm(maxres)
+        USE top_common
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: maxres2maxatm
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: maxres
+! .. Intrinsic Functions ..
+        INTRINSIC max
+
+! ----- use the topology library:
+        SELECT CASE (iprm(1,40))
+
+        CASE DEFAULT
+          CALL wrtmsg(msg_index=235,routine='maxres2maxatm',int1=iprm(1,40))
+        CASE (1)
+          maxres2maxatm = max(1,20*maxres)
+        CASE (2)
+          maxres2maxatm = max(1,16*maxres)
+        CASE (3)
+          maxres2maxatm = max(1,12*maxres)
+        CASE (4)
+          maxres2maxatm = max(1,5*maxres) + 50
+        CASE (5,8)
+          maxres2maxatm = max(1,4*maxres) + 200
+        CASE (6)
+          maxres2maxatm = max(1,3*maxres) + 50
+        CASE (7)
+          maxres2maxatm = max(1,maxres) + 50
+        CASE (9)
+          maxres2maxatm = max(1,3*maxres) + 100
+        END SELECT
+
+        RETURN
+      END FUNCTION maxres2maxatm
+
+
+      FUNCTION maxres2maximp(maxres)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: maxres2maximp
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: maxres
+! .. Intrinsic Functions ..
+        INTRINSIC max
+
+        maxres2maximp = max(1,5*maxres)
+        RETURN
+      END FUNCTION maxres2maximp
+
+
+      FUNCTION natm2mpairs(natm,contact_shell)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: natm2mpairs
+! .. Scalar Arguments ..
+        REAL, INTENT (IN) :: contact_shell
+        INTEGER, INTENT (IN) :: natm
+! .. Local Scalars ..
+        REAL :: cut0 = 1.5
+! .. Intrinsic Functions ..
+        INTRINSIC int, max, min
+
+        natm2mpairs = max(1,min(int(2*(contact_shell/cut0)**3),natm)*natm/2)
+
+        RETURN
+      END FUNCTION natm2mpairs
+
+
+      FUNCTION mattmod2mgrpatm(mattmod)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: mattmod2mgrpatm
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: mattmod
+! .. Intrinsic Functions ..
+        INTRINSIC max
+
+        mattmod2mgrpatm = max(1,mattmod)
+        RETURN
+      END FUNCTION mattmod2mgrpatm
+
+
+      FUNCTION mattmod2maxacns(mattmod)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: mattmod2maxacns
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: mattmod
+! .. Intrinsic Functions ..
+        INTRINSIC max
+
+        mattmod2maxacns = max(1,mattmod*(mattmod+1)/2)
+        RETURN
+      END FUNCTION mattmod2maxacns
+
+
+      FUNCTION maxatm2nbuckets(maxatm,naconts)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: maxatm2nbuckets
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: maxatm, naconts
+! .. Intrinsic Functions ..
+        INTRINSIC max
+
+        maxatm2nbuckets = max(1,2*naconts*maxatm)
+        RETURN
+      END FUNCTION maxatm2nbuckets
+
+
+      FUNCTION maxatm2maxbnd(maxatm)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: maxatm2maxbnd
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: maxatm
+! .. Intrinsic Functions ..
+        INTRINSIC max
+
+        maxatm2maxbnd = max(1,maxatm)
+        RETURN
+      END FUNCTION maxatm2maxbnd
+
+
+      FUNCTION maxatm2maxang(maxatm)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: maxatm2maxang
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: maxatm
+! .. Intrinsic Functions ..
+        INTRINSIC max
+
+        maxatm2maxang = max(1,2*maxatm)
+        RETURN
+      END FUNCTION maxatm2maxang
+
+
+      FUNCTION maxatm2maxdih(maxatm)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: maxatm2maxdih
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: maxatm
+! .. Intrinsic Functions ..
+        INTRINSIC max
+
+        maxatm2maxdih = max(1,3*maxatm)
+        RETURN
+      END FUNCTION maxatm2maxdih
+
+
+      FUNCTION maxatm2maxcns(maxatm)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: maxatm2maxcns
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: maxatm
+! .. Intrinsic Functions ..
+        INTRINSIC max
+
+        maxatm2maxcns = max(1,15*maxatm)
+
+        RETURN
+      END FUNCTION maxatm2maxcns
+
+
+      FUNCTION maxatm2maxlic(maxatm)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: maxatm2maxlic
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: maxatm
+! .. Intrinsic Functions ..
+        INTRINSIC max
+
+        maxatm2maxlic = max(1,4*maxatm)
+        RETURN
+      END FUNCTION maxatm2maxlic
+
+
+
+      FUNCTION maxcns2mprmcns(maxcns)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: maxcns2mprmcns
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: maxcns
+! .. Intrinsic Functions ..
+        INTRINSIC max
+
+        maxcns2mprmcns = max(1,20*maxcns)
+
+        RETURN
+      END FUNCTION maxcns2mprmcns
+
+
+      FUNCTION maxcns2matmcns(maxcns)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: maxcns2matmcns
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: maxcns
+! .. Intrinsic Functions ..
+        INTRINSIC max
+
+        maxcns2matmcns = max(1,3*maxcns)
+        RETURN
+      END FUNCTION maxcns2matmcns
+
+
+      SUBROUTINE amaxchn(prn,maxchn,iseqdb,nseqdb,codep)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: maxchn, prn
+! .. Array Arguments ..
+        INTEGER, POINTER :: iseqdb(:), nseqdb(:)
+        CHARACTER (*), POINTER :: codep(:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        CALL alloc_array(iseqdb,1,maxchn,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxchn', &
+          str1='iseqdb',int1=istat)
+
+        CALL alloc_array(nseqdb,1,maxchn,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxchn', &
+          str1='nseqdb',int1=istat)
+
+        CALL alloc_array(codep,1,maxchn,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amaxchn', &
+          str1='codep',int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'amaxchn')
+
+        RETURN
+      END SUBROUTINE amaxchn
+
+
+      SUBROUTINE amresdb(prn,mresdb,seqdb)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: mresdb, prn
+! .. Array Arguments ..
+        CHARACTER (*), POINTER :: seqdb(:,:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        CALL alloc_array(seqdb,1,mresdb,1,1,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='amresdb', &
+          str1='seqdb',int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'amresdb')
+
+        RETURN
+      END SUBROUTINE amresdb
+
+
+      SUBROUTINE update_mresdb(prn,new_mresdb)
+! .. Use Statements ..
+        USE mod_common
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: new_mresdb, prn
+
+        mresdb = max(sum(nseqdb(1:nchn))+maxrchn, new_mresdb)
+
+        CALL amresdb(prn,mresdb,seqdb)
+
+        RETURN
+      END SUBROUTINE update_mresdb
+
+
+      SUBROUTINE update_maxchn(prn,new_maxchn)
+! .. Use Statements ..
+        USE mod_common
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: new_maxchn, prn
+
+        maxchn = max(nchn, new_maxchn)
+
+        CALL amaxchn(prn,maxchn,iseqdb,nseqdb,codep)
+
+        RETURN
+      END SUBROUTINE update_maxchn
+
+
+      SUBROUTINE update_npdbfil(prn,npdbfil,pdbfil,pdblst)
+! .. Use Statements ..
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: npdbfil, prn
+! .. Array Arguments ..
+        CHARACTER (*), POINTER :: pdbfil(:), pdblst(:)
+! .. Local Scalars ..
+        INTEGER :: istat, m
+
+        CALL alloc_array(pdbfil,1,npdbfil,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='anpdbfil', &
+          str1='pdbfil',int1=istat)
+
+        CALL alloc_array(pdblst,1,npdbfil,.TRUE.,istat)
+        IF (istat>0) CALL wrtmsg(msg_index=215,routine='anpdbfil', &
+          str1='pdblst',int1=istat)
+
+        IF (prn>0) m = mem_allocated(prn,'anpdbfil')
+
+        RETURN
+      END SUBROUTINE update_npdbfil
+
+
+
+      SUBROUTINE update_maxcns(prn,new_maxcns)
+! .. Use Statements ..
+        USE mod_common
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: new_maxcns, prn
+! .. Intrinsic Functions ..
+        INTRINSIC max
+
+! ----- have to allow for the existing restraints and model size:
+        maxcns = max(1,ncsr+10,maxatm2maxcns(maxatm),new_maxcns)
+        CALL amaxcns(0,maxcns,nitcsr,itcsr,iatm,ipcsr,indcsr)
+
+        matmcns = maxcns2matmcns(maxcns)
+        CALL amatmcns(0,matmcns,indatm)
+
+        mprmcns = maxcns2mprmcns(maxcns)
+        CALL amprmcns(prn,mprmcns,pcsr)
+
+        RETURN
+      END SUBROUTINE update_maxcns
+
+
+
+      SUBROUTINE update_maxres_maxatm(prn,new_maxres,new_maxatm,maxres_expand)
+! .. Use Statements ..
+        USE top_common
+        USE mod_common
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: new_maxatm, new_maxres, prn
+        REAL, INTENT (IN) :: maxres_expand
+! .. Local Scalars ..
+        INTEGER :: m, maxatm_new, maxres_new
+! .. Intrinsic Functions ..
+        INTRINSIC max
+
+! ----- make sure you keep existing alignment, MODEL, MODEL2:
+        maxres_new = max(1,new_maxres, &
+          nint(maxres_expand*max(naln,naln2,nres,nres2)) + maxseg)
+
+        IF (maxres_new /= maxres) THEN 
+        maxres = maxres_new
+
+        CALL amaxres(0,maxres,maxseq,mdihtyp,nprof,maxngh,ialn2,irestypn2, &
+          invaln2,ialn,irestypn,invaln,iatmr1n,idih,idihc,isstruc,neigh, &
+          ineigh,imnchw,idsta1,idsta2,iatmr1,irestyp,idihres,katmr1,krestyp, &
+          alnacc,prof,gapdst,dih,acc,curvn,picres,caln2,ccaln2,caln,ccaln, &
+          resnumn,resnamn,chainn,resseg,resnam,resnum,chain,res2nam,res2num, &
+          chain2)
+
+        maximp = maxres2maximp(maxres)
+        CALL amaximp(0,maximp,iati)
+
+        END IF
+
+! ----- for estimating the number of atoms, maxres does not have to take into 
+!       account the ALIGNMENT overheads:
+        m = max(1,new_maxres,maxres,max(nres,nres2,naln,naln2))
+! ----- should MAXPSD be NPSEUDO?
+        maxatm_new = max(1,new_maxatm,maxatm,max(natm,natm2)+maxpsd,maxres2maxatm(m))
+
+        IF (maxatm_new /= maxatm) THEN
+        maxatm = maxatm_new
+
+        CALL amaxatm(0,maxatm,maxseq,maxbat,iresatmn,indats2n,iatc,natc, &
+          iattyp,iresatm,iatta,indats,natngh,kresatm,iatsym1,iatsym2,xmin, &
+          ymin,zmin,xn,yn,zn,bison,radii,charge,x,y,z,biso,vx,vy,vz,atmacc,x2, &
+          y2,z2,charg2,biso2,radii2,dvx,dvy,dvz,wghsym,picatm,atmnamn,atmnam, &
+          atm2nam)
+
+        CALL update_mpairs(0,0)
+
+        nbuckets = maxatm2nbuckets(maxatm,naconts)
+        CALL anbuckets(0,nbuckets,maxbck,ientry,jentry,nentries,mijentry)
+
+        maxdih = maxatm2maxdih(maxatm)
+        CALL amaxdih(0,maxdih,iatd)
+
+        maxlic = maxatm2maxlic(maxatm)
+        CALL amaxlic(0,maxlic,iar,jar,kar,lar,b1ic,b2ic,t1ic,t2ic,pic,tar)
+
+        maxang = maxatm2maxang(maxatm)
+        CALL amaxang(0,maxang,iata)
+
+        maxbnd = maxatm2maxbnd(maxatm)
+        CALL amaxbnd(prn,maxbnd,iatb)
+        
+        END IF
+
+        RETURN
+      END SUBROUTINE update_maxres_maxatm
+
+
+
+      SUBROUTINE update_maxseq(prn,new_maxseq)
+! .. Use Statements ..
+        USE top_common
+        USE mod_common
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: new_maxseq, prn
+        INTEGER :: maxseq_new
+! .. Intrinsic Functions ..
+        INTRINSIC max
+
+! ----- NUMB_OF_SEQUENCES, ALIGN_CODES, ATOM_FILES, NUMB_OF_SEQUENCES2, 
+!       add 2 for reserve (SUPERPOSE, framework, ...):
+
+        maxseq_new = max(2,max(iprm(1,49),nvsprm(36),nvsprm(37),iprm(1,77),nvsprm(60), &
+                               nvsprm(78))+2,new_maxseq)
+
+! ----- be efficient here since this routine is called for each TOP command, (re)allocate
+!       only when a change is necessary:
+        if (maxseq_new /= maxseq) then
+        
+        maxseq = maxseq_new
+        CALL amaxseq(prn,maxseq,maxres,maxatm,maxseg,mdihtyp,mfeatcorr, &
+          mrngcorr,maxngh,nmemtyp,ialn2,nresn2,irestypn2,invaln2,nsegmn2, &
+          iress1n2,iress2n2,ialn,nresn,irestypn,invaln,nsegmn,iress1n,iress2n, &
+          iresatmn,natmn,iatmr1n,idih,idihc,iglbsim,isstruc,neigh,ineigh, &
+          iresol,indats2n,imnchw,iacont,idsta1,idsta2,resol2,rfactr2,var,pdf, &
+          resol,rfactr,fractglsim,xn,yn,zn,dih,acc,bison,curvn,codein2,codein, &
+          accepts,caln2,ccaln2,alnchn2,prottyp2,source2,range2,name2,segidn2, &
+          caln,ccaln,alnchn,prottyp,source,range,name,segidn,atmfull,atmnamn, &
+          resnumn,resnamn,chainn,memrange,memalnchn,mematmfull,mvsprm)
+
+        end if
+
+        RETURN
+      END SUBROUTINE update_maxseq
+
+
+
+      SUBROUTINE update_mpairs(prn,new_mpairs)
+! .. Use Statements ..
+        USE top_common
+        USE mod_common
+        USE objective_function_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: new_mpairs, prn
+! .. Local Scalars ..
+        INTEGER :: mpairs_new
+! .. Intrinsic Functions ..
+        INTRINSIC max
+
+        mpairs_new = max(1,new_mpairs,natm2mpairs(natm,shell(rprm(1,62),2., &
+          rprm(2,48),rprm(2,49),statpotmax,lprm(1,35),lprm(1,36),lprm(1,37), &
+          lprm(1,69))))
+
+        IF (mpairs_new /= mpairs) THEN
+          mpairs = mpairs_new 
+          CALL ampairs(prn,mpairs,iapairs)
+        END IF
+
+        RETURN
+      END SUBROUTINE update_mpairs
+
+
+
+      SUBROUTINE update_maxacns(prn,new_maxacns,new_mprmacns,new_mattacns)
+! .. Use Statements ..
+        USE mod_common
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: new_mattacns, new_maxacns, new_mprmacns, prn
+! .. Intrinsic Functions ..
+        INTRINSIC max
+
+        maxacns = max(1,new_maxacns,nacsr+10)
+        CALL amaxacns(0,maxacns,nitcsr,itacsr,iatt,ipacsr)
+
+        mprmacns = max(new_mprmacns,nprmacns+10)
+        CALL amprmacns(0,mprmacns,pacsr)
+
+        mattacns = max(new_mattacns,nattacns+10)
+        CALL amattacns(prn,mattacns,indatt)
+
+        RETURN
+      END SUBROUTINE update_maxacns
+
+
+
+      SUBROUTINE update_mattmod_mgrpatm(prn,new_mattmod,new_mgrpatm)
+! .. Use Statements ..
+        USE mod_common
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: new_mattmod, new_mgrpatm, prn
+! .. Intrinsic Functions ..
+        INTRINSIC max
+
+        mgrpatm = max(1,new_mgrpatm,ngrpatm+10)
+        CALL amgrpatm(0,mgrpatm,iattmod,iarsr2,iarsr,grpatm)
+
+        mattmod = max(1,new_mattmod,nattmod+10)
+        CALL amattmod(prn,mattmod,iatmgrp,attmod)
+
+        RETURN
+      END SUBROUTINE update_mattmod_mgrpatm
+
+
+
+      SUBROUTINE dealloc
+! .. Use Statements ..
+        USE mod_common
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Intrinsic Functions ..
+        INTRINSIC associated
+
+        IF (associated(iseqdb)) DEALLOCATE (iseqdb)
+        IF (associated(nseqdb)) DEALLOCATE (nseqdb)
+        IF (associated(seqdb)) DEALLOCATE (seqdb)
+        IF (associated(codep)) DEALLOCATE (codep)
+        IF (associated(ialn2)) DEALLOCATE (ialn2)
+        IF (associated(nresn2)) DEALLOCATE (nresn2)
+        IF (associated(irestypn2)) DEALLOCATE (irestypn2)
+        IF (associated(invaln2)) DEALLOCATE (invaln2)
+        IF (associated(nsegmn2)) DEALLOCATE (nsegmn2)
+        IF (associated(iress1n2)) DEALLOCATE (iress1n2)
+        IF (associated(iress2n2)) DEALLOCATE (iress2n2)
+        IF (associated(resol2)) DEALLOCATE (resol2)
+        IF (associated(rfactr2)) DEALLOCATE (rfactr2)
+        IF (associated(caln2)) DEALLOCATE (caln2)
+        IF (associated(ccaln2)) DEALLOCATE (ccaln2)
+        IF (associated(alnchn2)) DEALLOCATE (alnchn2)
+        IF (associated(prottyp2)) DEALLOCATE (prottyp2)
+        IF (associated(source2)) DEALLOCATE (source2)
+        IF (associated(range2)) DEALLOCATE (range2)
+        IF (associated(name2)) DEALLOCATE (name2)
+        IF (associated(segidn2)) DEALLOCATE (segidn2)
+        IF (associated(codein2)) DEALLOCATE (codein2)
+        IF (associated(iattmod)) DEALLOCATE (iattmod)
+        IF (associated(iatmgrp)) DEALLOCATE (iatmgrp)
+        IF (associated(grpatm)) DEALLOCATE (grpatm)
+        IF (associated(attmod)) DEALLOCATE (attmod)
+        IF (associated(var)) DEALLOCATE (var)
+        IF (associated(pdf)) DEALLOCATE (pdf)
+        IF (associated(ientry)) DEALLOCATE (ientry)
+        IF (associated(jentry)) DEALLOCATE (jentry)
+        IF (associated(nentries)) DEALLOCATE (nentries)
+        IF (associated(iar)) DEALLOCATE (iar)
+        IF (associated(jar)) DEALLOCATE (jar)
+        IF (associated(kar)) DEALLOCATE (kar)
+        IF (associated(lar)) DEALLOCATE (lar)
+        IF (associated(b1ic)) DEALLOCATE (b1ic)
+        IF (associated(b2ic)) DEALLOCATE (b2ic)
+        IF (associated(t1ic)) DEALLOCATE (t1ic)
+        IF (associated(t2ic)) DEALLOCATE (t2ic)
+        IF (associated(pic)) DEALLOCATE (pic)
+        IF (associated(tar)) DEALLOCATE (tar)
+        IF (associated(xmin)) DEALLOCATE (xmin)
+        IF (associated(ymin)) DEALLOCATE (ymin)
+        IF (associated(zmin)) DEALLOCATE (zmin)
+        IF (associated(ialn)) DEALLOCATE (ialn)
+        IF (associated(nresn)) DEALLOCATE (nresn)
+        IF (associated(irestypn)) DEALLOCATE (irestypn)
+        IF (associated(invaln)) DEALLOCATE (invaln)
+        IF (associated(nsegmn)) DEALLOCATE (nsegmn)
+        IF (associated(iress1n)) DEALLOCATE (iress1n)
+        IF (associated(iress2n)) DEALLOCATE (iress2n)
+        IF (associated(resol)) DEALLOCATE (resol)
+        IF (associated(rfactr)) DEALLOCATE (rfactr)
+        IF (associated(alnacc)) DEALLOCATE (alnacc)
+        IF (associated(prof)) DEALLOCATE (prof)
+        IF (associated(gapdst)) DEALLOCATE (gapdst)
+        IF (associated(caln)) DEALLOCATE (caln)
+        IF (associated(ccaln)) DEALLOCATE (ccaln)
+        IF (associated(alnchn)) DEALLOCATE (alnchn)
+        IF (associated(prottyp)) DEALLOCATE (prottyp)
+        IF (associated(source)) DEALLOCATE (source)
+        IF (associated(range)) DEALLOCATE (range)
+        IF (associated(name)) DEALLOCATE (name)
+        IF (associated(segidn)) DEALLOCATE (segidn)
+        IF (associated(codein)) DEALLOCATE (codein)
+        IF (associated(atmfull)) DEALLOCATE (atmfull)
+        IF (associated(iresatmn)) DEALLOCATE (iresatmn)
+        IF (associated(natmn)) DEALLOCATE (natmn)
+        IF (associated(iatmr1n)) DEALLOCATE (iatmr1n)
+        IF (associated(idih)) DEALLOCATE (idih)
+        IF (associated(idihc)) DEALLOCATE (idihc)
+        IF (associated(iglbsim)) DEALLOCATE (iglbsim)
+        IF (associated(isstruc)) DEALLOCATE (isstruc)
+        IF (associated(neigh)) DEALLOCATE (neigh)
+        IF (associated(ineigh)) DEALLOCATE (ineigh)
+        IF (associated(iresol)) DEALLOCATE (iresol)
+        IF (associated(indats2n)) DEALLOCATE (indats2n)
+        IF (associated(imnchw)) DEALLOCATE (imnchw)
+        IF (associated(iacont)) DEALLOCATE (iacont)
+        IF (associated(idsta1)) DEALLOCATE (idsta1)
+        IF (associated(idsta2)) DEALLOCATE (idsta2)
+        IF (associated(fractglsim)) DEALLOCATE (fractglsim)
+        IF (associated(xn)) DEALLOCATE (xn)
+        IF (associated(yn)) DEALLOCATE (yn)
+        IF (associated(zn)) DEALLOCATE (zn)
+        IF (associated(dih)) DEALLOCATE (dih)
+        IF (associated(acc)) DEALLOCATE (acc)
+        IF (associated(bison)) DEALLOCATE (bison)
+        IF (associated(curvn)) DEALLOCATE (curvn)
+        IF (associated(atmnamn)) DEALLOCATE (atmnamn)
+        IF (associated(resnumn)) DEALLOCATE (resnumn)
+        IF (associated(resnamn)) DEALLOCATE (resnamn)
+        IF (associated(chainn)) DEALLOCATE (chainn)
+        IF (associated(accepts)) DEALLOCATE (accepts)
+        IF (associated(memrange)) DEALLOCATE (memrange)
+        IF (associated(memalnchn)) DEALLOCATE (memalnchn)
+        IF (associated(mematmfull)) DEALLOCATE (mematmfull)
+        IF (associated(iatc)) DEALLOCATE (iatc)
+        IF (associated(natc)) DEALLOCATE (natc)
+        IF (associated(iata)) DEALLOCATE (iata)
+        IF (associated(iatd)) DEALLOCATE (iatd)
+        IF (associated(iatb)) DEALLOCATE (iatb)
+        IF (associated(iati)) DEALLOCATE (iati)
+        IF (associated(resseg)) DEALLOCATE (resseg)
+        IF (associated(iatmr1)) DEALLOCATE (iatmr1)
+        IF (associated(iattyp)) DEALLOCATE (iattyp)
+        IF (associated(iresatm)) DEALLOCATE (iresatm)
+        IF (associated(iatta)) DEALLOCATE (iatta)
+        IF (associated(indats)) DEALLOCATE (indats)
+        IF (associated(irestyp)) DEALLOCATE (irestyp)
+        IF (associated(idihres)) DEALLOCATE (idihres)
+        IF (associated(natngh)) DEALLOCATE (natngh)
+        IF (associated(radii)) DEALLOCATE (radii)
+        IF (associated(charge)) DEALLOCATE (charge)
+        IF (associated(x)) DEALLOCATE (x)
+        IF (associated(y)) DEALLOCATE (y)
+        IF (associated(z)) DEALLOCATE (z)
+        IF (associated(biso)) DEALLOCATE (biso)
+        IF (associated(vx)) DEALLOCATE (vx)
+        IF (associated(vy)) DEALLOCATE (vy)
+        IF (associated(vz)) DEALLOCATE (vz)
+        IF (associated(atmacc)) DEALLOCATE (atmacc)
+        IF (associated(resnam)) DEALLOCATE (resnam)
+        IF (associated(atmnam)) DEALLOCATE (atmnam)
+        IF (associated(resnum)) DEALLOCATE (resnum)
+        IF (associated(chain)) DEALLOCATE (chain)
+        IF (associated(picres)) DEALLOCATE (picres)
+        IF (associated(picatm)) DEALLOCATE (picatm)
+        IF (associated(katmr1)) DEALLOCATE (katmr1)
+        IF (associated(kresatm)) DEALLOCATE (kresatm)
+        IF (associated(krestyp)) DEALLOCATE (krestyp)
+        IF (associated(x2)) DEALLOCATE (x2)
+        IF (associated(y2)) DEALLOCATE (y2)
+        IF (associated(z2)) DEALLOCATE (z2)
+        IF (associated(charg2)) DEALLOCATE (charg2)
+        IF (associated(biso2)) DEALLOCATE (biso2)
+        IF (associated(radii2)) DEALLOCATE (radii2)
+        IF (associated(res2nam)) DEALLOCATE (res2nam)
+        IF (associated(atm2nam)) DEALLOCATE (atm2nam)
+        IF (associated(res2num)) DEALLOCATE (res2num)
+        IF (associated(chain2)) DEALLOCATE (chain2)
+        IF (associated(dvx)) DEALLOCATE (dvx)
+        IF (associated(dvy)) DEALLOCATE (dvy)
+        IF (associated(dvz)) DEALLOCATE (dvz)
+        IF (associated(pdbfil)) DEALLOCATE (pdbfil)
+        IF (associated(pdblst)) DEALLOCATE (pdblst)
+        IF (associated(indatm)) DEALLOCATE (indatm)
+        IF (associated(itcsr)) DEALLOCATE (itcsr)
+        IF (associated(iatm)) DEALLOCATE (iatm)
+        IF (associated(ipcsr)) DEALLOCATE (ipcsr)
+        IF (associated(indcsr)) DEALLOCATE (indcsr)
+        IF (associated(pcsr)) DEALLOCATE (pcsr)
+        IF (associated(itacsr)) DEALLOCATE (itacsr)
+        IF (associated(iatt)) DEALLOCATE (iatt)
+        IF (associated(ipacsr)) DEALLOCATE (ipacsr)
+        IF (associated(indatt)) DEALLOCATE (indatt)
+        IF (associated(iapairs)) DEALLOCATE (iapairs)
+        IF (associated(iarsr2)) DEALLOCATE (iarsr2)
+        IF (associated(iarsr)) DEALLOCATE (iarsr)
+        IF (associated(pacsr)) DEALLOCATE (pacsr)
+        IF (associated(iatsym1)) DEALLOCATE (iatsym1)
+        IF (associated(iatsym2)) DEALLOCATE (iatsym2)
+        IF (associated(wghsym)) DEALLOCATE (wghsym)
+        RETURN
+      END SUBROUTINE dealloc
+
+
+! --- Pointer ARRAY can be either unassociated or associated. This routi
+!     allocates memory to it so that ARRAY(I1NEW:I2NEW). The whole new a
+!     is initialized. The contents of the old array is preserved within
+!     new array if RETAIN = .T. ISTAT is non-zero if something fails.
+
+      SUBROUTINE alloc1int(array,i1new,i2new,retain,istat)
+! ----- the initializing value for the elements of the array:
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Parameters ..
+        INTEGER, PARAMETER :: init_array = 0
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: i1new, i2new
+        INTEGER, INTENT (OUT) :: istat
+        LOGICAL, INTENT (IN) :: retain
+! .. Array Arguments ..
+        INTEGER, POINTER :: array(:)
+! .. Local Scalars ..
+        INTEGER :: conserved, i1old, i2old
+        LOGICAL :: pointer_defined
+! .. Local Arrays ..
+        INTEGER, POINTER :: dummy(:)
+! .. Intrinsic Functions ..
+        INTRINSIC associated, lbound, max, min, ubound
+      include "alloc1.inc"
+
+        RETURN
+      END SUBROUTINE alloc1int
+
+
+
+      SUBROUTINE alloc2int(array,i1new,i2new,j1new,j2new,retain,istat)
+! ----- the initializing value for the elements of the array:
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Parameters ..
+        INTEGER, PARAMETER :: init_array = 0
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: i1new, i2new, j1new, j2new
+        INTEGER, INTENT (OUT) :: istat
+        LOGICAL, INTENT (IN) :: retain
+! .. Array Arguments ..
+        INTEGER, POINTER :: array(:,:)
+! .. Local Scalars ..
+        INTEGER :: conserved, i1old, i2old, j1old, j2old
+        LOGICAL :: pointer_defined
+! .. Local Arrays ..
+        INTEGER, POINTER :: dummy(:,:)
+! .. Intrinsic Functions ..
+        INTRINSIC associated, lbound, max, min, ubound
+      include "alloc2.inc"
+
+        RETURN
+      END SUBROUTINE alloc2int
+
+
+
+      SUBROUTINE alloc3int(array,i1new,i2new,j1new,j2new,k1new,k2new,retain, &
+          istat)
+! ----- the initializing value for the elements of the array:
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Parameters ..
+        INTEGER, PARAMETER :: init_array = 0
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: i1new, i2new, j1new, j2new, k1new, k2new
+        INTEGER, INTENT (OUT) :: istat
+        LOGICAL, INTENT (IN) :: retain
+! .. Array Arguments ..
+        INTEGER, POINTER :: array(:,:,:)
+! .. Local Scalars ..
+        INTEGER :: conserved, i1old, i2old, j1old, j2old, k1old, k2old
+        LOGICAL :: pointer_defined
+! .. Local Arrays ..
+        INTEGER, POINTER :: dummy(:,:,:)
+! .. Intrinsic Functions ..
+        INTRINSIC associated, lbound, max, min, ubound
+      include "alloc3.inc"
+
+        RETURN
+      END SUBROUTINE alloc3int
+
+
+      SUBROUTINE alloc1real(array,i1new,i2new,retain,istat)
+! ----- the initializing value for the elements of the array:
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Parameters ..
+        REAL, PARAMETER :: init_array = 0.
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: i1new, i2new
+        INTEGER, INTENT (OUT) :: istat
+        LOGICAL, INTENT (IN) :: retain
+! .. Array Arguments ..
+        REAL, POINTER :: array(:)
+! .. Local Scalars ..
+        INTEGER :: conserved, i1old, i2old
+        LOGICAL :: pointer_defined
+! .. Local Arrays ..
+        REAL, POINTER :: dummy(:)
+! .. Intrinsic Functions ..
+        INTRINSIC associated, lbound, max, min, ubound
+      include "alloc1.inc"
+
+        RETURN
+      END SUBROUTINE alloc1real
+
+
+
+      SUBROUTINE alloc2real(array,i1new,i2new,j1new,j2new,retain,istat)
+! ----- the initializing value for the elements of the array:
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Parameters ..
+        REAL, PARAMETER :: init_array = 0.
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: i1new, i2new, j1new, j2new
+        INTEGER, INTENT (OUT) :: istat
+        LOGICAL, INTENT (IN) :: retain
+! .. Array Arguments ..
+        REAL, POINTER :: array(:,:)
+! .. Local Scalars ..
+        INTEGER :: conserved, i1old, i2old, j1old, j2old
+        LOGICAL :: pointer_defined
+! .. Local Arrays ..
+        REAL, POINTER :: dummy(:,:)
+! .. Intrinsic Functions ..
+        INTRINSIC associated, lbound, max, min, ubound
+      include "alloc2.inc"
+
+        RETURN
+      END SUBROUTINE alloc2real
+
+
+
+      SUBROUTINE alloc3real(array,i1new,i2new,j1new,j2new,k1new,k2new,retain, &
+          istat)
+! ----- the initializing value for the elements of the array:
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Parameters ..
+        REAL, PARAMETER :: init_array = 0.
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: i1new, i2new, j1new, j2new, k1new, k2new
+        INTEGER, INTENT (OUT) :: istat
+        LOGICAL, INTENT (IN) :: retain
+! .. Array Arguments ..
+        REAL, POINTER :: array(:,:,:)
+! .. Local Scalars ..
+        INTEGER :: conserved, i1old, i2old, j1old, j2old, k1old, k2old
+        LOGICAL :: pointer_defined
+! .. Local Arrays ..
+        REAL, POINTER :: dummy(:,:,:)
+! .. Intrinsic Functions ..
+        INTRINSIC associated, lbound, max, min, ubound
+      include "alloc3.inc"
+
+        RETURN
+      END SUBROUTINE alloc3real
+
+
+
+      SUBROUTINE alloc1chr(array,i1new,i2new,retain,istat)
+! ----- the initializing value for the elements of the array:
+! .. Use Statements ..
+        USE string_constants
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Parameters ..
+        CHARACTER (*), PARAMETER :: init_array = ' '
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: i1new, i2new
+        INTEGER, INTENT (OUT) :: istat
+        LOGICAL, INTENT (IN) :: retain
+! .. Array Arguments ..
+        CHARACTER (*), POINTER :: array(:)
+! .. Local Scalars ..
+        INTEGER :: conserved, i1old, i2old
+        LOGICAL :: pointer_defined
+! .. Local Arrays ..
+! .. Intrinsic Functions ..
+        INTRINSIC associated, lbound, len, max, min, ubound
+        CHARACTER (len(array)), POINTER :: dummy(:)
+
+        include "alloc1.inc"
+
+        RETURN
+      END SUBROUTINE alloc1chr
+
+
+
+      SUBROUTINE alloc2chr(array,i1new,i2new,j1new,j2new,retain,istat)
+! --- the initializing value for the elements of the array:
+! .. Use Statements ..
+        USE string_constants
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Parameters ..
+        CHARACTER (*), PARAMETER :: init_array = ' '
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: i1new, i2new, j1new, j2new
+        INTEGER, INTENT (OUT) :: istat
+        LOGICAL, INTENT (IN) :: retain
+! .. Array Arguments ..
+        CHARACTER (*), POINTER :: array(:,:)
+! .. Local Scalars ..
+        INTEGER :: conserved, i1old, i2old, j1old, j2old
+        LOGICAL :: pointer_defined
+! .. Local Arrays ..
+! .. Intrinsic Functions ..
+        INTRINSIC associated, lbound, len, max, min, ubound
+        CHARACTER (len(array)), POINTER :: dummy(:,:)
+
+      include "alloc2.inc"
+
+        RETURN
+      END SUBROUTINE alloc2chr
+
+
+
+      SUBROUTINE alloc3chr(array,i1new,i2new,j1new,j2new,k1new,k2new,retain, &
+          istat)
+! ----- the initializing value for the elements of the array:
+! .. Use Statements ..
+        USE string_constants
+        USE io_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Parameters ..
+        CHARACTER (*), PARAMETER :: init_array = ' '
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: i1new, i2new, j1new, j2new, k1new, k2new
+        INTEGER, INTENT (OUT) :: istat
+        LOGICAL, INTENT (IN) :: retain
+! .. Array Arguments ..
+        CHARACTER (*), POINTER :: array(:,:,:)
+! .. Local Scalars ..
+        INTEGER :: conserved, i1old, i2old, j1old, j2old, k1old, k2old
+        LOGICAL :: pointer_defined
+! .. Intrinsic Functions ..
+        INTRINSIC associated, lbound, len, max, min, ubound
+        CHARACTER (len(array)), POINTER :: dummy(:,:,:)
+
+      include "alloc3.inc"
+
+        RETURN
+      END SUBROUTINE alloc3chr
+
+
+
+      SUBROUTINE alloc1log(array,i1new,i2new,retain,istat)
+! ----- the initializing value for the elements of the array:
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Parameters ..
+        LOGICAL, PARAMETER :: init_array = .FALSE.
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: i1new, i2new
+        INTEGER, INTENT (OUT) :: istat
+        LOGICAL, INTENT (IN) :: retain
+! .. Array Arguments ..
+        LOGICAL, POINTER :: array(:)
+! .. Local Scalars ..
+        INTEGER :: conserved, i1old, i2old
+        LOGICAL :: pointer_defined
+! .. Local Arrays ..
+        LOGICAL, POINTER :: dummy(:)
+! .. Intrinsic Functions ..
+        INTRINSIC associated, lbound, max, min, ubound
+      include "alloc1.inc"
+
+        RETURN
+      END SUBROUTINE alloc1log
+
+
+
+      SUBROUTINE alloc2log(array,i1new,i2new,j1new,j2new,retain,istat)
+! ----- the initializing value for the elements of the array:
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Parameters ..
+        LOGICAL, PARAMETER :: init_array = .FALSE.
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: i1new, i2new, j1new, j2new
+        INTEGER, INTENT (OUT) :: istat
+        LOGICAL, INTENT (IN) :: retain
+! .. Array Arguments ..
+        LOGICAL, POINTER :: array(:,:)
+! .. Local Scalars ..
+        INTEGER :: conserved, i1old, i2old, j1old, j2old
+        LOGICAL :: pointer_defined
+! .. Local Arrays ..
+        LOGICAL, POINTER :: dummy(:,:)
+! .. Intrinsic Functions ..
+        INTRINSIC associated, lbound, max, min, ubound
+      include "alloc2.inc"
+
+        RETURN
+      END SUBROUTINE alloc2log
+
+
+
+      SUBROUTINE alloc3log(array,i1new,i2new,j1new,j2new,k1new,k2new,retain, &
+          istat)
+! ----- the initializing value for the elements of the array:
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Parameters ..
+        LOGICAL, PARAMETER :: init_array = .FALSE.
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: i1new, i2new, j1new, j2new, k1new, k2new
+        INTEGER, INTENT (OUT) :: istat
+        LOGICAL, INTENT (IN) :: retain
+! .. Array Arguments ..
+        LOGICAL, POINTER :: array(:,:,:)
+! .. Local Scalars ..
+        INTEGER :: conserved, i1old, i2old, j1old, j2old, k1old, k2old
+        LOGICAL :: pointer_defined
+! .. Local Arrays ..
+        LOGICAL, POINTER :: dummy(:,:,:)
+! .. Intrinsic Functions ..
+        INTRINSIC associated, lbound, max, min, ubound
+      include "alloc3.inc"
+
+        RETURN
+      END SUBROUTINE alloc3log
+
+
+
+      FUNCTION mem1int(var,varname,prnt)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: mem1int
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: prnt
+        CHARACTER (*), INTENT (IN) :: varname
+! .. Array Arguments ..
+        INTEGER, INTENT (IN) :: var(:)
+! .. Local Scalars ..
+        INTEGER :: sizevar
+! .. Intrinsic Functions ..
+        INTRINSIC adjustl, kind, lbound, size, trim, ubound
+
+        sizevar = size(var)
+        mem1int = kind(var)*sizevar
+
+        IF (prnt>1) WRITE (*,'(a15,1x,a1,1x,(i4,1x,i7,1x),26x,i8,1x,i9)') &
+          trim(adjustl(varname)), 'I', lbound(var,1), ubound(var,1), sizevar, &
+          mem1int
+
+        RETURN
+      END FUNCTION mem1int
+
+
+      FUNCTION mem2int(var,varname,prnt)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: mem2int
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: prnt
+        CHARACTER (*), INTENT (IN) :: varname
+! .. Array Arguments ..
+        INTEGER, INTENT (IN) :: var(:,:)
+! .. Local Scalars ..
+        INTEGER :: sizevar
+! .. Intrinsic Functions ..
+        INTRINSIC adjustl, kind, lbound, size, trim, ubound
+
+        sizevar = size(var)
+        mem2int = kind(var)*sizevar
+
+        IF (prnt>1) WRITE (*,'(a15,1x,a1,1x,2(i4,1x,i7,1x),13x,i8,1x,i9)') &
+          trim(adjustl(varname)), 'I', lbound(var,1), ubound(var,1), &
+          lbound(var,2), ubound(var,2), sizevar, mem2int
+
+        RETURN
+      END FUNCTION mem2int
+
+
+      FUNCTION mem3int(var,varname,prnt)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: mem3int
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: prnt
+        CHARACTER (*), INTENT (IN) :: varname
+! .. Array Arguments ..
+        INTEGER, INTENT (IN) :: var(:,:,:)
+! .. Local Scalars ..
+        INTEGER :: sizevar
+! .. Intrinsic Functions ..
+        INTRINSIC adjustl, kind, lbound, size, trim, ubound
+
+        sizevar = size(var)
+        mem3int = kind(var)*sizevar
+
+        IF (prnt>1) WRITE (*,'(a15,1x,a1,1x,3(i4,1x,i7,1x),i8,1x,i9)') &
+          trim(adjustl(varname)), 'I', lbound(var,1), ubound(var,1), &
+          lbound(var,2), ubound(var,2), lbound(var,3), ubound(var,3), sizevar, &
+          mem3int
+
+        RETURN
+      END FUNCTION mem3int
+
+
+      FUNCTION mem1real(var,varname,prnt)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: mem1real
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: prnt
+        CHARACTER (*), INTENT (IN) :: varname
+! .. Array Arguments ..
+        REAL, INTENT (IN) :: var(:)
+! .. Local Scalars ..
+        INTEGER :: sizevar
+! .. Intrinsic Functions ..
+        INTRINSIC adjustl, kind, lbound, size, trim, ubound
+
+        sizevar = size(var)
+        mem1real = kind(var)*sizevar
+
+        IF (prnt>1) WRITE (*,'(a15,1x,a1,1x,(i4,1x,i7,1x),26x,i8,1x,i9)') &
+          trim(adjustl(varname)), 'R', lbound(var,1), ubound(var,1), sizevar, &
+          mem1real
+
+        RETURN
+      END FUNCTION mem1real
+
+
+      FUNCTION mem2real(var,varname,prnt)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: mem2real
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: prnt
+        CHARACTER (*), INTENT (IN) :: varname
+! .. Array Arguments ..
+        REAL, INTENT (IN) :: var(:,:)
+! .. Local Scalars ..
+        INTEGER :: sizevar
+! .. Intrinsic Functions ..
+        INTRINSIC adjustl, kind, lbound, size, trim, ubound
+
+        sizevar = size(var)
+        mem2real = kind(var)*sizevar
+
+        IF (prnt>1) WRITE (*,'(a15,1x,a1,1x,2(i4,1x,i7,1x),13x,i8,1x,i9)') &
+          trim(adjustl(varname)), 'R', lbound(var,1), ubound(var,1), &
+          lbound(var,2), ubound(var,2), sizevar, mem2real
+
+        RETURN
+      END FUNCTION mem2real
+
+
+      FUNCTION mem3real(var,varname,prnt)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: mem3real
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: prnt
+        CHARACTER (*), INTENT (IN) :: varname
+! .. Array Arguments ..
+        REAL, INTENT (IN) :: var(:,:,:)
+! .. Local Scalars ..
+        INTEGER :: sizevar
+! .. Intrinsic Functions ..
+        INTRINSIC adjustl, kind, lbound, size, trim, ubound
+
+        sizevar = size(var)
+        mem3real = kind(var)*sizevar
+
+        IF (prnt>1) WRITE (*,'(a15,1x,a1,1x,3(i4,1x,i7,1x),i8,1x,i9)') &
+          trim(adjustl(varname)), 'R', lbound(var,1), ubound(var,1), &
+          lbound(var,2), ubound(var,2), lbound(var,3), ubound(var,3), sizevar, &
+          mem3real
+
+        RETURN
+      END FUNCTION mem3real
+
+
+      FUNCTION mem1log(var,varname,prnt)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: mem1log
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: prnt
+        CHARACTER (*), INTENT (IN) :: varname
+! .. Array Arguments ..
+        LOGICAL, INTENT (IN) :: var(:)
+! .. Local Scalars ..
+        INTEGER :: sizevar
+! .. Intrinsic Functions ..
+        INTRINSIC adjustl, kind, lbound, size, trim, ubound
+
+        sizevar = size(var)
+        mem1log = kind(var)*sizevar
+
+        IF (prnt>1) WRITE (*,'(a15,1x,a1,1x,(i4,1x,i7,1x),26x,i8,1x,i9)') &
+          trim(adjustl(varname)), 'L', lbound(var,1), ubound(var,1), sizevar, &
+          mem1log
+
+        RETURN
+      END FUNCTION mem1log
+
+
+      FUNCTION mem2log(var,varname,prnt)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: mem2log
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: prnt
+        CHARACTER (*), INTENT (IN) :: varname
+! .. Array Arguments ..
+        LOGICAL, INTENT (IN) :: var(:,:)
+! .. Local Scalars ..
+        INTEGER :: sizevar
+! .. Intrinsic Functions ..
+        INTRINSIC adjustl, kind, lbound, size, trim, ubound
+
+        sizevar = size(var)
+        mem2log = kind(var)*sizevar
+
+        IF (prnt>1) WRITE (*,'(a15,1x,a1,1x,2(i4,1x,i7,1x),13x,i8,1x,i9)') &
+          trim(adjustl(varname)), 'L', lbound(var,1), ubound(var,1), &
+          lbound(var,2), ubound(var,2), sizevar, mem2log
+
+        RETURN
+      END FUNCTION mem2log
+
+
+      FUNCTION mem3log(var,varname,prnt)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: mem3log
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: prnt
+        CHARACTER (*), INTENT (IN) :: varname
+! .. Array Arguments ..
+        LOGICAL, INTENT (IN) :: var(:,:,:)
+! .. Local Scalars ..
+        INTEGER :: sizevar
+! .. Intrinsic Functions ..
+        INTRINSIC adjustl, kind, lbound, size, trim, ubound
+
+        sizevar = size(var)
+        mem3log = kind(var)*sizevar
+
+        IF (prnt>1) WRITE (*,'(a15,1x,a1,1x,3(i4,1x,i7,1x),i8,1x,i9)') &
+          trim(adjustl(varname)), 'L', lbound(var,1), ubound(var,1), &
+          lbound(var,2), ubound(var,2), lbound(var,3), ubound(var,3), sizevar, &
+          mem3log
+
+        RETURN
+      END FUNCTION mem3log
+
+
+      FUNCTION mem1chr(var,varname,prnt)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: mem1chr
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: prnt
+        CHARACTER (*), INTENT (IN) :: varname
+! .. Array Arguments ..
+        CHARACTER (*), INTENT (IN) :: var(:)
+! .. Local Scalars ..
+        INTEGER :: sizevar
+! .. Intrinsic Functions ..
+        INTRINSIC adjustl, lbound, len, size, trim, ubound
+
+        sizevar = size(var)
+        mem1chr = len(var)*sizevar
+
+        IF (prnt>1) WRITE (*,'(a15,1x,a1,1x,(i4,1x,i7,1x),26x,i8,1x,i9)') &
+          trim(adjustl(varname)), 'S', lbound(var,1), ubound(var,1), sizevar, &
+          mem1chr
+
+        RETURN
+      END FUNCTION mem1chr
+
+
+      FUNCTION mem2chr(var,varname,prnt)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: mem2chr
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: prnt
+        CHARACTER (*), INTENT (IN) :: varname
+! .. Array Arguments ..
+        CHARACTER (*), INTENT (IN) :: var(:,:)
+! .. Local Scalars ..
+        INTEGER :: sizevar
+! .. Intrinsic Functions ..
+        INTRINSIC adjustl, lbound, len, size, trim, ubound
+
+        sizevar = size(var)
+        mem2chr = len(var)*sizevar
+
+        IF (prnt>1) WRITE (*,'(a15,1x,a1,1x,2(i4,1x,i7,1x),13x,i8,1x,i9)') &
+          trim(adjustl(varname)), 'S', lbound(var,1), ubound(var,1), &
+          lbound(var,2), ubound(var,2), sizevar, mem2chr
+
+        RETURN
+      END FUNCTION mem2chr
+
+
+      FUNCTION mem3chr(var,varname,prnt)
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: mem3chr
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: prnt
+        CHARACTER (*), INTENT (IN) :: varname
+! .. Array Arguments ..
+        CHARACTER (*), INTENT (IN) :: var(:,:,:)
+! .. Local Scalars ..
+        INTEGER :: sizevar
+! .. Intrinsic Functions ..
+        INTRINSIC adjustl, kind, lbound, size, trim, ubound
+
+        sizevar = size(var)
+        mem3chr = kind(var)*sizevar
+
+        IF (prnt>1) WRITE (*,'(a15,1x,a1,1x,3(i4,1x,i7,1x),i8,1x,i9)') &
+          trim(adjustl(varname)), 'S', lbound(var,1), ubound(var,1), &
+          lbound(var,2), ubound(var,2), lbound(var,3), ubound(var,3), sizevar, &
+          mem3chr
+
+        RETURN
+      END FUNCTION mem3chr
+
+
+      FUNCTION mem_allocated(prnt,rout)
+! .. Use Statements ..
+        USE mod_common
+        USE string_routines
+! .. Implicit None Statement ..
+        IMPLICIT NONE
+! .. Function Return Value ..
+        INTEGER :: mem_allocated
+! .. Scalar Arguments ..
+        INTEGER, INTENT (IN) :: prnt
+        CHARACTER (*), INTENT (IN) :: rout
+! .. Local Scalars ..
+        INTEGER :: i, m
+! .. Intrinsic Functions ..
+        INTRINSIC adjustl, associated, trim
+
+        IF (prnt>0) THEN
+
+          m = 0
+
+          IF (prnt>1) WRITE (*,'(/2a/2a/999a1)') &
+            'Status of dynamic memory allocation in routine: ', &
+            trim(adjustl(rout)), &
+            '       Variable T   L1      U1   L2      U2   L3      U3     ', &
+            'Size     Bytes', ('-',i=1,75)
+
+          IF (associated(iseqdb)) m = m + mem(iseqdb,'iseqdb',prnt)
+          IF (associated(nseqdb)) m = m + mem(nseqdb,'nseqdb',prnt)
+          IF (associated(seqdb)) m = m + mem(seqdb,'seqdb',prnt)
+          IF (associated(codep)) m = m + mem(codep,'codep',prnt)
+          IF (associated(ialn2)) m = m + mem(ialn2,'ialn2',prnt)
+          IF (associated(nresn2)) m = m + mem(nresn2,'nresn2',prnt)
+          IF (associated(irestypn2)) m = m + mem(irestypn2,'irestypn2',prnt)
+          IF (associated(invaln2)) m = m + mem(invaln2,'invaln2',prnt)
+          IF (associated(nsegmn2)) m = m + mem(nsegmn2,'nsegmn2',prnt)
+          IF (associated(iress1n2)) m = m + mem(iress1n2,'iress1n2',prnt)
+          IF (associated(iress2n2)) m = m + mem(iress2n2,'iress2n2',prnt)
+          IF (associated(resol2)) m = m + mem(resol2,'resol2',prnt)
+          IF (associated(rfactr2)) m = m + mem(rfactr2,'rfactr2',prnt)
+          IF (associated(caln2)) m = m + mem(caln2,'caln2',prnt)
+          IF (associated(ccaln2)) m = m + mem(ccaln2,'ccaln2',prnt)
+          IF (associated(alnchn2)) m = m + mem(alnchn2,'alnchn2',prnt)
+          IF (associated(prottyp2)) m = m + mem(prottyp2,'prottyp2',prnt)
+          IF (associated(source2)) m = m + mem(source2,'source2',prnt)
+          IF (associated(range2)) m = m + mem(range2,'range2',prnt)
+          IF (associated(name2)) m = m + mem(name2,'name2',prnt)
+          IF (associated(segidn2)) m = m + mem(segidn2,'segidn2',prnt)
+          IF (associated(codein2)) m = m + mem(codein2,'codein2',prnt)
+          IF (associated(iattmod)) m = m + mem(iattmod,'iattmod',prnt)
+          IF (associated(iatmgrp)) m = m + mem(iatmgrp,'iatmgrp',prnt)
+          IF (associated(grpatm)) m = m + mem(grpatm,'grpatm',prnt)
+          IF (associated(attmod)) m = m + mem(attmod,'attmod',prnt)
+          IF (associated(var)) m = m + mem(var,'var',prnt)
+          IF (associated(pdf)) m = m + mem(pdf,'pdf',prnt)
+          IF (associated(ientry)) m = m + mem(ientry,'ientry',prnt)
+          IF (associated(jentry)) m = m + mem(jentry,'jentry',prnt)
+          IF (associated(nentries)) m = m + mem(nentries,'nentries',prnt)
+          IF (associated(iar)) m = m + mem(iar,'iar',prnt)
+          IF (associated(jar)) m = m + mem(jar,'jar',prnt)
+          IF (associated(kar)) m = m + mem(kar,'kar',prnt)
+          IF (associated(lar)) m = m + mem(lar,'lar',prnt)
+          IF (associated(b1ic)) m = m + mem(b1ic,'b1ic',prnt)
+          IF (associated(b2ic)) m = m + mem(b2ic,'b2ic',prnt)
+          IF (associated(t1ic)) m = m + mem(t1ic,'t1ic',prnt)
+          IF (associated(t2ic)) m = m + mem(t2ic,'t2ic',prnt)
+          IF (associated(pic)) m = m + mem(pic,'pic',prnt)
+          IF (associated(tar)) m = m + mem(tar,'tar',prnt)
+          IF (associated(xmin)) m = m + mem(xmin,'xmin',prnt)
+          IF (associated(ymin)) m = m + mem(ymin,'ymin',prnt)
+          IF (associated(zmin)) m = m + mem(zmin,'zmin',prnt)
+          IF (associated(ialn)) m = m + mem(ialn,'ialn',prnt)
+          IF (associated(nresn)) m = m + mem(nresn,'nresn',prnt)
+          IF (associated(irestypn)) m = m + mem(irestypn,'irestypn',prnt)
+          IF (associated(invaln)) m = m + mem(invaln,'invaln',prnt)
+          IF (associated(nsegmn)) m = m + mem(nsegmn,'nsegmn',prnt)
+          IF (associated(iress1n)) m = m + mem(iress1n,'iress1n',prnt)
+          IF (associated(iress2n)) m = m + mem(iress2n,'iress2n',prnt)
+          IF (associated(resol)) m = m + mem(resol,'resol',prnt)
+          IF (associated(rfactr)) m = m + mem(rfactr,'rfactr',prnt)
+          IF (associated(alnacc)) m = m + mem(alnacc,'alnacc',prnt)
+          IF (associated(prof)) m = m + mem(prof,'prof',prnt)
+          IF (associated(gapdst)) m = m + mem(gapdst,'gapdst',prnt)
+          IF (associated(caln)) m = m + mem(caln,'caln',prnt)
+          IF (associated(ccaln)) m = m + mem(ccaln,'ccaln',prnt)
+          IF (associated(alnchn)) m = m + mem(alnchn,'alnchn',prnt)
+          IF (associated(prottyp)) m = m + mem(prottyp,'prottyp',prnt)
+          IF (associated(source)) m = m + mem(source,'source',prnt)
+          IF (associated(range)) m = m + mem(range,'range',prnt)
+          IF (associated(name)) m = m + mem(name,'name',prnt)
+          IF (associated(segidn)) m = m + mem(segidn,'segidn',prnt)
+          IF (associated(atmfull)) m = m + mem(atmfull,'atmfull',prnt)
+          IF (associated(codein)) m = m + mem(codein,'codein',prnt)
+          IF (associated(iresatmn)) m = m + mem(iresatmn,'iresatmn',prnt)
+          IF (associated(natmn)) m = m + mem(natmn,'natmn',prnt)
+          IF (associated(iatmr1n)) m = m + mem(iatmr1n,'iatmr1n',prnt)
+          IF (associated(idih)) m = m + mem(idih,'idih',prnt)
+          IF (associated(idihc)) m = m + mem(idihc,'idihc',prnt)
+          IF (associated(iglbsim)) m = m + mem(iglbsim,'iglbsim',prnt)
+          IF (associated(isstruc)) m = m + mem(isstruc,'isstruc',prnt)
+          IF (associated(neigh)) m = m + mem(neigh,'neigh',prnt)
+          IF (associated(ineigh)) m = m + mem(ineigh,'ineigh',prnt)
+          IF (associated(iresol)) m = m + mem(iresol,'iresol',prnt)
+          IF (associated(indats2n)) m = m + mem(indats2n,'indats2n',prnt)
+          IF (associated(imnchw)) m = m + mem(imnchw,'imnchw',prnt)
+          IF (associated(iacont)) m = m + mem(iacont,'iacont',prnt)
+          IF (associated(idsta1)) m = m + mem(idsta1,'idsta1',prnt)
+          IF (associated(idsta2)) m = m + mem(idsta2,'idsta2',prnt)
+          IF (associated(fractglsim)) m = m + mem(fractglsim,'fractglsim',prnt &
+            )
+          IF (associated(xn)) m = m + mem(xn,'xn',prnt)
+          IF (associated(yn)) m = m + mem(yn,'yn',prnt)
+          IF (associated(zn)) m = m + mem(zn,'zn',prnt)
+          IF (associated(dih)) m = m + mem(dih,'dih',prnt)
+          IF (associated(acc)) m = m + mem(acc,'acc',prnt)
+          IF (associated(bison)) m = m + mem(bison,'bison',prnt)
+          IF (associated(curvn)) m = m + mem(curvn,'curvn',prnt)
+          IF (associated(atmnamn)) m = m + mem(atmnamn,'atmnamn',prnt)
+          IF (associated(resnumn)) m = m + mem(resnumn,'resnumn',prnt)
+          IF (associated(resnamn)) m = m + mem(resnamn,'resnamn',prnt)
+          IF (associated(chainn)) m = m + mem(chainn,'chainn',prnt)
+          IF (associated(accepts)) m = m + mem(accepts,'accepts',prnt)
+          IF (associated(memrange)) m = m + mem(memrange,'memrange',prnt)
+          IF (associated(memalnchn)) m = m + mem(memalnchn,'memalnchn',prnt)
+          IF (associated(mematmfull)) m = m + mem(mematmfull,'mematmfull',prnt &
+            )
+          IF (associated(iatc)) m = m + mem(iatc,'iatc',prnt)
+          IF (associated(natc)) m = m + mem(natc,'natc',prnt)
+          IF (associated(iata)) m = m + mem(iata,'iata',prnt)
+          IF (associated(iatd)) m = m + mem(iatd,'iatd',prnt)
+          IF (associated(iatb)) m = m + mem(iatb,'iatb',prnt)
+          IF (associated(iati)) m = m + mem(iati,'iati',prnt)
+          IF (associated(resseg)) m = m + mem(resseg,'resseg',prnt)
+          IF (associated(iatmr1)) m = m + mem(iatmr1,'iatmr1',prnt)
+          IF (associated(iattyp)) m = m + mem(iattyp,'iattyp',prnt)
+          IF (associated(iresatm)) m = m + mem(iresatm,'iresatm',prnt)
+          IF (associated(iatta)) m = m + mem(iatta,'iatta',prnt)
+          IF (associated(indats)) m = m + mem(indats,'indats',prnt)
+          IF (associated(irestyp)) m = m + mem(irestyp,'irestyp',prnt)
+          IF (associated(idihres)) m = m + mem(idihres,'idihres',prnt)
+          IF (associated(natngh)) m = m + mem(natngh,'natngh',prnt)
+          IF (associated(radii)) m = m + mem(radii,'radii',prnt)
+          IF (associated(charge)) m = m + mem(charge,'charge',prnt)
+          IF (associated(x)) m = m + mem(x,'x',prnt)
+          IF (associated(y)) m = m + mem(y,'y',prnt)
+          IF (associated(z)) m = m + mem(z,'z',prnt)
+          IF (associated(biso)) m = m + mem(biso,'biso',prnt)
+          IF (associated(vx)) m = m + mem(vx,'vx',prnt)
+          IF (associated(vy)) m = m + mem(vy,'vy',prnt)
+          IF (associated(vz)) m = m + mem(vz,'vz',prnt)
+          IF (associated(atmacc)) m = m + mem(atmacc,'atmacc',prnt)
+          IF (associated(resnam)) m = m + mem(resnam,'resnam',prnt)
+          IF (associated(atmnam)) m = m + mem(atmnam,'atmnam',prnt)
+          IF (associated(resnum)) m = m + mem(resnum,'resnum',prnt)
+          IF (associated(chain)) m = m + mem(chain,'chain',prnt)
+          IF (associated(picres)) m = m + mem(picres,'picres',prnt)
+          IF (associated(picatm)) m = m + mem(picatm,'picatm',prnt)
+          IF (associated(katmr1)) m = m + mem(katmr1,'katmr1',prnt)
+          IF (associated(kresatm)) m = m + mem(kresatm,'kresatm',prnt)
+          IF (associated(krestyp)) m = m + mem(krestyp,'krestyp',prnt)
+          IF (associated(x2)) m = m + mem(x2,'x2',prnt)
+          IF (associated(y2)) m = m + mem(y2,'y2',prnt)
+          IF (associated(z2)) m = m + mem(z2,'z2',prnt)
+          IF (associated(charg2)) m = m + mem(charg2,'charg2',prnt)
+          IF (associated(biso2)) m = m + mem(biso2,'biso2',prnt)
+          IF (associated(radii2)) m = m + mem(radii2,'radii2',prnt)
+          IF (associated(atm2nam)) m = m + mem(atm2nam,'atm2nam',prnt)
+          IF (associated(res2nam)) m = m + mem(res2nam,'res2nam',prnt)
+          IF (associated(chain2)) m = m + mem(chain2,'chain2',prnt)
+          IF (associated(res2num)) m = m + mem(res2num,'res2num',prnt)
+          IF (associated(dvx)) m = m + mem(dvx,'dvx',prnt)
+          IF (associated(dvy)) m = m + mem(dvy,'dvy',prnt)
+          IF (associated(dvz)) m = m + mem(dvz,'dvz',prnt)
+          IF (associated(pdbfil)) m = m + mem(pdbfil,'pdbfil',prnt)
+          IF (associated(pdblst)) m = m + mem(pdblst,'pdblst',prnt)
+          IF (associated(indatm)) m = m + mem(indatm,'indatm',prnt)
+          IF (associated(itcsr)) m = m + mem(itcsr,'itcsr',prnt)
+          IF (associated(iatm)) m = m + mem(iatm,'iatm',prnt)
+          IF (associated(ipcsr)) m = m + mem(ipcsr,'ipcsr',prnt)
+          IF (associated(indatt)) m = m + mem(indatt,'indatt',prnt)
+          IF (associated(itacsr)) m = m + mem(itacsr,'itacsr',prnt)
+          IF (associated(iatt)) m = m + mem(iatt,'iatt',prnt)
+          IF (associated(ipacsr)) m = m + mem(ipacsr,'ipacsr',prnt)
+          IF (associated(iapairs)) m = m + mem(iapairs,'iapairs',prnt)
+          IF (associated(iarsr2)) m = m + mem(iarsr2,'iarsr2',prnt)
+          IF (associated(iarsr)) m = m + mem(iarsr,'iarsr',prnt)
+          IF (associated(indcsr)) m = m + mem(indcsr,'indcsr',prnt)
+          IF (associated(pcsr)) m = m + mem(pcsr,'pcsr',prnt)
+          IF (associated(pacsr)) m = m + mem(pacsr,'pacsr',prnt)
+          IF (associated(iatsym1)) m = m + mem(iatsym1,'iatsym1',prnt)
+          IF (associated(iatsym2)) m = m + mem(iatsym2,'iatsym2',prnt)
+          IF (associated(wghsym)) m = m + mem(wghsym,'wghsym',prnt)
+
+          mem_allocated = m
+
+          WRITE (*,'(/a,a15,a,i12,f12.3,f10.3)') &
+            'Dynamically allocated memory at ', trim(adjustl(rout)), &
+            ' [B,kB,MB]: ', m, m/(2.**10), m/(2.**20)
+
+        END IF
+
+        RETURN
+      END FUNCTION mem_allocated
+
+
+    END MODULE alloc_routines

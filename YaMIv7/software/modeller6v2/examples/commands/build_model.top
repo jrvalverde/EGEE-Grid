@@ -1,0 +1,17 @@
+# Example for: BUILD_MODEL
+
+# This will build a model for a given sequence in an extended conformation.
+
+READ_TOPOLOGY   FILE = '$(LIB)/top_heav.lib'
+READ_PARAMETERS FILE = '$(LIB)/par.lib'
+
+# Read the sequence from a file (does not have to be part of an alignment):
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = '1fas'
+# Calculate its molecular topology:
+GENERATE_TOPOLOGY SEQUENCE = '1fas'
+# Calculate its Cartesian coordinates using internal coordinates and
+# parameters if necessary:
+BUILD_MODEL INITIALIZE_XYZ = on
+
+# Write the coordinates to a PDB file:
+WRITE_MODEL FILE = '1fas.ini'

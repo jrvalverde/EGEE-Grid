@@ -1,0 +1,16 @@
+# Example for: WRITE_DATA
+
+# This will calculate solvent accessibility, dihedral angles, and 
+# residue-residue neighbors for a structure in the PDB file.
+
+SET OUTPUT_CONTROL = 1 1 1 1 1
+
+# Get topology library for radii and the model without waters and HETATMs:
+READ_TOPOLOGY FILE = '$(LIB)/top_heav.lib'
+SET HETATM_IO = off, WATER_IO = off
+READ_MODEL FILE = '1fas'
+
+# Calculate residue solvent accessibilities, dihedral angles, and 
+# residue-residue neighbors:
+SET RADII_FACTOR = 1.0 # The default is 0.82 (for soft-sphere restraints)
+WRITE_DATA FILE = '1fas', OUTPUT = 'PSA DIH NGH SSM CRV'

@@ -1,0 +1,10 @@
+# Example for: REORDER_ATOMS
+
+# This will standardize the order of atoms in the model.
+
+
+# Order the atoms according to a topology library:
+READ_TOPOLOGY FILE = '$(LIB)/top_heav.lib'
+READ_MODEL FILE = '1fas'
+REORDER_ATOMS
+WRITE_MODEL FILE = '1fas.ini1'

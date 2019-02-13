@@ -1,0 +1,11 @@
+# Example for: ROTATE_MODEL
+
+# This will orient a model as specified (no change in this example):
+
+# Read the structure and transform it:
+READ_MODEL FILE = '1fas'
+ROTATE_MODEL TRANSLATION = 0 0 0, ROTATION_MATRIX = 1 0 0 ;
+                                                    0 1 0 ;
+                                                    0 0 1,;
+             ROTATION_ANGLE = 0, ROTATION_AXIS = 1 1 1
+WRITE_MODEL FILE = '1fas.ini'

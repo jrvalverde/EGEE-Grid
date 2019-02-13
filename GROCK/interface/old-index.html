@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+<title>
+	GROCK
+</title>
+</head>
+
+<script language="JavaScript" type="text/javascript">
+
+//Function for display the help window
+function openNewWindow(fileName,windowName,thewidth,theHeight) 
+{
+        window.open(fileName,windowName,"toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=0,width="+thewidth+",height="+theHeight);
+}
+
+</script>
+
+<body background="back.png" >
+<center>
+
+<p><h1>GROCK</h1></p>
+
+<h3>Web interface for protein docking over the EGEE grid.</h3>
+
+<form name="form" enctype="multipart/form-data" method="post" action="../script/processor.php">
+
+
+<table style="width: 100%; text-align: left;" border="1" cellpadding="2"
+cellspacing="2" bgcolor="lightblue" >
+<tbody>
+<tr>
+	<td style="vertical-align: top;"><b>Receptor molecule in PDB format</b>
+	</td>
+	<td style="vertical-align: top;" align="center"><input type="file" name="upload[0]" size="40" >
+        <!-- <input type="hidden" name="MAX_FILE_SIZE" value="3000000">-- >
+	</td>
+</tr>
+
+<tr>
+    	<td  style="vertical-align: top;"><b>Database to search</b>
+	</td>
+	<td style="vertical-align: top;" align="center">
+	    <select name="database">
+	    <option selected value="pdbtest">PDB test database (19 mols)
+	    <option valie="pdb40">PDB (non-redundant 40%)
+	    <option value="pdb50">PDB (non-redundant 50%)
+	    <option value="pdb65">PDB (non-redundant 65%)
+	    <option value="pdb90">PDB (non-redundant 90%)
+	    <option value=" ">
+	    <option value="hic-up">HIC-Up compounds
+	    <option value="zinc-lead">ZINC lead compounds
+	    </select>
+	</td>
+</tr>
+
+<tr>
+	<td style="vertical-align: top;"><b>Low or High resolution docking.</b>
+	</td>
+	<td style="vertical-align: top;" align="center">
+		Low <input type="radio" name="resolution" value="low" checked>
+	  	High <input type="radio" name="resolution" value="high">
+	</td>
+</tr>
+<tr>
+	<td style="vertical-align: top;"><b>Generic or helix docking.</b>
+	</td>
+	<td style="vertical-align: top;" align="center">
+		Low <input type="radio" name="matching" value="generic" checked>
+	  	High <input type="radio" name="matching" value="helix">
+	</td>
+</tr>
+
+<tr align="center">
+	<td colspan="2" style="vertical-align: top;"><input type="submit" name="submit" value="Run Grock">
+	</td>
+</tr>
+
+</tbody>
+</table>
+
+<hr>
+<table width="100%">
+<tr>
+	<td align=center><a href="JavaScript:openNewWindow('./help.html','Help',650,200)"><img src="help.gif" alt="[HELP]"></a>
+	</td>
+</tr>
+
+<tr><td align=center>
+<address>
+<!-- app info here -->
+<p>If you have any trouble, please contact our
+    <a href="/cgi-bin/emailto?Bioinformatics+Administrator">Bioinformatics
+    Administrator</a></p>
+<p><a href="./Copyright-CSIC.html">&copy; EMBnet/CNB</a></p>
+</address>
+</td></tr>
+<tr>
+	<td align=center><img src="EMBnetCNB.gif" alt="[EMBnetCNB]"></a>
+	</td>
+</tr>
+</table>
+<p>
+	<a href="http://validator.w3.org/check?uri=referer">
+	<img border="0" src="http://www.w3.org/Icons/valid-html401"alt="Valid HTML 4.01!" height="31" width="88"></a>
+</p>
+</center>
+</form>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+Parsing configuration file phpDocumentor.ini...
+done
+using experimental tokenizer Parser
+
+
+Grabbing README/INSTALL/CHANGELOG
+
+done
+
+
+Tutorial/Extended Documentation Parsing Stage
+
+done
+
+
+General Parsing Stage
+
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/CVS/Entries -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/CVS/Repository -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/CVS/Root -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php -- Parsing file
+WARNING in auth.php on line 146: File "/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php" has no page-level DocBlock, use @package in the first DocBlock to create one
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/functions.php -- Parsing file
+WARNING in functions.php on line 100: Unknown tag "@note" used
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/functions.php.sav -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/gramm/CVS/Entries -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/gramm/CVS/Repository -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/gramm/CVS/Root -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/gramm/ang10.dat -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/gramm/ang12.dat -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/gramm/ang15.dat -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/gramm/ang18.dat -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/gramm/ang20.dat -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/gramm/ang30.dat -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/gramm/gramm -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/gramm/gramm.sh -- File not parsed, not a php file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php -- Parsing file
+WARNING in grid.php on line 212: no @package tag was used in a DocBlock for class Grid
+WARNING in grid.php on line 404: Unknown tag "@note" used
+WARNING in grid.php on line 404: Unknown tag "@note" used
+WARNING in grid.php on line 677: Unknown tag "@note" used
+WARNING in grid.php on line 753: Unknown tag "@note" used
+WARNING in grid.php on line 767: Unknown tag "@note" used
+WARNING in grid.php on line 843: Unknown tag "@note" used
+WARNING in grid.php on line 864: File "/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php" has no page-level DocBlock, use @package in the first DocBlock to create one
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid_test.php -- Parsing file
+WARNING in grid_test.php on line 75: File "/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid_test.php" has no page-level DocBlock, use @package in the first DocBlock to create one
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/processor.php -- Parsing file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/results.php -- Parsing file
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/ssh.php -- Parsing file
+WARNING in ssh.php on line 2: no @package tag was used in a DocBlock for class SExec
+WARNING in ssh.php on line 182: Unknown tag "@parm" used
+WARNING in ssh.php on line 430: no @package tag was used in a DocBlock for class SExec
+WARNING in ssh.php on line 430: 
+duplicate class element "SExec" in file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/ssh.php will be ignored.
+Use an @ignore tag on the original if you want this case to be documented.
+WARNING in ssh.php on line 483: File "/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/ssh.php" has no page-level DocBlock, use @package in the first DocBlock to create one
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/ssh_test.php -- Parsing file
+WARNING in ssh_test.php on line 86: File "/mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/ssh_test.php" has no page-level DocBlock, use @package in the first DocBlock to create one
+Reading file /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/variables.php -- Parsing file
+done
+
+Converting From Abstract Parsed Data
+
+Processing Class Inheritance
+
+
+Processing Root Trees
+
+
+Processing leftover classes (classes that extend root classes not found in the same package)
+done processing leftover classes
+
+Processing Procedural Page Element Name Conflicts
+
+
+Sorting page elements...done
+Formatting @uses list...done
+
+creating /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/media
+copying /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/media/layout.css
+copying /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/media/print.css
+copying /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/media/style.css
+Building indexes...done
+
+Sorting Indexes...done
+
+Sorting @todo list...done
+Converting tutorials/extended docs
+Formatting Package Indexes...    Writing /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/elementindex_GridGRAMM.html
+
+done
+Formatting Index...
+    Writing /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/elementindex.html
+
+    Writing /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/li_GridGRAMM.html
+
+    Writing /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/index.html
+done
+
+Formatting Left Quick Index...
+    Writing /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/classtrees_GridGRAMM.html
+
+done
+
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/auth.php Procedural Page Elements... Classes... done
+    Writing /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/GridGRAMM/_auth_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/functions.php Procedural Page Elements... Classes... done
+    Writing /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/GridGRAMM/_functions_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid.php Procedural Page Elements... Classes...
+    Writing /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/GridGRAMM/Grid.html
+ done
+    Writing /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/GridGRAMM/_grid_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/grid_test.php Procedural Page Elements... Classes... done
+    Writing /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/GridGRAMM/_grid_test_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/processor.php Procedural Page Elements... Classes... done
+    Writing /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/GridGRAMM/_processor_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/results.php Procedural Page Elements... Classes... done
+    Writing /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/GridGRAMM/_results_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/ssh.php Procedural Page Elements... Classes...
+    Writing /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/GridGRAMM/SExec.html
+ done
+    Writing /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/GridGRAMM/_ssh_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/ssh_test.php Procedural Page Elements... Classes... done
+    Writing /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/GridGRAMM/_ssh_test_php.html
+Converting /mnt/data/www/EMBnet/cgi-src/Grid/GridGRAMM/script/variables.php Procedural Page Elements... Classes... done
+    Writing /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/GridGRAMM/_variables_php.html
+
+Converting @todo List...done
+
+Converting Error Log...    Writing /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/errors.html
+
+
+To view errors and warnings, look at /u/sysadmin/netadmin/www/EMBnet/cgi-src/Grid/GridGRAMM/doc/pDoc/errors.html
+done
+
+Parsing time: 8 seconds
+
+Conversion time: 3 seconds
+
+Total Documentation Time: 11 seconds
+done

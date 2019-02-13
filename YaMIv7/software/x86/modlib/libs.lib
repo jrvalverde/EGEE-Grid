@@ -1,0 +1,28 @@
+# This is the list of MODELLER library files. 
+# This file is specified in the $LIB_LIB(mod_version) environment variable.
+# This file relies on the $MODINSTALL(mod_version) environment variable.
+# The environment variables have to be in the format ${varname} or $(varname).
+
+MESSAGES_LIB ${MODINSTALL6v2}/modlib/messages.lib
+RESDIH_LIB   ${MODINSTALL6v2}/modlib/resdih.lib
+RESGRP_LIB   ${MODINSTALL6v2}/modlib/resgrp.lib
+MDT_INI      ${MODINSTALL6v2}/modlib/mdt.ini
+RR_MAT       ${MODINSTALL6v2}/modlib/xs4.mat
+MNCHDEF_LIB  ${MODINSTALL6v2}/modlib/af_mnchdef.lib
+MODPRM_LIB   ${MODINSTALL6v2}/modlib/params.lib
+FEATS_LIB    ${MODINSTALL6v2}/modlib/feats.lib
+RADII_LIB    ${MODINSTALL6v2}/modlib/radii.lib
+RADII14_LIB  ${MODINSTALL6v2}/modlib/radii14.lib
+MNCH_LIB     ${MODINSTALL6v2}/modlib/mnch.lib
+MNCH1_LIB    ${MODINSTALL6v2}/modlib/mnch1.lib
+MNCH2_LIB    ${MODINSTALL6v2}/modlib/mnch2.lib
+MNCH3_LIB    ${MODINSTALL6v2}/modlib/mnch3.lib
+MNCH4_LIB    ${MODINSTALL6v2}/modlib/mnch4.lib
+MODELS_LIB   ${MODINSTALL6v2}/modlib/models.lib
+ATMEQV_LIB   ${MODINSTALL6v2}/modlib/atmeqv.lib
+SCHED_LIB    ${MODINSTALL6v2}/modlib/sched.lib
+SSTRUC_LIB   ${MODINSTALL6v2}/modlib/sstruc.lib
+MDT_LIB      ${MODINSTALL6v2}/modlib/mdt.lib
+PDBENT_LIB   ${MODINSTALL6v2}/modlib/pdbent.lib
+BIN_MODELLER ${MODINSTALL6v2}/bin
+LIB_MODELLER ${MODINSTALL6v2}/modlib

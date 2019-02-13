@@ -1,0 +1,4 @@
+tcgetattr: Invalid argument
+Connection to villon closed.
+tcgetattr: Invalid argument
+Connection to villon closed.

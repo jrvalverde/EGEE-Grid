@@ -1,0 +1,14 @@
+# Homology modelling by the MODELLER TOP routine 'model'.
+
+INCLUDE                             # Include the predefined TOP routines
+
+SET OUTPUT_CONTROL = 1 1 1 1 1      # uncomment to produce a large log file
+SET ALNFILE  = 'alignment.ali'      # alignment filename
+SET KNOWNS   = '5fd1'               # codes of the templates
+SET SEQUENCE = '1fdx'               # code of the target
+SET ATOM_FILES_DIRECTORY = './:../atom_files' # directories for input atom files
+SET STARTING_MODEL= 1               # index of the first model 
+SET ENDING_MODEL  = 1               # index of the last model
+                                    # (determines how many models to calculate)
+
+CALL ROUTINE = 'model'              # do homology modelling

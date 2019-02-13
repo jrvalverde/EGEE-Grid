@@ -1,0 +1,21 @@
+-nowarn : -pdb
+
+Running preprocess-pdb.perl ...
+pdb file     :: probe.pdb
+warn         :: 0
+multidock    :: 0
+
+
+Chains       :: 3
+
+-nowarn : -pdb
+
+Running preprocess-pdb.perl ...
+pdb file     :: target.pdb
+warn         :: 0
+multidock    :: 0
+
+
+Chains       :: 4
+
+PROTEIN-PROTEIN.sh: line 14:  5827 Segmentation fault      /opt/structure/bin/ftdock -static $larger.parsed -mobile $smaller.parsed > 3ddock_output

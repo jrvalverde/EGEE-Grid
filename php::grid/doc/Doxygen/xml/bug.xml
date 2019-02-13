@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.3.6">
+  <compounddef id="bug" kind="page">
+    <compoundname>bug</compoundname>
+    <title>Bug List</title>
+    <detaileddescription>
+<para><anchor id="bug_1_bug000002"/> <variablelist>
+<varlistentry><term>Member <ref refid="classGrid_1a37" kindref="member">Grid::initialize</ref> ($hours=12, $minutes=0) </term></varlistentry>
+<listitem><para>: XXX JR XXX grid-proxy-init will use the time from the last issued command. To avoid setting a time shorter than one already existing we should first issue a grid-proxy-info, check if there is a running proxy, its time left, see if it is longer than what we want to set and if it is, then do NOTHING to avoid setting it shorter. </para></listitem>
+</variablelist>
+</para><para><anchor id="bug_1_bug000001"/> <variablelist>
+<varlistentry><term>Member <ref refid="classGrid_1a11" kindref="member">Grid::initialize</ref> ($hours=12, $minutes=0) </term></varlistentry>
+<listitem><para>: XXX JR XXX grid-proxy-init will use the time from the last issued command. To avoid setting a time shorter than one already existing we should first issue a grid-proxy-info, check if there is a running proxy, its time left, see if it is longer than what we want to set and if it is, then do NOTHING to avoid setting it shorter. </para></listitem>
+</variablelist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

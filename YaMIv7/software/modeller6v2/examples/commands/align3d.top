@@ -1,0 +1,29 @@
+# Example for: ALIGN3D, SUPERPOSE
+
+# This will align 3D structures of two proteins:
+
+SET OUTPUT_CONTROL = 1 1 1 1 1
+
+# First example: read sequences from a sequence file:
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = '1fas' '2ctx'
+ALIGN GAP_PENALTIES_1D= -600 -400
+ALIGN3D GAP_PENALTIES_3D= 0 4.0
+WRITE_ALIGNMENT FILE = 'toxin-str.ali'
+
+# Second example: read sequences from PDB files to eliminate the 
+# need for the toxin.ali sequence file:
+READ_MODEL FILE = '1fas'
+SEQUENCE_TO_ALI ATOM_FILES = '1fas', ALIGN_CODES = '1fas'
+READ_MODEL FILE = '2ctx'
+SEQUENCE_TO_ALI ADD_SEQUENCE = on, ATOM_FILES = ATOM_FILES '2ctx', ;
+                ALIGN_CODES = ALIGN_CODES '2ctx'
+ALIGN GAP_PENALTIES_1D= -600 -400
+ALIGN3D GAP_PENALTIES_3D=  0 2.0
+WRITE_ALIGNMENT FILE = 'toxin-str.ali'
+
+# And now superpose the two structures using current alignment to get 
+# various RMS's:
+READ_MODEL  FILE = '1fas'
+PICK_ATOMS ATOM_TYPES = 'CA'
+READ_MODEL2 FILE = '2ctx'
+SUPERPOSE FIT_ATOMS = 'CA'

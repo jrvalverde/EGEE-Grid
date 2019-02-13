@@ -1,0 +1,18 @@
+# Example for: WRITE_PDB_XREF
+
+# This writes out information useful for relating PDB residue numbers with
+# residue indices.
+
+SET OUTPUT_CONTROL = 1 1 1 1 1
+
+READ_MODEL FILE = '2abx.atm', MODEL_SEGMENT = 'FIRST:@' 'END:'
+SEQUENCE_TO_ALI ALIGN_CODES = '2abx'
+
+WRITE_PDB_XREF FILE = '2abx.xref1',MODEL_SEGMENT='FIRST:@'  'END:'  # if not found, 1, NRES used
+WRITE_PDB_XREF FILE = '2abx.xref2',MODEL_SEGMENT='1:'   '50:'  # You can use string resid's
+WRITE_PDB_XREF FILE = '2abx.xref3',MODEL_SEGMENT='!2'  '!50'   # You can use integer resid's
+WRITE_PDB_XREF FILE = '2abx.xref4',MODEL_SEGMENT='2abx' '2abx' # You can even use the alignment 
+                                                               # specs, but not with ALIGN_CODES 
+                                                               # that start with '!'
+WRITE_PDB_XREF FILE = '2abx.xref5',MODEL_SEGMENT='!2'   '50:'  # You can mix the specs
+WRITE_PDB_XREF FILE = '2abx.xref6',MODEL_SEGMENT='!2'  'END:'  # You can mix the specs

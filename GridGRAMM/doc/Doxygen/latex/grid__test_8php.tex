@@ -1,0 +1,52 @@
+\section{grid\_\-test.php File Reference}
+\label{grid__test_8php}\index{grid_test.php@{grid\_\-test.php}}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf test\_\-grid\_\-connect} ()
+\begin{CompactList}\small\item\em test grid::connect()/disconnect() \item\end{CompactList}\item 
+{\bf test\_\-grid\_\-init} ()
+\begin{CompactList}\small\item\em test {\bf Grid::initialize()}{\rm (p.\,\pageref{grid_8php_a0})} \item\end{CompactList}\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+{\bf \$debug} = TRUE
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{grid_test.php@{grid\_\-test.php}!test_grid_connect@{test\_\-grid\_\-connect}}
+\index{test_grid_connect@{test\_\-grid\_\-connect}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}test\_\-grid\_\-connect ()}\label{grid__test_8php_a1}
+
+
+test grid::connect()/disconnect() 
+
+Grid::connect() opens a connection to a {\bf Grid}{\rm (p.\,\pageref{classGrid})} UI server (a server that allows one to submit and monitor jobs in the grid). It is much like 'rsh' allowing one to send commands to the UI node.
+
++ This routine tests Grid::connect() by opening a connection to a user interface node, executing a simple command (ls -l) on it (on the UI node itself) and disconnecting. 
+
+Definition at line 22 of file grid\_\-test.php.\index{grid_test.php@{grid\_\-test.php}!test_grid_init@{test\_\-grid\_\-init}}
+\index{test_grid_init@{test\_\-grid\_\-init}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}test\_\-grid\_\-init ()}\label{grid__test_8php_a2}
+
+
+test {\bf Grid::initialize()}{\rm (p.\,\pageref{grid_8php_a0})} 
+
+{\bf Grid::initialize()}{\rm (p.\,\pageref{grid_8php_a0})} allows us to identify ourselves to the {\bf Grid}{\rm (p.\,\pageref{classGrid})}. Identification must be made from a UI node, hence we need to connect first to a UI node.
+
+In later versions, {\bf initialize()}{\rm (p.\,\pageref{grid_8php_a0})} detects if we are already connected and if not, opens the connection implicitly for us. Both scenarios should be checked. 
+
+Definition at line 55 of file grid\_\-test.php.
+
+\subsection{Variable Documentation}
+\index{grid_test.php@{grid\_\-test.php}!$debug@{\$debug}}
+\index{$debug@{\$debug}!grid_test.php@{grid\_\-test.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$debug = TRUE}\label{grid__test_8php_a0}
+
+
+
+
+Definition at line 8 of file grid\_\-test.php.
+
+Referenced by Grid::get\_\-init\_\-status(), Grid::pdisconnect(), SExec::ssh\_\-close(), SExec::ssh\_\-copy(), SExec::ssh\_\-exec(), SExec::ssh\_\-open\_\-command(), SExec::ssh\_\-open\_\-shell(), SExec::ssh\_\-passthru(), and SExec::ssh\_\-popen().

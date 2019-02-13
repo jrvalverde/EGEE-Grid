@@ -1,0 +1,3514 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1033\deflangfe1033
+{\fonttbl {\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\f1\fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}Arial;}
+{\f2\fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}
+{\f3\froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}
+{\stylesheet
+{\widctlpar\adjustright \fs20\cgrid \snext0 Normal;}
+{\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid \sbasedon0 \snext0 heading 1;}
+{\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid \sbasedon0 \snext0 heading 2;}
+{\s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid \sbasedon0 \snext0 heading 3;}
+{\s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 4;}{\*\cs10 \additive Default Paragraph Font;}
+{\s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid \sbasedon0 \snext15 Title;}
+{\s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid \sbasedon0 \snext16 Subtitle;}
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid \sbasedon0 \snext17 BodyText;}
+{\s18\widctlpar\fs22\cgrid \sbasedon0 \snext18 DenseText;}
+{\s28\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext28 header;}
+{\s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid \sbasedon0 \snext29 footer;}
+{\s30\li360\sa60\sb120\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext30 GroupHeader;}
+{\s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext41 Code Example 0;}
+{\s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext42 Code Example 1;}
+{\s42\li720\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext43 Code Example 2;}
+{\s43\li1080\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext44 Code Example 3;}
+{\s44\li1440\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext45 Code Example 4;}
+{\s45\li1800\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext46 Code Example 5;}
+{\s46\li2160\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext47 Code Example 6;}
+{\s47\li2520\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext48 Code Example 7;}
+{\s48\li2880\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext49 Code Example 8;}
+{\s49\li3240\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext49 Code Example 9;}
+{\s50\li0\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext51 List Continue 0;}
+{\s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext52 List Continue 1;}
+{\s52\li720\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext53 List Continue 2;}
+{\s53\li1080\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext54 List Continue 3;}
+{\s54\li1440\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext55 List Continue 4;}
+{\s55\li1800\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext56 List Continue 5;}
+{\s56\li2160\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext57 List Continue 6;}
+{\s57\li2520\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext58 List Continue 7;}
+{\s58\li2880\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext59 List Continue 8;}
+{\s59\li3240\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext59 List Continue 9;}
+{\s60\li0\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext61 DescContinue 0;}
+{\s61\li360\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext62 DescContinue 1;}
+{\s62\li720\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext63 DescContinue 2;}
+{\s63\li1080\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext64 DescContinue 3;}
+{\s64\li1440\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext65 DescContinue 4;}
+{\s65\li1800\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext66 DescContinue 5;}
+{\s66\li2160\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext67 DescContinue 6;}
+{\s67\li2520\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext68 DescContinue 7;}
+{\s68\li2880\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext69 DescContinue 8;}
+{\s69\li3240\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext69 DescContinue 9;}
+{\s70\li0\sa30\sb30\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext81 LatexTOC 0;}
+{\s71\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext82 LatexTOC 1;}
+{\s72\li720\sa24\sb24\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext83 LatexTOC 2;}
+{\s73\li1080\sa21\sb21\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext84 LatexTOC 3;}
+{\s74\li1440\sa18\sb18\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext85 LatexTOC 4;}
+{\s75\li1800\sa15\sb15\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext86 LatexTOC 5;}
+{\s76\li2160\sa12\sb12\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext87 LatexTOC 6;}
+{\s77\li2520\sa9\sb9\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext88 LatexTOC 7;}
+{\s78\li2880\sa6\sb6\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext89 LatexTOC 8;}
+{\s79\li3240\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext89 LatexTOC 9;}
+{\s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext81 \sautoupd List Bullet 0;}
+{\s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid \sbasedon0 \snext82 \sautoupd List Bullet 1;}
+{\s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid \sbasedon0 \snext83 \sautoupd List Bullet 2;}
+{\s83\fi-360\li1440\widctlpar\jclisttab\tx1440{\*\pn \pnlvlbody\ilvl0\ls4\pnrnot0\pndec }\ls4\adjustright \fs20\cgrid \sbasedon0 \snext84 \sautoupd List Bullet 3;}
+{\s84\fi-360\li1800\widctlpar\jclisttab\tx1800{\*\pn \pnlvlbody\ilvl0\ls5\pnrnot0\pndec }\ls5\adjustright \fs20\cgrid \sbasedon0 \snext85 \sautoupd List Bullet 4;}
+{\s85\fi-360\li2160\widctlpar\jclisttab\tx2160{\*\pn \pnlvlbody\ilvl0\ls6\pnrnot0\pndec }\ls6\adjustright \fs20\cgrid \sbasedon0 \snext86 \sautoupd List Bullet 5;}
+{\s86\fi-360\li2520\widctlpar\jclisttab\tx2520{\*\pn \pnlvlbody\ilvl0\ls7\pnrnot0\pndec }\ls7\adjustright \fs20\cgrid \sbasedon0 \snext87 \sautoupd List Bullet 6;}
+{\s87\fi-360\li2880\widctlpar\jclisttab\tx2880{\*\pn \pnlvlbody\ilvl0\ls8\pnrnot0\pndec }\ls8\adjustright \fs20\cgrid \sbasedon0 \snext88 \sautoupd List Bullet 7;}
+{\s88\fi-360\li3240\widctlpar\jclisttab\tx3240{\*\pn \pnlvlbody\ilvl0\ls9\pnrnot0\pndec }\ls9\adjustright \fs20\cgrid \sbasedon0 \snext89 \sautoupd List Bullet 8;}
+{\s89\fi-360\li3600\widctlpar\jclisttab\tx3600{\*\pn \pnlvlbody\ilvl0\ls10\pnrnot0\pndec }\ls10\adjustright \fs20\cgrid \sbasedon0 \snext89 \sautoupd List Bullet 9;}
+{\s90\fi-360\li360\widctlpar\fs20\cgrid \sbasedon0 \snext91 \sautoupd List Enum 0;}
+{\s91\fi-360\li720\widctlpar\fs20\cgrid \sbasedon0 \snext92 \sautoupd List Enum 1;}
+{\s92\fi-360\li1080\widctlpar\fs20\cgrid \sbasedon0 \snext93 \sautoupd List Enum 2;}
+{\s93\fi-360\li1440\widctlpar\fs20\cgrid \sbasedon0 \snext94 \sautoupd List Enum 3;}
+{\s94\fi-360\li1800\widctlpar\fs20\cgrid \sbasedon0 \snext95 \sautoupd List Enum 4;}
+{\s95\fi-360\li2160\widctlpar\fs20\cgrid \sbasedon0 \snext96 \sautoupd List Enum 5;}
+{\s96\fi-360\li2520\widctlpar\fs20\cgrid \sbasedon0 \snext96 \sautoupd List Enum 5;}
+{\s97\fi-360\li2880\widctlpar\fs20\cgrid \sbasedon0 \snext98 \sautoupd List Enum 7;}
+{\s98\fi-360\li3240\widctlpar\fs20\cgrid \sbasedon0 \snext99 \sautoupd List Enum 8;}
+{\s99\fi-360\li3600\widctlpar\fs20\cgrid \sbasedon0 \snext99 \sautoupd List Enum 9;}
+}
+{\comment begin body}
+{\info 
+{\title {\comment php::Grid Reference Manual 1.0 }php::Grid}
+{\comment Generated byDoxgyen. }
+{\creatim \yr2006\mo6\dy22\hr10\min1\sec9}
+}\pard\plain 
+\sectd\pgnlcrm
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\vertalc\qc\par\par\par\par\par\par\par
+\pard\plain \s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid 
+{\field\fldedit {\*\fldinst TITLE \\*MERGEFORMAT}{\fldrslt TITLE}}\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\par
+\par\par\par\par\par\par\par\par\par\par\par\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+{\field\fldedit {\*\fldinst AUTHOR \\*MERGEFORMAT}{\fldrslt AUTHOR}}\par
+Version 1.0\par{\field\fldedit {\*\fldinst CREATEDATE \\*MERGEFORMAT}{\fldrslt CREATEDATE}}\par
+\page\page\vertalt
+\pard\plain 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Table of Contents\par
+\pard\plain \par
+{\field\fldedit {\*\fldinst TOC \\f \\*MERGEFORMAT}{\fldrslt Table of contents}}\par
+\pard\plain 
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+php::Grid Namespace Index\par \pard\plain 
+{\tc \v Namespace Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+php::Grid Namespace List\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here is a list of all namespaces with brief descriptions:\par
+}
+{
+\pard\plain \s71\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+\par
+{\b {\b Grid} (Submit jobs to the Grid through a UI-node )} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAEQ \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b grock} (Variables used to connect with the user interface host )} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAER \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b SExec} (Ssh.php -- a class to execute remote commands over SSH )} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAES \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b Util} (General utility functions )} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAET \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par
+}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+php::Grid Class Index\par \pard\plain 
+{\tc \v Class Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+php::Grid Class List\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here are the classes, structs, unions and interfaces with brief descriptions:\par
+}
+{
+\pard\plain \s71\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+\par
+{\b {\b Grid} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAABX \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par
+}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+php::Grid File Index\par \pard\plain 
+{\tc \v File Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+php::Grid File List\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here is a list of all files with brief descriptions:\par
+}
+{
+\pard\plain \s71\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+\par
+{\b {\b src/grid.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAA \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b test/grid.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAB \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b src/grid_config.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAC \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b test/grid_config.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAD \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b grid_test.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAE \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b src/ssh.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAF \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b test/ssh.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAG \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b src/util.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAH \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b test/util.php} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAI \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par
+}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+php::Grid Page Index\par \pard\plain 
+{\tc \v Page Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+php::Grid Related Pages\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here is a list of all related documentation pages:\par
+}
+{
+\pard\plain \s71\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+\par
+Bug List\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAEN \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+
+}\sect \sbkpage \pgndec \pgnrestart
+\sect \sectd \sbknone
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+php::Grid Namespace Documentation\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Grid Namespace Reference\par \pard\plain 
+{\tc\tcl2 \v Grid}
+{\xe \v Grid}
+{\bkmkstart AAAAAAAAEQ}
+{\bkmkend AAAAAAAAEQ}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Submit jobs to the Grid through a UI-node.  
+\par
+\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Submit jobs to the Grid through a UI-node. \par
+{{\b \par
+Author:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Jos\'E9 \'52. Valverde <{\f2 jrvalverde@acm.org}> \par
+}{{\b \par
+Version:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid 2.6  Jos\'E9 \'52. Valverde <{\f2 jrvalverde@acm.org}>\par
+}This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.\par
+This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.\par
+You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA\par
+Net {{\b \par
+Author:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Jos\'E9 \'52. Valverde <{\f2 jrvalverde@acm.org}>  Jos\'E9 \'52. Valverde <{\f2 jrvalverde@acm.org}>  ../doc/c/lgpl.txt \par
+}{{\b \par
+Version:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid CVS: {{\b \par
+Id}\par
+\pard\plain \s63\li1080\widctlpar\ql\adjustright \fs20\cgrid grid.php,v 1.4 2005/10/06 09:35:59 netadmin Exp \par
+}{\b ssh.php  ../test/grid_test.php  File available since Release 1.0 }\par
+}\par
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+grock Namespace Reference\par \pard\plain 
+{\tc\tcl2 \v grock}
+{\xe \v grock}
+{\bkmkstart AAAAAAAAER}
+{\bkmkend AAAAAAAAER}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Variables used to connect with the user interface host.  
+\par
+\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Variables used to connect with the user interface host. \par
+Note that you may set them directly using class methods, so there should not be any need for this file (unless you want to have a global, external site to state defaults). Actually the class GRID uses this file to set up its defaults.\par
+{{\b \par
+Author:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Jose R. Valverde <{\f2 jrvalverde@acm.org}> \par
+}{{\b \par
+Version:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid 1.0  Jos\'E9 \'52. Valverde <{\f2 jrvalverde@acm.org}>\par
+}This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.\par
+This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.\par
+You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA\par
+{{\b \par
+Author:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid David Garcia <{\f2 david@cnb.uam.es}> \par
+Jose R. Valverde <{\f2 david@cnb.uam.es}>  CSIC  ../c/lgpl.txt \par
+}{{\b \par
+Version:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid $Id$ \par
+}{{\b \par
+See also:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid grid_config.php {\b File available since release 0.0 }\par
+}\par
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+SExec Namespace Reference\par \pard\plain 
+{\tc\tcl2 \v SExec}
+{\xe \v SExec}
+{\bkmkstart AAAAAAAAES}
+{\bkmkend AAAAAAAAES}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid ssh.php -- a class to execute remote commands over SSH  
+\par
+\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid ssh.php -- a class to execute remote commands over SSH \par
+This file contains the files-based implementation of the SExec class. This implementation relies on the usage of regular temporary files to communicate with the remote end, thus avoiding several drawbacks (mainly deadlocks) associated with pipes.\par
+The SExec class provides methods to launch and control jobs and transfer files over SSH.\par
+PHP versions 4 and 5\par
+LICENSE: This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.\par
+This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.\par
+You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA\par
+Net {{\b \par
+Author:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Jos\'E9 \'52. Valverde <{\f2 jrvalverde@acm.org}>  Jos\'E9 \'52. Valverde <{\f2 jrvalverde@acm.org}>  doc/lic/lgpl.txt \par
+}{{\b \par
+Version:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid CVS: {{\b \par
+Id}\par
+\pard\plain \s63\li1080\widctlpar\ql\adjustright \fs20\cgrid ssh.php,v 1.3 2005/05/31 14:01:26 netadmin Exp \par
+}{\b ssh(1), scp(1)  File available since Release 1.0 }\par
+}\par
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Util Namespace Reference\par \pard\plain 
+{\tc\tcl2 \v Util}
+{\xe \v Util}
+{\bkmkstart AAAAAAAAET}
+{\bkmkend AAAAAAAAET}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid General utility functions.  
+\par
+\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid General utility functions. \par
+This file contains convenience functions used throughout the package.\par
+{{\b \par
+Author:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Jos\'E9 \'52. Valverde <{\f2 jrvalverde@es.embnet.org}> \par
+}{{\b \par
+Version:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid 1.0\par
+}Jos\'E9 \'52. Valverde <{\f2 jrvalverde@acm.org}>\par
+This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.\par
+This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.\par
+You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA \par
+\par
+}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+php::Grid Class Documentation{\tc \v Class Documentation}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Grid Class Reference\par \pard\plain 
+{\tc\tcl2 \v Grid}
+{\xe \v Grid}
+{\bkmkstart AAAAAAAABX}
+{\bkmkend AAAAAAAABX}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid \par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Grid} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Constructor for the class. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b destruct} ()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_user} ($user)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i set the Grid user name }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_host} ($host)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i set the name of the Grid access host }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_password} ($pass)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i set the password for the remote grid user/server }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_passphrase} ($pass)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i set the passphrase for the remote grid user }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_work_dir} ($wd)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i set working directory on the Grid server }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_error_log} ($errlog)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i set error log }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b get_connection_status} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i get grid connection status }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b get_init_status} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i get grid initialization status }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b connect} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i open a persistent connection to the Grid UI server }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b initialize} ($hours=12, $minutes=0)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Start the Grid services. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b destroy} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Destroy remote grid identity. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b session_new} ($hint="sess")\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Create a new session. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b session_define} ($session, $directory)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Define an already existing session. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b session_is_valid} ($session='default')\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i check if supplied argument is a valid (existing and active) session. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b session_directory} ($session='default')\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i return the directory associated to a session }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b session_list_all} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i list all existing sessions (debugging only) }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b session_destroy} ($session='default')\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i destroy the specified session }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b session_destroy_all} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Destroy all existing sessions. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b job_submit_set_timeout} ($seconds=0)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Set maximum (guesstimated) allowed time for a job submission to succeed. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b job_submit} ($job, &$out, $session='default')\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i submit a job to the grid }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b job_get_id} ($job, $session='default')\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Get Grid ID of a submitted job. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b job_status} ($job, &$out, $session='default')\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i check job status }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b job_get_output} ($job, &$out, $session='default')\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i retrieve results }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b job_cancel} ($job, &$out, $session='default')\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Cancel a job previously submitted to the grid. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Grid} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Constructor for the class. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b destruct} ()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_user} ($user)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i set the Grid user name }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_host} ($host)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i set the name of the Grid access host }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_password} ($pass)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i set the password for the remote grid user/server }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_passphrase} ($pass)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i set the passphrase for the remote grid user }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_work_dir} ($wd)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i set working directory on the Grid server }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_error_log} ($errlog)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i set error log }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b get_connection_status} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i get grid connection status }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b get_init_status} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i get grid initialization status }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b connect} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i open a persistent connection to the Grid UI server }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b initialize} ($hours=12, $minutes=0)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Start the Grid services. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b destroy} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Destroy remote grid identity. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b session_new} ($hint="sess")\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Create a new session. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b session_define} ($session, $directory)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Define an already existing session. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b session_is_valid} ($session='default')\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i check if supplied argument is a valid (existing and active) session. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b session_directory} ($session='default')\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i return the directory associated to a session }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b session_list_all} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i list all existing sessions (debugging only) }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b session_destroy} ($session='default')\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i destroy the specified session }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b session_destroy_all} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Destroy all existing sessions. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b job_submit_set_timeout} ($seconds=0)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Set maximum (guesstimated) allowed time for a job submission to succeed. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b job_submit} ($job, &$out, $session='default')\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i submit a job to the grid }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b job_get_id} ($job, $session='default')\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Get Grid ID of a submitted job. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b job_status} ($job, &$out, $session='default')\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i check job status }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b job_get_output} ($job, &$out, $session='default')\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i retrieve results }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b job_cancel} ($job, &$out, $session='default')\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Cancel a job previously submitted to the grid. }\par
+\par}
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Attributes\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $entry_point}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i the grid entry point, should not be needed }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $username}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i user name to use to connect to the grid }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $hostname}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i name of host that provides access to the grid }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $password}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i password to login on the UI node }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $passphrase}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i key to unlock the grid access certificate }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $work_dir}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i a GrUI directory where we can work }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $error_log}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i a local file to store the error log }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $std_in}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Standard input of the grid entry. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $std_out}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Standard output of the grid entry. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $std_err}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Standard error of the grid entry. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $connected}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $initialized}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $sessions}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $sx}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $submit_timeout}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v Grid\:Grid}
+{\xe \v Grid\:Grid}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::Grid ()}
+}\par
+{\bkmkstart AAAAAAAABY}
+{\bkmkend AAAAAAAABY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Constructor for the class. \par
+Set the values for the class variables using defaults provided in 'config.php'\par
+These defaults can be overridden using the functions provided below.\par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $eg = new Grid; if ($eg == FALSE) echo "Couldn't instantiate a new Grid!\\n"; } \par
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Grid a new instance of a Grid class object \par
+}\par
+Definition at line 399 of file src/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v Grid\:Grid}
+{\xe \v Grid\:Grid}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::Grid ()}
+}\par
+{\bkmkstart AAAAAAAABZ}
+{\bkmkend AAAAAAAABZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Constructor for the class. \par
+Set the values for the class variables using defaults provided in 'config.php'\par
+These defaults can be overridden using the functions provided below.\par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $eg = new Grid; if ($eg == FALSE) echo "Couldn't instantiate a new Grid!\\n"; } \par
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Grid a new instance of a Grid class object \par
+}\par
+Definition at line 399 of file test/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v connect\:Grid}
+{\xe \v Grid\:connect}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::connect ()}
+}\par
+{\bkmkstart AAAAAAAACA}
+{\bkmkend AAAAAAAACA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+open a persistent connection to the Grid UI server \par
+The Grid User Interface Server is the entry point to the Grid for users and user applications. This is where jobs are launched from.\par
+This package has been designed to be able to be installed in any host, independent of whether it is an UI or not. Thus, to be able to submit jobs to the Grid, the server hosting the Web UI must connect to a Grid UI host to do the work.\par
+This routine opens a connection to a Grid UI host using an specified username (i.e. all jobs will be run under said username).\par
+The panorama therefore will look like this:\par
+HTML front-end --> processor.php <--> SSH <--> remote host <--> Grid\par
+This allows for better resilience: should a GridUI host be unavailable, we can detect the error condition and try another one. If the GridUI runs the front-end, then we have a single point of failure, which is a no-no.\par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $eg = new Grid;} \par
+{\f2  $eg->pconnect(); if ($eg->{\b get_connection_status()} == FALSE) echo "Couldn't instantiate a new Grid!\\n"; } \par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Use files instead of pipes and open them after securing thew connection: this should do with deadlocks and leave a trace log.\par
+}{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid TRUE on success, FALSE otherwise. \par
+}\par
+Definition at line 788 of file test/grid.php.\par
+\par
+}
+{\xe \v connect\:Grid}
+{\xe \v Grid\:connect}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::connect ()}
+}\par
+{\bkmkstart AAAAAAAACB}
+{\bkmkend AAAAAAAACB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+open a persistent connection to the Grid UI server \par
+The Grid User Interface Server is the entry point to the Grid for users and user applications. This is where jobs are launched from.\par
+This package has been designed to be able to be installed in any host, independent of whether it is an UI or not. Thus, to be able to submit jobs to the Grid, the server hosting the Web UI must connect to a Grid UI host to do the work.\par
+This routine opens a connection to a Grid UI host using an specified username (i.e. all jobs will be run under said username).\par
+The panorama therefore will look like this:\par
+HTML front-end --> processor.php <--> SSH <--> remote host <--> Grid\par
+This allows for better resilience: should a GridUI host be unavailable, we can detect the error condition and try another one. If the GridUI runs the front-end, then we have a single point of failure, which is a no-no.\par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $eg = new Grid;} \par
+{\f2  $eg->pconnect(); if ($eg->{\b get_connection_status()} == FALSE) echo "Couldn't instantiate a new Grid!\\n"; } \par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Use files instead of pipes and open them after securing thew connection: this should do with deadlocks and leave a trace log.\par
+}{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid TRUE on success, FALSE otherwise. \par
+}\par
+Definition at line 788 of file src/grid.php.\par
+\par
+Referenced by session_list_all().\par
+}
+{\xe \v destroy\:Grid}
+{\xe \v Grid\:destroy}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::destroy ()}
+}\par
+{\bkmkstart AAAAAAAACC}
+{\bkmkend AAAAAAAACC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Destroy remote grid identity. \par
+Destroy the certification we initialized so that no more jobs can be launched under our identity.\par
+This may be called even if we haven't called 'Grid::initialize()' because there may exits a previous activation that is still valid and we want to destroy it.\par
+To make things clear:\par
+{\b Grid::initialize()} "opens" the "door" to the Grid for {\i the user}  during a given time. New calls from the same user in this or any other login session, from this or any other site, while the "door" is open, share the same "door" and simply extend its validity period.\par
+{\b Grid::destroy()} "closes" the currently open door. If the door was being shared by more login sessions, it is closed for {\i all}  of them, not just the caller, and hence nor the caller, nor {\i any process}  under the same user will be able to use the grid any longer unless {\b Grid::initialize()} is called again to open the door again (issue a new certificate).\par
+In other words, you don't close {\i a}  Grid "door", you close {\i the}  Grid "door", and if it casually is being shared with other work sessions, then ALL of them will be destroyed (meaning that other active work sessions will fail).\par
+Thus: be careful when using this method. Be {\b very careful} .\par
+Sessions should be initiated using a validity length that you guesstimate will be comfortably enough for running all your work and left to expire by themselves.\par
+{\b Grid::destroy()} should only be called when you are sure that you don't want {\i any}  work on the Grid to be accepted on your behalf, neither from this not other work sessions.\par
+So, in general, it is better to make good estimations of the time needed by your jobs and specify it to {\b Grid::initialize()} and not use {\b Grid::destroy()} unless there are good reasons.\par
+Sample usage: {\f2  $eg = new Grid; $eg->set_user($user); $eg->set_host($host); $eg->set_password($passwd); $eg->set_passphrase($passphrase); $eg->set_work_dir("/tmp/grid/test/cless"); $eg->set_error_log("/tmp/grid/test/cless/connection.err"); if (!$eg->{\b initialize()}) echo "error: couldn't init the grid\\n"; else echo "OK"; $eg->{\b destroy()}; $eg->disconnect(); } \par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Be careful when using this function: as it destroys our Grid-ID, no more work will be able to be executed on the grid on our behalf. In other words, please, make sure there is no work pending and that all your work has terminated before destroying your Grid-ID.\par
+}{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid bool TRUE on success, FALSE on failure \par
+}\par
+Definition at line 1035 of file test/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v destroy\:Grid}
+{\xe \v Grid\:destroy}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::destroy ()}
+}\par
+{\bkmkstart AAAAAAAACD}
+{\bkmkend AAAAAAAACD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Destroy remote grid identity. \par
+Destroy the certification we initialized so that no more jobs can be launched under our identity.\par
+This may be called even if we haven't called 'Grid::initialize()' because there may exits a previous activation that is still valid and we want to destroy it.\par
+To make things clear:\par
+{\b Grid::initialize()} "opens" the "door" to the Grid for {\i the user}  during a given time. New calls from the same user in this or any other login session, from this or any other site, while the "door" is open, share the same "door" and simply extend its validity period.\par
+{\b Grid::destroy()} "closes" the currently open door. If the door was being shared by more login sessions, it is closed for {\i all}  of them, not just the caller, and hence nor the caller, nor {\i any process}  under the same user will be able to use the grid any longer unless {\b Grid::initialize()} is called again to open the door again (issue a new certificate).\par
+In other words, you don't close {\i a}  Grid "door", you close {\i the}  Grid "door", and if it casually is being shared with other work sessions, then ALL of them will be destroyed (meaning that other active work sessions will fail).\par
+Thus: be careful when using this method. Be {\b very careful} .\par
+Sessions should be initiated using a validity length that you guesstimate will be comfortably enough for running all your work and left to expire by themselves.\par
+{\b Grid::destroy()} should only be called when you are sure that you don't want {\i any}  work on the Grid to be accepted on your behalf, neither from this not other work sessions.\par
+So, in general, it is better to make good estimations of the time needed by your jobs and specify it to {\b Grid::initialize()} and not use {\b Grid::destroy()} unless there are good reasons.\par
+Sample usage: {\f2  $eg = new Grid; $eg->set_user($user); $eg->set_host($host); $eg->set_password($passwd); $eg->set_passphrase($passphrase); $eg->set_work_dir("/tmp/grid/test/cless"); $eg->set_error_log("/tmp/grid/test/cless/connection.err"); if (!$eg->{\b initialize()}) echo "error: couldn't init the grid\\n"; else echo "OK"; $eg->{\b destroy()}; $eg->disconnect(); } \par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Be careful when using this function: as it destroys our Grid-ID, no more work will be able to be executed on the grid on our behalf. In other words, please, make sure there is no work pending and that all your work has terminated before destroying your Grid-ID.\par
+}{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid bool TRUE on success, FALSE on failure \par
+}\par
+Definition at line 1038 of file src/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v destruct\:Grid}
+{\xe \v Grid\:destruct}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::destruct ()}
+}\par
+{\bkmkstart AAAAAAAACE}
+{\bkmkend AAAAAAAACE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 416 of file test/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v destruct\:Grid}
+{\xe \v Grid\:destruct}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::destruct ()}
+}\par
+{\bkmkstart AAAAAAAACF}
+{\bkmkend AAAAAAAACF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 416 of file src/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v get_connection_status\:Grid}
+{\xe \v Grid\:get_connection_status}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::get_connection_status ()}
+}\par
+{\bkmkstart AAAAAAAACG}
+{\bkmkend AAAAAAAACG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+get grid connection status \par
+This method allows you to know if the connection with the remote grid entry point has been successfully established or not. Note that this does not mean you may launch jobs to the grid: you still need to initialize the grid first.\par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $eg = new Grid;} \par
+{\f2  $eg->pconnect(); if ($eg->{\b get_connection_status()} == FALSE) echo "Couldn't connect to the Grid entry point!\\n"; } \par
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid bool TRUE if the connection has been established, FALSE otherwise. \par
+}\par
+Definition at line 690 of file test/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v get_connection_status\:Grid}
+{\xe \v Grid\:get_connection_status}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::get_connection_status ()}
+}\par
+{\bkmkstart AAAAAAAACH}
+{\bkmkend AAAAAAAACH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+get grid connection status \par
+This method allows you to know if the connection with the remote grid entry point has been successfully established or not. Note that this does not mean you may launch jobs to the grid: you still need to initialize the grid first.\par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $eg = new Grid;} \par
+{\f2  $eg->pconnect(); if ($eg->{\b get_connection_status()} == FALSE) echo "Couldn't connect to the Grid entry point!\\n"; } \par
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid bool TRUE if the connection has been established, FALSE otherwise. \par
+}\par
+Definition at line 690 of file src/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v get_init_status\:Grid}
+{\xe \v Grid\:get_init_status}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::get_init_status ()}
+}\par
+{\bkmkstart AAAAAAAACI}
+{\bkmkend AAAAAAAACI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+get grid initialization status \par
+This method allows you to learn whether the Grid has been successfully initialized and is ready to accept jobs. This entails both, login in as a specific user on the Grid connection point, and activating the proxy with your passphrase.\par
+The reason for the two step process is that in order to activate the grid you need to identify yourself using a grid certificate emitted by a CA. But to activate it you need an account on a grid access machine, which is open by any local administrator. Since this account is not under the central CA control, we can't trust it to submit jobs and require a proxy-initialization with an appropriate passphrase.\par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $eg = new Grid;} \par
+{\f2  $eg->{\b initialize()}; if ($eg->{\b get_init_status()} == FALSE) echo "Couldn't initialize the Grid!\\n"; } \par
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid bool TRUE if the grid has been initialized, FALSE otherwise. \par
+}\par
+Definition at line 731 of file test/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v get_init_status\:Grid}
+{\xe \v Grid\:get_init_status}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::get_init_status ()}
+}\par
+{\bkmkstart AAAAAAAACJ}
+{\bkmkend AAAAAAAACJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+get grid initialization status \par
+This method allows you to learn whether the Grid has been successfully initialized and is ready to accept jobs. This entails both, login in as a specific user on the Grid connection point, and activating the proxy with your passphrase.\par
+The reason for the two step process is that in order to activate the grid you need to identify yourself using a grid certificate emitted by a CA. But to activate it you need an account on a grid access machine, which is open by any local administrator. Since this account is not under the central CA control, we can't trust it to submit jobs and require a proxy-initialization with an appropriate passphrase.\par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $eg = new Grid;} \par
+{\f2  $eg->{\b initialize()}; if ($eg->{\b get_init_status()} == FALSE) echo "Couldn't initialize the Grid!\\n"; } \par
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid bool TRUE if the grid has been initialized, FALSE otherwise. \par
+}\par
+Definition at line 731 of file src/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v initialize\:Grid}
+{\xe \v Grid\:initialize}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::initialize ($ {\i hours} = 12, $ {\i minutes} = 0)}
+}\par
+{\bkmkstart AAAAAAAACK}
+{\bkmkend AAAAAAAACK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Start the Grid services. \par
+This function starts the grid services on the remote UI server host. This is done by unlocking the certificate that we are going to use to run our jobs on the grid using the passphrase provided.\par
+Grid services have a lifetime of their own. By default they are available for 12:00 hours (that's the default value of grid-proxy-init itself), but their duration may be fine tuned if we have some knowledge about the time required to run our job.\par
+Grid opening time is specified in hours+minutes. If the number of minutes is negative, the specified minutes are substracted from the specified hours (e.g: 1, -15 is fifteen minutes to one hour, i.e. 45 minutes). If the total time specified is negative then the default of 12:00 is used.\par
+{\b Grid::initialize()} enables the grid for a specified amount of time (by default 12:00h). This means that during the validity period, the user on the Grid-UI host may access the grid, in the same or different logins. The validity period SURVIVES after we close all communications with the remote grid entry point for as long as we have specified (so our jobs may continue running).\par
+If Grid access was already available (by a previous call to {\b Grid::initialize()}) when we issue the call, then it is reused and extended to acommodate the newly requested validity period. In other words, the Grid access is shared among all logins during its lifetime.\par
+This also means that if a valid certificate has been issued and not expired yet (another call to {\b Grid::initialize()} is still valid), then we may submit jobs to the Grid without any need to call {\b Grid::initialize()} ourselves.\par
+E.g., say you have a web-based service that runs a long job and you want to have the grid enabled 12h (the default). You just call {\b Grid::initialize()} and then submit the job.\par
+Now say that before it expires, someone logs in on your account but shouldn't have access to the Grid (i.e. they don't know the Grid-activation passphrase). Since the grid is already activated, they CAN submit jobs on your behalf even if they should not.\par
+Therefore, {\b DO NOT SHARE YOUR ACCOUNT ON THE GRID-UI WITH ANYBODY} . Protect it as dearly as your Grid certificate.\par
+It also means that debugging may be somewhat convoluted, as a call to {\b Grid::initialize()} may fail and jobs could still be accepted if another call from some other process is still valid. While debugging, it is better if you review the command output and make sure it shows how the call fared.\par
+So, what happens if we destroy a session? See {\b Grid::destroy()} for more details.\par
+Sample usage: {\f2  $eg = new Grid; $eg->set_user($user); $eg->set_host($host); $eg->set_password($passwd); $eg->set_passphrase($passphrase); $eg->set_work_dir("/tmp/grid/test/cless"); $eg->set_error_log("/tmp/grid/test/cless/connection.err"); $eg->{\b connect()}; if (!$eg->{\b initialize()}) echo "error: couldn't init the grid\\n"; else echo "OK\\n"; $eg->{\b destroy()}; $eg->disconnect(); } \par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid the output of the grid initialization command will go to {\b our}  standard output (i.e. the web server)!\par
+}\par
+{{\b \par
+Bug:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid : XXX JR XXX grid-proxy-init will use the time from the last issued command. To avoid setting a time shorter than one already existing we should first issue a grid-proxy-info, check if there is a running proxy, its time left, see if it is longer than what we want to set and if it is, then do NOTHING to avoid setting it shorter. \par
+}
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i integer} Estimated duration in hours of the session\par
+{\i integer} Estimated duration in minutes of the session\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid bool TRUE on success, FALSE otherwise \par
+}\par
+Definition at line 903 of file test/grid.php.\par
+\par
+}
+{\xe \v initialize\:Grid}
+{\xe \v Grid\:initialize}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::initialize ($ {\i hours} = 12, $ {\i minutes} = 0)}
+}\par
+{\bkmkstart AAAAAAAACL}
+{\bkmkend AAAAAAAACL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Start the Grid services. \par
+This function starts the grid services on the remote UI server host. This is done by unlocking the certificate that we are going to use to run our jobs on the grid using the passphrase provided.\par
+Grid services have a lifetime of their own. By default they are available for 12:00 hours (that's the default value of grid-proxy-init itself), but their duration may be fine tuned if we have some knowledge about the time required to run our job.\par
+Grid opening time is specified in hours+minutes. If the number of minutes is negative, the specified minutes are substracted from the specified hours (e.g: 1, -15 is fifteen minutes to one hour, i.e. 45 minutes). If the total time specified is negative then the default of 12:00 is used.\par
+{\b Grid::initialize()} enables the grid for a specified amount of time (by default 12:00h). This means that during the validity period, the user on the Grid-UI host may access the grid, in the same or different logins. The validity period SURVIVES after we close all communications with the remote grid entry point for as long as we have specified (so our jobs may continue running).\par
+If Grid access was already available (by a previous call to {\b Grid::initialize()}) when we issue the call, then it is reused and extended to acommodate the newly requested validity period. In other words, the Grid access is shared among all logins during its lifetime.\par
+This also means that if a valid certificate has been issued and not expired yet (another call to {\b Grid::initialize()} is still valid), then we may submit jobs to the Grid without any need to call {\b Grid::initialize()} ourselves.\par
+E.g., say you have a web-based service that runs a long job and you want to have the grid enabled 12h (the default). You just call {\b Grid::initialize()} and then submit the job.\par
+Now say that before it expires, someone logs in on your account but shouldn't have access to the Grid (i.e. they don't know the Grid-activation passphrase). Since the grid is already activated, they CAN submit jobs on your behalf even if they should not.\par
+Therefore, {\b DO NOT SHARE YOUR ACCOUNT ON THE GRID-UI WITH ANYBODY} . Protect it as dearly as your Grid certificate.\par
+It also means that debugging may be somewhat convoluted, as a call to {\b Grid::initialize()} may fail and jobs could still be accepted if another call from some other process is still valid. While debugging, it is better if you review the command output and make sure it shows how the call fared.\par
+So, what happens if we destroy a session? See {\b Grid::destroy()} for more details.\par
+Sample usage: {\f2  $eg = new Grid; $eg->set_user($user); $eg->set_host($host); $eg->set_password($passwd); $eg->set_passphrase($passphrase); $eg->set_work_dir("/tmp/grid/test/cless"); $eg->set_error_log("/tmp/grid/test/cless/connection.err"); $eg->{\b connect()}; if (!$eg->{\b initialize()}) echo "error: couldn't init the grid\\n"; else echo "OK\\n"; $eg->{\b destroy()}; $eg->disconnect(); } \par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid the output of the grid initialization command will go to {\b our}  standard output (i.e. the web server)!\par
+}\par
+{{\b \par
+Bug:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid : XXX JR XXX grid-proxy-init will use the time from the last issued command. To avoid setting a time shorter than one already existing we should first issue a grid-proxy-info, check if there is a running proxy, its time left, see if it is longer than what we want to set and if it is, then do NOTHING to avoid setting it shorter. \par
+}
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i integer} Estimated duration in hours of the session\par
+{\i integer} Estimated duration in minutes of the session\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid bool TRUE on success, FALSE otherwise \par
+}\par
+Definition at line 903 of file src/grid.php.\par
+\par
+}
+{\xe \v job_cancel\:Grid}
+{\xe \v Grid\:job_cancel}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::job_cancel ($ {\i job}, &$ {\i out}, $ {\i session} = 'default')}
+}\par
+{\bkmkstart AAAAAAAACM}
+{\bkmkend AAAAAAAACM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Cancel a job previously submitted to the grid. \par
+Note: If the job has not reached the CE yet (i.e.: its status is WAITING or READY states), the cancellation request may be ignored, and the job may continue running, although a message of successful cancellation is returned to the user. In such cases, just cancel the job again when its status is SCHEDULED or RUNNING\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} The name of the job you submitted to the grid \par
+{\i string} Optionally identifies the session to which the job belongs (if it was submitted within one). If this is not specified, then the default session is used. \par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid bool TRUE on success, FALSE on failure. \par
+}\par
+Definition at line 1946 of file test/grid.php.\par
+\par
+}
+{\xe \v job_cancel\:Grid}
+{\xe \v Grid\:job_cancel}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::job_cancel ($ {\i job}, &$ {\i out}, $ {\i session} = 'default')}
+}\par
+{\bkmkstart AAAAAAAACN}
+{\bkmkend AAAAAAAACN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Cancel a job previously submitted to the grid. \par
+Note: If the job has not reached the CE yet (i.e.: its status is WAITING or READY states), the cancellation request may be ignored, and the job may continue running, although a message of successful cancellation is returned to the user. In such cases, just cancel the job again when its status is SCHEDULED or RUNNING\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} The name of the job you submitted to the grid \par
+{\i string} Optionally identifies the session to which the job belongs (if it was submitted within one). If this is not specified, then the default session is used. \par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid bool TRUE on success, FALSE on failure. \par
+}\par
+Definition at line 1949 of file src/grid.php.\par
+\par
+}
+{\xe \v job_get_id\:Grid}
+{\xe \v Grid\:job_get_id}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::job_get_id ($ {\i job}, $ {\i session} = 'default')}
+}\par
+{\bkmkstart AAAAAAAACO}
+{\bkmkend AAAAAAAACO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Get Grid ID of a submitted job. \par
+You should not need this function normally. The job and session names you already have should actually be enough for all your needs. The function is needed internally by the class, but otherwise it should be of little interest.\par
+Nevertheless, you may want to have access to this knowledge, either out of curiosity or for other reasons (e.g. re-routing access to a job through other access points after a crash of the original access point you used to submit it).\par
+Indeed, this will come handy for newer releases of this class when disaster recovery is added. Meanwhile, as already said, it is of little use.\par
+Sample usage: {\f2  $eg = new Grid; $eg->set_user($user); $eg->set_host($host); $eg->set_password($passwd); $eg->set_passphrase($passphrase); $eg->set_work_dir("/tmp/grid/test/cless"); $eg->set_error_log("/tmp/grid/test/cless/connection.err"); echo "initializing grid... "; if (!$eg->{\b initialize()}) echo "error: couldn't init the grid\\n"; else echo "OK\\n"; echo "Submitting tst-job... "; if (! $eg->job_submit("tst-job", $out)) echo "error: coudn't start the job\\n"; else echo "OK\\n"; print_r($out); print_r($eg->job_get_id("tst-job")); } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} The name of the job you submitted to the grid \par
+{\i string} Optionally identifies the session to which the job belongs (if it was submitted within one).\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid array|false with the known job-id's submitted from this 'job'. That looks as an oxymoron: there should only be one. Ergo, you may use it to detect job name clashes or job re-submissions.\par
+}{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid this is nasty and should be enhanced on a future version. \par
+}\par
+Definition at line 1607 of file test/grid.php.\par
+\par
+}
+{\xe \v job_get_id\:Grid}
+{\xe \v Grid\:job_get_id}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::job_get_id ($ {\i job}, $ {\i session} = 'default')}
+}\par
+{\bkmkstart AAAAAAAACP}
+{\bkmkend AAAAAAAACP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Get Grid ID of a submitted job. \par
+You should not need this function normally. The job and session names you already have should actually be enough for all your needs. The function is needed internally by the class, but otherwise it should be of little interest.\par
+Nevertheless, you may want to have access to this knowledge, either out of curiosity or for other reasons (e.g. re-routing access to a job through other access points after a crash of the original access point you used to submit it).\par
+Indeed, this will come handy for newer releases of this class when disaster recovery is added. Meanwhile, as already said, it is of little use.\par
+Sample usage: {\f2  $eg = new Grid; $eg->set_user($user); $eg->set_host($host); $eg->set_password($passwd); $eg->set_passphrase($passphrase); $eg->set_work_dir("/tmp/grid/test/cless"); $eg->set_error_log("/tmp/grid/test/cless/connection.err"); echo "initializing grid... "; if (!$eg->{\b initialize()}) echo "error: couldn't init the grid\\n"; else echo "OK\\n"; echo "Submitting tst-job... "; if (! $eg->job_submit("tst-job", $out)) echo "error: coudn't start the job\\n"; else echo "OK\\n"; print_r($out); print_r($eg->job_get_id("tst-job")); } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} The name of the job you submitted to the grid \par
+{\i string} Optionally identifies the session to which the job belongs (if it was submitted within one).\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid array|false with the known job-id's submitted from this 'job'. That looks as an oxymoron: there should only be one. Ergo, you may use it to detect job name clashes or job re-submissions.\par
+}{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid this is nasty and should be enhanced on a future version. \par
+}\par
+Definition at line 1610 of file src/grid.php.\par
+\par
+}
+{\xe \v job_get_output\:Grid}
+{\xe \v Grid\:job_get_output}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::job_get_output ($ {\i job}, &$ {\i out}, $ {\i session} = 'default')}
+}\par
+{\bkmkstart AAAAAAAACQ}
+{\bkmkend AAAAAAAACQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+retrieve results \par
+Retrieve the results of a job from the Grid. This function will attempt to retrieve the results of a job. This relies on the results being already available, i.e. you better check the job status first and make sure it has completed.\par
+If you don't, and the job hasn't completed yet, don't worry: nothing will be retrieved. So, no harm done. But you should check stdout to verify the condition.\par
+All results will be stored remotely on the job directory, under a subdirectory with a unique name of the form $grid_user_name_XXXXX... where the X's mean a random string. Locally you will see them as $job/job_output so that they have an easy name to identify them.\par
+To access your job output, just open this $job/output directory and look inside.\par
+The rationale for this is to avoid overwriting your job information with its output. If that was intended, nothing is lost, just pick-up the newly generated file. This way you always have continued access to your old, submitted data for checking.\par
+Sample usage: {\f2  $eg = new Grid; $eg->set_user($user); $eg->set_host($host); $eg->set_password($passwd); $eg->set_passphrase($passphrase); $eg->set_work_dir("/tmp/grid/test/cless"); $eg->set_error_log("/tmp/grid/test/cless/connection.err"); echo "initializing grid... "; if (!$eg->{\b initialize()}) echo "error: couldn't init the grid\\n"; else echo "OK\\n"; echo "Submitting tst-job... "; if (! $eg->job_submit("tst-job", $out)) echo "error: coudn't start the job\\n"; else echo "OK\\n"; print_r($out); echo "\\nGetting job ID... \\n"; print_r($eg->job_get_id("tst-job")); echo "\\nGetting job status... \\n"; print_r($eg->job_status("tst-job", $out)); echo "\\nGetting job output... "; if (! $eg->job_get_output("tst-job", $out)) echo "error: couldn't get job output\\n"; else echo "OK\\n"; print_r($out); } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} The name of the job you submitted to the grid \par
+{\i string} Optionally identifies the session to which the job belongs (if it was submitted within one). If this is not specified, then the default session is used. \par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid bool TRUE on success, FALSE on failure. \par
+}\par
+Definition at line 1854 of file test/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v job_get_output\:Grid}
+{\xe \v Grid\:job_get_output}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::job_get_output ($ {\i job}, &$ {\i out}, $ {\i session} = 'default')}
+}\par
+{\bkmkstart AAAAAAAACR}
+{\bkmkend AAAAAAAACR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+retrieve results \par
+Retrieve the results of a job from the Grid. This function will attempt to retrieve the results of a job. This relies on the results being already available, i.e. you better check the job status first and make sure it has completed.\par
+If you don't, and the job hasn't completed yet, don't worry: nothing will be retrieved. So, no harm done. But you should check stdout to verify the condition.\par
+All results will be stored remotely on the job directory, under a subdirectory with a unique name of the form $grid_user_name_XXXXX... where the X's mean a random string. Locally you will see them as $job/job_output so that they have an easy name to identify them.\par
+To access your job output, just open this $job/output directory and look inside.\par
+The rationale for this is to avoid overwriting your job information with its output. If that was intended, nothing is lost, just pick-up the newly generated file. This way you always have continued access to your old, submitted data for checking.\par
+Sample usage: {\f2  $eg = new Grid; $eg->set_user($user); $eg->set_host($host); $eg->set_password($passwd); $eg->set_passphrase($passphrase); $eg->set_work_dir("/tmp/grid/test/cless"); $eg->set_error_log("/tmp/grid/test/cless/connection.err"); echo "initializing grid... "; if (!$eg->{\b initialize()}) echo "error: couldn't init the grid\\n"; else echo "OK\\n"; echo "Submitting tst-job... "; if (! $eg->job_submit("tst-job", $out)) echo "error: coudn't start the job\\n"; else echo "OK\\n"; print_r($out); echo "\\nGetting job ID... \\n"; print_r($eg->job_get_id("tst-job")); echo "\\nGetting job status... \\n"; print_r($eg->job_status("tst-job", $out)); echo "\\nGetting job output... "; if (! $eg->job_get_output("tst-job", $out)) echo "error: couldn't get job output\\n"; else echo "OK\\n"; print_r($out); } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} The name of the job you submitted to the grid \par
+{\i string} Optionally identifies the session to which the job belongs (if it was submitted within one). If this is not specified, then the default session is used. \par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid bool TRUE on success, FALSE on failure. \par
+}\par
+Definition at line 1857 of file src/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v job_status\:Grid}
+{\xe \v Grid\:job_status}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::job_status ($ {\i job}, &$ {\i out}, $ {\i session} = 'default')}
+}\par
+{\bkmkstart AAAAAAAACS}
+{\bkmkend AAAAAAAACS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+check job status \par
+This routine retrieves the job status report from the remote grid entry point into your local job directory, and returns the status of your specified job/session.\par
+Sample usage: {\f2  $eg = new Grid; $eg->set_user($user); $eg->set_host($host); $eg->set_password($passwd); $eg->set_passphrase($passphrase); $eg->set_work_dir("/tmp/grid/test/cless"); $eg->set_error_log("/tmp/grid/test/cless/connection.err"); echo "initializing grid... "; if (!$eg->{\b initialize()}) echo "error: couldn't init the grid\\n"; else echo "OK\\n"; echo "Submitting tst-job... "; if (! $eg->job_submit("tst-job", $out)) echo "error: coudn't start the job\\n"; else echo "OK\\n"; print_r($out); echo "\\nGetting job ID... \\n"; print_r($eg->job_get_id("tst-job")); echo "\\nGetting job status... \\n"; print_r($eg->job_status("tst-job", $out)); } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} The name of the job you submitted to the grid \par
+{\i string} Output of the status request program. Useful for debugging. \par
+{\i string} Optionally identifies the session to which the job belongs (if it was submitted within one).\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid array|false an array containing the job status or FALSE on failure. \par
+}\par
+Definition at line 1718 of file test/grid.php.\par
+\par
+}
+{\xe \v job_status\:Grid}
+{\xe \v Grid\:job_status}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::job_status ($ {\i job}, &$ {\i out}, $ {\i session} = 'default')}
+}\par
+{\bkmkstart AAAAAAAACT}
+{\bkmkend AAAAAAAACT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+check job status \par
+This routine retrieves the job status report from the remote grid entry point into your local job directory, and returns the status of your specified job/session.\par
+Sample usage: {\f2  $eg = new Grid; $eg->set_user($user); $eg->set_host($host); $eg->set_password($passwd); $eg->set_passphrase($passphrase); $eg->set_work_dir("/tmp/grid/test/cless"); $eg->set_error_log("/tmp/grid/test/cless/connection.err"); echo "initializing grid... "; if (!$eg->{\b initialize()}) echo "error: couldn't init the grid\\n"; else echo "OK\\n"; echo "Submitting tst-job... "; if (! $eg->job_submit("tst-job", $out)) echo "error: coudn't start the job\\n"; else echo "OK\\n"; print_r($out); echo "\\nGetting job ID... \\n"; print_r($eg->job_get_id("tst-job")); echo "\\nGetting job status... \\n"; print_r($eg->job_status("tst-job", $out)); } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} The name of the job you submitted to the grid \par
+{\i string} Output of the status request program. Useful for debugging. \par
+{\i string} Optionally identifies the session to which the job belongs (if it was submitted within one).\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid array|false an array containing the job status or FALSE on failure. \par
+}\par
+Definition at line 1721 of file src/grid.php.\par
+\par
+}
+{\xe \v job_submit\:Grid}
+{\xe \v Grid\:job_submit}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::job_submit ($ {\i job}, &$ {\i out}, $ {\i session} = 'default')}
+}\par
+{\bkmkstart AAAAAAAACU}
+{\bkmkend AAAAAAAACU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+submit a job to the grid \par
+This procedure submits a job to the Grid, optionally tagging it as part of a specific session.\par
+A job must be stored in a single directory (whose name you provide in the call to this function). The directory must contain any executables, libraries, configuration files/scripts, and input data needed to run your job.\par
+In addition, there must be a JDL file called 'job.jdl' and describing the job to the grid using the JDL language.\par
+Please note that only the job-directory name is used. If you provide a longer path, only the last component (the job directory name) will be used to identify your job remotely.\par
+Sample usage: {\f2  $eg = new Grid; $eg->set_user($user); $eg->set_host($host); $eg->set_password($passwd); $eg->set_passphrase($passphrase); $eg->set_work_dir("/tmp/grid/test/cless"); $eg->set_error_log("/tmp/grid/test/cless/connection.err"); echo "initializing grid... "; if (!$eg->{\b initialize()}) echo "error: couldn't init the grid\\n"; else echo "OK\\n"; echo "Submitting tst-job... "; if (! $eg->job_submit("tst-job", $out)) echo "error: coudn't start the job\\n"; else echo "OK\\n"; print_r($out); $eg->{\b destroy()}; $eg->disconnect(); } \par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid in future instances we may provide routines to generate the JDL, possibly within a GridJob class of its own.\par
+}{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} The name of the job (same as the subdirectory it is in) \par
+{\i array} A variable to hold any messages spitted by the submission procedure. Messages will be stored as an array of strings (one per line) without ending newlines. \par
+{\i string} Optional name of the session to which this job belongs (obtained from a previous call to session_new). \par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid bool TRUE if success, FALSE otherwise \par
+}\par
+Definition at line 1465 of file test/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v job_submit\:Grid}
+{\xe \v Grid\:job_submit}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::job_submit ($ {\i job}, &$ {\i out}, $ {\i session} = 'default')}
+}\par
+{\bkmkstart AAAAAAAACV}
+{\bkmkend AAAAAAAACV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+submit a job to the grid \par
+This procedure submits a job to the Grid, optionally tagging it as part of a specific session.\par
+A job must be stored in a single directory (whose name you provide in the call to this function). The directory must contain any executables, libraries, configuration files/scripts, and input data needed to run your job.\par
+In addition, there must be a JDL file called 'job.jdl' and describing the job to the grid using the JDL language.\par
+Please note that only the job-directory name is used. If you provide a longer path, only the last component (the job directory name) will be used to identify your job remotely.\par
+Sample usage: {\f2  $eg = new Grid; $eg->set_user($user); $eg->set_host($host); $eg->set_password($passwd); $eg->set_passphrase($passphrase); $eg->set_work_dir("/tmp/grid/test/cless"); $eg->set_error_log("/tmp/grid/test/cless/connection.err"); echo "initializing grid... "; if (!$eg->{\b initialize()}) echo "error: couldn't init the grid\\n"; else echo "OK\\n"; echo "Submitting tst-job... "; if (! $eg->job_submit("tst-job", $out)) echo "error: coudn't start the job\\n"; else echo "OK\\n"; print_r($out); $eg->{\b destroy()}; $eg->disconnect(); } \par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid in future instances we may provide routines to generate the JDL, possibly within a GridJob class of its own.\par
+}{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} The name of the job (same as the subdirectory it is in) \par
+{\i array} A variable to hold any messages spitted by the submission procedure. Messages will be stored as an array of strings (one per line) without ending newlines. \par
+{\i string} Optional name of the session to which this job belongs (obtained from a previous call to session_new). \par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid bool TRUE if success, FALSE otherwise \par
+}\par
+Definition at line 1468 of file src/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v job_submit_set_timeout\:Grid}
+{\xe \v Grid\:job_submit_set_timeout}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::job_submit_set_timeout ($ {\i seconds} = 0)}
+}\par
+{\bkmkstart AAAAAAAACW}
+{\bkmkend AAAAAAAACW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Set maximum (guesstimated) allowed time for a job submission to succeed. \par
+This value is application and dataset dependent, will be of relevance in rare occasions (1/4000) and hence may as well be generous.\par
+The default is 0 seconds (no timeout). You should make measures to ensure it is reasonable. If set to 0, no timeout will be used.\par
+Unless set to 0, you will need to code some resubmission policy in your application.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i integer} $seconds timeout in seconds for job submission (defaults to 0, no timeout). \par
+}
+\par
+Definition at line 1407 of file test/grid.php.\par
+\par
+References $debug_grid, and session_is_valid().\par
+}
+{\xe \v job_submit_set_timeout\:Grid}
+{\xe \v Grid\:job_submit_set_timeout}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::job_submit_set_timeout ($ {\i seconds} = 0)}
+}\par
+{\bkmkstart AAAAAAAACX}
+{\bkmkend AAAAAAAACX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Set maximum (guesstimated) allowed time for a job submission to succeed. \par
+This value is application and dataset dependent, will be of relevance in rare occasions (1/4000) and hence may as well be generous.\par
+The default is 0 seconds (no timeout). You should make measures to ensure it is reasonable. If set to 0, no timeout will be used.\par
+Unless set to 0, you will need to code some resubmission policy in your application.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i integer} $seconds timeout in seconds for job submission (defaults to 0, no timeout). \par
+}
+\par
+Definition at line 1410 of file src/grid.php.\par
+\par
+References $debug_grid, and session_is_valid().\par
+}
+{\xe \v session_define\:Grid}
+{\xe \v Grid\:session_define}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::session_define ($ {\i session}, $ {\i directory})}
+}\par
+{\bkmkstart AAAAAAAACY}
+{\bkmkend AAAAAAAACY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Define an already existing session. \par
+This is useful if the session already exists and we want to access it: we already know its directory name, and just want to associate a new name with the existing directory name.\par
+Use e.g. when you are to submit a job from a WWW page and access the results from a different one: as the new page has no access to the status of the previous one, we need to rebuild it ourselves.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} session name \par
+{\i string} subdirectory of $work_dir to be associated to that name \par
+}
+\par
+Definition at line 1261 of file test/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v session_define\:Grid}
+{\xe \v Grid\:session_define}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::session_define ($ {\i session}, $ {\i directory})}
+}\par
+{\bkmkstart AAAAAAAACZ}
+{\bkmkend AAAAAAAACZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Define an already existing session. \par
+This is useful if the session already exists and we want to access it: we already know its directory name, and just want to associate a new name with the existing directory name.\par
+Use e.g. when you are to submit a job from a WWW page and access the results from a different one: as the new page has no access to the status of the previous one, we need to rebuild it ourselves.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} session name \par
+{\i string} subdirectory of $work_dir to be associated to that name \par
+}
+\par
+Definition at line 1264 of file src/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v session_destroy\:Grid}
+{\xe \v Grid\:session_destroy}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::session_destroy ($ {\i session} = 'default')}
+}\par
+{\bkmkstart AAAAAAAADA}
+{\bkmkend AAAAAAAADA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+destroy the specified session \par
+This method destroys all data associated with the specified session. Currently it does not kill its associated jobs, but deleted all their underlying data nevertheless.\par
+Warning: passing an empty string or no argument will destroy the default session.\par
+return bool TRUE if success, FALSE otherwise \par
+Definition at line 1331 of file test/grid.php.\par
+\par
+}
+{\xe \v session_destroy\:Grid}
+{\xe \v Grid\:session_destroy}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::session_destroy ($ {\i session} = 'default')}
+}\par
+{\bkmkstart AAAAAAAADB}
+{\bkmkend AAAAAAAADB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+destroy the specified session \par
+This method destroys all data associated with the specified session. Currently it does not kill its associated jobs, but deleted all their underlying data nevertheless.\par
+Warning: passing an empty string or no argument will destroy the default session.\par
+return bool TRUE if success, FALSE otherwise \par
+Definition at line 1334 of file src/grid.php.\par
+\par
+}
+{\xe \v session_destroy_all\:Grid}
+{\xe \v Grid\:session_destroy_all}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::session_destroy_all ()}
+}\par
+{\bkmkstart AAAAAAAADC}
+{\bkmkend AAAAAAAADC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Destroy all existing sessions. \par
+private \par
+Definition at line 1364 of file test/grid.php.\par
+\par
+}
+{\xe \v session_destroy_all\:Grid}
+{\xe \v Grid\:session_destroy_all}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::session_destroy_all ()}
+}\par
+{\bkmkstart AAAAAAAADD}
+{\bkmkend AAAAAAAADD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Destroy all existing sessions. \par
+private \par
+Definition at line 1367 of file src/grid.php.\par
+\par
+}
+{\xe \v session_directory\:Grid}
+{\xe \v Grid\:session_directory}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::session_directory ($ {\i session} = 'default')}
+}\par
+{\bkmkstart AAAAAAAADE}
+{\bkmkend AAAAAAAADE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+return the directory associated to a session \par
+DOES NO ERROR CHECKING FOR VALID SESSION\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} a session name \par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid string the associated directory name\par
+}private \par
+Definition at line 1297 of file test/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v session_directory\:Grid}
+{\xe \v Grid\:session_directory}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::session_directory ($ {\i session} = 'default')}
+}\par
+{\bkmkstart AAAAAAAADF}
+{\bkmkend AAAAAAAADF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+return the directory associated to a session \par
+DOES NO ERROR CHECKING FOR VALID SESSION\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} a session name \par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid string the associated directory name\par
+}private \par
+Definition at line 1300 of file src/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v session_is_valid\:Grid}
+{\xe \v Grid\:session_is_valid}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::session_is_valid ($ {\i session} = 'default')}
+}\par
+{\bkmkstart AAAAAAAADG}
+{\bkmkend AAAAAAAADG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+check if supplied argument is a valid (existing and active) session. \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} a session name \par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid bool TRUE if the session could be found among the list of valid sessions, FALSE otherwise\par
+}private \par
+Definition at line 1276 of file test/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v session_is_valid\:Grid}
+{\xe \v Grid\:session_is_valid}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::session_is_valid ($ {\i session} = 'default')}
+}\par
+{\bkmkstart AAAAAAAADH}
+{\bkmkend AAAAAAAADH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+check if supplied argument is a valid (existing and active) session. \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} a session name \par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid bool TRUE if the session could be found among the list of valid sessions, FALSE otherwise\par
+}private \par
+Definition at line 1279 of file src/grid.php.\par
+\par
+References $debug_grid.\par
+Referenced by job_submit_set_timeout(), and session_list_all().\par
+}
+{\xe \v session_list_all\:Grid}
+{\xe \v Grid\:session_list_all}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::session_list_all ()}
+}\par
+{\bkmkstart AAAAAAAADI}
+{\bkmkend AAAAAAAADI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+list all existing sessions (debugging only) \par
+private \par
+Definition at line 1309 of file test/grid.php.\par
+\par
+References $debug_grid, connect(), and session_is_valid().\par
+}
+{\xe \v session_list_all\:Grid}
+{\xe \v Grid\:session_list_all}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::session_list_all ()}
+}\par
+{\bkmkstart AAAAAAAADJ}
+{\bkmkend AAAAAAAADJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+list all existing sessions (debugging only) \par
+private \par
+Definition at line 1312 of file src/grid.php.\par
+\par
+References $debug_grid, connect(), and session_is_valid().\par
+}
+{\xe \v session_new\:Grid}
+{\xe \v Grid\:session_new}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::session_new ($ {\i hint} = "sess")}
+}\par
+{\bkmkstart AAAAAAAADK}
+{\bkmkend AAAAAAAADK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Create a new session. \par
+We take control of the session system: in a previous incarnation we got the session name from the user. This is dangerous since we can not avoid clashes even with random session names provided by a user: a randomly generated name may be guaranteed unique within the user's local host namespace, but should various calls come from different hosts (e.g. HA front-ends in a cluster), it is conceivable (although improbable) that both come up with the same random number and generate a clash on the shared remote grid access point. Hence the new approach: to be true, users do not need to generate a session name themselves: they just need a way to refer to them.\par
+This routine will generate a new session: under a given session, we guarantee that processes will be run under an isolated sandbox where non name clashes from other concurrent users will occur. Name clashes within a given session induced by the user are still the responsability of the user.\par
+SESSIONS\par
+The basic idea is as follows: if you are developing a service that may be called concurrently by various users, your problem at the GrUI is the same as on your local server: avoiding name clashes for jobs. As long as you manage that locally using unique names, the same will work on the UI server.\par
+This however may be inconvenient at times. It is usually the case when your service is not composed by a single job, but by many independent jobs that may be run concurrently as well. You still need to generate unique names for each sub-job, but if they are produced within a local uniquely named service-instance, then you may reuse the sub-job names for each instance.\par
+This comes handy in the case of many sub-jobs: as long as the main service instance is uniquely identified, contained sub-jobs may have significant names that are easier to identify than randomly-generated ones: e.g. {
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 
+    user A -> service-instance-A -+-> sub-job-1
+                                  |
+                                  +-> sub-job-2
+                                  |
+                                  etc...\par
+}
+\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid     user B -> service-instance-B -+-> sub-job-1
+                                  |
+                                  +-> sub-job-2
+                                  |
+                                  etc...
+ \par
+}
+ In this case, since the service-instances have unique names (A, B) we may use the same naming strategy in both cases for naming sub-jobs (1, 2,...) which makes bookkeeping a lot easier.\par
+To reproduce a similar behaviour remotely we provide 'sessions'.\par
+Basically, what you are doing in the local case is isolating all the equally named jobs of each service-instance within an unique sandbox. In the grid you get the same result using 'sessions': whenever you want to submit a series of non-randomly-named jobs (or even a single one) you first allocate a session, and then attach those jobs to the session. Job names within a session are guaranteed not to clash with equal job names from another session.\par
+Note the 'non-randomly-named' tag above: you want to use sessions ALWAYS that you use any non-random job name unless you can guarantee it will be the only job with that name ON THE GRID.\par
+This is an important notice: your job may have a non-random, but guaranteed unique name on your local host. And as long as the job will only be submitted from your local host it is OK. But if you are going to share your tools with other fellows, then they will install them locally and submit a similarly named job as well. The job name will be unique within each one's local machine, but when jobs are collected at the GrUI, they will all have the same name, which is a no-no.\par
+USING SESSIONS\par
+Once you see the need for using sessions, using them is quite simple: you call this function asking for a new session to be created on the remote grid access point on your behalf. The routine will return a unique session identifier which you later use to tag jobs that are to be run within that session's sandbox.\par
+Sample usage: {\f2  $eg = new Grid; $eg->set_user($user); $eg->set_host($host); $eg->set_password($passwd); $eg->set_passphrase($passphrase); $eg->set_work_dir("/tmp/grid/debug"); $eg->set_error_log("/tmp/grid/debug/connection.err"); echo "initializing grid... "; if (!$eg->{\b initialize()}) \{ echo "error: couldn't init the grid\\n"; exit; \} else echo "OK\\n"; echo "Submitting tst-job to default session...\\n"; $out = array(""); if (! $eg->job_submit("tst-job", $out)) \{ echo "error: coudn't start the job\\n"; exit; \} else echo "OK\\n"; print_r($out); echo "Submitting tst-job to a new session...\\n"; $sess = $eg->{\b session_new()}; echo "sess = "; print_r($sess); echo "\\n"; if ($sess != FALSE) \{ $out = array(""); if (! $eg->job_submit("tst-job", $out, $sess)) echo "error: coudn't start the job\\n"; else \{ echo "OK\\n"; \} $eg->session_destroy($sess); \} $eg->{\b destruct()}; } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} $hint an optional string to be used for the session name\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid string|false session ID of the newly generated session. \par
+}\par
+Definition at line 1191 of file test/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v session_new\:Grid}
+{\xe \v Grid\:session_new}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::session_new ($ {\i hint} = "sess")}
+}\par
+{\bkmkstart AAAAAAAADL}
+{\bkmkend AAAAAAAADL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Create a new session. \par
+We take control of the session system: in a previous incarnation we got the session name from the user. This is dangerous since we can not avoid clashes even with random session names provided by a user: a randomly generated name may be guaranteed unique within the user's local host namespace, but should various calls come from different hosts (e.g. HA front-ends in a cluster), it is conceivable (although improbable) that both come up with the same random number and generate a clash on the shared remote grid access point. Hence the new approach: to be true, users do not need to generate a session name themselves: they just need a way to refer to them.\par
+This routine will generate a new session: under a given session, we guarantee that processes will be run under an isolated sandbox where non name clashes from other concurrent users will occur. Name clashes within a given session induced by the user are still the responsability of the user.\par
+SESSIONS\par
+The basic idea is as follows: if you are developing a service that may be called concurrently by various users, your problem at the GrUI is the same as on your local server: avoiding name clashes for jobs. As long as you manage that locally using unique names, the same will work on the UI server.\par
+This however may be inconvenient at times. It is usually the case when your service is not composed by a single job, but by many independent jobs that may be run concurrently as well. You still need to generate unique names for each sub-job, but if they are produced within a local uniquely named service-instance, then you may reuse the sub-job names for each instance.\par
+This comes handy in the case of many sub-jobs: as long as the main service instance is uniquely identified, contained sub-jobs may have significant names that are easier to identify than randomly-generated ones: e.g. {
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 
+    user A -> service-instance-A -+-> sub-job-1
+                                  |
+                                  +-> sub-job-2
+                                  |
+                                  etc...\par
+}
+\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid     user B -> service-instance-B -+-> sub-job-1
+                                  |
+                                  +-> sub-job-2
+                                  |
+                                  etc...
+ \par
+}
+ In this case, since the service-instances have unique names (A, B) we may use the same naming strategy in both cases for naming sub-jobs (1, 2,...) which makes bookkeeping a lot easier.\par
+To reproduce a similar behaviour remotely we provide 'sessions'.\par
+Basically, what you are doing in the local case is isolating all the equally named jobs of each service-instance within an unique sandbox. In the grid you get the same result using 'sessions': whenever you want to submit a series of non-randomly-named jobs (or even a single one) you first allocate a session, and then attach those jobs to the session. Job names within a session are guaranteed not to clash with equal job names from another session.\par
+Note the 'non-randomly-named' tag above: you want to use sessions ALWAYS that you use any non-random job name unless you can guarantee it will be the only job with that name ON THE GRID.\par
+This is an important notice: your job may have a non-random, but guaranteed unique name on your local host. And as long as the job will only be submitted from your local host it is OK. But if you are going to share your tools with other fellows, then they will install them locally and submit a similarly named job as well. The job name will be unique within each one's local machine, but when jobs are collected at the GrUI, they will all have the same name, which is a no-no.\par
+USING SESSIONS\par
+Once you see the need for using sessions, using them is quite simple: you call this function asking for a new session to be created on the remote grid access point on your behalf. The routine will return a unique session identifier which you later use to tag jobs that are to be run within that session's sandbox.\par
+Sample usage: {\f2  $eg = new Grid; $eg->set_user($user); $eg->set_host($host); $eg->set_password($passwd); $eg->set_passphrase($passphrase); $eg->set_work_dir("/tmp/grid/debug"); $eg->set_error_log("/tmp/grid/debug/connection.err"); echo "initializing grid... "; if (!$eg->{\b initialize()}) \{ echo "error: couldn't init the grid\\n"; exit; \} else echo "OK\\n"; echo "Submitting tst-job to default session...\\n"; $out = array(""); if (! $eg->job_submit("tst-job", $out)) \{ echo "error: coudn't start the job\\n"; exit; \} else echo "OK\\n"; print_r($out); echo "Submitting tst-job to a new session...\\n"; $sess = $eg->{\b session_new()}; echo "sess = "; print_r($sess); echo "\\n"; if ($sess != FALSE) \{ $out = array(""); if (! $eg->job_submit("tst-job", $out, $sess)) echo "error: coudn't start the job\\n"; else \{ echo "OK\\n"; \} $eg->session_destroy($sess); \} $eg->{\b destruct()}; } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} $hint an optional string to be used for the session name\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid string|false session ID of the newly generated session. \par
+}\par
+Definition at line 1194 of file src/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v set_error_log\:Grid}
+{\xe \v Grid\:set_error_log}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::set_error_log ($ {\i errlog})}
+}\par
+{\bkmkstart AAAAAAAADM}
+{\bkmkend AAAAAAAADM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+set error log \par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $eg = new Grid; if ($eg == FALSE) echo "Couldn't instantiate a new Grid!\\n"; $eg->set_error_log("./grid-services/error.log"); } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} path to a local file where we will store the error log (i.e. stderr of the grid connection) \par
+}
+\par
+Definition at line 657 of file test/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v set_error_log\:Grid}
+{\xe \v Grid\:set_error_log}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::set_error_log ($ {\i errlog})}
+}\par
+{\bkmkstart AAAAAAAADN}
+{\bkmkend AAAAAAAADN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+set error log \par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $eg = new Grid; if ($eg == FALSE) echo "Couldn't instantiate a new Grid!\\n"; $eg->set_error_log("./grid-services/error.log"); } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} path to a local file where we will store the error log (i.e. stderr of the grid connection) \par
+}
+\par
+Definition at line 657 of file src/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v set_host\:Grid}
+{\xe \v Grid\:set_host}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::set_host ($ {\i host})}
+}\par
+{\bkmkstart AAAAAAAADO}
+{\bkmkend AAAAAAAADO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+set the name of the Grid access host \par
+In order to connect to the Grid and be able to submit jobs we need a tuple (host/user/password/passphrase), i.e. an entry point to log in, and a passphrase to unlock the grid certificate.\par
+This method allows us to define the entry point to use to gain access to the Grid.\par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $host="gridui.example.com";} \par
+{\f2  $eg = new Grid; if ($eg == FALSE) echo "Couldn't instantiate a new Grid!\\n"; $eg->set_host($host); } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} host name of the remote UI host \par
+}
+\par
+Definition at line 501 of file test/grid.php.\par
+\par
+}
+{\xe \v set_host\:Grid}
+{\xe \v Grid\:set_host}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::set_host ($ {\i host})}
+}\par
+{\bkmkstart AAAAAAAADP}
+{\bkmkend AAAAAAAADP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+set the name of the Grid access host \par
+In order to connect to the Grid and be able to submit jobs we need a tuple (host/user/password/passphrase), i.e. an entry point to log in, and a passphrase to unlock the grid certificate.\par
+This method allows us to define the entry point to use to gain access to the Grid.\par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $host="gridui.example.com";} \par
+{\f2  $eg = new Grid; if ($eg == FALSE) echo "Couldn't instantiate a new Grid!\\n"; $eg->set_host($host); } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} host name of the remote UI host \par
+}
+\par
+Definition at line 501 of file src/grid.php.\par
+\par
+}
+{\xe \v set_passphrase\:Grid}
+{\xe \v Grid\:set_passphrase}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::set_passphrase ($ {\i pass})}
+}\par
+{\bkmkstart AAAAAAAADQ}
+{\bkmkend AAAAAAAADQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+set the passphrase for the remote grid user \par
+In order to connect to the Grid and be able to submit jobs we need a tuple (host/user/password/passphrase), i.e. an entry point to log in, and a passphrase to unlock the grid certificate.\par
+After we gain access to the UI host, we must unlock our certificate which identifies ourselves as 'bona-fide' grid users.\par
+People might have an account on any UI node for a variety of reasons, but that does not qualify them to use Grid resources. Only a central Grid authority can grant this kind of access and this is done by issuing a Certificate.\par
+Users then must store this certificate in their account on a UI host and protect it with a suitably long passphrase. This last one is the value we provide here.\par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $passphrase="pass phrase to unlock certificate";} \par
+{\f2  $eg = new Grid; if ($eg == FALSE) echo "Couldn't instantiate a new Grid!\\n"; $eg->set_passphrase($passphrase); } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} passphrase needed to unlock the grid certificate \par
+}
+\par
+Definition at line 599 of file test/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v set_passphrase\:Grid}
+{\xe \v Grid\:set_passphrase}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::set_passphrase ($ {\i pass})}
+}\par
+{\bkmkstart AAAAAAAADR}
+{\bkmkend AAAAAAAADR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+set the passphrase for the remote grid user \par
+In order to connect to the Grid and be able to submit jobs we need a tuple (host/user/password/passphrase), i.e. an entry point to log in, and a passphrase to unlock the grid certificate.\par
+After we gain access to the UI host, we must unlock our certificate which identifies ourselves as 'bona-fide' grid users.\par
+People might have an account on any UI node for a variety of reasons, but that does not qualify them to use Grid resources. Only a central Grid authority can grant this kind of access and this is done by issuing a Certificate.\par
+Users then must store this certificate in their account on a UI host and protect it with a suitably long passphrase. This last one is the value we provide here.\par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $passphrase="pass phrase to unlock certificate";} \par
+{\f2  $eg = new Grid; if ($eg == FALSE) echo "Couldn't instantiate a new Grid!\\n"; $eg->set_passphrase($passphrase); } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} passphrase needed to unlock the grid certificate \par
+}
+\par
+Definition at line 599 of file src/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v set_password\:Grid}
+{\xe \v Grid\:set_password}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::set_password ($ {\i pass})}
+}\par
+{\bkmkstart AAAAAAAADS}
+{\bkmkend AAAAAAAADS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+set the password for the remote grid user/server \par
+In order to connect to the Grid and be able to submit jobs we need a tuple (host/user/password/passphrase), i.e. an entry point to log in, and a passphrase to unlock the grid certificate.\par
+This method allows us to specify the password to clear access to the Grid UI host.\par
+Note that this is specific to the remote UI server selected.\par
+Further note that gaining access to a user account on a given host does not give us rights to submit jobs: we still need to unlock our ID certificate with the appropriate passphrase. Anybody with root access to an UI host can add accounts. Further, the UI host might have other roles and host other accounts for different purposes which should not access the grid. Bottomline is that we can not trust an account on a user-controlled host to identify Grid users. For this we need to recurse to a central authority to grant final access.\par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $password="password";} \par
+{\f2  $eg = new Grid; if ($eg == FALSE) echo "Couldn't instantiate a new Grid!\\n"; $eg->set_password($password); } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} password needed to login on to the grid UI server \par
+}
+\par
+Definition at line 552 of file test/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v set_password\:Grid}
+{\xe \v Grid\:set_password}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::set_password ($ {\i pass})}
+}\par
+{\bkmkstart AAAAAAAADT}
+{\bkmkend AAAAAAAADT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+set the password for the remote grid user/server \par
+In order to connect to the Grid and be able to submit jobs we need a tuple (host/user/password/passphrase), i.e. an entry point to log in, and a passphrase to unlock the grid certificate.\par
+This method allows us to specify the password to clear access to the Grid UI host.\par
+Note that this is specific to the remote UI server selected.\par
+Further note that gaining access to a user account on a given host does not give us rights to submit jobs: we still need to unlock our ID certificate with the appropriate passphrase. Anybody with root access to an UI host can add accounts. Further, the UI host might have other roles and host other accounts for different purposes which should not access the grid. Bottomline is that we can not trust an account on a user-controlled host to identify Grid users. For this we need to recurse to a central authority to grant final access.\par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $password="password";} \par
+{\f2  $eg = new Grid; if ($eg == FALSE) echo "Couldn't instantiate a new Grid!\\n"; $eg->set_password($password); } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} password needed to login on to the grid UI server \par
+}
+\par
+Definition at line 552 of file src/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v set_user\:Grid}
+{\xe \v Grid\:set_user}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::set_user ($ {\i user})}
+}\par
+{\bkmkstart AAAAAAAADU}
+{\bkmkend AAAAAAAADU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+set the Grid user name \par
+In order to connect to the Grid and be able to submit jobs we need a tuple (host/user/password/passphrase), i.e. an entry point to log in, and a passphrase to unlock the grid certificate.\par
+This method allows us to define the username which will be used to log in on the grid, i.e. how do we identify ourselves to the Grid UI host.\par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $user="user";} \par
+{\f2  $eg = new Grid; if ($eg == FALSE) echo "Couldn't instantiate a new Grid!\\n"; $eg->set_user($user); } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} user identity to use in the Grid UI host \par
+}
+\par
+Definition at line 464 of file test/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v set_user\:Grid}
+{\xe \v Grid\:set_user}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::set_user ($ {\i user})}
+}\par
+{\bkmkstart AAAAAAAADV}
+{\bkmkend AAAAAAAADV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+set the Grid user name \par
+In order to connect to the Grid and be able to submit jobs we need a tuple (host/user/password/passphrase), i.e. an entry point to log in, and a passphrase to unlock the grid certificate.\par
+This method allows us to define the username which will be used to log in on the grid, i.e. how do we identify ourselves to the Grid UI host.\par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $user="user";} \par
+{\f2  $eg = new Grid; if ($eg == FALSE) echo "Couldn't instantiate a new Grid!\\n"; $eg->set_user($user); } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} user identity to use in the Grid UI host \par
+}
+\par
+Definition at line 464 of file src/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v set_work_dir\:Grid}
+{\xe \v Grid\:set_work_dir}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::set_work_dir ($ {\i wd})}
+}\par
+{\bkmkstart AAAAAAAADW}
+{\bkmkend AAAAAAAADW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+set working directory on the Grid server \par
+This is a directory located on the grid server where all jobs and job related information will be created. It may be a path local to the user home or a global path (usually on /tmp or /var/tmp).\par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $eg = new Grid; if ($eg == FALSE) echo "Couldn't instantiate a new Grid!\\n"; $eg->set_work_dir("./grid-services"); } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} the remote path of the working directory \par
+}
+\par
+Definition at line 630 of file test/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\xe \v set_work_dir\:Grid}
+{\xe \v Grid\:set_work_dir}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::set_work_dir ($ {\i wd})}
+}\par
+{\bkmkstart AAAAAAAADX}
+{\bkmkend AAAAAAAADX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+set working directory on the Grid server \par
+This is a directory located on the grid server where all jobs and job related information will be created. It may be a path local to the user home or a global path (usually on /tmp or /var/tmp).\par
+Sample usage: {\f2  require_once './grid_config.php'; require_once './ssh.php'; require_once './grid.php';} \par
+{\f2  $eg = new Grid; if ($eg == FALSE) echo "Couldn't instantiate a new Grid!\\n"; $eg->set_work_dir("./grid-services"); } \par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i string} the remote path of the working directory \par
+}
+\par
+Definition at line 630 of file src/grid.php.\par
+\par
+References $debug_grid.\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Data Documentation\par
+\pard\plain 
+{\xe \v $connected\:Grid}
+{\xe \v Grid\:$connected}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$connected}
+}\par
+{\bkmkstart AAAAAAAADY}
+{\bkmkend AAAAAAAADY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 303 of file test/grid.php.\par
+\par
+}
+{\xe \v $entry_point\:Grid}
+{\xe \v Grid\:$entry_point}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$entry_point}
+}\par
+{\bkmkstart AAAAAAAADZ}
+{\bkmkend AAAAAAAADZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+the grid entry point, should not be needed \par
+\par
+Definition at line 267 of file test/grid.php.\par
+\par
+}
+{\xe \v $error_log\:Grid}
+{\xe \v Grid\:$error_log}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$error_log}
+}\par
+{\bkmkstart AAAAAAAAEA}
+{\bkmkend AAAAAAAAEA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+a local file to store the error log \par
+\par
+Definition at line 279 of file test/grid.php.\par
+\par
+}
+{\xe \v $hostname\:Grid}
+{\xe \v Grid\:$hostname}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$hostname}
+}\par
+{\bkmkstart AAAAAAAAEB}
+{\bkmkend AAAAAAAAEB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+name of host that provides access to the grid \par
+\par
+Definition at line 271 of file test/grid.php.\par
+\par
+}
+{\xe \v $initialized\:Grid}
+{\xe \v Grid\:$initialized}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$initialized}
+}\par
+{\bkmkstart AAAAAAAAEC}
+{\bkmkend AAAAAAAAEC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 310 of file test/grid.php.\par
+\par
+}
+{\xe \v $passphrase\:Grid}
+{\xe \v Grid\:$passphrase}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$passphrase}
+}\par
+{\bkmkstart AAAAAAAAED}
+{\bkmkend AAAAAAAAED}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+key to unlock the grid access certificate \par
+\par
+Definition at line 275 of file test/grid.php.\par
+\par
+}
+{\xe \v $password\:Grid}
+{\xe \v Grid\:$password}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$password}
+}\par
+{\bkmkstart AAAAAAAAEE}
+{\bkmkend AAAAAAAAEE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+password to login on the UI node \par
+\par
+Definition at line 273 of file test/grid.php.\par
+\par
+}
+{\xe \v $sessions\:Grid}
+{\xe \v Grid\:$sessions}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$sessions}
+}\par
+{\bkmkstart AAAAAAAAEF}
+{\bkmkend AAAAAAAAEF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 317 of file test/grid.php.\par
+\par
+}
+{\xe \v $std_err\:Grid}
+{\xe \v Grid\:$std_err}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$std_err}
+}\par
+{\bkmkstart AAAAAAAAEG}
+{\bkmkend AAAAAAAAEG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Standard error of the grid entry. \par
+\par
+Definition at line 291 of file test/grid.php.\par
+\par
+}
+{\xe \v $std_in\:Grid}
+{\xe \v Grid\:$std_in}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$std_in}
+}\par
+{\bkmkstart AAAAAAAAEH}
+{\bkmkend AAAAAAAAEH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Standard input of the grid entry. \par
+\par
+Definition at line 287 of file test/grid.php.\par
+\par
+}
+{\xe \v $std_out\:Grid}
+{\xe \v Grid\:$std_out}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$std_out}
+}\par
+{\bkmkstart AAAAAAAAEI}
+{\bkmkend AAAAAAAAEI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Standard output of the grid entry. \par
+\par
+Definition at line 289 of file test/grid.php.\par
+\par
+}
+{\xe \v $submit_timeout\:Grid}
+{\xe \v Grid\:$submit_timeout}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$submit_timeout}
+}\par
+{\bkmkstart AAAAAAAAEJ}
+{\bkmkend AAAAAAAAEJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 376 of file test/grid.php.\par
+\par
+}
+{\xe \v $sx\:Grid}
+{\xe \v Grid\:$sx}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$sx}
+}\par
+{\bkmkstart AAAAAAAAEK}
+{\bkmkend AAAAAAAAEK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 324 of file test/grid.php.\par
+\par
+}
+{\xe \v $username\:Grid}
+{\xe \v Grid\:$username}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$username}
+}\par
+{\bkmkstart AAAAAAAAEL}
+{\bkmkend AAAAAAAAEL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+user name to use to connect to the grid \par
+\par
+Definition at line 269 of file test/grid.php.\par
+\par
+}
+{\xe \v $work_dir\:Grid}
+{\xe \v Grid\:$work_dir}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Grid::$work_dir}
+}\par
+{\bkmkstart AAAAAAAAEM}
+{\bkmkend AAAAAAAAEM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+a GrUI directory where we can work \par
+\par
+Definition at line 277 of file test/grid.php.\par
+\par
+}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following files:{\par
+\pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
+{\b src/grid.php}\par
+\pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
+{\b test/grid.php}\par
+}}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+php::Grid File Documentation{\tc \v File Documentation}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+grid.php File Reference\par \pard\plain 
+{\tc\tcl2 \v grid.php}
+{\xe \v grid.php}
+{\bkmkstart AAAAAAAAAA}
+{\bkmkend AAAAAAAAAA}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Namespaces\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+namespace {\b Grid}\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Classes\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b Grid}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+grid.php File Reference\par \pard\plain 
+{\tc\tcl2 \v grid.php}
+{\xe \v grid.php}
+{\bkmkstart AAAAAAAAAB}
+{\bkmkend AAAAAAAAAB}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Namespaces\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+namespace {\b Grid}\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Classes\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b Grid}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+grid_config.php File Reference\par \pard\plain 
+{\tc\tcl2 \v grid_config.php}
+{\xe \v grid_config.php}
+{\bkmkstart AAAAAAAAAC}
+{\bkmkend AAAAAAAAAC}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Namespaces\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+namespace {\b grock}\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $php_version} = 4\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i which version of PHP are we running }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_wd_path} = "services/egee"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Remote work directory in the {\b Grid} UI server. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_error_log} = "./grid_error.txt"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i where the error log of the grid connection should be stored locally }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_user} = "user"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i user name to use to connect to the {\b Grid} UI host  string $grid_user }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_host} = "gridui.example.com"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i name of the {\b Grid} UI host  string $grid_host }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_server} = "$grid_user@$grid_host"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Who acts as the grid server for us  string $grid_server. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_password} = "USE GRID::SET_PASSWORD"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Default password to login on the UI machine. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_passphrase} = "USE GRID::SET_PASSPHRASE"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Default passphrase to unlock certificate of remote user at the UI. }\par
+\par}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variable Documentation\par
+\pard\plain 
+{\xe \v $grid_error_log\:src/grid_config.php}
+{\xe \v src/grid_config.php\:$grid_error_log}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_error_log = "./grid_error.txt"}
+}\par
+{\bkmkstart AAAAAAAAAJ}
+{\bkmkend AAAAAAAAAJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+where the error log of the grid connection should be stored locally \par
+string $grid_error_log \par
+Definition at line 66 of file src/grid_config.php.\par
+\par
+}
+{\xe \v $grid_host\:src/grid_config.php}
+{\xe \v src/grid_config.php\:$grid_host}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_host = "gridui.example.com"}
+}\par
+{\bkmkstart AAAAAAAAAK}
+{\bkmkend AAAAAAAAAK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+name of the {\b Grid} UI host  string $grid_host \par
+\par
+Definition at line 79 of file src/grid_config.php.\par
+\par
+}
+{\xe \v $grid_passphrase\:src/grid_config.php}
+{\xe \v src/grid_config.php\:$grid_passphrase}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_passphrase = "USE GRID::SET_PASSPHRASE"}
+}\par
+{\bkmkstart AAAAAAAAAL}
+{\bkmkend AAAAAAAAAL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Default passphrase to unlock certificate of remote user at the UI. \par
+\par
+Definition at line 97 of file src/grid_config.php.\par
+\par
+}
+{\xe \v $grid_password\:src/grid_config.php}
+{\xe \v src/grid_config.php\:$grid_password}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_password = "USE GRID::SET_PASSWORD"}
+}\par
+{\bkmkstart AAAAAAAAAM}
+{\bkmkend AAAAAAAAAM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Default password to login on the UI machine. \par
+string $grid_password \par
+Definition at line 92 of file src/grid_config.php.\par
+\par
+}
+{\xe \v $grid_server\:src/grid_config.php}
+{\xe \v src/grid_config.php\:$grid_server}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_server = "$grid_user@$grid_host"}
+}\par
+{\bkmkstart AAAAAAAAAN}
+{\bkmkend AAAAAAAAAN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Who acts as the grid server for us  string $grid_server. \par
+\par
+Definition at line 85 of file src/grid_config.php.\par
+\par
+}
+{\xe \v $grid_user\:src/grid_config.php}
+{\xe \v src/grid_config.php\:$grid_user}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_user = "user"}
+}\par
+{\bkmkstart AAAAAAAAAO}
+{\bkmkend AAAAAAAAAO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+user name to use to connect to the {\b Grid} UI host  string $grid_user \par
+\par
+Definition at line 73 of file src/grid_config.php.\par
+\par
+}
+{\xe \v $grid_wd_path\:src/grid_config.php}
+{\xe \v src/grid_config.php\:$grid_wd_path}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_wd_path = "services/egee"}
+}\par
+{\bkmkstart AAAAAAAAAP}
+{\bkmkend AAAAAAAAAP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Remote work directory in the {\b Grid} UI server. \par
+We will use this to separate different services into alternate hierarchies in the grid server, as well as to avoid cluttering the remote user's dir with too many directories.\par
+This should be a path relative to the user home OR an actual correct full path. For the sake of versatility it is better to use a relative path.\par
+string $grid_wd_path \par
+Definition at line 59 of file src/grid_config.php.\par
+\par
+}
+{\xe \v $php_version\:src/grid_config.php}
+{\xe \v src/grid_config.php\:$php_version}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$php_version = 4}
+}\par
+{\bkmkstart AAAAAAAAAQ}
+{\bkmkend AAAAAAAAAQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+which version of PHP are we running \par
+integer $php_version \par
+Definition at line 44 of file src/grid_config.php.\par
+\par
+Referenced by ssh_open().\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+grid_config.php File Reference\par \pard\plain 
+{\tc\tcl2 \v grid_config.php}
+{\xe \v grid_config.php}
+{\bkmkstart AAAAAAAAAD}
+{\bkmkend AAAAAAAAAD}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Namespaces\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+namespace {\b grock}\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $php_version} = 4\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i which version of PHP are we running }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_wd_path} = "services/egee"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Remote work directory in the {\b Grid} UI server. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_error_log} = "./grid_error.txt"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i where the error log of the grid connection should be stored locally }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_user} = "user"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i user name to use to connect to the {\b Grid} UI host  string $grid_user }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_host} = "gridui.example.com"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i name of the {\b Grid} UI host  string $grid_host }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_server} = "$grid_user@$grid_host"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Who acts as the grid server for us  string $grid_server. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_password} = "USE GRID::SET_PASSWORD"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Default password to login on the UI machine. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $grid_passphrase} = "USE GRID::SET_PASSPHRASE"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Default passphrase to unlock certificate of remote user at the UI. }\par
+\par}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variable Documentation\par
+\pard\plain 
+{\xe \v $grid_error_log\:test/grid_config.php}
+{\xe \v test/grid_config.php\:$grid_error_log}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_error_log = "./grid_error.txt"}
+}\par
+{\bkmkstart AAAAAAAAAR}
+{\bkmkend AAAAAAAAAR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+where the error log of the grid connection should be stored locally \par
+string $grid_error_log \par
+Definition at line 66 of file test/grid_config.php.\par
+\par
+}
+{\xe \v $grid_host\:test/grid_config.php}
+{\xe \v test/grid_config.php\:$grid_host}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_host = "gridui.example.com"}
+}\par
+{\bkmkstart AAAAAAAAAS}
+{\bkmkend AAAAAAAAAS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+name of the {\b Grid} UI host  string $grid_host \par
+\par
+Definition at line 79 of file test/grid_config.php.\par
+\par
+}
+{\xe \v $grid_passphrase\:test/grid_config.php}
+{\xe \v test/grid_config.php\:$grid_passphrase}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_passphrase = "USE GRID::SET_PASSPHRASE"}
+}\par
+{\bkmkstart AAAAAAAAAT}
+{\bkmkend AAAAAAAAAT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Default passphrase to unlock certificate of remote user at the UI. \par
+\par
+Definition at line 97 of file test/grid_config.php.\par
+\par
+}
+{\xe \v $grid_password\:test/grid_config.php}
+{\xe \v test/grid_config.php\:$grid_password}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_password = "USE GRID::SET_PASSWORD"}
+}\par
+{\bkmkstart AAAAAAAAAU}
+{\bkmkend AAAAAAAAAU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Default password to login on the UI machine. \par
+string $grid_password \par
+Definition at line 92 of file test/grid_config.php.\par
+\par
+}
+{\xe \v $grid_server\:test/grid_config.php}
+{\xe \v test/grid_config.php\:$grid_server}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_server = "$grid_user@$grid_host"}
+}\par
+{\bkmkstart AAAAAAAAAV}
+{\bkmkend AAAAAAAAAV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Who acts as the grid server for us  string $grid_server. \par
+\par
+Definition at line 85 of file test/grid_config.php.\par
+\par
+}
+{\xe \v $grid_user\:test/grid_config.php}
+{\xe \v test/grid_config.php\:$grid_user}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_user = "user"}
+}\par
+{\bkmkstart AAAAAAAAAW}
+{\bkmkend AAAAAAAAAW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+user name to use to connect to the {\b Grid} UI host  string $grid_user \par
+\par
+Definition at line 73 of file test/grid_config.php.\par
+\par
+}
+{\xe \v $grid_wd_path\:test/grid_config.php}
+{\xe \v test/grid_config.php\:$grid_wd_path}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$grid_wd_path = "services/egee"}
+}\par
+{\bkmkstart AAAAAAAAAX}
+{\bkmkend AAAAAAAAAX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Remote work directory in the {\b Grid} UI server. \par
+We will use this to separate different services into alternate hierarchies in the grid server, as well as to avoid cluttering the remote user's dir with too many directories.\par
+This should be a path relative to the user home OR an actual correct full path. For the sake of versatility it is better to use a relative path.\par
+string $grid_wd_path \par
+Definition at line 59 of file test/grid_config.php.\par
+\par
+}
+{\xe \v $php_version\:test/grid_config.php}
+{\xe \v test/grid_config.php\:$php_version}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$php_version = 4}
+}\par
+{\bkmkstart AAAAAAAAAY}
+{\bkmkend AAAAAAAAAY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+which version of PHP are we running \par
+integer $php_version \par
+Definition at line 44 of file test/grid_config.php.\par
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+grid_test.php File Reference\par \pard\plain 
+{\tc\tcl2 \v grid_test.php}
+{\xe \v grid_test.php}
+{\bkmkstart AAAAAAAAAE}
+{\bkmkend AAAAAAAAAE}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_grid_init} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i test {\b Grid::initialize()}/destroy() }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_job_submit} ()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_job_get_id} ()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_job_status} ()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_job_get_output} ()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_sessions} ()\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $debug_grid} = TRUE\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b $debug_sexec} = TRUE\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v test_grid_init\:grid_test.php}
+{\xe \v grid_test.php\:test_grid_init}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test_grid_init ()}
+}\par
+{\bkmkstart AAAAAAAAAZ}
+{\bkmkend AAAAAAAAAZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+test {\b Grid::initialize()}/destroy() \par
+{\b Grid::initialize()} allows us to identify ourselves to the {\b Grid}. Identification must be made from a UI node, hence we need to connect first to a UI node. \par
+Definition at line 25 of file grid_test.php.\par
+\par
+}
+{\xe \v test_job_get_id\:grid_test.php}
+{\xe \v grid_test.php\:test_job_get_id}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test_job_get_id ()}
+}\par
+{\bkmkstart AAAAAAAABA}
+{\bkmkend AAAAAAAABA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 82 of file grid_test.php.\par
+\par
+}
+{\xe \v test_job_get_output\:grid_test.php}
+{\xe \v grid_test.php\:test_job_get_output}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test_job_get_output ()}
+}\par
+{\bkmkstart AAAAAAAABB}
+{\bkmkend AAAAAAAABB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 145 of file grid_test.php.\par
+\par
+}
+{\xe \v test_job_status\:grid_test.php}
+{\xe \v grid_test.php\:test_job_status}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test_job_status ()}
+}\par
+{\bkmkstart AAAAAAAABC}
+{\bkmkend AAAAAAAABC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 112 of file grid_test.php.\par
+\par
+}
+{\xe \v test_job_submit\:grid_test.php}
+{\xe \v grid_test.php\:test_job_submit}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test_job_submit ()}
+}\par
+{\bkmkstart AAAAAAAABD}
+{\bkmkend AAAAAAAABD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 52 of file grid_test.php.\par
+\par
+}
+{\xe \v test_sessions\:grid_test.php}
+{\xe \v grid_test.php\:test_sessions}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test_sessions ()}
+}\par
+{\bkmkstart AAAAAAAABE}
+{\bkmkend AAAAAAAABE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 186 of file grid_test.php.\par
+\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variable Documentation\par
+\pard\plain 
+{\xe \v $debug_grid\:grid_test.php}
+{\xe \v grid_test.php\:$debug_grid}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$debug_grid = TRUE}
+}\par
+{\bkmkstart AAAAAAAABF}
+{\bkmkend AAAAAAAABF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 265 of file grid_test.php.\par
+\par
+Referenced by Grid::destroy(), Grid::destruct(), Grid::get_connection_status(), Grid::get_init_status(), Grid::Grid(), Grid::job_get_output(), Grid::job_submit(), Grid::job_submit_set_timeout(), Grid::session_define(), Grid::session_directory(), Grid::session_is_valid(), Grid::session_list_all(), Grid::session_new(), Grid::set_error_log(), Grid::set_passphrase(), Grid::set_password(), Grid::set_user(), and Grid::set_work_dir().\par
+}
+{\xe \v $debug_sexec\:grid_test.php}
+{\xe \v grid_test.php\:$debug_sexec}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+$debug_sexec = TRUE}
+}\par
+{\bkmkstart AAAAAAAABG}
+{\bkmkend AAAAAAAABG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 266 of file grid_test.php.\par
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+ssh.php File Reference\par \pard\plain 
+{\tc\tcl2 \v ssh.php}
+{\xe \v ssh.php}
+{\bkmkstart AAAAAAAAAF}
+{\bkmkend AAAAAAAAAF}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Namespaces\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+namespace {\b SExec}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+ssh.php File Reference\par \pard\plain 
+{\tc\tcl2 \v ssh.php}
+{\xe \v ssh.php}
+{\bkmkstart AAAAAAAAAG}
+{\bkmkend AAAAAAAAAG}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Namespaces\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+namespace {\b SExec}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+util.php File Reference\par \pard\plain 
+{\tc\tcl2 \v util.php}
+{\xe \v util.php}
+{\bkmkstart AAAAAAAAAH}
+{\bkmkend AAAAAAAAAH}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Namespaces\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+namespace {\b Util}\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_header} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Start the display of a www page. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_footer} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i close a web page }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b warning} ($msg)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i print a warning }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b error} ($where, $what)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i print an error message and exit }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b letal} ($what, $where)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i print a letal error message and die }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_passthru} ($remote, $password, $command, $status)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Execute a single command remotely using ssh and return its entire output (like passthru). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_copy} ($origin, $destination, $password)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Copy a file or directory from one source to a destination. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_open} ($remote, $password)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v error\:src/util.php}
+{\xe \v src/util.php\:error}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+error ($ {\i where}, $ {\i what})}
+}\par
+{\bkmkstart AAAAAAAABH}
+{\bkmkend AAAAAAAABH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+print an error message and exit \par
+Whenever we detect something wrong, we must tell the user. This function will take an error message as its argument, format it suitably and spit it out.\par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid This might look nicer using javascript to pop up a nice window with the error message. Style sheets would be nice too.\par
+}{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i where} the name of the caller routine or the process where the error occurred \par
+{\i what} a description of the abnormal condition that triggered the error \par
+}
+\par
+Definition at line 122 of file src/util.php.\par
+\par
+}
+{\xe \v letal\:src/util.php}
+{\xe \v src/util.php\:letal}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+letal ($ {\i what}, $ {\i where})}
+}\par
+{\bkmkstart AAAAAAAABI}
+{\bkmkend AAAAAAAABI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+print a letal error message and die \par
+This function is called whenever a letal error (one that prevents further processing) is detected. The function will spit out an error message, close the page and exit the program. It should seldomly be used, since it may potentially disrupt the page layout (e.g. amid a table) by not closing open tags of which it is unaware. Actually it is a wrapper for error + terminate.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i where} location (physical or logical) where the error was detected: a physical location (routine name/line number) may be helpful for debugging, a logical location (during which part of the processing it happened) will be more helful to the user.\par
+{\i what} a descrition of the abnormality detected. \par
+}
+\par
+Definition at line 156 of file src/util.php.\par
+\par
+References error(), and set_footer().\par
+}
+{\xe \v set_footer\:src/util.php}
+{\xe \v src/util.php\:set_footer}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+set_footer ()}
+}\par
+{\bkmkstart AAAAAAAABJ}
+{\bkmkend AAAAAAAABJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+close a web page \par
+Make sure we end the page with all the appropriate formulisms: close the body, include copyright notice, state creator and any needed details, and close the page. \par
+Definition at line 72 of file src/util.php.\par
+\par
+Referenced by letal().\par
+}
+{\xe \v set_header\:src/util.php}
+{\xe \v src/util.php\:set_header}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+set_header ()}
+}\par
+{\bkmkstart AAAAAAAABK}
+{\bkmkend AAAAAAAABK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Start the display of a www page. \par
+We have it as a function so we can customise all pages generated as needed. This routine will open HTML, create the page header, and include any needed style sheets (if any) to provide a common look-and-feel for all pages generated. \par
+Definition at line 45 of file src/util.php.\par
+\par
+}
+{\xe \v ssh_copy\:src/util.php}
+{\xe \v src/util.php\:ssh_copy}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+ssh_copy ($ {\i origin}, $ {\i destination}, $ {\i password})}
+}\par
+{\bkmkstart AAAAAAAABL}
+{\bkmkend AAAAAAAABL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Copy a file or directory from one source to a destination. \par
+This function copies source to dest, where one of them is a local filespec and the other a remote filespec of the form [user@]host:path\par
+If the original source is a directory, it will be copied recursively to destination (hence easing file transfers).\par
+The function returns TRUE on success or FALSE on failure. \par
+Definition at line 224 of file src/util.php.\par
+\par
+}
+{\xe \v ssh_open\:src/util.php}
+{\xe \v src/util.php\:ssh_open}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+ssh_open ($ {\i remote}, $ {\i password})}
+}\par
+{\bkmkstart AAAAAAAABM}
+{\bkmkend AAAAAAAABM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 242 of file src/util.php.\par
+\par
+References $php_version, letal(), and warning().\par
+}
+{\xe \v ssh_passthru\:src/util.php}
+{\xe \v src/util.php\:ssh_passthru}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+ssh_passthru ($ {\i remote}, $ {\i password}, $ {\i command}, $ {\i status})}
+}\par
+{\bkmkstart AAAAAAAABN}
+{\bkmkend AAAAAAAABN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Execute a single command remotely using ssh and return its entire output (like passthru). \par
+This might be done as well using a pipe on /tmp and making the command 'cat' the pipe: when ssh runs, it runs the command 'cat' on the pipe and hangs on read. Then we just need a thread to open the pipe, put the password and close the pipe. This other way the password is never wirtten down. But, OTOH, the file life is so ephemeral that most of the time it will only exist in the internal system cache, so this approach is not that bad either.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i remote} The remote end to run the command, in the form 'user' (or 'host' if the username is the same). \par
+{\i password} The remote password. Note that if direct RSA/DSA/.shosts/.rhosts login is enabled then the password should be ignored as SSH should not run the ASKPASS command). \par
+{\i command} The command to execute on the remote end NOTE: if you want to use redirection, the entire remote command line should be enclosed in additional quotes! \par
+{\i status} Optional, this will hold the termination status of SSH after invocation, which should be the exit status of the remote command or 255 if an error occurred \par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid output The output of the remote command. \par
+}\par
+Definition at line 196 of file src/util.php.\par
+\par
+}
+{\xe \v warning\:src/util.php}
+{\xe \v src/util.php\:warning}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+warning ($ {\i msg})}
+}\par
+{\bkmkstart AAAAAAAABO}
+{\bkmkend AAAAAAAABO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+print a warning \par
+Prints a warning in a separate pop-up window. A warning is issued when a non-critical problem has been detected. Execution can be resumed using some defaults, but the user should be notified. In order to not disrupt the web page we are displaying we use a JavaScript pop-up alert to notify the user.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i msg} the warning message to send the user \par
+}
+\par
+Definition at line 99 of file src/util.php.\par
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+util.php File Reference\par \pard\plain 
+{\tc\tcl2 \v util.php}
+{\xe \v util.php}
+{\bkmkstart AAAAAAAAAI}
+{\bkmkend AAAAAAAAAI}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Namespaces\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+namespace {\b Util}\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_header} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Start the display of a www page. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b set_footer} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i close a web page }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b warning} ($msg)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i print a warning }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b error} ($where, $what)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i print an error message and exit }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b letal} ($what, $where)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i print a letal error message and die }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_passthru} ($remote, $password, $command, $status)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Execute a single command remotely using ssh and return its entire output (like passthru). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_copy} ($origin, $destination, $password)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Copy a file or directory from one source to a destination. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ssh_open} ($remote, $password)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v error\:test/util.php}
+{\xe \v test/util.php\:error}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+error ($ {\i where}, $ {\i what})}
+}\par
+{\bkmkstart AAAAAAAABP}
+{\bkmkend AAAAAAAABP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+print an error message and exit \par
+Whenever we detect something wrong, we must tell the user. This function will take an error message as its argument, format it suitably and spit it out.\par
+{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid This might look nicer using javascript to pop up a nice window with the error message. Style sheets would be nice too.\par
+}{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i where} the name of the caller routine or the process where the error occurred \par
+{\i what} a description of the abnormal condition that triggered the error \par
+}
+\par
+Definition at line 122 of file test/util.php.\par
+\par
+Referenced by letal().\par
+}
+{\xe \v letal\:test/util.php}
+{\xe \v test/util.php\:letal}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+letal ($ {\i what}, $ {\i where})}
+}\par
+{\bkmkstart AAAAAAAABQ}
+{\bkmkend AAAAAAAABQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+print a letal error message and die \par
+This function is called whenever a letal error (one that prevents further processing) is detected. The function will spit out an error message, close the page and exit the program. It should seldomly be used, since it may potentially disrupt the page layout (e.g. amid a table) by not closing open tags of which it is unaware. Actually it is a wrapper for error + terminate.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i where} location (physical or logical) where the error was detected: a physical location (routine name/line number) may be helpful for debugging, a logical location (during which part of the processing it happened) will be more helful to the user.\par
+{\i what} a descrition of the abnormality detected. \par
+}
+\par
+Definition at line 156 of file test/util.php.\par
+\par
+References error(), and set_footer().\par
+Referenced by ssh_open().\par
+}
+{\xe \v set_footer\:test/util.php}
+{\xe \v test/util.php\:set_footer}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+set_footer ()}
+}\par
+{\bkmkstart AAAAAAAABR}
+{\bkmkend AAAAAAAABR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+close a web page \par
+Make sure we end the page with all the appropriate formulisms: close the body, include copyright notice, state creator and any needed details, and close the page. \par
+Definition at line 72 of file test/util.php.\par
+\par
+}
+{\xe \v set_header\:test/util.php}
+{\xe \v test/util.php\:set_header}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+set_header ()}
+}\par
+{\bkmkstart AAAAAAAABS}
+{\bkmkend AAAAAAAABS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Start the display of a www page. \par
+We have it as a function so we can customise all pages generated as needed. This routine will open HTML, create the page header, and include any needed style sheets (if any) to provide a common look-and-feel for all pages generated. \par
+Definition at line 45 of file test/util.php.\par
+\par
+}
+{\xe \v ssh_copy\:test/util.php}
+{\xe \v test/util.php\:ssh_copy}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+ssh_copy ($ {\i origin}, $ {\i destination}, $ {\i password})}
+}\par
+{\bkmkstart AAAAAAAABT}
+{\bkmkend AAAAAAAABT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Copy a file or directory from one source to a destination. \par
+This function copies source to dest, where one of them is a local filespec and the other a remote filespec of the form [user@]host:path\par
+If the original source is a directory, it will be copied recursively to destination (hence easing file transfers).\par
+The function returns TRUE on success or FALSE on failure. \par
+Definition at line 224 of file test/util.php.\par
+\par
+}
+{\xe \v ssh_open\:test/util.php}
+{\xe \v test/util.php\:ssh_open}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+ssh_open ($ {\i remote}, $ {\i password})}
+}\par
+{\bkmkstart AAAAAAAABU}
+{\bkmkend AAAAAAAABU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Definition at line 242 of file test/util.php.\par
+\par
+References $php_version, letal(), and warning().\par
+}
+{\xe \v ssh_passthru\:test/util.php}
+{\xe \v test/util.php\:ssh_passthru}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+ssh_passthru ($ {\i remote}, $ {\i password}, $ {\i command}, $ {\i status})}
+}\par
+{\bkmkstart AAAAAAAABV}
+{\bkmkend AAAAAAAABV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Execute a single command remotely using ssh and return its entire output (like passthru). \par
+This might be done as well using a pipe on /tmp and making the command 'cat' the pipe: when ssh runs, it runs the command 'cat' on the pipe and hangs on read. Then we just need a thread to open the pipe, put the password and close the pipe. This other way the password is never wirtten down. But, OTOH, the file life is so ephemeral that most of the time it will only exist in the internal system cache, so this approach is not that bad either.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i remote} The remote end to run the command, in the form 'user' (or 'host' if the username is the same). \par
+{\i password} The remote password. Note that if direct RSA/DSA/.shosts/.rhosts login is enabled then the password should be ignored as SSH should not run the ASKPASS command). \par
+{\i command} The command to execute on the remote end NOTE: if you want to use redirection, the entire remote command line should be enclosed in additional quotes! \par
+{\i status} Optional, this will hold the termination status of SSH after invocation, which should be the exit status of the remote command or 255 if an error occurred \par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid output The output of the remote command. \par
+}\par
+Definition at line 196 of file test/util.php.\par
+\par
+}
+{\xe \v warning\:test/util.php}
+{\xe \v test/util.php\:warning}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+warning ($ {\i msg})}
+}\par
+{\bkmkstart AAAAAAAABW}
+{\bkmkend AAAAAAAABW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+print a warning \par
+Prints a warning in a separate pop-up window. A warning is issued when a non-critical problem has been detected. Execution can be resumed using some defaults, but the user should be notified. In order to not disrupt the web page we are displaying we use a JavaScript pop-up alert to notify the user.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i msg} the warning message to send the user \par
+}
+\par
+Definition at line 99 of file test/util.php.\par
+\par
+Referenced by ssh_open().\par
+}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+php::Grid Page Documentation{\tc \v Page Documentation}
+\par \pard\plain 
+{\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid {\tc\tcl2 \v Bug List}
+Bug List\par
+{\bkmkstart AAAAAAAAEN}
+{\bkmkend AAAAAAAAEN}
+}{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\bkmkstart AAAAAAAAEO}
+{\bkmkend AAAAAAAAEO}
+ {
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \par
+{\b Member {\b Grid::initialize} ($hours=12, $minutes=0) }
+\par
+: XXX JR XXX grid-proxy-init will use the time from the last issued command. To avoid setting a time shorter than one already existing we should first issue a grid-proxy-info, check if there is a running proxy, its time left, see if it is longer than what we want to set and if it is, then do NOTHING to avoid setting it shorter. }
+\par
+\par
+{\bkmkstart AAAAAAAAEP}
+{\bkmkend AAAAAAAAEP}
+ {
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \par
+{\b Member {\b Grid::initialize} ($hours=12, $minutes=0) }
+\par
+: XXX JR XXX grid-proxy-init will use the time from the last issued command. To avoid setting a time shorter than one already existing we should first issue a grid-proxy-info, check if there is a running proxy, its time left, see if it is longer than what we want to set and if it is, then do NOTHING to avoid setting it shorter. }
+\par
+\par
+}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Index\par 
+\pard\plain 
+{\tc \v Index}
+{\field\fldedit {\*\fldinst INDEX \\c2 \\*MERGEFORMAT}{\fldrslt INDEX}}
+}

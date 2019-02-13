@@ -1,0 +1,1556 @@
+\section{Grid Class Reference}
+\label{classGrid}\index{Grid@{Grid}}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf Grid} ()
+\begin{CompactList}\small\item\em Constructor for the class. \item\end{CompactList}\item 
+{\bf destruct} ()
+\item 
+{\bf set\_\-user} (\$user)
+\begin{CompactList}\small\item\em set the Grid user name \item\end{CompactList}\item 
+{\bf set\_\-host} (\$host)
+\begin{CompactList}\small\item\em set the name of the Grid access host \item\end{CompactList}\item 
+{\bf set\_\-password} (\$pass)
+\begin{CompactList}\small\item\em set the password for the remote grid user/server \item\end{CompactList}\item 
+{\bf set\_\-passphrase} (\$pass)
+\begin{CompactList}\small\item\em set the passphrase for the remote grid user \item\end{CompactList}\item 
+{\bf set\_\-work\_\-dir} (\$wd)
+\begin{CompactList}\small\item\em set working directory on the Grid server \item\end{CompactList}\item 
+{\bf set\_\-error\_\-log} (\$errlog)
+\begin{CompactList}\small\item\em set error log \item\end{CompactList}\item 
+{\bf get\_\-connection\_\-status} ()
+\begin{CompactList}\small\item\em get grid connection status \item\end{CompactList}\item 
+{\bf get\_\-init\_\-status} ()
+\begin{CompactList}\small\item\em get grid initialization status \item\end{CompactList}\item 
+{\bf connect} ()
+\begin{CompactList}\small\item\em open a persistent connection to the Grid UI server \item\end{CompactList}\item 
+{\bf initialize} (\$hours=12, \$minutes=0)
+\begin{CompactList}\small\item\em Start the Grid services. \item\end{CompactList}\item 
+{\bf destroy} ()
+\begin{CompactList}\small\item\em Destroy remote grid identity. \item\end{CompactList}\item 
+{\bf session\_\-new} (\$hint=\char`\"{}sess\char`\"{})
+\begin{CompactList}\small\item\em Create a new session. \item\end{CompactList}\item 
+{\bf session\_\-define} (\$session, \$directory)
+\begin{CompactList}\small\item\em Define an already existing session. \item\end{CompactList}\item 
+{\bf session\_\-is\_\-valid} (\$session='default')
+\begin{CompactList}\small\item\em check if supplied argument is a valid (existing and active) session. \item\end{CompactList}\item 
+{\bf session\_\-directory} (\$session='default')
+\begin{CompactList}\small\item\em return the directory associated to a session \item\end{CompactList}\item 
+{\bf session\_\-list\_\-all} ()
+\begin{CompactList}\small\item\em list all existing sessions (debugging only) \item\end{CompactList}\item 
+{\bf session\_\-destroy} (\$session='default')
+\begin{CompactList}\small\item\em destroy the specified session \item\end{CompactList}\item 
+{\bf session\_\-destroy\_\-all} ()
+\begin{CompactList}\small\item\em Destroy all existing sessions. \item\end{CompactList}\item 
+{\bf job\_\-submit\_\-set\_\-timeout} (\$seconds=0)
+\begin{CompactList}\small\item\em Set maximum (guesstimated) allowed time for a job submission to succeed. \item\end{CompactList}\item 
+{\bf job\_\-submit} (\$job, \&\$out, \$session='default')
+\begin{CompactList}\small\item\em submit a job to the grid \item\end{CompactList}\item 
+{\bf job\_\-get\_\-id} (\$job, \$session='default')
+\begin{CompactList}\small\item\em Get Grid ID of a submitted job. \item\end{CompactList}\item 
+{\bf job\_\-status} (\$job, \&\$out, \$session='default')
+\begin{CompactList}\small\item\em check job status \item\end{CompactList}\item 
+{\bf job\_\-get\_\-output} (\$job, \&\$out, \$session='default')
+\begin{CompactList}\small\item\em retrieve results \item\end{CompactList}\item 
+{\bf job\_\-cancel} (\$job, \&\$out, \$session='default')
+\begin{CompactList}\small\item\em Cancel a job previously submitted to the grid. \item\end{CompactList}\item 
+{\bf Grid} ()
+\begin{CompactList}\small\item\em Constructor for the class. \item\end{CompactList}\item 
+{\bf destruct} ()
+\item 
+{\bf set\_\-user} (\$user)
+\begin{CompactList}\small\item\em set the Grid user name \item\end{CompactList}\item 
+{\bf set\_\-host} (\$host)
+\begin{CompactList}\small\item\em set the name of the Grid access host \item\end{CompactList}\item 
+{\bf set\_\-password} (\$pass)
+\begin{CompactList}\small\item\em set the password for the remote grid user/server \item\end{CompactList}\item 
+{\bf set\_\-passphrase} (\$pass)
+\begin{CompactList}\small\item\em set the passphrase for the remote grid user \item\end{CompactList}\item 
+{\bf set\_\-work\_\-dir} (\$wd)
+\begin{CompactList}\small\item\em set working directory on the Grid server \item\end{CompactList}\item 
+{\bf set\_\-error\_\-log} (\$errlog)
+\begin{CompactList}\small\item\em set error log \item\end{CompactList}\item 
+{\bf get\_\-connection\_\-status} ()
+\begin{CompactList}\small\item\em get grid connection status \item\end{CompactList}\item 
+{\bf get\_\-init\_\-status} ()
+\begin{CompactList}\small\item\em get grid initialization status \item\end{CompactList}\item 
+{\bf connect} ()
+\begin{CompactList}\small\item\em open a persistent connection to the Grid UI server \item\end{CompactList}\item 
+{\bf initialize} (\$hours=12, \$minutes=0)
+\begin{CompactList}\small\item\em Start the Grid services. \item\end{CompactList}\item 
+{\bf destroy} ()
+\begin{CompactList}\small\item\em Destroy remote grid identity. \item\end{CompactList}\item 
+{\bf session\_\-new} (\$hint=\char`\"{}sess\char`\"{})
+\begin{CompactList}\small\item\em Create a new session. \item\end{CompactList}\item 
+{\bf session\_\-define} (\$session, \$directory)
+\begin{CompactList}\small\item\em Define an already existing session. \item\end{CompactList}\item 
+{\bf session\_\-is\_\-valid} (\$session='default')
+\begin{CompactList}\small\item\em check if supplied argument is a valid (existing and active) session. \item\end{CompactList}\item 
+{\bf session\_\-directory} (\$session='default')
+\begin{CompactList}\small\item\em return the directory associated to a session \item\end{CompactList}\item 
+{\bf session\_\-list\_\-all} ()
+\begin{CompactList}\small\item\em list all existing sessions (debugging only) \item\end{CompactList}\item 
+{\bf session\_\-destroy} (\$session='default')
+\begin{CompactList}\small\item\em destroy the specified session \item\end{CompactList}\item 
+{\bf session\_\-destroy\_\-all} ()
+\begin{CompactList}\small\item\em Destroy all existing sessions. \item\end{CompactList}\item 
+{\bf job\_\-submit\_\-set\_\-timeout} (\$seconds=0)
+\begin{CompactList}\small\item\em Set maximum (guesstimated) allowed time for a job submission to succeed. \item\end{CompactList}\item 
+{\bf job\_\-submit} (\$job, \&\$out, \$session='default')
+\begin{CompactList}\small\item\em submit a job to the grid \item\end{CompactList}\item 
+{\bf job\_\-get\_\-id} (\$job, \$session='default')
+\begin{CompactList}\small\item\em Get Grid ID of a submitted job. \item\end{CompactList}\item 
+{\bf job\_\-status} (\$job, \&\$out, \$session='default')
+\begin{CompactList}\small\item\em check job status \item\end{CompactList}\item 
+{\bf job\_\-get\_\-output} (\$job, \&\$out, \$session='default')
+\begin{CompactList}\small\item\em retrieve results \item\end{CompactList}\item 
+{\bf job\_\-cancel} (\$job, \&\$out, \$session='default')
+\begin{CompactList}\small\item\em Cancel a job previously submitted to the grid. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+{\bf \$entry\_\-point}
+\begin{CompactList}\small\item\em the grid entry point, should not be needed \item\end{CompactList}\item 
+{\bf \$username}
+\begin{CompactList}\small\item\em user name to use to connect to the grid \item\end{CompactList}\item 
+{\bf \$hostname}
+\begin{CompactList}\small\item\em name of host that provides access to the grid \item\end{CompactList}\item 
+{\bf \$password}
+\begin{CompactList}\small\item\em password to login on the UI node \item\end{CompactList}\item 
+{\bf \$passphrase}
+\begin{CompactList}\small\item\em key to unlock the grid access certificate \item\end{CompactList}\item 
+{\bf \$work\_\-dir}
+\begin{CompactList}\small\item\em a Gr\-UI directory where we can work \item\end{CompactList}\item 
+{\bf \$error\_\-log}
+\begin{CompactList}\small\item\em a local file to store the error log \item\end{CompactList}\item 
+{\bf \$std\_\-in}
+\begin{CompactList}\small\item\em Standard input of the grid entry. \item\end{CompactList}\item 
+{\bf \$std\_\-out}
+\begin{CompactList}\small\item\em Standard output of the grid entry. \item\end{CompactList}\item 
+{\bf \$std\_\-err}
+\begin{CompactList}\small\item\em Standard error of the grid entry. \item\end{CompactList}\item 
+{\bf \$connected}
+\item 
+{\bf \$initialized}
+\item 
+{\bf \$sessions}
+\item 
+{\bf \$sx}
+\item 
+{\bf \$submit\_\-timeout}
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Grid@{Grid}!Grid@{Grid}}
+\index{Grid@{Grid}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::Grid ()}\label{classGrid_a0}
+
+
+Constructor for the class. 
+
+Set the values for the class variables using defaults provided in 'config.php'
+
+These defaults can be overridden using the functions provided below.
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$eg = new Grid; if (\$eg == FALSE) echo \char`\"{}Couldn't instantiate a new Grid!$\backslash$n\char`\"{}; }
+
+\begin{Desc}
+\item[Returns:]Grid a new instance of a Grid class object \end{Desc}
+
+
+Definition at line 399 of file src/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!Grid@{Grid}}
+\index{Grid@{Grid}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::Grid ()}\label{classGrid_a26}
+
+
+Constructor for the class. 
+
+Set the values for the class variables using defaults provided in 'config.php'
+
+These defaults can be overridden using the functions provided below.
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$eg = new Grid; if (\$eg == FALSE) echo \char`\"{}Couldn't instantiate a new Grid!$\backslash$n\char`\"{}; }
+
+\begin{Desc}
+\item[Returns:]Grid a new instance of a Grid class object \end{Desc}
+
+
+Definition at line 399 of file test/grid.php.
+
+References \$debug\_\-grid.
+
+\subsection{Member Function Documentation}
+\index{Grid@{Grid}!connect@{connect}}
+\index{connect@{connect}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::connect ()}\label{classGrid_a36}
+
+
+open a persistent connection to the Grid UI server 
+
+The Grid User Interface Server is the entry point to the Grid for users and user applications. This is where jobs are launched from.
+
+This package has been designed to be able to be installed in any host, independent of whether it is an UI or not. Thus, to be able to submit jobs to the Grid, the server hosting the Web UI must connect to a Grid UI host to do the work.
+
+This routine opens a connection to a Grid UI host using an specified username (i.e. all jobs will be run under said username).
+
+The panorama therefore will look like this:
+
+HTML front-end --$>$ processor.php $<$--$>$ SSH $<$--$>$ remote host $<$--$>$ Grid
+
+This allows for better resilience: should a Grid\-UI host be unavailable, we can detect the error condition and try another one. If the Grid\-UI runs the front-end, then we have a single point of failure, which is a no-no.
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$eg = new Grid;}
+
+{\tt  \$eg-$>$pconnect(); if (\$eg-$>${\bf get\_\-connection\_\-status()}{\rm (p.\,\pageref{classGrid_a8})} == FALSE) echo \char`\"{}Couldn't instantiate a new Grid!$\backslash$n\char`\"{}; }
+
+\begin{Desc}
+\item[Note:]Use files instead of pipes and open them after securing thew connection: this should do with deadlocks and leave a trace log.\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE on success, FALSE otherwise. \end{Desc}
+
+
+Definition at line 788 of file test/grid.php.\index{Grid@{Grid}!connect@{connect}}
+\index{connect@{connect}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::connect ()}\label{classGrid_a10}
+
+
+open a persistent connection to the Grid UI server 
+
+The Grid User Interface Server is the entry point to the Grid for users and user applications. This is where jobs are launched from.
+
+This package has been designed to be able to be installed in any host, independent of whether it is an UI or not. Thus, to be able to submit jobs to the Grid, the server hosting the Web UI must connect to a Grid UI host to do the work.
+
+This routine opens a connection to a Grid UI host using an specified username (i.e. all jobs will be run under said username).
+
+The panorama therefore will look like this:
+
+HTML front-end --$>$ processor.php $<$--$>$ SSH $<$--$>$ remote host $<$--$>$ Grid
+
+This allows for better resilience: should a Grid\-UI host be unavailable, we can detect the error condition and try another one. If the Grid\-UI runs the front-end, then we have a single point of failure, which is a no-no.
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$eg = new Grid;}
+
+{\tt  \$eg-$>$pconnect(); if (\$eg-$>${\bf get\_\-connection\_\-status()}{\rm (p.\,\pageref{classGrid_a8})} == FALSE) echo \char`\"{}Couldn't instantiate a new Grid!$\backslash$n\char`\"{}; }
+
+\begin{Desc}
+\item[Note:]Use files instead of pipes and open them after securing thew connection: this should do with deadlocks and leave a trace log.\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE on success, FALSE otherwise. \end{Desc}
+
+
+Definition at line 788 of file src/grid.php.
+
+Referenced by session\_\-list\_\-all().\index{Grid@{Grid}!destroy@{destroy}}
+\index{destroy@{destroy}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::destroy ()}\label{classGrid_a38}
+
+
+Destroy remote grid identity. 
+
+Destroy the certification we initialized so that no more jobs can be launched under our identity.
+
+This may be called even if we haven't called 'Grid::initialize()' because there may exits a previous activation that is still valid and we want to destroy it.
+
+To make things clear:
+
+{\bf Grid::initialize()}{\rm (p.\,\pageref{classGrid_a11})} \char`\"{}opens\char`\"{} the \char`\"{}door\char`\"{} to the Grid for {\em the user\/} during a given time. New calls from the same user in this or any other login session, from this or any other site, while the \char`\"{}door\char`\"{} is open, share the same \char`\"{}door\char`\"{} and simply extend its validity period.
+
+{\bf Grid::destroy()}{\rm (p.\,\pageref{classGrid_a12})} \char`\"{}closes\char`\"{} the currently open door. If the door was being shared by more login sessions, it is closed for {\em all\/} of them, not just the caller, and hence nor the caller, nor {\em any process\/} under the same user will be able to use the grid any longer unless {\bf Grid::initialize()}{\rm (p.\,\pageref{classGrid_a11})} is called again to open the door again (issue a new certificate).
+
+In other words, you don't close {\em a\/} Grid \char`\"{}door\char`\"{}, you close {\em the\/} Grid \char`\"{}door\char`\"{}, and if it casually is being shared with other work sessions, then ALL of them will be destroyed (meaning that other active work sessions will fail).
+
+Thus: be careful when using this method. Be {\bf very careful}.
+
+Sessions should be initiated using a validity length that you guesstimate will be comfortably enough for running all your work and left to expire by themselves.
+
+{\bf Grid::destroy()}{\rm (p.\,\pageref{classGrid_a12})} should only be called when you are sure that you don't want {\em any\/} work on the Grid to be accepted on your behalf, neither from this not other work sessions.
+
+So, in general, it is better to make good estimations of the time needed by your jobs and specify it to {\bf Grid::initialize()}{\rm (p.\,\pageref{classGrid_a11})} and not use {\bf Grid::destroy()}{\rm (p.\,\pageref{classGrid_a12})} unless there are good reasons.
+
+Sample usage: {\tt  \$eg = new Grid; \$eg-$>$set\_\-user(\$user); \$eg-$>$set\_\-host(\$host); \$eg-$>$set\_\-password(\$passwd); \$eg-$>$set\_\-passphrase(\$passphrase); \$eg-$>$set\_\-work\_\-dir(\char`\"{}/tmp/grid/test/cless\char`\"{}); \$eg-$>$set\_\-error\_\-log(\char`\"{}/tmp/grid/test/cless/connection.err\char`\"{}); if (!\$eg-$>${\bf initialize()}{\rm (p.\,\pageref{classGrid_a11})}) echo \char`\"{}error: couldn't init the grid$\backslash$n\char`\"{}; else echo \char`\"{}OK\char`\"{}; \$eg-$>${\bf destroy()}{\rm (p.\,\pageref{classGrid_a12})}; \$eg-$>$disconnect(); }
+
+\begin{Desc}
+\item[Note:]Be careful when using this function: as it destroys our Grid-ID, no more work will be able to be executed on the grid on our behalf. In other words, please, make sure there is no work pending and that all your work has terminated before destroying your Grid-ID.\end{Desc}
+\begin{Desc}
+\item[Returns:]bool TRUE on success, FALSE on failure \end{Desc}
+
+
+Definition at line 1035 of file test/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!destroy@{destroy}}
+\index{destroy@{destroy}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::destroy ()}\label{classGrid_a12}
+
+
+Destroy remote grid identity. 
+
+Destroy the certification we initialized so that no more jobs can be launched under our identity.
+
+This may be called even if we haven't called 'Grid::initialize()' because there may exits a previous activation that is still valid and we want to destroy it.
+
+To make things clear:
+
+{\bf Grid::initialize()}{\rm (p.\,\pageref{classGrid_a11})} \char`\"{}opens\char`\"{} the \char`\"{}door\char`\"{} to the Grid for {\em the user\/} during a given time. New calls from the same user in this or any other login session, from this or any other site, while the \char`\"{}door\char`\"{} is open, share the same \char`\"{}door\char`\"{} and simply extend its validity period.
+
+{\bf Grid::destroy()}{\rm (p.\,\pageref{classGrid_a12})} \char`\"{}closes\char`\"{} the currently open door. If the door was being shared by more login sessions, it is closed for {\em all\/} of them, not just the caller, and hence nor the caller, nor {\em any process\/} under the same user will be able to use the grid any longer unless {\bf Grid::initialize()}{\rm (p.\,\pageref{classGrid_a11})} is called again to open the door again (issue a new certificate).
+
+In other words, you don't close {\em a\/} Grid \char`\"{}door\char`\"{}, you close {\em the\/} Grid \char`\"{}door\char`\"{}, and if it casually is being shared with other work sessions, then ALL of them will be destroyed (meaning that other active work sessions will fail).
+
+Thus: be careful when using this method. Be {\bf very careful}.
+
+Sessions should be initiated using a validity length that you guesstimate will be comfortably enough for running all your work and left to expire by themselves.
+
+{\bf Grid::destroy()}{\rm (p.\,\pageref{classGrid_a12})} should only be called when you are sure that you don't want {\em any\/} work on the Grid to be accepted on your behalf, neither from this not other work sessions.
+
+So, in general, it is better to make good estimations of the time needed by your jobs and specify it to {\bf Grid::initialize()}{\rm (p.\,\pageref{classGrid_a11})} and not use {\bf Grid::destroy()}{\rm (p.\,\pageref{classGrid_a12})} unless there are good reasons.
+
+Sample usage: {\tt  \$eg = new Grid; \$eg-$>$set\_\-user(\$user); \$eg-$>$set\_\-host(\$host); \$eg-$>$set\_\-password(\$passwd); \$eg-$>$set\_\-passphrase(\$passphrase); \$eg-$>$set\_\-work\_\-dir(\char`\"{}/tmp/grid/test/cless\char`\"{}); \$eg-$>$set\_\-error\_\-log(\char`\"{}/tmp/grid/test/cless/connection.err\char`\"{}); if (!\$eg-$>${\bf initialize()}{\rm (p.\,\pageref{classGrid_a11})}) echo \char`\"{}error: couldn't init the grid$\backslash$n\char`\"{}; else echo \char`\"{}OK\char`\"{}; \$eg-$>${\bf destroy()}{\rm (p.\,\pageref{classGrid_a12})}; \$eg-$>$disconnect(); }
+
+\begin{Desc}
+\item[Note:]Be careful when using this function: as it destroys our Grid-ID, no more work will be able to be executed on the grid on our behalf. In other words, please, make sure there is no work pending and that all your work has terminated before destroying your Grid-ID.\end{Desc}
+\begin{Desc}
+\item[Returns:]bool TRUE on success, FALSE on failure \end{Desc}
+
+
+Definition at line 1038 of file src/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!destruct@{destruct}}
+\index{destruct@{destruct}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::destruct ()}\label{classGrid_a27}
+
+
+
+
+Definition at line 416 of file test/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!destruct@{destruct}}
+\index{destruct@{destruct}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::destruct ()}\label{classGrid_a1}
+
+
+
+
+Definition at line 416 of file src/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!get_connection_status@{get\_\-connection\_\-status}}
+\index{get_connection_status@{get\_\-connection\_\-status}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::get\_\-connection\_\-status ()}\label{classGrid_a34}
+
+
+get grid connection status 
+
+This method allows you to know if the connection with the remote grid entry point has been successfully established or not. Note that this does not mean you may launch jobs to the grid: you still need to initialize the grid first.
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$eg = new Grid;}
+
+{\tt  \$eg-$>$pconnect(); if (\$eg-$>${\bf get\_\-connection\_\-status()}{\rm (p.\,\pageref{classGrid_a8})} == FALSE) echo \char`\"{}Couldn't connect to the Grid entry point!$\backslash$n\char`\"{}; }
+
+\begin{Desc}
+\item[Returns:]bool TRUE if the connection has been established, FALSE otherwise. \end{Desc}
+
+
+Definition at line 690 of file test/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!get_connection_status@{get\_\-connection\_\-status}}
+\index{get_connection_status@{get\_\-connection\_\-status}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::get\_\-connection\_\-status ()}\label{classGrid_a8}
+
+
+get grid connection status 
+
+This method allows you to know if the connection with the remote grid entry point has been successfully established or not. Note that this does not mean you may launch jobs to the grid: you still need to initialize the grid first.
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$eg = new Grid;}
+
+{\tt  \$eg-$>$pconnect(); if (\$eg-$>${\bf get\_\-connection\_\-status()}{\rm (p.\,\pageref{classGrid_a8})} == FALSE) echo \char`\"{}Couldn't connect to the Grid entry point!$\backslash$n\char`\"{}; }
+
+\begin{Desc}
+\item[Returns:]bool TRUE if the connection has been established, FALSE otherwise. \end{Desc}
+
+
+Definition at line 690 of file src/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!get_init_status@{get\_\-init\_\-status}}
+\index{get_init_status@{get\_\-init\_\-status}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::get\_\-init\_\-status ()}\label{classGrid_a35}
+
+
+get grid initialization status 
+
+This method allows you to learn whether the Grid has been successfully initialized and is ready to accept jobs. This entails both, login in as a specific user on the Grid connection point, and activating the proxy with your passphrase.
+
+The reason for the two step process is that in order to activate the grid you need to identify yourself using a grid certificate emitted by a CA. But to activate it you need an account on a grid access machine, which is open by any local administrator. Since this account is not under the central CA control, we can't trust it to submit jobs and require a proxy-initialization with an appropriate passphrase.
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$eg = new Grid;}
+
+{\tt  \$eg-$>${\bf initialize()}{\rm (p.\,\pageref{classGrid_a11})}; if (\$eg-$>${\bf get\_\-init\_\-status()}{\rm (p.\,\pageref{classGrid_a9})} == FALSE) echo \char`\"{}Couldn't initialize the Grid!$\backslash$n\char`\"{}; }
+
+\begin{Desc}
+\item[Returns:]bool TRUE if the grid has been initialized, FALSE otherwise. \end{Desc}
+
+
+Definition at line 731 of file test/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!get_init_status@{get\_\-init\_\-status}}
+\index{get_init_status@{get\_\-init\_\-status}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::get\_\-init\_\-status ()}\label{classGrid_a9}
+
+
+get grid initialization status 
+
+This method allows you to learn whether the Grid has been successfully initialized and is ready to accept jobs. This entails both, login in as a specific user on the Grid connection point, and activating the proxy with your passphrase.
+
+The reason for the two step process is that in order to activate the grid you need to identify yourself using a grid certificate emitted by a CA. But to activate it you need an account on a grid access machine, which is open by any local administrator. Since this account is not under the central CA control, we can't trust it to submit jobs and require a proxy-initialization with an appropriate passphrase.
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$eg = new Grid;}
+
+{\tt  \$eg-$>${\bf initialize()}{\rm (p.\,\pageref{classGrid_a11})}; if (\$eg-$>${\bf get\_\-init\_\-status()}{\rm (p.\,\pageref{classGrid_a9})} == FALSE) echo \char`\"{}Couldn't initialize the Grid!$\backslash$n\char`\"{}; }
+
+\begin{Desc}
+\item[Returns:]bool TRUE if the grid has been initialized, FALSE otherwise. \end{Desc}
+
+
+Definition at line 731 of file src/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!initialize@{initialize}}
+\index{initialize@{initialize}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::initialize (\$ {\em hours} = 12, \$ {\em minutes} = 0)}\label{classGrid_a37}
+
+
+Start the Grid services. 
+
+This function starts the grid services on the remote UI server host. This is done by unlocking the certificate that we are going to use to run our jobs on the grid using the passphrase provided.
+
+Grid services have a lifetime of their own. By default they are available for 12:00 hours (that's the default value of grid-proxy-init itself), but their duration may be fine tuned if we have some knowledge about the time required to run our job.
+
+Grid opening time is specified in hours+minutes. If the number of minutes is negative, the specified minutes are substracted from the specified hours (e.g: 1, -15 is fifteen minutes to one hour, i.e. 45 minutes). If the total time specified is negative then the default of 12:00 is used.
+
+{\bf Grid::initialize()}{\rm (p.\,\pageref{classGrid_a11})} enables the grid for a specified amount of time (by default 12:00h). This means that during the validity period, the user on the Grid-UI host may access the grid, in the same or different logins. The validity period SURVIVES after we close all communications with the remote grid entry point for as long as we have specified (so our jobs may continue running).
+
+If Grid access was already available (by a previous call to {\bf Grid::initialize()}{\rm (p.\,\pageref{classGrid_a11})}) when we issue the call, then it is reused and extended to acommodate the newly requested validity period. In other words, the Grid access is shared among all logins during its lifetime.
+
+This also means that if a valid certificate has been issued and not expired yet (another call to {\bf Grid::initialize()}{\rm (p.\,\pageref{classGrid_a11})} is still valid), then we may submit jobs to the Grid without any need to call {\bf Grid::initialize()}{\rm (p.\,\pageref{classGrid_a11})} ourselves.
+
+E.g., say you have a web-based service that runs a long job and you want to have the grid enabled 12h (the default). You just call {\bf Grid::initialize()}{\rm (p.\,\pageref{classGrid_a11})} and then submit the job.
+
+Now say that before it expires, someone logs in on your account but shouldn't have access to the Grid (i.e. they don't know the Grid-activation passphrase). Since the grid is already activated, they CAN submit jobs on your behalf even if they should not.
+
+Therefore, {\bf DO NOT SHARE YOUR ACCOUNT ON THE GRID-UI WITH ANYBODY}. Protect it as dearly as your Grid certificate.
+
+It also means that debugging may be somewhat convoluted, as a call to {\bf Grid::initialize()}{\rm (p.\,\pageref{classGrid_a11})} may fail and jobs could still be accepted if another call from some other process is still valid. While debugging, it is better if you review the command output and make sure it shows how the call fared.
+
+So, what happens if we destroy a session? See {\bf Grid::destroy()}{\rm (p.\,\pageref{classGrid_a12})} for more details.
+
+Sample usage: {\tt  \$eg = new Grid; \$eg-$>$set\_\-user(\$user); \$eg-$>$set\_\-host(\$host); \$eg-$>$set\_\-password(\$passwd); \$eg-$>$set\_\-passphrase(\$passphrase); \$eg-$>$set\_\-work\_\-dir(\char`\"{}/tmp/grid/test/cless\char`\"{}); \$eg-$>$set\_\-error\_\-log(\char`\"{}/tmp/grid/test/cless/connection.err\char`\"{}); \$eg-$>${\bf connect()}{\rm (p.\,\pageref{classGrid_a10})}; if (!\$eg-$>${\bf initialize()}{\rm (p.\,\pageref{classGrid_a11})}) echo \char`\"{}error: couldn't init the grid$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; \$eg-$>${\bf destroy()}{\rm (p.\,\pageref{classGrid_a12})}; \$eg-$>$disconnect(); }
+
+\begin{Desc}
+\item[Note:]the output of the grid initialization command will go to {\bf our} standard output (i.e. the web server)!\end{Desc}
+
+
+\begin{Desc}
+\item[{\bf Bug}]: XXX JR XXX grid-proxy-init will use the time from the last issued command. To avoid setting a time shorter than one already existing we should first issue a grid-proxy-info, check if there is a running proxy, its time left, see if it is longer than what we want to set and if it is, then do NOTHING to avoid setting it shorter. \end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em integer}]Estimated duration in hours of the session\item[{\em integer}]Estimated duration in minutes of the session\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]bool TRUE on success, FALSE otherwise \end{Desc}
+
+
+Definition at line 903 of file test/grid.php.\index{Grid@{Grid}!initialize@{initialize}}
+\index{initialize@{initialize}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::initialize (\$ {\em hours} = 12, \$ {\em minutes} = 0)}\label{classGrid_a11}
+
+
+Start the Grid services. 
+
+This function starts the grid services on the remote UI server host. This is done by unlocking the certificate that we are going to use to run our jobs on the grid using the passphrase provided.
+
+Grid services have a lifetime of their own. By default they are available for 12:00 hours (that's the default value of grid-proxy-init itself), but their duration may be fine tuned if we have some knowledge about the time required to run our job.
+
+Grid opening time is specified in hours+minutes. If the number of minutes is negative, the specified minutes are substracted from the specified hours (e.g: 1, -15 is fifteen minutes to one hour, i.e. 45 minutes). If the total time specified is negative then the default of 12:00 is used.
+
+{\bf Grid::initialize()}{\rm (p.\,\pageref{classGrid_a11})} enables the grid for a specified amount of time (by default 12:00h). This means that during the validity period, the user on the Grid-UI host may access the grid, in the same or different logins. The validity period SURVIVES after we close all communications with the remote grid entry point for as long as we have specified (so our jobs may continue running).
+
+If Grid access was already available (by a previous call to {\bf Grid::initialize()}{\rm (p.\,\pageref{classGrid_a11})}) when we issue the call, then it is reused and extended to acommodate the newly requested validity period. In other words, the Grid access is shared among all logins during its lifetime.
+
+This also means that if a valid certificate has been issued and not expired yet (another call to {\bf Grid::initialize()}{\rm (p.\,\pageref{classGrid_a11})} is still valid), then we may submit jobs to the Grid without any need to call {\bf Grid::initialize()}{\rm (p.\,\pageref{classGrid_a11})} ourselves.
+
+E.g., say you have a web-based service that runs a long job and you want to have the grid enabled 12h (the default). You just call {\bf Grid::initialize()}{\rm (p.\,\pageref{classGrid_a11})} and then submit the job.
+
+Now say that before it expires, someone logs in on your account but shouldn't have access to the Grid (i.e. they don't know the Grid-activation passphrase). Since the grid is already activated, they CAN submit jobs on your behalf even if they should not.
+
+Therefore, {\bf DO NOT SHARE YOUR ACCOUNT ON THE GRID-UI WITH ANYBODY}. Protect it as dearly as your Grid certificate.
+
+It also means that debugging may be somewhat convoluted, as a call to {\bf Grid::initialize()}{\rm (p.\,\pageref{classGrid_a11})} may fail and jobs could still be accepted if another call from some other process is still valid. While debugging, it is better if you review the command output and make sure it shows how the call fared.
+
+So, what happens if we destroy a session? See {\bf Grid::destroy()}{\rm (p.\,\pageref{classGrid_a12})} for more details.
+
+Sample usage: {\tt  \$eg = new Grid; \$eg-$>$set\_\-user(\$user); \$eg-$>$set\_\-host(\$host); \$eg-$>$set\_\-password(\$passwd); \$eg-$>$set\_\-passphrase(\$passphrase); \$eg-$>$set\_\-work\_\-dir(\char`\"{}/tmp/grid/test/cless\char`\"{}); \$eg-$>$set\_\-error\_\-log(\char`\"{}/tmp/grid/test/cless/connection.err\char`\"{}); \$eg-$>${\bf connect()}{\rm (p.\,\pageref{classGrid_a10})}; if (!\$eg-$>${\bf initialize()}{\rm (p.\,\pageref{classGrid_a11})}) echo \char`\"{}error: couldn't init the grid$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; \$eg-$>${\bf destroy()}{\rm (p.\,\pageref{classGrid_a12})}; \$eg-$>$disconnect(); }
+
+\begin{Desc}
+\item[Note:]the output of the grid initialization command will go to {\bf our} standard output (i.e. the web server)!\end{Desc}
+
+
+\begin{Desc}
+\item[{\bf Bug}]: XXX JR XXX grid-proxy-init will use the time from the last issued command. To avoid setting a time shorter than one already existing we should first issue a grid-proxy-info, check if there is a running proxy, its time left, see if it is longer than what we want to set and if it is, then do NOTHING to avoid setting it shorter. \end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em integer}]Estimated duration in hours of the session\item[{\em integer}]Estimated duration in minutes of the session\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]bool TRUE on success, FALSE otherwise \end{Desc}
+
+
+Definition at line 903 of file src/grid.php.\index{Grid@{Grid}!job_cancel@{job\_\-cancel}}
+\index{job_cancel@{job\_\-cancel}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::job\_\-cancel (\$ {\em job}, \&\$ {\em out}, \$ {\em session} = 'default')}\label{classGrid_a51}
+
+
+Cancel a job previously submitted to the grid. 
+
+Note: If the job has not reached the CE yet (i.e.: its status is WAITING or READY states), the cancellation request may be ignored, and the job may continue running, although a message of successful cancellation is returned to the user. In such cases, just cancel the job again when its status is SCHEDULED or RUNNING
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]The name of the job you submitted to the grid \item[{\em string}]Optionally identifies the session to which the job belongs (if it was submitted within one). If this is not specified, then the default session is used. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]bool TRUE on success, FALSE on failure. \end{Desc}
+
+
+Definition at line 1946 of file test/grid.php.\index{Grid@{Grid}!job_cancel@{job\_\-cancel}}
+\index{job_cancel@{job\_\-cancel}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::job\_\-cancel (\$ {\em job}, \&\$ {\em out}, \$ {\em session} = 'default')}\label{classGrid_a25}
+
+
+Cancel a job previously submitted to the grid. 
+
+Note: If the job has not reached the CE yet (i.e.: its status is WAITING or READY states), the cancellation request may be ignored, and the job may continue running, although a message of successful cancellation is returned to the user. In such cases, just cancel the job again when its status is SCHEDULED or RUNNING
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]The name of the job you submitted to the grid \item[{\em string}]Optionally identifies the session to which the job belongs (if it was submitted within one). If this is not specified, then the default session is used. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]bool TRUE on success, FALSE on failure. \end{Desc}
+
+
+Definition at line 1949 of file src/grid.php.\index{Grid@{Grid}!job_get_id@{job\_\-get\_\-id}}
+\index{job_get_id@{job\_\-get\_\-id}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::job\_\-get\_\-id (\$ {\em job}, \$ {\em session} = 'default')}\label{classGrid_a48}
+
+
+Get Grid ID of a submitted job. 
+
+You should not need this function normally. The job and session names you already have should actually be enough for all your needs. The function is needed internally by the class, but otherwise it should be of little interest.
+
+Nevertheless, you may want to have access to this knowledge, either out of curiosity or for other reasons (e.g. re-routing access to a job through other access points after a crash of the original access point you used to submit it).
+
+Indeed, this will come handy for newer releases of this class when disaster recovery is added. Meanwhile, as already said, it is of little use.
+
+Sample usage: {\tt  \$eg = new Grid; \$eg-$>$set\_\-user(\$user); \$eg-$>$set\_\-host(\$host); \$eg-$>$set\_\-password(\$passwd); \$eg-$>$set\_\-passphrase(\$passphrase); \$eg-$>$set\_\-work\_\-dir(\char`\"{}/tmp/grid/test/cless\char`\"{}); \$eg-$>$set\_\-error\_\-log(\char`\"{}/tmp/grid/test/cless/connection.err\char`\"{}); echo \char`\"{}initializing grid... \char`\"{}; if (!\$eg-$>${\bf initialize()}{\rm (p.\,\pageref{classGrid_a11})}) echo \char`\"{}error: couldn't init the grid$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; echo \char`\"{}Submitting tst-job... \char`\"{}; if (! \$eg-$>$job\_\-submit(\char`\"{}tst-job\char`\"{}, \$out)) echo \char`\"{}error: coudn't start the job$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; print\_\-r(\$out); print\_\-r(\$eg-$>$job\_\-get\_\-id(\char`\"{}tst-job\char`\"{})); }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]The name of the job you submitted to the grid \item[{\em string}]Optionally identifies the session to which the job belongs (if it was submitted within one).\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]array$|$false with the known job-id's submitted from this 'job'. That looks as an oxymoron: there should only be one. Ergo, you may use it to detect job name clashes or job re-submissions.\end{Desc}
+\begin{Desc}
+\item[Note:]this is nasty and should be enhanced on a future version. \end{Desc}
+
+
+Definition at line 1607 of file test/grid.php.\index{Grid@{Grid}!job_get_id@{job\_\-get\_\-id}}
+\index{job_get_id@{job\_\-get\_\-id}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::job\_\-get\_\-id (\$ {\em job}, \$ {\em session} = 'default')}\label{classGrid_a22}
+
+
+Get Grid ID of a submitted job. 
+
+You should not need this function normally. The job and session names you already have should actually be enough for all your needs. The function is needed internally by the class, but otherwise it should be of little interest.
+
+Nevertheless, you may want to have access to this knowledge, either out of curiosity or for other reasons (e.g. re-routing access to a job through other access points after a crash of the original access point you used to submit it).
+
+Indeed, this will come handy for newer releases of this class when disaster recovery is added. Meanwhile, as already said, it is of little use.
+
+Sample usage: {\tt  \$eg = new Grid; \$eg-$>$set\_\-user(\$user); \$eg-$>$set\_\-host(\$host); \$eg-$>$set\_\-password(\$passwd); \$eg-$>$set\_\-passphrase(\$passphrase); \$eg-$>$set\_\-work\_\-dir(\char`\"{}/tmp/grid/test/cless\char`\"{}); \$eg-$>$set\_\-error\_\-log(\char`\"{}/tmp/grid/test/cless/connection.err\char`\"{}); echo \char`\"{}initializing grid... \char`\"{}; if (!\$eg-$>${\bf initialize()}{\rm (p.\,\pageref{classGrid_a11})}) echo \char`\"{}error: couldn't init the grid$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; echo \char`\"{}Submitting tst-job... \char`\"{}; if (! \$eg-$>$job\_\-submit(\char`\"{}tst-job\char`\"{}, \$out)) echo \char`\"{}error: coudn't start the job$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; print\_\-r(\$out); print\_\-r(\$eg-$>$job\_\-get\_\-id(\char`\"{}tst-job\char`\"{})); }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]The name of the job you submitted to the grid \item[{\em string}]Optionally identifies the session to which the job belongs (if it was submitted within one).\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]array$|$false with the known job-id's submitted from this 'job'. That looks as an oxymoron: there should only be one. Ergo, you may use it to detect job name clashes or job re-submissions.\end{Desc}
+\begin{Desc}
+\item[Note:]this is nasty and should be enhanced on a future version. \end{Desc}
+
+
+Definition at line 1610 of file src/grid.php.\index{Grid@{Grid}!job_get_output@{job\_\-get\_\-output}}
+\index{job_get_output@{job\_\-get\_\-output}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::job\_\-get\_\-output (\$ {\em job}, \&\$ {\em out}, \$ {\em session} = 'default')}\label{classGrid_a50}
+
+
+retrieve results 
+
+Retrieve the results of a job from the Grid. This function will attempt to retrieve the results of a job. This relies on the results being already available, i.e. you better check the job status first and make sure it has completed.
+
+If you don't, and the job hasn't completed yet, don't worry: nothing will be retrieved. So, no harm done. But you should check stdout to verify the condition.
+
+All results will be stored remotely on the job directory, under a subdirectory with a unique name of the form \$grid\_\-user\_\-name\_\-XXXXX... where the X's mean a random string. Locally you will see them as \$job/job\_\-output so that they have an easy name to identify them.
+
+To access your job output, just open this \$job/output directory and look inside.
+
+The rationale for this is to avoid overwriting your job information with its output. If that was intended, nothing is lost, just pick-up the newly generated file. This way you always have continued access to your old, submitted data for checking.
+
+Sample usage: {\tt  \$eg = new Grid; \$eg-$>$set\_\-user(\$user); \$eg-$>$set\_\-host(\$host); \$eg-$>$set\_\-password(\$passwd); \$eg-$>$set\_\-passphrase(\$passphrase); \$eg-$>$set\_\-work\_\-dir(\char`\"{}/tmp/grid/test/cless\char`\"{}); \$eg-$>$set\_\-error\_\-log(\char`\"{}/tmp/grid/test/cless/connection.err\char`\"{}); echo \char`\"{}initializing grid... \char`\"{}; if (!\$eg-$>${\bf initialize()}{\rm (p.\,\pageref{classGrid_a11})}) echo \char`\"{}error: couldn't init the grid$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; echo \char`\"{}Submitting tst-job... \char`\"{}; if (! \$eg-$>$job\_\-submit(\char`\"{}tst-job\char`\"{}, \$out)) echo \char`\"{}error: coudn't start the job$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; print\_\-r(\$out); echo \char`\"{}$\backslash$n\-Getting job ID... $\backslash$n\char`\"{}; print\_\-r(\$eg-$>$job\_\-get\_\-id(\char`\"{}tst-job\char`\"{})); echo \char`\"{}$\backslash$n\-Getting job status... $\backslash$n\char`\"{}; print\_\-r(\$eg-$>$job\_\-status(\char`\"{}tst-job\char`\"{}, \$out)); echo \char`\"{}$\backslash$n\-Getting job output... \char`\"{}; if (! \$eg-$>$job\_\-get\_\-output(\char`\"{}tst-job\char`\"{}, \$out)) echo \char`\"{}error: couldn't get job output$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; print\_\-r(\$out); }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]The name of the job you submitted to the grid \item[{\em string}]Optionally identifies the session to which the job belongs (if it was submitted within one). If this is not specified, then the default session is used. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]bool TRUE on success, FALSE on failure. \end{Desc}
+
+
+Definition at line 1854 of file test/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!job_get_output@{job\_\-get\_\-output}}
+\index{job_get_output@{job\_\-get\_\-output}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::job\_\-get\_\-output (\$ {\em job}, \&\$ {\em out}, \$ {\em session} = 'default')}\label{classGrid_a24}
+
+
+retrieve results 
+
+Retrieve the results of a job from the Grid. This function will attempt to retrieve the results of a job. This relies on the results being already available, i.e. you better check the job status first and make sure it has completed.
+
+If you don't, and the job hasn't completed yet, don't worry: nothing will be retrieved. So, no harm done. But you should check stdout to verify the condition.
+
+All results will be stored remotely on the job directory, under a subdirectory with a unique name of the form \$grid\_\-user\_\-name\_\-XXXXX... where the X's mean a random string. Locally you will see them as \$job/job\_\-output so that they have an easy name to identify them.
+
+To access your job output, just open this \$job/output directory and look inside.
+
+The rationale for this is to avoid overwriting your job information with its output. If that was intended, nothing is lost, just pick-up the newly generated file. This way you always have continued access to your old, submitted data for checking.
+
+Sample usage: {\tt  \$eg = new Grid; \$eg-$>$set\_\-user(\$user); \$eg-$>$set\_\-host(\$host); \$eg-$>$set\_\-password(\$passwd); \$eg-$>$set\_\-passphrase(\$passphrase); \$eg-$>$set\_\-work\_\-dir(\char`\"{}/tmp/grid/test/cless\char`\"{}); \$eg-$>$set\_\-error\_\-log(\char`\"{}/tmp/grid/test/cless/connection.err\char`\"{}); echo \char`\"{}initializing grid... \char`\"{}; if (!\$eg-$>${\bf initialize()}{\rm (p.\,\pageref{classGrid_a11})}) echo \char`\"{}error: couldn't init the grid$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; echo \char`\"{}Submitting tst-job... \char`\"{}; if (! \$eg-$>$job\_\-submit(\char`\"{}tst-job\char`\"{}, \$out)) echo \char`\"{}error: coudn't start the job$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; print\_\-r(\$out); echo \char`\"{}$\backslash$n\-Getting job ID... $\backslash$n\char`\"{}; print\_\-r(\$eg-$>$job\_\-get\_\-id(\char`\"{}tst-job\char`\"{})); echo \char`\"{}$\backslash$n\-Getting job status... $\backslash$n\char`\"{}; print\_\-r(\$eg-$>$job\_\-status(\char`\"{}tst-job\char`\"{}, \$out)); echo \char`\"{}$\backslash$n\-Getting job output... \char`\"{}; if (! \$eg-$>$job\_\-get\_\-output(\char`\"{}tst-job\char`\"{}, \$out)) echo \char`\"{}error: couldn't get job output$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; print\_\-r(\$out); }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]The name of the job you submitted to the grid \item[{\em string}]Optionally identifies the session to which the job belongs (if it was submitted within one). If this is not specified, then the default session is used. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]bool TRUE on success, FALSE on failure. \end{Desc}
+
+
+Definition at line 1857 of file src/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!job_status@{job\_\-status}}
+\index{job_status@{job\_\-status}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::job\_\-status (\$ {\em job}, \&\$ {\em out}, \$ {\em session} = 'default')}\label{classGrid_a49}
+
+
+check job status 
+
+This routine retrieves the job status report from the remote grid entry point into your local job directory, and returns the status of your specified job/session.
+
+Sample usage: {\tt  \$eg = new Grid; \$eg-$>$set\_\-user(\$user); \$eg-$>$set\_\-host(\$host); \$eg-$>$set\_\-password(\$passwd); \$eg-$>$set\_\-passphrase(\$passphrase); \$eg-$>$set\_\-work\_\-dir(\char`\"{}/tmp/grid/test/cless\char`\"{}); \$eg-$>$set\_\-error\_\-log(\char`\"{}/tmp/grid/test/cless/connection.err\char`\"{}); echo \char`\"{}initializing grid... \char`\"{}; if (!\$eg-$>${\bf initialize()}{\rm (p.\,\pageref{classGrid_a11})}) echo \char`\"{}error: couldn't init the grid$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; echo \char`\"{}Submitting tst-job... \char`\"{}; if (! \$eg-$>$job\_\-submit(\char`\"{}tst-job\char`\"{}, \$out)) echo \char`\"{}error: coudn't start the job$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; print\_\-r(\$out); echo \char`\"{}$\backslash$n\-Getting job ID... $\backslash$n\char`\"{}; print\_\-r(\$eg-$>$job\_\-get\_\-id(\char`\"{}tst-job\char`\"{})); echo \char`\"{}$\backslash$n\-Getting job status... $\backslash$n\char`\"{}; print\_\-r(\$eg-$>$job\_\-status(\char`\"{}tst-job\char`\"{}, \$out)); }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]The name of the job you submitted to the grid \item[{\em string}]Output of the status request program. Useful for debugging. \item[{\em string}]Optionally identifies the session to which the job belongs (if it was submitted within one).\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]array$|$false an array containing the job status or FALSE on failure. \end{Desc}
+
+
+Definition at line 1718 of file test/grid.php.\index{Grid@{Grid}!job_status@{job\_\-status}}
+\index{job_status@{job\_\-status}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::job\_\-status (\$ {\em job}, \&\$ {\em out}, \$ {\em session} = 'default')}\label{classGrid_a23}
+
+
+check job status 
+
+This routine retrieves the job status report from the remote grid entry point into your local job directory, and returns the status of your specified job/session.
+
+Sample usage: {\tt  \$eg = new Grid; \$eg-$>$set\_\-user(\$user); \$eg-$>$set\_\-host(\$host); \$eg-$>$set\_\-password(\$passwd); \$eg-$>$set\_\-passphrase(\$passphrase); \$eg-$>$set\_\-work\_\-dir(\char`\"{}/tmp/grid/test/cless\char`\"{}); \$eg-$>$set\_\-error\_\-log(\char`\"{}/tmp/grid/test/cless/connection.err\char`\"{}); echo \char`\"{}initializing grid... \char`\"{}; if (!\$eg-$>${\bf initialize()}{\rm (p.\,\pageref{classGrid_a11})}) echo \char`\"{}error: couldn't init the grid$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; echo \char`\"{}Submitting tst-job... \char`\"{}; if (! \$eg-$>$job\_\-submit(\char`\"{}tst-job\char`\"{}, \$out)) echo \char`\"{}error: coudn't start the job$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; print\_\-r(\$out); echo \char`\"{}$\backslash$n\-Getting job ID... $\backslash$n\char`\"{}; print\_\-r(\$eg-$>$job\_\-get\_\-id(\char`\"{}tst-job\char`\"{})); echo \char`\"{}$\backslash$n\-Getting job status... $\backslash$n\char`\"{}; print\_\-r(\$eg-$>$job\_\-status(\char`\"{}tst-job\char`\"{}, \$out)); }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]The name of the job you submitted to the grid \item[{\em string}]Output of the status request program. Useful for debugging. \item[{\em string}]Optionally identifies the session to which the job belongs (if it was submitted within one).\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]array$|$false an array containing the job status or FALSE on failure. \end{Desc}
+
+
+Definition at line 1721 of file src/grid.php.\index{Grid@{Grid}!job_submit@{job\_\-submit}}
+\index{job_submit@{job\_\-submit}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::job\_\-submit (\$ {\em job}, \&\$ {\em out}, \$ {\em session} = 'default')}\label{classGrid_a47}
+
+
+submit a job to the grid 
+
+This procedure submits a job to the Grid, optionally tagging it as part of a specific session.
+
+A job must be stored in a single directory (whose name you provide in the call to this function). The directory must contain any executables, libraries, configuration files/scripts, and input data needed to run your job.
+
+In addition, there must be a JDL file called 'job.jdl' and describing the job to the grid using the JDL language.
+
+Please note that only the job-directory name is used. If you provide a longer path, only the last component (the job directory name) will be used to identify your job remotely.
+
+Sample usage: {\tt  \$eg = new Grid; \$eg-$>$set\_\-user(\$user); \$eg-$>$set\_\-host(\$host); \$eg-$>$set\_\-password(\$passwd); \$eg-$>$set\_\-passphrase(\$passphrase); \$eg-$>$set\_\-work\_\-dir(\char`\"{}/tmp/grid/test/cless\char`\"{}); \$eg-$>$set\_\-error\_\-log(\char`\"{}/tmp/grid/test/cless/connection.err\char`\"{}); echo \char`\"{}initializing grid... \char`\"{}; if (!\$eg-$>${\bf initialize()}{\rm (p.\,\pageref{classGrid_a11})}) echo \char`\"{}error: couldn't init the grid$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; echo \char`\"{}Submitting tst-job... \char`\"{}; if (! \$eg-$>$job\_\-submit(\char`\"{}tst-job\char`\"{}, \$out)) echo \char`\"{}error: coudn't start the job$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; print\_\-r(\$out); \$eg-$>${\bf destroy()}{\rm (p.\,\pageref{classGrid_a12})}; \$eg-$>$disconnect(); }
+
+\begin{Desc}
+\item[Note:]in future instances we may provide routines to generate the JDL, possibly within a Grid\-Job class of its own.\end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]The name of the job (same as the subdirectory it is in) \item[{\em array}]A variable to hold any messages spitted by the submission procedure. Messages will be stored as an array of strings (one per line) without ending newlines. \item[{\em string}]Optional name of the session to which this job belongs (obtained from a previous call to session\_\-new). \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]bool TRUE if success, FALSE otherwise \end{Desc}
+
+
+Definition at line 1465 of file test/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!job_submit@{job\_\-submit}}
+\index{job_submit@{job\_\-submit}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::job\_\-submit (\$ {\em job}, \&\$ {\em out}, \$ {\em session} = 'default')}\label{classGrid_a21}
+
+
+submit a job to the grid 
+
+This procedure submits a job to the Grid, optionally tagging it as part of a specific session.
+
+A job must be stored in a single directory (whose name you provide in the call to this function). The directory must contain any executables, libraries, configuration files/scripts, and input data needed to run your job.
+
+In addition, there must be a JDL file called 'job.jdl' and describing the job to the grid using the JDL language.
+
+Please note that only the job-directory name is used. If you provide a longer path, only the last component (the job directory name) will be used to identify your job remotely.
+
+Sample usage: {\tt  \$eg = new Grid; \$eg-$>$set\_\-user(\$user); \$eg-$>$set\_\-host(\$host); \$eg-$>$set\_\-password(\$passwd); \$eg-$>$set\_\-passphrase(\$passphrase); \$eg-$>$set\_\-work\_\-dir(\char`\"{}/tmp/grid/test/cless\char`\"{}); \$eg-$>$set\_\-error\_\-log(\char`\"{}/tmp/grid/test/cless/connection.err\char`\"{}); echo \char`\"{}initializing grid... \char`\"{}; if (!\$eg-$>${\bf initialize()}{\rm (p.\,\pageref{classGrid_a11})}) echo \char`\"{}error: couldn't init the grid$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; echo \char`\"{}Submitting tst-job... \char`\"{}; if (! \$eg-$>$job\_\-submit(\char`\"{}tst-job\char`\"{}, \$out)) echo \char`\"{}error: coudn't start the job$\backslash$n\char`\"{}; else echo \char`\"{}OK$\backslash$n\char`\"{}; print\_\-r(\$out); \$eg-$>${\bf destroy()}{\rm (p.\,\pageref{classGrid_a12})}; \$eg-$>$disconnect(); }
+
+\begin{Desc}
+\item[Note:]in future instances we may provide routines to generate the JDL, possibly within a Grid\-Job class of its own.\end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]The name of the job (same as the subdirectory it is in) \item[{\em array}]A variable to hold any messages spitted by the submission procedure. Messages will be stored as an array of strings (one per line) without ending newlines. \item[{\em string}]Optional name of the session to which this job belongs (obtained from a previous call to session\_\-new). \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]bool TRUE if success, FALSE otherwise \end{Desc}
+
+
+Definition at line 1468 of file src/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!job_submit_set_timeout@{job\_\-submit\_\-set\_\-timeout}}
+\index{job_submit_set_timeout@{job\_\-submit\_\-set\_\-timeout}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::job\_\-submit\_\-set\_\-timeout (\$ {\em seconds} = 0)}\label{classGrid_a46}
+
+
+Set maximum (guesstimated) allowed time for a job submission to succeed. 
+
+This value is application and dataset dependent, will be of relevance in rare occasions (1/4000) and hence may as well be generous.
+
+The default is 0 seconds (no timeout). You should make measures to ensure it is reasonable. If set to 0, no timeout will be used.
+
+Unless set to 0, you will need to code some resubmission policy in your application.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em integer}]\$seconds timeout in seconds for job submission (defaults to 0, no timeout). \end{description}
+\end{Desc}
+
+
+Definition at line 1407 of file test/grid.php.
+
+References \$debug\_\-grid, and session\_\-is\_\-valid().\index{Grid@{Grid}!job_submit_set_timeout@{job\_\-submit\_\-set\_\-timeout}}
+\index{job_submit_set_timeout@{job\_\-submit\_\-set\_\-timeout}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::job\_\-submit\_\-set\_\-timeout (\$ {\em seconds} = 0)}\label{classGrid_a20}
+
+
+Set maximum (guesstimated) allowed time for a job submission to succeed. 
+
+This value is application and dataset dependent, will be of relevance in rare occasions (1/4000) and hence may as well be generous.
+
+The default is 0 seconds (no timeout). You should make measures to ensure it is reasonable. If set to 0, no timeout will be used.
+
+Unless set to 0, you will need to code some resubmission policy in your application.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em integer}]\$seconds timeout in seconds for job submission (defaults to 0, no timeout). \end{description}
+\end{Desc}
+
+
+Definition at line 1410 of file src/grid.php.
+
+References \$debug\_\-grid, and session\_\-is\_\-valid().\index{Grid@{Grid}!session_define@{session\_\-define}}
+\index{session_define@{session\_\-define}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::session\_\-define (\$ {\em session}, \$ {\em directory})}\label{classGrid_a40}
+
+
+Define an already existing session. 
+
+This is useful if the session already exists and we want to access it: we already know its directory name, and just want to associate a new name with the existing directory name.
+
+Use e.g. when you are to submit a job from a WWW page and access the results from a different one: as the new page has no access to the status of the previous one, we need to rebuild it ourselves.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]session name \item[{\em string}]subdirectory of \$work\_\-dir to be associated to that name \end{description}
+\end{Desc}
+
+
+Definition at line 1261 of file test/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!session_define@{session\_\-define}}
+\index{session_define@{session\_\-define}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::session\_\-define (\$ {\em session}, \$ {\em directory})}\label{classGrid_a14}
+
+
+Define an already existing session. 
+
+This is useful if the session already exists and we want to access it: we already know its directory name, and just want to associate a new name with the existing directory name.
+
+Use e.g. when you are to submit a job from a WWW page and access the results from a different one: as the new page has no access to the status of the previous one, we need to rebuild it ourselves.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]session name \item[{\em string}]subdirectory of \$work\_\-dir to be associated to that name \end{description}
+\end{Desc}
+
+
+Definition at line 1264 of file src/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!session_destroy@{session\_\-destroy}}
+\index{session_destroy@{session\_\-destroy}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::session\_\-destroy (\$ {\em session} = 'default')}\label{classGrid_a44}
+
+
+destroy the specified session 
+
+This method destroys all data associated with the specified session. Currently it does not kill its associated jobs, but deleted all their underlying data nevertheless.
+
+Warning: passing an empty string or no argument will destroy the default session.
+
+return bool TRUE if success, FALSE otherwise 
+
+Definition at line 1331 of file test/grid.php.\index{Grid@{Grid}!session_destroy@{session\_\-destroy}}
+\index{session_destroy@{session\_\-destroy}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::session\_\-destroy (\$ {\em session} = 'default')}\label{classGrid_a18}
+
+
+destroy the specified session 
+
+This method destroys all data associated with the specified session. Currently it does not kill its associated jobs, but deleted all their underlying data nevertheless.
+
+Warning: passing an empty string or no argument will destroy the default session.
+
+return bool TRUE if success, FALSE otherwise 
+
+Definition at line 1334 of file src/grid.php.\index{Grid@{Grid}!session_destroy_all@{session\_\-destroy\_\-all}}
+\index{session_destroy_all@{session\_\-destroy\_\-all}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::session\_\-destroy\_\-all ()}\label{classGrid_a45}
+
+
+Destroy all existing sessions. 
+
+private 
+
+Definition at line 1364 of file test/grid.php.\index{Grid@{Grid}!session_destroy_all@{session\_\-destroy\_\-all}}
+\index{session_destroy_all@{session\_\-destroy\_\-all}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::session\_\-destroy\_\-all ()}\label{classGrid_a19}
+
+
+Destroy all existing sessions. 
+
+private 
+
+Definition at line 1367 of file src/grid.php.\index{Grid@{Grid}!session_directory@{session\_\-directory}}
+\index{session_directory@{session\_\-directory}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::session\_\-directory (\$ {\em session} = 'default')}\label{classGrid_a42}
+
+
+return the directory associated to a session 
+
+DOES NO ERROR CHECKING FOR VALID SESSION
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]a session name \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]string the associated directory name\end{Desc}
+private 
+
+Definition at line 1297 of file test/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!session_directory@{session\_\-directory}}
+\index{session_directory@{session\_\-directory}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::session\_\-directory (\$ {\em session} = 'default')}\label{classGrid_a16}
+
+
+return the directory associated to a session 
+
+DOES NO ERROR CHECKING FOR VALID SESSION
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]a session name \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]string the associated directory name\end{Desc}
+private 
+
+Definition at line 1300 of file src/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!session_is_valid@{session\_\-is\_\-valid}}
+\index{session_is_valid@{session\_\-is\_\-valid}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::session\_\-is\_\-valid (\$ {\em session} = 'default')}\label{classGrid_a41}
+
+
+check if supplied argument is a valid (existing and active) session. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]a session name \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]bool TRUE if the session could be found among the list of valid sessions, FALSE otherwise\end{Desc}
+private 
+
+Definition at line 1276 of file test/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!session_is_valid@{session\_\-is\_\-valid}}
+\index{session_is_valid@{session\_\-is\_\-valid}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::session\_\-is\_\-valid (\$ {\em session} = 'default')}\label{classGrid_a15}
+
+
+check if supplied argument is a valid (existing and active) session. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]a session name \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]bool TRUE if the session could be found among the list of valid sessions, FALSE otherwise\end{Desc}
+private 
+
+Definition at line 1279 of file src/grid.php.
+
+References \$debug\_\-grid.
+
+Referenced by job\_\-submit\_\-set\_\-timeout(), and session\_\-list\_\-all().\index{Grid@{Grid}!session_list_all@{session\_\-list\_\-all}}
+\index{session_list_all@{session\_\-list\_\-all}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::session\_\-list\_\-all ()}\label{classGrid_a43}
+
+
+list all existing sessions (debugging only) 
+
+private 
+
+Definition at line 1309 of file test/grid.php.
+
+References \$debug\_\-grid, connect(), and session\_\-is\_\-valid().\index{Grid@{Grid}!session_list_all@{session\_\-list\_\-all}}
+\index{session_list_all@{session\_\-list\_\-all}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::session\_\-list\_\-all ()}\label{classGrid_a17}
+
+
+list all existing sessions (debugging only) 
+
+private 
+
+Definition at line 1312 of file src/grid.php.
+
+References \$debug\_\-grid, connect(), and session\_\-is\_\-valid().\index{Grid@{Grid}!session_new@{session\_\-new}}
+\index{session_new@{session\_\-new}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::session\_\-new (\$ {\em hint} = \char`\"{}sess\char`\"{})}\label{classGrid_a39}
+
+
+Create a new session. 
+
+We take control of the session system: in a previous incarnation we got the session name from the user. This is dangerous since we can not avoid clashes even with random session names provided by a user: a randomly generated name may be guaranteed unique within the user's local host namespace, but should various calls come from different hosts (e.g. HA front-ends in a cluster), it is conceivable (although improbable) that both come up with the same random number and generate a clash on the shared remote grid access point. Hence the new approach: to be true, users do not need to generate a session name themselves: they just need a way to refer to them.
+
+This routine will generate a new session: under a given session, we guarantee that processes will be run under an isolated sandbox where non name clashes from other concurrent users will occur. Name clashes within a given session induced by the user are still the responsability of the user.
+
+SESSIONS
+
+The basic idea is as follows: if you are developing a service that may be called concurrently by various users, your problem at the Gr\-UI is the same as on your local server: avoiding name clashes for jobs. As long as you manage that locally using unique names, the same will work on the UI server.
+
+This however may be inconvenient at times. It is usually the case when your service is not composed by a single job, but by many independent jobs that may be run concurrently as well. You still need to generate unique names for each sub-job, but if they are produced within a local uniquely named service-instance, then you may reuse the sub-job names for each instance.
+
+This comes handy in the case of many sub-jobs: as long as the main service instance is uniquely identified, contained sub-jobs may have significant names that are easier to identify than randomly-generated ones: e.g. \small\begin{alltt}
+    user A -$>$ service-instance-A -+-$>$ sub-job-1
+                                  |
+                                  +-$>$ sub-job-2
+                                  |
+                                  etc...\end{alltt}\normalsize 
+
+
+\small\begin{alltt}    user B -$>$ service-instance-B -+-$>$ sub-job-1
+                                  |
+                                  +-$>$ sub-job-2
+                                  |
+                                  etc...
+ \end{alltt}\normalsize 
+ In this case, since the service-instances have unique names (A, B) we may use the same naming strategy in both cases for naming sub-jobs (1, 2,...) which makes bookkeeping a lot easier.
+
+To reproduce a similar behaviour remotely we provide 'sessions'.
+
+Basically, what you are doing in the local case is isolating all the equally named jobs of each service-instance within an unique sandbox. In the grid you get the same result using 'sessions': whenever you want to submit a series of non-randomly-named jobs (or even a single one) you first allocate a session, and then attach those jobs to the session. Job names within a session are guaranteed not to clash with equal job names from another session.
+
+Note the 'non-randomly-named' tag above: you want to use sessions ALWAYS that you use any non-random job name unless you can guarantee it will be the only job with that name ON THE GRID.
+
+This is an important notice: your job may have a non-random, but guaranteed unique name on your local host. And as long as the job will only be submitted from your local host it is OK. But if you are going to share your tools with other fellows, then they will install them locally and submit a similarly named job as well. The job name will be unique within each one's local machine, but when jobs are collected at the Gr\-UI, they will all have the same name, which is a no-no.
+
+USING SESSIONS
+
+Once you see the need for using sessions, using them is quite simple: you call this function asking for a new session to be created on the remote grid access point on your behalf. The routine will return a unique session identifier which you later use to tag jobs that are to be run within that session's sandbox.
+
+Sample usage: {\tt  \$eg = new Grid; \$eg-$>$set\_\-user(\$user); \$eg-$>$set\_\-host(\$host); \$eg-$>$set\_\-password(\$passwd); \$eg-$>$set\_\-passphrase(\$passphrase); \$eg-$>$set\_\-work\_\-dir(\char`\"{}/tmp/grid/debug\char`\"{}); \$eg-$>$set\_\-error\_\-log(\char`\"{}/tmp/grid/debug/connection.err\char`\"{}); echo \char`\"{}initializing grid... \char`\"{}; if (!\$eg-$>${\bf initialize()}{\rm (p.\,\pageref{classGrid_a11})}) \{ echo \char`\"{}error: couldn't init the grid$\backslash$n\char`\"{}; exit; \} else echo \char`\"{}OK$\backslash$n\char`\"{}; echo \char`\"{}Submitting tst-job to default session...$\backslash$n\char`\"{}; \$out = array(\char`\"{}\char`\"{}); if (! \$eg-$>$job\_\-submit(\char`\"{}tst-job\char`\"{}, \$out)) \{ echo \char`\"{}error: coudn't start the job$\backslash$n\char`\"{}; exit; \} else echo \char`\"{}OK$\backslash$n\char`\"{}; print\_\-r(\$out); echo \char`\"{}Submitting tst-job to a new session...$\backslash$n\char`\"{}; \$sess = \$eg-$>${\bf session\_\-new()}{\rm (p.\,\pageref{classGrid_a13})}; echo \char`\"{}sess = \char`\"{}; print\_\-r(\$sess); echo \char`\"{}$\backslash$n\char`\"{}; if (\$sess != FALSE) \{ \$out = array(\char`\"{}\char`\"{}); if (! \$eg-$>$job\_\-submit(\char`\"{}tst-job\char`\"{}, \$out, \$sess)) echo \char`\"{}error: coudn't start the job$\backslash$n\char`\"{}; else \{ echo \char`\"{}OK$\backslash$n\char`\"{}; \} \$eg-$>$session\_\-destroy(\$sess); \} \$eg-$>${\bf destruct()}{\rm (p.\,\pageref{classGrid_a1})}; }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]\$hint an optional string to be used for the session name\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]string$|$false session ID of the newly generated session. \end{Desc}
+
+
+Definition at line 1191 of file test/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!session_new@{session\_\-new}}
+\index{session_new@{session\_\-new}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::session\_\-new (\$ {\em hint} = \char`\"{}sess\char`\"{})}\label{classGrid_a13}
+
+
+Create a new session. 
+
+We take control of the session system: in a previous incarnation we got the session name from the user. This is dangerous since we can not avoid clashes even with random session names provided by a user: a randomly generated name may be guaranteed unique within the user's local host namespace, but should various calls come from different hosts (e.g. HA front-ends in a cluster), it is conceivable (although improbable) that both come up with the same random number and generate a clash on the shared remote grid access point. Hence the new approach: to be true, users do not need to generate a session name themselves: they just need a way to refer to them.
+
+This routine will generate a new session: under a given session, we guarantee that processes will be run under an isolated sandbox where non name clashes from other concurrent users will occur. Name clashes within a given session induced by the user are still the responsability of the user.
+
+SESSIONS
+
+The basic idea is as follows: if you are developing a service that may be called concurrently by various users, your problem at the Gr\-UI is the same as on your local server: avoiding name clashes for jobs. As long as you manage that locally using unique names, the same will work on the UI server.
+
+This however may be inconvenient at times. It is usually the case when your service is not composed by a single job, but by many independent jobs that may be run concurrently as well. You still need to generate unique names for each sub-job, but if they are produced within a local uniquely named service-instance, then you may reuse the sub-job names for each instance.
+
+This comes handy in the case of many sub-jobs: as long as the main service instance is uniquely identified, contained sub-jobs may have significant names that are easier to identify than randomly-generated ones: e.g. \small\begin{alltt}
+    user A -$>$ service-instance-A -+-$>$ sub-job-1
+                                  |
+                                  +-$>$ sub-job-2
+                                  |
+                                  etc...\end{alltt}\normalsize 
+
+
+\small\begin{alltt}    user B -$>$ service-instance-B -+-$>$ sub-job-1
+                                  |
+                                  +-$>$ sub-job-2
+                                  |
+                                  etc...
+ \end{alltt}\normalsize 
+ In this case, since the service-instances have unique names (A, B) we may use the same naming strategy in both cases for naming sub-jobs (1, 2,...) which makes bookkeeping a lot easier.
+
+To reproduce a similar behaviour remotely we provide 'sessions'.
+
+Basically, what you are doing in the local case is isolating all the equally named jobs of each service-instance within an unique sandbox. In the grid you get the same result using 'sessions': whenever you want to submit a series of non-randomly-named jobs (or even a single one) you first allocate a session, and then attach those jobs to the session. Job names within a session are guaranteed not to clash with equal job names from another session.
+
+Note the 'non-randomly-named' tag above: you want to use sessions ALWAYS that you use any non-random job name unless you can guarantee it will be the only job with that name ON THE GRID.
+
+This is an important notice: your job may have a non-random, but guaranteed unique name on your local host. And as long as the job will only be submitted from your local host it is OK. But if you are going to share your tools with other fellows, then they will install them locally and submit a similarly named job as well. The job name will be unique within each one's local machine, but when jobs are collected at the Gr\-UI, they will all have the same name, which is a no-no.
+
+USING SESSIONS
+
+Once you see the need for using sessions, using them is quite simple: you call this function asking for a new session to be created on the remote grid access point on your behalf. The routine will return a unique session identifier which you later use to tag jobs that are to be run within that session's sandbox.
+
+Sample usage: {\tt  \$eg = new Grid; \$eg-$>$set\_\-user(\$user); \$eg-$>$set\_\-host(\$host); \$eg-$>$set\_\-password(\$passwd); \$eg-$>$set\_\-passphrase(\$passphrase); \$eg-$>$set\_\-work\_\-dir(\char`\"{}/tmp/grid/debug\char`\"{}); \$eg-$>$set\_\-error\_\-log(\char`\"{}/tmp/grid/debug/connection.err\char`\"{}); echo \char`\"{}initializing grid... \char`\"{}; if (!\$eg-$>${\bf initialize()}{\rm (p.\,\pageref{classGrid_a11})}) \{ echo \char`\"{}error: couldn't init the grid$\backslash$n\char`\"{}; exit; \} else echo \char`\"{}OK$\backslash$n\char`\"{}; echo \char`\"{}Submitting tst-job to default session...$\backslash$n\char`\"{}; \$out = array(\char`\"{}\char`\"{}); if (! \$eg-$>$job\_\-submit(\char`\"{}tst-job\char`\"{}, \$out)) \{ echo \char`\"{}error: coudn't start the job$\backslash$n\char`\"{}; exit; \} else echo \char`\"{}OK$\backslash$n\char`\"{}; print\_\-r(\$out); echo \char`\"{}Submitting tst-job to a new session...$\backslash$n\char`\"{}; \$sess = \$eg-$>${\bf session\_\-new()}{\rm (p.\,\pageref{classGrid_a13})}; echo \char`\"{}sess = \char`\"{}; print\_\-r(\$sess); echo \char`\"{}$\backslash$n\char`\"{}; if (\$sess != FALSE) \{ \$out = array(\char`\"{}\char`\"{}); if (! \$eg-$>$job\_\-submit(\char`\"{}tst-job\char`\"{}, \$out, \$sess)) echo \char`\"{}error: coudn't start the job$\backslash$n\char`\"{}; else \{ echo \char`\"{}OK$\backslash$n\char`\"{}; \} \$eg-$>$session\_\-destroy(\$sess); \} \$eg-$>${\bf destruct()}{\rm (p.\,\pageref{classGrid_a1})}; }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]\$hint an optional string to be used for the session name\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]string$|$false session ID of the newly generated session. \end{Desc}
+
+
+Definition at line 1194 of file src/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!set_error_log@{set\_\-error\_\-log}}
+\index{set_error_log@{set\_\-error\_\-log}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::set\_\-error\_\-log (\$ {\em errlog})}\label{classGrid_a33}
+
+
+set error log 
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$eg = new Grid; if (\$eg == FALSE) echo \char`\"{}Couldn't instantiate a new Grid!$\backslash$n\char`\"{}; \$eg-$>$set\_\-error\_\-log(\char`\"{}./grid-services/error.log\char`\"{}); }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]path to a local file where we will store the error log (i.e. stderr of the grid connection) \end{description}
+\end{Desc}
+
+
+Definition at line 657 of file test/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!set_error_log@{set\_\-error\_\-log}}
+\index{set_error_log@{set\_\-error\_\-log}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::set\_\-error\_\-log (\$ {\em errlog})}\label{classGrid_a7}
+
+
+set error log 
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$eg = new Grid; if (\$eg == FALSE) echo \char`\"{}Couldn't instantiate a new Grid!$\backslash$n\char`\"{}; \$eg-$>$set\_\-error\_\-log(\char`\"{}./grid-services/error.log\char`\"{}); }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]path to a local file where we will store the error log (i.e. stderr of the grid connection) \end{description}
+\end{Desc}
+
+
+Definition at line 657 of file src/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!set_host@{set\_\-host}}
+\index{set_host@{set\_\-host}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::set\_\-host (\$ {\em host})}\label{classGrid_a29}
+
+
+set the name of the Grid access host 
+
+In order to connect to the Grid and be able to submit jobs we need a tuple (host/user/password/passphrase), i.e. an entry point to log in, and a passphrase to unlock the grid certificate.
+
+This method allows us to define the entry point to use to gain access to the Grid.
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$host=\char`\"{}gridui.example.com\char`\"{};}
+
+{\tt  \$eg = new Grid; if (\$eg == FALSE) echo \char`\"{}Couldn't instantiate a new Grid!$\backslash$n\char`\"{}; \$eg-$>$set\_\-host(\$host); }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]host name of the remote UI host \end{description}
+\end{Desc}
+
+
+Definition at line 501 of file test/grid.php.\index{Grid@{Grid}!set_host@{set\_\-host}}
+\index{set_host@{set\_\-host}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::set\_\-host (\$ {\em host})}\label{classGrid_a3}
+
+
+set the name of the Grid access host 
+
+In order to connect to the Grid and be able to submit jobs we need a tuple (host/user/password/passphrase), i.e. an entry point to log in, and a passphrase to unlock the grid certificate.
+
+This method allows us to define the entry point to use to gain access to the Grid.
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$host=\char`\"{}gridui.example.com\char`\"{};}
+
+{\tt  \$eg = new Grid; if (\$eg == FALSE) echo \char`\"{}Couldn't instantiate a new Grid!$\backslash$n\char`\"{}; \$eg-$>$set\_\-host(\$host); }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]host name of the remote UI host \end{description}
+\end{Desc}
+
+
+Definition at line 501 of file src/grid.php.\index{Grid@{Grid}!set_passphrase@{set\_\-passphrase}}
+\index{set_passphrase@{set\_\-passphrase}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::set\_\-passphrase (\$ {\em pass})}\label{classGrid_a31}
+
+
+set the passphrase for the remote grid user 
+
+In order to connect to the Grid and be able to submit jobs we need a tuple (host/user/password/passphrase), i.e. an entry point to log in, and a passphrase to unlock the grid certificate.
+
+After we gain access to the UI host, we must unlock our certificate which identifies ourselves as 'bona-fide' grid users.
+
+People might have an account on any UI node for a variety of reasons, but that does not qualify them to use Grid resources. Only a central Grid authority can grant this kind of access and this is done by issuing a Certificate.
+
+Users then must store this certificate in their account on a UI host and protect it with a suitably long passphrase. This last one is the value we provide here.
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$passphrase=\char`\"{}pass phrase to unlock certificate\char`\"{};}
+
+{\tt  \$eg = new Grid; if (\$eg == FALSE) echo \char`\"{}Couldn't instantiate a new Grid!$\backslash$n\char`\"{}; \$eg-$>$set\_\-passphrase(\$passphrase); }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]passphrase needed to unlock the grid certificate \end{description}
+\end{Desc}
+
+
+Definition at line 599 of file test/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!set_passphrase@{set\_\-passphrase}}
+\index{set_passphrase@{set\_\-passphrase}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::set\_\-passphrase (\$ {\em pass})}\label{classGrid_a5}
+
+
+set the passphrase for the remote grid user 
+
+In order to connect to the Grid and be able to submit jobs we need a tuple (host/user/password/passphrase), i.e. an entry point to log in, and a passphrase to unlock the grid certificate.
+
+After we gain access to the UI host, we must unlock our certificate which identifies ourselves as 'bona-fide' grid users.
+
+People might have an account on any UI node for a variety of reasons, but that does not qualify them to use Grid resources. Only a central Grid authority can grant this kind of access and this is done by issuing a Certificate.
+
+Users then must store this certificate in their account on a UI host and protect it with a suitably long passphrase. This last one is the value we provide here.
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$passphrase=\char`\"{}pass phrase to unlock certificate\char`\"{};}
+
+{\tt  \$eg = new Grid; if (\$eg == FALSE) echo \char`\"{}Couldn't instantiate a new Grid!$\backslash$n\char`\"{}; \$eg-$>$set\_\-passphrase(\$passphrase); }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]passphrase needed to unlock the grid certificate \end{description}
+\end{Desc}
+
+
+Definition at line 599 of file src/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!set_password@{set\_\-password}}
+\index{set_password@{set\_\-password}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::set\_\-password (\$ {\em pass})}\label{classGrid_a30}
+
+
+set the password for the remote grid user/server 
+
+In order to connect to the Grid and be able to submit jobs we need a tuple (host/user/password/passphrase), i.e. an entry point to log in, and a passphrase to unlock the grid certificate.
+
+This method allows us to specify the password to clear access to the Grid UI host.
+
+Note that this is specific to the remote UI server selected.
+
+Further note that gaining access to a user account on a given host does not give us rights to submit jobs: we still need to unlock our ID certificate with the appropriate passphrase. Anybody with root access to an UI host can add accounts. Further, the UI host might have other roles and host other accounts for different purposes which should not access the grid. Bottomline is that we can not trust an account on a user-controlled host to identify Grid users. For this we need to recurse to a central authority to grant final access.
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$password=\char`\"{}password\char`\"{};}
+
+{\tt  \$eg = new Grid; if (\$eg == FALSE) echo \char`\"{}Couldn't instantiate a new Grid!$\backslash$n\char`\"{}; \$eg-$>$set\_\-password(\$password); }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]password needed to login on to the grid UI server \end{description}
+\end{Desc}
+
+
+Definition at line 552 of file test/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!set_password@{set\_\-password}}
+\index{set_password@{set\_\-password}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::set\_\-password (\$ {\em pass})}\label{classGrid_a4}
+
+
+set the password for the remote grid user/server 
+
+In order to connect to the Grid and be able to submit jobs we need a tuple (host/user/password/passphrase), i.e. an entry point to log in, and a passphrase to unlock the grid certificate.
+
+This method allows us to specify the password to clear access to the Grid UI host.
+
+Note that this is specific to the remote UI server selected.
+
+Further note that gaining access to a user account on a given host does not give us rights to submit jobs: we still need to unlock our ID certificate with the appropriate passphrase. Anybody with root access to an UI host can add accounts. Further, the UI host might have other roles and host other accounts for different purposes which should not access the grid. Bottomline is that we can not trust an account on a user-controlled host to identify Grid users. For this we need to recurse to a central authority to grant final access.
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$password=\char`\"{}password\char`\"{};}
+
+{\tt  \$eg = new Grid; if (\$eg == FALSE) echo \char`\"{}Couldn't instantiate a new Grid!$\backslash$n\char`\"{}; \$eg-$>$set\_\-password(\$password); }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]password needed to login on to the grid UI server \end{description}
+\end{Desc}
+
+
+Definition at line 552 of file src/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!set_user@{set\_\-user}}
+\index{set_user@{set\_\-user}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::set\_\-user (\$ {\em user})}\label{classGrid_a28}
+
+
+set the Grid user name 
+
+In order to connect to the Grid and be able to submit jobs we need a tuple (host/user/password/passphrase), i.e. an entry point to log in, and a passphrase to unlock the grid certificate.
+
+This method allows us to define the username which will be used to log in on the grid, i.e. how do we identify ourselves to the Grid UI host.
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$user=\char`\"{}user\char`\"{};}
+
+{\tt  \$eg = new Grid; if (\$eg == FALSE) echo \char`\"{}Couldn't instantiate a new Grid!$\backslash$n\char`\"{}; \$eg-$>$set\_\-user(\$user); }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]user identity to use in the Grid UI host \end{description}
+\end{Desc}
+
+
+Definition at line 464 of file test/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!set_user@{set\_\-user}}
+\index{set_user@{set\_\-user}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::set\_\-user (\$ {\em user})}\label{classGrid_a2}
+
+
+set the Grid user name 
+
+In order to connect to the Grid and be able to submit jobs we need a tuple (host/user/password/passphrase), i.e. an entry point to log in, and a passphrase to unlock the grid certificate.
+
+This method allows us to define the username which will be used to log in on the grid, i.e. how do we identify ourselves to the Grid UI host.
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$user=\char`\"{}user\char`\"{};}
+
+{\tt  \$eg = new Grid; if (\$eg == FALSE) echo \char`\"{}Couldn't instantiate a new Grid!$\backslash$n\char`\"{}; \$eg-$>$set\_\-user(\$user); }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]user identity to use in the Grid UI host \end{description}
+\end{Desc}
+
+
+Definition at line 464 of file src/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!set_work_dir@{set\_\-work\_\-dir}}
+\index{set_work_dir@{set\_\-work\_\-dir}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::set\_\-work\_\-dir (\$ {\em wd})}\label{classGrid_a32}
+
+
+set working directory on the Grid server 
+
+This is a directory located on the grid server where all jobs and job related information will be created. It may be a path local to the user home or a global path (usually on /tmp or /var/tmp).
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$eg = new Grid; if (\$eg == FALSE) echo \char`\"{}Couldn't instantiate a new Grid!$\backslash$n\char`\"{}; \$eg-$>$set\_\-work\_\-dir(\char`\"{}./grid-services\char`\"{}); }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]the remote path of the working directory \end{description}
+\end{Desc}
+
+
+Definition at line 630 of file test/grid.php.
+
+References \$debug\_\-grid.\index{Grid@{Grid}!set_work_dir@{set\_\-work\_\-dir}}
+\index{set_work_dir@{set\_\-work\_\-dir}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::set\_\-work\_\-dir (\$ {\em wd})}\label{classGrid_a6}
+
+
+set working directory on the Grid server 
+
+This is a directory located on the grid server where all jobs and job related information will be created. It may be a path local to the user home or a global path (usually on /tmp or /var/tmp).
+
+Sample usage: {\tt  require\_\-once './grid\_\-config.php'; require\_\-once './ssh.php'; require\_\-once './grid.php';}
+
+{\tt  \$eg = new Grid; if (\$eg == FALSE) echo \char`\"{}Couldn't instantiate a new Grid!$\backslash$n\char`\"{}; \$eg-$>$set\_\-work\_\-dir(\char`\"{}./grid-services\char`\"{}); }
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]the remote path of the working directory \end{description}
+\end{Desc}
+
+
+Definition at line 630 of file src/grid.php.
+
+References \$debug\_\-grid.
+
+\subsection{Member Data Documentation}
+\index{Grid@{Grid}!$connected@{\$connected}}
+\index{$connected@{\$connected}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::\$connected}\label{classGrid_o10}
+
+
+
+
+Definition at line 303 of file test/grid.php.\index{Grid@{Grid}!$entry_point@{\$entry\_\-point}}
+\index{$entry_point@{\$entry\_\-point}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::\$entry\_\-point}\label{classGrid_o0}
+
+
+the grid entry point, should not be needed 
+
+
+
+Definition at line 267 of file test/grid.php.\index{Grid@{Grid}!$error_log@{\$error\_\-log}}
+\index{$error_log@{\$error\_\-log}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::\$error\_\-log}\label{classGrid_o6}
+
+
+a local file to store the error log 
+
+
+
+Definition at line 279 of file test/grid.php.\index{Grid@{Grid}!$hostname@{\$hostname}}
+\index{$hostname@{\$hostname}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::\$hostname}\label{classGrid_o2}
+
+
+name of host that provides access to the grid 
+
+
+
+Definition at line 271 of file test/grid.php.\index{Grid@{Grid}!$initialized@{\$initialized}}
+\index{$initialized@{\$initialized}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::\$initialized}\label{classGrid_o11}
+
+
+
+
+Definition at line 310 of file test/grid.php.\index{Grid@{Grid}!$passphrase@{\$passphrase}}
+\index{$passphrase@{\$passphrase}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::\$passphrase}\label{classGrid_o4}
+
+
+key to unlock the grid access certificate 
+
+
+
+Definition at line 275 of file test/grid.php.\index{Grid@{Grid}!$password@{\$password}}
+\index{$password@{\$password}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::\$password}\label{classGrid_o3}
+
+
+password to login on the UI node 
+
+
+
+Definition at line 273 of file test/grid.php.\index{Grid@{Grid}!$sessions@{\$sessions}}
+\index{$sessions@{\$sessions}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::\$sessions}\label{classGrid_o12}
+
+
+
+
+Definition at line 317 of file test/grid.php.\index{Grid@{Grid}!$std_err@{\$std\_\-err}}
+\index{$std_err@{\$std\_\-err}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::\$std\_\-err}\label{classGrid_o9}
+
+
+Standard error of the grid entry. 
+
+
+
+Definition at line 291 of file test/grid.php.\index{Grid@{Grid}!$std_in@{\$std\_\-in}}
+\index{$std_in@{\$std\_\-in}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::\$std\_\-in}\label{classGrid_o7}
+
+
+Standard input of the grid entry. 
+
+
+
+Definition at line 287 of file test/grid.php.\index{Grid@{Grid}!$std_out@{\$std\_\-out}}
+\index{$std_out@{\$std\_\-out}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::\$std\_\-out}\label{classGrid_o8}
+
+
+Standard output of the grid entry. 
+
+
+
+Definition at line 289 of file test/grid.php.\index{Grid@{Grid}!$submit_timeout@{\$submit\_\-timeout}}
+\index{$submit_timeout@{\$submit\_\-timeout}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::\$submit\_\-timeout}\label{classGrid_o14}
+
+
+
+
+Definition at line 376 of file test/grid.php.\index{Grid@{Grid}!$sx@{\$sx}}
+\index{$sx@{\$sx}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::\$sx}\label{classGrid_o13}
+
+
+
+
+Definition at line 324 of file test/grid.php.\index{Grid@{Grid}!$username@{\$username}}
+\index{$username@{\$username}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::\$username}\label{classGrid_o1}
+
+
+user name to use to connect to the grid 
+
+
+
+Definition at line 269 of file test/grid.php.\index{Grid@{Grid}!$work_dir@{\$work\_\-dir}}
+\index{$work_dir@{\$work\_\-dir}!Grid@{Grid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Grid::\$work\_\-dir}\label{classGrid_o5}
+
+
+a Gr\-UI directory where we can work 
+
+
+
+Definition at line 277 of file test/grid.php.
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+{\bf src/grid.php}\item 
+{\bf test/grid.php}\end{CompactItemize}

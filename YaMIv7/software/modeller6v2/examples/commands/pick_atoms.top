@@ -1,0 +1,66 @@
+# Example for: PICK_ATOMS
+
+# This will pick various subsets of atoms in the MODEL and compare them 
+# with MODEL2.
+
+SET OUTPUT_CONTROL = 1 1 1 1 0
+
+# Read the models and the alignment:
+READ_MODEL  FILE = '1fas'
+READ_MODEL2 FILE = '2ctx'
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = '1fas' '2ctx'
+WRITE_ALIGNMENT FILE = 'toxin.pap', ALIGNMENT_FORMAT = 'PAP'
+
+# Set some defaults (the same as in top.ini):
+SET SELECTION_MODE   = 'ATOM'       # only the selected atoms, not whole residues
+SET SELECTION_FROM   = 'ALL'        # scanning of all atoms, not selected atoms
+SET SELECTION_SEARCH = 'SEGMENT'    # scan over a segment
+SET SELECTION_SEGMENT= 'FIRST:' 'LAST:'    # the whole chain as a segment
+SET RES_TYPES = 'ALL'               # all residue types
+SET PICK_ATOMS_SET   = 1            # put the selected atoms in set 1
+SET SELECTION_STATUS = 'INITIALIZE' # select only the selected atoms
+
+# Pick and superpose mainchain atoms:
+PICK_ATOMS ATOM_TYPES = 'MNCH'
+SUPERPOSE
+
+# Pick and superpose sidechain atoms:
+PICK_ATOMS ATOM_TYPES = 'SDCH'
+SUPERPOSE
+
+# Pick and superpose CA and CB atoms:
+PICK_ATOMS ATOM_TYPES = 'CA CB'
+SUPERPOSE
+
+# Pick and superpose all atoms:
+PICK_ATOMS ATOM_TYPES = 'ALL'
+SUPERPOSE
+
+# Pick and superpose CA and CB atoms in one segment only:
+PICK_ATOMS ATOM_TYPES = 'CA CB', SELECTION_SEGMENT = '2:' '10:'
+SUPERPOSE
+SET SELECTION_SEGMENT = 'FIRST:' 'LAST:' # allow for the whole chain again
+
+# Pick and superpose all atoms within 6 angstroms of the 'CA' atom in residue '10:':
+PICK_ATOMS ATOM_TYPES = 'ALL', SPHERE_RADIUS = 6.0, ;
+           SELECTION_SEARCH = 'SPHERE', SPHERE_CENTER = '10:' 'CA'
+SUPERPOSE
+
+# Pick and superpose all atoms within 6 angstroms of any atom in 
+# segment 2: to 10:
+PICK_ATOMS ATOM_TYPES = 'ALL', SELECTION_SEGMENT = '2:' '10:',;
+           SELECTION_SEARCH = 'SPHERE_SEGMENT', SPHERE_RADIUS = 6.0
+SUPERPOSE
+
+# Pick and superpose all atoms in all loops (ie residues within 2 positions 
+# of any gap in the alignment):
+PICK_ATOMS ATOM_TYPES = 'ALL', SELECTION_SEGMENT = 'LOOPS' '', ;
+           SELECTION_SEARCH = 'SEGMENT', GAP_EXTENSION = 2 2
+SUPERPOSE
+
+# Pick and superpose all atoms within 6 angstroms of all loops (ie residues
+# within 2 positions of any gap in the alignment):
+PICK_ATOMS ATOM_TYPES = 'ALL', SELECTION_SEGMENT = 'LOOPS' '',;
+           SELECTION_SEARCH = 'SPHERE_SEGMENT', SPHERE_RADIUS = 6.0, ;
+           GAP_EXTENSION = 2 2
+SUPERPOSE

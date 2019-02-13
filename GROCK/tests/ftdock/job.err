@@ -1,0 +1,5 @@
+-nowarn : -pdb
+-nowarn : -pdb
+./job.sh: line 53: ./centres: No such file or directory
+tar: centres.pdb: Cannot stat: No such file or directory
+tar: Error exit delayed from previous errors

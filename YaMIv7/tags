@@ -1,0 +1,85 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.2	//
+Grid	grid.php	/^    function Grid() {$/;"	f
+Grid	grid.php	/^class Grid {$/;"	c
+SExec	ssh.php	/^    function SExec($remote="localhost", $password="xxyzzy")$/;"	f
+SExec	ssh.php	/^class SExec {$/;"	c
+activate_new_sandbox	lib.php	/^function activate_new_sandbox()$/;"	f
+activate_new_sandbox	util.php	/^function activate_new_sandbox()$/;"	f
+build_models	lib.php	/^function build_models($auth, $opts)$/;"	f
+call_modeller	processor.php	/^function call_modeller($topfile, $debug)$/;"	f
+call_pdb2seg	processor.php	/^function call_pdb2seg($sequence_pir, $pdb_dir, $pdb_prefix, $pdb_extension, $segfile, $knowns, $random_str)$/;"	f
+connect	grid.php	/^    function connect()$/;"	f
+destroy	grid.php	/^    function destroy()$/;"	f
+destruct	grid.php	/^    function destruct() {$/;"	f
+destruct	ssh.php	/^    function destruct()$/;"	f
+error	lib.php	/^function error($where, $what)$/;"	f
+error	util.php	/^function error($where, $what)$/;"	f
+get_auth_data	lib.php	/^function get_auth_data(&$auth)$/;"	f
+get_connection_status	grid.php	/^    function get_connection_status()$/;"	f
+get_init_status	grid.php	/^    function get_init_status()$/;"	f
+get_user_auth	processor.php	/^function get_user_auth(&$auth)$/;"	f
+initialize	grid.php	/^    function initialize($hours=12, $minutes=0)$/;"	f
+job_cancel	grid.php	/^    function job_cancel($job, &$out, $session='default')$/;"	f
+job_get_id	grid.php	/^    function job_get_id($job, $session='default')$/;"	f
+job_get_output	grid.php	/^    function job_get_output($job, &$out, $session='default')$/;"	f
+job_status	grid.php	/^    function job_status($job, &$out, $session='default')$/;"	f
+job_submit	grid.php	/^    function job_submit($job, &$out, $session='default')$/;"	f
+job_submit_set_timeout	grid.php	/^    function job_submit_set_timeout($seconds=0)$/;"	f
+letal	lib.php	/^function letal($where, $what)$/;"	f
+letal	util.php	/^function letal($where, $what)$/;"	f
+log_error	lib.php	/^function log_error($where, $what)$/;"	f
+log_error	util.php	/^function log_error($where, $what)$/;"	f
+log_message	lib.php	/^function log_message($what)$/;"	f
+log_message	util.php	/^function log_message($what)$/;"	f
+log_notice	lib.php	/^function log_notice($what)$/;"	f
+log_notice	util.php	/^function log_notice($what)$/;"	f
+log_warning	lib.php	/^function log_warning($what)$/;"	f
+log_warning	util.php	/^function log_warning($what)$/;"	f
+make_config	lib.php	/^function make_config($opts)$/;"	f
+openNewWindow	index.html	/^function openNewWindow(fileName,windowName,theWidth,theHeight) $/;"	f
+openNewWindow	yami.html	/^function openNewWindow(fileName,windowName,theWidth,theHeight) $/;"	f
+pdb2seg	lib.php	/^function pdb2seg($sequence_pir, $segfile, $knowns)$/;"	f
+random_number	lib.php	/^function random_number()$/;"	f
+random_number	util.php	/^function random_number()$/;"	f
+session_define	grid.php	/^    function session_define($session, $directory)$/;"	f
+session_destroy	grid.php	/^    function session_destroy($session='default')$/;"	f
+session_destroy_all	grid.php	/^    function session_destroy_all()$/;"	f
+session_directory	grid.php	/^    function session_directory($session='default')$/;"	f
+session_is_valid	grid.php	/^    function session_is_valid($session='default')$/;"	f
+session_list_all	grid.php	/^    function session_list_all()$/;"	f
+session_new	grid.php	/^    function session_new($hint="sess")$/;"	f
+set_auth_defaults	processor.php	/^function set_auth_defaults(&$auth)$/;"	f
+set_error_log	grid.php	/^    function set_error_log($errlog)$/;"	f
+set_footer	lib.php	/^function set_footer()$/;"	f
+set_footer	util.php	/^function set_footer()$/;"	f
+set_header	lib.php	/^function set_header($reload)$/;"	f
+set_header	util.php	/^function set_header()$/;"	f
+set_host	grid.php	/^    function set_host($host)$/;"	f
+set_passphrase	grid.php	/^    function set_passphrase($pass)$/;"	f
+set_password	grid.php	/^    function set_password($pass)$/;"	f
+set_tmp_dir	processor.php	/^function set_tmp_dir( $random_str, $system_tmproot )$/;"	f
+set_user	grid.php	/^    function set_user($user)$/;"	f
+set_work_dir	grid.php	/^    function set_work_dir($wd)$/;"	f
+showalig	index.html	/^function showalig(str)$/;"	f
+showalig	yami.html	/^function showalig(str)$/;"	f
+ssh_close	ssh.php	/^    function ssh_close($p)$/;"	f
+ssh_copy	ssh.php	/^    function ssh_copy($origin, $destination, $password)$/;"	f
+ssh_copy_from	ssh.php	/^    function ssh_copy_from($remotepath, $localpath, &$out)$/;"	f
+ssh_copy_to	ssh.php	/^    function ssh_copy_to($localpath, $remotepath, &$out)$/;"	f
+ssh_exec	ssh.php	/^    function ssh_exec($command, &$out)$/;"	f
+ssh_open_command	ssh.php	/^    function ssh_open_command($command)$/;"	f
+ssh_open_shell	ssh.php	/^    function ssh_open_shell()$/;"	f
+ssh_out_expect	ssh.php	/^    function ssh_out_expect($p, $expr="^# ")$/;"	f
+ssh_passthru	ssh.php	/^    function ssh_passthru($command, &$status)$/;"	f
+ssh_pclose	ssh.php	/^    function ssh_pclose($f)$/;"	f
+ssh_popen	ssh.php	/^    function ssh_popen($command, $mode)$/;"	f
+upload_file	lib.php	/^function upload_file($tag)$/;"	f
+upload_probe_data	util.php	/^function upload_probe_data()$/;"	f
+upload_processor	processor.php	/^function upload_processor( $alig )$/;"	f
+warning	lib.php	/^function warning($msg)$/;"	f
+warning	util.php	/^function warning($msg)$/;"	f

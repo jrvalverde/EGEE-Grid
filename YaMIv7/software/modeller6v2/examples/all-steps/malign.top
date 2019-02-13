@@ -1,0 +1,48 @@
+# PRIMER: STEP 2
+#
+# Prepare an initial multiple family alignment of all structures and sequences 
+# related to your target sequence. For simplicity, only those structures found
+# by SEARCH.TOP are aligned here. In general, you should add all the related 
+# structures found in $MODINSTALL/modlib/seqfilt_3.0_30_XN.grp and all the
+# related sequences that you can find by FASTA, BLAST, in papers, etc. For example, 
+# 5fd1, identified by SEARCH.TOP, is also related to  1fdc  1fer  2fd2  1fdd  
+# 1fda  1fdb  1fd2  1frx  1frm  1frl  1frk  1frj  1fri  1frh, as found in 
+# $MODINSTALL/modlib/seqfilt_3.0_30_XN.grp.
+#
+# Note: if you wanted to align more than one sequence (in addition to the
+#       target sequence) you'd have to modify the 'align_strs_seq' routine.
+
+
+# Include MODELLER library scripts
+INCLUDE
+
+SET OUTPUT_CONTROL = 1 1 1 1 1
+
+# directory with input atom files
+SET ATOM_FILES_DIRECTORY = './:../atom_files'
+
+# Name of the input file specifying templates and the target sequence:
+SET SEGFILE = 'alignment.seg'
+
+# Structures' PDB codes:
+SET KNOWNS = '1fdn' '5fd1' '1fxd' '2fxb'
+
+# Target sequence code:
+SET SEQUENCE = '1fdx'
+
+# Output alignment filename ('PIR' format), identity matrix filename:
+SET ALNFILE = 'alignment.seg.ali', MATRIX_FILE = 'fer2.id.mat'
+
+####  End of setup  ################################################################
+
+# Write out the superposed structures:
+SET WRITE_FIT = 'ON'
+
+# Some alignment parameters:
+SET OVERHANG = 4
+
+# Make the structures/target sequence alignment:
+CALL ROUTINE = 'align_strs_seq'
+
+# Write out the alignment in the 'PAP' format, too:
+WRITE_ALIGNMENT FILE  = 'alignment.seg.pap', ALIGNMENT_FORMAT = 'PAP'

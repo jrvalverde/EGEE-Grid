@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Docs for page grock-ws.php</title>
+	<link rel="stylesheet" type="text/css" id="layout" href="../media/layout.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../media/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../media/print.css" media="print">
+</head>
+
+<body>
+<div id="header">
+	<div id="navLinks">
+		[ <a href="../classtrees_grock.html">Class Tree: grock</a> ]
+		[ <a href="../elementindex_grock.html">Index: grock</a> ]
+		[ <a href="../elementindex.html">All elements</a> ]
+	</div>
+	<div id="packagePosition">
+		<div id="packageTitle2">grock</div>
+		<div id="packageTitle">grock</div>
+		<div id="elementPath"> &middot; </div>
+	</div>
+</div>
+
+<div id="nav" class="small">
+	<div id="packages">
+		Packages:
+					<p><a href="../li_GROCK.html">GROCK</a></p>
+					<p><a href="../li_Grid.html">Grid</a></p>
+					<p><a href="../li_grock.html">grock</a></p>
+					<p><a href="../li_SExec.html">SExec</a></p>
+			</div>
+
+				<div id="index">
+			<div id="files">
+								Files:<br>
+								<a href="../grock/_config_php.html">		config.php
+		</a><br>
+			<a href="../grock/_database_php.html">		database.php
+		</a><br>
+			<a href="../grock/_dock_php.html">		dock.php
+		</a><br>
+			<a href="../grock/_explore_complex_php.html">		explore_complex.php
+		</a><br>
+			<a href="../grock/_explore_match_php.html">		explore_match.php
+		</a><br>
+			<a href="../grock/_explore_molecule_php.html">		explore_molecule.php
+		</a><br>
+			<a href="../grock/_fishy_php.html">		fishy.php
+		</a><br>
+			<a href="../grock/_gramm_php.html">		gramm.php
+		</a><br>
+			<a href="../grock/_grid_config_php.html">		grid_config.php
+		</a><br>
+			<a href="../grock/_grock-ws_php.html">		grock-ws.php
+		</a><br>
+			<a href="../grock/_grock_php.html">		grock.php
+		</a><br>
+			<a href="../grock/_grock_lib_php.html">		grock_lib.php
+		</a><br>
+			<a href="../grock/_processor_php.html">		processor.php
+		</a><br>
+			<a href="../grock/_report_php.html">		report.php
+		</a><br>
+			<a href="../grock/_ssh_php.html">		ssh.php
+		</a><br>
+			<a href="../grock/_util_php.html">		util.php
+		</a><br>
+				</div>
+			<div id="classes">
+							</div>
+		</div>
+	</div>
+
+<div id="body">
+			<h1>Procedural File: grock-ws.php</h1>
+	<p style="margin: 0px;">Source Location: /grock-ws.php</p>
+	
+<br>
+<br>
+
+<div class="contents">
+<h2>Classes:</h2>
+<dl>
+</dl>
+</div>
+
+<h2>Page Details:</h2>
+<p align="center"><strong>GROCK - GRid dOCK
+</strong></p>
+<p>A web service to perform high-thoughput docking on the Grid.</p><p>The goal of this service is to provide a convenient way to generate  docking searches of a probe molecule against a database of target  molecules.</p><p>The probe may be a protein or a drug or small compound. The target  database to be searched may be a set of protein or small compound  structures.</p><p>LICENSE</p><p>This library is free software; you can redistribute it and/or  modify it under the terms of the GNU Lesser General Public  License as published by the Free Software Foundation; either  version 2.1 of the License, or (at your option) any later version.</p><p>This library is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  Lesser General Public License for more details.</p><p>You should have received a copy of the GNU Lesser General Public  License along with this library; if not, write to the Free Software  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</p><h4>Tags:</h4>
+<ul>
+	<li><b>see</b> - <a href="../grock/_dock_php.html">dock.php</a></li>
+	<li><b>see</b> - <a href="../grock/_processor_php.html">processor.php</a></li>
+	<li><b>link</b> - <a href="http://savannah.cern.ch/projects/GridGRAMM">http://savannah.cern.ch/projects/GridGRAMM</a></li>
+	<li><b>since</b> - File available since release 0.0</li>
+	<li><b>see</b> - <a href="../grock/_grock_lib_php.html">grock_lib.php</a></li>
+	<li><b>see</b> - <a href="../grock/_config_php.html">config.php</a></li>
+	<li><b>author</b> - Jose R. Valverde &lt;<a href="mailto:david@cnb.uam.es">mailto:david@cnb.uam.es</a>&gt;</li>
+	<li><b>copyright</b> - CSIC</li>
+	<li><b>license</b> - ../c/gpl.txt</li>
+	<li><b>version</b> - $Id$</li>
+	<li><b>author</b> - David Garcia &lt;<a href="mailto:david@cnb.uam.es">mailto:david@cnb.uam.es</a>&gt;</li>
+</ul>
+<hr>
+Includes:<br>
+require_once(<a href="../grock/_dock_php.html">'dock.php'</a>) <span class="linenumber">[line 52]</span>
+<br />
+require_once(<a href="../GROCK/_lib_nusoap_php.html">'lib/nusoap.php'</a>) <span class="linenumber">[line 53]</span>
+<br />
+require_once(<a href="../grock/_config_php.html">'config.php'</a>) <span class="linenumber">[line 50]</span>
+<br />
+require_once(<a href="../grock/_grock_lib_php.html">'grock_lib.php'</a>) <span class="linenumber">[line 51]</span>
+<br />
+<hr>
+<div id="global">
+</div><hr>
+<div id="define">
+</div><hr>
+<div id="function">
+	<a name="functionbibliography"></a>
+	<h3>bibliography</h3>
+	<div class="indent">
+		<code>an bibliography(
+)</code>
+		<p class="linenumber">[line 259]</p>
+		<p align="center"><strong>Return bibliographic references needed when using this server
+</strong></p>
+<p>We want users to have an easy way to determine which references they  must include in publications using this server. This method provides an  easy way to collect them... and to add to them by higher-level software.</p><p>Clients may then call this method, get the references as an array of  strings, and add additional strings to this array to append *their* own  references to the list.</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - array of strings containing bibliographic references</li>
+</ul>
+		
+		<h4>Parameters</h4>
+		<ul>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionget_output"></a>
+	<h3>get_output</h3>
+	<div class="indent">
+		<code>void get_output(
+mixed $output_handle)</code>
+		<p class="linenumber">[line 344]</p>
+				
+		<h4>Parameters</h4>
+		<ul>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functiongrock_it"></a>
+	<h3>grock_it</h3>
+	<div class="indent">
+		<code>void grock_it(
+mixed $auth_token, mixed $grock_options)</code>
+		<p class="linenumber">[line 307]</p>
+				
+		<h4>Parameters</h4>
+		<ul>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionsource_code"></a>
+	<h3>source_code</h3>
+	<div class="indent">
+		<code>string source_code(
+)</code>
+		<p class="linenumber">[line 241]</p>
+		<p align="center"><strong>return source code for this script
+</strong></p>
+<p>This method allows interested parties to get the source code for  this script. Since this is open source, we want to make it easy  for users to get/produce source code.</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - containing the source code (with embedded newlines)</li>
+</ul>
+		
+		<h4>Parameters</h4>
+		<ul>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="functionusage"></a>
+	<h3>usage</h3>
+	<div class="indent">
+		<code>HTML usage(
+)</code>
+		<p class="linenumber">[line 272]</p>
+		<p align="center"><strong>Return usage of this service
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - string containing the usage (with embedded newlines)</li>
+</ul>
+		
+		<h4>Parameters</h4>
+		<ul>
+				</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+</div>
+	<div id="credit">
+		<hr>
+		Documentation generated on Thu, 27 Oct 2005 13:03:37 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.2.3</a>
+	</div>
+</div>
+</body>
+</html>

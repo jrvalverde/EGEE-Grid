@@ -1,0 +1,17 @@
+# Example for: MAKE_REGION 
+
+# This will define a random contiguous patch of atoms on a surface of the
+# protein.
+
+# Read the PDB file
+READ_MODEL FILE = '../atom_files/pdb1fdn.ent'
+
+# Calculate atomic accessibilities with appropriate probe_radius
+WRITE_DATA OUTPUT = 'PSA ATOMIC_SOL', RADII_FACTOR = 1.6, ;
+           PSA_INTEGRATION_STEP = 0.05, PROBE_RADIUS = 0.1
+
+# Get the "random" patch of exposed atoms on the surface
+MAKE_REGION ATOM_ACCESSIBILITY = 0.5, REGION_SIZE = 35, RAND_SEED = -18343
+
+# Write out a PDB file with the patch indicated by Biso = 1:
+WRITE_MODEL FILE = '1fdn.reg'

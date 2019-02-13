@@ -1,0 +1,23 @@
+# Demonstrating ALIGN2D, aligning with variable gap penalty
+
+SET OUTPUT_CONTROL = 1 1 1 1 1
+
+READ_TOPOLOGY FILE = '$(LIB)/top_heav.lib'
+
+# Read aligned structure(s):
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = '2ctx'
+# READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = '2ctx' '2abx'
+SET ADD_SEQUENCE = on, ALIGN_BLOCK = NUMB_OF_SEQUENCES
+# Read aligned sequence(s):
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = ALIGN_CODES '1nbt'
+ 
+# Structure sensitive variable gap penalty sequence-sequence alignment:
+SET OVERHANG = 0
+# SET RR_FILE = '$(LIB)/id.sim.mat'
+SET GAP_PENALTIES_1D = -450 0
+SET GAP_PENALTIES_2D = 0.35 1.2 0.9 1.2 0.6 8.6 1.2 0.0
+ALIGN2D 
+WRITE_ALIGNMENT FILE  = 'align2d.ali', ALIGNMENT_FORMAT = 'PIR',
+WRITE_ALIGNMENT FILE  = 'align2d.pap', ALIGNMENT_FORMAT = 'PAP', ;
+ ALIGNMENT_FEATURES='INDICES HELIX BETA STRAIGHTNESS ACCESSIBILITY CONSERVATION'
+CHECK_ALIGNMENT

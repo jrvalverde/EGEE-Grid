@@ -1,0 +1,1399 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Docs For Class Grid</title>
+	<link rel="stylesheet" type="text/css" id="layout" href="../media/layout.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../media/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../media/print.css" media="print">
+</head>
+
+<body>
+<div id="header">
+	<div id="navLinks">
+		[ <a href="../classtrees_Grid.html">Class Tree: Grid</a> ]
+		[ <a href="../elementindex_Grid.html">Index: Grid</a> ]
+		[ <a href="../elementindex.html">All elements</a> ]
+	</div>
+	<div id="packagePosition">
+		<div id="packageTitle2">Grid</div>
+		<div id="packageTitle">Grid</div>
+		<div id="elementPath"> &middot; </div>
+	</div>
+</div>
+
+<div id="nav" class="small">
+	<div id="packages">
+		Packages:
+					<p><a href="../li_Grid.html">Grid</a></p>
+					<p><a href="../li_grock.html">grock</a></p>
+					<p><a href="../li_SExec.html">SExec</a></p>
+					<p><a href="../li_Util.html">Util</a></p>
+			</div>
+
+				<div id="index">
+			<div id="files">
+								Files:<br>
+								<a href="../Grid/_grid_php.html">		grid.php
+		</a><br>
+				</div>
+			<div id="classes">
+				Classes:<br>
+								<a href="../Grid/Grid.html">		Grid
+		</a><br>
+				</div>
+		</div>
+	</div>
+
+<div id="body">
+	    		<h1>Class: Grid</h1>
+	<p style="margin: 0px;">Source Location: /grid.php</p>
+	
+
+<div class="leftcol">
+	<h3><a href="#class_details">Class Overview</a> <span class="smalllinenumber">[line 239]</span></h3>
+	<div id="classTree"><pre></pre>
+</div>
+	<div class="small">
+	<p>Grid access class</p>
+		<h4>Author(s):</h4>
+	<ul>
+																		<li>José R. Valverde &lt;jrvalverde@acm.org&gt;</li>
+																</ul>
+	<h4>Version:</h4>
+	<ul>
+													<li>2.1</li>
+																					</ul>
+
+	<h4>Copyright:</h4>
+	<ul>
+								<li>José R. Valverde &lt;jrvalverde@acm.org&gt;
+  This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+  This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+  You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</li>
+																										</li>
+	</div>
+</div>
+
+<div class="middlecol">
+	<h3><a href="#class_vars">Variables</a></h3>
+	<ul class="small">
+				<li><a href="../Grid/Grid.html#var$connected">$connected</a></li>
+				<li><a href="../Grid/Grid.html#var$entry_point">$entry_point</a></li>
+				<li><a href="../Grid/Grid.html#var$error_log">$error_log</a></li>
+				<li><a href="../Grid/Grid.html#var$hostname">$hostname</a></li>
+				<li><a href="../Grid/Grid.html#var$initialized">$initialized</a></li>
+				<li><a href="../Grid/Grid.html#var$passphrase">$passphrase</a></li>
+				<li><a href="../Grid/Grid.html#var$password">$password</a></li>
+				<li><a href="../Grid/Grid.html#var$sessions">$sessions</a></li>
+				<li><a href="../Grid/Grid.html#var$std_err">$std_err</a></li>
+				<li><a href="../Grid/Grid.html#var$std_in">$std_in</a></li>
+				<li><a href="../Grid/Grid.html#var$std_out">$std_out</a></li>
+				<li><a href="../Grid/Grid.html#var$submit_timeout">$submit_timeout</a></li>
+				<li><a href="../Grid/Grid.html#var$sx">$sx</a></li>
+				<li><a href="../Grid/Grid.html#var$username">$username</a></li>
+				<li><a href="../Grid/Grid.html#var$work_dir">$work_dir</a></li>
+			</ul>
+	<h3><a href="#class_consts">Constants</a></h3>
+	<ul class="small">
+			</ul>
+</div>
+<div class="rightcol">
+	<h3><a href="#class_methods">Methods</a></h3>
+	<ul class="small">
+				<li><a href="../Grid/Grid.html#methodGrid">Grid</a></li>
+				<li><a href="../Grid/Grid.html#methodconnect">connect</a></li>
+				<li><a href="../Grid/Grid.html#methoddestroy">destroy</a></li>
+				<li><a href="../Grid/Grid.html#methoddestruct">destruct</a></li>
+				<li><a href="../Grid/Grid.html#methodget_connection_status">get_connection_status</a></li>
+				<li><a href="../Grid/Grid.html#methodget_init_status">get_init_status</a></li>
+				<li><a href="../Grid/Grid.html#methodinitialize">initialize</a></li>
+				<li><a href="../Grid/Grid.html#methodjob_cancel">job_cancel</a></li>
+				<li><a href="../Grid/Grid.html#methodjob_get_id">job_get_id</a></li>
+				<li><a href="../Grid/Grid.html#methodjob_get_output">job_get_output</a></li>
+				<li><a href="../Grid/Grid.html#methodjob_status">job_status</a></li>
+				<li><a href="../Grid/Grid.html#methodjob_submit">job_submit</a></li>
+				<li><a href="../Grid/Grid.html#methodjob_submit_set_timeout">job_submit_set_timeout</a></li>
+				<li><a href="../Grid/Grid.html#methodsession_define">session_define</a></li>
+				<li><a href="../Grid/Grid.html#methodsession_destroy">session_destroy</a></li>
+				<li><a href="../Grid/Grid.html#methodsession_destroy_all">session_destroy_all</a></li>
+				<li><a href="../Grid/Grid.html#methodsession_directory">session_directory</a></li>
+				<li><a href="../Grid/Grid.html#methodsession_is_valid">session_is_valid</a></li>
+				<li><a href="../Grid/Grid.html#methodsession_list_all">session_list_all</a></li>
+				<li><a href="../Grid/Grid.html#methodsession_new">session_new</a></li>
+				<li><a href="../Grid/Grid.html#methodset_error_log">set_error_log</a></li>
+				<li><a href="../Grid/Grid.html#methodset_host">set_host</a></li>
+				<li><a href="../Grid/Grid.html#methodset_passphrase">set_passphrase</a></li>
+				<li><a href="../Grid/Grid.html#methodset_password">set_password</a></li>
+				<li><a href="../Grid/Grid.html#methodset_user">set_user</a></li>
+				<li><a href="../Grid/Grid.html#methodset_work_dir">set_work_dir</a></li>
+			</ul>
+</div>
+
+<div id="content">
+<hr>
+	<div class="contents">
+	</div>
+
+	<div class="leftCol">
+	<h2>Inherited Variables</h2>
+		<h2>Inherited Constants</h2>
+		</div>
+
+	<div class="rightCol">
+	<h2>Inherited Methods</h2>
+		</div>
+	<br clear="all">
+	<hr>
+
+	<a name="class_details"></a>
+	<h2>Class Details</h2>
+	<p align="center"><strong>Grid access class
+</strong></p>
+<p>This class allows you to connect to a remote Grid UI server and   launch and monitor jobs on it.</p><p>The reason for this class is mostly one of resilience: if you   put all your services directly on a GrUI host, then whenever   that host if offline, your services will be as well.</p><p>An alternative is to replicate the services on various GrUI nodes.</p><p>Or better yet: use this class and set up your services wherever   you want. You may put them on an HA system and ensure this way   their continuous availability. Your service will be always up   and running, ready to accept jobs.</p><p>Your next problem is dealing with the Grid UI. You still need   to log-in on a Grid access point to submit your jobs. But once   you have detached from a specific GrUI node, you are free to   attempt a connection to a given remote access point, and if it   is available (and while it is) submit jobs as needed. If at any   time it is not available, nothing is lost: just look for another   one and use this to continue working. You may thus enter the   grid through any door.</p><p>There is a side advantage too: with your services on a GrUI node   you can only launch jobs from it. With your services detached from   any given Grid door, you may use _any_ AND _as many_ as you want:   this means you may launch jobs using various GrUI nodes simultaneously   if you so wish. And even split the jobs througho various, separate   Grids if you feel like it, hence potentially increasing your   throughput and computing power, harnessing even more resources.</p><p>Detaching your jobs from the GrUI has one serious drawback though:   all your job information must travel from your service user interface   to the grid user interface through the Internet, which may be   potentially dangerous. We deal with this security issue using SSH   to handle all communications and provide encryption. As long as   you use strong passwords you may feel secure. Actually, it is as   weak (or strong) as working directly on the GrUI node: access to   it is still managed by standard password mechanisms and subject to   the same types of attacks. However, remember you now have an extra   system (the front-end) to maintain and secure. Please, be always   cautious with any server you use.</p><p>Sounds convincing? Then read ahead to learn how to use this class.</p><p><strong>PERSISTENT vs. DISCONNECTED MODE</strong></p><p>As of release 2.0, this distinction is no longer meaningful. We now  use a new SExec class that multiplexes disconnected commands over a  single sahred channel, thus providing all the advantages of both,  connected and disconnected modes. We now provide a single set of  methods.</p><p><strong>JOB MANAGEMENT</strong></p><p>In order to submit your jobs to the grid you need to understand how   job management has been defined for this class. On the command line   you would have a lot more versatility, but to make this class more   useful some compromises had to be reached. We have defined a strict   protocol to generate/prepare your jobs before submitting them to   the grid, and you must stick to it if you want to avoid problems.</p><p>To understand why this has been designed the way it is, you should   keep in mind that you will be preparing your jobs on one (or many)   front-end and submitting them from it to one (or many) GrUI nodes.   Further to it, this has been designed to make it easy to deploy   web-based services for users. Therefore many similar jobs might   be launched simultaneously and we need some way to avoid collusion   among them. To avoid one job stepping over other we must isolate   every one from each other. This means providing an isolated environment   for every job.</p><p>The easiest way to achieve our goal is to have every job submitted   placed on an independent directory (which we pair to the job name).   For single jobs, this means that you should make sure that no two   potentially simultaneous/overlapping jobs have the same name (i.e.   are stored in the same directory so there is no risk one overwrites   files of the other).</p><p>Sometimes this may result inconvenient to you. E.g. if your whole job   is submitted split into many separate sub-jobs (which each is a separate   job from the point of view of the grid) you may want to follow some   naming convention for your sub-jobs that makes it easier to identify   and keep track of them. In this case, if you had two simultaneous   runs, then the names would collide.</p><p>For example, let's say you are rendering frames of a movie and want   to identify each job by frame number: 0000, 0001, 0002, 0003... If   you now try to generate a second movie while the first is being   processed, then the frames of the second movie (named as well 0000,   0001, etc...) would overwrite the frames of the first one.   Generating random names for each frame would be an option, but too   cumbersome and expensive as you would need to keep track of the   association of the random names with the actual frames.</p><p>To deal with this scenario we define 'sessions'. A session is identified   by a unique identifier, and guarantees that all jobs belonging to this   session are kept separate from similarly named jobs from other sessions.</p><p>Actually when you create a session, what we actually do is create   a subdirectory in the GrUI and direct all further jobs to this   subdirectory. This way, jobs of two sessions may have the same name   and not step into each other.</p><p><strong>PREPARING JOBS FOR THE GRID</strong></p><p>To prepare a job for the grid you must assign it a name. The same   preacutions that apply to any local job hold for your grid work too:   if various simultaneous jobs of the same kind may be run, then each   must be kept separate from the others by using a different name.</p><p>Once you have decided the name, you must create a directory locally   with the same name as your job. In this directory you must install   everything needed to run your job: executables, libraries, input   data and a JDL file.</p><p>The JDL file defines the work that we will ask the grid to carry   out. Since each single job gets its own directory, you will only   submit one JDL file for each, and to make processing easier, we   request that this JDL file have a fixed name: &quot;job.jdl&quot;.</p><p>The grid processing will generate various auxiliary files, for internal   housekeeping. Again, for simplicity, we have chosen to call each of   them 'job.*', i.e. 'job.' something. This means that other than 'job.jdl'   you should NOT create any file named job.anything on your job directory   to avoid collusion with possible temporary files.</p><p>In brief, to prepare a job: <ul><li>select a name</li><li>create a directory named after the job</li><li>populate this directory with all files needed to run your job</li><li>generate the file 'job.jdl' with the description of the work to
+    be carried out by the grid</li><li>avoid having files named 'job.*' (starting with 'job.')</li></ul>   <strong>SUBMITTING JOBS TO THE GRID</strong></p><p>First consider whether you will be using unique job names or if   you will follow a convenient naming convention that may cause name   collisions with other jobs.</p><p>If you feel pretty safe that the job name is unique (e.g. has been   generated using one or more random strings), then simply call the   appropriate *job_submit() function.</p><p>If you are using names that have low entropy or reusing names for   similar jobs then it is advisable that you first call one of the   *session_new() routines to ensure all your jobs will be kept isolated   from other similarly named jobs, and then use the *job_submit()   routines to send your jobs.</p><p>For the curious: when you submit your job, the directory and all   of its contents will be sent to the remote Grid UI selected and   then the 'job.jdl' will be submitted to the grid. In the process,   several files will be generated holding information about your   job identity in the grid context that will be kept for housekeeping   and future reference.</p><p>The above is to be kept in mind when submitting light or numerous   jobs: the transfer time may become sensibly relevant. Please do   take it into consideration in your equations when designing jobs   for the grid using this class. You may find it interesting to first   store all or some of your job data/execs on the grid and keep them   already there instead of having to copy them.</p><p>Grid file management routines are not included yet, but are intended   for a future release of this class.</p><h4>Tags:</h4>
+<ul>
+	<li><b>copyright</b> - José R. Valverde &lt;jrvalverde@acm.org&gt;
+  This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+  This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+  You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</li>
+	<li><b>version</b> - 2.1</li>
+	<li><b>author</b> - José R. Valverde &lt;jrvalverde@acm.org&gt;</li>
+	<li><b>see</b> - ssh.php (PHP SSH class)</li>
+	<li><b>pre</b> - ssh.php</li>
+</ul>
+	<p class="small" style="color: #334B66;">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_vars"></a>
+	<h2>Class Variables</h2>
+		<a name="var$connected"></a>
+	<p></p>
+	<h4>$connected = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 303]</p>
+		<p align="center"><strong>Have we already connected?
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> bool</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$entry_point"></a>
+	<p></p>
+	<h4>$entry_point = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 267]</p>
+		<p align="center"><strong>the grid entry point, should not be needed
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$error_log"></a>
+	<p></p>
+	<h4>$error_log = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 279]</p>
+		<p align="center"><strong>a local file to store the error log
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$hostname"></a>
+	<p></p>
+	<h4>$hostname = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 271]</p>
+		<p align="center"><strong>name of host that provides access to the grid
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$initialized"></a>
+	<p></p>
+	<h4>$initialized = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 310]</p>
+		<p align="center"><strong>Have we already identified ourselves?
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> bool</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$passphrase"></a>
+	<p></p>
+	<h4>$passphrase = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 275]</p>
+		<p align="center"><strong>key to unlock the grid access certificate
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$password"></a>
+	<p></p>
+	<h4>$password = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 273]</p>
+		<p align="center"><strong>password to login on the UI node
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$sessions"></a>
+	<p></p>
+	<h4>$sessions = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 317]</p>
+		<p align="center"><strong>A unique identifier for this session
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> array</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$std_err"></a>
+	<p></p>
+	<h4>$std_err = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 291]</p>
+		<p align="center"><strong>Standard error of the grid entry
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$std_in"></a>
+	<p></p>
+	<h4>$std_in = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 287]</p>
+		<p align="center"><strong>Standard input of the grid entry
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$std_out"></a>
+	<p></p>
+	<h4>$std_out = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 289]</p>
+		<p align="center"><strong>Standard output of the grid entry
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$submit_timeout"></a>
+	<p></p>
+	<h4>$submit_timeout = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 376]</p>
+		<p align="center"><strong>Submit timeout
+</strong></p>
+<p>XXX JR XXX HACK 	This variable used for a hack (?) to ensure job submission does  not hang. Currently job submission using edg-job-submit may hang  occassinally. This is rare, maybe one out of 4-5 thousand jobs,  but for such large datasets it becomes an issue.</p><p>My impression is that it hangs on copying the job to the remote  resource broker. This may happen if the RB becomes unavaliable:  by TCP semantics the line remains open until connectivity is  restored, but if this takes too long, or if some error conditions  are met your connection may stall.</p><p>This is very difficult to spot unless it is done at a very low  level in the copy connection protocol. Higher up, one can not know  if the copy takes too long because of connection problems or if it  simply is a huge dataset or a very slow connection.</p><p>For the same reason, edg-job-submit has no way to know if the  connection is stalled unless it has some way to measure the amount  of data transferred (which is done lower in the protocol stack). So  from edg-job-submit point of view, most probably it is not a bug,  but a feature: it aims for a most optimistic situation and a most  safe transfer, i.e. keep trying to use the connection as long as it  is not broken, and try to ensure the data gets fully transferred  in the presence of trouble for as long as the connection may be  recovered, and do not make any assumption about the size of the  dataset or the speed of the line.</p><p>Now, for an automated submission system with deadline (proxy  validity) this is a potential disaster: I have witnessed job submissions  hang for as long as a couple of days (and then I killed them manually).</p><p>So, what can we do?</p><p>If you know the bounds of your job sizes (exec + datasets) then you  may have an estimate of how long you want to allow a transfer to  take, and kill any submission taking longer. Then with appropriate  code the submission may be retaken (in my experience, hang submissions  usually succeed after bein manually killed and retried) or the job  resubmitted at a later time if you have recovery code on your app.</p><p>This variable holds the maximum time in seconds you guesstimate a  job submission should be allowed to take. If this timeout is  exceeded the submission will be unpiteously killed. Since this is  a rare condition you may be generous.</p><h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> integer</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$sx"></a>
+	<p></p>
+	<h4>$sx = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 324]</p>
+		<p align="center"><strong>The secure transfer communications line to use
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> <a href="../SExec/SExec.html">SExec</a></p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$username"></a>
+	<p></p>
+	<h4>$username = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 269]</p>
+		<p align="center"><strong>user name to use to connect to the grid
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$work_dir"></a>
+	<p></p>
+	<h4>$work_dir = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 277]</p>
+		<p align="center"><strong>a GrUI directory where we can work
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_methods"></a>
+	<h2>Class Methods</h2>
+		<a name="methodGrid"></a>
+	<p></p>
+	<h3>Grid</h3>
+	<div class="indent">
+		<p>
+		<code><a href="../Grid/Grid.html">Grid</a> Grid(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 399]</p>
+		<p align="center"><strong>Constructor for the class
+</strong></p>
+<p>Set the values for the class variables using defaults provided in  'config.php'</p><p>These defaults can be overridden using the functions provided below.</p><p>Sample usage:  <div class="listing"><pre><ol><li> <span class="src-inc">require_once </span><span class="src-str">'./grid_config.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./ssh.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./grid.php'</span><span class="src-sym">;</span></li>
+<li>&nbsp;</li>
+<li> <span class="src-var">$eg </span>= <span class="src-key">new </span><a href="../Grid/Grid.html#methodGrid">Grid</a><span class="src-sym">;</span></li>
+<li> <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$eg </span>== <span class="src-id">FALSE</span><span class="src-sym">)</span></li>
+<li>     echo <span class="src-str">&quot;Couldn't instantiate a new Grid!\n&quot;</span><span class="src-sym">;</span></li>
+</ol></pre></div></p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - a new instance of a Grid class object</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodconnect"></a>
+	<p></p>
+	<h3>connect</h3>
+	<div class="indent">
+		<p>
+		<code>TRUE connect(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 788]</p>
+		<p align="center"><strong>open a persistent connection to the Grid UI server
+</strong></p>
+<p>The Grid User Interface Server is the entry point to the Grid   for users and user applications. This is where jobs are launched from.</p><p>This package has been designed to be able to be installed in any   host, independent of whether it is an UI or not. Thus, to be able to   submit jobs to the Grid, the server hosting the Web UI must connect to   a Grid UI host to do the work.</p><p>This routine opens a connection to a Grid UI host using an specified   username (i.e. all jobs will be run under said username).</p><p>The panorama therefore will look like this:</p><p>HTML front-end --&gt; processor.php &lt;--&gt; SSH &lt;--&gt; remote host &lt;--&gt; Grid</p><p>This allows for better resilience: should a GridUI host be  unavailable, we can detect the error condition and try another  one. If the GridUI runs the front-end, then we have a single  point of failure, which is a no-no.</p><p>Sample usage:  <div class="listing"><pre><ol><li> <span class="src-inc">require_once </span><span class="src-str">'./grid_config.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./ssh.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./grid.php'</span><span class="src-sym">;</span></li>
+<li>&nbsp;</li>
+<li> <span class="src-var">$eg </span>= <span class="src-key">new </span><a href="../Grid/Grid.html#methodGrid">Grid</a><span class="src-sym">;</span></li>
+<li>&nbsp;</li>
+<li> <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><span class="src-id">pconnect</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li> <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodget_connection_status">get_connection_status</a><span class="src-sym">(</span><span class="src-sym">) </span>== <span class="src-id">FALSE</span><span class="src-sym">)</span></li>
+<li>     echo <span class="src-str">&quot;Couldn't instantiate a new Grid!\n&quot;</span><span class="src-sym">;</span></li>
+</ol></pre></div></p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - on success, FALSE otherwise.</li>
+	<li><b>note</b> - Use files instead of pipes and open them after securing  thew connection: this should do with deadlocks and leave a trace  log.</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methoddestroy"></a>
+	<p></p>
+	<h3>destroy</h3>
+	<div class="indent">
+		<p>
+		<code>bool destroy(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 1038]</p>
+		<p align="center"><strong>Destroy remote grid identity
+</strong></p>
+<p>Destroy the certification we initialized so that no more jobs 	can be launched under our identity.</p><p>This may be called even if we haven't called 'Grid::initialize()'  because there may exits a previous activation that is still  valid and we want to destroy it.</p><p>To make things clear:</p><p>Grid::initialize() &quot;opens&quot; the &quot;door&quot; to the Grid for <em>the user</em>  during a given time. New calls from the same user in this or any  other login session, from this or any other site, while the &quot;door&quot;  is open, share the same &quot;door&quot; and simply extend its validity  period.</p><p>Grid::destroy() &quot;closes&quot; the currently open door. If the door  was being shared by more login sessions, it is closed for <em>all</em>  of them, not just the caller, and hence nor the caller, nor  <em>any process</em> under the same user will be able to use the  grid any longer unless Grid::initialize() is called again to  open the door again (issue a new certificate).</p><p>In other words, you don't close <em>a</em> Grid &quot;door&quot;, you close  <em>the</em> Grid &quot;door&quot;, and if it casually is being shared with other  work sessions, then ALL of them will be destroyed (meaning that  other active work sessions will fail).</p><p>Thus: be careful when using this method. Be <strong>very careful</strong>.</p><p>Sessions should be initiated using a validity length that you  guesstimate will be comfortably enough for running all your work  and left to expire by themselves.</p><p>Grid::destroy() should only be called when you are sure that  you don't want <em>any</em> work on the Grid to be accepted on  your behalf, neither from this not other work sessions.</p><p>So, in general, it is better to make good estimations of the  time needed by your jobs and specify it to Grid::initialize()  and not use Grid::destroy() unless there are good reasons.</p><p>Sample usage:  <div class="listing"><pre><ol><li>     <span class="src-var">$eg </span>= <span class="src-key">new </span><a href="../Grid/Grid.html#methodGrid">Grid</a><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_user">set_user</a><span class="src-sym">(</span><span class="src-var">$user</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_host">set_host</a><span class="src-sym">(</span><span class="src-var">$host</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_password">set_password</a><span class="src-sym">(</span><span class="src-var">$passwd</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_passphrase">set_passphrase</a><span class="src-sym">(</span><span class="src-var">$passphrase</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_work_dir">set_work_dir</a><span class="src-sym">(</span><span class="src-str">&quot;/tmp/grid/test/cless&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_error_log">set_error_log</a><span class="src-sym">(</span><span class="src-str">&quot;/tmp/grid/test/cless/connection.err&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodinitialize">initialize</a><span class="src-sym">(</span><span class="src-sym">))</span></li>
+<li>         echo <span class="src-str">&quot;error: couldn't init the grid\n&quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">else</span></li>
+<li>         echo <span class="src-str">&quot;OK&quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methoddestroy">destroy</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><span class="src-id">disconnect</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+</ol></pre></div></p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - TRUE on success, FALSE on failure</li>
+	<li><b>note</b> - Be careful when using this function: as it destroys our             Grid-ID, no more work will be able to be executed on the             grid on our behalf. In other words, please, make sure there             is no work pending and that all your work has terminated             before destroying your Grid-ID.</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methoddestruct"></a>
+	<p></p>
+	<h3>destruct</h3>
+	<div class="indent">
+		<p>
+		<code>void destruct(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 416]</p>
+				
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodget_connection_status"></a>
+	<p></p>
+	<h3>get_connection_status</h3>
+	<div class="indent">
+		<p>
+		<code>bool get_connection_status(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 690]</p>
+		<p align="center"><strong>get grid connection status
+</strong></p>
+<p>This method allows you to know if the connection with the remote  grid entry point has been successfully established or not. Note  that this does not mean you may launch jobs to the grid: you  still need to initialize the grid first.</p><p>Sample usage:  <div class="listing"><pre><ol><li> <span class="src-inc">require_once </span><span class="src-str">'./grid_config.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./ssh.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./grid.php'</span><span class="src-sym">;</span></li>
+<li>&nbsp;</li>
+<li> <span class="src-var">$eg </span>= <span class="src-key">new </span><a href="../Grid/Grid.html#methodGrid">Grid</a><span class="src-sym">;</span></li>
+<li>&nbsp;</li>
+<li> <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><span class="src-id">pconnect</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li> <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodget_connection_status">get_connection_status</a><span class="src-sym">(</span><span class="src-sym">) </span>== <span class="src-id">FALSE</span><span class="src-sym">)</span></li>
+<li>     echo <span class="src-str">&quot;Couldn't connect to the Grid entry point!\n&quot;</span><span class="src-sym">;</span></li>
+</ol></pre></div></p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - TRUE if the connection has been established, FALSE                 otherwise.</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodget_init_status"></a>
+	<p></p>
+	<h3>get_init_status</h3>
+	<div class="indent">
+		<p>
+		<code>bool get_init_status(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 731]</p>
+		<p align="center"><strong>get grid initialization status
+</strong></p>
+<p>This method allows you to learn whether the Grid has been  successfully initialized and is ready to accept jobs. This  entails both, login in as a specific user on the Grid connection  point, and activating the proxy with your passphrase.</p><p>The reason for the two step process is that in order to activate  the grid you need to identify yourself using a grid certificate  emitted by a CA. But to activate it you need an account on a grid  access machine, which is open by any local administrator. Since  this account is not under the central CA control, we can't trust  it to submit jobs and require a proxy-initialization with an  appropriate passphrase.</p><p>Sample usage:  <div class="listing"><pre><ol><li> <span class="src-inc">require_once </span><span class="src-str">'./grid_config.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./ssh.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./grid.php'</span><span class="src-sym">;</span></li>
+<li>&nbsp;</li>
+<li> <span class="src-var">$eg </span>= <span class="src-key">new </span><a href="../Grid/Grid.html#methodGrid">Grid</a><span class="src-sym">;</span></li>
+<li>&nbsp;</li>
+<li> <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodinitialize">initialize</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li> <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodget_init_status">get_init_status</a><span class="src-sym">(</span><span class="src-sym">) </span>== <span class="src-id">FALSE</span><span class="src-sym">)</span></li>
+<li>     echo <span class="src-str">&quot;Couldn't initialize the Grid!\n&quot;</span><span class="src-sym">;</span></li>
+</ol></pre></div></p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - TRUE if the grid has been initialized, FALSE                 otherwise.</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodinitialize"></a>
+	<p></p>
+	<h3>initialize</h3>
+	<div class="indent">
+		<p>
+		<code>bool initialize(
+[integer
+$hours = 12], [integer
+$minutes = 0])</code>
+		</p>
+	
+		<p class="linenumber">[line 903]</p>
+		<p align="center"><strong>Start the Grid services
+</strong></p>
+<p>This function starts the grid services on the remote UI server host. 	This is done by unlocking the certificate that we are going to use   to run our jobs on the grid using the passphrase provided.</p><p>Grid services have a lifetime of their own. By default they are 	available for 12:00 hours (that's the default value of 	grid-proxy-init itself), but their duration may be fine tuned 	if we have some knowledge about the time required to run our 	job.</p><p>Grid opening time is specified in hours+minutes. If the number of 	minutes is negative, the specified minutes are substracted from 	the specified hours (e.g: 1, -15 is fifteen minutes to one hour, 	i.e. 45 minutes). If the total time specified is negative then 	the default of 12:00 is used.</p><p>Grid::initialize() enables the grid for a specified amount of time  (by default 12:00h). This means that during the validity period,  the user on the Grid-UI host may access the grid, in the same or  different logins. The validity period SURVIVES after we close  all communications with the remote grid entry point for as long  as we have specified (so our jobs may continue running).</p><p>If Grid access was already available (by a previous call to  Grid::initialize()) when we issue the call, then it is reused  and extended to acommodate the newly requested validity period.  In other words, the Grid access is shared among all logins  during its lifetime.</p><p>This also means that if a valid certificate has been issued and  not expired yet (another call to Grid::initialize() is still  valid), then we may submit jobs to the Grid without any need  to call Grid::initialize() ourselves.</p><p>E.g., say you have a web-based service that runs a long job  and you want to have the grid enabled 12h (the default). You  just call Grid::initialize() and then submit the job.</p><p>Now say that before it expires, someone logs in on your account  but shouldn't have access to the Grid (i.e. they don't know  the Grid-activation passphrase). Since the grid is already  activated, they CAN submit jobs on your behalf even if they  should not.</p><p>Therefore, <strong>DO NOT SHARE YOUR ACCOUNT ON THE GRID-UI
+ WITH ANYBODY</strong>. Protect it as dearly as your Grid certificate.</p><p>It also means that debugging may be somewhat convoluted, as  a call to Grid::initialize() may fail and jobs could still  be accepted if another call from some other process is still  valid. While debugging, it is better if you review the  command output and make sure it shows how the call fared.</p><p>So, what happens if we destroy a session? See Grid::destroy()  for more details.</p><p>Sample usage:  <div class="listing"><pre><ol><li>     <span class="src-var">$eg </span>= <span class="src-key">new </span><a href="../Grid/Grid.html#methodGrid">Grid</a><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_user">set_user</a><span class="src-sym">(</span><span class="src-var">$user</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_host">set_host</a><span class="src-sym">(</span><span class="src-var">$host</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_password">set_password</a><span class="src-sym">(</span><span class="src-var">$passwd</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_passphrase">set_passphrase</a><span class="src-sym">(</span><span class="src-var">$passphrase</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_work_dir">set_work_dir</a><span class="src-sym">(</span><span class="src-str">&quot;/tmp/grid/test/cless&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_error_log">set_error_log</a><span class="src-sym">(</span><span class="src-str">&quot;/tmp/grid/test/cless/connection.err&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodconnect">connect</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodinitialize">initialize</a><span class="src-sym">(</span><span class="src-sym">))</span></li>
+<li>         echo <span class="src-str">&quot;error: couldn't init the grid\n&quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">else</span></li>
+<li>         echo <span class="src-str">&quot;OK\n&quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methoddestroy">destroy</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><span class="src-id">disconnect</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+</ol></pre></div></p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - TRUE on success, FALSE otherwise</li>
+	<li><b>note</b> - the output of the grid initialization command will go to           <strong>our</strong> standard output (i.e. the web server)!</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">integer</span>
+		<b>$hours</b> 
+		- 
+		Estimated duration in hours of the session</li>
+			<li>
+		<span class="type">integer</span>
+		<b>$minutes</b> 
+		- 
+		Estimated duration in minutes of the session</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodjob_cancel"></a>
+	<p></p>
+	<h3>job_cancel</h3>
+	<div class="indent">
+		<p>
+		<code>bool job_cancel(
+string
+$job, string
+&$out, [mixed
+$session = 'default'])</code>
+		</p>
+	
+		<p class="linenumber">[line 1949]</p>
+		<p align="center"><strong>Cancel a job previously submitted to the grid
+</strong></p>
+<p>Note: If the job has not reached the CE yet (i.e.: its status is WAITING  or READY states), the cancellation request may be ignored, and the job  may continue running, although a message of successful cancellation is  returned to the user. In such cases, just cancel the job again when its  status is SCHEDULED or RUNNING</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - TRUE on success, FALSE on failure.</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$job</b> 
+		- 
+		The name of the job you submitted to the grid</li>
+			<li>
+		<span class="type">string</span>
+		<b>&$out</b> 
+		- 
+		Optionally identifies the session to which the job                     belongs (if it was submitted within one). If this                     is not specified, then the default session is used.</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodjob_get_id"></a>
+	<p></p>
+	<h3>job_get_id</h3>
+	<div class="indent">
+		<p>
+		<code>array|false job_get_id(
+string
+$job, [string
+$session = 'default'])</code>
+		</p>
+	
+		<p class="linenumber">[line 1610]</p>
+		<p align="center"><strong>Get Grid ID of a submitted job.
+</strong></p>
+<p>You should not need this function normally. The job and session  names you already have should actually be enough for all your needs.  The function is needed internally by the class, but otherwise it should  be of little interest.</p><p>Nevertheless, you may want to have access to this knowledge, either  out of curiosity or for other reasons (e.g. re-routing access to a  job through other access points after a crash of the original access  point you used to submit it).</p><p>Indeed, this will come handy for newer releases of this class when  disaster recovery is added. Meanwhile, as already said, it is of little  use.</p><p>Sample usage:  <div class="listing"><pre><ol><li>     <span class="src-var">$eg </span>= <span class="src-key">new </span><a href="../Grid/Grid.html#methodGrid">Grid</a><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_user">set_user</a><span class="src-sym">(</span><span class="src-var">$user</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_host">set_host</a><span class="src-sym">(</span><span class="src-var">$host</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_password">set_password</a><span class="src-sym">(</span><span class="src-var">$passwd</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_passphrase">set_passphrase</a><span class="src-sym">(</span><span class="src-var">$passphrase</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_work_dir">set_work_dir</a><span class="src-sym">(</span><span class="src-str">&quot;/tmp/grid/test/cless&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_error_log">set_error_log</a><span class="src-sym">(</span><span class="src-str">&quot;/tmp/grid/test/cless/connection.err&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     echo <span class="src-str">&quot;initializing grid... &quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodinitialize">initialize</a><span class="src-sym">(</span><span class="src-sym">))</span></li>
+<li>         echo <span class="src-str">&quot;error: couldn't init the grid\n&quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">else</span></li>
+<li>         echo <span class="src-str">&quot;OK\n&quot;</span><span class="src-sym">;</span></li>
+<li>     echo <span class="src-str">&quot;Submitting tst-job... &quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">! </span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodjob_submit">job_submit</a><span class="src-sym">(</span><span class="src-str">&quot;tst-job&quot;</span><span class="src-sym">, </span><span class="src-var">$out</span><span class="src-sym">))</span></li>
+<li>         echo <span class="src-str">&quot;error: coudn't start the job\n&quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">else</span></li>
+<li>         echo <span class="src-str">&quot;OK\n&quot;</span><span class="src-sym">;</span></li>
+<li>     <a href="http://www.php.net/print_r">print_r</a><span class="src-sym">(</span><span class="src-var">$out</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <a href="http://www.php.net/print_r">print_r</a><span class="src-sym">(</span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodjob_get_id">job_get_id</a><span class="src-sym">(</span><span class="src-str">&quot;tst-job&quot;</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+</ol></pre></div></p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - with the known job-id's submitted from this             'job'. That looks as an oxymoron: there should only be             one. Ergo, you may use it to detect job name clashes or             job re-submissions.</li>
+	<li><b>note</b> - this is nasty and should be enhanced on a future version.</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$job</b> 
+		- 
+		The name of the job you submitted to the grid</li>
+			<li>
+		<span class="type">string</span>
+		<b>$session</b> 
+		- 
+		Optionally identifies the session to which the job                     belongs (if it was submitted within one).</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodjob_get_output"></a>
+	<p></p>
+	<h3>job_get_output</h3>
+	<div class="indent">
+		<p>
+		<code>bool job_get_output(
+string
+$job, string
+&$out, [mixed
+$session = 'default'])</code>
+		</p>
+	
+		<p class="linenumber">[line 1857]</p>
+		<p align="center"><strong>retrieve results
+</strong></p>
+<p>Retrieve the results of a job from the Grid. This function will  attempt to retrieve the results of a job. This relies on the results  being already available, i.e. you better check the job status first  and make sure it has completed.</p><p>If you don't, and the job hasn't completed yet, don't worry: nothing  will be retrieved. So, no harm done. But you should check stdout to  verify the condition.</p><p>All results will be stored remotely on the job directory, under a  subdirectory with a unique name of the form $grid_user_name_XXXXX...  where the X's mean a random string. Locally you will see them as 	$job/job_output so that they have an easy name to identify them.</p><p>To access your job output, just open this $job/output directory  and look inside.</p><p>The rationale for this is to avoid overwriting your job information  with its output. If that was intended, nothing is lost, just pick-up  the newly generated file. This way you always have continued access  to your old, submitted data for checking.</p><p>Sample usage:  <div class="listing"><pre><ol><li>     <span class="src-var">$eg </span>= <span class="src-key">new </span><a href="../Grid/Grid.html#methodGrid">Grid</a><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_user">set_user</a><span class="src-sym">(</span><span class="src-var">$user</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_host">set_host</a><span class="src-sym">(</span><span class="src-var">$host</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_password">set_password</a><span class="src-sym">(</span><span class="src-var">$passwd</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_passphrase">set_passphrase</a><span class="src-sym">(</span><span class="src-var">$passphrase</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_work_dir">set_work_dir</a><span class="src-sym">(</span><span class="src-str">&quot;/tmp/grid/test/cless&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_error_log">set_error_log</a><span class="src-sym">(</span><span class="src-str">&quot;/tmp/grid/test/cless/connection.err&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     echo <span class="src-str">&quot;initializing grid... &quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodinitialize">initialize</a><span class="src-sym">(</span><span class="src-sym">))</span></li>
+<li>         echo <span class="src-str">&quot;error: couldn't init the grid\n&quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">else</span></li>
+<li>         echo <span class="src-str">&quot;OK\n&quot;</span><span class="src-sym">;</span></li>
+<li>     echo <span class="src-str">&quot;Submitting tst-job... &quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">! </span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodjob_submit">job_submit</a><span class="src-sym">(</span><span class="src-str">&quot;tst-job&quot;</span><span class="src-sym">, </span><span class="src-var">$out</span><span class="src-sym">))</span></li>
+<li>        echo <span class="src-str">&quot;error: coudn't start the job\n&quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">else</span></li>
+<li>        echo <span class="src-str">&quot;OK\n&quot;</span><span class="src-sym">;</span></li>
+<li>     <a href="http://www.php.net/print_r">print_r</a><span class="src-sym">(</span><span class="src-var">$out</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     echo <span class="src-str">&quot;\nGetting job ID... \n&quot;</span><span class="src-sym">;</span></li>
+<li>     <a href="http://www.php.net/print_r">print_r</a><span class="src-sym">(</span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodjob_get_id">job_get_id</a><span class="src-sym">(</span><span class="src-str">&quot;tst-job&quot;</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+<li>     echo <span class="src-str">&quot;\nGetting job status... \n&quot;</span><span class="src-sym">;</span></li>
+<li>     <a href="http://www.php.net/print_r">print_r</a><span class="src-sym">(</span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodjob_status">job_status</a><span class="src-sym">(</span><span class="src-str">&quot;tst-job&quot;</span><span class="src-sym">, </span><span class="src-var">$out</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+<li>     echo <span class="src-str">&quot;\nGetting job output... &quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">! </span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodjob_get_output">job_get_output</a><span class="src-sym">(</span><span class="src-str">&quot;tst-job&quot;</span><span class="src-sym">, </span><span class="src-var">$out</span><span class="src-sym">))</span></li>
+<li>         echo <span class="src-str">&quot;error: couldn't get job output\n&quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">else</span></li>
+<li>         echo <span class="src-str">&quot;OK\n&quot;</span><span class="src-sym">;</span></li>
+<li>     <a href="http://www.php.net/print_r">print_r</a><span class="src-sym">(</span><span class="src-var">$out</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+</ol></pre></div></p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - TRUE on success, FALSE on failure.</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$job</b> 
+		- 
+		The name of the job you submitted to the grid</li>
+			<li>
+		<span class="type">string</span>
+		<b>&$out</b> 
+		- 
+		Optionally identifies the session to which the job                     belongs (if it was submitted within one). If this                     is not specified, then the default session is used.</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodjob_status"></a>
+	<p></p>
+	<h3>job_status</h3>
+	<div class="indent">
+		<p>
+		<code>array|false job_status(
+string
+$job, string
+&$out, [string
+$session = 'default'])</code>
+		</p>
+	
+		<p class="linenumber">[line 1721]</p>
+		<p align="center"><strong>check job status
+</strong></p>
+<p>This routine retrieves the job status report from the remote  grid entry point into your local job directory, and returns the  status of your specified job/session.</p><p>Sample usage:  <div class="listing"><pre><ol><li>     <span class="src-var">$eg </span>= <span class="src-key">new </span><a href="../Grid/Grid.html#methodGrid">Grid</a><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_user">set_user</a><span class="src-sym">(</span><span class="src-var">$user</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_host">set_host</a><span class="src-sym">(</span><span class="src-var">$host</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_password">set_password</a><span class="src-sym">(</span><span class="src-var">$passwd</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_passphrase">set_passphrase</a><span class="src-sym">(</span><span class="src-var">$passphrase</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_work_dir">set_work_dir</a><span class="src-sym">(</span><span class="src-str">&quot;/tmp/grid/test/cless&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_error_log">set_error_log</a><span class="src-sym">(</span><span class="src-str">&quot;/tmp/grid/test/cless/connection.err&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     echo <span class="src-str">&quot;initializing grid... &quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodinitialize">initialize</a><span class="src-sym">(</span><span class="src-sym">))</span></li>
+<li>         echo <span class="src-str">&quot;error: couldn't init the grid\n&quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">else</span></li>
+<li>         echo <span class="src-str">&quot;OK\n&quot;</span><span class="src-sym">;</span></li>
+<li>     echo <span class="src-str">&quot;Submitting tst-job... &quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">! </span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodjob_submit">job_submit</a><span class="src-sym">(</span><span class="src-str">&quot;tst-job&quot;</span><span class="src-sym">, </span><span class="src-var">$out</span><span class="src-sym">))</span></li>
+<li>         echo <span class="src-str">&quot;error: coudn't start the job\n&quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">else</span></li>
+<li>         echo <span class="src-str">&quot;OK\n&quot;</span><span class="src-sym">;</span></li>
+<li>     <a href="http://www.php.net/print_r">print_r</a><span class="src-sym">(</span><span class="src-var">$out</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     echo <span class="src-str">&quot;\nGetting job ID... \n&quot;</span><span class="src-sym">;</span></li>
+<li>     <a href="http://www.php.net/print_r">print_r</a><span class="src-sym">(</span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodjob_get_id">job_get_id</a><span class="src-sym">(</span><span class="src-str">&quot;tst-job&quot;</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+<li>     echo <span class="src-str">&quot;\nGetting job status... \n&quot;</span><span class="src-sym">;</span></li>
+<li>     <a href="http://www.php.net/print_r">print_r</a><span class="src-sym">(</span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodjob_status">job_status</a><span class="src-sym">(</span><span class="src-str">&quot;tst-job&quot;</span><span class="src-sym">, </span><span class="src-var">$out</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+</ol></pre></div></p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - an array containing the job status or FALSE on                     failure.</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$job</b> 
+		- 
+		The name of the job you submitted to the grid</li>
+			<li>
+		<span class="type">string</span>
+		<b>&$out</b> 
+		- 
+		Output of the status request program. Useful for                     debugging.</li>
+			<li>
+		<span class="type">string</span>
+		<b>$session</b> 
+		- 
+		Optionally identifies the session to which the job                     belongs (if it was submitted within one).</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodjob_submit"></a>
+	<p></p>
+	<h3>job_submit</h3>
+	<div class="indent">
+		<p>
+		<code>bool job_submit(
+string
+$job, array
+&$out, [string
+$session = 'default'])</code>
+		</p>
+	
+		<p class="linenumber">[line 1468]</p>
+		<p align="center"><strong>submit a job to the grid
+</strong></p>
+<p>This procedure submits a job to the Grid, optionally tagging it  as part of a specific session.</p><p>A job must be stored in a single directory (whose name you  provide in the call to this function). The directory must contain  any executables, libraries, configuration files/scripts, and input  data needed to run your job.</p><p>In addition, there must be a JDL file called 'job.jdl' and describing  the job to the grid using the JDL language.</p><p>Please note that only the job-directory name is used. If you provide  a longer path, only the last component (the job directory name) will  be used to identify your job remotely.</p><p>Sample usage:  <div class="listing"><pre><ol><li>     <span class="src-var">$eg </span>= <span class="src-key">new </span><a href="../Grid/Grid.html#methodGrid">Grid</a><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_user">set_user</a><span class="src-sym">(</span><span class="src-var">$user</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_host">set_host</a><span class="src-sym">(</span><span class="src-var">$host</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_password">set_password</a><span class="src-sym">(</span><span class="src-var">$passwd</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_passphrase">set_passphrase</a><span class="src-sym">(</span><span class="src-var">$passphrase</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_work_dir">set_work_dir</a><span class="src-sym">(</span><span class="src-str">&quot;/tmp/grid/test/cless&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_error_log">set_error_log</a><span class="src-sym">(</span><span class="src-str">&quot;/tmp/grid/test/cless/connection.err&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     echo <span class="src-str">&quot;initializing grid... &quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodinitialize">initialize</a><span class="src-sym">(</span><span class="src-sym">))</span></li>
+<li>         echo <span class="src-str">&quot;error: couldn't init the grid\n&quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">else</span></li>
+<li>         echo <span class="src-str">&quot;OK\n&quot;</span><span class="src-sym">;</span></li>
+<li>     echo <span class="src-str">&quot;Submitting tst-job... &quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">! </span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodjob_submit">job_submit</a><span class="src-sym">(</span><span class="src-str">&quot;tst-job&quot;</span><span class="src-sym">, </span><span class="src-var">$out</span><span class="src-sym">))</span></li>
+<li>         echo <span class="src-str">&quot;error: coudn't start the job\n&quot;</span><span class="src-sym">;</span></li>
+<li>     <span class="src-key">else</span></li>
+<li>         echo <span class="src-str">&quot;OK\n&quot;</span><span class="src-sym">;</span></li>
+<li>     <a href="http://www.php.net/print_r">print_r</a><span class="src-sym">(</span><span class="src-var">$out</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methoddestroy">destroy</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>     <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><span class="src-id">disconnect</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+</ol></pre></div></p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - TRUE if success, FALSE otherwise</li>
+	<li><b>note</b> - in future instances we may provide routines to generate the         JDL, possibly within a GridJob class of its own.</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$job</b> 
+		- 
+		The name of the job (same as the subdirectory it is in)</li>
+			<li>
+		<span class="type">array</span>
+		<b>&$out</b> 
+		- 
+		A variable to hold any messages spitted by the submission                     procedure. Messages will be stored as an array of                     strings (one per line) without ending newlines.</li>
+			<li>
+		<span class="type">string</span>
+		<b>$session</b> 
+		- 
+		Optional name of the session to which this job belongs                     (obtained from a previous call to session_new).</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodjob_submit_set_timeout"></a>
+	<p></p>
+	<h3>job_submit_set_timeout</h3>
+	<div class="indent">
+		<p>
+		<code>void job_submit_set_timeout(
+[integer
+$seconds = 0])</code>
+		</p>
+	
+		<p class="linenumber">[line 1410]</p>
+		<p align="center"><strong>Set maximum (guesstimated) allowed time for a job submission to  succeed.
+</strong></p>
+<p>This value is application and dataset dependent, will be of  relevance in rare occasions (1/4000) and hence may as well be  generous.</p><p>The default is 0 seconds (no timeout). You should make measures  to ensure it is reasonable. If set to 0, no timeout will be used.</p><p>Unless set to 0, you will need to code some resubmission policy  in your application.</p>		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">integer</span>
+		<b>$seconds</b> 
+		- 
+		timeout in seconds for job submission         (defaults to 0, no timeout).</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodsession_define"></a>
+	<p></p>
+	<h3>session_define</h3>
+	<div class="indent">
+		<p>
+		<code>void session_define(
+string
+$session, string
+$directory)</code>
+		</p>
+	
+		<p class="linenumber">[line 1264]</p>
+		<p align="center"><strong>Define an already existing session
+</strong></p>
+<p>This is useful if the session already exists and  we want to access it: we already know its  directory name, and just want to associate a  new name with the existing directory name.</p><p>Use e.g. when you are to submit a job from  a WWW page and access the results from a different  one: as the new page has no access to the status of  the previous one, we need to rebuild it ourselves.</p>		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$session</b> 
+		- 
+		session name</li>
+			<li>
+		<span class="type">string</span>
+		<b>$directory</b> 
+		- 
+		subdirectory of $work_dir to be associated to that name</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodsession_destroy"></a>
+	<p></p>
+	<h3>session_destroy</h3>
+	<div class="indent">
+		<p>
+		<code>void session_destroy(
+[mixed
+$session = 'default'])</code>
+		</p>
+	
+		<p class="linenumber">[line 1334]</p>
+		<p align="center"><strong>destroy the specified session
+</strong></p>
+<p>This method destroys all data associated with the specified  session. Currently it does not kill its associated jobs, but  deleted all their underlying data nevertheless.</p><p>Warning: passing an empty string or no argument will destroy  the default session.</p><p>return bool TRUE if success, FALSE otherwise</p>		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodsession_destroy_all"></a>
+	<p></p>
+	<h3>session_destroy_all</h3>
+	<div class="indent">
+		<p>
+		<code>void session_destroy_all(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 1367]</p>
+		<p align="center"><strong>Destroy all existing sessions
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodsession_directory"></a>
+	<p></p>
+	<h3>session_directory</h3>
+	<div class="indent">
+		<p>
+		<code>string session_directory(
+[string
+$session = 'default'])</code>
+		</p>
+	
+		<p class="linenumber">[line 1300]</p>
+		<p align="center"><strong>return the directory associated to a session
+</strong></p>
+<p>DOES NO ERROR CHECKING FOR VALID SESSION</p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - the associated directory name</li>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$session</b> 
+		- 
+		a session name</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodsession_is_valid"></a>
+	<p></p>
+	<h3>session_is_valid</h3>
+	<div class="indent">
+		<p>
+		<code>bool session_is_valid(
+[string
+$session = 'default'])</code>
+		</p>
+	
+		<p class="linenumber">[line 1279]</p>
+		<p align="center"><strong>check if supplied argument is a valid (existing and active)  session.
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - TRUE if the session could be found among the list of                 valid sessions, FALSE otherwise</li>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$session</b> 
+		- 
+		a session name</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodsession_list_all"></a>
+	<p></p>
+	<h3>session_list_all</h3>
+	<div class="indent">
+		<p>
+		<code>void session_list_all(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 1312]</p>
+		<p align="center"><strong>list all existing sessions  (debugging only)
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodsession_new"></a>
+	<p></p>
+	<h3>session_new</h3>
+	<div class="indent">
+		<p>
+		<code>string|false session_new(
+[string
+$hint = "sess"])</code>
+		</p>
+	
+		<p class="linenumber">[line 1194]</p>
+		<p align="center"><strong>Create a new session
+</strong></p>
+<p>We take control of the session system: in a previous incarnation  we got the session name from the user. This is dangerous since we  can not avoid clashes even with random session names provided by  a user: a randomly generated name may be guaranteed unique within  the user's local host namespace, but should various calls come from  different hosts (e.g. HA front-ends in a cluster), it is conceivable  (although improbable) that both come up with the same random number  and generate a clash on the shared remote grid access point. Hence  the new approach: to be true, users do not need to generate a session  name themselves: they just need a way to refer to them.</p><p>This routine will generate a new session: under a given session,  we guarantee that processes will be run under an isolated sandbox  where non name clashes from other concurrent users will occur.  Name clashes within a given session induced by the user are still  the responsability of the user.</p><p>SESSIONS</p><p>The basic idea is as follows: if you are developing a service that  may be called concurrently by various users, your problem at the GrUI  is the same as on your local server: avoiding name clashes for jobs.  As long as you manage that locally using unique names, the same will  work on the UI server.</p><p>This however may be inconvenient at times. It is usually the case  when your service is not composed by a single job, but by many  independent jobs that may be run concurrently as well. You still  need to generate unique names for each sub-job, but if they are  produced within a local uniquely named service-instance, then you  may reuse the sub-job names for each instance.</p><p>This comes handy in the case of many sub-jobs: as long as the main  service instance is uniquely identified, contained sub-jobs may have  significant names that are easier to identify than randomly-generated  ones: e.g.  <pre>    user A -> service-instance-A -+-> sub-job-1
+                                  |
+                                  +-> sub-job-2
+                                  |
+                                  etc...
+
+    user B -> service-instance-B -+-> sub-job-1
+                                  |
+                                  +-> sub-job-2
+                                  |
+                                  etc...</pre> 	In this case, since the service-instances have unique names (A, B)  we may use the same naming strategy in both cases for naming sub-jobs  (1, 2,...) which makes bookkeeping a lot easier.</p><p>To reproduce a similar behaviour remotely we provide 'sessions'.</p><p>Basically, what you are doing in the local case is isolating all the  equally named jobs of each service-instance within an unique sandbox.  In the grid you get the same result using 'sessions': whenever you  want to submit a series of non-randomly-named jobs (or even a single  one) you first allocate a session, and then attach those jobs to the  session. Job names within a session are guaranteed not to clash with  equal job names from another session.</p><p>Note the 'non-randomly-named' tag above: you want to use sessions  ALWAYS that you use any non-random job name unless you can guarantee  it will be the only job with that name ON THE GRID.</p><p>This is an important notice: your job may have a non-random, but  guaranteed unique name on your local host. And as long as the job  will only be submitted from your local host it is OK. But if you  are going to share your tools with other fellows, then they will  install them locally and submit a similarly named job as well. The  job name will be unique within each one's local machine, but when  jobs are collected at the GrUI, they will all have the same name,  which is a no-no.</p><p>USING SESSIONS</p><p>Once you see the need for using sessions, using them is quite  simple: you call this function asking for a new session to be  created on the remote grid access point on your behalf. The routine  will return a unique session identifier which you later use to  tag jobs that are to be run within that session's sandbox.</p><p>Sample usage:  <div class="listing"><pre><ol><li>    <span class="src-var">$eg </span>= <span class="src-key">new </span><a href="../Grid/Grid.html#methodGrid">Grid</a><span class="src-sym">;</span></li>
+<li>    <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_user">set_user</a><span class="src-sym">(</span><span class="src-var">$user</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>    <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_host">set_host</a><span class="src-sym">(</span><span class="src-var">$host</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>    <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_password">set_password</a><span class="src-sym">(</span><span class="src-var">$passwd</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>    <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_passphrase">set_passphrase</a><span class="src-sym">(</span><span class="src-var">$passphrase</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>    <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_work_dir">set_work_dir</a><span class="src-sym">(</span><span class="src-str">&quot;/tmp/grid/debug&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>    <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_error_log">set_error_log</a><span class="src-sym">(</span><span class="src-str">&quot;/tmp/grid/debug/connection.err&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>    echo <span class="src-str">&quot;initializing grid... &quot;</span><span class="src-sym">;</span></li>
+<li>    <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodinitialize">initialize</a><span class="src-sym">(</span><span class="src-sym">)) </span><span class="src-sym">{</span></li>
+<li>        echo <span class="src-str">&quot;error: couldn't init the grid\n&quot;</span><span class="src-sym">;</span></li>
+<li>        <span class="src-key">exit</span><span class="src-sym">;</span></li>
+<li>  <span class="src-sym">}</span></li>
+<li>    <span class="src-key">else</span></li>
+<li>        echo <span class="src-str">&quot;OK\n&quot;</span><span class="src-sym">;</span></li>
+<li>    echo <span class="src-str">&quot;Submitting tst-job to default session...\n&quot;</span><span class="src-sym">;</span></li>
+<li>    <span class="src-var">$out </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">&quot;&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>    <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">! </span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodjob_submit">job_submit</a><span class="src-sym">(</span><span class="src-str">&quot;tst-job&quot;</span><span class="src-sym">, </span><span class="src-var">$out</span><span class="src-sym">)) </span><span class="src-sym">{</span></li>
+<li>        echo <span class="src-str">&quot;error: coudn't start the job\n&quot;</span><span class="src-sym">;</span></li>
+<li>        <span class="src-key">exit</span><span class="src-sym">;</span></li>
+<li>    <span class="src-sym">}</span></li>
+<li>    <span class="src-key">else</span></li>
+<li>       echo <span class="src-str">&quot;OK\n&quot;</span><span class="src-sym">;</span></li>
+<li>    <a href="http://www.php.net/print_r">print_r</a><span class="src-sym">(</span><span class="src-var">$out</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>    echo <span class="src-str">&quot;Submitting tst-job to a new session...\n&quot;</span><span class="src-sym">;</span></li>
+<li>    <span class="src-var">$sess </span>= <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodsession_new">session_new</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>    echo <span class="src-str">&quot;sess = &quot;</span><span class="src-sym">; </span><a href="http://www.php.net/print_r">print_r</a><span class="src-sym">(</span><span class="src-var">$sess</span><span class="src-sym">)</span><span class="src-sym">; </span>echo <span class="src-str">&quot;\n&quot;</span><span class="src-sym">;</span></li>
+<li>    <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$sess </span>!= <span class="src-id">FALSE</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li>        <span class="src-var">$out </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">&quot;&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">! </span><span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodjob_submit">job_submit</a><span class="src-sym">(</span><span class="src-str">&quot;tst-job&quot;</span><span class="src-sym">, </span><span class="src-var">$out</span><span class="src-sym">, </span><span class="src-var">$sess</span><span class="src-sym">))</span></li>
+<li>           echo <span class="src-str">&quot;error: coudn't start the job\n&quot;</span><span class="src-sym">;</span></li>
+<li>        <span class="src-key">else </span><span class="src-sym">{</span></li>
+<li>           echo <span class="src-str">&quot;OK\n&quot;</span><span class="src-sym">;</span></li>
+<li>        <span class="src-sym">}</span></li>
+<li>        <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodsession_destroy">session_destroy</a><span class="src-sym">(</span><span class="src-var">$sess</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li>    <span class="src-sym">}</span></li>
+<li>    <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methoddestruct">destruct</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+</ol></pre></div></p><h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - session ID of the newly generated session.</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$hint</b> 
+		- 
+		an optional string to be used for the session name</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodset_error_log"></a>
+	<p></p>
+	<h3>set_error_log</h3>
+	<div class="indent">
+		<p>
+		<code>void set_error_log(
+string
+$errlog)</code>
+		</p>
+	
+		<p class="linenumber">[line 657]</p>
+		<p align="center"><strong>set error log
+</strong></p>
+<p>Sample usage:  <div class="listing"><pre><ol><li> <span class="src-inc">require_once </span><span class="src-str">'./grid_config.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./ssh.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./grid.php'</span><span class="src-sym">;</span></li>
+<li>&nbsp;</li>
+<li> <span class="src-var">$eg </span>= <span class="src-key">new </span><a href="../Grid/Grid.html#methodGrid">Grid</a><span class="src-sym">;</span></li>
+<li> <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$eg </span>== <span class="src-id">FALSE</span><span class="src-sym">)</span></li>
+<li>     echo <span class="src-str">&quot;Couldn't instantiate a new Grid!\n&quot;</span><span class="src-sym">;</span></li>
+<li> <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_error_log">set_error_log</a><span class="src-sym">(</span><span class="src-str">&quot;./grid-services/error.log&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+</ol></pre></div></p>		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$errlog</b> 
+		- 
+		path to a local file where we will store the error log              (i.e. stderr of the grid connection)</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodset_host"></a>
+	<p></p>
+	<h3>set_host</h3>
+	<div class="indent">
+		<p>
+		<code>void set_host(
+string
+$host)</code>
+		</p>
+	
+		<p class="linenumber">[line 501]</p>
+		<p align="center"><strong>set the name of the Grid access host
+</strong></p>
+<p>In order to connect to the Grid and be able to submit  jobs we need a tuple (host/user/password/passphrase),  i.e. an entry point to log in, and a passphrase to unlock  the grid certificate.</p><p>This method allows us to define the entry point to use  to gain access to the Grid.</p><p>Sample usage:  <div class="listing"><pre><ol><li> <span class="src-inc">require_once </span><span class="src-str">'./grid_config.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./ssh.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./grid.php'</span><span class="src-sym">;</span></li>
+<li>&nbsp;</li>
+<li> <span class="src-var">$host</span>=<span class="src-str">&quot;gridui.example.com&quot;</span><span class="src-sym">;</span></li>
+<li>&nbsp;</li>
+<li> <span class="src-var">$eg </span>= <span class="src-key">new </span><a href="../Grid/Grid.html#methodGrid">Grid</a><span class="src-sym">;</span></li>
+<li> <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$eg </span>== <span class="src-id">FALSE</span><span class="src-sym">)</span></li>
+<li>     echo <span class="src-str">&quot;Couldn't instantiate a new Grid!\n&quot;</span><span class="src-sym">;</span></li>
+<li> <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_host">set_host</a><span class="src-sym">(</span><span class="src-var">$host</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+</ol></pre></div></p>		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$host</b> 
+		- 
+		host name of the remote UI host</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodset_passphrase"></a>
+	<p></p>
+	<h3>set_passphrase</h3>
+	<div class="indent">
+		<p>
+		<code>void set_passphrase(
+string
+$pass)</code>
+		</p>
+	
+		<p class="linenumber">[line 599]</p>
+		<p align="center"><strong>set the passphrase for the remote grid user
+</strong></p>
+<p>In order to connect to the Grid and be able to submit  jobs we need a tuple (host/user/password/passphrase),  i.e. an entry point to log in, and a passphrase to unlock  the grid certificate.</p><p>After we gain access to the UI host, we must unlock our  certificate which identifies ourselves as 'bona-fide'  grid users.</p><p>People might have an account on any UI node for a variety  of reasons, but that does not qualify them to use Grid  resources. Only a central Grid authority can grant this  kind of access and this is done by issuing a Certificate.</p><p>Users then must store this certificate in their account  on a UI host and protect it with a suitably long passphrase.  This last one is the value we provide here.</p><p>Sample usage:  <div class="listing"><pre><ol><li> <span class="src-inc">require_once </span><span class="src-str">'./grid_config.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./ssh.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./grid.php'</span><span class="src-sym">;</span></li>
+<li>&nbsp;</li>
+<li> <span class="src-var">$passphrase</span>=<span class="src-str">&quot;pass phrase to unlock certificate&quot;</span><span class="src-sym">;</span></li>
+<li>&nbsp;</li>
+<li> <span class="src-var">$eg </span>= <span class="src-key">new </span><a href="../Grid/Grid.html#methodGrid">Grid</a><span class="src-sym">;</span></li>
+<li> <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$eg </span>== <span class="src-id">FALSE</span><span class="src-sym">)</span></li>
+<li>     echo <span class="src-str">&quot;Couldn't instantiate a new Grid!\n&quot;</span><span class="src-sym">;</span></li>
+<li> <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_passphrase">set_passphrase</a><span class="src-sym">(</span><span class="src-var">$passphrase</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+</ol></pre></div></p>		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$pass</b> 
+		- 
+		passphrase needed to unlock the grid certificate</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodset_password"></a>
+	<p></p>
+	<h3>set_password</h3>
+	<div class="indent">
+		<p>
+		<code>void set_password(
+string
+$pass)</code>
+		</p>
+	
+		<p class="linenumber">[line 552]</p>
+		<p align="center"><strong>set the password for the remote grid user/server
+</strong></p>
+<p>In order to connect to the Grid and be able to submit  jobs we need a tuple (host/user/password/passphrase),  i.e. an entry point to log in, and a passphrase to unlock  the grid certificate.</p><p>This method allows us to specify the password to  clear access to the Grid UI host.</p><p>Note that this is specific to the remote UI server  selected.</p><p>Further note that gaining access to a user account on  a given host does not give us rights to submit jobs:  we still need to unlock our ID certificate with the  appropriate passphrase. Anybody with root access to an  UI host can add accounts. Further, the UI host might  have other roles and host other accounts for different  purposes which should not access the grid. Bottomline is  that we can not trust an account on a user-controlled  host to identify Grid users. For this we need to recurse  to a central authority to grant final access.</p><p>Sample usage:  <div class="listing"><pre><ol><li> <span class="src-inc">require_once </span><span class="src-str">'./grid_config.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./ssh.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./grid.php'</span><span class="src-sym">;</span></li>
+<li>&nbsp;</li>
+<li> <span class="src-var">$password</span>=<span class="src-str">&quot;password&quot;</span><span class="src-sym">;</span></li>
+<li>&nbsp;</li>
+<li> <span class="src-var">$eg </span>= <span class="src-key">new </span><a href="../Grid/Grid.html#methodGrid">Grid</a><span class="src-sym">;</span></li>
+<li> <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$eg </span>== <span class="src-id">FALSE</span><span class="src-sym">)</span></li>
+<li>     echo <span class="src-str">&quot;Couldn't instantiate a new Grid!\n&quot;</span><span class="src-sym">;</span></li>
+<li> <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_password">set_password</a><span class="src-sym">(</span><span class="src-var">$password</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+</ol></pre></div></p>		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$pass</b> 
+		- 
+		password needed to login on to the grid UI server</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodset_user"></a>
+	<p></p>
+	<h3>set_user</h3>
+	<div class="indent">
+		<p>
+		<code>void set_user(
+string
+$user)</code>
+		</p>
+	
+		<p class="linenumber">[line 464]</p>
+		<p align="center"><strong>set the Grid user name
+</strong></p>
+<p>In order to connect to the Grid and be able to submit  jobs we need a tuple (host/user/password/passphrase),  i.e. an entry point to log in, and a passphrase to unlock  the grid certificate.</p><p>This method allows us to define the username which will  be used to log in on the grid, i.e. how do we identify  ourselves to the Grid UI host.</p><p>Sample usage:  <div class="listing"><pre><ol><li> <span class="src-inc">require_once </span><span class="src-str">'./grid_config.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./ssh.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./grid.php'</span><span class="src-sym">;</span></li>
+<li>&nbsp;</li>
+<li> <span class="src-var">$user</span>=<span class="src-str">&quot;user&quot;</span><span class="src-sym">;</span></li>
+<li>&nbsp;</li>
+<li> <span class="src-var">$eg </span>= <span class="src-key">new </span><a href="../Grid/Grid.html#methodGrid">Grid</a><span class="src-sym">;</span></li>
+<li> <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$eg </span>== <span class="src-id">FALSE</span><span class="src-sym">)</span></li>
+<li>     echo <span class="src-str">&quot;Couldn't instantiate a new Grid!\n&quot;</span><span class="src-sym">;</span></li>
+<li> <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_user">set_user</a><span class="src-sym">(</span><span class="src-var">$user</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+</ol></pre></div></p>		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$user</b> 
+		- 
+		user identity to use in the Grid UI host</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodset_work_dir"></a>
+	<p></p>
+	<h3>set_work_dir</h3>
+	<div class="indent">
+		<p>
+		<code>void set_work_dir(
+string
+$wd)</code>
+		</p>
+	
+		<p class="linenumber">[line 630]</p>
+		<p align="center"><strong>set working directory on the Grid server
+</strong></p>
+<p>This is a directory located on the grid server where all jobs  and job related information will be created. It may be a path  local to the user home or a global path (usually on /tmp or  /var/tmp).</p><p>Sample usage:  <div class="listing"><pre><ol><li> <span class="src-inc">require_once </span><span class="src-str">'./grid_config.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./ssh.php'</span><span class="src-sym">;</span></li>
+<li> <span class="src-inc">require_once </span><span class="src-str">'./grid.php'</span><span class="src-sym">;</span></li>
+<li>&nbsp;</li>
+<li> <span class="src-var">$eg </span>= <span class="src-key">new </span><a href="../Grid/Grid.html#methodGrid">Grid</a><span class="src-sym">;</span></li>
+<li> <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$eg </span>== <span class="src-id">FALSE</span><span class="src-sym">)</span></li>
+<li>     echo <span class="src-str">&quot;Couldn't instantiate a new Grid!\n&quot;</span><span class="src-sym">;</span></li>
+<li> <span class="src-var">$eg</span><span class="src-sym">-&gt;</span><a href="../Grid/Grid.html#methodset_work_dir">set_work_dir</a><span class="src-sym">(</span><span class="src-str">&quot;./grid-services&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+</ol></pre></div></p>		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$wd</b> 
+		- 
+		the remote path of the working directory</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_methods"></a>
+	<h2>Class Methods</h2>
+	</div>
+	<div id="credit">
+		<hr>
+		Documentation generated on Thu, 22 Jun 2006 10:01:02 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.3.0RC4</a>
+	</div>
+</div>
+</body>

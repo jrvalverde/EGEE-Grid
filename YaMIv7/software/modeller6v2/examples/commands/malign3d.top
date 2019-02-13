@@ -1,0 +1,14 @@
+# Example for: MALIGN3D, COMPARE
+
+# This will read all sequences from a sequence file, multiply align
+# their 3D structures, and then also compare them using this alignment.
+
+READ_ALIGNMENT FILE = 'toxin.ali', ALIGN_CODES = 'all'
+MALIGN GAP_PENALTIES_1D= -600 -400
+MALIGN3D GAP_PENALTIES_3D= 0 2.0, WRITE_FIT = on,  WRITE_WHOLE_PDB = off
+WRITE_ALIGNMENT FILE = 'toxin-str.pap', ALIGNMENT_FORMAT = 'PAP'
+
+# Make two comparisons: no cutoffs, and 3.5A/60 degree cutoffs for RMS, DRMS,
+# and dihedral angle comparisons:
+COMPARE RMS_CUTOFFS = 999 999 999 999 999 999 999 999 999 999 999
+COMPARE RMS_CUTOFFS = 3.5 3.5 60 60 60 60 60 60 60 60 60

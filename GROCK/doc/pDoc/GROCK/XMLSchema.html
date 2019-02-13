@@ -1,0 +1,897 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Docs For Class XMLSchema</title>
+	<link rel="stylesheet" type="text/css" id="layout" href="../media/layout.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../media/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../media/print.css" media="print">
+</head>
+
+<body>
+<div id="header">
+	<div id="navLinks">
+		[ <a href="../classtrees_GROCK.html">Class Tree: GROCK</a> ]
+		[ <a href="../elementindex_GROCK.html">Index: GROCK</a> ]
+		[ <a href="../elementindex.html">All elements</a> ]
+	</div>
+	<div id="packagePosition">
+		<div id="packageTitle2">GROCK</div>
+		<div id="packageTitle">GROCK</div>
+		<div id="elementPath"> &middot; </div>
+	</div>
+</div>
+
+<div id="nav" class="small">
+	<div id="packages">
+		Packages:
+					<p><a href="../li_GROCK.html">GROCK</a></p>
+					<p><a href="../li_Grid.html">Grid</a></p>
+					<p><a href="../li_grock.html">grock</a></p>
+					<p><a href="../li_SExec.html">SExec</a></p>
+			</div>
+
+				<div id="index">
+			<div id="files">
+								Files:<br>
+								<a href="../GROCK/_lib_class_nusoap_base_php.html">		class.nusoap_base.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soapclient_php.html">		class.soapclient.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_fault_php.html">		class.soap_fault.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_parser_php.html">		class.soap_parser.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_server_php.html">		class.soap_server.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_transport_http_php.html">		class.soap_transport_http.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_val_php.html">		class.soap_val.php
+		</a><br>
+			<a href="../GROCK/_lib_class_wsdl_php.html">		class.wsdl.php
+		</a><br>
+			<a href="../GROCK/_lib_class_wsdlcache_php.html">		class.wsdlcache.php
+		</a><br>
+			<a href="../GROCK/_lib_class_xmlschema_php.html">		class.xmlschema.php
+		</a><br>
+			<a href="../GROCK/_lib_nusoap_php.html">		nusoap.php
+		</a><br>
+			<a href="../GROCK/_lib_nusoapmime_php.html">		nusoapmime.php
+		</a><br>
+				</div>
+			<div id="classes">
+				Classes:<br>
+								<a href="../GROCK/nusoap_base.html">		nusoap_base
+		</a><br>
+			<a href="../GROCK/soapclient.html">		soapclient
+		</a><br>
+			<a href="../GROCK/soapclientmime.html">		soapclientmime
+		</a><br>
+			<a href="../GROCK/soapval.html">		soapval
+		</a><br>
+			<a href="../GROCK/soap_fault.html">		soap_fault
+		</a><br>
+			<a href="../GROCK/soap_parser.html">		soap_parser
+		</a><br>
+			<a href="../GROCK/soap_server.html">		soap_server
+		</a><br>
+			<a href="../GROCK/soap_transport_http.html">		soap_transport_http
+		</a><br>
+			<a href="../GROCK/wsdl.html">		wsdl
+		</a><br>
+			<a href="../GROCK/wsdlcache.html">		wsdlcache
+		</a><br>
+			<a href="../GROCK/XMLSchema.html">		XMLSchema
+		</a><br>
+				</div>
+		</div>
+	</div>
+
+<div id="body">
+			<h1>Class: XMLSchema</h1>
+	<p style="margin: 0px;">Source Location: /lib/class.xmlschema.php</p>
+	
+
+<div class="leftcol">
+	<h3><a href="#class_details">Class Overview</a> <span class="smalllinenumber">[line 17]</span></h3>
+	<div id="classTree"><pre>nusoap_base
+   |
+   --XMLSchema</pre>
+</div>
+	<div class="small">
+	<p>parses an XML Schema, allows access to it's data, other utility methods  no validation... yet.</p>
+		<h4>Author(s):</h4>
+	<ul>
+																		<li>Dietrich Ayala &lt;<a href="mailto:dietrich@ganx4.com">mailto:dietrich@ganx4.com</a>&gt;</li>
+						</ul>
+	<h4>Version:</h4>
+	<ul>
+													<li>$Id: class.xmlschema.php,v 1.25 2004/03/31 01:52:58 snichol Exp $</li>
+											</ul>
+
+	<h4>Copyright:</h4>
+	<ul>
+																		</li>
+	</div>
+</div>
+
+<div class="middlecol">
+	<h3><a href="#class_vars">Variables</a></h3>
+	<ul class="small">
+				<li><a href="../GROCK/XMLSchema.html#var$attributes">$attributes</a></li>
+				<li><a href="../GROCK/XMLSchema.html#var$complexTypes">$complexTypes</a></li>
+				<li><a href="../GROCK/XMLSchema.html#var$currentComplexType">$currentComplexType</a></li>
+				<li><a href="../GROCK/XMLSchema.html#var$currentElement">$currentElement</a></li>
+				<li><a href="../GROCK/XMLSchema.html#var$currentSimpleType">$currentSimpleType</a></li>
+				<li><a href="../GROCK/XMLSchema.html#var$defaultNamespace">$defaultNamespace</a></li>
+				<li><a href="../GROCK/XMLSchema.html#var$depth">$depth</a></li>
+				<li><a href="../GROCK/XMLSchema.html#var$depth_array">$depth_array</a></li>
+				<li><a href="../GROCK/XMLSchema.html#var$elements">$elements</a></li>
+				<li><a href="../GROCK/XMLSchema.html#var$enclosingNamespaces">$enclosingNamespaces</a></li>
+				<li><a href="../GROCK/XMLSchema.html#var$imports">$imports</a></li>
+				<li><a href="../GROCK/XMLSchema.html#var$message">$message</a></li>
+				<li><a href="../GROCK/XMLSchema.html#var$parser">$parser</a></li>
+				<li><a href="../GROCK/XMLSchema.html#var$position">$position</a></li>
+				<li><a href="../GROCK/XMLSchema.html#var$schema">$schema</a></li>
+				<li><a href="../GROCK/XMLSchema.html#var$schemaInfo">$schemaInfo</a></li>
+				<li><a href="../GROCK/XMLSchema.html#var$schemaTargetNamespace">$schemaTargetNamespace</a></li>
+				<li><a href="../GROCK/XMLSchema.html#var$simpleTypes">$simpleTypes</a></li>
+				<li><a href="../GROCK/XMLSchema.html#var$xml">$xml</a></li>
+			</ul>
+</div>
+<div class="rightcol">
+	<h3><a href="#class_methods">Methods</a></h3>
+	<ul class="small">
+				<li><a href="../GROCK/XMLSchema.html#methodXMLSchema">XMLSchema</a></li>
+				<li><a href="../GROCK/XMLSchema.html#methodaddComplexType">addComplexType</a></li>
+				<li><a href="../GROCK/XMLSchema.html#methodaddSimpleType">addSimpleType</a></li>
+				<li><a href="../GROCK/XMLSchema.html#methodgetPHPType">getPHPType</a></li>
+				<li><a href="../GROCK/XMLSchema.html#methodgetTypeDef">getTypeDef</a></li>
+				<li><a href="../GROCK/XMLSchema.html#methodparseFile">parseFile</a></li>
+				<li><a href="../GROCK/XMLSchema.html#methodparseString">parseString</a></li>
+				<li><a href="../GROCK/XMLSchema.html#methodschemaCharacterData">schemaCharacterData</a></li>
+				<li><a href="../GROCK/XMLSchema.html#methodschemaEndElement">schemaEndElement</a></li>
+				<li><a href="../GROCK/XMLSchema.html#methodschemaStartElement">schemaStartElement</a></li>
+				<li><a href="../GROCK/XMLSchema.html#methodserializeSchema">serializeSchema</a></li>
+				<li><a href="../GROCK/XMLSchema.html#methodserializeTypeDef">serializeTypeDef</a></li>
+				<li><a href="../GROCK/XMLSchema.html#methodtypeToForm">typeToForm</a></li>
+				<li><a href="../GROCK/XMLSchema.html#methodxdebug">xdebug</a></li>
+			</ul>
+</div>
+
+<div id="content">
+<hr>
+	<div class="contents">
+	</div>
+
+	<div class="leftCol">
+	<h2>Inherited Variables</h2>
+		</div>
+
+	<div class="rightCol">
+	<h2>Inherited Methods</h2>
+		</div>
+	<br clear="all">
+	<hr>
+
+	<a name="class_details"></a>
+	<h2>Class Details</h2>
+	<p align="center"><strong>parses an XML Schema, allows access to it's data, other utility methods  no validation... yet.
+</strong></p>
+<p>very experimental and limited. As is discussed on XML-DEV, I'm one of the people  that just doesn't have time to read the spec(s) thoroughly, and just have a couple of trusty  tutorials I refer to :)</p><h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+	<li><b>version</b> - $Id: class.xmlschema.php,v 1.25 2004/03/31 01:52:58 snichol Exp $</li>
+	<li><b>author</b> - Dietrich Ayala &lt;<a href="mailto:dietrich@ganx4.com">mailto:dietrich@ganx4.com</a>&gt;</li>
+</ul>
+	<p class="small" style="color: #334B66;">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_vars"></a>
+	<h2>Class Variables</h2>
+		<a name="var$attributes"></a>
+	<p></p>
+	<h4>$attributes = <span class="value">array()</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 28]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$complexTypes"></a>
+	<p></p>
+	<h4>$complexTypes = <span class="value">array()</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 29]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$currentComplexType"></a>
+	<p></p>
+	<h4>$currentComplexType = <span class="value">&nbsp;false</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 30]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$currentElement"></a>
+	<p></p>
+	<h4>$currentElement = <span class="value">&nbsp;false</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 32]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$currentSimpleType"></a>
+	<p></p>
+	<h4>$currentSimpleType = <span class="value">&nbsp;false</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 34]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$defaultNamespace"></a>
+	<p></p>
+	<h4>$defaultNamespace = <span class="value">array()</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 43]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$depth"></a>
+	<p></p>
+	<h4>$depth = <span class="value">&nbsp;0</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 40]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$depth_array"></a>
+	<p></p>
+	<h4>$depth_array = <span class="value">array()</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 41]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$elements"></a>
+	<p></p>
+	<h4>$elements = <span class="value">array()</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 31]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$enclosingNamespaces"></a>
+	<p></p>
+	<h4>$enclosingNamespaces = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 23]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$imports"></a>
+	<p></p>
+	<h4>$imports = <span class="value">array()</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 36]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$message"></a>
+	<p></p>
+	<h4>$message = <span class="value">array()</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 42]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$parser"></a>
+	<p></p>
+	<h4>$parser = <span class="value"></span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 38]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$position"></a>
+	<p></p>
+	<h4>$position = <span class="value">&nbsp;0</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 39]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$schema"></a>
+	<p></p>
+	<h4>$schema = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 20]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$schemaInfo"></a>
+	<p></p>
+	<h4>$schemaInfo = <span class="value">array()</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 25]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$schemaTargetNamespace"></a>
+	<p></p>
+	<h4>$schemaTargetNamespace = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 26]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$simpleTypes"></a>
+	<p></p>
+	<h4>$simpleTypes = <span class="value">array()</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 33]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$xml"></a>
+	<p></p>
+	<h4>$xml = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 21]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_methods"></a>
+	<h2>Class Methods</h2>
+		<a name="methodXMLSchema"></a>
+	<p></p>
+	<h3>XMLSchema</h3>
+	<div class="indent">
+		<p>
+		<code>XMLSchema XMLSchema(
+[string
+$schema = ''], [string
+$xml = ''], [string
+$namespaces = array()])</code>
+		</p>
+	
+		<p class="linenumber">[line 53]</p>
+		<p align="center"><strong>constructor
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$schema</b> 
+		- 
+		schema document URI</li>
+			<li>
+		<span class="type">string</span>
+		<b>$xml</b> 
+		- 
+		xml document URI</li>
+			<li>
+		<span class="type">string</span>
+		<b>$namespaces</b> 
+		- 
+		namespaces defined in enclosing XML</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodaddComplexType"></a>
+	<p></p>
+	<h3>addComplexType</h3>
+	<div class="indent">
+		<p>
+		<code>void addComplexType(
+name
+$name, [typeClass
+$typeClass = 'complexType'], [phpType:
+$phpType = 'array'], [compositor
+$compositor = ''], [restrictionBase
+$restrictionBase = ''], [elements
+$elements = array()], [attrs
+$attrs = array()], [arrayType:
+$arrayType = ''])</code>
+		</p>
+	
+		<p class="linenumber">[line 726]</p>
+		<p align="center"><strong>adds a complex type to the schema
+</strong></p>
+<p>example: array</p><p>addType(  	'ArrayOfstring',  	'complexType',  	'array',  	'',  	'SOAP-ENC:Array',  	array('ref'=&gt;'SOAP-ENC:arrayType','wsdl:arrayType'=&gt;'string[]'),  	'xsd:string'  );</p><p>example: PHP associative array ( SOAP Struct )</p><p>addType(  	'SOAPStruct',  	'complexType',  	'struct',  	'all',  	array('myVar'=&gt; array('name'=&gt;'myVar','type'=&gt;'string')  );</p>		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">name</span>
+		<b>$name</b> 
+		- 
+		</li>
+			<li>
+		<span class="type">typeClass</span>
+		<b>$typeClass</b> 
+		- 
+		(complexType|simpleType|attribute)</li>
+			<li>
+		<span class="type">phpType:</span>
+		<b>$phpType</b> 
+		- 
+		currently supported are array and struct (php assoc array)</li>
+			<li>
+		<span class="type">compositor</span>
+		<b>$compositor</b> 
+		- 
+		(all|sequence|choice)</li>
+			<li>
+		<span class="type">restrictionBase</span>
+		<b>$restrictionBase</b> 
+		- 
+		namespace:name (http://schemas.xmlsoap.org/soap/encoding/:Array)</li>
+			<li>
+		<span class="type">elements</span>
+		<b>$elements</b> 
+		- 
+		= array ( name = array(name=&gt;'',type=&gt;'') )</li>
+			<li>
+		<span class="type">attrs</span>
+		<b>$attrs</b> 
+		- 
+		= array(      array(         'ref' =&gt; &quot;http://schemas.xmlsoap.org/soap/encoding/:arrayType&quot;,         &quot;http://schemas.xmlsoap.org/wsdl/:arrayType&quot; =&gt; &quot;string[]&quot;      )  )</li>
+			<li>
+		<span class="type">arrayType:</span>
+		<b>$arrayType</b> 
+		- 
+		namespace:name (http://www.w3.org/2001/XMLSchema:string)</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodaddSimpleType"></a>
+	<p></p>
+	<h3>addSimpleType</h3>
+	<div class="indent">
+		<p>
+		<code>void addSimpleType(
+name
+$name, [restrictionBase
+$restrictionBase = ''], [typeClass
+$typeClass = 'simpleType'], [phpType:
+$phpType = 'scalar'])</code>
+		</p>
+	
+		<p class="linenumber">[line 751]</p>
+		<p align="center"><strong>adds a simple type to the schema
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>see</b> - xmlschema</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">name</span>
+		<b>$name</b> 
+		- 
+		</li>
+			<li>
+		<span class="type">restrictionBase</span>
+		<b>$restrictionBase</b> 
+		- 
+		namespace:name (http://schemas.xmlsoap.org/soap/encoding/:Array)</li>
+			<li>
+		<span class="type">typeClass</span>
+		<b>$typeClass</b> 
+		- 
+		(simpleType)</li>
+			<li>
+		<span class="type">phpType:</span>
+		<b>$phpType</b> 
+		- 
+		(scalar)</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodgetPHPType"></a>
+	<p></p>
+	<h3>getPHPType</h3>
+	<div class="indent">
+		<p>
+		<code>mixed getPHPType(
+mixed
+$type, mixed
+$ns, string
+$type,, string
+$ns,)</code>
+		</p>
+	
+		<p class="linenumber">[line 537]</p>
+		<p align="center"><strong>get the PHP type of a user defined type in the schema
+</strong></p>
+<p>PHP type is kind of a misnomer since it actually returns 'struct' for assoc. arrays  returns false if no type exists, or not w/ the given namespace  else returns a string that is either a native php type, or 'struct'</p><h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$type,</b> 
+		- 
+		name of defined type</li>
+			<li>
+		<span class="type">string</span>
+		<b>$ns,</b> 
+		- 
+		namespace of type</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodgetTypeDef"></a>
+	<p></p>
+	<h3>getTypeDef</h3>
+	<div class="indent">
+		<p>
+		<code>mixed getTypeDef(
+string
+$type)</code>
+		</p>
+	
+		<p class="linenumber">[line 564]</p>
+		<p align="center"><strong>returns an array of information about a given type  returns false if no type exists by the given name
+</strong></p>
+<p>typeDef = array( 	 'elements' =&gt; array(), // refs to elements array 	'restrictionBase' =&gt; '', 	'phpType' =&gt; '', 	'order' =&gt; '(sequence|all)', 	'attrs' =&gt; array() // refs to attributes array 	)</p><h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$type</b> 
+		- 
+		</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodparseFile"></a>
+	<p></p>
+	<h3>parseFile</h3>
+	<div class="indent">
+		<p>
+		<code>boolean parseFile(
+mixed
+$xml, mixed
+$type, string
+$xml,, string
+$type,)</code>
+		</p>
+	
+		<p class="linenumber">[line 86]</p>
+		<p align="center"><strong>parse an XML file
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$xml,</b> 
+		- 
+		path/URL to XML file</li>
+			<li>
+		<span class="type">string</span>
+		<b>$type,</b> 
+		- 
+		(schema | xml)</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodparseString"></a>
+	<p></p>
+	<h3>parseString</h3>
+	<div class="indent">
+		<p>
+		<code>void parseString(
+string
+$xml, mixed
+$type, string
+$type,)</code>
+		</p>
+	
+		<p class="linenumber">[line 112]</p>
+		<p align="center"><strong>parse an XML string
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$xml</b> 
+		- 
+		path or URL</li>
+			<li>
+		<span class="type">string</span>
+		<b>$type,</b> 
+		- 
+		(schema|xml)</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodschemaCharacterData"></a>
+	<p></p>
+	<h3>schemaCharacterData</h3>
+	<div class="indent">
+		<p>
+		<code>void schemaCharacterData(
+string
+$parser, string
+$data)</code>
+		</p>
+	
+		<p class="linenumber">[line 419]</p>
+		<p align="center"><strong>element content handler
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$parser</b> 
+		- 
+		XML parser object</li>
+			<li>
+		<span class="type">string</span>
+		<b>$data</b> 
+		- 
+		element content</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodschemaEndElement"></a>
+	<p></p>
+	<h3>schemaEndElement</h3>
+	<div class="indent">
+		<p>
+		<code>void schemaEndElement(
+string
+$parser, string
+$name)</code>
+		</p>
+	
+		<p class="linenumber">[line 392]</p>
+		<p align="center"><strong>end-element handler
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$parser</b> 
+		- 
+		XML parser object</li>
+			<li>
+		<span class="type">string</span>
+		<b>$name</b> 
+		- 
+		element name</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodschemaStartElement"></a>
+	<p></p>
+	<h3>schemaStartElement</h3>
+	<div class="indent">
+		<p>
+		<code>void schemaStartElement(
+string
+$parser, string
+$name, string
+$attrs)</code>
+		</p>
+	
+		<p class="linenumber">[line 160]</p>
+		<p align="center"><strong>start-element handler
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$parser</b> 
+		- 
+		XML parser object</li>
+			<li>
+		<span class="type">string</span>
+		<b>$name</b> 
+		- 
+		element name</li>
+			<li>
+		<span class="type">string</span>
+		<b>$attrs</b> 
+		- 
+		associative array of attributes</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodserializeSchema"></a>
+	<p></p>
+	<h3>serializeSchema</h3>
+	<div class="indent">
+		<p>
+		<code>void serializeSchema(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 429]</p>
+		<p align="center"><strong>serialize the schema
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodserializeTypeDef"></a>
+	<p></p>
+	<h3>serializeTypeDef</h3>
+	<div class="indent">
+		<p>
+		<code>mixed serializeTypeDef(
+mixed
+$type, string
+$type,)</code>
+		</p>
+	
+		<p class="linenumber">[line 621]</p>
+		<p align="center"><strong>returns a sample serialization of a given type, or false if no type by the given name
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$type,</b> 
+		- 
+		name of type</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodtypeToForm"></a>
+	<p></p>
+	<h3>typeToForm</h3>
+	<div class="indent">
+		<p>
+		<code>string typeToForm(
+mixed
+$name, mixed
+$type, string
+$name,, string
+$type,)</code>
+		</p>
+	
+		<p class="linenumber">[line 656]</p>
+		<p align="center"><strong>returns HTML form elements that allow a user  to enter values for creating an instance of the given type.
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$name,</b> 
+		- 
+		name for type instance</li>
+			<li>
+		<span class="type">string</span>
+		<b>$type,</b> 
+		- 
+		name of type</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodxdebug"></a>
+	<p></p>
+	<h3>xdebug</h3>
+	<div class="indent">
+		<p>
+		<code>void xdebug(
+string
+$string)</code>
+		</p>
+	
+		<p class="linenumber">[line 522]</p>
+		<p align="center"><strong>adds debug data to the clas level debug string
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$string</b> 
+		- 
+		debug data</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+</div>
+	<div id="credit">
+		<hr>
+		Documentation generated on Thu, 27 Oct 2005 13:03:29 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.2.3</a>
+	</div>
+</div>
+</body>
+</html>

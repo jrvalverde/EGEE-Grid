@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Docs for page config.php</title>
+	<link rel="stylesheet" type="text/css" id="layout" href="../media/layout.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../media/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../media/print.css" media="print">
+</head>
+
+<body>
+<div id="header">
+	<div id="navLinks">
+		[ <a href="../classtrees_grock.html">Class Tree: grock</a> ]
+		[ <a href="../elementindex_grock.html">Index: grock</a> ]
+		[ <a href="../elementindex.html">All elements</a> ]
+	</div>
+	<div id="packagePosition">
+		<div id="packageTitle2">grock</div>
+		<div id="packageTitle">grock</div>
+		<div id="elementPath"> &middot; </div>
+	</div>
+</div>
+
+<div id="nav" class="small">
+	<div id="packages">
+		Packages:
+					<p><a href="../li_GROCK.html">GROCK</a></p>
+					<p><a href="../li_Grid.html">Grid</a></p>
+					<p><a href="../li_grock.html">grock</a></p>
+					<p><a href="../li_SExec.html">SExec</a></p>
+			</div>
+
+				<div id="index">
+			<div id="files">
+								Files:<br>
+								<a href="../grock/_config_php.html">		config.php
+		</a><br>
+			<a href="../grock/_database_php.html">		database.php
+		</a><br>
+			<a href="../grock/_dock_php.html">		dock.php
+		</a><br>
+			<a href="../grock/_explore_complex_php.html">		explore_complex.php
+		</a><br>
+			<a href="../grock/_explore_match_php.html">		explore_match.php
+		</a><br>
+			<a href="../grock/_explore_molecule_php.html">		explore_molecule.php
+		</a><br>
+			<a href="../grock/_fishy_php.html">		fishy.php
+		</a><br>
+			<a href="../grock/_gramm_php.html">		gramm.php
+		</a><br>
+			<a href="../grock/_grid_config_php.html">		grid_config.php
+		</a><br>
+			<a href="../grock/_grock-ws_php.html">		grock-ws.php
+		</a><br>
+			<a href="../grock/_grock_php.html">		grock.php
+		</a><br>
+			<a href="../grock/_grock_lib_php.html">		grock_lib.php
+		</a><br>
+			<a href="../grock/_processor_php.html">		processor.php
+		</a><br>
+			<a href="../grock/_report_php.html">		report.php
+		</a><br>
+			<a href="../grock/_ssh_php.html">		ssh.php
+		</a><br>
+			<a href="../grock/_util_php.html">		util.php
+		</a><br>
+				</div>
+			<div id="classes">
+							</div>
+		</div>
+	</div>
+
+<div id="body">
+			<h1>Procedural File: config.php</h1>
+	<p style="margin: 0px;">Source Location: /config.php</p>
+	
+<br>
+<br>
+
+<div class="contents">
+<h2>Classes:</h2>
+<dl>
+</dl>
+</div>
+
+<h2>Page Details:</h2>
+<p align="center"><strong>Variables used to connect with the user interface host
+</strong></p>
+<p>This library is free software; you can redistribute it and/or  modify it under the terms of the GNU Lesser General Public  License as published by the Free Software Foundation; either  version 2.1 of the License, or (at your option) any later version.</p><p>This library is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  Lesser General Public License for more details.</p><p>You should have received a copy of the GNU Lesser General Public  License along with this library; if not, write to the Free Software  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</p><h4>Tags:</h4>
+<ul>
+	<li><b>see</b> - <a href="../grock/_grid_config_php.html">grid_config.php</a></li>
+	<li><b>link</b> - <a href="http://savannah.cern.ch/projects/GridGRAMM">http://savannah.cern.ch/projects/GridGRAMM</a></li>
+	<li><b>since</b> - File available since release 0.0</li>
+	<li><b>version</b> - $Id$</li>
+	<li><b>license</b> - ../c/lgpl.txt</li>
+	<li><b>author</b> - Jose R. Valverde &lt;<a href="mailto:david@cnb.uam.es">mailto:david@cnb.uam.es</a>&gt;</li>
+	<li><b>copyright</b> - CSIC</li>
+	<li><b>author</b> - David Garcia &lt;<a href="mailto:david@cnb.uam.es">mailto:david@cnb.uam.es</a>&gt;</li>
+</ul>
+<hr>
+Includes:<br>
+require_once(<a href="../grock/_grid_config_php.html">'grid_config.php'</a>) <span class="linenumber">[line 222]</span>
+<br />
+<p align="center"><strong>URL (absolute or relative) to a servlet that may generate a  PNG image file from a PDB structure
+</strong></p>
+<p>global string $pdb2ps</p><hr>
+<div id="global">
+	<a name="global$db_dir"></a>
+	<h3><i>string</i> $db_dir</h3>
+	<div class="indent">
+	<p class="linenumber">[line 154]</p>
+	<p align="center"><strong>Directory where the database listings are located
+</strong></p>
+<p>This directory contains listings of entries from the  actual databases: the databases themselves may be much  more comprehensive, but we are interested in searching  only against the subset of entries specified in the  listing files, which are located here.</p><p>This allows us to have a single master, fully complete  database and various listings of different subsets that  take less space (e.g. pdb40, pdb50, pdb90...).</p>
+	<p><b>Default Value:</b>&quot;$app_dir$app_dir/databases/&quot;</p>
+		</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="global$hicup_path"></a>
+	<h3><i>string</i> $hicup_path</h3>
+	<div class="indent">
+	<p class="linenumber">[line 168]</p>
+	<p align="center"><strong>Path to actual HIC-Up database files
+</strong></p>
+
+	<p><b>Default Value:</b>'/data/gen/hic-up'</p>
+		</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="global$local_tmp_path"></a>
+	<h3><i>string</i> $local_tmp_path</h3>
+	<div class="indent">
+	<p class="linenumber">[line 127]</p>
+	<p align="center"><strong>Path to the working directories in the local machine
+</strong></p>
+<p>This must be a directory within the Web server accessible area.  Typically a directory below the 'htdocs' or $DocumentRoot</p><p>In principle this is the same as $tmp_path, but we want a  variable name that makes it evident whether we are talking  of a temporary path in the local system or the remote back  end.</p>
+	<p><b>Default Value:</b>$tmp_path</p>
+		</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="global$maintainer"></a>
+	<h3><i>string</i> $maintainer</h3>
+	<div class="indent">
+	<p class="linenumber">[line 39]</p>
+	<p align="center"><strong>email address of the service maintainer
+</strong></p>
+<p>Used to point users to some help desk reference if anything goes wrong  i.e. YOU</p>
+	<p><b>Default Value:</b>&quot;netadmin@es.embnet.org&quot;</p>
+		</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="global$mmtsb_tools"></a>
+	<h3><i>string</i> $mmtsb_tools</h3>
+	<div class="indent">
+	<p class="linenumber">[line 182]</p>
+	<p align="center"><strong>Path to MMTSB tools used by PDB database manipulation routines
+</strong></p>
+
+	<p><b>Default Value:</b>&quot;/opt/structure/mmtsb_tools/perl/&quot;</p>
+		</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="global$pdb_path"></a>
+	<h3><i>string</i> $pdb_path</h3>
+	<div class="indent">
+	<p class="linenumber">[line 161]</p>
+	<p align="center"><strong>Path to actual PDB database files
+</strong></p>
+
+	<p><b>Default Value:</b>'/data/gen/pdb'</p>
+		</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="global$pkg_name"></a>
+	<h3><i>string</i> $pkg_name</h3>
+	<div class="indent">
+	<p class="linenumber">[line 95]</p>
+	<p align="center"><strong>Title to use for displaying in all the page headers
+</strong></p>
+
+	<p><b>Default Value:</b>&quot;GROCK&quot;</p>
+		</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="global$www_app_dir"></a>
+	<h3><i>string</i> $www_app_dir</h3>
+	<div class="indent">
+	<p class="linenumber">[line 108]</p>
+	<p align="center"><strong>Path to where this program has been installed
+</strong></p>
+<p>We will use this path to avoid duplicating common files. In order  to do so, we need to know the path relative to Document Root, since  that is how it will be accessed over the Web. Should we need a full  path we can always rebuild it by concatenating this with $document_root</p>
+	<p><b>Default Value:</b>&quot;/cgi-src/Grid/GROCK&quot;</p>
+		</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="global$zinc_path"></a>
+	<h3><i>string</i> $zinc_path</h3>
+	<div class="indent">
+	<p class="linenumber">[line 175]</p>
+	<p align="center"><strong>Path to actual ZINC database files
+</strong></p>
+
+	<p><b>Default Value:</b>'/data/gen/zinc'</p>
+		</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+</div><hr>
+<div id="define">
+</div><hr>
+<div id="function">
+</div>
+	<div id="credit">
+		<hr>
+		Documentation generated on Thu, 27 Oct 2005 13:03:30 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.2.3</a>
+	</div>
+</div>
+</body>
+</html>

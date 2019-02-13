@@ -1,0 +1,14 @@
+#!/bin/sh
+
+rm *_fit.pdb
+rm *.dih.Z *.ngh.Z *.psa.Z *.mat *.fit *.sum *.html cluster.opt
+rm 1fdx.rsr 1fdx.d[01]? 1fdx.pln 1fdx.sdh procheck.prm cluster.deb
+rm to-be-refined.tmp *.D* *.B* *.L* *.rsr *.ini *IL* *.lrsr
+rm *.ps *.log *.E* *.V* nmemb.dat occupancy.dat alignment.pap
+rm 1fdx.deb 1fdx.ini 1fdx.lan 1fdx.mod 1fdx.nb 1fdx.new
+rm 1fdx.out 1fdx.rdeb 1fdx.rin 1fdx.sch 1fdx.sco
+rm anglen.log clean.log get-model1.log nb.log pplot.log
+rm procheck.par secstr.log comp.log
+rm fort.* top.out .atc* atjob* model-loop_??.* run_clustor.*
+rm std??? clustor.log* .at*
+rm model.rsr model.[BVD]* model.ini model.sch

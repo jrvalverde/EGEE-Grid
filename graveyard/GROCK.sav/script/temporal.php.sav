@@ -1,0 +1,313 @@
+<?
+
+require_once("./grid.php");
+
+
+// SECURITY??? TO DO...
+
+/**
+ * Our session_id. Is the same for the LOCAL and the REMOTE machines.
+ */  
+$session_id=random_number();
+$session_path="$local_tmp_path/$session_id";
+
+/**
+ * GRAMM docking resolution
+ */
+$resolution=$_POST["resolution"];
+
+/**
+ * GRAMM docking type
+ */
+$representation=$_POST["representation"];
+
+/**
+ * Generate the local working directory and enter it.
+ */
+generate_sandbox($session_path);
+ 
+/**
+ * Ligand upload validation
+ *
+ * Checks the ligand file upload. This function can be debugged.
+ */ 
+upload_user_data($session_path);
+$ligand=basename($_FILES['upload']['name'][0]);  
+
+/**
+ * GROCK: GRid dOCKing
+ * VARIABLES COMMENTS!!! VARIABLES COMMENTS!!! VARIABLES COMMENTS!!!
+ */ 
+do_grock($app_dir, $local_tmp_path, $session_path, $session_id, $resolution, $representation, $grid_password, $grid_passphrase, $UI_grid_path);
+
+/**
+ * The signal to notice the job is done is the "jobs_sended.txt" file
+ */
+$handle=fopen("$session_path/jobs_sended.txt", "w");
+fclose($handle);
+
+
+echo "<center><h1>Please, click <a href=\"http://bakunin.cnb.uam.es/cgi-src/Grid/GROCK/script/results.php?id=$session_id&ligand=$ligand\">HERE</a> to see the GROCK results page</h1><center>";
+
+function do_grock($app_dir, $local_tmp_path, $session_path, $session_id, $resolution, $representation, $grid_password, $grid_passphrase, $UI_grid_path)
+{   	
+
+	/**
+	 * We check if the PDB list file is available
+	 */
+    	$fp = fopen("$app_dir/pdb_nr/pdb40.lst", "r");
+    	if (!$fp)
+    	{
+    	    letal("Receptors list", "Cannot read the PDB list file.");
+    	}
+	
+	
+	/**
+	 * COMMENTS
+	 */
+	$cmd = "/opt/globus/bin/grid-proxy-init -valid 72:00 -pwstdin";
+        remote_cmd($cmd, $grid_password, $grid_passphrase);
+		
+	//REMOTE DIRECTORY
+	$cmd = "mkdir $UI_grid_path/$session_id; hostname";
+        remote_cmd($cmd, $grid_password, "");
+	    
+	/*
+	 * Start a loop to send the gramm jobs over the grid.
+	 * There is a job for each ligand-receptor pair.
+	 */
+	$i = 0;
+	while (!feof($fp)) 
+	{ 
+	    /*
+	     * Read the PDB list file.
+	     */
+    	    $line = fgets( $fp );
+	    $i++;
+	    echo $i."\t:[".$line . "]<br>\n";
+	    if ($line=="")
+	    {
+	     	continue;
+	    }
+	    
+	    /*
+	     * Process line by line the file with the receptors list, to get the receptors file.
+	     * Some receptor/protein names have the last character empty
+	     */
+	    $aux = substr("$line", 5, 6);
+	    $aux = trim($aux);
+    	    $chain = substr("$aux", 5, 1);
+	    
+	    /**
+	     * To send a GRAMM job over the grid we need:
+	     * - A JDL("Job Description Language") file
+	     * - The GRAMM program itself!!!
+	     */
+	    create_gramm_job($app_dir, $session_path, $aux, $resolution, $representation);
+	    
+	    //RECEPTORS DIRECTORIES
+	    //TO CHANGE???
+	    $local_dir = "$local_tmp_path/$session_id/$aux";
+	    $remote_dir="$UI_grid_path/$session_id/$aux";
+	    $from="local";
+    	    remote_copy($local_dir, $remote_dir, $grid_password, $from);
+	    
+	}
+    	
+	/*
+	 * We send the grid job here
+	 */
+	// XXX JR XXX
+	// NOTA: COPIA lcg-submitter y output tools al directorio local
+	// de GROCK (p. ej. en ./lcg-submit)
+	// Luego, antes de ejecutar lo que sigue haz
+	//
+	//  ssh_copy_to('.lcg-submiter', $UI_grid_path');
+	//
+	// y sustituye el comando por
+	//
+	// cmd = "/usr/bin/perl $UI_grid_path/lcg-submit/lcg-submitter-biomed-beta11.pl -session $remote_session";
+	//
+	// De este modo nos aseguramos ser independientes de localidades.
+	//
+	// PRUEBALO, Y LUEGO BORRA ESTE COMENTARIO.
+	//
+	$remote_session= "$UI_grid_path/$session_id";
+	$cmd = "/usr/bin/perl /home/david/newgrock/lcg-submitter-biomed-beta11.pl -session $remote_session";
+	remote_cmd($cmd, $grid_password, "");
+	
+	/**
+	 * We close the PDB list
+	 */
+    	rewind ( $fp  );
+    	fclose( $fp );
+	
+	}
+
+function random_number()
+{
+    /**
+     * Random values generation
+     * srand -- Seed the random number generator
+     * rand -- Generate a random integer
+     */
+     srand((double)microtime()*10000);
+     $random_value = rand();
+     return $random_value;
+}
+
+function generate_sandbox($session_path)
+{
+    mkdir("$session_path");
+    chdir("$session_path");	
+}
+
+function upload_user_data($session_path)
+{
+
+    /**
+     * In PHP versions earlier than 4.1.0, $HTTP_POST_FILES should be used instead
+     * of $_FILES.
+     */ 
+    $uploaddir = "$session_path/";
+    //$uploadfile = $uploaddir . basename($_FILES['upload']['name'][0]); 
+    $uploadfile = $uploaddir . "ligand.pdb";
+
+    /*
+     * The uploaded file will we moved later by the "install_grid_files" function
+     * to a directory inside the session directory, named with the receptor file.
+     */
+    if (move_uploaded_file($_FILES['upload']['tmp_name'][0], $uploadfile)) 
+    {
+    	echo "<center>Ligand file is valid, and was successfully uploaded.</center>\n";
+    } else 
+    {
+    	letal("File Upload", "Cannot upload ligand file");
+    }
+
+    /**
+     * Upload information
+     *
+     */
+    
+    	//echo 'Here is some more debugging info:';
+    	//print_r($_FILES);
+
+}
+
+function create_gramm_job($app_dir, $session_path, $aux, $resolution, $representation)
+{
+    $local_job_directory="$session_path/$aux";	
+    /*
+     * LOCAL working directory. The Grid class copies the whole directoy
+     * to the REMOTE machine, the USER INTERFACE.
+     */
+    exec("mkdir -p $local_job_directory");
+    chdir("$local_job_directory");
+    
+    /*
+     * We move the ligand file, uploaded by the user with the GROCK form
+     */
+    exec("cp $session_path/ligand.pdb $local_job_directory/");
+    
+    /*
+     * Now we extract the receptor file from the PDB database.
+     */
+     receptor_file($session_path, $local_job_directory, $aux);
+     
+    /*
+     * GRAMM program files. The rpar.gr is generated under the user instructions in the submit form.
+     */     
+    write_rpar_gr($local_job_directory, $resolution, $representation);
+    
+    exec("cp $app_dir/script/gramm/rmol.gr $local_job_directory/rmol.gr");
+    exec("cp $app_dir/script/gramm/wlist.gr $local_job_directory/wlist.gr");
+    exec("cp $app_dir/script/gramm/gramm $local_job_directory/gramm");
+    exec("cp -r $app_dir/script/gramm/*.dat $local_job_directory/");
+    exec("cp $app_dir/script/gramm/gramm.sh $local_job_directory/gramm.sh");
+    
+    /**
+     * We generate the gramm-go-tar.gz package
+     */
+    exec("tar -cf gramm-go.tar *.dat *.gr gramm");
+    exec("gzip gramm-go.tar");
+    exec("rm -f *dat *gr gramm");
+    
+    /**
+     * JDL file, mandatory to send a job over the grid
+     */
+    exec("cp $app_dir/jdl/session.jdl $local_job_directory");
+    
+}
+
+
+function receptor_file($session_path, $local_job_directory, $aux)
+{
+      // PDB Database
+      $local_pdb_path="/data/gen/pdb";
+      
+      // Path to convpdb.pl script
+      $mmtsb_tools="/opt/structure/mmtsb_tools/perl/";
+      
+      /**
+       * We extract the last character of the pdb file name
+       */
+      $chain=substr($aux, 5, 6);
+      if ($chain=="")
+    	     { 
+	    	$entry="pdb".strtolower( substr("$aux", 0, 4) ).".ent";
+	    	exec("echo $aux >> $session_path/pdb_list.txt");
+		exec("cp $local_pdb_path/$entry $local_job_directory/receptor.pdb");
+	     } else
+    	     { 
+	    	$mmtsb_tools="/opt/structure/mmtsb_tools/perl/";
+	    	$entry="pdb".strtolower( substr("$aux", 0, 4) ).".ent";
+	        exec("echo $aux >> $session_path/pdb_list.txt");
+		exec("$mmtsb_tools/convpdb.pl -chain $chain $local_pdb_path/$entry > $local_job_directory/$entry");
+		exec("cp $local_pdb_path/$entry $local_job_directory/receptor.pdb");
+	     }
+}
+
+function write_rpar_gr($local_job_directory, $resolution, $representation)
+{
+    $rpar="./rpar.gr";
+    $matching = "generic"; //$matching = "helix";
+    
+    if ($representation=="hydrophobic")
+    {
+        $projection="blackwhite";
+    }else
+    {
+        $projection="gray";
+    }
+
+    $fp = fopen( "$rpar", "w" );
+
+        if ( $resolution=="low")
+        {
+            fwrite( $fp, "Matching mode (generic/helix) ....................... mmode= $matching\n" );
+            fwrite( $fp, "Grid step ............................................. eta= 6.8\n" );
+            fwrite( $fp, "Repulsion (attraction is always -1) .................... ro= 6.5.\n" );
+            fwrite( $fp, "Attraction double range (fraction of single range) ..... fr= 0.\n" );
+            fwrite( $fp, "Potential range type (atom_radius, grid_step) ....... crang= grid_step\n" );
+            fwrite( $fp, "Projection (blackwhite, gray) ................ ....... ccti= $projection\n" );
+            fwrite( $fp, "Representation (all, hydrophobic) .................... crep= $representation\n" );
+            fwrite( $fp, "Number of matches to output .......................... maxm= 1000\n" );
+            fwrite( $fp, "Angle for rotations, deg (10,12,15,18,20,30, 0-no rot.)  ai= 20\n" );
+        }else
+        {
+            fwrite( $fp, "Matching mode (generic/helix) ....................... mmode= $matching\n" );
+            fwrite( $fp, "Grid step ............................................. eta= 1.7\n" );
+            fwrite( $fp, "Repulsion (attraction is always -1) .................... ro= 30.\n" );
+            fwrite( $fp, "Attraction double range (fraction of single range) ..... fr= 0.\n" );
+            fwrite( $fp, "Potential range type (atom_radius, grid_step) ....... crang= atom_radius\n" );
+            fwrite( $fp, "Projection (blackwhite, gray) ................ ....... ccti= $projection\n" );
+            fwrite( $fp, "Representation (all, hydrophobic) .................... crep= $representation\n" );
+            fwrite( $fp, "Number of matches to output .......................... maxm= 1000\n" );
+            fwrite( $fp, "Angle for rotations, deg (10,12,15,18,20,30, 0-no rot.)  ai= 10\n" );
+        }
+
+    fclose($fp);
+}
+
+?>

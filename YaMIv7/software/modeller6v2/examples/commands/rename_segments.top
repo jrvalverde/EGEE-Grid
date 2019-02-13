@@ -1,0 +1,11 @@
+# Example for: RENAME_SEGMENTS
+
+# This will assign new PDB single-character chain id's to all the chains
+# in the input PDB file (here there are two 'chains': protein and the HETATM
+# water molecules).
+
+# Read the MODEL with all HETATM and water records (so there are two 'chains'):
+READ_MODEL FILE = '1fas', HETATM_IO = on, WATER_IO = on
+# Assign new segment names and write out the new model:
+RENAME_SEGMENTS SEGMENT_IDS = 'X' 'Y'
+WRITE_MODEL FILE = '1fas.ini'

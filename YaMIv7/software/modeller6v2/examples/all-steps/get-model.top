@@ -1,0 +1,22 @@
+# PRIMER: STEP 5
+#
+# This script should produce two models, 1fdx.B999901 and 1fdx.B999902.
+# 
+# Before you run this script, do this: ln alignment.seg.ali fer2.ali
+#
+
+INCLUDE                             # Include the predefined TOP routines
+
+SYSTEM COMMAND = 'ln -s alignment.seg.ali fer2.ali'
+
+SET ALNFILE  = 'fer2.ali'           # alignment filename
+SET KNOWNS   = '5fd1' '1fdn'        # codes of the templates
+SET SEQUENCE = '1fdx'               # code of the target
+SET ATOM_FILES_DIRECTORY = './:../atom_files' # directories for input atom files
+SET STARTING_MODEL= 1               # index of the first model 
+SET ENDING_MODEL  = 2               # index of the last model
+                                    # (determines how many models to calculate)
+SET DEVIATION     = 4.0             # have to be >0 if more than 1 model
+SET RAND_SEED     = -12312          # to have different models from another TOP file
+
+CALL ROUTINE = 'model'              # do homology modelling

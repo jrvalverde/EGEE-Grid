@@ -1,0 +1,124 @@
+
+
+
+                                 INSTALLATION    
+
+                             M O D E L L E R   6v2      
+
+
+                       Copyright(c) 1989-2001 Andrej Sali           
+                              All Rights Reserved
+
+
+
+** PLATFORMS
+
+  MODELLER is written in Fortran 90 and runs on Silicon Graphics under IRIX,
+  on Sun workstation under Solaris, IBM under AIX, on DEC Alphas and Pentium
+  PC's under Linux.
+
+
+
+** INSTALLATION
+
+  See file modeller.README for information about how to get MODELLER. The
+  source code is not generally available. Hence, most users are limited to
+  the compiled versions of MODELLER. Program is distributed as a single
+  compressed tar archive (modeller6v2.tar.Z) that contains scripts,
+  libraries, examples, documentation (in PDF and HTML formats) and 
+  executables for different platforms and operating systems.
+
+
+   1)  Download modeller6v2.tar.Z file into the desired directory
+       on your computer.
+
+
+   2)  Unpack the file:     
+
+          uncompress modeller6v2.tar.Z     
+          tar xvf modeller6v2.tar  
+
+      The result of unpacking will be directory ./modeller6v2 
+      (next to the  modeller6v2.tar.Z file) with the following 
+      uncompressed files and  directories:
+
+         doc/             MODELLER documentation directory
+         examples/        directory containing examples and tutorials
+         Install          installation script          
+         INSTALLATION     this file
+         modeller.README  file describing distribution and registration
+         modlib/          libraries and data files for the program
+         scripts/         script files used to compile and use MODELLER
+         src/             directory with executables
+
+
+   3)  Go to the ./modeller6v2 directory and run the installation script 
+
+         ./Install 
+
+       Answer several questions as prompted. If you make a mistake, 
+       you can re-run the script.
+
+
+   4)  If the script installation was successful you may stop here. 
+    Otherwise you have to install MODELLER manually as described 
+    below.
+
+
+5)  Include into your login script the lines below. Edit them 
+    appropriately to suit your system. In case of csh or tcsh 
+    the login script is ".cshrc" (you can generally find your 
+    current shell by typing 'echo $shell').
+
+#######################################################
+
+# this is a location of the modeller6v2 directory           
+# (i.e where you unpacked tar.Z file)
+setenv MODINSTALL6v2 /usr/local/modeller/modeller6v2           
+
+# please comment out those that don't apply to you:
+setenv EXECUTABLE_TYPE6v2   i386-absoft  # for Linux
+setenv EXECUTABLE_TYPE6v2   iris4d       # for SGI
+setenv EXECUTABLE_TYPE6v2   sun4         # for SUN
+setenv EXECUTABLE_TYPE6v2   alpha        # for DEC Alpha
+setenv EXECUTABLE_TYPE6v2   rs6000       # for IBM 
+
+setenv LIBS_LIB6v2         
+$MODINSTALL6v2/modlib/libs.lib
+
+# replace KEY_MODELLER with the Modeller key you obtained
+# after signing the online license agreement
+setenv KEY_MODELLER6v2
+
+set    path=($path $MODINSTALL6v2/bin)
+limit  stacksize unlimited
+
+########################################################
+
+
+   6)  Source the login script by executing the command:  
+
+         source ~/.cshrc
+
+
+   5)  Install the program:  
+
+        a) change directory:      
+           cd $MODINSTALL6v2/src/main  
+
+        b) execute command:      
+           make install
+ 
+
+
+  For additional information visit our web site: 
+  http://guitar.rockefeller.edu
+
+
+
+  Sincerely,
+  Modeller Team
+  December, 2001.
+
+
+

@@ -1,0 +1,7 @@
+Type = "Job";
+JobType = "normal";
+VirtualOrganisation= "biomed";
+Executable = "/bin/hostname";
+StdOutput = "salida.out";
+StdError = "error.err";
+OutputSandbox = {"error.err","salida.out"};

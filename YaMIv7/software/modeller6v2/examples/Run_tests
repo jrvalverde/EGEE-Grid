@@ -1,0 +1,13 @@
+#!/bin/sh
+
+currdir=`pwd`
+scriptname=run_tops1
+
+for script in `find . -name $scriptname  -print`
+do
+  dir=`dirname $script`
+  cd $dir
+  echo DIR: $dir
+  ./$scriptname
+  cd $currdir
+done

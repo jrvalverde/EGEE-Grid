@@ -1,0 +1,752 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Docs For Class soap_parser</title>
+	<link rel="stylesheet" type="text/css" id="layout" href="../media/layout.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../media/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../media/print.css" media="print">
+</head>
+
+<body>
+<div id="header">
+	<div id="navLinks">
+		[ <a href="../classtrees_GROCK.html">Class Tree: GROCK</a> ]
+		[ <a href="../elementindex_GROCK.html">Index: GROCK</a> ]
+		[ <a href="../elementindex.html">All elements</a> ]
+	</div>
+	<div id="packagePosition">
+		<div id="packageTitle2">GROCK</div>
+		<div id="packageTitle">GROCK</div>
+		<div id="elementPath"> &middot; </div>
+	</div>
+</div>
+
+<div id="nav" class="small">
+	<div id="packages">
+		Packages:
+					<p><a href="../li_GROCK.html">GROCK</a></p>
+					<p><a href="../li_Grid.html">Grid</a></p>
+					<p><a href="../li_grock.html">grock</a></p>
+					<p><a href="../li_SExec.html">SExec</a></p>
+			</div>
+
+				<div id="index">
+			<div id="files">
+								Files:<br>
+								<a href="../GROCK/_lib_class_nusoap_base_php.html">		class.nusoap_base.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soapclient_php.html">		class.soapclient.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_fault_php.html">		class.soap_fault.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_parser_php.html">		class.soap_parser.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_server_php.html">		class.soap_server.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_transport_http_php.html">		class.soap_transport_http.php
+		</a><br>
+			<a href="../GROCK/_lib_class_soap_val_php.html">		class.soap_val.php
+		</a><br>
+			<a href="../GROCK/_lib_class_wsdl_php.html">		class.wsdl.php
+		</a><br>
+			<a href="../GROCK/_lib_class_wsdlcache_php.html">		class.wsdlcache.php
+		</a><br>
+			<a href="../GROCK/_lib_class_xmlschema_php.html">		class.xmlschema.php
+		</a><br>
+			<a href="../GROCK/_lib_nusoap_php.html">		nusoap.php
+		</a><br>
+			<a href="../GROCK/_lib_nusoapmime_php.html">		nusoapmime.php
+		</a><br>
+				</div>
+			<div id="classes">
+				Classes:<br>
+								<a href="../GROCK/nusoap_base.html">		nusoap_base
+		</a><br>
+			<a href="../GROCK/soapclient.html">		soapclient
+		</a><br>
+			<a href="../GROCK/soapclientmime.html">		soapclientmime
+		</a><br>
+			<a href="../GROCK/soapval.html">		soapval
+		</a><br>
+			<a href="../GROCK/soap_fault.html">		soap_fault
+		</a><br>
+			<a href="../GROCK/soap_parser.html">		soap_parser
+		</a><br>
+			<a href="../GROCK/soap_server.html">		soap_server
+		</a><br>
+			<a href="../GROCK/soap_transport_http.html">		soap_transport_http
+		</a><br>
+			<a href="../GROCK/wsdl.html">		wsdl
+		</a><br>
+			<a href="../GROCK/wsdlcache.html">		wsdlcache
+		</a><br>
+			<a href="../GROCK/XMLSchema.html">		XMLSchema
+		</a><br>
+				</div>
+		</div>
+	</div>
+
+<div id="body">
+			<h1>Class: soap_parser</h1>
+	<p style="margin: 0px;">Source Location: /lib/class.soap_parser.php</p>
+	
+
+<div class="leftcol">
+	<h3><a href="#class_details">Class Overview</a> <span class="smalllinenumber">[line 14]</span></h3>
+	<div id="classTree"><pre>nusoap_base
+   |
+   --soap_parser</pre>
+</div>
+	<div class="small">
+	<p>soap_parser class parses SOAP XML messages into native PHP values</p>
+		<h4>Author(s):</h4>
+	<ul>
+																		<li>Dietrich Ayala &lt;<a href="mailto:dietrich@ganx4.com">mailto:dietrich@ganx4.com</a>&gt;</li>
+						</ul>
+	<h4>Version:</h4>
+	<ul>
+													<li>$Id: class.soap_parser.php,v 1.27 2004/04/22 14:32:23 snichol Exp $</li>
+											</ul>
+
+	<h4>Copyright:</h4>
+	<ul>
+																		</li>
+	</div>
+</div>
+
+<div class="middlecol">
+	<h3><a href="#class_vars">Variables</a></h3>
+	<ul class="small">
+				<li><a href="../GROCK/soap_parser.html#var$body_position">$body_position</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$debug_flag">$debug_flag</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$decode_utf8">$decode_utf8</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$default_namespace">$default_namespace</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$depth">$depth</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$depth_array">$depth_array</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$document">$document</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$fault">$fault</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$fault_code">$fault_code</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$fault_detail">$fault_detail</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$fault_str">$fault_str</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$ids">$ids</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$message">$message</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$method">$method</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$multirefs">$multirefs</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$namespaces">$namespaces</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$parent">$parent</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$position">$position</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$responseHeaders">$responseHeaders</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$root_header">$root_header</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$root_struct">$root_struct</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$root_struct_name">$root_struct_name</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$root_struct_namespace">$root_struct_namespace</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$soapresponse">$soapresponse</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$status">$status</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$xml">$xml</a></li>
+				<li><a href="../GROCK/soap_parser.html#var$xml_encoding">$xml_encoding</a></li>
+			</ul>
+</div>
+<div class="rightcol">
+	<h3><a href="#class_methods">Methods</a></h3>
+	<ul class="small">
+				<li><a href="../GROCK/soap_parser.html#methodsoap_parser">soap_parser</a></li>
+				<li><a href="../GROCK/soap_parser.html#methodbuildVal">buildVal</a></li>
+				<li><a href="../GROCK/soap_parser.html#methodcharacter_data">character_data</a></li>
+				<li><a href="../GROCK/soap_parser.html#methoddecodeSimple">decodeSimple</a></li>
+				<li><a href="../GROCK/soap_parser.html#methoddecode_entities">decode_entities</a></li>
+				<li><a href="../GROCK/soap_parser.html#methodend_element">end_element</a></li>
+				<li><a href="../GROCK/soap_parser.html#methodgetHeaders">getHeaders</a></li>
+				<li><a href="../GROCK/soap_parser.html#methodget_response">get_response</a></li>
+				<li><a href="../GROCK/soap_parser.html#methodstart_element">start_element</a></li>
+			</ul>
+</div>
+
+<div id="content">
+<hr>
+	<div class="contents">
+	</div>
+
+	<div class="leftCol">
+	<h2>Inherited Variables</h2>
+		</div>
+
+	<div class="rightCol">
+	<h2>Inherited Methods</h2>
+		</div>
+	<br clear="all">
+	<hr>
+
+	<a name="class_details"></a>
+	<h2>Class Details</h2>
+	<p align="center"><strong>soap_parser class parses SOAP XML messages into native PHP values
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+	<li><b>version</b> - $Id: class.soap_parser.php,v 1.27 2004/04/22 14:32:23 snichol Exp $</li>
+	<li><b>author</b> - Dietrich Ayala &lt;<a href="mailto:dietrich@ganx4.com">mailto:dietrich@ganx4.com</a>&gt;</li>
+</ul>
+	<p class="small" style="color: #334B66;">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_vars"></a>
+	<h2>Class Variables</h2>
+		<a name="var$body_position"></a>
+	<p></p>
+	<h4>$body_position = <span class="value">&nbsp;0</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 40]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$debug_flag"></a>
+	<p></p>
+	<h4>$debug_flag = <span class="value">&nbsp;true</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 37]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$decode_utf8"></a>
+	<p></p>
+	<h4>$decode_utf8 = <span class="value">&nbsp;true</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 47]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$default_namespace"></a>
+	<p></p>
+	<h4>$default_namespace = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 28]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$depth"></a>
+	<p></p>
+	<h4>$depth = <span class="value">&nbsp;0</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 27]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$depth_array"></a>
+	<p></p>
+	<h4>$depth_array = <span class="value">array()</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 36]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$document"></a>
+	<p></p>
+	<h4>$document = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 23]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$fault"></a>
+	<p></p>
+	<h4>$fault = <span class="value">&nbsp;false</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 32]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$fault_code"></a>
+	<p></p>
+	<h4>$fault_code = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 33]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$fault_detail"></a>
+	<p></p>
+	<h4>$fault_detail = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 35]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$fault_str"></a>
+	<p></p>
+	<h4>$fault_str = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 34]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$ids"></a>
+	<p></p>
+	<h4>$ids = <span class="value">array()</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 43]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$message"></a>
+	<p></p>
+	<h4>$message = <span class="value">array()</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 30]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$method"></a>
+	<p></p>
+	<h4>$method = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 18]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$multirefs"></a>
+	<p></p>
+	<h4>$multirefs = <span class="value">array()</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 45]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$namespaces"></a>
+	<p></p>
+	<h4>$namespaces = <span class="value">array()</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 29]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$parent"></a>
+	<p></p>
+	<h4>$parent = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 31]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$position"></a>
+	<p></p>
+	<h4>$position = <span class="value">&nbsp;0</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 26]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$responseHeaders"></a>
+	<p></p>
+	<h4>$responseHeaders = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 39]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$root_header"></a>
+	<p></p>
+	<h4>$root_header = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 22]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$root_struct"></a>
+	<p></p>
+	<h4>$root_struct = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 19]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$root_struct_name"></a>
+	<p></p>
+	<h4>$root_struct_name = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 20]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$root_struct_namespace"></a>
+	<p></p>
+	<h4>$root_struct_namespace = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 21]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$soapresponse"></a>
+	<p></p>
+	<h4>$soapresponse = <span class="value">&nbsp;NULL</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 38]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$status"></a>
+	<p></p>
+	<h4>$status = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 25]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$xml"></a>
+	<p></p>
+	<h4>$xml = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 16]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$xml_encoding"></a>
+	<p></p>
+	<h4>$xml_encoding = <span class="value">&nbsp;''</span></h4>
+	<div class="indent">
+		<p class="linenumber">[line 17]</p>
+				<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_methods"></a>
+	<h2>Class Methods</h2>
+		<a name="methodsoap_parser"></a>
+	<p></p>
+	<h3>soap_parser</h3>
+	<div class="indent">
+		<p>
+		<code>soap_parser soap_parser(
+string
+$xml, [string
+$encoding = 'UTF-8'], [string
+$method = ''], [string
+$decode_utf8 = true])</code>
+		</p>
+	
+		<p class="linenumber">[line 58]</p>
+		<p align="center"><strong>constructor
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$xml</b> 
+		- 
+		SOAP message</li>
+			<li>
+		<span class="type">string</span>
+		<b>$encoding</b> 
+		- 
+		character encoding scheme of message</li>
+			<li>
+		<span class="type">string</span>
+		<b>$method</b> 
+		- 
+		</li>
+			<li>
+		<span class="type">string</span>
+		<b>$decode_utf8</b> 
+		- 
+		whether to decode UTF-8 to ISO-8859-1</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodbuildVal"></a>
+	<p></p>
+	<h3>buildVal</h3>
+	<div class="indent">
+		<p>
+		<code>void buildVal(
+string
+$pos)</code>
+		</p>
+	
+		<p class="linenumber">[line 448]</p>
+		<p align="center"><strong>builds response structures for compound values (arrays/structs)
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$pos</b> 
+		- 
+		position in node tree</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodcharacter_data"></a>
+	<p></p>
+	<h3>character_data</h3>
+	<div class="indent">
+		<p>
+		<code>void character_data(
+string
+$parser, string
+$data)</code>
+		</p>
+	
+		<p class="linenumber">[line 351]</p>
+		<p align="center"><strong>element content handler
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$parser</b> 
+		- 
+		XML parser object</li>
+			<li>
+		<span class="type">string</span>
+		<b>$data</b> 
+		- 
+		element content</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methoddecodeSimple"></a>
+	<p></p>
+	<h3>decodeSimple</h3>
+	<div class="indent">
+		<p>
+		<code>void decodeSimple(
+string
+$value, string
+$type, string
+$typens)</code>
+		</p>
+	
+		<p class="linenumber">[line 411]</p>
+		<p align="center"><strong>decodes simple types into PHP variables
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$value</b> 
+		- 
+		value to decode</li>
+			<li>
+		<span class="type">string</span>
+		<b>$type</b> 
+		- 
+		XML type to decode</li>
+			<li>
+		<span class="type">string</span>
+		<b>$typens</b> 
+		- 
+		XML type namespace to decode</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methoddecode_entities"></a>
+	<p></p>
+	<h3>decode_entities</h3>
+	<div class="indent">
+		<p>
+		<code>void decode_entities(
+string
+$text)</code>
+		</p>
+	
+		<p class="linenumber">[line 396]</p>
+		<p align="center"><strong>decodes entities
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$text</b> 
+		- 
+		string to translate</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodend_element"></a>
+	<p></p>
+	<h3>end_element</h3>
+	<div class="indent">
+		<p>
+		<code>void end_element(
+string
+$parser, string
+$name)</code>
+		</p>
+	
+		<p class="linenumber">[line 264]</p>
+		<p align="center"><strong>end-element handler
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$parser</b> 
+		- 
+		XML parser object</li>
+			<li>
+		<span class="type">string</span>
+		<b>$name</b> 
+		- 
+		element name</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodgetHeaders"></a>
+	<p></p>
+	<h3>getHeaders</h3>
+	<div class="indent">
+		<p>
+		<code>string getHeaders(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 386]</p>
+		<p align="center"><strong>get the parsed headers
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - XML or empty if no headers</li>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodget_response"></a>
+	<p></p>
+	<h3>get_response</h3>
+	<div class="indent">
+		<p>
+		<code>mixed get_response(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 376]</p>
+		<p align="center"><strong>get the parsed message
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodstart_element"></a>
+	<p></p>
+	<h3>start_element</h3>
+	<div class="indent">
+		<p>
+		<code>void start_element(
+string
+$parser, string
+$name, string
+$attrs)</code>
+		</p>
+	
+		<p class="linenumber">[line 123]</p>
+		<p align="center"><strong>start-element handler
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - private</li>
+</ul>
+		
+
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$parser</b> 
+		- 
+		XML parser object</li>
+			<li>
+		<span class="type">string</span>
+		<b>$name</b> 
+		- 
+		element name</li>
+			<li>
+		<span class="type">string</span>
+		<b>$attrs</b> 
+		- 
+		associative array of attributes</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+</div>
+	<div id="credit">
+		<hr>
+		Documentation generated on Thu, 27 Oct 2005 13:03:21 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.2.3</a>
+	</div>
+</div>
+</body>
+</html>

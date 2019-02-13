@@ -1,0 +1,115 @@
+<html>
+  <head>
+    <title>Retinoblastoma protein</title>
+    <script src="Jmol.js"></script>
+  </head>
+  <body bgcolor="#ccccff">
+    <script>
+      jmolInitialize(".");
+      jmolCheckBrowser("popup", "../browsercheck", "onClick");
+    </script>
+    <form>
+
+      <table border="1">
+	<tr>
+	  <td>
+	    <table>
+	      <tr><th>
+		<h2>RB1: The retinoblastoma protein</h2>
+	      </th></tr>
+	      <tr><td>
+	        1GUX: retinoblastoma tumor suppressor protein<br /> 
+		complexed with nine residues of papilloma virus E7<br /> 
+		peptide containing the LXCXE motif
+	      </td></tr>
+	      <tr><td>
+		<script>
+		jmolApplet(400, "load 1gux.pdb.gz; cpk off; wireframe off;" +
+		"cartoon; color cartoon structure");
+		</script>
+	      </td></tr>
+	    </table>
+	  </td>
+	  <td>
+	    <script>
+	      jmolHtml("<b>Space fill</b><br />");
+	      jmolRadioGroup([
+	        ["spacefill off", "off ", "checked"],
+		["spacefill 25%", "25% "],
+		["spacefill 50%", "50% "],
+		["spacefill on",  "100%"]
+		]);
+	    </script>
+	    <script>
+	      jmolHtml("<hr /><b>Wireframe</b><br />");
+	      jmolCheckbox("wireframe on", "wireframe off", "wireframe on/off");
+	    </script>
+	    <script>
+	      jmolHtml("<hr /><b>Cartoon display</b><br />");
+	      jmolCheckbox("cartoon on", "cartoon off", "cartoon on/off", "checked");
+	      jmolHtml("<br />");
+	    </script>
+	    <script>
+	      jmolHtml("<hr /><b>Rocket display</b><br />");
+	      jmolCheckbox("rocket on", "rocket off", "rocket on/off");
+	      jmolHtml("<br />");
+	    </script>
+	    <script>	      
+	      jmolHtml("<hr /><b>Zoom in and take a closer look</b><br />");
+	      jmolButton("zoom 300");
+	      jmolBr();
+	      jmolButton("zoom 200");
+	      jmolBr();
+	      jmolButton("zoom 100");
+	      jmolBr();
+	    </script>
+	    <script>
+	      jmolHtml("<hr /><b>Take it for a spin</b><br />");
+	      jmolCheckbox("spin on", "spin off", "spin");
+	      jmolBr();
+	    </script>
+	    <script>
+	      jmolHtml("<hr><b>Human papillomavirus E7 fragment</b><br />");
+	      jmolCheckbox("select *:E; cpk on; select *",
+	      		   "select *:E; cpk off; select *",
+			   "CPK on/off"
+	      );
+	    </script>
+	  </td>
+	  <td>
+	    <script>
+	      jmolHtml("<b>Color atoms</b><br />");
+	      jmolRadioGroup([
+	        "color atoms none",
+	        ["color atoms structure", null, "checked"],
+		"color atoms amino",
+		"color atoms shapely",
+		"color atoms temperature",
+		], "<br />");
+	    </script>
+	    <script>
+	      jmolHtml("<hr><b>Color cartoons</b><br />");
+	      jmolRadioGroup([
+	        "color cartoon none",
+	        ["color cartoon structure", null, "checked"],
+		"color cartoon amino",
+		"color cartoon shapely",
+		"color cartoon temperature",
+		], "<br />");
+	    </script>
+	    <script>
+	      jmolHtml("<hr><b>Color rockets</b><br />");
+	      jmolRadioGroup([
+	        ["color rocket none", null, "checked"],
+	        "color rocket structure",
+		"color rocket amino",
+		"color rocket shapely",
+		"color rocket temperature",
+		], "<br />");
+	    </script>
+	  </td>
+	</tr>
+      </table>
+    </form>
+  </body>
+</html>

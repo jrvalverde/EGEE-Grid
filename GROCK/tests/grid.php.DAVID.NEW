@@ -1,0 +1,478 @@
+<?php
+
+
+
+/** definition of default values */
+include_once("grid_config.php");
+/** SExec class */
+require_once("ssh.php");
+/** utility routines */
+include_once("util.php");
+ 
+class Grid {
+    
+    /** the grid entry point, should not be needed */
+    var $entry_point; 	
+    /** user name to use to connect to the grid */
+    var $username;
+    /** name of host that provides access to the grid */
+    var $hostname;	
+    /** password to login on the UI node */
+    var $password;	
+    /** key to unlock the grid access certificate */
+    var $passphrase;
+    /** a GrUI directory where we can work */
+    var $work_dir;	
+    /** a local file to store the error log */
+    var $error_log;	
+    /**#@-*/
+    
+    /**#@+
+     * @access private
+     * @var resource
+     */
+    /** Standard input of the grid entry */
+    var $std_in;	
+    /** Standard output of the grid entry */
+    var $std_out;	
+    /** Standard error of the grid entry */
+    var $std_err;	
+    // !!! IMPORTANT !!! either:
+    //	a. set files to not hang on wait or
+    //	b. remember to set them to no-hang when needed
+    /**#@-*/
+
+    /**
+     * Have we already connected?
+     *
+     * @access private
+     * @var bool
+     */
+    var $connected;
+    /**
+     * Have we already identified ourselves?
+     *
+     * @access private
+     * @var bool
+     */
+    var $initialized;
+    /**
+     *  A unique identifier for this session
+     *
+     * @access private
+     * @var array
+     */
+    var $sessions;
+    /**
+     *  The secure transfer communications line to use
+     *
+     * @access private
+     * @var SExec
+     */
+    var $sx;
+    
+    var $submit_timeout;
+    
+    /**
+     * Constructor for the class
+     *
+     * Set the values for the class variables using defaults provided in
+     * 'config.php'
+     *
+     * These defaults can be overridden using the functions provided below.
+     *
+     * Sample usage:
+     * <code>
+     * require_once './grid_config.php';
+     * require_once './ssh.php';
+     * require_once './grid.php';
+     * 
+     * $eg = new Grid;
+     * if ($eg == FALSE)
+     *     echo "Couldn't instantiate a new Grid!\n";
+     * </code>
+     *
+     * @return Grid a new instance of a Grid class object
+     */
+    function Grid() {
+    	global $debug_grid;
+	
+	if ($debug_grid) echo "Grid::Grid()\n";
+
+    	$this->entry_point = $GLOBALS['grid_server'];
+	$this->username    = $GLOBALS['grid_user'];
+	$this->hostname    = $GLOBALS['grid_host'];
+	$this->password    = $GLOBALS['grid_password'];
+	$this->passphrase  = $GLOBALS['grid_passphrase'];
+	$this->work_dir    = $GLOBALS['grid_wd_path'];
+	$this->error_log   = $GLOBALS['grid_error_log'];
+	$this->connected   = FALSE;
+	$this->sessions['default'] = 'default';
+	return $this;
+    }
+    
+    function destruct() {
+    	global $debug_grid;
+	
+    	if ($debug_grid) echo "Grid::destruct()\n";
+	if ($debug_grid) print_r($this);
+    	// remove remote files (should we?)
+	// $this->destroy_all_sessions();
+    	// free sessions array
+    	// unset($this->sessions);
+	// remove local files if any (should we?)
+	
+    	// with a shared connection we now must ensure some
+	// cleanup is done...
+	// THIS SHOULD BE AUTOMATIC ON CLASS SExec! REVIEW
+	$this->sx->destruct();
+    }
+    
+    // A C C E S S    V A R I A B L E    V A L U E S
+    // Note: do we also need "get_XX" routines?
+
+    /**
+     * set the Grid user name
+     *
+     *	In order to connect to the Grid and be able to submit
+     * jobs we need a tuple (host/user/password/passphrase),
+     * i.e. an entry point to log in, and a passphrase to unlock
+     * the grid certificate.
+     *
+     *	This method allows us to define the username which will
+     * be used to log in on the grid, i.e. how do we identify 
+     * ourselves to the Grid UI host.
+     *
+     * Sample usage:
+     * <code>
+     * require_once './grid_config.php';
+     * require_once './ssh.php';
+     * require_once './grid.php';
+     *
+     * $user="user";
+     *
+     * $eg = new Grid;
+     * if ($eg == FALSE)
+     *     echo "Couldn't instantiate a new Grid!\n";
+     * $eg->set_user($user);
+     * </code>
+     *
+     * @param string user identity to use in the Grid UI host
+     */
+    function set_user($user)
+    {
+    	global $debug_grid;
+	
+	if ($debug_grid) echo "Grid::set_user($user)\n";
+
+    	$this->username = $user;
+	$this->entry_point=$user."@".$this->hostname;
+    }
+    
+    /**
+     * set the name of the Grid access host
+     *
+     *	In order to connect to the Grid and be able to submit
+     * jobs we need a tuple (host/user/password/passphrase),
+     * i.e. an entry point to log in, and a passphrase to unlock
+     * the grid certificate.
+     *
+     *	This method allows us to define the entry point to use
+     * to gain access to the Grid.
+     *
+     * Sample usage:
+     * <code>
+     * require_once './grid_config.php';
+     * require_once './ssh.php';
+     * require_once './grid.php';
+     *
+     * $host="gridui.example.com";
+     *
+     * $eg = new Grid;
+     * if ($eg == FALSE)
+     *     echo "Couldn't instantiate a new Grid!\n";
+     * $eg->set_host($host);
+     * </code>
+     *
+     * @param string host name of the remote UI host
+     */
+    function set_host($host)
+    {
+    	global $debug_grid;
+	
+	if ($debug_grid) echo "Grid::set_host($host)\n";
+
+    	$this->hostname = $host;
+	$this->entry_point = $this->username."@".$host;
+    }
+    
+    /**
+     * set the password for the remote grid user/server
+     *
+     *	In order to connect to the Grid and be able to submit
+     * jobs we need a tuple (host/user/password/passphrase),
+     * i.e. an entry point to log in, and a passphrase to unlock
+     * the grid certificate.
+     *
+     *	This method allows us to specify the password to
+     * clear access to the Grid UI host.
+     *
+     *	Note that this is specific to the remote UI server 
+     * selected.
+     *
+     *	Further note that gaining access to a user account on
+     * a given host does not give us rights to submit jobs:
+     * we still need to unlock our ID certificate with the
+     * appropriate passphrase. Anybody with root access to an
+     * UI host can add accounts. Further, the UI host might
+     * have other roles and host other accounts for different
+     * purposes which should not access the grid. Bottomline is
+     * that we can not trust an account on a user-controlled
+     * host to identify Grid users. For this we need to recurse
+     * to a central authority to grant final access.
+     *
+     * Sample usage:
+     * <code>
+     * require_once './grid_config.php';
+     * require_once './ssh.php';
+     * require_once './grid.php';
+     *
+     * $password="password";
+     *
+     * $eg = new Grid;
+     * if ($eg == FALSE)
+     *     echo "Couldn't instantiate a new Grid!\n";
+     * $eg->set_password($password);
+     * </code>
+     *
+     * @param string password needed to login on to the grid UI server
+     */
+    function set_password($pass)
+    {
+    	global $debug_grid;
+	
+	if ($debug_grid) echo "Grid::set_password($pass)\n";
+
+    	$this->password = $pass;
+    }
+
+    /**
+     * set the passphrase for the remote grid user
+     *
+     *
+     *	In order to connect to the Grid and be able to submit
+     * jobs we need a tuple (host/user/password/passphrase),
+     * i.e. an entry point to log in, and a passphrase to unlock
+     * the grid certificate.
+     *
+     *	After we gain access to the UI host, we must unlock our
+     * certificate which identifies ourselves as 'bona-fide'
+     * grid users.
+     *
+     *	People might have an account on any UI node for a variety
+     * of reasons, but that does not qualify them to use Grid
+     * resources. Only a central Grid authority can grant this
+     * kind of access and this is done by issuing a Certificate.
+     *
+     *	Users then must store this certificate in their account
+     * on a UI host and protect it with a suitably long passphrase.
+     * This last one is the value we provide here.
+     *
+     * Sample usage:
+     * <code>
+     * require_once './grid_config.php';
+     * require_once './ssh.php';
+     * require_once './grid.php';
+     *
+     * $passphrase="pass phrase to unlock certificate";
+     *
+     * $eg = new Grid;
+     * if ($eg == FALSE)
+     *     echo "Couldn't instantiate a new Grid!\n";
+     * $eg->set_passphrase($passphrase);
+     * </code>
+     *
+     * @param string passphrase needed to unlock the grid certificate
+     */
+    function set_passphrase($pass)
+    {
+    	global $debug_grid;
+	
+	if ($debug_grid) echo "Grid::set_passphrase($pass)\n";
+
+    	$this->passphrase = $pass;
+    }
+    
+    /**
+     * set working directory on the Grid server
+     *
+     * This is a directory located on the grid server where all jobs
+     * and job related information will be created. It may be a path
+     * local to the user home or a global path (usually on /tmp or 
+     * /var/tmp).
+     *
+     * Sample usage:
+     * <code>
+     * require_once './grid_config.php';
+     * require_once './ssh.php';
+     * require_once './grid.php';
+     *
+     * $eg = new Grid;
+     * if ($eg == FALSE)
+     *     echo "Couldn't instantiate a new Grid!\n";
+     * $eg->set_work_dir("./grid-services");
+     * </code>
+     *
+     * @param string the remote path of the working directory
+     */
+    function set_work_dir($wd)
+    {
+    	global $debug_grid;
+	
+	if ($debug_grid) echo "Grid::set_work_dir($wd)\n";
+
+    	$this->work_dir=$wd;
+    }
+    
+    /**
+     * set error log
+     *
+     * Sample usage:
+     * <code>
+     * require_once './grid_config.php';
+     * require_once './ssh.php';
+     * require_once './grid.php';
+     *
+     * $eg = new Grid;
+     * if ($eg == FALSE)
+     *     echo "Couldn't instantiate a new Grid!\n";
+     * $eg->set_error_log("./grid-services/error.log");
+     * </code>
+     *
+     * @param string path to a local file where we will store the error log
+     *		     (i.e. stderr of the grid connection)
+     */
+    function set_error_log($errlog)
+    {
+    	global $debug_grid;
+	
+	if ($debug_grid) echo "Grid::set_error_log($errlog)\n";
+
+    	$this->error_log = $errlog;
+    }
+    
+    /**
+     * get grid connection status
+     *
+     * This method allows you to know if the connection with the remote
+     * grid entry point has been successfully established or not. Note
+     * that this does not mean you may launch jobs to the grid: you
+     * still need to initialize the grid first.
+     *
+     * Sample usage:
+     * <code>
+     * require_once './grid_config.php';
+     * require_once './ssh.php';
+     * require_once './grid.php';
+     * 
+     * $eg = new Grid;
+     * 
+     * $eg->pconnect();
+     * if ($eg->get_connection_status() == FALSE)
+     *     echo "Couldn't connect to the Grid entry point!\n";
+     * </code>
+     *
+     * @return bool TRUE if the connection has been established, FALSE
+     *	    	    otherwise.
+     */
+    function get_connection_status()
+    {
+    	global $debug_grid;
+	
+	if ($debug_grid) echo "Grid::get_connection_status()\n";
+
+    	return $this->connected;
+    }
+
+    /**
+     * get grid initialization status
+     *
+     * This method allows you to learn whether the Grid has been
+     * successfully initialized and is ready to accept jobs. This
+     * entails both, login in as a specific user on the Grid connection
+     * point, and activating the proxy with your passphrase.
+     *
+     * The reason for the two step process is that in order to activate
+     * the grid you need to identify yourself using a grid certificate
+     * emitted by a CA. But to activate it you need an account on a grid
+     * access machine, which is open by any local administrator. Since
+     * this account is not under the central CA control, we can't trust 
+     * it to submit jobs and require a proxy-initialization with an
+     * appropriate passphrase.
+     *
+     * Sample usage:
+     * <code>
+     * require_once './grid_config.php';
+     * require_once './ssh.php';
+     * require_once './grid.php';
+     * 
+     * $eg = new Grid;
+     * 
+     * $eg->initialize();
+     * if ($eg->get_init_status() == FALSE)
+     *     echo "Couldn't initialize the Grid!\n";
+     * </code>
+     *
+     * @return bool TRUE if the grid has been initialized, FALSE
+     *	    	    otherwise.
+     */
+    function get_init_status()
+    {
+    	global $debug_grid;
+	
+	if ($debug_grid) echo "Grid::get_init_status()\n";
+
+    	return $this->initialized;
+    }
+
+    function connect()
+    {	
+ 	global $debug_grid;
+	
+	if ($debug_grid) echo "\nGrid::connect()\n";
+	
+	// Using the new SExec class (Rel2) instantiating an SExec
+	// object creates a master channel to the remote end point
+	// The master channel will be hitchhicked by all other
+	// SExec commands.
+	
+	$this->sx = new SExec($this->entry_point, $this->password);
+	
+	if ($this->sx == FALSE)
+    	{
+	    // couldn't stablish connection with the remote end
+	    return FALSE;
+	}
+	$this->connected = TRUE;
+	return TRUE;
+    }
+    
+    function destruct() {
+    	global $debug_grid;
+	
+    	if ($debug_grid) echo "Grid::destruct()\n";
+	if ($debug_grid) print_r($this);
+    	// remove remote files (should we?)
+	// $this->destroy_all_sessions();
+    	// free sessions array
+    	// unset($this->sessions);
+	// remove local files if any (should we?)
+	
+    	// with a shared connection we now must ensure some
+	// cleanup is done...
+	// THIS SHOULD BE AUTOMATIC ON CLASS SExec! REVIEW
+	$this->sx->destruct();
+    }
+    
+}
+?>

@@ -1,0 +1,9 @@
+# A sample TOP file for fully automated comparative modeling
+
+INCLUDE                                       # include MODELLER routines
+SET ATOM_FILES_DIRECTORY = './:../atom_files' # directory with input atom files
+SET SEGFILE     = 'alignment.seg'             # input file w/ templates and target
+SET KNOWNS      = '5fd1' '1fdn' '1fxd' '2fxb' # templates' PDB codes
+SET SEQUENCE    = '1fdx'                      # target code
+SET OUTPUT_CONTROL = 1 1 1 1 2
+CALL ROUTINE    = 'full_homol'                # get alignment and a model

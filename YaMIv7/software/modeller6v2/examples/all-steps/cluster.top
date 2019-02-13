@@ -1,0 +1,12 @@
+# PRIMER: STEP 4
+#
+# Selecting the templates.
+#
+# If you do not have ASGL installed (most of you won't), the second
+# graphics routine won't work. You can then either determine the templates
+# from the sequence identity matrix or use PHYLIP.
+
+INCLUDE
+
+CALL ROUTINE = 'principal_components',      FAMILY = 'alignment.seg'
+CALL ROUTINE = 'asgl_principal_components', FAMILY = 'alignment.seg'

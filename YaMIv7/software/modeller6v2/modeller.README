@@ -1,0 +1,123 @@
+
+
+
+                               M O D E L L E R
+
+       PROTEIN STRUCTURE MODELLING BY SATISFACTION OF SPATIAL RESTRAINTS
+
+
+                         MODELLER 6v2, December, 2001
+
+
+                     Copyright(c) 1989-2001 Andrej Sali
+                            All Rights Reserved
+
+
+                           Written by Andrej Sali,
+                               with help from
+             Andras Fiser, Roberto Sanchez, Marc A. Marti-Renom,
+           Bozidar Jerkovic, Azat Ya.Badretdinov, Francisco Melo,
+                     John P. Overington and Eric Feyfant
+
+                    Rockefeller University, New York, USA
+                     Harvard University, Cambridge, USA
+                  Imperial Cancer Research Fund, London, UK
+              Birkbeck College, University of London, London, UK
+
+
+  Andrej Sali, The Rockefeller University, 1230 York Avenue, New York,
+  NY 10021, USA. Tel: +1-212-327-7550. Fax: +1-212-327-7540.
+  E-mail: sali@rockefeller.edu. URL: http://guitar.rockefeller.edu/
+
+
+
+** DESCRIPTION:
+
+  MODELLER is used for homology or comparative modeling of protein three-
+  dimensional structures (1). The user provides an alignment of a sequence
+  to be modeled with known related structures and MODELLER automatically 
+  calculates a model containining all non-hydrogen atoms. MODELLER 
+  implements comparative protein structure modeling by satisfaction of
+  spatial restraints (2,3), and can perform many additional tasks, including
+  de novo modeling of oligopeptides, optimization of various models of
+  protein structure with respect to a flexibly defined objective function,
+  multiple alignment of protein sequences and/or structures, clustering,
+  searching of sequence databases, comparison of protein structures, etc.
+  MODELLER is written in Fortran-90 and is meant to run on a UNIX system.
+
+  1. M.A. Marti-Renom, A. Stuart,  A. Fiser,  R.Sanchez,  F. Melo,  A. Sali.
+     Comparative protein structure modelingof genes and genomes. 
+     Annu. Rev. Biophys. Biomol. Struct. 29, 291-325, 2000.
+
+  2. A. Sali &amp; T.L. Blundell. Comparative protein modelling by 
+     satisfaction of spatial restraints. J. Mol. Biol. 234, 779-815, 1993.
+
+  3. A. Fiser, R.K. Do, A. Sali. Modeling of loops in protein structures,
+     Protein Science 9. 1753-1773, 2000.
+
+
+
+** DISTRIBUTION:
+
+  MODELLER is available free of charge to academic non-profit institutions
+  from the MODELLER website (http://guitar.rockefeller.edu/modeller).
+
+  For commercial licensing of MODELLER, please contact Dr. David Edwards,
+  Accelrys Inc., 9685 Scranton Road, San Diego, CA 92121-3752, USA,
+  tel +1 (858) 799-5374, fax +1 (858) 458-0136, email dje@accelrys.com,
+  http://www.accelrys.com.
+
+
+
+** REGISTRATION and INSTALLATION
+
+  Please access the academic license server from the MODELLER website
+  to apply for the MODELLER key. This key has to be assigned to the
+  environment variable KEY_MODELLER6v2 in your login script (eg, .cshrc)
+  before you can execute MODELLER. See file INSTALLATION for installation
+  instructions.
+
+
+
+** MODELLER USERS EMAIL LIST:
+
+  In addition to the manual, you can receive help from the MODELLER 
+  users email list. The archive of this list contains many tips about 
+  using MODLELLER. You can access it from the MODELLER website at
+  http://guitar.rockefeller.edu/modeller or subscribe to it directly by
+  sending an email message to modeller_usage@guitar.rockefeller.edu with
+  the word 'subscribe' in the body of the message.
+
+
+
+** GRAPHICAL INTERFACE:
+
+  MODELLER runs via its own TOP scripting language and it does not provide
+  any graphical interface. A graphical interface to MODELLER is available
+  as part of Accelrys' QUANTA, InsightII, and WEBLab interactive molecular
+  modeling programs, which also contain many other tools for protein 
+  modeling and structural analysis. QUANTA, InsightII and WEBLab facilitate
+  preparation of input files for MODELLER (e.g.alignment file) as well as
+  an analysis of results (e.g. an evaluation of the models). If you are
+  interested in these programs, please contact Accelrys Inc. at the address
+  above.
+
+  Our group has developed ModView, program to interactively visualize and
+  analyze multiple protein sequences and/or structures. More information 
+  about ModView is available at http://guitar.rockefeller.edu/modview.
+
+
+
+** ADDITIONAL INFORMATION:
+
+  Additional information about MODELLER, other related resources and
+  contact information can be obtained at our web site:
+  http://guitar.rockefeller.edu
+
+
+
+  Sincerely,
+  Modeller Team
+  December, 2001.
+
+

@@ -1,0 +1,554 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.3.6">
+  <compounddef id="util_8php" kind="file">
+    <compoundname>util.php</compoundname>
+    <innernamespace refid="namespaceegTINKER">egTINKER</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="util_8php_1a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>set_header</definition>
+        <argsstring>()</argsstring>
+        <name>set_header</name>
+        <briefdescription>
+<para>Start the display of a www page. </para>        </briefdescription>
+        <detaileddescription>
+<para>We have it as a function so we can customise all pages generated as needed. This routine will open HTML, create the page header, and include any needed style sheets (if any) to provide a common look-and-feel for all pages generated. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/util.php" line="29" bodystart="28" bodyend="46"/>
+        <references refid="config_8php_1a3" compoundref="config_8php" startline="42">$app_dir</references>
+      </memberdef>
+      <memberdef kind="function" id="util_8php_1a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>set_footer</definition>
+        <argsstring>()</argsstring>
+        <name>set_footer</name>
+        <briefdescription>
+<para>close a web page </para>        </briefdescription>
+        <detaileddescription>
+<para>Make sure we end the page with all the appropriate formulisms: close the body, include copyright notice, state creator and any needed details, and close the page. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/util.php" line="56" bodystart="55" bodyend="69"/>
+        <references refid="config_8php_1a3" compoundref="config_8php" startline="42">$app_dir</references>
+        <references refid="config_8php_1a1" compoundref="config_8php" startline="21">$maintainer</references>
+        <referencedby refid="util_8php_1a4" compoundref="util_8php" startline="139" endline="144">letal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="util_8php_1a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>warning</definition>
+        <argsstring>($msg)</argsstring>
+        <name>warning</name>
+        <param>
+          <type>$</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>print a warning </para>        </briefdescription>
+        <detaileddescription>
+<para>Prints a warning in a separate pop-up window. A warning is issued when a non-critical problem has been detected. Execution can be resumed using some defaults, but the user should be notified. In order to not disrupt the web page we are displaying we use a JavaScript pop-up alert to notify the user.</para><para><parameterlist kind="param"><parametername>msg</parametername>
+<parameterdescription>
+<para>the warning message to send the user </para></parameterdescription></parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/util.php" line="83" bodystart="82" bodyend="87"/>
+        <referencedby refid="util_8php_1a7" compoundref="util_8php" startline="225" endline="333">ssh_open</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="util_8php_1a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>error</definition>
+        <argsstring>($where, $what)</argsstring>
+        <name>error</name>
+        <param>
+          <type>$</type>
+          <declname>where</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>what</declname>
+        </param>
+        <briefdescription>
+<para>print an error message and exit </para>        </briefdescription>
+        <detaileddescription>
+<para>Whenever we detect something wrong, we must tell the user. This function will take an error message as its argument, format it suitably and spit it out.</para><para><simplesect kind="note"><para>This might look nicer using javascript to pop up a nice window with the error message. Style sheets would be nice too.</para></simplesect>
+<parameterlist kind="param"><parametername>where</parametername>
+<parameterdescription>
+<para>the name of the caller routine or the process where the error occurred </para></parameterdescription><parametername>what</parametername>
+<parameterdescription>
+<para>a description of the abnormal condition that triggered the error </para></parameterdescription></parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/util.php" line="106" bodystart="105" bodyend="119"/>
+        <referencedby refid="util_8php_1a4" compoundref="util_8php" startline="139" endline="144">letal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="util_8php_1a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>letal</definition>
+        <argsstring>($what, $where)</argsstring>
+        <name>letal</name>
+        <param>
+          <type>$</type>
+          <declname>what</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>where</declname>
+        </param>
+        <briefdescription>
+<para>print a letal error message and die </para>        </briefdescription>
+        <detaileddescription>
+<para>This function is called whenever a letal error (one that prevents further processing) is detected. The function will spit out an error message, close the page and exit the program. It should seldomly be used, since it may potentially disrupt the page layout (e.g. amid a table) by not closing open tags of which it is unaware. Actually it is a wrapper for error + terminate.</para><para><parameterlist kind="param"><parametername>where</parametername>
+<parameterdescription>
+<para>location (physical or logical) where the error was detected: a physical location (routine name/line number) may be helpful for debugging, a logical location (during which part of the processing it happened) will be more helful to the user.</para></parameterdescription><parametername>what</parametername>
+<parameterdescription>
+<para>a descrition of the abnormality detected. </para></parameterdescription></parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/util.php" line="140" bodystart="139" bodyend="144"/>
+        <references refid="util_8php_1a3" compoundref="util_8php" startline="105" endline="119">error</references>
+        <references refid="test_2ssh__test_8php_1a3" compoundref="test_2ssh__test_8php" startline="48">exit</references>
+        <references refid="util_8php_1a1" compoundref="util_8php" startline="55" endline="69">set_footer</references>
+        <referencedby refid="util_8php_1a7" compoundref="util_8php" startline="225" endline="333">ssh_open</referencedby>
+        <referencedby refid="classSExec_1a6" compoundref="ssh-files_8php" startline="318" endline="405">SExec::ssh_open_command</referencedby>
+        <referencedby refid="classSExec_1a5" compoundref="ssh-files_8php" startline="218" endline="305">SExec::ssh_open_shell</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="util_8php_1a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ssh_passthru</definition>
+        <argsstring>($remote, $password, $command, $status)</argsstring>
+        <name>ssh_passthru</name>
+        <param>
+          <type>$</type>
+          <declname>remote</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+<para>Execute a single command remotely using ssh and return its entire output (like passthru). </para>        </briefdescription>
+        <detaileddescription>
+<para>This might be done as well using a pipe on /tmp and making the command &apos;cat&apos; the pipe: when ssh runs, it runs the command &apos;cat&apos; on the pipe and hangs on read. Then we just need a thread to open the pipe, put the password and close the pipe. This other way the password is never wirtten down. But, OTOH, the file life is so ephemeral that most of the time it will only exist in the internal system cache, so this approach is not that bad either.</para><para><parameterlist kind="param"><parametername>remote</parametername>
+<parameterdescription>
+<para>The remote end to run the command, in the form &apos;user&apos; (or &apos;host&apos; if the username is the same). </para></parameterdescription><parametername>password</parametername>
+<parameterdescription>
+<para>The remote password. Note that if direct RSA/DSA/.shosts/.rhosts login is enabled then the password should be ignored as SSH should not run the ASKPASS command). </para></parameterdescription><parametername>command</parametername>
+<parameterdescription>
+<para>The command to execute on the remote end NOTE: if you want to use redirection, the entire remote command line should be enclosed in additional quotes! </para></parameterdescription><parametername>status</parametername>
+<parameterdescription>
+<para>Optional, this will hold the termination status of SSH after invocation, which should be the exit status of the remote command or 255 if an error occurred </para></parameterdescription></parameterlist>
+<simplesect kind="return"><para>output The output of the remote command. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/util.php" line="180" bodystart="179" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="util_8php_1a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ssh_copy</definition>
+        <argsstring>($origin, $destination, $password)</argsstring>
+        <name>ssh_copy</name>
+        <param>
+          <type>$</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>destination</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+        </param>
+        <briefdescription>
+<para>Copy a file or directory from one source to a destination. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function copies source to dest, where one of them is a local filespec and the other a remote filespec of the form [user@]host:path</para><para>If the original source is a directory, it will be copied recursively to destination (hence easing file transfers).</para><para>The function returns TRUE on success or FALSE on failure. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/util.php" line="208" bodystart="207" bodyend="223"/>
+        <references refid="results_8php_1a2" compoundref="results_8php" startline="76">$status</references>
+      </memberdef>
+      <memberdef kind="function" id="util_8php_1a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ssh_open</definition>
+        <argsstring>($remote, $password)</argsstring>
+        <name>ssh_open</name>
+        <param>
+          <type>$</type>
+          <declname>remote</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/util.php" line="226" bodystart="225" bodyend="333"/>
+        <references refid="config_8php_1a21" compoundref="config_8php" startline="204">$debug</references>
+        <references refid="config_8php_1a0" compoundref="config_8php" startline="11">$php_version</references>
+        <references refid="auth_8php_1a3" compoundref="auth_8php" startline="51">$process</references>
+        <references refid="results_8php_1a2" compoundref="results_8php" startline="76">$status</references>
+        <references refid="util_8php_1a4" compoundref="util_8php" startline="139" endline="144">letal</references>
+        <references refid="util_8php_1a2" compoundref="util_8php" startline="82" endline="87">warning</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="2"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>General<sp/>utility<sp/>functions</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>contains<sp/>convenience<sp/>functions<sp/>used<sp/>throughout<sp/>the<sp/>package.<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>@package<sp/>egTINKER</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>@author<sp/>José<sp/>R.<sp/>Valverde<sp/>&lt;jrvalverde@cnb.uam.es&gt;</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>@version<sp/>1.0</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>@copyright<sp/>CSIC<sp/>-<sp/>GPL</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>include<sp/>global<sp/>configuration<sp/>definitions</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">require_once(</highlight><highlight class="stringliteral">&quot;./config.php&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-------------<sp/>COMMODITY<sp/>ROUTINES<sp/>----------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="20"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>Start<sp/>the<sp/>display<sp/>of<sp/>a<sp/>www<sp/>page</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>We<sp/>have<sp/>it<sp/>as<sp/>a<sp/>function<sp/>so<sp/>we<sp/>can<sp/>customise<sp/>all<sp/>pages<sp/>generated<sp/>as</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>needed.<sp/>This<sp/>routine<sp/>will<sp/>open<sp/>HTML,<sp/>create<sp/>the<sp/>page<sp/>header,<sp/>and<sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>include<sp/>any<sp/>needed<sp/>style<sp/>sheets<sp/>(if<sp/>any)<sp/>to<sp/>provide<sp/>a<sp/>common<sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>look-and-feel<sp/>for<sp/>all<sp/>pages<sp/>generated.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="util_8php_1a0" refkind="member"><highlight class="normal">function<sp/><ref refid="util_8php_1a0" kindref="member">set_header</ref>()</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>global<sp/>$app_name,<sp/><ref refid="config_8php_1a3" kindref="member">$app_dir</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Start<sp/>HTML<sp/>vx.xx<sp/>output</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;html&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Print<sp/>headers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;head&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;meta<sp/>http-equiv=\&quot;Content-Type\&quot;<sp/>content=\&quot;text/html;<sp/>charset=ISO-8859-1\&quot;&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;meta<sp/>name=\&quot;DESCRIPTION\&quot;<sp/>content=\&quot;a<sp/>web<sp/>interface<sp/>to<sp/>run<sp/>TINKER<sp/>molecular<sp/>modelling<sp/>on<sp/>the<sp/>EGEE<sp/>grid\&quot;&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;meta<sp/>name=\&quot;AUTHOR\&quot;<sp/>content=\&quot;EMBnet/CNB\&quot;&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;meta<sp/>name=\&quot;COPYRIGHT\&quot;<sp/>content=\&quot;(c)<sp/>2004-5<sp/>by<sp/>CSIC<sp/>-<sp/>Open<sp/>Source<sp/>Software\&quot;&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;meta<sp/>name=\&quot;GENERATOR\&quot;<sp/>content=\&quot;$app_name\&quot;&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;link<sp/>rel=\&quot;StyleSheet\&quot;<sp/>href=\&quot;$app_dir/style/style.css\&quot;<sp/>type=\&quot;text/css\&quot;/&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;link<sp/>rel=\&quot;shortcut<sp/>icon\&quot;<sp/>href=\&quot;$app_dir/images/favicon.ico\&quot;/&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;title=\&quot;$app_name\&quot;&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/head&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Prepare<sp/>body</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;body<sp/>bgcolor=\&quot;white\&quot;<sp/>background=\&quot;$app_dir/images/6h2o-w-small.gif\&quot;<sp/>link=\&quot;ffc600\&quot;<sp/>VLINK=\&quot;#cc9900\&quot;<sp/>ALINK=\&quot;#4682b4\&quot;&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="48"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>close<sp/>a<sp/>web<sp/>page</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>Make<sp/>sure<sp/>we<sp/>end<sp/>the<sp/>page<sp/>with<sp/>all<sp/>the<sp/>appropriate<sp/>formulisms:</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>close<sp/>the<sp/>body,<sp/>include<sp/>copyright<sp/>notice,<sp/>state<sp/>creator<sp/>and</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>any<sp/>needed<sp/>details,<sp/>and<sp/>close<sp/>the<sp/>page.</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="util_8php_1a1" refkind="member"><highlight class="normal">function<sp/><ref refid="util_8php_1a1" kindref="member">set_footer</ref>()</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global<sp/><ref refid="config_8php_1a1" kindref="member">$maintainer</ref>,<sp/><ref refid="config_8php_1a3" kindref="member">$app_dir</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>close<sp/>body</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/body&gt;&lt;hr&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>footer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;center&gt;&lt;table<sp/>border=\&quot;0\&quot;<sp/>width=\&quot;90%\&quot;&gt;&lt;tr&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copyright<sp/>and<sp/>author</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;td&gt;&lt;A<sp/>HREF=\&quot;$app_dir/c/copyright.html\&quot;&gt;&amp;copy;&lt;/a&gt;EMBnet/CNB&lt;/td&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>contact<sp/>info</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;td<sp/>align=\&quot;RIGHT\&quot;&gt;&lt;A<sp/>HREF=\&quot;emailto:$maintainer\&quot;&gt;$maintainer&lt;/a&gt;&lt;/td&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/tr&gt;&lt;/table&gt;&lt;/center&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Page</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/html&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="71"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/>print<sp/>a<sp/>warning</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/>Prints<sp/>a<sp/>warning<sp/>in<sp/>a<sp/>separate<sp/>pop-up<sp/>window.</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/>A<sp/>warning<sp/>is<sp/>issued<sp/>when<sp/>a<sp/>non-critical<sp/>problem<sp/>has<sp/>been<sp/>detected.</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/>Execution<sp/>can<sp/>be<sp/>resumed<sp/>using<sp/>some<sp/>defaults,<sp/>but<sp/>the<sp/>user<sp/>should</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>be<sp/>notified.<sp/>In<sp/>order<sp/>to<sp/>not<sp/>disrupt<sp/>the<sp/>web<sp/>page<sp/>we<sp/>are<sp/>displaying</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/>we<sp/>use<sp/>a<sp/>JavaScript<sp/>pop-up<sp/>alert<sp/>to<sp/>notify<sp/>the<sp/>user.</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/>@param<sp/>msg<sp/>the<sp/>warning<sp/>message<sp/>to<sp/>send<sp/>the<sp/>user</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="util_8php_1a2" refkind="member"><highlight class="normal">function<sp/><ref refid="util_8php_1a2" kindref="member">warning</ref>($msg)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;script<sp/>language=\&quot;JavaScript\&quot;&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;alert(\&quot;WARNING:\n<sp/>$msg\&quot;);&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/script&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="89"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/>print<sp/>an<sp/>error<sp/>message<sp/>and<sp/>exit</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/>Whenever<sp/>we<sp/>detect<sp/>something<sp/>wrong,<sp/>we<sp/>must<sp/>tell<sp/>the<sp/>user.<sp/>This<sp/>function</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*<sp/>will<sp/>take<sp/>an<sp/>error<sp/>message<sp/>as<sp/>its<sp/>argument,<sp/>format<sp/>it<sp/>suitably<sp/>and</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*<sp/>spit<sp/>it<sp/>out.</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/>*<sp/>@note<sp/>This<sp/>might<sp/>look<sp/>nicer<sp/>using<sp/>javascript<sp/>to<sp/>pop<sp/>up<sp/>a<sp/>nice<sp/>window<sp/>with</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/>*<sp/>the<sp/>error<sp/>message.<sp/>Style<sp/>sheets<sp/>would<sp/>be<sp/>nice<sp/>too.</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/>@param<sp/>where<sp/>the<sp/>name<sp/>of<sp/>the<sp/>caller<sp/>routine<sp/>or<sp/>the<sp/>process<sp/>where<sp/>the</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error<sp/>occurred</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/>@param<sp/>what<sp/><sp/>a<sp/>description<sp/>of<sp/>the<sp/>abnormal<sp/>condition<sp/>that<sp/>triggered</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>error</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="util_8php_1a3" refkind="member"><highlight class="normal">function<sp/><ref refid="util_8php_1a3" kindref="member">error</ref>($where,<sp/>$what)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>format<sp/>the<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;p&gt;&lt;/p&gt;&lt;center&gt;&lt;table<sp/>border=\&quot;2\&quot;&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;tr&gt;&lt;td&gt;&lt;center&gt;&lt;font<sp/>color=\&quot;red\&quot;&gt;&lt;strong&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>output<sp/>the<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;ERROR<sp/>-<sp/>HORROR\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>close<sp/>format</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/strong&gt;&lt;/font&gt;&lt;/center&gt;&lt;/td&gt;&lt;/tr&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;tr&gt;&lt;td&gt;&lt;center&gt;&lt;b&gt;$where&lt;/b&gt;&lt;/center&gt;&lt;/td&gt;&lt;/tr&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;tr&gt;&lt;td&gt;&lt;center&gt;$what&lt;/center&gt;&lt;/td&gt;&lt;/tr&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/table&gt;&lt;/center&gt;&lt;p&gt;&lt;/p&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="121"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/>print<sp/>a<sp/>letal<sp/>error<sp/>message<sp/>and<sp/>die</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*<sp/>This<sp/>function<sp/>is<sp/>called<sp/>whenever<sp/>a<sp/>letal<sp/>error<sp/>(one<sp/>that<sp/>prevents</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*<sp/>further<sp/>processing)<sp/>is<sp/>detected.<sp/>The<sp/>function<sp/>will<sp/>spit<sp/>out<sp/>an</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/>error<sp/>message,<sp/>close<sp/>the<sp/>page<sp/>and<sp/>exit<sp/>the<sp/>program.</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*<sp/>It<sp/>should<sp/>seldomly<sp/>be<sp/>used,<sp/>since<sp/>it<sp/>may<sp/>potentially<sp/>disrupt<sp/>the</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*<sp/>page<sp/>layout<sp/>(e.g.<sp/>amid<sp/>a<sp/>table)<sp/>by<sp/>not<sp/>closing<sp/>open<sp/>tags<sp/>of<sp/>which</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*<sp/>it<sp/>is<sp/>unaware.</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*<sp/>Actually<sp/>it<sp/>is<sp/>a<sp/>wrapper<sp/>for<sp/>error<sp/>+<sp/>terminate.</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/>*<sp/>@param<sp/>where<sp/>location<sp/>(physical<sp/>or<sp/>logical)<sp/>where<sp/>the<sp/>error<sp/>was</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/>*<sp/>detected:<sp/>a<sp/>physical<sp/>location<sp/>(routine<sp/>name/line<sp/>number)<sp/>may<sp/>be</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*<sp/>helpful<sp/>for<sp/>debugging,<sp/>a<sp/>logical<sp/>location<sp/>(during<sp/>which<sp/>part<sp/>of</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*<sp/>the<sp/>processing<sp/>it<sp/>happened)<sp/>will<sp/>be<sp/>more<sp/>helful<sp/>to<sp/>the<sp/>user.</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/>*<sp/>@param<sp/>what<sp/>a<sp/>descrition<sp/>of<sp/>the<sp/>abnormality<sp/>detected.</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="util_8php_1a4" refkind="member"><highlight class="normal">function<sp/><ref refid="util_8php_1a4" kindref="member">letal</ref>($what,<sp/>$where)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="util_8php_1a3" kindref="member">error</ref>($what,<sp/>$where);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="util_8php_1a1" kindref="member">set_footer</ref>();</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="test_2ssh__test_8php_1a3" kindref="member">exit</ref>();</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-------------<sp/>SSH<sp/>ROUTINES<sp/>----------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="148"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*<sp/><sp/>Execute<sp/>a<sp/>single<sp/>command<sp/>remotely<sp/>using<sp/>ssh<sp/>and<sp/></highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*<sp/>return<sp/>its<sp/>entire<sp/>output<sp/>(like<sp/>passthru)</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>might<sp/>be<sp/>done<sp/>as<sp/>well<sp/>using<sp/>a<sp/>pipe<sp/>on<sp/>/tmp<sp/>and</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/>*<sp/>making<sp/>the<sp/>command<sp/>&apos;cat&apos;<sp/>the<sp/>pipe:<sp/>when<sp/>ssh<sp/>runs,<sp/>it</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/>*<sp/>runs<sp/>the<sp/>command<sp/>&apos;cat&apos;<sp/>on<sp/>the<sp/>pipe<sp/>and<sp/>hangs<sp/>on<sp/>read.</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*<sp/><sp/>Then<sp/>we<sp/>just<sp/>need<sp/>a<sp/>thread<sp/>to<sp/>open<sp/>the<sp/>pipe,<sp/>put<sp/>the</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/>password<sp/>and<sp/>close<sp/>the<sp/>pipe.</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>other<sp/>way<sp/>the<sp/>password<sp/>is<sp/>never<sp/>wirtten<sp/>down.</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*<sp/>But,<sp/>OTOH,<sp/>the<sp/>file<sp/>life<sp/>is<sp/>so<sp/>ephemeral<sp/>that<sp/>most</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/>*<sp/>of<sp/>the<sp/>time<sp/>it<sp/>will<sp/>only<sp/>exist<sp/>in<sp/>the<sp/>internal<sp/>system</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/>*<sp/>cache,<sp/>so<sp/>this<sp/>approach<sp/>is<sp/>not<sp/>that<sp/>bad<sp/>either.</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/>*<sp/><sp/>@param<sp/>remote<sp/><sp/><sp/>The<sp/>remote<sp/>end<sp/>to<sp/>run<sp/>the<sp/>command,<sp/>in</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>form<sp/>&apos;user@host&apos;<sp/>(or<sp/>&apos;host&apos;<sp/>if<sp/>the</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>username<sp/>is<sp/>the<sp/>same).</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/>*<sp/><sp/>@param<sp/>password<sp/>The<sp/>remote<sp/>password.<sp/>Note<sp/>that<sp/>if<sp/>direct</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RSA/DSA/.shosts/.rhosts<sp/>login<sp/>is<sp/>enabled</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>then<sp/>the<sp/>password<sp/>should<sp/>be<sp/>ignored<sp/>as</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SSH<sp/>should<sp/>not<sp/>run<sp/>the<sp/>ASKPASS<sp/>command).</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/>*<sp/><sp/>@param<sp/>command<sp/><sp/>The<sp/>command<sp/>to<sp/>execute<sp/>on<sp/>the<sp/>remote<sp/>end</highlight></codeline>
+<codeline lineno="170"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NOTE:<sp/>if<sp/>you<sp/>want<sp/>to<sp/>use<sp/>redirection,<sp/>the</highlight></codeline>
+<codeline lineno="171"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entire<sp/>remote<sp/>command<sp/>line<sp/>should<sp/>be<sp/></highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enclosed<sp/>in<sp/>additional<sp/>quotes!</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/>*<sp/><sp/>@param<sp/>status<sp/><sp/><sp/>Optional,<sp/>this<sp/>will<sp/>hold<sp/>the<sp/>termination</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>of<sp/>SSH<sp/>after<sp/>invocation,<sp/>which</highlight></codeline>
+<codeline lineno="175"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>should<sp/>be<sp/>the<sp/>exit<sp/>status<sp/>of<sp/>the<sp/>remote</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>command<sp/>or<sp/>255<sp/>if<sp/>an<sp/>error<sp/>occurred</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/>*<sp/><sp/>@return<sp/>output<sp/><sp/>The<sp/>output<sp/>of<sp/>the<sp/>remote<sp/>command.</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179" refid="util_8php_1a5" refkind="member"><highlight class="normal">function<sp/><ref refid="util_8php_1a5" kindref="member">ssh_passthru</ref>($remote,<sp/>$password,<sp/>$command,<sp/>$status)</highlight></codeline>
+<codeline lineno="180"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>umask(0077);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$tmpfname<sp/>=<sp/>tempnam(</highlight><highlight class="stringliteral">&quot;/tmp&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;egTinker&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chmod($tmpfname,<sp/>0700);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$fp<sp/>=<sp/>fopen($tmpfname,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fputs($fp,<sp/></highlight><highlight class="stringliteral">&quot;#!/bin/sh\necho<sp/>$password\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fputs($fp,<sp/></highlight><highlight class="stringliteral">&quot;rm<sp/>-f<sp/>$tmpfname\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fclose($fp);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>putenv(</highlight><highlight class="stringliteral">&quot;DISPLAY=none:0.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>putenv(</highlight><highlight class="stringliteral">&quot;SSH_ASKPASS=$tmpfname&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>passthru(</highlight><highlight class="stringliteral">&quot;ssh<sp/>-x<sp/>-t<sp/>-t<sp/>$remote<sp/>$command&quot;</highlight><highlight class="normal">,<sp/>$status);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Do<sp/>a<sp/>remote<sp/>scp<sp/>connection<sp/>with<sp/>local<sp/>password</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="194"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/>*<sp/><sp/>Copy<sp/>a<sp/>file<sp/>or<sp/>directory<sp/>from<sp/>one<sp/>source<sp/>to<sp/>a<sp/>destination</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>function<sp/>copies<sp/>source<sp/>to<sp/>dest,<sp/>where<sp/>one<sp/>of<sp/>them<sp/>is<sp/>a</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/>*<sp/>local<sp/>filespec<sp/>and<sp/>the<sp/>other<sp/>a<sp/>remote<sp/>filespec<sp/>of<sp/>the<sp/>form</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"><sp/>*<sp/>[user@]host:path</highlight></codeline>
+<codeline lineno="200"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="201"><highlight class="comment"><sp/>*<sp/><sp/>If<sp/>the<sp/>original<sp/>source<sp/>is<sp/>a<sp/>directory,<sp/>it<sp/>will<sp/>be<sp/>copied</highlight></codeline>
+<codeline lineno="202"><highlight class="comment"><sp/>*<sp/>recursively<sp/>to<sp/>destination<sp/>(hence<sp/>easing<sp/>file<sp/>transfers).</highlight></codeline>
+<codeline lineno="203"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="204"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>function<sp/>returns<sp/>TRUE<sp/>on<sp/>success<sp/>or<sp/>FALSE<sp/>on<sp/>failure.</highlight></codeline>
+<codeline lineno="205"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="206"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207" refid="util_8php_1a6" refkind="member"><highlight class="normal">function<sp/><ref refid="util_8php_1a6" kindref="member">ssh_copy</ref>($origin,<sp/>$destination,<sp/>$password)</highlight></codeline>
+<codeline lineno="208"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>umask(0077);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$tmpfname<sp/>=<sp/>tempnam(</highlight><highlight class="stringliteral">&quot;/tmp&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;egTinker&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chmod($tmpfname,<sp/>0700);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$fp<sp/>=<sp/>fopen($tmpfname,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fputs($fp,<sp/></highlight><highlight class="stringliteral">&quot;#!/bin/sh\necho<sp/>$password\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fputs($fp,<sp/></highlight><highlight class="stringliteral">&quot;rm<sp/>$tmpfname\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fclose($fp);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>putenv(</highlight><highlight class="stringliteral">&quot;DISPLAY=none:0.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>putenv(</highlight><highlight class="stringliteral">&quot;SSH_ASKPASS=$tmpfname&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>system(</highlight><highlight class="stringliteral">&quot;scp<sp/>-pqrC<sp/>$origin<sp/>$destination&quot;</highlight><highlight class="normal">,<sp/>$status);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="results_8php_1a2" kindref="member">$status</ref><sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TRUE;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FALSE;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225" refid="util_8php_1a7" refkind="member"><highlight class="normal">function<sp/><ref refid="util_8php_1a7" kindref="member">ssh_open</ref>($remote,<sp/>$password)</highlight></codeline>
+<codeline lineno="226"><highlight class="normal">{<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>global<sp/><ref refid="config_8php_1a0" kindref="member">$php_version</ref>;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>global<sp/><ref refid="config_8php_1a21" kindref="member">$debug</ref>;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Open<sp/>a<sp/>child<sp/>process<sp/>with<sp/>the<sp/>&apos;proc_open&apos;<sp/>function.<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Some<sp/>tricks:<sp/>we<sp/>must<sp/>open<sp/>the<sp/>connection<sp/>using<sp/>&apos;-x&apos;<sp/>to<sp/>disable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>X11<sp/>forwarding,<sp/>and<sp/>use<sp/>&apos;-t<sp/>-t&apos;<sp/>to<sp/>avoid<sp/>SSH<sp/>generating<sp/>an<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>because<sp/>we<sp/>are<sp/>not<sp/>connected<sp/>to<sp/>any<sp/>terminal.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>NOTE:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>We<sp/>require<sp/>users<sp/>to<sp/>have<sp/>an<sp/>account<sp/>and<sp/>password<sp/>on</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>the<sp/>UI<sp/>and<sp/>provide<sp/>their<sp/>user/password<sp/>through<sp/>the<sp/>web<sp/>or</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>otherwise<sp/>(e.g.<sp/>using<sp/>myproxy)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>NOTE:<sp/>if<sp/>the<sp/>web<sp/>server<sp/>is<sp/>trusted<sp/>remotely<sp/>(i.e.<sp/>it&apos;s<sp/>SSH<sp/>public<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>key<sp/>is<sp/>accepted<sp/>in<sp/>~user@host:.ssh/authorized_keys)<sp/>then<sp/>any<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>password<sp/>will<sp/>do.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="config_8php_1a0" kindref="member">$php_version</ref><sp/>&lt;<sp/>5)<sp/>{</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Prepare<sp/>I/O</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$descriptorspec<sp/>=<sp/>array(</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/>=&gt;<sp/>array(</highlight><highlight class="stringliteral">&quot;pipe&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;r&quot;</highlight><highlight class="normal">),<sp/><sp/></highlight><highlight class="comment">//<sp/>connect<sp/>child&apos;s<sp/>stdin<sp/>to<sp/>the<sp/>read<sp/>end<sp/>of<sp/>a<sp/>pipe</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/>=&gt;<sp/>array(</highlight><highlight class="stringliteral">&quot;pipe&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">),<sp/><sp/></highlight><highlight class="comment">//<sp/>connect<sp/>child&apos;s<sp/>stdout<sp/>to<sp/>the<sp/>write<sp/>end<sp/>of<sp/>a<sp/>pipe</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/>=&gt;<sp/>array(</highlight><highlight class="stringliteral">&quot;pipe&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">)<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>stderr<sp/>is<sp/>a<sp/>pipe<sp/>to<sp/>read<sp/>from</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>prepare<sp/>password</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>putenv(</highlight><highlight class="stringliteral">&quot;DISPLAY=none:0.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>putenv(</highlight><highlight class="stringliteral">&quot;SSH_ASKPASS=$tmpfname&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>umask(0077);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$tmpfname<sp/>=<sp/>tempnam(</highlight><highlight class="stringliteral">&quot;/tmp&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;egTinker&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chmod($tmpfname,<sp/>0700);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$fp<sp/>=<sp/>fopen($tmpfname,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fputs($fp,<sp/></highlight><highlight class="stringliteral">&quot;#!/bin/sh\necho<sp/>$password\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fputs($fp,<sp/></highlight><highlight class="stringliteral">&quot;rm<sp/>$tmpfname\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fclose($fp);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="auth_8php_1a3" kindref="member">$process</ref><sp/>=<sp/>proc_open(</highlight><highlight class="stringliteral">&quot;ssh<sp/>-x<sp/>-t<sp/>-t<sp/>$remote&quot;</highlight><highlight class="normal">,<sp/></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$descriptorspec,</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$pipes);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="config_8php_1a21" kindref="member">$debug</ref>)<sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;ssh<sp/>-x<sp/>-t<sp/>-t<sp/>$remote&lt;br<sp/>/&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>check<sp/>status</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!is_resource($process))<sp/></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="util_8php_1a4" kindref="member">letal</ref>(</highlight><highlight class="stringliteral">&quot;SSH::connect&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;cannot<sp/>connect<sp/>to<sp/>the<sp/>remote<sp/>host&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="config_8php_1a21" kindref="member">$debug</ref>)<sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;proc_open&lt;br<sp/>/&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>php5<sp/>--<sp/>we<sp/>can<sp/>use<sp/>PTYs<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>XXX<sp/>--<sp/>untested<sp/>--<sp/>probably<sp/>unneeded<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$descriptorspec<sp/>=<sp/>array(</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/>=&gt;<sp/>array(</highlight><highlight class="stringliteral">&quot;pty&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/>=&gt;<sp/>array(</highlight><highlight class="stringliteral">&quot;pty&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/>=&gt;<sp/>array(</highlight><highlight class="stringliteral">&quot;pty&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>prepare<sp/>password</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>putenv(</highlight><highlight class="stringliteral">&quot;DISPLAY=none:0.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>putenv(</highlight><highlight class="stringliteral">&quot;SSH_ASKPASS=$tmpfname&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>umask(0077);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$tmpfname<sp/>=<sp/>tempnam(</highlight><highlight class="stringliteral">&quot;/tmp&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;egTinker&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chmod($tmpfname,<sp/>0700);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$fp<sp/>=<sp/>fopen($tmpfname,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fputs($fp,<sp/></highlight><highlight class="stringliteral">&quot;#!/bin/sh\necho<sp/>$password\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fputs($fp,<sp/></highlight><highlight class="stringliteral">&quot;rm<sp/>$tmpfname\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fclose($fp);</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="auth_8php_1a3" kindref="member">$process</ref><sp/>=<sp/>proc_open(</highlight><highlight class="stringliteral">&quot;ssh<sp/>-x<sp/>-t<sp/>-t<sp/>$remote&quot;</highlight><highlight class="normal">,<sp/></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$descriptorspec,</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$pipes);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>check<sp/>status</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!is_resource($process))<sp/></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="util_8php_1a4" kindref="member">letal</ref>(</highlight><highlight class="stringliteral">&quot;SSH::connect&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;cannot<sp/>connect<sp/>to<sp/>the<sp/>remote<sp/>host&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="results_8php_1a2" kindref="member">$status</ref><sp/>=<sp/>proc_get_status($process);</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="results_8php_1a2" kindref="member">$status</ref>-&gt;running<sp/>==<sp/>FALSE)<sp/>{</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fclose($pipes[0]);<sp/>fclose($pipes[1]);<sp/>fclose($pipes[2]);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>proc_close($process);</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="util_8php_1a4" kindref="member">letal</ref>(</highlight><highlight class="stringliteral">&quot;SSH::connect&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;connection<sp/>exited<sp/>&quot;</highlight><highlight class="normal">.$status-&gt;exitcode);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="results_8php_1a2" kindref="member">$status</ref>-&gt;signaled)<sp/>{</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fclose($pipes[0]);<sp/>fclose($pipes[1]);<sp/>fclose($pipes[2]);</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>proc_close($process);</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="util_8php_1a4" kindref="member">letal</ref>(</highlight><highlight class="stringliteral">&quot;SSH::connect&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;connection<sp/>terminated<sp/>by<sp/>&quot;</highlight><highlight class="normal">.$status-&gt;termsig);</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="results_8php_1a2" kindref="member">$status</ref>-&gt;stopped)<sp/>{</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Tell<sp/>the<sp/>user<sp/>and<sp/>hope<sp/>for<sp/>the<sp/>best</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="util_8php_1a2" kindref="member">warning</ref>(</highlight><highlight class="stringliteral">&quot;SSH::connect<sp/>stopped<sp/>by<sp/>&quot;</highlight><highlight class="normal">.$status-&gt;stopsig.</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/>it<sp/>may<sp/>still<sp/>have<sp/>a<sp/>chance<sp/>though&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>$pipes<sp/>now<sp/>looks<sp/>like<sp/>this:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>0<sp/>=&gt;<sp/>writeable<sp/>handle<sp/>connected<sp/>to<sp/>child<sp/>stdin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>1<sp/>=&gt;<sp/>readable<sp/>handle<sp/>connected<sp/>to<sp/>child<sp/>stdout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>now<sp/>have<sp/>a<sp/>connection<sp/>to<sp/>the<sp/>remote<sp/>Grid<sp/>User<sp/>Interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Server<sp/>which<sp/>we<sp/>may<sp/>use<sp/>to<sp/>send<sp/>commands/receive<sp/>output</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>array(&apos;stdin&apos;<sp/>=&gt;<sp/>$pipes[0],</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&apos;stdout&apos;<sp/>=&gt;<sp/>$pipes[1],</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&apos;stderr&apos;<sp/>=&gt;<sp/>$pipes[2]<sp/>);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="/mnt/data/www/EMBnet/cgi-src/Grid/egTinker/src/util.php"/>
+  </compounddef>
+</doxygen>

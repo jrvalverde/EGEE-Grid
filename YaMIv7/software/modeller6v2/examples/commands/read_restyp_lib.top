@@ -1,0 +1,7 @@
+# Example for: READ_RESTYP_LIB 
+
+# This will read again a user specified residue type library, perhaps 
+# to read in the new user-defined residue types.
+
+# Just read the default file again for this example:
+READ_RESTYP_LIB RESTYP_LIB_FILE = '$(LIB)/restyp.lib'

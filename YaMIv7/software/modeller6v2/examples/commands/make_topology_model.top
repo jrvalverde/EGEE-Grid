@@ -1,0 +1,13 @@
+# Example for: MAKE_TOPOLOGY_MODEL, WRITE_TOPOLOGY_MODEL
+
+# This creates a topology library for heavy atoms from the 
+# CHARMM all-atom topology library:
+
+# Read CHARMM all-atom topology library:
+READ_TOPOLOGY FILE = '${LIB}/top.lib'
+
+# Keep only heavy atoms (TOPOLOGY_MODEL = 3)
+MAKE_TOPOLOGY_MODEL TOPOLOGY_MODEL = 3
+
+# Write the resulting topology library to a new file:
+WRITE_TOPOLOGY_MODEL FILE = 'top_heav.lib'

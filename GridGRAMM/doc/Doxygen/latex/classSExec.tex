@@ -1,0 +1,264 @@
+\section{SExec Class Reference}
+\label{classSExec}\index{SExec@{SExec}}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf SExec} (\$remote=\char`\"{}localhost\char`\"{}, \$password=\char`\"{}xxyzzy\char`\"{})
+\item 
+{\bf set\_\-remote\_\-end} (\$remote, \$password=\char`\"{}xxyzzy\char`\"{})
+\item 
+{\bf ssh\_\-passthru} (\$remote, \$password, \$command, \&\$status)
+\begin{CompactList}\small\item\em Execute a single command remotely using ssh and display its output, optionally returning its exit status (like passthru). \item\end{CompactList}\item 
+{\bf ssh\_\-exec} (\$remote, \$password, \$command, \&\$out)
+\begin{CompactList}\small\item\em Execute a remote command using SSH. \item\end{CompactList}\item 
+{\bf ssh\_\-copy} (\$origin, \$destination, \$password)
+\begin{CompactList}\small\item\em Copy a file or directory from one source to a destination. \item\end{CompactList}\item 
+{\bf ssh\_\-open\_\-shell} (\$remote, \$password)
+\begin{CompactList}\small\item\em Open an SSH connection to a remote site with a shell to run interactive commands. \item\end{CompactList}\item 
+{\bf ssh\_\-open\_\-command} (\$remote, \$password, \$command)
+\begin{CompactList}\small\item\em Open an SSH connection to run an interactive command on a remote site. \item\end{CompactList}\item 
+{\bf ssh\_\-close} (\$p)
+\begin{CompactList}\small\item\em Close an SSH interactive session. \item\end{CompactList}\item 
+{\bf ssh\_\-get\_\-status} (\$p)
+\begin{CompactList}\small\item\em get info about a running ssh\_\-open\_\-$\ast$ process \item\end{CompactList}\item 
+{\bf ssh\_\-popen} (\$remote, \$password, \$command, \$mode)
+\begin{CompactList}\small\item\em Execute a remore command and keep an unidirectional stream contact with it. \item\end{CompactList}\item 
+{\bf ssh\_\-pclose} (\$f)
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+{\bf \$version} = \char`\"{}1.0\char`\"{}
+\item 
+{\bf \$remote}
+\item 
+{\bf \$password}
+\item 
+{\bf \$ssh} = \char`\"{}/usr/bin/ssh\char`\"{}
+\item 
+{\bf \$scp} = \char`\"{}/usr/bin/scp\char`\"{}
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{SExec@{SExec}!SExec@{SExec}}
+\index{SExec@{SExec}!SExec@{SExec}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SExec::SExec (\$ {\em remote} = \char`\"{}localhost\char`\"{}, \$ {\em password} = \char`\"{}xxyzzy\char`\"{})}\label{classSExec_a0}
+
+
+
+
+Definition at line 12 of file ssh.php.
+
+References \$remote.
+
+\subsection{Member Function Documentation}
+\index{SExec@{SExec}!set_remote_end@{set\_\-remote\_\-end}}
+\index{set_remote_end@{set\_\-remote\_\-end}!SExec@{SExec}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SExec::set\_\-remote\_\-end (\$ {\em remote}, \$ {\em password} = \char`\"{}xxyzzy\char`\"{})}\label{classSExec_a1}
+
+
+
+
+Definition at line 18 of file ssh.php.
+
+References \$password, and \$remote.\index{SExec@{SExec}!ssh_close@{ssh\_\-close}}
+\index{ssh_close@{ssh\_\-close}!SExec@{SExec}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SExec::ssh\_\-close (\$ {\em p})}\label{classSExec_a7}
+
+
+Close an SSH interactive session. 
+
+
+
+Definition at line 417 of file ssh.php.
+
+References \$debug.
+
+Referenced by Grid::pjob\_\-get\_\-id().\index{SExec@{SExec}!ssh_copy@{ssh\_\-copy}}
+\index{ssh_copy@{ssh\_\-copy}!SExec@{SExec}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SExec::ssh\_\-copy (\$ {\em origin}, \$ {\em destination}, \$ {\em password})}\label{classSExec_a4}
+
+
+Copy a file or directory from one source to a destination. 
+
+This function copies source to dest, where one of them is a local filespec and the other a remote filespec of the form [user@]host:path
+
+If the original source is a directory, it will be copied recursively to destination (hence easing file transfers).
+
+The function returns TRUE on success or FALSE on failure.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em origin}]The origin path, of the form [user@][host][:port]path You may omit the optional sections if the default values (local username, local host, standard SSH port) are OK\item[{\em destination}]The destination path, of the form [user@][host][:port:]path You may omit the optional sections if the default values (local username, local host, standard SSH port) are OK\end{description}
+\end{Desc}
+password The password to use to connect to the remote end of the copy (be it the origin or the destination, it's all the same). If connection is automatic by some means (.shosts or RSA/DSA authentication) then it should be ignored and any password should do.
+
+\begin{Desc}
+\item[Returns:]status TRUE if all went well, or FALSE on failure. \end{Desc}
+
+
+Definition at line 183 of file ssh.php.
+
+References \$debug, and \$status.\index{SExec@{SExec}!ssh_exec@{ssh\_\-exec}}
+\index{ssh_exec@{ssh\_\-exec}!SExec@{SExec}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SExec::ssh\_\-exec (\$ {\em remote}, \$ {\em password}, \$ {\em command}, \&\$ {\em out})}\label{classSExec_a3}
+
+
+Execute a remote command using SSH. 
+
+This function sort of mimics rexec(3) using SSH as the transport protocol.
+
+The function returns the exit status of the remote command, and appends the remote job output to an optional argument.
+
+This function is intended to be used as a one-time all-at-once non-interactive execution mechanism which will run the command remotely and return its output.
+
+If you try to issue an interactive command using this function, all you will get is unneccessary trouble. So don't!
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em remote}]The remote end to run the command, in the form 'user:port' (you may omit the 'user@' or ':port' parts if the default values [i.e. same user or standard port] are OK). \item[{\em password}]The remote password. Note that if direct RSA/DSA/.shosts/.rhosts login is enabled then the password should be ignored as SSH should not run the ASKPASS command). \item[{\em command}]The command to execute on the remote end NOTE: if you want to use redirection, the entire remote command line should be enclosed in additional quotes! \item[{\em output}]Optional, the collated (stdout+stderr) output of the remote command. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]status will hold the termination status of SSH after invocation, which should be the exit status of the remote command or 255 if an error occurred \end{Desc}
+
+
+Definition at line 130 of file ssh.php.
+
+References \$debug.
+
+Referenced by Grid::pjob\_\-retrieve().\index{SExec@{SExec}!ssh_get_status@{ssh\_\-get\_\-status}}
+\index{ssh_get_status@{ssh\_\-get\_\-status}!SExec@{SExec}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SExec::ssh\_\-get\_\-status (\$ {\em p})}\label{classSExec_a8}
+
+
+get info about a running ssh\_\-open\_\-$\ast$ process 
+
+
+
+Definition at line 442 of file ssh.php.\index{SExec@{SExec}!ssh_open_command@{ssh\_\-open\_\-command}}
+\index{ssh_open_command@{ssh\_\-open\_\-command}!SExec@{SExec}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SExec::ssh\_\-open\_\-command (\$ {\em remote}, \$ {\em password}, \$ {\em command})}\label{classSExec_a6}
+
+
+Open an SSH connection to run an interactive command on a remote site. 
+
+Connects to a remote host and runs an interactive command with NO controlling terminal.
+
+Returns a process\_\-control array which contains the process resource ID and an the standard file descriptors which the caller may use to interact with the remote shell. 
+
+Definition at line 329 of file ssh.php.
+
+References \$debug.\index{SExec@{SExec}!ssh_open_shell@{ssh\_\-open\_\-shell}}
+\index{ssh_open_shell@{ssh\_\-open\_\-shell}!SExec@{SExec}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SExec::ssh\_\-open\_\-shell (\$ {\em remote}, \$ {\em password})}\label{classSExec_a5}
+
+
+Open an SSH connection to a remote site with a shell to run interactive commands. 
+
+Connects to a remote host and opens an interactive shell session with NO controlling terminal.
+
+Returns a process\_\-control array which contains the process resource ID and an the standard file descriptors which the caller may use to interact with the remote shell.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em remote}]The remote end to run the shell, in the form 'user:port' (you may omit the 'user@' or ':port' parts if the default values [i.e. same user or standard port] are OK). \item[{\em password}]The remote password. Note that if direct RSA/DSA/.shosts/.rhosts login is enabled then the password should be ignored as SSH should not run the ASKPASS command). \end{description}
+\end{Desc}
+
+
+Definition at line 224 of file ssh.php.
+
+References \$debug.\index{SExec@{SExec}!ssh_passthru@{ssh\_\-passthru}}
+\index{ssh_passthru@{ssh\_\-passthru}!SExec@{SExec}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SExec::ssh\_\-passthru (\$ {\em remote}, \$ {\em password}, \$ {\em command}, \&\$ {\em status})}\label{classSExec_a2}
+
+
+Execute a single command remotely using ssh and display its output, optionally returning its exit status (like passthru). 
+
+This function is intended to be used as a one-time all-at-once non-interactive execution mechanism which will run the command remotely and display its output.
+
+If you try to issue an interactive command using this function, all you will get is unneccessary trouble. So don't!
+
+This might be done as well using a pipe on /tmp and making the command 'cat' the pipe: when ssh runs, it runs the command 'cat' on the pipe and hangs on read. Then we just need a thread to open the pipe, put the password and close the pipe. This other way the password is never wirtten down. But, OTOH, the file life is so ephemeral that most of the time it will only exist in the internal system cache, so this approach is not that bad either.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em remote}]The remote end to run the command, in the form 'user:port' (you may omit the 'user@' or ':port' parts if the default values [i.e. same user or standard port] are OK). \item[{\em password}]The remote password. Note that if direct RSA/DSA/.shosts/.rhosts login is enabled then the password should be ignored as SSH should not run the ASKPASS command). \item[{\em command}]The command to execute on the remote end NOTE: if you want to use redirection, the entire remote command line should be enclosed in additional quotes! \item[{\em status}]Optional, this will hold the termination status of SSH after invocation, which should be the exit status of the remote command or 255 if an error occurred \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]void \end{Desc}
+
+
+Definition at line 67 of file ssh.php.
+
+References \$debug.\index{SExec@{SExec}!ssh_pclose@{ssh\_\-pclose}}
+\index{ssh_pclose@{ssh\_\-pclose}!SExec@{SExec}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SExec::ssh\_\-pclose (\$ {\em f})}\label{classSExec_a10}
+
+
+
+
+Definition at line 477 of file ssh.php.\index{SExec@{SExec}!ssh_popen@{ssh\_\-popen}}
+\index{ssh_popen@{ssh\_\-popen}!SExec@{SExec}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SExec::ssh\_\-popen (\$ {\em remote}, \$ {\em password}, \$ {\em command}, \$ {\em mode})}\label{classSExec_a9}
+
+
+Execute a remore command and keep an unidirectional stream contact with it. 
+
+This routine mimics 'popen()' but uses ssh to connect to a remote host and run the requested command. 
+
+Definition at line 455 of file ssh.php.
+
+References \$debug.
+
+Referenced by Grid::pjob\_\-get\_\-id().
+
+\subsection{Member Data Documentation}
+\index{SExec@{SExec}!$password@{\$password}}
+\index{$password@{\$password}!SExec@{SExec}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SExec::\$password}\label{classSExec_o2}
+
+
+
+
+Definition at line 7 of file ssh.php.
+
+Referenced by set\_\-remote\_\-end().\index{SExec@{SExec}!$remote@{\$remote}}
+\index{$remote@{\$remote}!SExec@{SExec}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SExec::\$remote}\label{classSExec_o1}
+
+
+
+
+Definition at line 6 of file ssh.php.
+
+Referenced by set\_\-remote\_\-end(), and SExec().\index{SExec@{SExec}!$scp@{\$scp}}
+\index{$scp@{\$scp}!SExec@{SExec}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SExec::\$scp = \char`\"{}/usr/bin/scp\char`\"{}}\label{classSExec_o4}
+
+
+
+
+Definition at line 10 of file ssh.php.\index{SExec@{SExec}!$ssh@{\$ssh}}
+\index{$ssh@{\$ssh}!SExec@{SExec}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SExec::\$ssh = \char`\"{}/usr/bin/ssh\char`\"{}}\label{classSExec_o3}
+
+
+
+
+Definition at line 9 of file ssh.php.\index{SExec@{SExec}!$version@{\$version}}
+\index{$version@{\$version}!SExec@{SExec}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SExec::\$version = \char`\"{}1.0\char`\"{}}\label{classSExec_o0}
+
+
+
+
+Definition at line 5 of file ssh.php.
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf ssh.php}\end{CompactItemize}

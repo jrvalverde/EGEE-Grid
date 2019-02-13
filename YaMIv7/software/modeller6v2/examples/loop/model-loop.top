@@ -1,0 +1,29 @@
+# Homology modelling by the MODELLER TOP routine 'model'.
+#
+# This can be ran with run_clustor model-loop.top, too.
+#
+# In addition to the standard overall homology modeling, at the end, this 
+# routine also calls the thorough loop optimization routine, which generates
+# by default 25 loop models for each *.B9999???? model. The default
+# loop selection (regions around gaps) can be changed by re-defining 
+# routine select_loop_atoms.
+
+INCLUDE                             # Include the predefined TOP routines
+
+ SET OUTPUT_CONTROL = 1 1 1 1 0
+
+SET ALNFILE  = 'alignment.ali'      # alignment filename
+SET KNOWNS   = '5fd1'               # codes of the templates
+SET SEQUENCE = '1fdx'               # code of the target
+SET ATOM_FILES_DIRECTORY = './:../atom_files' # directories for input atom files
+# SET STARTING_MODEL= 1
+# SET ENDING_MODEL  = 1
+                                    # (determines how many models to calculate)
+
+SET DO_LOOPS = 1                    # do loops extensively
+SET LOOP_STARTING_MODEL = 1
+SET LOOP_ENDING_MODEL = 4
+SET LOOP_MD_LEVEL = 'refine_1'
+SET MD_LEVEL = 'nothing'
+
+CALL ROUTINE = 'model'              # do homology modelling
