@@ -1,0 +1,31 @@
+To get a list of applications:
+	ls -1 $tinker_dir/bin
+
+To get help on an application:
+
+	open $tinker_dir/doc/guide.txt
+	do
+		read $line
+	while $line != toupper($app)
+	read $line	// empty line
+	do
+		read $line
+		$help .= $line
+	while $line != ''
+
+To get list of FF parameter files
+
+	ls -1 $tinker_dir/params | sed -e 's/\.prm//g'
+
+To get help on FF
+
+	open $tinker_dir/doc/guide.txt
+	do
+		read $line
+	while $line != toupper("$ff.prm")
+	read $line
+	do
+		$help .= $line
+		read $line
+	while $line != '[A-Z0-9]*\.PRM'
+
