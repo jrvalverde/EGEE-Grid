@@ -1,0 +1,46 @@
+hostname
+domainname
+
+echo
+echo "---- OS ---- "
+uname -a
+cat /etc/issue
+cat /proc/cpuinfo
+cat /proc/meminfo
+
+echo
+echo "---- Filesystem ----"
+echo "PWD=" pwd
+df
+
+echo
+echo "---- VO Install ----"
+echo "VO_DTEAM =" ${VO_DTEAM_SW_DIR}
+ls ${VO_DTEAM_SW_DIR}
+
+echo 
+echo "---- Tools ----"
+which gcc
+gcc --version
+which python
+python -V
+which python2.2
+python2.2 -V
+python2.2 -c "import sys; print 'UNICODE SIZE:', sys.maxunicode"
+which python2.3
+python2.3 -V
+
+echo
+echo "--- Network connectivity ----"
+echo "Outbound:"
+ping -c 3 www.cern.ch
+echo "Outbound into firewall:"
+ping -c 3 pcitapi75.cern.ch
+echo "Route to CERN:"
+traceroute www.cern.ch
+
+echo
+echo "--- Download thruput ---"
+wget http://cern.ch/diane/download/diane.installation.manager
+chmod +x ./diane.installation.manager
+./diane.installation.manager --prefix=$PWD 1.2.0 download

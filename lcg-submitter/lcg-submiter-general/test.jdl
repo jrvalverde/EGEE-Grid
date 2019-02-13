@@ -1,0 +1,5 @@
+Executable = "test_wn_wrapper"; 
+StdOutput = "std.out"; 
+StdError = "std.err"; 
+InputSandbox = {"test_wn_wrapper", "test_wn_capabilities"};
+OutputSandbox = {"std.out","std.err","caps.out"};

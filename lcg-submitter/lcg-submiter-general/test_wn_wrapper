@@ -1,0 +1,5 @@
+#!/bin/sh
+rm -f caps.out
+chmod u+x ./test_wn_capabilities
+./test_wn_capabilities &> caps.out
+echo 'created caps.out'
