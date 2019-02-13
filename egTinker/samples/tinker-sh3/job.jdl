@@ -1,0 +1,8 @@
+Type = "job";
+JobType = "normal";
+VirtualOrganisation = "biomed";
+Executable = "job.sh";
+StdOutput = "out";
+StdError = "err";
+InputSandbox = { "job.sh", "job.tgz" };
+OutputSandbox = { "output.tgz", "out", "err" };

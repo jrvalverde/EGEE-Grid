@@ -1,0 +1,173 @@
+head	1.3;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.3
+date	2002.02.06.11.47.32;	author netadmin;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2001.09.05.12.13.06;	author netadmin;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2001.09.04.13.37.05;	author netadmin;	state Exp;
+branches;
+next	;
+
+
+desc
+@WWW help for TINKER MINIMIZE (C) J. R. Valverde, 2001
+@
+
+
+1.3
+log
+@Fixed wap mailing [j]
+@
+text
+@<HTML>
+<HEAD><TITLE="minimize"></HEAD>
+<BODY BGCOLOR="white" BACKGROUND="images/6h2o-w-small.gif">
+<!-- $Id: minimize_help.html,v 1.2 2001/09/05 12:13:06 netadmin Exp netadmin $ -->
+<!-- $Log: minimize_help.html,v $
+<!-- Revision 1.2  2001/09/05 12:13:06  netadmin
+<!-- Aesthetic enhancements [j]
+<!--
+<!-- Revision 1.1  2001/09/04 13:37:05  netadmin
+<!-- Initial revision
+<!-- -->
+
+<CENTER><H1><A HREF="http://dasher.wustl.edu/tinker">TINKER</A></H1>
+<STRONG><EM>Software Tools for Molecular Design</EM></STRONG></CENTER>
+
+
+<TABLE WIDTH="90%" ALIGN="CENTER" CELLSPACING="18">
+<TR><TH><CENTER><H2>MINIMIZE</H2></CENTER></TH></TR>
+
+<TR><TD BGCOLOR="lightyellow">
+
+<P>Performs a nonlinear conjugate gradient minimization of an 
+input structure over Cartesian coordinates. The method 
+requires only the potential energy and gradient at each step 
+along the minimization pathway. It requires storage space 
+proportional to the number of atoms in the structure. The 
+MINIMIZE procedure is recommended for preliminary 
+minimization of trial structures to an RMS gradient of 1.0 
+to 0.1 kcal/mole/Ang. It has a relatively fast cycle time 
+and is tolerant of poor initial structures, but converges 
+very slowly (linearly) once near the minimum.</P>
+
+<P>This page will first convert your structure to PDB format
+using BABEL, and then process that structure with TINKER, first
+converting it to Tinker's XYZ format, then running MINIMIZE and
+finally converting TINKER output back to PDB format.</P>
+
+</TD></TR>
+<TR><TD BGCOLOR="lightblue">
+
+<STRONG>Input:</STRONG> You must supply:
+<UL>
+    <LI>the <STRONG>coordinates</STRONG> of your molecule in 
+any of BABEL supported
+formats, either as a local file selected from your computer
+or pasting the coordinate data in the supplied box.</LI>
+
+    <LI>the input <STRONG>format</STRONG> of your data (make sure it matches
+what you have or you may get entirely wrong results)</LI>
+
+    <LI>the <A HREF="params.html"><STRONG>force field</STRONG></A> to use in the minimization procedure</LI>
+
+    <LI>target <STRONG>RMS gradient</STRONG> value at which the minimization 
+will terminate (in Kcal/mole/Angstrom)</LI>
+
+    <LI>an <STRONG>e-mail address</STRONG> where the results (see below) will 
+be sent</LI>
+    
+    <LI>an optional <STRONG>urgent-mail address</STRONG> (e.g. a WAP mobile 
+phone) where a short notification may be sent (so you may know it's done 
+ASAP)</LI>
+    
+    <LI>a <STRONG>short title</STRONG> to identify your job (this is for your own reference
+purposes, so you can identify the results when they are mailed to you)</LI>
+</UL></P>
+
+</TD></TR>
+<TR><TD BGCOLOR="lightpink">
+
+<P><STRONG>Output</STRONG> will be sent to you by e-mail at the specified address. It
+will consist of several files:
+<UL>
+    <LI>[LOG] the minimization  statistics 
+    <LI>[XYZ] the minimized structure in TINKER XYZ format
+    <LI>[PDB] the minimized structure in PDB format
+    <LI>[SEQ] the sequence corresponding to your structure
+</UL></P>
+<P>You may also specify an additional e-mail address to receive
+a short notification. Typically this would be a mobile phone e-mail
+address. This way, if your results are important to you, you will
+be notified of program termination as soon as possible.</P>
+
+</TD></TR><TR><TD BGCOLOR="lightgreen">
+
+     Questions and comments regarding the TINKER package, 
+including suggestions for improvements and changes should be 
+made to the author:<PRE>
+
+  Professor Jay William Ponder
+  Biochemistry & Molecular Biophysics
+  North Building, Room 2811, Box 8231
+  Washington University School of Medicine
+  660 South Euclid Avenue
+  Saint Louis, MO  63110  U.S.A.
+
+  phone: (314) 362-4195
+  fax:   (314) 362-7183
+  email: ponder@@dasher.wustl.edu
+</PRE>
+
+</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>
+@
+
+
+1.2
+log
+@Aesthetic enhancements [j]
+@
+text
+@d4 1
+a4 1
+<!-- $Id: minimize_help.html,v 1.1 2001/09/04 13:37:05 netadmin Exp netadmin $ -->
+d6 3
+d51 1
+a51 1
+    <LI>the <STRONG>force field</STRONG> to use in the minimization procedure</LI>
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d3 6
+a8 3
+<BODY BGCOLOR="white">
+<!-- $Id$ -->
+<!-- $Log$ -->
+d11 1
+a11 1
+<EM>Software Tools for Molecular Design</EM></CENTER>
+d14 1
+a14 1
+<TABLE WIDTH="90%" ALIGN="CENTER">
+@
