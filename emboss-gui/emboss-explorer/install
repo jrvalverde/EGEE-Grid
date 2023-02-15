@@ -1,0 +1,128 @@
+#!/bin/sh
+
+usage() {
+	cat <<EOF
+this script must be executed from the top-level directory of the
+EMBOSS Explorer distribution.
+EOF
+	exit 1
+}
+
+prompt() {
+	echo -e "$1\n\t(default is $2)"
+	read INPUT
+	eval $3=${INPUT:-$2}
+}
+
+echo installing EMBOSS Explorer perl modules...
+echo
+perl Makefile.PL && make && make install || exit
+
+echo installing EMBOSS Explorer GUI components...
+echo
+echo I need to collect some information in order to install EMBOSS Explorer:
+
+EMBOSS_PREFIX=`embossversion -full 2>/dev/null | awk '/^InstallDirectory/ { print $2 }'`
+prompt "Where was EMBOSS installed?" ${EMBOSS_PREFIX:-/usr/local} EMBOSS_PREFIX
+
+# TODO something fancy to guess the web root?
+prompt "Where should the EMBOSS Explorer HTML files be installed?" /var/www/html/emboss HTML_PATH
+OUTPUT_PATH=$HTML_PATH/output
+
+prompt "What is the URL prefix corresponding to the HTML directory above?" /emboss HTML_URL
+OUTPUT_URL=$HTML_URL/output
+
+prompt "Where should the EMBOSS Explorer CGI script be installed?" /var/www/cgi-bin/emboss CGI_PATH
+
+if [ -d $CGI_PATH ]
+then
+	CGI_DIR=$CGI_PATH
+	CGI_PATH=$CGI_DIR/emboss
+else
+	CGI_DIR=${CGI_PATH%/*}
+fi
+
+prompt "What is the complete URL corresponding to the CGI script '$CGI_PATH'?" /cgi-bin/emboss CGI_URL
+
+# munge EMBOSS::GUI::Conf according to the information above...
+CONF_MODULE=`perl -MEMBOSS::GUI::Conf -e 'print $INC{"EMBOSS/GUI/Conf.pm"}'`
+perl -pi -e "
+	\$HTML_PATH = '$HTML_PATH'; s/(?<=HTML_PATH = \")[^\"]*/\$HTML_PATH/;
+	\$HTML_URL='$HTML_URL'; s/(?<=HTML_URL = \")[^\"]*/\$HTML_URL/;
+	\$OUTPUT_PATH = '$OUTPUT_PATH'; s/(?<=OUTPUT_PATH = \")[^\"]*/\$OUTPUT_PATH/;
+	\$OUTPUT_URL='$OUTPUT_URL'; s/(?<=OUTPUT_URL = \")[^\"]*/\$OUTPUT_URL/;
+	\$EMBOSS_PREFIX='$EMBOSS_PREFIX'; s/(?<=EMBOSS_PREFIX = \")[^\"]*/\$EMBOSS_PREFIX/;
+" $CONF_MODULE
+
+# install HTML and CGI files...
+[ -d html ] || usage
+echo installing HTML files to $HTML_PATH...
+if [ -d $HTML_PATH ]
+then
+	cp -rp html/* $HTML_PATH	
+else
+	cp -rp html $HTML_PATH
+fi
+echo creating HTML index file at $HTML_PATH/index.html...
+echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Frameset//EN\"
+ \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd\">
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <title>EMBOSS Explorer</title>
+  </head>
+  <frameset cols=\"170, *\">
+    <frame src=\"$CGI_URL/menu\" name=\"menu\" />
+    <frame src=\"$CGI_URL/intro\" name=\"main\" />
+  </frameset>
+</html>" >$HTML_PATH/index.html
+echo creating output directory at $OUTPUT_PATH...
+[ -d $OUTPUT_PATH ] || mkdir $OUTPUT_PATH
+#echo creating .htaccess file in $OUTPUT_PATH/.htaccess...
+#echo "Header add Cache-Control: no-cache" >>$OUTPUT_PATH/.htaccess
+echo installing CGI script to $CGI_PATH...
+cp cgi/emboss $CGI_PATH
+
+# copy support files used in the program manuals...
+echo copying manual support files to $HTML_PATH/manual...
+[ -d $HTML_PATH/manual ] || mkdir $HTML_PATH/manual
+# EMBOSS 3
+find $EMBOSS_PREFIX/share/EMBOSS/doc/programs/html -type f ! -name '*.html' -exec cp {} $HTML_PATH/manual \;
+# EMBOSS 4
+find $EMBOSS_PREFIX/share/EMBOSS/doc/html/emboss/apps -type f ! -name '*.html' -exec cp {} $HTML_PATH/manual \;
+
+# fix permissions...
+echo fixing permissions...
+find $HTML_PATH -type d -exec chmod a+rx {} \; -o -type f -exec chmod a+r {} \;
+chmod a+rwx $OUTPUT_PATH
+chmod a+rx $CGI_PATH
+
+# TODO mention cron script in bin directory, when it exists...
+CRON="0 4 * * * find $OUTPUT_PATH -type d -mindepth 1 -maxdepth 1 -atime 1 -exec rm -rf {} \;"
+
+# mention location of configuration file and things that can be changed (list
+# of excluded applications, mostly...)
+
+cat <<EOF
+
+EMBOSS Explorer is installed.  Visit $CGI_URL to test it out.
+Site configuration (including a list of applications to be excluded from
+public access) is stored in the EMBOSS::GUI::Conf module (located at $CONF_MODULE).
+
+The main style sheet, which can be edited to customize the appearance of
+EMBOSS Explorer is $HTML_PATH/style/emboss.css.  If you prefer the look and
+feel of the old EMBOSS GUI, you can use $HTML_PATH/style/classic.css
+instead (the style sheet is specified in the EMBOSS::GUI::Conf module).
+
+EMBOSS Explorer generates temporary output files every time an application is
+used.  Depending on the tasks being performed, these output files can consume
+space fairly quickly.  The old output can be cleaned up on a regular basis by
+adding a task to the root user's crontab.  The following example runs every
+morning at 0400 and removes all output files that have not been accessed in
+the last 24 hours:
+
+0 4 * * * find $OUTPUT_PATH -type d -mindepth 1 -maxdepth 1 -atime 1 -exec rm -rf {} \;
+
+Please report any errors or strange occurrences using the bug tracker at
+http://sourceforge.net/tracker/?func=add&group_id=124389&atid=699414
+
+EOF

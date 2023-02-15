@@ -1,0 +1,44 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use EMBOSS::GUI;
+
+my $emboss = EMBOSS::GUI->new();
+
+### JR ### START
+# This is needed for when EMBOSS has been compiled for a directory
+# that is different from the one it was finally installed.
+#
+# It may happen if someone uses an EMBOSS compiled by someone else
+# and installs it on its own preferred site.
+#
+# Or it may happen when running EMBOSS "installed" on the Grid, when
+# you don't have any guarantees about the installation path other than
+# that some environment reference variables.
+#
+# When running EMBOSS on the Grid this needs to be handled by the remote
+# running script... However, we still need to run 'wossname' locally
+# in order to get a list of programs, and this 'wossname' may as well
+# have been compiled for a different destination than the actual install
+# directory.
+#
+# In any case, this is the safest approach anyhow: making sure these
+# environment variables are set makes us independent of compilation
+# switches.
+
+# Note that this should be replaced at run-time or at installation time.
+
+
+my $cf = EMBOSS::GUI::Conf->new();
+
+$ENV{'EMBOSS_ACDROOT'} = $cf->{'EMBOSS_ACDROOT'};
+$ENV{'PLPLOT_LIB'} = $cf->{'EMBOSS_HOME'};
+$ENV{'LD_LIBRARY_PATH'} = $cf->{'EMBOSS_PREFIX'}.'/lib:\$LD_LIBRARY_PATH';
+$ENV{'PATH'} = $cf->{'EMBOSS_BIN'}.':\$PATH';
+
+### JR ### END
+
+$emboss->go();
+

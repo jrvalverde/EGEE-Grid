@@ -1,0 +1,28 @@
+Emboss explorer
+================
+
+EMBOSS explorer is a web-based graphical user interface to the EMBOSS suite of
+bioinformatics tools.  It is exceedingly simple to install, configure,
+maintain and use.
+
+INSTALLATION
+
+To install this module, execute the install script in the top-level directory
+of the distribution.
+
+	./install
+
+DEPENDENCIES
+
+The EMBOSS::ACD module requires the following CPAN modules:
+
+	Parse::RecDescent
+	Mail::Send
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2004 by Luke McCarthy
+
+Emboss Explorer is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.8.3 or,
+at your option, any later version of Perl 5 you may have available.

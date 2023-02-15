@@ -1,0 +1,148 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use Getopt::Long;
+use Pod::Usage;
+
+use EMBOSS::GUI;
+use EMBOSS::GUI::Conf;
+use EMBOSS::GUI::XHTML;
+
+my $frames = 1;
+my $cgi = "/cgi-bin/emboss";
+GetOptions(
+	"frames!" => \$frames,
+	"cgi=s" => \$cgi
+) or pod2usage();
+my $dir = shift || $EMBOSS::GUI::Conf::HTML_PATH;
+-d $dir && -w $dir
+	or pod2usage("$dir is not a writeable directory");
+
+print <<EOF;
+
+I am about to dump static EMBOSS Explorer pages to the following directory:
+
+	$dir
+
+These pages will overwrite existing HTML at this location.
+EOF
+while (1) {
+	print "\nDo you wish to continue (y/n)? ";
+	my $response = <STDIN>;
+	if ($response =~ /^y/i) {
+		last;
+	} elsif ($response =~ /^n/i) {
+		exit;
+	}
+}
+
+#my $style_url = $EMBOSS::GUI::Conf::STYLE_URL =~
+#	/^$EMBOSS::GUI::Conf::HTML_URL\/(.*)/ ? $1: $EMBOSS::GUI::Conf::STYLE_URL;
+my $style_url = $EMBOSS::GUI::Conf::STYLE_URL;
+#my $image_url = $EMBOSS::GUI::Conf::IMAGE_URL =~
+#	/^$EMBOSS::GUI::Conf::HTML_URL\/(.*)/ ?	$1 : $EMBOSS::GUI::Conf::IMAGE_URL;
+my $image_url = $EMBOSS::GUI::Conf::IMAGE_URL;
+#my $manual_url = $EMBOSS::GUI::Conf::MANUAL_URL =~
+#	/^$EMBOSS::GUI::Conf::HTML_URL\/(.*)/ ? $1 : $EMBOSS::GUI::Conf::MANUAL_URL;
+my $manual_url = $EMBOSS::GUI::Conf::MANUAL_URL;
+my $html = EMBOSS::GUI::XHTML->new(
+	frames => $frames,
+	style_url => $style_url,
+	image_url => $image_url,
+	manual_url => $manual_url,
+	script_url => $cgi,
+	static => 1
+);
+my $emboss = EMBOSS::GUI->new(
+	html => $html
+);
+my $pages = 0;
+if ($frames) {
+	dump_page("$dir/index.html", $html->frameset_page);
+	dump_page("$dir/alphamenu.html", $html->menu_page($emboss->apps));
+	dump_page("$dir/groupmenu.html", $html->menu_page($emboss->groups));
+	dump_page("$dir/intro.html", $html->intro_page);
+}
+my $manual_dir = $EMBOSS::GUI::Conf::MANUAL_URL;
+$manual_dir =~ s/$EMBOSS::GUI::Conf::HTML_URL/$dir/;
+-d $manual_dir or mkdir $manual_dir
+	or die "error creating directory $manual_dir: $!";
+foreach my $aref ($emboss->apps) {
+	my ($app, $doc) = @$aref;
+	if (!$emboss->is_excluded($app)) {
+		if (my $acdfile = $emboss->_find_acd($app)) {
+			if (my $acd = eval { EMBOSS::ACD->new($acdfile) }) {
+				dump_page("$dir/$app.html", $html->input_page($acd));
+			} else {
+				warn "failed to parse $acdfile\n";
+			}
+				
+		} else {
+			warn "failed to locate ACD file for $app\n";
+		}
+		if (my $manual = $emboss->_find_manual($app)) {
+			dump_page("$manual_dir/$app.html",
+				$html->manual_page($app, $manual));
+		} else {
+			warn "failed to locate manual for $app\n";
+		}
+	}
+}
+
+print <<EOF;
+
+Done.  If the location above is not the same location given during the
+installation of EMBOSS Explorer, the style, images, and manual directories
+will have to be copied over to the new location.
+
+EOF
+
+sub dump_page {
+	my ($path, $content) = @_;
+
+	++$pages;
+	$emboss->_write_to_file($path, $content)
+		or die "error writing to $path: $!\n";
+}
+
+=head1 NAME
+
+mkstatic
+
+=head1 AUTHOR
+
+Luke McCarthy <lukem@gene.pbi.nrc.ca>
+
+=head1 SYNOPSIS
+
+mkstatic
+[ --noframes ]
+[ --cgi URL ]
+[ DIRECTORY ]
+
+=head1 DESCRIPTION
+
+TODO...
+
+=head1 OPTIONS
+
+=over4
+
+=item --frames | --noframes
+
+Controls whether or not the generated HTML has a separate frame for the
+application menu.  The default is to use a separate frame.
+
+=item --cgi URL
+
+Use the specified URL as the location of the CGI script that application input
+forms are submitted to.
+
+=back
+
+=head1 COPYRIGHT
+
+Copyright (c) 2004 Luke McCarthy.  All rights reserved.  This program is free
+software.  You may copy or redistribute it under the same terms as Perl itself.
